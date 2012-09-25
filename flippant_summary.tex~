@@ -1,0 +1,124 @@
+\documentclass[15pt, landscape]{article}
+\usepackage{graphicx}
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.7in, right=1.9in,top=1.4in, bottom=1.9in]{geometry}
+\usepackage[no-math]{fontspec}
+
+
+\usepackage{sectsty}
+\usepackage{multicol,scalefnt}
+\usepackage{amsmath, amssymb, amsfonts,  titlesec}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage{fancyhdr,  booktabs, multirow}
+\usepackage[font=small,format=plain,labelfont=it,up,textfont=it,up]{caption}
+\usepackage{listings}
+
+\usepackage{enumitem}
+
+\newlist{alist}{itemize}{1}
+\setlist[alist]{label=--,labelindent=2in,leftmargin=9pt,labelsep=6pt, itemsep=0pt}
+
+%========= FONT SPECS ============
+\tolerance 8000
+
+\defaultfontfeatures{Mapping=tex-text, Ligatures=Common}
+
+\renewcommand\refname{references} % this sets the name of
+\def\labelitemi{--}
+
+\def\sansfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=1.5, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansnormalfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=-10,Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansitalicfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=1.5, FakeSlant=0.2, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+
+
+
+
+%\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.74]{CPMono_v07}}
+\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91]{Inconsolata}}
+
+\renewcommand{\texttt}[1]{{\monofont #1}}
+
+\lstset{
+aboveskip=2\medskipamount, belowskip=2\medskipamount,
+basicstyle=\monofont,
+language=python,
+numbers=left, numberstyle=\tiny,  numbersep=9pt,
+xleftmargin=.4in, frame=l, xrightmargin=.25in
+}
+
+
+%\titleformat{\section}{\huge\sansnormalfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
+\titleformat{\section}{\huge\sansnormalfont}{}{0em}{}
+\titleformat{\subsection}{\sansfont}{\protect\makebox[0pt][r]{\thesubsection\quad}}{0em}{}
+
+\fancyhead[LO, LE]{\sansfont\small An improved batch CP method \normalsize}
+\fancyhead[RO, RE]{\sansfont\small \nouppercase\leftmark}
+\fancyfoot[C]{\sansfont\thepage}
+
+\begin{document}
+\fontsize{11pt}{15pt}\selectfont
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+\baselineskip=15.5pt plus 0pt
+\frenchspacing
+
+\begin{centering}
+\vspace{3em}
+\LARGE\sansfont{An improved batch processing CP approach}
+
+\vspace{2em}
+\large
+\sansfont Sebastian Kosch
+
+\vfill
+\normalfont
+A thesis submitted in conformity with the requirements
+
+for the degree of \textit{Bachelor of Applied Science}
+
+\vspace{2em}
+
+\textmd Division of Engineering Science\\
+University of Toronto\\
+
+2013
+
+\end{centering}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\vskip 4em
+\section[Intro]{Introduction}
+\vspace{6.6em}
+The following paper is based on an article by Arnaud Malapert, Christelle Guéret and Louis-Martin Rousseau. The objective of the method is to group all jobs $j \in J$ into batches $k \in K$ such that the maximal lateness is minimized. $D_k$ is the due date of the batch and sometimes denoted $\mathrm{max}(D_k)$ because it's the maximal allowable due date for that batch $k$. 
+
+We can consider batches to come in groups, classified by their due date. All batches with the same due date are called a \textit{bucket.} Buckets are a useful concept because two batches with the same due date will still have to be processed after one another, so we might as well consider them together.
+
+At the end, we want to simply have to order batches by their due dates, so the question becomes: how do we assign jobs to batches? As soon as we put one job $j$ into a batch $k$, the question becomes: do we put the next ``open'' job $j'$ into the same batch, into a new batch before, or into a new batch after? 
+
+\subsection[AF rule]{Lower bound on \sansitalicfont{L\textsubscript{max}}}
+
+The first observation we can make is that the maximal lateness $L_{max}$ will only get worse (or stay constant if we're lucky) with every additional job we assign. That means that we never even need to try to look for an assignment that reduces $L_{max}$, which saves considerable search effort. If we can assign an open job and $L_{max}$ stays constant, that's the best we can do, and we better be happy with it. This is the \textbf{LF} filtering rule.
+
+\subsection{Marginal cost of assigning \textit{j} to \textit{k}}
+We can get an idea of the marginal cost of adding a job $j$ to batch $k$ by considering how that action will delay a bucket $q$ of batches. There are three cases to consider:
+
+\begin{alist}
+\item{if $k$ is due after $q$ , and so is $j$, then $q$ won't risk being delayed at all.}
+\item{if $k$ was due after $q$ but $j$ is due with or before $q$, then the assignment will force $k$ to be moved before $q$. That will cause an extra delay to $q$ based on however long $k$ takes after the assignment.}
+\item{if $k$ was always due before $q$, then $j$ will only delay $q$ any further if it makes $k$ take longer than it did before.}
+\end{alist}
+
+Everytime we assign a job to a batch $k$ and $k$'s due date or length change as a result, we should reconsider for all open jobs $j \in J^\star$ that could potentially be assigned to $k$ whether it still makes sense for them at all to ever be assigned to $k$. We can use the above three cases to check whether such an assignment would worsen $L_{max}$, and if it does, $j$ shouldn't be assigned to $k$. This is the \textbf{AF} filtering rule.
+
+\subsection{Marginal cost of opening up a new batch}
+The vast part of the search space consists of the different batches an open job $j^\star$ could potentially be assigned to. Sometimes it may make sense to open up a new batch for an open job, but often we can know that we don't even have to try, based on a simple calculation:
+
+If $K^\star$ are the existing batches, numbered consecutively (1 through $M$), and $J^\star$ are the open jobs, then we could potentially create up to $|J^\star|$ new batches, resulting in $M = |K^\star| + |J^\star|$. \marginpar{Is this really worth it?} Now, after opening up new batches, some new buckets will be created, some old buckets will have new batches in them, and we can recalculate the lateness of all buckets. But we can't possibly try this every time with all possible combinations of open jobs. 
+
+We can know, however, a lower bound on the completion date (and thus lateness) of bucket $q$ after creating new batches for each one of $m^\star$ of the smallest open jobs, that is, those with the shortest processing times. If we only look at those open jobs that are due \textit{before or with} $q$, then the sum of their processing times will be the smallest possible delay that $q$ will suffer. Most of the time, the open jobs assigned won't be the shortest, and maybe some of the open jobs that are due after $q$ will get squeezed into a batch before $q$. So the delay to $q$ from opening $m^\star$ new batches will likely be bigger. But at least we have a lower bound for the very best case that is easily computable.
+
+
+\end{document}
