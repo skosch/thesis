@@ -176,6 +176,25 @@ According to Williams, it is easy to build IP models that, while correct, are re
 \paragraph*{Example problem} 
 http://www.scribd.com/doc/49547850/Model-Building-in-Mathematical-Programming
 
+\pagebreak
+\section{How this could be solved}
+We're trying to create an mixed integer linear programming model (MILP). In the original paper, they had one non-linear constraint:
+\begin{align}
+  (d_{max}-d_j)(1-x_{jk}) \geq D_k-d_j \;\;\;\forall j \in J, \forall k \in K
+\end{align}
+This can easily be turned into
+\begin{align}
+  x_{jk}d_j-D_k &\geq 0\;\;\;\forall j \in J, \forall k \in K\\
+  d_{max}-D_k &\geq 0\;\;\;\forall k \in K
+\end{align}
+\subsection{Possible improvements}
+We cannot modify the solution process itself -- that's the whole point of the exercise, after all. Maybe we can preprocess to limit the domains of some decision variables. This is where ``preordering'' may come into play.
+\paragraph{Limiting batch due date}
+Since we start with as many batches as jobs, the solver is free to put every job into a batch of the same number. To make things more efficient, it can also put jobs into batches before, but it would never make sense to put a job into a batch with a higher number, so we have a limit that
+\begin{align}
+  x_{jk} = 0 \;\;\; \forall j,k: j > k
+\end{align}
+
 
 \end{document}
 

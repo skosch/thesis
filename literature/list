@@ -1,0 +1,24 @@
+To check out:
+
+
+GENERAL STUFF
+==============================
+
+Azizoglu, 2000: Scheduling a batch processing machine with non-identical job sizes.
+
+Dupont, 2002. Minimizing the makespan on a batch machine with non-identical job iszes: an exact procedure.
+
+Sabouni, 2010. Optimal methods for bach processing problem with makespan and maximum lateness objectives.
+
+
+
+INTEGER PROGRAMMING
+==============================
+
+Grossmann, 1996: Mixed-Integer Optimization Techniques for the Design and Scheduling of Batch Processes.
+
+
+CONSTRAINT PROGRAMMING
+==============================
+
+Baptiste, 2001: Constraint-based scheduling: applying constraint programming to scheduling problems.
