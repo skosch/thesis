@@ -1,0 +1,13 @@
+// This example illustrates two different things :
+//  - how to call a script function after a data initialization
+//  - how to call a Java function from this script function
+prepare {                                      
+   function read(element, name) {                   
+      var fileName = thisOplModel.resolvePath("externaldataread.txt");
+      var customDataSource = IloOplCallJava("externaldataread.SimpleTextReader",
+         "<init>", "(Lilog.opl.IloOplModel;Ljava.lang.String;Ljava.lang.String;)V", thisOplModel, fileName, ",");
+      customDataSource.fillOplElement(thisOplModel, element);
+      return true;
+   }   
+}
+strings = {"val1"} invoke read;

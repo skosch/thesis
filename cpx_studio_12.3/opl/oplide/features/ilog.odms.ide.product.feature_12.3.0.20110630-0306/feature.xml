@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ilog.odms.ide.product.feature"
+      label="%Feature-Name"
+      version="12.3.0.20110630-0306"
+      provider-name="%Feature-Vendor"
+      nl="en,de,fr,es,ja,zh,zh_TW,it,pt,ko">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="ilog.odms.ide.rcp.feature"
+         version="12.3.0.20110630-0306"/>
+
+   <includes
+         id="org.eclipse.equinox.executable"
+         version="3.4.2.R36x_v20110125-7N7K7bF8zk1BAKMh0iz0t94miBLY"/>
+
+   <requires>
+      <import feature="org.eclipse.rcp" version="3.4.2"/>
+   </requires>
+
+</feature>

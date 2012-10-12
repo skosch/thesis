@@ -1,0 +1,225 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:18">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Installing a Token Key  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="157193">
+<h3 class="Header3SplitLeft">Installing a Token Key</h3>
+</a><p class="Body"><a name="157194">
+This section describes the steps to install a token key. A token key lets you use a product on a set of machines connected to a network, or on a stand-alone machine. A token key specifies the number of tokens granted, which is the maximum number of simultaneous developers, unless the product documentation says otherwise (for example, in ILOG Server 4.1, the number of tokens is the maximum number of simultaneous connections). </a></p>
+<p class="Body"><a name="179465">
+For more information on token counting, see the section <a href="chap35.html#156109"><span class="Default">"Token Counting" </span></a>.</a></p>
+<p class="Body"><a name="179318">
+To be able to grant you a token key, ILOG needs some information on a selected machine of your network. That's why your shipment may not already contain your token key. Steps 1 to 3 explain how to contact ILOG, provide the required information, and get your token key back.</a></p>
+<p class="Body"><a name="174321">
+On the other hand, if ILOG already has the required information, your shipment may already include a sheet labelled <em class="Emphasis">Access Key</em>,<em class="Emphasis"> </em>which contains your token key. In this case, you don't have to follow Steps 1 to 5, and you can skip to Step 6.</p><table class="TipTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/tip.gif"></td>
+   <td><div class="Note"><a name="180048">For an easy start up, all ILOG products are shipped with a temporary evaluation license on a separate sheet. If you want to start using this product immediately, and take care of your token license later, see the section <a href="chap17.html#157155"><span class="Default">"Installing an Evaluation Key" </span></a>. But don't forget to order your license key quickly!</a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="179587">
+<h4 class="Header4">Step 1. Choose the Client Using the Token</h4>
+</a><p class="Body"><a name="179592">
+There are two kinds of tokens:</a></p>
+<ul class="BulletedListP"><p><li><a name="179593">Floating tokens. These tokens let you use the product on any machine of your network. If you have purchased such a token, skip steps 1 and 2. 
+</a><p><li><a name="179591">Fixed tokens. Such tokens let you use the product on one machine only. This machine is called the token client host. Choose which machine will be the token client host. If you have purchased several fixed tokens, you must repeat the token installation procedure for each machine.
+</a></ul><a name="179627">
+<h4 class="Header4">Step 2. Get the Token Client Hostid</h4>
+</a><p class="Body"><a name="179625">
+Log on to the token client host, and execute the command <code class="Code">/usr/ilog/ilm/ihostid</code>.</a></p>
+<p class="Body"><a name="179635">
+This command displays the hostname, hostid, and hostid checksum of your machine.</a></p>
+<p class="Body"><a name="179636">
+Here is an example:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">The hostname of this machine is helios
+The hostid of this machine is   6430bd3b
+The checksum of this hostid is  03933
+</span></pre></td></tr></table><p><a name="157215">
+<h4 class="Header4">Step 3. Choose a Host to Run the Token Server</h4>
+</a><p class="Body"><a name="157219">
+Token keys are managed by an ILM process called the token server. Token keys can only be used if there is a token server running on your network.</a></p>
+<p class="Body"><a name="179653">
+First of all, identify the machine on which you will run the token server. This can be any machine on your local network running the operating system corresponding to the product CD-ROM you received. If there is already a token server running on some machine, identify this machine. Otherwise, you must choose one. Try to choose a stable machine-a file server is a common choice. In the rest of this section, the machine you have selected will be called the <span class="Default">token server host</span>.</a></p>
+<p class="Body"><a name="179654">
+The token server host can also be the token client host, typically if you have purchased only one fixed token. </a></p>
+<p class="Body"><a name="179753">
+You do not need to be root to run the token server.</a></p>
+<a name="179755">
+<h4 class="Header4">Step 4. Get the Token Server Hostid</h4>
+</a><p class="Body"><a name="157287">
+Log on to the token server host and execute the following command:</a></p>
+<pre><p class="Preformatted"><a name="157288">$ /usr/ilog/ilm/ihostid
+</a></p></pre><p class="Body"><a name="157289">
+This command displays the hostname, hostid and hostid checksum of the machine. An example output would be:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">The hostname of this machine is    helios
+The hostid of this machine is      6430bd3b
+The checksum of this hostid is     03933
+</span></pre></td></tr></table><p><a name="173078">
+<h4 class="Header4">Step 5. Get the Token Key from ILOG</h4>
+</a><p class="Body"><a name="177305">
+The information displayed by the <code class="Code">ihostid</code> command must be sent to ILOG to get your token key. To do so, follow the instructions in the <em class="Emphasis">Access Key Request </em>form.</a></p>
+<a name="157308">
+<h4 class="Header4">Step 6. Add the Token Key to the License File</h4>
+</a><p class="Body"><a name="157312">
+You should do this step once you have received your token key from ILOG. Here is an example of the text you may have received:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">LICENSE Springfield Computing Inc.
+SERVER  3000 helios 6430bd3b 03933
+TOKEN   Views      2.400 NEVER     918MK37CCG52 3  sun4 , license: 186
+</span></pre></td></tr></table><p><p class="Body"><a name="178946">
+The <code class="Code">LICENSE</code> and <code class="Code">SERVER</code> lines identify your site and token server host. The next line contains the token key. If you have purchased licenses for several products or product components, the text you received may actually contain several token keys.</a></p>
+<p class="Body"><a name="174509">
+If the license file does not exist, create one by saving the whole text you received as the license file.</a></p>
+<p class="Body"><a name="180504">
+If the license file exists, edit it using your favorite editor. The license file is in <code class="Code">/usr/ilog/ilm/access.ilm</code>. To do so:</a></p>
+<ol>
+<div class="NumberedList"><a name="180495">
+<li value="1.	">Make sure that the LICENSE and SERVER lines are consistent. If one or both of them  are not in the license file, insert whichever ones are missing at the beginning of the file. If any of them are present, check that they are identical to the ones you received from ILOG. If they are not, there is a problem. In this case, contact your ILOG sales representative.
+</a></div><p><div class="NumberedList"><a name="180510">
+<li value="2.	">Append the new key or keys (i.e., the lines after the SERVER line) to the end of the file. If you are replacing an old key with a new one for the same product on the same machine, delete or comment out the line with the old key; to comment out a line, put a <code class="Code">"#"</code> in the first column.
+</a></div><p></ol>
+<a name="157344">
+<h4 class="Header4">Step 7. Set Up the Environment</h4>
+</a><p class="Body"><a name="157348">
+The shell variable <code class="Code">ILOG_LICENSE_FILE</code> must be set to the absolute path of the <code class="Code">access.ilm</code> file. To do this, execute one of the following shell commands:</a></p>
+<ul class="BulletedListP"><p><li><a name="157349">If you're using <code class="Code">sh</code> or one of its derivatives, such as <code class="Code">ksh</code> or <code class="Code">bash</code>:
+</a></ul><pre><p class="Preformatted"><a name="157350">$ ILOG_LICENSE_FILE=/usr/ilog/ilm/access.ilm
+$ export ILOG_LICENSE_FILE
+</a></p></pre><ul class="BulletedListP"><p><li><a name="157351">If you're using <code class="Code">csh</code> or one of its derivatives, such as <code class="Code">tcsh</code>:
+</a></ul><pre><p class="Preformatted"><a name="157352">$ setenv ILOG_LICENSE_FILE /usr/ilog/ilm/access.ilm
+</a></p></pre><p class="Body"><a name="157353">
+This can be automated by putting these commands in your shell startup file. This should be done for every ILOG user at your site<code class="Code">.</code></a></p>
+<a name="157357">
+<h4 class="Header4">Step 8. Check the License File</h4>
+</a><p class="Body"><a name="157358">
+To check that the license file has no syntax errors and that the variable <code class="Code">ILOG_LICENSE_FILE</code> is properly set, type:</a></p>
+<pre><p class="Preformatted"><a name="157359">$ /usr/ilog/ilm/ilmcheck
+</a></p></pre><p class="Body"><a name="157360">
+This command should issue the message:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Checking license file "/usr/ilog/ilm/access.ilm"
+     License file "/usr/ilog/ilm/access.ilm" is correct
+</span></pre></td></tr></table><p><p class="Body"><a name="178678">
+Otherwise, something is wrong with the license file or with the setting of <span class="Default">ILOG_LICENSE_FILE</span>. Please read <a href="chap320.html#148899"><span class="Default">"Troubleshooting" </span></a> for help.</p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="178684"><span class="Default">The client station must have a copy or a link to the file </span><code class="Code">access.ilm</code>.</a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="157367">
+<h4 class="Header4">Step 9. Kill the Previous Token Server Process</h4>
+</a><p class="Body"><a name="157371">
+If there is already a running ILM server process, you must kill it. Log on to the token server host and get the process id of the server by typing one of the two lines below at the shell:</a></p>
+<p class="Body"><a name="180600">
+</a></p>
+<ul class="BulletedListP"><p><li><a name="157372">If you're using a BSD derived system, such as SunOS 4.1.x:
+</a></ul><pre><p class="Preformatted"><a name="157373">$ ps -awx | grep ilmd | grep -v grep
+</a></p></pre><ul class="BulletedListP"><p><li><a name="157374">If you're using a System V derived system, such as Solaris 2.x or HP/UX:
+</a></ul><pre><p class="Preformatted"><a name="157375">$ ps -e | grep ilmd | grep -v grep
+</a></p></pre><p class="Body"><a name="157414">
+If there is no running server process, this command will issue no output. Otherwise, it will display a line starting with the server process id; kill this process by typing a command like:</a></p>
+<pre><p class="Preformatted"><a name="157376">$ kill -15 <code class="Code">process-id
+</code></a></p></pre><a name="157377">
+<h4 class="Header4">Step 10. Start the Token Server</h4>
+</a><p class="Body"><a name="157378">
+Log on to the token server host. To start the token server as a background process, execute one of the following shell commands:</a></p>
+<ul class="BulletedListP"><p><li><a name="179043">If you're using <code class="Code">sh</code> or one of its derivatives, type:
+</a></ul><pre><p class="Preformatted"><a name="179044">$ /usr/ilog/ilm/ilmd &gt;&gt; <code class="Code">/usr/ilog/ilm/ilm.log</code> 2&gt;&amp;1 &amp;
+</a></p></pre><ul class="BulletedListP"><p><li><a name="179045">If you're using <code class="Code">csh</code> or one of its derivatives, type:
+</a></ul><pre><p class="Preformatted"><a name="179046">$ /usr/ilog/ilm/ilmd &gt;&gt;&amp; <code class="Code">/usr/ilog/ilm/ilm.log</code> &amp;
+</a></p></pre><p class="Body"><a name="157380">
+A typical output of this command in the <code class="Code">ilmd</code> log file is:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Apr 24 15:16:59 License Manager v2.6 [pid 28934]
+Apr 24 15:16:59 Using license file "/usr/ilog/ilm/access.ilm"
+Apr 24 15:16:59 Licensed to "Springfield Computing Inc."
+Apr 24 15:16:59 Tokens for Views on jupiter: 3 pcwinnt
+Apr 24 15:16:59 Tokens for Solver: 4 any
+</span></pre></td></tr></table><p><p class="Body"><a name="179538">
+Each time the token server machine is rebooted, the server process must be restarted. This can be done automatically by adding the commands below to the shell script which is executed when the system reboots:</a></p>
+<pre><p class="Preformatted"><a name="157388">if [ -x /usr/ilog/ilm/ilmd ]
+then
+  echo "Starting the ILOG Token Server"
+  ILOG_LICENSE_FILE=/usr/ilog/ilm/access.ilm
+  export ILOG_LICENSE_FILE
+  /usr/ilog/ilm/ilmd &gt;&gt; <code class="Code">/usr/ilog/ilm/ilm.log</code> 2&gt;&amp;1 &amp;
+fi
+</a></p></pre><p class="Body"><a name="157389">
+Typically, the reboot script is<code class="Code">/etc/rc.local</code> or <code class="Code">/etc/rc</code>. If neither of these files exists on your system, contact your system administrator for more information.</p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="180067">On Hp/UX, the ilmd command invocation in <code class="Code">/etc/rc</code> must be preceded by <code class="Code">nohup</code>:<code class="Code">nohup /usr/ilog/ilm/ilmd &gt;&gt; ...</code></a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="157401">
+<h4 class="Header4">Step 11. Check the Token Server and the Available Tokens</h4>
+</a><p class="Body"><a name="157402">
+The command <span class="Default">ilmlist</span> will display the server status and the number of available tokens, as well as tokens checked out and queued by users:</a></p>
+<pre><p class="Preformatted"><a name="157403">$ /usr/ilog/ilm/ilmlist
+</a></p></pre><p class="Body"><a name="157404">
+A typical output of this command would be:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Ilmlist v2.60
+License file "/usr/ilog/ilm/access.ilm"
+Token server on "asbm01" is UP.
+
+<span class="Default">* PRODUCT Server:10 solaris
+tokens in use: 5 on solaris
+available tokens: 3
+</span>
+USER	HOSTNAME	PID	PLATFORM	IN USE	SINCE	USAGE
+ServUser	sol12	31990	solaris	May 22	09:36:40	192.127.05.3121.6
+ServUser	sol12	31990	solaris	May 22	10:00:30	192.127.05.3121.7
+ServUser	sol12	31990	solaris	May 22	10:06:34	192.127.05.3121.9
+ServUser	sol12	31990	solaris	May 22	10:10:55	192.127.05.3121.10
+ServUser	sol12	31990	solaris	May 22	10:15:23	192.127.05.3121.11
+</span></pre></td></tr></table><p><a name="179074">
+<h4 class="Header4">Where to Go from Here?</h4>
+</a><p class="Body"><a name="161125">
+If the previous steps have been successfully carried out, you can start using your ILOG product. Please refer to the product document set for further instructions.</a></p>
+<p class="Body"><a name="159918">
+Remember that every ILOG user at your site should set the <code class="Code">ILOG_LICENSE_FILE</code> environment variable as explained in Step 5.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap17.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Installing an Evaluation Key  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap19.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: Installing a Node Key  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

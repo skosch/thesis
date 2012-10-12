@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.cvs.nls1" label="%featureName" provider-name="%providerName" version="1.2.1.v201102251823">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>%copyright</copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/eclipse/updates/3.6"></update>
+      <discovery label="%updateSiteName" url="http://download.eclipse.org/eclipse/updates/3.6"></discovery>
+      <discovery label="%secondaryUpdateSiteName" url="http://download.eclipse.org/releases/helios"></discovery>
+   </url>
+
+   
+
+   <plugin fragment="true" id="org.eclipse.cvs.nl1" unpack="false" version="1.0.500.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.team.cvs.core.nl1" unpack="false" version="3.3.301.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.team.cvs.ssh2.nl1" unpack="false" version="3.2.300.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.team.cvs.ui.nl1" unpack="false" version="3.3.302.v201102251823"></plugin>
+
+</feature>

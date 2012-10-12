@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="Estrazione di un progetto CVS">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      Tale pagina mostra come esplorare un repository CVS e come estrarre un
+      progetto. In caso di aiuto durante un qualsiasi passo, selezionare l'icona (?) sulla
+      destra.
+    </description>
+  </intro>
+
+  <item
+      title="Apertura della prospettiva di esplorazione di repository CVS"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+      Dal menu principale, selezionare Finestra &gt; Apri prospettiva &gt; Altro...,
+      quindi selezionare la prospettiva <b>Esplorazione repository CVS</b>.
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="Aggiunta di un repository CVS"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+      Nella vista Repository CVS, fare clic sul pulsante della barra
+      degli strumenti <b>Aggiungi repository CVS</b>. Immettere le informazioni sul  e sull'autenticazione del
+      repository. Ad esempio, per il repository <b>eclipse</b>, immettere quanto segue:<br/>
+      <br/>
+      Host: dev.eclipse.org<br/>
+      di repository: /cvsroot/eclipse<br/>
+      Utente: anonymous<br/>
+      Tipo di connessione: pserver<br/>
+      <br/>
+      Per i restanti valori utilizzare quelli predefiniti e selezionare Fine.
+    </description>
+  </item>
+
+  <item
+      title="Individuazione del progetto"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+      Espandere il nodo <b>HEAD</b> sotto il repository appena aggiunto e individuare
+      il progetto da estrarre (ad es., cercare il codice sorgente per la vista della       pagina di aiuto; si trova in org.eclipse.ui.cheatsheets)
+    </description>
+  </item>
+
+  <item
+      title="Controllo del progetto"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+      Fare clic col il tasto destro del mouse sul progetto che si desidera estrarre e selezionare <b>Estrai</b>. Tale operazione consentirà di scaricare il contenuto più aggiornato dal repository allo
+      spazio di lavoro.
+    </description>
+  </item>
+
+  <item
+      title="Visualizzazione dello spazio di lavoro"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+      Per visualizzare il progetto nel proprio spazio di lavoro, passare alla prospettiva <b>Risorsa</b>
+      tramite Finestra &gt; Apri prospettiva &gt; Risorsa per visualizzare il progetto nella vista
+      <b>Esplora progetto</b>. Ora è possibile visualizzare e gestire il contenuto
+      del progetto.
+    </description>
+  </item>
+
+</cheatsheet>

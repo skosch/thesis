@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CPLEX for Microsoft Excel" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2467.html">
+   <topic label="Setting up CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2469.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2470.html"/>
+      <topic label="Registering CPLEX for Microsoft Excel as an add-in with Excel 2003" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2471.html"/>
+      <topic label="Registering CPLEX for Microsoft Excel as an add-in with Excel 2007" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2472.html"/>
+   </topic>
+   <topic label="Defining an optimization model in Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2473.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2474.html"/>
+      <topic label="Creating an optimization model in an Excel spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2475.html">
+         <topic label="The four sections of the spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2476.html"/>
+         <topic label="Data Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2477.html"/>
+         <topic label="Decision Variables Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2478.html"/>
+         <topic label="Objective Function Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2479.html"/>
+         <topic label="Constraints Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2480.html"/>
+      </topic>
+      <topic label="Specifying the objective function cell and constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2481.html"/>
+      <topic label="Excel formulas and cell reference notation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2482.html"/>
+      <topic label="Modeling Tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2483.html"/>
+   </topic>
+   <topic label="User interface of CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2484.html">
+      <topic label="The CPLEX Menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2485.html"/>
+      <topic label="CPLEX Model Information window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2486.html"/>
+   </topic>
+   <topic label="Procedures in CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2487.html">
+      <topic label="Accessing help and documentation in CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2488.html"/>
+      <topic label="Loading a problem model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2489.html"/>
+      <topic label="Solving a problem model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2490.html"/>
+      <topic label="Saving a problem model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2491.html"/>
+      <topic label="Adding, updating, or removing a constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2492.html"/>
+      <topic label="Stepping through MIP solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2493.html"/>
+      <topic label="Analyzing solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2494.html"/>
+      <topic label="Resetting your worksheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2495.html"/>
+      <topic label="CPLEX Model Parameter Settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2496.html">
+         <topic label="CPLEX Model Parameter Settings: General" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2497.html"/>
+         <topic label="CPLEX Model Parameter Settings: Algorithmic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2498.html"/>
+         <topic label="CPLEX Model Parameter Settings: Polishing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2499.html"/>
+         <topic label="CPLEX Advanced Parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2500.html"/>
+      </topic>
+   </topic>
+   <topic label="Examples of CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2501.html">
+      <topic label="blend.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2502.html"/>
+      <topic label="diet.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2503.html"/>
+      <topic label="facility.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2504.html"/>
+      <topic label="fixcost1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2505.html"/>
+      <topic label="foodmanufact.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2506.html"/>
+      <topic label="inout1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2507.html"/>
+      <topic label="lpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2508.html"/>
+      <topic label="mipex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2509.html"/>
+      <topic label="miqpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2510.html"/>
+      <topic label="qcpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2511.html"/>
+      <topic label="qpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2512.html"/>
+      <topic label="rates.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2513.html"/>
+      <topic label="steel.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2514.html"/>
+      <topic label="Using IBM ILOG CPLEX for Microsoft Excel with VBA" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2515.html"/>
+   </topic>
+   <topic label="Glossary of CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2516.html"/>
+</toc>

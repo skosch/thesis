@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="org.eclipse.ui.workbench.migration" name="Portierungsleitfaden" alt-style="css/whatsnew.properties" style="css/whatsnew.css" path="whatsnew/@">
+		<group filter="plugin=org.eclipse.platform.doc.isv" style-id="content-group" id="content-group">
+       		<link label="Vom vorherigen Release migrieren" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.isv/porting/eclipse_3_6_porting_guide.html" id="migration" style-id="content-link">
+          		<text>Hier erfahren Sie, was Sie tun müssen, damit bereits vorhandener Code in Eclipse 3.6 verwendet werden kann.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

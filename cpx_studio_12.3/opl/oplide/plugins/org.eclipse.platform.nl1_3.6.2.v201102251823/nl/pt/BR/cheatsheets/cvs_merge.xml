@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="Mesclar Ramificações CVS">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      Esta folha de dicas mostra as etapas para mesclar alterações de uma ramificação CVS
+      em outra, ou no HEAD. Se você precisar de ajuda em alguma etapa, clique no ícone (?), à direita.
+    </description>
+  </intro>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Determinar Informações Sobre Ramificação e Versão">
+    <description>
+      A primeira etapa é decidir <b>quais</b> as duas ramificações que serão mescladas, em
+      que <b>versão</b> o conteúdo foi ramificado e qual será a ramificação de
+      <b>destino</b> (no qual resultará a mesclagem).
+      Depois de ter essas informações, vá para a próxima etapa.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm"
+      title="Registrar Saída do Projeto">
+    <description>
+      Antes de mesclar, você deve <b>registrar saída</b> do projeto a ser mesclado
+      e trazê-lo para o seu espaço de trabalho. É possível fazer isso com o assistente de
+      importação ou incluindo o repositório da perspectiva Exploração do Repositório CVS,
+      ou clique no botão (?) para obter Ajuda.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-103.htm"
+      title="Carregar o Destino no Espaço de Trabalho">
+    <description>
+      No navegador, clique com o botão direito do mouse no projeto e selecione Substituir por &gt;
+      Outra Ramificação ou Versão. Selecione a ramificação de destino. Isso carregará o conteúdo
+      mais recente da ramificação em seu espaço de trabalho.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Mesclar Detalhes">
+    <description>
+      Novamente no navegador, clique com o botão direito do mouse no projeto e selecione <b>Equipe</b>
+      &gt; <b>Mesclar</b> e conclua as etapas do assistente. Nesse assistente, é possível
+      especificar os detalhes da mesclagem.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Trabalhar com o Editor de Mesclagem">
+    <description>
+No Editor de Mesclagem mescle manualmente as alterações. Esta etapa carrega as alterações no espaço de trabalho. Depois de mesclar as alterações
+      e estar satisfeito com o resultado, vá para a próxima etapa.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-114.htm"
+      title="Consolidar suas Alterações">
+    <description>
+      Clique com o botão direito do mouse no projeto e selecione <b>Equipe</b> &gt; <b>Sincronizar com
+      Repositório</b> e, em seguida, consolide as alterações no repositório. Essa
+      etapa finaliza a transferência das alterações do espaço de trabalho para o repositório CVS
+      e finaliza a mesclagem.
+    </description>
+  </item>
+
+</cheatsheet>

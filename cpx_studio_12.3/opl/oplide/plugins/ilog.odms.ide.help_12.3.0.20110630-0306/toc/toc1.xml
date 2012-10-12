@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Starting Kit" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit274.html">
+   <topic label="Acknowledgements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit275.html"/>
+   <topic label="How to Use the Documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit276.html">
+      <topic label="Prerequisites - what you should know" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit277.html"/>
+      <topic label="The documentation formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit278.html"/>
+      <topic label="Accessing the documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit279.html">
+         <topic label="About the online help" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit280.html"/>
+         <topic label="Using the Dynamic Help" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit281.html"/>
+      </topic>
+      <topic label="Navigating in the documentation set" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit282.html">
+         <topic label="Where to start" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit283.html"/>
+         <topic label="Learning about the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit284.html"/>
+         <topic label="Learning the OPL language" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit285.html"/>
+         <topic label="Learning the application programming interfaces (APIs)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit286.html"/>
+         <topic label="Notation and naming conventions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit287.html"/>
+         <topic label="Disclaimers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit288.html"/>
+      </topic>
+      <topic label="Where to find information on special characters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit289.html"/>
+   </topic>
+   <topic label="Globalization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit290.html">
+      <topic label="Setting your locale" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit291.html"/>
+      <topic label="Overriding regional settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit292.html"/>
+      <topic label="Supported languages and features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit293.html"/>
+      <topic label="Not supported" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit294.html"/>
+   </topic>
+   <topic label="Working Environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit295.html">
+      <topic label="Supported platforms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit296.html">
+         <topic label="Warning" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit297.html"/>
+         <topic label="System requirements for CPLEX Studio" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit298.html"/>
+         <topic label="Environment variables for UNIX platforms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit299.html"/>
+      </topic>
+      <topic label="Supported databases" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit300.html"/>
+      <topic label="Accessing shared libraries" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit301.html">
+         <topic label="In Java applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit302.html"/>
+         <topic label="In .NET applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit303.html"/>
+      </topic>
+   </topic>
+   <topic label="From Operations Research to CPLEX Studio and ODM Enterprise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit304.html">
+      <topic label="A quick start to CPLEX Studio" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit305.html">
+         <topic label="The Main window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit306.html"/>
+         <topic label="Understanding OPL projects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit307.html">
+            <topic label="Projects / folders" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit308.html"/>
+            <topic label="OPL model files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit309.html"/>
+            <topic label="Data files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit310.html"/>
+            <topic label="Settings files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit311.html"/>
+            <topic label="Run configurations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit312.html"/>
+         </topic>
+         <topic label="Modeling the P-Median problem with OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit313.html"/>
+         <topic label="Two solving engines" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit314.html"/>
+         <topic label="Debugging and dealing with error messages" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit315.html"/>
+         <topic label="Displaying solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit316.html"/>
+         <topic label="Summary: what you can do with the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit317.html"/>
+      </topic>
+      <topic label="From problem solving to what-if scenarios: IBM ILOG ODM Enterprise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit318.html">
+         <topic label="ODM Enterprise Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit319.html"/>
+         <topic label="How CPLEX Optimization Studio and ODM Enterprise integrate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit320.html"/>
+         <topic label="Rapid development with tightly integrated CPLEX Studio and ODM Enterprise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit321.html"/>
+      </topic>
+   </topic>
+   <topic label="Getting Started with Scheduling in CPLEX Studio" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit322.html">
+      <topic label="Scheduling with IBM ILOG CPLEX Studio" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit323.html"/>
+      <topic label="Modeling and solving a simple problem: house building" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit324.html"/>
+      <topic label="Adding workers and transition times to the house building problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit325.html"/>
+      <topic label="Adding calendars to the house building problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit326.html"/>
+      <topic label="Using cumulative functions in the house building problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit327.html"/>
+      <topic label="Using alternative resources in the house building problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit328.html"/>
+      <topic label="Using state functions: house building with state incompatibilities" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Starting_kit329.html"/>
+   </topic>
+</toc>

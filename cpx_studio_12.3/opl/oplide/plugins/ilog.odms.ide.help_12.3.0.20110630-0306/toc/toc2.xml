@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CPLEX Studio IDE" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE330.html">
+   <topic label="Getting Started with the IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE331.html">
+      <topic label="Introduction to the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE332.html">
+         <topic label="Launching the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE333.html">
+            <topic label="Starting the IDE from Windows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE334.html"/>
+            <topic label="Starting the IDE from Linux" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE335.html"/>
+            <topic label="The Welcome window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE336.html"/>
+            <topic label="The main window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE337.html"/>
+         </topic>
+         <topic label="Opening distributed examples in the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE338.html">
+            <topic label="Why you should use the New Example wizard" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE339.html"/>
+            <topic label="Working with the New Example wizard" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE340.html"/>
+         </topic>
+         <topic label="Working with projects in the OPL Projects Navigator" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE341.html">
+            <topic label="Importing existing projects into the workspace" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE342.html"/>
+            <topic label="Managing projects in the OPL Projects Navigator" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE343.html"/>
+            <topic label="File types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE344.html"/>
+         </topic>
+         <topic label="Important concepts and terms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE345.html">
+            <topic label="Resources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE346.html"/>
+            <topic label="Workspace" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE347.html"/>
+            <topic label="Views" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE348.html"/>
+         </topic>
+         <topic label="The Problem Browser" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE349.html"/>
+         <topic label="Resizing, moving, hiding, and restoring IDE views" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE350.html"/>
+         <topic label="Working with files in CPLEX Studio" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE351.html">
+            <topic label="Adding existing files to a project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE352.html"/>
+            <topic label="Ordering files within a run configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE353.html"/>
+            <topic label="Opening files for editing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE354.html"/>
+            <topic label="Local History and its related features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE355.html"/>
+            <topic label="'Compare With' features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE356.html"/>
+            <topic label="'Replace With' features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE357.html"/>
+         </topic>
+         <topic label="Executing OPL projects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE358.html">
+            <topic label="The Run options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE359.html"/>
+            <topic label="The Status Bar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE360.html"/>
+            <topic label="The execution toolbar options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE361.html"/>
+            <topic label="Executing projects in a separate process" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE362.html"/>
+         </topic>
+      </topic>
+      <topic label="Getting Started Tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE363.html">
+         <topic label="Prerequisites - before you start" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE364.html"/>
+         <topic label="Creating a project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE365.html">
+            <topic label="Purpose" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE366.html"/>
+            <topic label="The pasta production example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE367.html"/>
+            <topic label="Creating an empty project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE368.html"/>
+            <topic label="Adding the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE369.html"/>
+            <topic label="Dealing with errors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE370.html"/>
+            <topic label="Adding data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE371.html"/>
+         </topic>
+         <topic label="Executing a project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE372.html">
+            <topic label="What you are going to do" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE373.html"/>
+            <topic label="Populating and executing the run configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE374.html"/>
+            <topic label="Adding a settings file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE375.html"/>
+            <topic label="Changing an MP option value" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE376.html"/>
+            <topic label="Creating and executing a different configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE377.html"/>
+         </topic>
+         <topic label="Examining a solution to the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE378.html">
+            <topic label="Execution results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE379.html"/>
+            <topic label="The Output tabs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE380.html"/>
+            <topic label="Understanding the Problem Browser" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE381.html"/>
+            <topic label="Viewing the results of scheduling problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE382.html"/>
+         </topic>
+         <topic label="Saving and restoring results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE383.html"/>
+      </topic>
+   </topic>
+   <topic label="IDE Tutorials" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE384.html">
+      <topic label="About IDE tutorials" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE385.html"/>
+      <topic label="Understanding solving statistics and progress (MP models)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE386.html">
+         <topic label="Purpose of the tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE387.html"/>
+         <topic label="The scalable warehouse example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE388.html"/>
+         <topic label="The scalable warehouse project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE389.html"/>
+         <topic label="Executing the warehouse project with scalable data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE390.html"/>
+         <topic label="Examining the statistics and progress chart (MP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE391.html">
+            <topic label="The Progress Chart (MP models)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE392.html"/>
+            <topic label="The Statistics table (MP models)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE393.html"/>
+         </topic>
+         <topic label="Examining the engine log" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE394.html"/>
+         <topic label="Examining the results and the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE395.html"/>
+         <topic label="Changing a CPLEX parameter value" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE396.html"/>
+      </topic>
+      <topic label="Understanding solving statistics and progress (CP models)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE397.html">
+         <topic label="Purpose of the tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE398.html"/>
+         <topic label="The steel mill example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE399.html"/>
+         <topic label="Executing the model in the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE400.html"/>
+         <topic label="Coloring of CP keywords and functions in the IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE401.html"/>
+         <topic label="Examining the statistics and progress chart (CP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE402.html">
+            <topic label="Statistics" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE403.html"/>
+            <topic label="The progress chart (CP models)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE404.html"/>
+            <topic label="The statistics table (CP models)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE405.html"/>
+         </topic>
+         <topic label="Examining the engine log" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE406.html"/>
+         <topic label="Changing a CP parameter value" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE407.html"/>
+      </topic>
+      <topic label="Working with external data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE408.html">
+         <topic label="Purpose and prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE409.html"/>
+         <topic label="Using data sources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE410.html"/>
+         <topic label="The oil database example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE411.html">
+            <topic label="Description of the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE412.html"/>
+            <topic label="The oil database tables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE413.html"/>
+            <topic label="The oil database project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE414.html"/>
+            <topic label="The oil database data file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE415.html"/>
+            <topic label="Executing the oil database example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE416.html"/>
+            <topic label="Viewing the result in the database" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE417.html"/>
+            <topic label="The Result table after execution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE418.html"/>
+         </topic>
+         <topic label="The oil sheet example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE419.html">
+            <topic label="Description of the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE420.html"/>
+            <topic label="The oil data spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE421.html"/>
+            <topic label="The oil sheet project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE422.html"/>
+            <topic label="The oil sheet data file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE423.html"/>
+            <topic label="Executing the oil sheet example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE424.html"/>
+            <topic label="Viewing the result in the spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE425.html"/>
+            <topic label="The RESULT sheet after execution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE426.html"/>
+         </topic>
+      </topic>
+      <topic label="Using IBM ILOG Script for OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE427.html">
+         <topic label="Purpose and prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE428.html"/>
+         <topic label="Features of IBM ILOG Script for OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE429.html"/>
+         <topic label="Interactive Scripting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE430.html"/>
+         <topic label="The multiperiod production planning example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE431.html">
+            <topic label="Presenting the multiperiod production planning example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE432.html"/>
+            <topic label="Setting up the multiperiod production model and data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE433.html"/>
+            <topic label="Executing a flow control script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE434.html"/>
+            <topic label="Purpose of the flow control script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE435.html"/>
+            <topic label="Debugging a flow control script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE436.html"/>
+         </topic>
+         <topic label="The transportation example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE437.html">
+            <topic label="Presenting the transportation example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE438.html"/>
+            <topic label="Setting up the transportation model and data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE439.html"/>
+            <topic label="Executing preprocessing scripts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE440.html"/>
+            <topic label="Purpose of the preprocessing scripts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE441.html"/>
+            <topic label="Debugging a preprocessing script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE442.html"/>
+         </topic>
+         <topic label="The covering example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE443.html">
+            <topic label="Presenting the covering example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE444.html"/>
+            <topic label="Setting up the covering model and data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE445.html"/>
+            <topic label="Purpose of the postprocessing script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE446.html"/>
+            <topic label="Executing a postprocessing script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE447.html"/>
+            <topic label="Postprocessing a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE448.html"/>
+         </topic>
+      </topic>
+      <topic label="Relaxing infeasible models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE449.html">
+         <topic label="Presenting the nurse scheduling example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE450.html"/>
+         <topic label="Setting up the nurses model and data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE451.html"/>
+         <topic label="Executing the nurses project (1)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE452.html"/>
+         <topic label="Working on the execution results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE453.html">
+            <topic label="Studying the suggested relaxation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE454.html"/>
+            <topic label="Studying the suggested conflicts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE455.html"/>
+            <topic label="Changing the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE456.html"/>
+         </topic>
+         <topic label="Executing the nurses project (2)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE457.html"/>
+         <topic label="How relaxation and conflict search works" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE458.html">
+            <topic label="Relaxations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE459.html"/>
+            <topic label="Setting the relaxation level" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE460.html"/>
+            <topic label="Conflicts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE461.html"/>
+         </topic>
+      </topic>
+      <topic label="Profiling the execution of a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE462.html">
+         <topic label="Purpose and prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE463.html"/>
+         <topic label="Identifying slow and memory-consuming model elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE464.html">
+            <topic label="Presenting the profiler example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE465.html"/>
+            <topic label="Executing the profiler model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE466.html"/>
+            <topic label="Description of the profiling information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE467.html"/>
+            <topic label="Examining the profiling information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE468.html"/>
+         </topic>
+         <topic label="Examining model extraction and solving" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE469.html">
+            <topic label="Presenting the scalable run configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE470.html"/>
+            <topic label="Executing the scalable run configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE471.html"/>
+            <topic label="Examining the extraction and search information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE472.html"/>
+            <topic label="Turning off the Profiler" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE473.html"/>
+            <topic label="Drawing conclusions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE474.html"/>
+         </topic>
+      </topic>
+      <topic label="Working with the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE475.html">
+         <topic label="Purpose and prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE476.html"/>
+         <topic label="The solution pool in the CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE477.html">
+            <topic label="How the solution pool works" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE478.html"/>
+            <topic label="Examining pool solutions in the Problem Browser" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE479.html"/>
+            <topic label="Obtaining more solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE480.html"/>
+            <topic label="Setting solution pool options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE481.html"/>
+         </topic>
+         <topic label="Filtering the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE482.html">
+            <topic label="Solution pool filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE483.html"/>
+            <topic label="Adding a range filter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE484.html"/>
+         </topic>
+         <topic label="Flow control script and solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE485.html">
+            <topic label="How the flow control script works" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE486.html"/>
+            <topic label="Executing the flow control script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE487.html"/>
+         </topic>
+      </topic>
+      <topic label="Using the performance tuning tool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE488.html">
+         <topic label="Purpose and prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE489.html"/>
+         <topic label="How performance tuning works" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE490.html"/>
+         <topic label="How to use performance tuning in the IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE491.html">
+            <topic label="Tuning without fixed settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE492.html"/>
+            <topic label="Results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE493.html"/>
+            <topic label="Tuning with fixed settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE494.html"/>
+            <topic label="Tuning options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE495.html"/>
+            <topic label="Temporary tuning files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE496.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="More About the IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE497.html">
+      <topic label="Tour of the Graphical User Interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE498.html">
+         <topic label="The main window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE499.html">
+            <topic label="The Editing Area" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE500.html"/>
+            <topic label="The Outline" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE501.html"/>
+            <topic label="The Problem browser" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE502.html"/>
+            <topic label="The Output Area" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE503.html"/>
+            <topic label="The Search feature" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE504.html"/>
+         </topic>
+         <topic label="Toolbars" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE505.html">
+            <topic label="Tooltips and arrows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE506.html"/>
+            <topic label="The execution toolbar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE507.html"/>
+            <topic label="The Debug toolbars" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE508.html"/>
+            <topic label="The OPL Projects Navigator toolbar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE509.html"/>
+            <topic label="The Problem browser toolbar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE510.html"/>
+            <topic label="The Output Area toolbars" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE511.html"/>
+         </topic>
+         <topic label="The text editor" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE512.html">
+            <topic label="Editor features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE513.html"/>
+            <topic label="Switching between Editor windows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE514.html"/>
+            <topic label="Resizing an Editor window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE515.html"/>
+            <topic label="Keyboard shortcuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE516.html"/>
+            <topic label="Model Completion and Model Templates" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE517.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE518.html"/>
+               <topic label="Model Completion" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE519.html"/>
+               <topic label="Model Templates" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE520.html"/>
+            </topic>
+            <topic label="Local History and its related features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE521.html"/>
+            <topic label="'Compare With' features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE522.html"/>
+            <topic label="'Replace With' features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE523.html"/>
+         </topic>
+         <topic label="Menu commands and equivalent toolbar buttons" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE524.html">
+            <topic label="General description" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE525.html"/>
+            <topic label="File menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE526.html"/>
+            <topic label="Edit menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE527.html"/>
+            <topic label="Navigate menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE528.html"/>
+            <topic label="Run menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE529.html"/>
+            <topic label="Window menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE530.html"/>
+            <topic label="Help menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE531.html"/>
+         </topic>
+         <topic label="Right-click context menu commands" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE532.html">
+            <topic label="For projects, models, and data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE533.html"/>
+            <topic label="For run configurations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE534.html"/>
+         </topic>
+         <topic label="The settings editor" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE535.html">
+            <topic label="Setting programming options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE536.html"/>
+         </topic>
+         <topic label="Icons" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE537.html">
+            <topic label="Types in the Problem browser" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE538.html"/>
+            <topic label="Types and sets in call stacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE539.html"/>
+         </topic>
+      </topic>
+      <topic label="Processes and Procedures" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE540.html">
+         <topic label="What happens when you execute a run configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE541.html"/>
+         <topic label="Passing parameters to a remote process" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE542.html"/>
+         <topic label="Doing more with the Problem Browser" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE543.html">
+            <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE544.html"/>
+            <topic label="Browsing a model without execution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE545.html"/>
+            <topic label="Element usage in browsing vs. solving" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE546.html"/>
+            <topic label="Navigating the model file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE547.html"/>
+            <topic label="Postprocessing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE548.html"/>
+            <topic label="Displaying individual table views" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE549.html"/>
+            <topic label="Resulting views" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE550.html"/>
+         </topic>
+         <topic label="Doing more with projects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE551.html">
+            <topic label="Reusing existing files and projects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE552.html"/>
+            <topic label="Working with several projects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE553.html"/>
+            <topic label="Using templates" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE554.html"/>
+            <topic label="Order of files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE555.html"/>
+         </topic>
+         <topic label="Generating output files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE556.html">
+            <topic label="Generating a compiled model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE557.html"/>
+            <topic label="Exporting external data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE558.html"/>
+            <topic label="Exporting internal data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE559.html"/>
+         </topic>
+         <topic label="Launching OPL run configurations in the background" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE560.html">
+            <topic label="Running your projects in the background" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE561.html"/>
+            <topic label="Creating an oplrun launch configuration interactively" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE562.html"/>
+            <topic label="Creating a customized oplrun launch configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE563.html"/>
+            <topic label="External Tools Dialog options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE564.html"/>
+         </topic>
+      </topic>
+      <topic label="CPLEX Studio IDE advanced settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE565.html"/>
+      <topic label="Memory allocation for CPLEX Studio IDE" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_IDE566.html"/>
+   </topic>
+</toc>

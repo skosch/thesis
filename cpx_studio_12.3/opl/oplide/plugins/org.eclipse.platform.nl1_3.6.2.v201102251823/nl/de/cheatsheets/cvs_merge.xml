@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="CVS-Verzweigungen mischen">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+In diesem Spickzettel werden die Schritte beschrieben, die ausgeführt werden müssen, um die
+Änderungen einer CVS-Verzweigung in eine andere Verzweigung oder in HEAD zu
+mischen. Wenn Sie für einen Schritt Hilfe benötigen, klicken Sie auf das
+Fragezeichensymbol (?) oben rechts.
+    </description>
+  </intro>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Verzweigungs- und Versionsinformationen ermitteln">
+    <description>
+Zunächst müssen Sie ermitteln, <b>welche</b> beiden Verzweigungen gemischt werden
+sollen, bei welcher <b>Version</b> der Inhalt verzweigt wurde und welche Verzweigung die
+<b>Zielverzweigung</b> (d. h., die Verzweigung, in der das Ergebnis der Mischoperation
+gespeichert wird) sein soll. Wenn Sie diese Informationen zusammengestellt haben, können Sie mit dem nächsten
+Schritt fortfahren.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm"
+      title="Projekt auschecken">
+    <description>
+Vor dem Mischen müssen Sie das zu mischende Projekt <b>auschecken</b> und auf Ihrem
+Arbeitsbereich platzieren. Sie können hierfür den Importassistenten verwenden oder das
+Repository aus der Perspektive 'CVS-Repository durchsuchen' hinzufügen. Sie können auch
+auf die Schaltfläche mit dem Fragezeichen (?) klicken, um Hilfe aufzurufen.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-103.htm"
+      title="Ziel in den Arbeitsbereich laden">
+    <description>
+Klicken Sie im Navigator mit der rechten Maustaste auf das Projekt, und wählen Sie
+<b>Ersetzen durch</b> &gt; <b>Andere Verzweigung oder Version</b> aus. Wählen Sie die Zielverzweigung
+aus. Hierdurch wird der aktuelle Inhalt der Verzweigung in den Arbeitsbereich geladen.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Details mischen">
+    <description>
+Klicken Sie im Navigator erneut mit der rechten Maustaste auf das Projekt, wählen Sie <b>Team</b> &gt;
+<b>Mischen</b> aus, und führen Sie die Schritte im Assistenten aus. In diesem Assistenten werden die Details
+der Mischoperation angegeben.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Mit dem Mischeditor arbeiten">
+    <description>
+Im Mischeditor können Sie die Änderungen manuell mischen. In diesem Schritt werden die
+erforderlichen Änderungen in den Arbeitsbereich geladen. Wenn Sie alle Änderungen
+gemischt haben und das Ergebnis zufriedenstellend ist, können Sie mit dem nächsten Schritt
+fortfahren.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-114.htm"
+      title="Änderungen festschreiben">
+    <description>
+Klicken Sie mit der rechten Maustaste auf das Projekt, wählen Sie <b>Team</b> &gt; <b>Mit
+Repository synchronisieren</b> aus, und schreiben Sie anschließend alle Änderungen im
+Repository fest. Mit diesem Schritt wird die Übertragung der Änderungen aus dem
+Arbeitsbereich in das CVS-Repository und die Mischoperation abgeschlossen.
+    </description>
+  </item>
+
+</cheatsheet>

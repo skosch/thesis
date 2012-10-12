@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Interactive Optimizer of CPLEX" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2404.html">
+   <topic label="Commands of the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2405.html">
+      <topic label="Overview of commands" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2406.html"/>
+      <topic label="Table of the commands of the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2407.html"/>
+      <topic label="Managing parameters in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2408.html"/>
+      <topic label="Saving a parameter specification file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2409.html"/>
+   </topic>
+</toc>

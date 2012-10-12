@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+
+#include <ilcplex/ilocplex.h>
+
+using namespace std;
+
+int main() {
+  IloEnv env;
+  try {
+
+    // declarations
+    IloModel model(env);
+
+    // variables
+    IloNumVar x1(env, 0.0, 40.0, ILOFLOAT);    
+    IloNumVar x2(env, 0.0, 40.0, ILOBOOL);
+
+    // objective function
+    IloObjective obj = IloMinimize(env, x1 + 3*x2);
+    model.add(obj);
+
+    // constraints
+    model.add(-x1 + 4*x2 <= 3);
+
+    // solving the model
+    IloCplex cplex(model);
+    cplex.solve();
+    cout << cplex.getStatus() << endl;
+    cout << "Value of x1: " << cplex.getValue(x1);
+    cout << "Value of x2: " << cplex.getValue(x2);
+  } catch( IloException& e) {
+    cout << "Some error: " << e << endl;
+  }
+
+  env.end();
+  cout << "Done!" << endl;
+  return 0;
+}

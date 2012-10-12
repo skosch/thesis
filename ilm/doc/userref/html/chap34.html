@@ -1,0 +1,174 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:24">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>License File Syntax  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="147425">
+<h3 class="Header3SplitLeft">License File Syntax</h3>
+</a><p class="Body"><a name="147426">
+The following rules apply to license files:</a></p>
+<ul class="BulletedListP"><p><li><a name="156361">The file must have exactly one line beginning with "LICENSE".
+</a><p><li><a name="156362">The file must have at most one line beginning with "SERVER".
+</a><p><li><a name="147427">Case is significant. Except for comment lines and spaces, all texts must be typed strictly as provided.
+</a><p><li><a name="153335">Access keys must start at the first column; no white space is allowed before the key.
+</a><p><li><a name="141224">Access key fields can be separated by any number of spaces or tabulations.
+</a><p><li><a name="141225">There must be no empty or blank lines.
+</a><p><li><a name="148954">The last line must end with a newline character and/or a carriage return character.
+</a><p><li><a name="141226">Comment lines have a <code class="Code">"#"</code> in the first column. </p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="156144">License files must be edited and saved in text format. If you are using Notepad to edit files, this is automatic. If you are using another text editor such as WordPad, you must select the text format option when saving a license file. To check that your file is saved in text format, open an MS-DOS command prompt window and type the following:</a></div><p><div class="NoteContinued"><a name="156374"><code class="Code">TYPE C:\ILOG\ILM\ACCESS.ILM</code></a></div><p>
+<div class="NoteContinued"><a name="156145">Also, beware that some editors will automatically append the extension <code class="Code">.txt</code> to your file. Furthermore, Windows Explorer may hide this extension. To determine which is the real extension of the file you created, open an MS-DOS command prompt window  ant type the following:<code class="Code">DIR C:\ILOG\ILM</code></a></div><p>
+<div class="NoteContinued"><a name="156146">If the extension is wrong, rename your file in that window. For example, type the following:</a></div><p>
+<div class="NoteContinued"><a name="156147"><code class="Code">CD C:\ILOG\ILM</code></a></div><p>
+<div class="NoteContinued"><a name="156606"><code class="Code">REN access.ilm.txt access.ilm</code></a></div><p>
+
+</td>
+ </tr>
+</table>
+
+</a></ul><p class="Body"><a name="151206">
+A license file contains two logical sections: a site section, which describes the user site, and a key section, which contains the keys purchased for this site. Here is an example of a license file:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable"># This is a comment
+# site section
+LICENSE Springfield Computing Inc.
+SERVER  3000 helios 6430bd3b 03933
+# key section
+EVAL	Scheduler	 5.000	  01-Jun-2001 	EG7JA4ZND0X8 any , license: 186
+NODE	Solver	4.000	NEVER	1NNF00A60ACN	421e028a pcwin95 , license: 187
+SITE	Rules	5.000	NEVER	FY7HAJ09UEHA	Y solaris , license: 188
+TOKEN	Views	2.400	NEVER	87SDFSDF7687	10 solaris , license: 187
+RTNODE	Rules	5.000	NEVER	FAG2361UB798	123ab1fc any , license: 189
+TOKEN	DbLink	2.000	NEVER	EIRENRENVRRN	5 solaris on 6430db3b helios , license: 190
+NODE	CPLEX	5.500	NEVER	OKE3987VGO4M	77 pcwin95, options: e m , license: 187
+</span></pre></td></tr></table><p><a name="154466">
+<h4 class="Header4">Site Section</h4>
+</a><p class="Body"><a name="140829">
+A full site section contains two lines, respectively starting with the <code class="Code">LICENSE</code> and <code class="Code">SERVER</code> keywords. Depending on the type of keys the file contains, the <code class="Code">SERVER</code> line or both lines can be absent, as specified in the next section<span class="Default">.</span></a></p>
+<p class="Body"><a name="140609">
+The <code class="Code">LICENSE</code> line contains a short text describing the site. This description is used in the banner which is displayed when an application is launched. Changing this text invalidates the keys in the license file.</a></p>
+<p class="Body"><a name="140418">
+The <code class="Code">SERVER</code> line specifies, in the following order:</a></p>
+<ul class="BulletedListP"><p><li><a name="140397">The TCP/IP port number used by the token server. This port number can be freely changed.
+</a><p><li><a name="140478">The hostname of the machine running the token server. This name can be freely changed.
+</a><p><li><a name="140479">The hostid of the machine running the token server. Changing this information invalidates keys of type <code class="Code">TOKEN</code>.
+</a><p><li><a name="140500">The checksum of the hostid. This information is currently not used by ILM and can be set to any five-character string.
+</a></ul><a name="140371">
+<h4 class="Header4">Key Section</h4>
+</a><p class="Body"><a name="140931">
+The key section can contain any number of access keys with the following format:</a></p>
+<ul class="BulletedListP"><p><li><a name="142074">Field 1: Key type: One of <code class="Code">EVAL</code>, <code class="Code">NODE</code>, <code class="Code">SITE</code>, <code class="Code">TOKEN</code> and <code class="Code">RTNODE</code>.
+</a><p><li><a name="152661">Field 2: 	Name of the product. For <code class="Code">EVAL</code> keys, this can be "<code class="Code">*</code>".
+</a><p><li><a name="142075">Field 3:	 Version number of the product. Only the first part is significant: A key for version 2.3 is also valid for version 2.4, but not any more for version 3.0. You must not change this number.
+</a><p><li><a name="142076">Field 4:	 Expiration date of the key, or <code class="Code">NEVER</code> for permanent keys.
+</a><p><li><a name="142080">Field 5:	 A password validating the information in the key.
+</a></ul><p class="Body"><a name="142178">
+The meaning of other fields depends on the key type. Key types are:</a></p>
+<ul class="BulletedListP"><p><li><a name="142179"><code class="Code">EVAL</code>: Evaluation key. The product can be used on any host of the specified platform until the key expires. If the second field contains a "<code class="Code">*</code>", the key is valid for all ILOG products. Platforms are specified in the optional 7th field.
+</a><p><li><a name="142514"><code class="Code">NODE</code>: Node key. The product can be used only on the host whose hostid is specified in the sixth field of the key. A license file can contain several <code class="Code">NODE</code> keys for the same product. An optional 7th field specifies the platform on which the license can be used (e.g. <code class="Code">pcwinnt</code> <code class="Code">pcwin95</code>).
+</a><p><li><a name="153573"><code class="Code">RTNODE</code>: Node runtime key. The application using the product can be used only on the host whose hostid is specified in the sixth field of the key. A license file can contain several <code class="Code">RTNODE</code> keys for the same product. A 7th optional field specifies the platform on which the license can be used (e.g. <code class="Code">pcwinnt</code>, <code class="Code">pcwin95</code>)
+</a><p><li><a name="152649"><code class="Code">SITE</code>: Site key. The product can be used on any host. The sixth field can be "<code class="Code">Y</code>" or "<code class="Code">N</code>" and specifies whether or not a banner is to be printed when the product is launched. Changing this information invalidates the password and the key cannot be used. The next fields, if any, contain the list of platforms for which the key is valid. If no platform is specified, the site key is valid on all platforms.
+</a><p><li><a name="154555"><code class="Code">TOKEN</code>: Token key. The number of available tokens and their respective platforms are specified in the sixth field of the line. For fixed tokens, the sixth field also contains the hostid and the hostname of the token client host. A token key requires a token server running on your network or on your machine. For information on token usage, refer to section <a href="chap35.html#156109"><span class="Default">"Token Counting" </span></a>.
+</a><dl class="PlainList2P">
+<p><dt><dd><a name="154372">Token keys can only be used with TCP/IP installed.
+</a></dl>
+</ul><p class="Body"><a name="155074">
+An additional field can be appended. This field, which begins with "<code class="Code">, options:</code>" specifies the options activated in the product. Refer to the product documentation for explanations on the meaning of these options.</a></p>
+<p class="Body"><a name="155339">
+Another additional field can be appended. This field, which begins with "<code class="Code">, license:</code>" specifies the license rights which are supported by the current key. Refer to your ILOG sales representative for an explanation on the meaning of the licensed rights. </p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="154805">No information in a key should be modified. Changing any information, such as the expiration date, the product version or the number of tokens, invalidates the password and makes the key unusable.</a></div><p>
+</td>
+ </tr>
+</table>
+ </a></p>
+<p class="Body"><a name="154568">
+When the same key type is repeated for a product, only the last key valid for this machine is taken into account, except that a fixed token has priority over a floating token. All types of keys for the same product can be mixed in a license file. The order in which keys are used is:</a></p>
+<ul class="BulletedList2P"><ul class="BulletedList2P">
+<p><li><a name="142462"><code class="Code">RUNTIME</code>
+</a><p><li><a name="142463"><code class="Code">EVAL</code>
+</a><p><li><a name="156164"><code class="Code">NODE</code>
+</a><p><li><a name="156165"><code class="Code">RTNODE</code>
+</a><p><li><a name="156177">SITE
+</a><p><li><a name="142464"><code class="Code">TOKEN</code>
+</a></ul>
+</ul><p class="Body"><a name="142459">
+<a href="chap34.html#141283">Table 1</a> specifies which information in the site section is required depending on the key type.<span class="Default"></p>
+<Table class ="DefaultTable" border="1" cellpadding="5" cellspacing="0">
+<caption><p class="TableTitle"><a name="141283">
+Table 1  Site Information Requirements for Access Keys</a></p></caption>
+<tr><th><a name="141289"><div class="CellHeading">Key type&nbsp;</div></a></th><th><a name="141291"><div class="CellHeading">Needs a LICENSE line&nbsp;</div></a></th><th><a name="141293"><div class="CellHeading">Needs a SERVER line&nbsp;</div></a></th></tr>
+<tr valign="top"><td><a name="141390"><div class="CellBody">EVAL &nbsp;</div></a></td><td><a name="141392"><div class="CellBody">Yes&nbsp;</div></a></td><td><a name="141394"><div class="CellBody">No&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="141301"><div class="CellBody">NODE&nbsp;</div></a></td><td><a name="141303"><div class="CellBody">Yes&nbsp;</div></a></td><td><a name="141305"><div class="CellBody">No&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="153579"><div class="CellBody">RTNODE&nbsp;</div></a></td><td><a name="153581"><div class="CellBody">Yes&nbsp;</div></a></td><td><a name="153583"><div class="CellBody">No&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="152653"><div class="CellBody">SITE&nbsp;</div></a></td><td><a name="152655"><div class="CellBody">Yes&nbsp;</div></a></td><td><a name="152657"><div class="CellBody">No&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="141313"><div class="CellBody">TOKEN&nbsp;</div></a></td><td><a name="141315"><div class="CellBody">Yes&nbsp;</div></a></td><td><a name="141317"><div class="CellBody">Yes&nbsp;</div></a></td></tr>
+
+</Table>
+
+<p></span></a></p>
+<p class="Body"><a name="156015">
+<a href="chap34.html#156019">Table 2</a> specifies the hardware and operating system configuration supported by every platform mentioned in the key. <span class="Default"></p>
+<Table class ="DefaultTable" border="1" cellpadding="5" cellspacing="0">
+<caption><p class="TableTitle"><a name="156019">
+Table 2  <span class="Default">Hardware and OS Correspondence by Platform</span></a></p></caption>
+<tr><th><a name="156025"><div class="CellHeading">Hardware&nbsp;</div></a></th><th><a name="156027"><div class="CellHeading">Operating System Version&nbsp;</div></a></th><th><a name="156029"><div class="CellHeading">ILM platform name&nbsp;</div></a></th></tr>
+<tr valign="top"><td><a name="156031"><div class="CellBody">Sun SPARC&nbsp;</div></a></td><td><a name="156033"><div class="CellBody">SunOS 4.x&nbsp;</div></a></td><td><a name="156035"><div class="CellBody">sun4&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156037"><div class="CellBody">Sun SPARC&nbsp;</div></a></td><td><a name="156039"><div class="CellBody">Solaris 2.x, 7, 8&nbsp;</div></a></td><td><a name="156041"><div class="CellBody">solaris&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156043"><div class="CellBody">HP 9000/7xx and 8xx&nbsp;</div></a></td><td><a name="156045"><div class="CellBody">HP/UX 9 or higher&nbsp;</div></a></td><td><a name="156047"><div class="CellBody">hp9700&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156049"><div class="CellBody">IBM RS6000&nbsp;</div></a></td><td><a name="156051"><div class="CellBody">AIX 3 or higher&nbsp;</div></a></td><td><a name="156053"><div class="CellBody">rs6000&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156055"><div class="CellBody">Silicon Graphics&nbsp;</div></a></td><td><a name="156057"><div class="CellBody">IRIX 5 or higher&nbsp;</div></a></td><td><a name="156059"><div class="CellBody">irix5&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156061"><div class="CellBody">Dec Alpha&nbsp;</div></a></td><td><a name="156063"><div class="CellBody">OSF/1 version 3.2 or higher&nbsp;</div></a></td><td><a name="156065"><div class="CellBody">alphaosf&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156067"><div class="CellBody">PC Intel&nbsp;</div></a></td><td><a name="156069"><div class="CellBody">Linux 1 or higher&nbsp;</div></a></td><td><a name="156071"><div class="CellBody">linux&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156073"><div class="CellBody">PC Intel&nbsp;</div></a></td><td><a name="156075"><div class="CellBody">Solaris 2.x, 7, 8&nbsp;</div></a></td><td><a name="156077"><div class="CellBody">x86solaris&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156079"><div class="CellBody">PC Intel&nbsp;</div></a></td><td><a name="156081"><div class="CellBody">QNX&nbsp;</div></a></td><td><a name="156083"><div class="CellBody">i86qnx&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156085"><div class="CellBody">PC Intel&nbsp;</div></a></td><td><a name="156087"><div class="CellBody">Windows 95 / Windows 98&nbsp;</div></a></td><td><a name="156089"><div class="CellBody">pcwin95&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156091"><div class="CellBody">PC Intel&nbsp;</div></a></td><td><a name="156093"><div class="CellBody">Windows NT / Windows 2000&nbsp;</div></a></td><td><a name="156095"><div class="CellBody">pcwinnt&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156097"><div class="CellBody">PC Alpha&nbsp;</div></a></td><td><a name="156099"><div class="CellBody">Windows NT / Windows 2000&nbsp;</div></a></td><td><a name="156101"><div class="CellBody">alphant&nbsp;</div></a></td></tr>
+<tr valign="top"><td><a name="156103"><div class="CellBody">Siemens Nixdorf&nbsp;</div></a></td><td><a name="156105"><div class="CellBody">Sinix 5.43&nbsp;</div></a></td><td><a name="156107"><div class="CellBody">rmsinix&nbsp;</div></a></td></tr>
+
+</Table>
+
+<p>  </span></a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap33.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: The ILOG_LICENSE_FILE Environment Variable  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap35.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: Token Counting  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

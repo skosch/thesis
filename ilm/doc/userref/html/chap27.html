@@ -1,0 +1,203 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:21">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Installing a Token Key  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="167294">
+<h3 class="Header3SplitLeft">Installing a Token Key</h3>
+</a><p class="Body"><a name="169094">
+This section describes the steps to install a token key. A token key lets you use a product on a set of machines connected to a network, or on a stand-alone machine. A token key specifies the number of tokens granted, which is the maximum number of simultaneous developers, unless the product documentation says otherwise (for example, in ILOG Server 4.1, the number of tokens is the maximum number of simultaneous connections). </a></p>
+<p class="Body"><a name="169226">
+For more information on token counting, see <a href="chap35.html#156109"><span class="Default">"Token Counting" </span></a>.</a></p>
+<p class="Body"><a name="167299">
+To be able to grant you a token key, ILOG needs some information on a selected machine of your network. That's why your shipment may not already contain your token key. Steps 1 to 3 explain how to contact ILOG, provide the required information, and get your token key back.</a></p>
+<p class="Body"><a name="167306">
+On the other hand, if ILOG already has the required information, your shipment may already include a sheet labelled <span class="Default">Access Key </span>which contains your token key. In this case, you don't have to follow Steps 1 to 5, and you can skip to Step 6.</p><table class="TipTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/tip.gif"></td>
+   <td><div class="Note"><a name="170233">For an easy start up, all ILOG products are shipped with a temporary evaluation license on a separate sheet. If you want to start using this product immediately, and take care of your token license later, see the section <a href="chap26.html#156739"><span class="Default">"Installing an Evaluation Key" </span></a>. But don't forget to order your license key quickly!</a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="169316">
+<h4 class="Header4">Step 1. Choose the Client Using the Token</h4>
+</a><p class="Body"><a name="169317">
+There are two kinds of tokens:</a></p>
+<ul class="BulletedListP"><p><li><a name="169318">Floating tokens. These tokens let you use the product on any machine of your network. If you have purchased such a token, skip steps 1 and 2. 
+</a><p><li><a name="169319">Fixed tokens. Such tokens let you use the product on one machine only. This machine is called the token client host. You must provide the name of this machine. If you have purchased several fixed tokens, you must repeat the token installation procedure for each machine.
+</a></ul><a name="169320">
+<h4 class="Header4">Step 2. Get the Token Client Hostid</h4>
+</a><p class="Body"><a name="169493">
+Log on to the token client host and open an MS-DOS command prompt window. Then, call <code class="Code">IHOSTID.EXE</code> from the directory where you have installed ILM using the following command:</a></p>
+<p class="Body"><a name="169323">
+C:\ILOG\ILM\IHOSTID.EXE</a></p>
+<p class="Body"><a name="169334">
+This command displays the hostname, hostid, and hostid checksum of your machine.</a></p>
+<p class="Body"><a name="169324">
+Here is an example:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">The hostname of this machine is helios
+The hostid of this machine is   6430bd3b
+The checksum of this hostid is  03933
+</span></pre></td></tr></table><p><a name="167336">
+<h4 class="Header4">Step 3. Choose a Host to Run the Token Server</h4>
+</a><p class="Body"><a name="167340">
+Token keys are managed by an ILM process called the token server. Token keys can only be used if there is a token server running on your network.</a></p>
+<p class="Body"><a name="168200">
+First of all, identify the machine on which you will run the token server. This can be any Windows machine on your local network. You can also choose a Unix machine as the server of your local network. In this case, read the Unix section to know how to install the token server. If there is already a token server running on some machine, identify this machine. Otherwise, you must choose one. Try to choose a stable machine-a file server is a common choice. In the rest of this section, the machine you have selected will be called the <span class="Default">token server host</span>.</a></p>
+<p class="Body"><a name="169307">
+The token server host can also be the token client host, typically if you have purchased only one fixed token. </a></p>
+<a name="167355">
+<h4 class="Header4">Step 4. Get the Token Server Hostid</h4>
+</a><p class="Body"><a name="169505">
+Log on to the token server host and open an MS-DOS command prompt window. Then, call <code class="Code">IHOSTID.EXE</code> from the directory where you have installed ILM using the following command:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">C:\ILOG\ILM\IHOSTID.EXE
+</span></pre></td></tr></table><p><p class="Body"><a name="167358">
+This command displays the hostname, hostid and hostid checksum of the machine. An example output would be:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">The hostname of this machine is    helios
+The hostid of this machine is      6430bd3b
+The checksum of this hostid is     03933
+</span></pre></td></tr></table><p><a name="167360">
+<h4 class="Header4">Step 5. Get the Token Key from ILOG</h4>
+</a><p class="Body"><a name="169517">
+The information displayed by the <code class="Code">ihostid</code> command must be sent to ILOG to get your token key. To do so, follow the instructions in the <em class="Emphasis">Access Key Request </em>form.</a></p>
+<a name="167364">
+<h4 class="Header4">Step 6. Add the Token Key to the License File</h4>
+</a><p class="Body"><a name="167394">
+You should do this step once you have received your token key from ILOG. Here is an example of the text you may have received:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">LICENSE Springfield Computing Inc.
+SERVER  3000 helios 6430bd3b 03933
+TOKEN   Views   2.400 NEVER    918MK37CCG52 3  pcwin95 , license: 186
+</span></pre></td></tr></table><p><p class="Body"><a name="169185">
+The <code class="Code">LICENSE</code> and <code class="Code">SERVER</code> lines identify your site and token server host. The next line contains the token key. If you have purchased licenses for several products or product components, the text you received may actually contain several token keys.</a></p>
+<p class="Body"><a name="170870">
+If the license file does not exist, create one by saving the whole text you received as the license file.</a></p>
+<p class="Body"><a name="170871">
+If the license file exists, edit it using your favorite editor. The license file is in <code class="Code">C:\ILOG\ILM\ACESS.ILM</code>. To do so:</a></p>
+<ol>
+<div class="NumberedList"><a name="170872">
+<li value="1.	">Make sure that the LICENSE and SERVER lines are consistent. If one or both of them  are not in the license file, insert whichever ones are missing at the beginning of the file. If any of them are present, check that they are identical to the ones you received from ILOG. If they are not, there is a problem. In this case, contact your ILOG sales representative.
+</a></div><p><div class="NumberedList"><a name="170873">
+<li value="2.	">Append the new key or keys (i.e., the lines after the SERVER line) to the end of the file. If you are replacing an old key with a new one for the same product on the same machine, delete or comment out the line with the old key; to comment out a line, put a <code class="Code">"#"</code> in the first column.
+</a></div><p></ol>
+<a name="167397">
+<h4 class="Header4">Step 7. Set Up the Environment</h4>
+</a><p class="Body"><a name="167402">
+The system variable <code class="Code">ILOG_LICENSE_FILE</code> must be set to the absolute path of the <code class="Code">ACCESS.ILM</code> file. To do this:</a></p>
+<ul class="BulletedListP"><p><li><a name="167576">Under Windows 95, Windows 98 or Windows Millenium, edit the file <code class="Code">AUTOEXEC.BAT </code>and add the following line:
+</a></ul><pre><p class="Preformatted"><a name="167577">set ILOG_LICENSE_FILE=C:\ILOG\ILM\ACCESS.ILM
+</a></p></pre><dl class="PlainListP">
+<p><dt><dd><a name="169752">To make this change effective, you need to restart your computer.
+</a></dl>
+<ul class="BulletedListP"><p><li><a name="168747">Under Windows NT, you must be logged on as an Administrator. Open the Control Panel and double-click on the System icon. In the Environment tab, click somewhere in the System Variables box (for example on the OS). Enter <code class="Code">ILOG_LICENSE_FILE</code> in the "Variable" text field and enter the correct value in the "Value" field, as shown in the following illustration:<center><img src=images/ILM.gif ></center>
+ 
+</a><dl class="PlainList2P">
+<p><dt><dd><a name="167583">Click on the "Set" button. This will set a new System Variable.
+</a></dl>
+<p><li><a name="170764">Under Windows 2000, you must be logged on as Administrator or have the appropriate privileges. Open the Control Panel and double-click on the System icon. Click on the Advanced tab, then on the "Environment Variables" button. Create a new system variable, and set it to <code class="Code">C:\ILOG\ILM\ACCESS.ILM</code>.
+</a></ul><a name="167411">
+<h4 class="Header4">Step 8. Check the License File</h4>
+</a><p class="Body"><a name="167975">
+To check that the license file has no syntax errors and that the variable <code class="Code">ILOG_LICENSE_FILE</code> is properly set, call <code class="Code">ILMCHECK</code> from the directory where you have installed ILM by typing the following line:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">C:\ILOG\ILM\ILMCHECK.EXE
+</span></pre></td></tr></table><p><p class="Body"><a name="167414">
+This command should issue the message:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Checking license file "C:\ILOG\ILM\ACCESS.ILM"
+     License file "C:\ILOG\ILM\ACCESS.ILM" is correct
+</span></pre></td></tr></table><p><p class="Body"><a name="167416">
+Otherwise, something is wrong with the license file or with the setting of <span class="Default">ILOG_LICENSE_FILE</span>. Please read section <a href="chap320.html#148899"><span class="Default">"Troubleshooting" </span></a> for help.</p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="167425"><span class="Default">The client station must have a copy of </span><span class="Default">C:\ILOG\ILM\ACCESS.ILM</span> or read access to that file.</a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="167426">
+<h4 class="Header4">Step 9. Install the ILOG License Manager Service</h4>
+</a><p class="Body"><a name="167430">
+Log on to the server host. On Windows NT and Windows 2000, you should have administrator privileges. Open and MS-DOS command prompt window and install the ILOG License Manager Service by typing the following commands:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">mkdir C:\TEMP
+cd C:\ILOG\ILM
+ILMSERV.EXE -install
+</span></pre></td></tr></table><p><p class="Body"><a name="168208">
+The token server will be automatically started each time rebooting takes place. On Windows 95, Windows 98 or Windows Millenium, you need to restart your computer to launch the service. On Windows NT or Windows 2000, make sure that the service is started by opening the Control Panel and double-clicking on the Services icon. If it is not, select the ILOG License Manager service and click on the Start button.</a></p>
+<p class="Body"><a name="168209">
+To remove the service, use the following commands:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">cd C:\ILOG\ILM
+ILMSERV.EXE -remove
+</span></pre></td></tr></table><p><p class="Body"><a name="169017">
+The log file of the Licence Manager service is <span class="Default">C:\ILOG\ILM\ILM.LOG</span>. A typical output of this log file is:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Apr 24 15:16:59 License Manager v2.6 [pid 28934]
+Apr 24 15:16:59 Using license file "C:\ILOG\ILM\ACCESS.ILM"
+Apr 24 15:16:59 Licensed to "Springfield Computing Inc."
+Apr 24 15:16:59 Tokens for Views on jupiter: 3 pcwinnt
+Apr 24 15;16:59 Tokens for Solver: 4 any
+</span></pre></td></tr></table><p><a name="169554">
+<h4 class="Header4">Step 10. Check the Token Server and the Available Tokens</h4>
+</a><p class="Body"><a name="167989">
+Call <code class="Code">ILMLIST</code> from the directory where you have installed ILM by typing the following line:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">C:\ILOG\ILM\ILMLIST.EXE
+</span></pre></td></tr></table><p><p class="Body"><a name="169170">
+The command <code class="Code">ILMLIST</code> will display the server status and the number of available tokens. A typical output of this command would be:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable"><code class="Code">Ilmlist v2.60
+License file "C:\ILOG\ILM\ACCESS.ILM"
+</code>Token server on "asbm01" is UP.
+
+<span class="Default">* PRODUCT Server:10 solaris
+tokens in use: 5 on solaris
+available tokens: 3
+</span>
+USER	HOSTNAME	PID	PLATFORM	IN USE	SINCE	USAGE
+ServUser	sol12	31990	solaris	May 22	09:36:40	192.127.05.3121.6
+ServUser	sol12	31990	solaris	May 22	10:00:30	192.127.05.3121.7
+ServUser	sol12	31990	solaris	May 22	10:06:34	192.127.05.3121.9
+ServUser	sol12	31990	solaris	May 22	10:10:55	192.127.05.3121.10
+ServUser	sol12	31990	solaris	May 22	10:15:23	192.127.05.3121.11
+</span></pre></td></tr></table><p><a name="169083">
+<h4 class="Header4">Where to Go from Here?</h4>
+</a><p class="Body"><a name="167468">
+If the previous steps have been successfully carried out, you can start using your ILOG product. Please refer to the product document set for further instructions.</a></p>
+<p class="Body"><a name="167472">
+Remember that every ILOG user at your site should set the <code class="Code">ILOG_LICENSE_FILE</code> environment variable as explained in Step 5.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap26.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Installing an Evaluation Key  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap28.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: Installing a Node Key  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<contexts>
+   <context id="APIencoding">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2218.html" label="API string encoding switch"/>
+   </context>
+   <context id="CapiExampleWithcplexxdoth">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2369.html" label="Callable Library examples using cplexx.h"/>
+   </context>
+   <context id="cplex_advind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2214.html" label="advanced start switch"/>
+   </context>
+   <context id="cplex_aggcutlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2215.html" label="constraint aggregation limit for cut generation"/>
+   </context>
+   <context id="cplex_aggfill">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2216.html" label="preprocessing aggregator fill"/>
+   </context>
+   <context id="cplex_aggind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2217.html" label="preprocessing aggregator application limit"/>
+   </context>
+   <context id="cplex_auxrootthreads">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2336.html" label="auxiliary root threads"/>
+   </context>
+   <context id="cplex_baralg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2219.html" label="barrier algorithm"/>
+   </context>
+   <context id="cplex_barcolnz">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2220.html" label="barrier column nonzeros"/>
+   </context>
+   <context id="cplex_barcrossalg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2221.html" label="barrier crossover algorithm"/>
+   </context>
+   <context id="cplex_bardisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2222.html" label="barrier display information"/>
+   </context>
+   <context id="cplex_barepcomp">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2223.html" label="convergence tolerance for LP and QP problems"/>
+   </context>
+   <context id="cplex_bargrowth">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2224.html" label="barrier growth limit"/>
+   </context>
+   <context id="cplex_baritlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2225.html" label="barrier iteration limit"/>
+   </context>
+   <context id="cplex_barmaxcor">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2226.html" label="barrier maximum correction limit"/>
+   </context>
+   <context id="cplex_barobjrng">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2227.html" label="barrier objective range"/>
+   </context>
+   <context id="cplex_barorder">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2228.html" label="barrier ordering algorithm"/>
+   </context>
+   <context id="cplex_barqcpepcomp">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2229.html" label="convergence tolerance for QC problems"/>
+   </context>
+   <context id="cplex_barstartalg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2230.html" label="barrier starting point algorithm"/>
+   </context>
+   <context id="cplex_bbinterval">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2231.html" label="MIP strategy best bound interval"/>
+   </context>
+   <context id="cplex_bndstrenind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2232.html" label="bound strengthening switch"/>
+   </context>
+   <context id="cplex_brdir">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2233.html" label="MIP branching direction"/>
+   </context>
+   <context id="cplex_bttol">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2234.html" label="backtracking tolerance"/>
+   </context>
+   <context id="cplex_cliques">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2235.html" label="MIP cliques switch"/>
+   </context>
+   <context id="cplex_clocktype">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2236.html" label="clock type for computation time"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2237.html" label="clone log in parallel optimization"/>
+   </context>
+   <context id="cplex_coeredind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2238.html" label="coefficient reduction setting"/>
+   </context>
+   <context id="cplex_colreadlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2239.html" label="variable (column) read limit"/>
+   </context>
+   <context id="cplex_conflictdisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2240.html" label="conflict information display"/>
+   </context>
+   <context id="cplex_covers">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2241.html" label="MIP covers switch"/>
+   </context>
+   <context id="cplex_craind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2242.html" label="simplex crash ordering"/>
+   </context>
+   <context id="cplex_cutlo">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2243.html" label="lower cutoff"/>
+   </context>
+   <context id="cplex_cutpass">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2244.html" label="number of cutting plane passes"/>
+   </context>
+   <context id="cplex_cutsfactor">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2245.html" label="row multiplier factor for cuts"/>
+   </context>
+   <context id="cplex_cutup">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2246.html" label="upper cutoff"/>
+   </context>
+   <context id="cplex_datacheck">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2247.html" label="data consistency checking switch"/>
+   </context>
+   <context id="cplex_depind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2248.html" label="dependency switch"/>
+   </context>
+   <context id="cplex_directory_structure">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1298.html" label="Directory structure of CPLEX"/>
+   </context>
+   <context id="cplex_disjcuts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2249.html" label="MIP disjunctive cuts switch"/>
+   </context>
+   <context id="cplex_divetype">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2250.html" label="MIP dive strategy"/>
+   </context>
+   <context id="cplex_dpriind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2251.html" label="dual simplex pricing algorithm"/>
+   </context>
+   <context id="cplex_eachcutlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2252.html" label="type of cut limit"/>
+   </context>
+   <context id="cplex_epagap">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2253.html" label="absolute MIP gap tolerance"/>
+   </context>
+   <context id="cplex_epgap">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2254.html" label="relative MIP gap tolerance"/>
+   </context>
+   <context id="cplex_epint">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2255.html" label="integrality tolerance"/>
+   </context>
+   <context id="cplex_eplin">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2256.html" label="epsilon used in linearization"/>
+   </context>
+   <context id="cplex_epmrk">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2257.html" label="Markowitz tolerance"/>
+   </context>
+   <context id="cplex_epopt">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2258.html" label="optimality tolerance"/>
+   </context>
+   <context id="cplex_epper">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2259.html" label="perturbation constant"/>
+   </context>
+   <context id="cplex_eprelax">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2260.html" label="relaxation for FeasOpt"/>
+   </context>
+   <context id="cplex_eprhs">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2261.html" label="feasibility tolerance"/>
+   </context>
+   <context id="cplex_feasoptmode">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2262.html" label="mode of FeasOpt"/>
+   </context>
+   <context id="cplex_flowcovers">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2264.html" label="MIP flow cover cuts switch"/>
+   </context>
+   <context id="cplex_flowpaths">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2265.html" label="MIP flow path cut switch"/>
+   </context>
+   <context id="cplex_fpheur">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2266.html" label="feasibility pump switch"/>
+   </context>
+   <context id="cplex_fraccand">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2267.html" label="candidate limit for generating Gomory fractional cuts"/>
+   </context>
+   <context id="cplex_fraccuts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2268.html" label="MIP Gomory fractional cuts switch"/>
+   </context>
+   <context id="cplex_fracpass">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2269.html" label="pass limit for generating Gomory fractional cuts"/>
+   </context>
+   <context id="cplex_gubcovers">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2270.html" label="MIP GUB cuts switch"/>
+   </context>
+   <context id="cplex_heurfreq">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2271.html" label="MIP heuristic frequency"/>
+   </context>
+   <context id="cplex_home">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/CPLEX1277.html" label="CPLEX"/>
+   </context>
+   <context id="cplex_implbd">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2272.html" label="MIP implied bound cuts switch"/>
+   </context>
+   <context id="cplex_intsollim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2273.html" label="MIP integer solution-file switch and prefix"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2274.html" label="MIP integer solution limit"/>
+   </context>
+   <context id="cplex_itlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2275.html" label="simplex maximum iteration limit"/>
+   </context>
+   <context id="cplex_lbheur">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2276.html" label="local branching heuristic"/>
+   </context>
+   <context id="cplex_lpmethod">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2333.html" label="algorithm for continuous problems"/>
+   </context>
+   <context id="cplex_mcfcuts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2277.html" label="MCF cut switch"/>
+   </context>
+   <context id="cplex_memoryemphasis">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2278.html" label="memory reduction switch"/>
+   </context>
+   <context id="cplex_mipcbredlp">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2279.html" label="MIP callback switch between original model and reduced, presolved model"/>
+   </context>
+   <context id="cplex_mipdisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2280.html" label="MIP node log display information"/>
+   </context>
+   <context id="cplex_mipemphasis">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2281.html" label="MIP emphasis switch"/>
+   </context>
+   <context id="cplex_mipinterval">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2282.html" label="MIP node log interval"/>
+   </context>
+   <context id="cplex_mipkappastats">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2283.html" label="MIP kappa computation"/>
+   </context>
+   <context id="cplex_mipordind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2284.html" label="MIP priority order switch"/>
+   </context>
+   <context id="cplex_mipordtype">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2285.html" label="MIP priority order generation"/>
+   </context>
+   <context id="cplex_mipsearch">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2286.html" label="MIP dynamic search switch"/>
+   </context>
+   <context id="cplex_miqcpstrat">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2287.html" label="MIQCP strategy switch"/>
+   </context>
+   <context id="cplex_mircuts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2288.html" label="MIP MIR (mixed integer rounding) cut switch"/>
+   </context>
+   <context id="cplex_mpslongnum">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2289.html" label="precision of numerical output in MPS and REW file formats"/>
+   </context>
+   <context id="cplex_netdisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2290.html" label="network logging display switch"/>
+   </context>
+   <context id="cplex_netepopt">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2291.html" label="network optimality tolerance"/>
+   </context>
+   <context id="cplex_neteprhs">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2292.html" label="network primal feasibility tolerance"/>
+   </context>
+   <context id="cplex_netfind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2293.html" label="simplex network extraction level"/>
+   </context>
+   <context id="cplex_netitlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2294.html" label="network simplex iteration limit"/>
+   </context>
+   <context id="cplex_netppriind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2295.html" label="network simplex pricing algorithm"/>
+   </context>
+   <context id="cplex_nodefileind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2297.html" label="node storage file switch"/>
+   </context>
+   <context id="cplex_nodelim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2298.html" label="MIP node limit"/>
+   </context>
+   <context id="cplex_nodesel">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2299.html" label="MIP node selection strategy"/>
+   </context>
+   <context id="cplex_numericalemphasis">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2300.html" label="numerical precision emphasis"/>
+   </context>
+   <context id="cplex_nzreadlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2301.html" label="nonzero element read limit"/>
+   </context>
+   <context id="cplex_objdif">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2302.html" label="absolute objective difference cutoff"/>
+   </context>
+   <context id="cplex_objllim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2303.html" label="lower objective value limit"/>
+   </context>
+   <context id="cplex_objulim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2304.html" label="upper objective value limit"/>
+   </context>
+   <context id="cplex_parallel_threads_safety">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2140.html" label="Thread safety"/>
+   </context>
+   <context id="cplex_parallelmode">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2305.html" label="parallel mode switch"/>
+   </context>
+   <context id="cplex_perind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2306.html" label="simplex perturbation switch"/>
+   </context>
+   <context id="cplex_perlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2307.html" label="simplex perturbation limit"/>
+   </context>
+   <context id="cplex_polishafterepagap">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2308.html" label="absolute MIP gap before starting to polish a feasible solution"/>
+   </context>
+   <context id="cplex_polishafterepgap">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2309.html" label="relative MIP gap before starting to polish a feasible solution"/>
+   </context>
+   <context id="cplex_polishafterintsol">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2310.html" label="MIP integer solutions to find before starting to polish a feasible solution"/>
+   </context>
+   <context id="cplex_polishafternode">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2311.html" label="nodes to process before starting to polish a feasible solution"/>
+   </context>
+   <context id="cplex_polishaftertime">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2312.html" label="time before starting to polish a feasible solution"/>
+   </context>
+   <context id="cplex_polishtime">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2313.html" label="time spent polishing a solution (deprecated)"/>
+   </context>
+   <context id="cplex_populatelim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2314.html" label="maximum number of solutions generated for solution pool by populate"/>
+   </context>
+   <context id="cplex_ppriind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2315.html" label="primal simplex pricing algorithm"/>
+   </context>
+   <context id="cplex_predual">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2316.html" label="presolve dual setting"/>
+   </context>
+   <context id="cplex_preind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2317.html" label="presolve switch"/>
+   </context>
+   <context id="cplex_prelinear">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2318.html" label="linear reduction switch"/>
+   </context>
+   <context id="cplex_prepass">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2319.html" label="limit on the number of presolve passes made"/>
+   </context>
+   <context id="cplex_preslvnd">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2320.html" label="node presolve switch"/>
+   </context>
+   <context id="cplex_pricelim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2321.html" label="simplex pricing candidate list size"/>
+   </context>
+   <context id="cplex_probe">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2322.html" label="MIP probing level"/>
+   </context>
+   <context id="cplex_probetime">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2323.html" label="time spent probing"/>
+   </context>
+   <context id="cplex_python_setup">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1297.html" label="Setting up the Python API of CPLEX"/>
+   </context>
+   <context id="CPLEX_PythonAPI">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1614.html" label="Why Python?"/>
+   </context>
+   <context id="cplex_qpmakepsdind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2324.html" label="indefinite MIQP switch"/>
+   </context>
+   <context id="cplex_qpmethod">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2334.html" label="algorithm for continuous quadratic optimization"/>
+   </context>
+   <context id="cplex_qpnzreadlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2325.html" label="QP Q-matrix nonzero read limit"/>
+   </context>
+   <context id="cplex_reduce">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2326.html" label="primal and dual reduction type"/>
+   </context>
+   <context id="cplex_reinv">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2327.html" label="simplex refactoring frequency"/>
+   </context>
+   <context id="cplex_relaxpreind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2328.html" label="relaxed LP presolve switch"/>
+   </context>
+   <context id="cplex_relobjdif">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2329.html" label="relative objective difference cutoff"/>
+   </context>
+   <context id="cplex_repairtries">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2330.html" label="number of attempts to repair infeasible MIP start"/>
+   </context>
+   <context id="cplex_repeatpresolve">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2331.html" label="MIP repeat presolve switch"/>
+   </context>
+   <context id="cplex_rinsheur">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2332.html" label="RINS heuristic frequency"/>
+   </context>
+   <context id="cplex_rowreadlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2337.html" label="constraint (row) read limit"/>
+   </context>
+   <context id="cplex_scaind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2338.html" label="scale parameter"/>
+   </context>
+   <context id="cplex_scrind">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2339.html" label="messages to screen switch"/>
+   </context>
+   <context id="cplex_setup_Eclipse">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1296.html" label="Setting up Eclipse for the Java API of CPLEX"/>
+   </context>
+   <context id="cplex_siftalg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2340.html" label="sifting subproblem algorithm"/>
+   </context>
+   <context id="cplex_siftdisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2341.html" label="sifting information display"/>
+   </context>
+   <context id="cplex_siftitlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2342.html" label="upper limit on sifting iterations"/>
+   </context>
+   <context id="cplex_simdisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2343.html" label="simplex iteration information display"/>
+   </context>
+   <context id="cplex_singlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2344.html" label="simplex singularity repair limit"/>
+   </context>
+   <context id="cplex_solnpoolagap">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2345.html" label="absolute gap for solution pool"/>
+   </context>
+   <context id="cplex_solnpoolcapacity">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2346.html" label="maximum number of solutions kept in solution pool"/>
+   </context>
+   <context id="cplex_solnpoolgap">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2347.html" label="relative gap for solution pool"/>
+   </context>
+   <context id="cplex_solnpoolintensity">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2348.html" label="solution pool intensity"/>
+   </context>
+   <context id="cplex_solnpoolreplace">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2349.html" label="solution pool replacement strategy"/>
+   </context>
+   <context id="cplex_solutiontarget">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2350.html" label="solution target type"/>
+   </context>
+   <context id="cplex_startalg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2335.html" label="MIP starting algorithm"/>
+   </context>
+   <context id="cplex_strongcandlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2351.html" label="MIP strong branching candidate list limit"/>
+   </context>
+   <context id="cplex_strongitlim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2352.html" label="MIP strong branching iterations limit"/>
+   </context>
+   <context id="cplex_subalg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2296.html" label="MIP subproblem algorithm"/>
+   </context>
+   <context id="cplex_submipnodelim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2353.html" label="limit on nodes explored when a subMIP is being solved"/>
+   </context>
+   <context id="cplex_symmetry">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2354.html" label="symmetry breaking"/>
+   </context>
+   <context id="cplex_threads">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2355.html" label="global default thread count"/>
+   </context>
+   <context id="cplex_tilim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2356.html" label="optimizer time limit"/>
+   </context>
+   <context id="cplex_topical_solnpolish">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2204.html" label="Solution polishing"/>
+   </context>
+   <context id="cplex_trelim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2357.html" label="tree memory limit"/>
+   </context>
+   <context id="cplex_tuningdisplay">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2358.html" label="tuning information display"/>
+   </context>
+   <context id="cplex_tuningmeasure">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2359.html" label="tuning measure"/>
+   </context>
+   <context id="cplex_tuningrepeat">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2360.html" label="tuning repeater"/>
+   </context>
+   <context id="cplex_tuningtilim">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2361.html" label="tuning time limit"/>
+   </context>
+   <context id="cplex_varsel">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2362.html" label="MIP variable selection strategy"/>
+   </context>
+   <context id="cplex_workdir">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2363.html" label="directory for working files"/>
+   </context>
+   <context id="cplex_workmem">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2364.html" label="memory available for working storage"/>
+   </context>
+   <context id="cplex_zerohalfcuts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2366.html" label="MIP zero-half cuts switch"/>
+   </context>
+   <context id="cplexcel_accessing_help">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2488.html" label="Accessing help and documentation in CPLEX for Microsoft Excel"/>
+   </context>
+   <context id="cplexcel_add_change_delete_constraint">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2492.html" label="Adding, updating, or removing a constraint"/>
+   </context>
+   <context id="cplexcel_cplex_menu">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2485.html" label="The CPLEX Menu"/>
+   </context>
+   <context id="cplexcel_create_model">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2475.html" label="Creating an optimization model in an Excel spreadsheet"/>
+   </context>
+   <context id="cplexcel_creating_reports">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2494.html" label="Analyzing solutions"/>
+   </context>
+   <context id="cplexcel_loading_a_model">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2489.html" label="Loading a problem model"/>
+   </context>
+   <context id="cplexcel_register_xll_2003">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2471.html" label="Registering CPLEX for Microsoft Excel as an add-in with Excel 2003"/>
+   </context>
+   <context id="cplexcel_register_xll_2007">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2472.html" label="Registering CPLEX for Microsoft Excel as an add-in with Excel 2007"/>
+   </context>
+   <context id="cplexcel_reset_default_values">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2495.html" label="Resetting your worksheet"/>
+   </context>
+   <context id="cplexcel_saving_a_model">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2491.html" label="Saving a problem model"/>
+   </context>
+   <context id="cplexcel_setting_cplex_options_advanced">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2500.html" label="CPLEX Advanced Parameters"/>
+   </context>
+   <context id="cplexcel_setting_cplex_options_algorithmic">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2498.html" label="CPLEX Model Parameter Settings: Algorithmic"/>
+   </context>
+   <context id="cplexcel_setting_cplex_options_main">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2497.html" label="CPLEX Model Parameter Settings: General"/>
+   </context>
+   <context id="cplexcel_setting_cplex_options_polishing">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2499.html" label="CPLEX Model Parameter Settings: Polishing"/>
+   </context>
+   <context id="cplexcel_solving_a_model">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2490.html" label="Solving a problem model"/>
+   </context>
+   <context id="cplexcel_step_through_solutions">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2493.html" label="Stepping through MIP solutions"/>
+   </context>
+   <context id="cplexEncoding">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1653.html" label="Selecting an encoding"/>
+   </context>
+   <context id="datacheck">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1641.html" label="Turn on the data check parameter"/>
+   </context>
+   <context id="fileencoding">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2263.html" label="file encoding switch"/>
+   </context>
+   <context id="gs_onepage_pythonEG">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1309.html" label="Using the Python API"/>
+   </context>
+   <context id="gs_python_accessModule">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1450.html" label="Accessing the module cplex"/>
+   </context>
+   <context id="gs_python_design">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1448.html" label="Design of CPLEX in a Python application"/>
+   </context>
+   <context id="gs_python_install">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1449.html" label="Starting the CPLEX Python API"/>
+   </context>
+   <context id="gs_python_modif3">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1456.html" label="Example: modifying a model lpex3.py"/>
+   </context>
+   <context id="gs_python_modifAndReopt">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1455.html" label="Modifying and re-optimizing in the CPLEX Python API"/>
+   </context>
+   <context id="gs_python_modifReopt">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1454.html" label="Example: reading a problem from a file lpex2.py"/>
+   </context>
+   <context id="gs_python_params">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1457.html" label="Using CPLEX parameters in the CPLEX Python API"/>
+   </context>
+   <context id="gs_python_readwritefiles">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1452.html" label="Reading and writing CPLEX models to files with Python"/>
+   </context>
+   <context id="gs_python_selectOpt">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1453.html" label="Selecting an optimizer in Python"/>
+   </context>
+   <context id="gs_python_smallLP">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1451.html" label="Building and solving a small LP with Python"/>
+   </context>
+   <context id="highPrecisionPythonNZ">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1621.html" label="Displaying high precision nonzero values of a solution"/>
+   </context>
+   <context id="legal_terms">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/CPLEX1278.html#d4e216560" label="Copyright notice"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2411.html#d4e431235" label="Copyright notice"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2468.html#d4e434312" label="Copyright notice"/>
+   </context>
+   <context id="nzPythonUsrMan">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1620.html" label="Examining variables with nonzero values in a solution"/>
+   </context>
+   <context id="parameter_sets_of">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2191.html" label="Managing sets of parameters"/>
+   </context>
+   <context id="Python_callbackComplexTermCrit">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1627.html" label="Example: complex termination criteria in a callback"/>
+   </context>
+   <context id="Python_callbacks">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1623.html" label="Using callbacks in the Python API"/>
+   </context>
+   <context id="python_histograms">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1618.html" label="Example: generating a histogram"/>
+   </context>
+   <context id="Python_output">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1624.html" label="Example: displaying solutions with increased precision from the Python API"/>
+   </context>
+   <context id="Python_parameters">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1622.html" label="Managing CPLEX parameters in the Python API"/>
+   </context>
+   <context id="Python_polymorphism">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1617.html" label="Using polymorphism in the Python API"/>
+   </context>
+   <context id="Python_problemData">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1616.html" label="Modifying and querying problem data in the Python API"/>
+   </context>
+   <context id="python_queryingsolnqual">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1619.html" label="Querying solution information in the Python API"/>
+   </context>
+   <context id="Python_seqOfProblems">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1626.html" label="Example: solving a sequence of related problems in the Python API"/>
+   </context>
+   <context id="Python_simplextableau">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1625.html" label="Example: examining the simplex tableau in the Python API"/>
+   </context>
+   <context id="Python_structure">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1615.html" label="Meet the Python API"/>
+   </context>
+   <context id="setupLinux">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1295.html" label="Setting up CPLEX for on GNU/Linux"/>
+   </context>
+   <context id="testModelCPLEX">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1636.html" label="Test and debug the model"/>
+   </context>
+   <context id="timingInterfaceCPLEX">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1672.html" label="Using the timing interface"/>
+   </context>
+   <context id="usr_mip_cuts_mcf">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1838.html" label="Multi-commodity flow (MCF) cuts"/>
+   </context>
+   <context id="WriteLevel">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2365.html" label="write level for MST, SOL files"/>
+   </context>
+</contexts>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+  <!-- Extension to the SDK Tutorials Page. -->
+  <extensionContent id="org.eclipse.team" name="チーム/CVS
+" alt-style="css/tutorials.properties" style="css/tutorials.css" path="tutorials/@">
+    <group label="チーム/CVS
+" id="team" style-id="content-group">
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.checkout" label="CVS プロジェクトのチェックアウト
+" id="cvs_checkout" style-id="content-link">
+        <text>CVS リポジトリーに接続してプロジェクトをチェックアウトする方法について説明します。
+</text>
+      </link>
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.merge" label="CVS ブランチのマージ
+" id="cvs_merge" style-id="content-link">
+        <text>変更を CVS ブランチから他へマージするための手順を説明します。
+</text>
+      </link>
+    </group>
+  </extensionContent>
+</introContent>

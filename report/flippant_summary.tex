@@ -1,0 +1,102 @@
+\documentclass[20pt, landscape]{article}
+\usepackage{graphicx}
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.4in, right=1.6in,top=1.4in, bottom=1.6in]{geometry}
+\usepackage[no-math]{fontspec}
+
+
+\usepackage{sectsty}
+\usepackage{multicol,scalefnt}
+\usepackage{amsmath, amssymb, amsfonts,  titlesec}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage{fancyhdr,  booktabs, multirow}
+\usepackage[font=small,format=plain,labelfont=it,up,textfont=it,up]{caption}
+\usepackage{listings}
+
+\usepackage{enumitem}
+
+\newlist{alist}{itemize}{1}
+\setlist[alist]{label=--,labelindent=2in,leftmargin=9pt,labelsep=6pt, itemsep=0pt}
+
+%========= FONT SPECS ============
+\tolerance 8000
+
+\defaultfontfeatures{Mapping=tex-text, Ligatures=Common}
+
+\renewcommand\refname{references} % this sets the name of
+\def\labelitemi{--}
+
+\def\sansfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=0.1, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansnormalfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=-10,Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansitalicfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=1.5, FakeSlant=0.2, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+
+
+
+
+%\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.74]{CPMono_v07}}
+\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91]{Inconsolata}}
+
+\renewcommand{\texttt}[1]{{\monofont #1}}
+
+\lstset{
+aboveskip=2\medskipamount, belowskip=2\medskipamount,
+basicstyle=\monofont,
+language=python,
+numbers=left, numberstyle=\tiny,  numbersep=9pt,
+xleftmargin=.4in, frame=l, xrightmargin=.25in
+}
+
+
+%\titleformat{\section}{\huge\sansnormalfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
+\titleformat{\section}{\huge\sansnormalfont}{}{0em}{}
+\titleformat{\subsection}{\sansfont}{\protect\makebox[0pt][r]{\thesubsection\quad}}{0em}{}
+
+\fancyhead[LO, LE]{\sansfont\small An improved batch CP method \normalsize}
+\fancyhead[RO, RE]{\sansfont\small \nouppercase\leftmark}
+\fancyfoot[C]{\sansfont\thepage}
+
+\begin{document}
+\fontsize{11pt}{15pt}\selectfont
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+\baselineskip=15.5pt plus 0pt
+\frenchspacing
+
+\begin{centering}
+\vspace{3em}
+\LARGE\sansfont{An improved batch processing CP approach}
+
+\vspace{2em}
+\large
+\sansfont Sebastian Kosch
+
+\vfill
+\normalfont
+A thesis submitted in conformity with the requirements
+
+for the degree of \textit{Bachelor of Applied Science}
+
+\vspace{2em}
+
+\textmd Division of Engineering Science\\
+University of Toronto\\
+
+2013
+
+\end{centering}
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\vskip 4em
+\section[Intro]{Introduction}
+\vspace{6.6em}
+
+\section{CP vs MIP}
+CP will probably work well when: your problem has substructures that can be represented/captured by global constraints; the constraints propagate well (i.e. filtering algorithm is strong; problem dependent); your knowledge about the problem allows you to write an intelligent and effective search heuristic (both variable and value selection). Also, practical applications in which it is difficult to find a feasible solution have benefited from the use of CP (e.g. award winning Dutch railway scheduling, MLB scheduling).
+
+As "anonymous" points out, when the linear relaxation of a MIP is tight, one can expect good results. The addition of strong cutting planes and the existence of good primal heuristics also play an important role. Another reason one might try CP rather than MIP could be because the problem has "ugly" constraints that would be very hard to model using only linear inequalities.
+
+In many cases, however, one needs to try both in order to find out which one works better. That being said, there are situations in which neither MIP nor CP provide good results. In those cases, one may consider combining them into a hybrid algorithm. But that is a different story...
+\end{document}

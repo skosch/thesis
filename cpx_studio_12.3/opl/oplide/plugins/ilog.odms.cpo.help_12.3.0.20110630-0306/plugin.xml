@@ -1,0 +1,21 @@
+
+<plugin>
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc.xml" primary="true"/>
+      <toc file="toc/toc1.xml" primary="false"/>
+      <toc file="toc/toc2.xml" primary="false"/>
+      <toc file="toc/toc3.xml" primary="false"/>
+      <toc file="toc/refcppcpoptimizer.xml" primary="false"/>
+      <toc file="toc/refjavacpoptimizer.xml" primary="false"/>
+      <toc file="toc/refdotnetcpoptimizer.xml" primary="false"/>
+</extension>
+  <extension point="org.eclipse.help.contexts">
+    <contexts file="contexts.xml"  />
+</extension>
+  <extension point="org.eclipse.help.index">
+    <index file="index.xml"  />
+    <index file="index-refcppcpoptimizer.xml"  />
+    <index file="index-refjavacpoptimizer.xml"  />
+    <index file="index-refdotnetcpoptimizer.xml"  />
+</extension>
+</plugin>

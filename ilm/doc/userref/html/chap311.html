@@ -1,0 +1,67 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:24">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>The ilmd Command  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="146004">
+<h3 class="Header3SplitLeft">The ilmd Command</h3>
+</a><p class="Body"><a name="146005">
+Syntax: <code class="Code">ilmd [ -v ] filename</code> ...</a></p>
+<p class="Body"><a name="146006">
+This command runs the token server. The token server must be run before any product using token keys. The other types of keys do not require a token server.</a></p>
+<p class="Body"><a name="146007">
+The filename arguments specify the license files to use. With no arguments, <code class="Code">ilmd</code> uses the default file <code class="Code">/usr/ilog/ilm/access.ilm</code> or the files specified by the shell variable <code class="Code">ILOG_LICENSE_FILE</code> if this variable is defined.</a></p>
+<p class="Body"><a name="146008">
+The <code class="Code">-v</code> option enables verbose mode.</a></p>
+<p class="Body"><a name="153461">
+You do not need to be super-user to run the token server (see the note to HP/UX users below). The token server and the product using the token keys are system-independent. For example, you can run the token server on an HP/UX machine and the ILOG product on a SunOS machine.</a></p>
+<p class="Body"><a name="153465">
+Since the token server must be running permanently, it is good practice to put a command launching <code class="Code">ilmd</code> in the shell script which is executed when the token server host boots.</p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="153947"><span class="Default"> </span>On HP/UX, an <code class="Code">ilmd</code> invocation in <code class="Code">/etc/rc</code> must be preceded by <code class="Code">nohup</code><span class="Default">:</span><span class="Default">nohup /usr/ilog/ilm/ilmd </span><span class="Default">...</span></a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap310.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: The ihostid Command  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap312.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: The ilmlist Command  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

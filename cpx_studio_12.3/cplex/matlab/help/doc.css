@@ -1,0 +1,213 @@
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: Dialog, Arial, Verdana, Helvetica, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6, .heading {
+  color: #858a8b;
+  font-weight: bold;
+}
+h2, h3, h4, h5, h6, div.content {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+h1 {
+  font-size: 20px;
+  margin-bottom: 0px;
+    margin-top: 10px; /* for OHJ */
+}
+h2 {
+  font-size: 18px;
+}
+h3, div.purposeLabel, div.syntaxLabel, div.descriptionLabel, div.exampleLabel {
+  font-size: 16px;
+}
+h4, div.contextLabel, div.categoryLabel, div.typeLabel, div.usageLabel, div.eclipseRelatedLinksLabel {
+  font-size: 14px;
+}
+h5, dd.shortDefTopicContent h3 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 10px;
+}
+a.bluelink, a.bluelink:link, a.navigation, a.navigation:active, a.navigation:hover, a.navigation:link, a.navigation:visited {
+  color: #005da0;
+}
+a.bluelink:active, a.bluelink:hover {
+  color: #cc9900;
+}
+a.bluelink:visited {
+  color: #704d90;
+}
+a.breadcrumb, a.breadcrumb:active, a.breadcrumb:hover, a.breadcrumb:link, a.breadcrumb:visited {
+  color: #000000;
+}
+a.breadcrumb, a.breadcrumb:active, a.breadcrumb:hover, a.breadcrumb:link, a.breadcrumb:visited, a.navigation, a.navigation:active, a.navigation:hover, a.navigation:link, a.navigation:visited {
+  text-decoration: none;
+}
+div.caption, div.title {
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+div.mediaobject {
+  margin: 10px 0px;
+}
+pre.programlisting {
+  background-color: #f2f2f2;
+  font-family: Courier New, Courier, monospace;
+}
+pre.businessRule, span.businessRule {
+  font-family: Dialog, Verdana, Helvetica, Arial, sans-serif;
+}
+pre, ol.orderedlist, ol.steps, ul.itemizedlist, ul.steps {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+div.eclipseRelatedLinksLabel {
+  margin-top: 13px;
+}
+span.apilink, span.apiname, span.command, span.filename, span.inlineequation, span.literal {
+  font-family: Courier New, Courier, monospace;
+}
+ol.steps, ul.steps, ol.substeps, ul.substeps {
+  margin-left: 16px;
+  padding-left: 13px;
+}
+ol.substeps, ol.orderedlist ol.orderedlist {
+  list-style-type: lower-alpha;
+}
+span.bold, span.guicommand {
+  font-weight: bold;
+}
+span.italics, span.replaceable, span.seeAlso {
+  font-style: italic;
+}
+div.important, div.note, div.tip, div.warning {
+  border-color: #808080;
+  border-style: solid; 
+  border-width: 1px;
+  margin-bottom: 7px;
+  padding-bottom: 0;
+  padding-left:  5px;
+  padding-right:  5px;
+  padding-top: 2px;
+}
+div.importantLabel, div.noteLabel, div.tipLabel, div.warningLabel, div.procedureIntro, dt.term, dt.shortDefTopic, div.purposeLabel, div.contextLabel, div.categoryLabel, div.typeLabel, div.syntaxLabel, div.descriptionLabel, div.usageLabel, div.exampleLabel, div.eclipseRelatedLinksLabel {
+  font-weight: bold;
+}
+div.noteLabel, div.tipLabel, dt.shortDefTopic, div.purposeLabel, div.contextLabel, div.categoryLabel, div.typeLabel, div.syntaxLabel, div.descriptionLabel, div.usageLabel, div.exampleLabel, div.eclipseRelatedLinksLabel {
+  color: #858a8b;
+}
+div.importantLabel, div.warningLabel {
+  color: #d82020;
+}
+div.caption {
+  margin-bottom: 10px;
+}
+table {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+table.noClassWithBorder, table.noClassWithBorder td, table.noClassWithBorder th {
+  border-collapse: collapse;
+  border-color: #808080;
+  border-style: solid;
+  border-width: 1px;
+}
+table.noClassWithBorder td, table.noClassNoBorder td {
+  padding: 2px;
+  vertical-align: top;
+}
+div.breadcrumbs {
+  background-color: #d8d8d8;
+  font-size: 10px;
+  line-height: 16px;
+  padding-left: 7px;
+}
+div.header {
+  margin-bottom: 10px;
+}
+div.navigation {
+  float: right;
+  font-size: 11px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+div.content {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+div.groupBar {
+  margin-bottom: 13px;
+  margin-top: 10px;
+}
+dl.group {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+}
+div.para {
+  margin-bottom: 7px;
+}
+div.splashscreen {
+  text-align: center;
+}
+div.iframe {
+  margin-bottom: 13px;
+}
+div.flashdata {
+  margin-bottom: 13px;
+}
+img.imagemap, a img {
+  border: none;
+}
+ul.eclipseRelatedLinks, ul.subtoc, ul.synopsis, ul.indexTerm, ul.see { 
+  list-style-type: none;
+}
+ul.eclipseRelatedLinks, ul.subtoc { 
+  margin-left: 0;
+  padding-left: 0;
+  margin-top: 7px;
+}
+ul.synopsis, ul.subtoc {
+  border-width: 0px;
+  display: block;
+}
+ul.synopsis {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+div.footer {
+  border-top: 1px solid #808080;
+}
+div.copyright {
+  color: #858a8b;
+  font-size: 10px;
+}
+div.topLink { text-align: right; }
+@media print { div.topLink, div.groupBar, div.navigation { display: none; } }
+  
+div.eclipseRelatedLinksLabel {
+  background-image: url(../../../../../../_media/doc/related_bullet_default.gif);
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding-left: 1em;
+}
+div.help_breadcrumbs {
+  padding-left: 7px;
+}
+div.help_breadcrumbs a, div.help_breadcrumbs a:link {
+  color: #005da0;
+}
+div.help_breadcrumbs a:active, div.help_breadcrumbs a:hover {
+  color: #cc9900;
+}
+div.help_breadcrumbs a:visited {
+  color: #704d90;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Language and Interfaces Examples" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1216.html">
+   <topic label="OPL examples that use CPLEX (Mathematical Programming)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1217.html">
+      <topic label="Where to find the CPLEX examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1218.html"/>
+      <topic label="Blending problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1219.html"/>
+      <topic label="Commodity flow problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1220.html"/>
+      <topic label="Covering problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1221.html"/>
+      <topic label="Cutting stock problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1222.html"/>
+      <topic label="Fixed-charge production problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1223.html"/>
+      <topic label="Inventory problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1224.html"/>
+      <topic label="Knapsack problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1225.html"/>
+      <topic label="Miscellaneous examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1226.html"/>
+      <topic label="Product mix problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1227.html"/>
+      <topic label="Production problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1228.html"/>
+      <topic label="Profiling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1229.html"/>
+      <topic label="Quadratic problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1230.html"/>
+      <topic label="Relaxation of infeasible models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1231.html"/>
+      <topic label="Warehouse location problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1232.html"/>
+   </topic>
+   <topic label="OPL examples that use CP Optimizer (Constraint Programming)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1233.html">
+      <topic label="Where to find the CP examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1234.html"/>
+      <topic label="Using OPL CP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1235.html"/>
+      <topic label="Syntax examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1236.html"/>
+      <topic label="Search examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1237.html"/>
+      <topic label="Combinatorial examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1238.html"/>
+      <topic label="Scheduling examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1239.html"/>
+   </topic>
+   <topic label="Solving several OPL examples consecutively" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1240.html"/>
+   <topic label="Interfaces examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1241.html">
+      <topic label="Where to find the interfaces examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1242.html"/>
+      <topic label="How to launch the interfaces examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1243.html"/>
+      <topic label="Iterating through OPL elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1244.html"/>
+      <topic label="Basic model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1245.html"/>
+      <topic label="User-defined data sources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1246.html"/>
+      <topic label="SteelMill, a CP example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1247.html"/>
+      <topic label="Modifying a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1248.html"/>
+      <topic label="Column generation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1249.html"/>
+      <topic label="Custom data sources and data handlers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1250.html"/>
+      <topic label="Source code to run OPL: oplrunsample" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1251.html"/>
+      <topic label="Excel integration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1252.html"/>
+      <topic label="CP car production sequencing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1253.html"/>
+      <topic label="High volume processing with multiple threads" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1254.html"/>
+   </topic>
+   <topic label="OPL model library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1255.html">
+      <topic label="Where to find the industry examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1256.html"/>
+      <topic label="Finance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1257.html"/>
+      <topic label="Manufacturing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1258.html"/>
+      <topic label="Mining" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1259.html"/>
+      <topic label="Supply chain" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1260.html"/>
+      <topic label="Telecommunications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1261.html"/>
+      <topic label="Time tabling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1262.html"/>
+      <topic label="Transportation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1263.html"/>
+      <topic label="Mathematical games" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl1264.html"/>
+   </topic>
+</toc>

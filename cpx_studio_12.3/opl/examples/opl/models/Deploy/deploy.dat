@@ -1,0 +1,111 @@
+// --------------------------------------------------------------------------
+// Licensed Materials - Property of IBM
+//
+// 5725-A06 5725-A29 5724-Y48 5724-Y49 5724-Y54 5724-Y55
+// Copyright IBM Corporation 1998, 2011. All Rights Reserved.
+//
+// Note to U.S. Government Users Restricted Rights:
+// Use, duplication or disclosure restricted by GSA ADP Schedule
+// Contract with IBM Corp.
+// --------------------------------------------------------------------------
+
+// The nodes of the supply chain
+Sites = {
+   Atlanta,
+   Chicago,
+   Dallas,
+   Denver,
+   Newark,
+   Pasadena,
+   Portland
+};
+
+// The articles
+Articles = {
+   A04567,
+   A04900
+};
+
+// Stocks on hand at each node at the begining of the period.
+OnHand = [
+      [ 200, 150 ],    // Atlanta,    A04567, A04900
+      [ 30, 90 ],      // Chicago,    A04567, A04900
+      [ 70, 50 ],      // Dallas,     A04567, A04900
+      [ 100, 10 ],       // Denver,     A04567, A04900
+      [ 100, 10 ],       // Newark,     A04567, A04900
+      [ 100, 10 ],       // Pasadena,   A04567, A04900
+      [ 200, 100 ]     // Portland,   A04567, A04900
+      ];
+
+// Directed links of the supply chain
+Links = {
+   <   Atlanta,   Chicago    >,
+   <   Chicago,   Dallas     >,
+   <   Chicago,   Denver     >,
+   <   Dallas,    Newark     >,
+   <   Dallas,    Pasadena   >,
+   <   Portland,  Dallas     >,
+   <   Portland,  Denver     >
+};
+
+// Demands for all articles at each node at the begining of the period.
+Demand = [
+      [ 0, 0 ],       // Atlanta, A04567, A04900
+      [ 50, 30 ],     // Chicago, A04567, A04900
+      [ 40, 80 ],     // Dallas,  A04567, A04900
+      [ 30, 10 ],     // Denver,  A04567, A04900
+      [ 30, 50 ],     // Newark,  A04567, A04900
+      [ 30, 20 ],     // Pasadena,A04567, A04900
+      [ 0, 10 ]       // Portland,A04567, A04900
+      ];
+
+//Unit transportation cost on each link
+Cost = #[
+   <   Atlanta,  Chicago  >:   2,
+   <   Chicago,  Dallas   >:   2,
+   <   Chicago,  Denver   >:   1,
+   <   Dallas,   Newark   >:   2,
+   <   Dallas,   Pasadena >:   1,
+   <   Portland, Dallas   >:   1,
+   <   Portland, Denver   >:   1
+ ]#;
+
+// The linkExtraCost is incremental cost 
+// (=Cost of unit extra flow - Standard cost of unit flow)
+LinkExtraCost = #[
+   <   Atlanta,  Chicago  >:   2,
+   <   Chicago,  Dallas   >:   1,
+   <   Chicago,  Denver   >:   2,
+   <   Dallas,   Newark   >:   1,
+   <   Dallas,   Pasadena >:   1,
+   <   Portland, Dallas   >:   1,
+   <   Portland, Denver   >:   1
+ ]#;
+ 
+
+
+// Tranportation capacities for each link
+LinkCapacity = #[
+   <   Atlanta,  Chicago  >:   50,
+   <   Chicago,  Dallas   >:   40,
+   <   Chicago,  Denver   >:   60,
+   <   Dallas,   Newark   >:   60,
+   <   Dallas,   Pasadena >:   40,
+   <   Portland, Dallas   >:   30,
+   <   Portland, Denver   >:   30
+  ]#;
+  
+
+// Storage capacities at each node
+SiteCapacity = [ 100, 150, 100, 120, 100, 180, 100 ];
+
+// Cost of unit extra storage capacity 
+SiteExtraCost = [
+      2,    // Atlanta,    
+      5,    // Chicago,    
+      2,    // Dallas,     
+      1 ,   // Denver,   
+      1,    // Newark,    
+      3,    // Pasadena,  
+      1     // Portland,   
+      ];

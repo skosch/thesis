@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="CVS プロジェクトのチェックアウト
+">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+この虎の巻では CVS リポジトリーを探索してプロジェクトをチェックアウトする方法を説明します。右の (?) アイコンをクリックするとヘルプが表示されます。
+</description>
+  </intro>
+
+  <item
+      title="CVS リポジトリー・エクスプローラー・パースペクティブを開く"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+メインメニューから、ウィンドウ &gt; パースペクティブを開く &gt; その他...を開き、<b>CVS リポジトリー・エクスプローラー</b>・パースペクティブを選択します。
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="CVS リポジトリーの追加"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+CVS リポジトリー・ビューで <b>CVS リポジトリーの追加</b> ツールバー・ボタンをクリックします。リポジトリーのロケーションおよび認証情報を入力します。例えば、<b>eclipse</b> リポジトリーには以下を入力します。<br/>
+      <br/>
+      ホスト: dev.eclipse.org<br/>
+      リポジトリー・パス: /cvsroot/eclipse<br/>
+      ユーザー: anonymous<br/>
+      接続タイプ: pserver<br/>
+      <br/>
+その他はデフォルトを使用し、「完了」をクリックします。
+    </description>
+  </item>
+
+  <item
+      title="プロジェクトを探す"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+新規に追加されたリポジトリーの下にある <b>HEAD</b> ノードを展開し、チェックアウトしたいプロジェクトを探します (例: 虎の巻ビューのソース・コードは org.eclipse.ui.cheatsheets にあります)。
+    </description>
+  </item>
+
+  <item
+      title="プロジェクトのチェックアウト"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+チェックアウトしたいプロジェクトを右クリックし、<b>チェックアウト</b> を選択します。最新のコンテンツがリポジトリーからワークスペースにダウンロードされます。
+    </description>
+  </item>
+
+  <item
+      title="ワークスペースの表示"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+      ワークスペースでプロジェクトを表示するには、
+      「ウィンドウ」&gt;「パースペクティブを開く」&gt;「リソース」と選択して<b>リソース</b>・パースペクティブに切り替え、
+      <b>プロジェクト・エクスプローラー</b>・ビューでプロジェクトを表示します。プロジェクトの内容を表示し作業することができます。
+    </description>
+  </item>
+
+</cheatsheet>

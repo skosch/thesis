@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="CVS ブランチのマージ
+">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+この虎の巻では、変更を CVS ブランチから他の CVS ブランチまたは HEAD にマージする方法を説明します。 右の (?) アイコンをクリックするとヘルプが表示されます。
+</description>
+  </intro>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="ブランチおよびバージョン情報の判別">
+    <description>
+はじめに、<b>どの</b> 2 つのブランチをマージするか、どの <b>バージョン</b> でコンテンツのブランチが作成されたか、そして <b>宛先</b> のブランチをどれにするか(マージの結果を収める場所)を決めます。この情報を取得したら、次のステップに進んでください。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm"
+      title="プロジェクトのチェックアウト">
+    <description>
+マージを行う前に、マージするプロジェクトを <b>チェックアウト</b> してワークスペースに追加する必要があります。インポート・ウィザードから行うか、CVS リポジトリー・エクスプローラー・パースペクティブからリポジトリーを追加してください。ヘルプを参照するには (?) ボタンをクリックしてください。
+</description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-103.htm"
+      title="ワークスペースに宛先をロード">
+    <description>
+ナビゲーターでプロジェクトを右クリックし、置換 &gt; 他のブランチまたはバージョンを選択します。宛先ブランチを選択します。これにより、ブランチの最新コンテンツがワークスペースにロードされます。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="マージ詳細">
+    <description>
+ナビゲーターに戻り、プロジェクトを右クリックし、<b>チーム</b> &gt; <b>マージ</b>を選択してウィザードでステップを完了します。このウィザードでマージに関する詳細を指定します。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="マージ・エディターを使用した作業">
+    <description>
+マージ・エディターで、手操作で変更をマージします。 このステップでは、必要な変更をワークスペースにロードします。 すべての変更をマージし、その結果に問題がなければ次のステップに進みます。    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-114.htm"
+      title="変更のコミット">
+    <description>
+プロジェクトを右クリックし、<b>チーム</b> &gt; <b>リポジトリーと同期化</b> を選択し、すべての変更をリポジトリーにコミットします。このステップでは、ワークスペースから CVS リポジトリーへの変更の転送を終了し、マージを完了します。    </description>
+  </item>
+
+</cheatsheet>

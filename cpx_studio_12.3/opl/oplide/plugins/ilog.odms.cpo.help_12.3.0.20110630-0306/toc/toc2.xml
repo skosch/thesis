@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CP Optimizer User's Manual" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2651.html">
+   <topic label="Welcome to the CP Optimizer User’s Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2652.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2653.html"/>
+      <topic label="About this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2654.html"/>
+      <topic label="Prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2655.html"/>
+      <topic label="Related documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2656.html"/>
+      <topic label="Installing CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2657.html"/>
+      <topic label="Typographic and Naming Conventions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2658.html"/>
+   </topic>
+   <topic label="Using CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2659.html">
+      <topic label="Overview of CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2660.html"/>
+      <topic label="The three-stage method" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2661.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2662.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2663.html">
+         <topic label="Decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2664.html"/>
+         <topic label="Constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2665.html"/>
+      </topic>
+      <topic label="Solve the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2666.html">
+         <topic label="Solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2667.html"/>
+         <topic label="Search space" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2668.html"/>
+         <topic label="Initial constraint propagation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2669.html"/>
+         <topic label="Constructive search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2670.html"/>
+         <topic label="Constraint propagation during search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2671.html"/>
+      </topic>
+      <topic label="Scheduling in CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2672.html">
+         <topic label="Basic building blocks of scheduling models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2673.html"/>
+         <topic label="Search space for scheduling models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2674.html"/>
+      </topic>
+      <topic label="Using search parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2675.html">
+         <topic label="Setting parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2676.html"/>
+         <topic label="Time mode parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2677.html"/>
+      </topic>
+   </topic>
+   <topic label="Modeling a problem with Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2678.html">
+      <topic label="Using the environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2679.html">
+         <topic label="Creating the environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2680.html"/>
+         <topic label="Environment and communication channels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2681.html"/>
+         <topic label="Environment and memory management" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2682.html"/>
+      </topic>
+      <topic label="Managing data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2683.html">
+         <topic label="Arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2684.html"/>
+         <topic label="Sets of tuples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2685.html"/>
+         <topic label="Piecewise linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2686.html"/>
+         <topic label="Step functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2687.html"/>
+      </topic>
+      <topic label="Defining decision variables and expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2688.html">
+         <topic label="Integer decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2689.html"/>
+         <topic label="Interval decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2690.html"/>
+         <topic label="Interval sequence decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2691.html"/>
+         <topic label="Expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2692.html"/>
+         <topic label="Domains of variables and expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2693.html"/>
+      </topic>
+      <topic label="Declaring the objective" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2694.html"/>
+      <topic label="Adding constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2695.html">
+         <topic label="Constraint classes" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2696.html"/>
+         <topic label="Arithmetic constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2697.html"/>
+         <topic label="Specialized constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2698.html"/>
+         <topic label="Combining constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2699.html"/>
+      </topic>
+      <topic label="Formulating a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2700.html"/>
+   </topic>
+   <topic label="Constraints and expressions in CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2701.html">
+      <topic label="Arithmetic constraints and expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2702.html">
+         <topic label="Arithmetic expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2703.html"/>
+         <topic label="Element expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2704.html"/>
+         <topic label="Division expression examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2705.html"/>
+      </topic>
+      <topic label="Logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2706.html"/>
+      <topic label="Compatibility constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2707.html"/>
+      <topic label="Specialized constraints on integer decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2708.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2709.html"/>
+         <topic label="All different constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2710.html"/>
+         <topic label="Minimum distance constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2711.html"/>
+         <topic label="Packing constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2712.html"/>
+         <topic label="Inverse constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2713.html"/>
+         <topic label="Lexicographic constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2714.html"/>
+         <topic label="Distribution constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2715.html"/>
+      </topic>
+      <topic label="Constraints and expressions on interval decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2716.html">
+         <topic label="Expressions on interval decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2717.html"/>
+         <topic label="Forbidden values constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2718.html"/>
+         <topic label="Precedence constraints on interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2719.html"/>
+         <topic label="Logical constraints on interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2720.html"/>
+         <topic label="Constraints on groups of interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2721.html"/>
+         <topic label="Sequence constraints on interval variables and interval sequence variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2722.html"/>
+         <topic label="Constraints and expressions on cumulative (cumul) function expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2723.html">
+            <topic label="Cumul function expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2724.html"/>
+            <topic label="Elementary cumul function expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2725.html"/>
+            <topic label="Expressions on cumul function expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2726.html"/>
+            <topic label="Constraints on cumul function expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2727.html"/>
+         </topic>
+         <topic label="Constraints on state functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2728.html"/>
+      </topic>
+   </topic>
+   <topic label="Constraint propagation in CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2729.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2730.html"/>
+      <topic label="Domain reduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2731.html"/>
+      <topic label="Constraint propagation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2732.html"/>
+      <topic label="Propagation of arithmetic constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2733.html"/>
+      <topic label="Propagation of logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2734.html"/>
+      <topic label="Propagation of specialized constraints and expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2735.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2736.html"/>
+         <topic label="Inference levels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2737.html"/>
+         <topic label="The element expression" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2738.html"/>
+         <topic label="The counting expression" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2739.html"/>
+         <topic label="The distribution constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2740.html"/>
+         <topic label="The compatibility and incompatibility constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2741.html"/>
+      </topic>
+      <topic label="Constraint aggregation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2742.html"/>
+   </topic>
+   <topic label="Search in CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2743.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2744.html"/>
+      <topic label="Searching for solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2745.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2746.html"/>
+         <topic label="Solving an optimization problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2747.html"/>
+         <topic label="Accessing intermediate solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2748.html"/>
+         <topic label="Solving a satisfiability problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2749.html"/>
+      </topic>
+      <topic label="The search log" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2750.html">
+         <topic label="Reading a search log" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2751.html"/>
+         <topic label="Search log parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2752.html"/>
+      </topic>
+      <topic label="Retrieving a solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2753.html"/>
+      <topic label="Retrieving search information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2754.html"/>
+      <topic label="Setting parameters on search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2755.html"/>
+   </topic>
+   <topic label="Tuning the CP Optimizer search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2756.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2757.html"/>
+      <topic label="Using alternative search types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2758.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2759.html"/>
+         <topic label="Depth-first search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2760.html"/>
+         <topic label="Restart search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2761.html"/>
+         <topic label="Multi-point search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2762.html"/>
+         <topic label="Setting parameters for directing the search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2763.html"/>
+      </topic>
+      <topic label="Ordering variables and values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2764.html">
+         <topic label="Grouping variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2765.html"/>
+         <topic label="Defining a constructive strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2766.html"/>
+         <topic label="Simple variable selection" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2767.html"/>
+         <topic label="Simple value selection" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2768.html"/>
+         <topic label="Multi-criteria selection" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2769.html"/>
+         <topic label="Search phases with selectors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2770.html"/>
+         <topic label="Defining your own evaluator" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2771.html"/>
+         <topic label="Search phases for scheduling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2772.html"/>
+      </topic>
+      <topic label="Using multi-point search algorithms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2773.html"/>
+      <topic label="Solving lexicographic multi-objective problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2774.html"/>
+   </topic>
+   <topic label="Designing models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2775.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2776.html"/>
+      <topic label="Decrease the number of variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2777.html"/>
+      <topic label="Use dual representation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2778.html"/>
+      <topic label="Remove symmetries" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2779.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2780.html"/>
+         <topic label="Group by type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2781.html"/>
+         <topic label="Introduce order among variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2782.html"/>
+      </topic>
+      <topic label="Introduce surrogate constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2783.html"/>
+   </topic>
+   <topic label="Designing scheduling models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2784.html">
+      <topic label="Specifying interval bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2785.html"/>
+      <topic label="Specifying precedence relations between interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2786.html"/>
+      <topic label="Modeling resource calendars" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2787.html"/>
+      <topic label="Chains of optional intervals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2788.html"/>
+      <topic label="Different uses of the alternative constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2789.html"/>
+      <topic label="Modeling hierarchical models and “Work Breakdown Structures”" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2790.html"/>
+      <topic label="Modeling classical finite capacity resources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2791.html"/>
+      <topic label="Modeling classical scheduling costs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2792.html"/>
+      <topic label="Modeling sequence-dependent setup times" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2793.html"/>
+      <topic label="Increasing inference on alternative constraints in the engine" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2794.html"/>
+   </topic>
+   <topic label="Debugging applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2795.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2796.html"/>
+      <topic label="Catching exceptions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2797.html"/>
+      <topic label="Testing with a known solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2798.html"/>
+      <topic label="Tracing propagation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2799.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2800.html"/>
+         <topic label="Terse level trace" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2801.html"/>
+         <topic label="Verbose level trace" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2802.html"/>
+      </topic>
+   </topic>
+   <topic label="Developing an application with CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2803.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2804.html"/>
+      <topic label="Preparing data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2805.html"/>
+      <topic label="Clarifying the cost function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2806.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2807.html"/>
+         <topic label="Dissect the cost function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2808.html"/>
+         <topic label="Approximate the cost function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2809.html"/>
+      </topic>
+      <topic label="Defining a solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2810.html"/>
+      <topic label="Identifying the constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2811.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2812.html"/>
+         <topic label="Define all constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2813.html"/>
+         <topic label="Distinguish constraints from preferable conditions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2814.html"/>
+      </topic>
+      <topic label="Abstracting a miniproblem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2815.html"/>
+      <topic label="Designing the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2816.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2817.html"/>
+         <topic label="Decompose the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2818.html"/>
+         <topic label="Determine precision" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2819.html"/>
+         <topic label="Validate the model with data and constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2820.html"/>
+         <topic label="Experiment with variant models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2821.html"/>
+      </topic>
+      <topic label="Tuning Performance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2822.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2823.html"/>
+         <topic label="Use multiple data sets for tuning" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2824.html"/>
+         <topic label="Optimize propagation and search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2825.html"/>
+         <topic label="Look at changes" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2826.html"/>
+         <topic label="Use expertise from the problem domain" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2827.html"/>
+         <topic label="Reconsider what makes a solution optimal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2828.html"/>
+         <topic label="Consider symmetry" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2829.html"/>
+      </topic>
+   </topic>
+</toc>

@@ -1,0 +1,97 @@
+LICENSE INFORMATION
+
+The Programs listed below are licensed under the following terms and conditions in addition to those of the International Program License Agreement.
+
+Program Name: IBM ILOG CPLEX Optimization Studio V12.3
+Program Number: 5725-A06
+
+Program Name: IBM ILOG CPLEX V12.3
+Program Number: 5724-Y48
+
+Program Name: IBM ILOG CP Optimizer V12.3
+Program Number: 5724-Y49
+
+Program Name: IBM ILOG OPL-CPLEX V12.3
+Program Number: 5724-Y54
+
+Program Name: IBM ILOG OPL-CPLEX Analyst Studio V12.3
+Program Number: 5724-Y55
+
+Supporting Programs
+
+The Program is licensed as a multi-product package and includes the Supporting Programs identified below. Licensee is authorized to install and use such Supporting Programs only to support Licensee's use of the Principal Program under this Agreement and within the limits of the Proofs of Entitlement for the Program (unless broader rights are provided elsewhere in this License Information document). The phrase "to support Licensee's use" would include only those uses that are necessary or otherwise directly related to a licensed use of the Principal Program or another Supporting Program. The Supporting Programs may not be used for any other purpose. Licensee is not authorized to transfer or remarket the Supporting Programs separate from the Principal Program. The terms of this Agreement may replace or modify the license terms for the Supporting Programs. In the event of conflict, these terms supersede the terms of the license agreement which accompanies the Supporting Programs. When Licensee's right to use the Program expires or terminates, Licensee must discontinue use, destroy or promptly return all copies of the Supporting Programs to the party from whom Licensee acquired the Program. If Licensee downloaded the Supporting Programs, Licensee should contact the party from whom Licensee acquired the Program. If Licensee wishes to license the Supporting Programs for any use beyond the limits set forth above, please contact an IBM Sales Representative or the party from whom Licensee acquired the Program to obtain the appropriate license.
+
+The following are Supporting Programs licensed with the Program:
+IBM ILOG JViews Enterprise 8.7
+IBM ILOG DB Link 5.4
+IBM ESSL 5.1
+
+Benchmarking
+
+Licensee may disclose the results of any benchmark test of the Program or its subcomponents to any third party provided that Licensee (A) publicly discloses the complete methodology used in the benchmark test (for example, hardware and software setup, installation procedure and configuration files), (B) performs Licensee's benchmark testing running the Program in its Specified Operating Environment using the latest applicable updates, patches and fixes available for the Program from IBM or third parties that provide IBM products ("Third Parties"), and (C) follows any and all performance tuning and "best practices" guidance available in the Program's documentation and on IBM's support web sites for the Program. If Licensee publishes the results of any benchmark tests for the Program, then notwithstanding anything to the contrary in any agreement between Licensee and IBM or Third Parties, IBM and Third Parties will have the right to publish the results of benchmark tests with respect to Licensee's products provided IBM or Third Parties complies with the requirements of (A), (B) and (C) above in its testing of Licensee's products.
+
+Notwithstanding the foregoing, under no circumstances may Licensee publish the results of benchmark tests run on Oracle Outside In Technology without prior written permission.
+
+The above benchmarking terms apply to the following Programs or subcomponents:
+IBM ILOG CPLEX Optimization Studio V12.3
+IBM ILOG CPLEX V12.3
+IBM ILOG CP Optimizer V12.3
+IBM ILOG OPL-CPLEX V12.3
+IBM ILOG OPL-CPLEX Analyst Studio V12.3
+
+Source Components and Sample Materials
+
+The Program may include some components in source code form ("Source Components") and other materials identified as Sample Materials. Licensee may copy and modify Source Components and Sample Materials for internal use only provided such use is within the limits of the license rights under this Agreement, provided however that Licensee may not alter or delete any copyright information or notices contained in the Source Components or Sample Materials. IBM provides the Source Components and Sample Materials without obligation of support and "AS IS", WITH NO WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING THE WARRANTY OF TITLE, NON-INFRINGEMENT OR NON-INTERFERENCE AND THE IMPLIED WARRANTIES AND CONDITIONS OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+Restrictions on Use for the Benefit of a Third Party
+
+Licensee may not use the Program or any component thereof to provide service bureau, hosting services, or any sort of commercial information technology services to third parties, or transfer the Program to a third party, unless otherwise agreed to in writing by IBM.
+
+Authorized User
+
+Authorized User is a unit of measure by which the Program can be licensed. An Authorized User is a unique person who is given access to the Program. The Program may be installed on any number of computers or servers and each Authorized User may have simultaneous access to any number of instances of the Program at one time. Licensee must obtain separate, dedicated entitlements for each Authorized User given access to the Program in any manner directly or indirectly (for example: via a multiplexing program, device, or application server) through any means. An entitlement for an Authorized User is unique to that Authorized User and may not be shared, nor may it be reassigned other than for the permanent transfer of the Authorized User entitlement to another person.
+
+Processor Value Unit (PVU)
+
+Processor Value Unit (PVU) is a unit of measure by which the Program can be licensed. The number of PVU entitlements required is based on the processor technology (defined within the PVU Table by Processor Vendor, Brand, Type and Model Number at http://www.ibm.com/software/lotus/passportadvantage/pvu_licensing_for_customers.html) and the number of processors made available to the Program. IBM continues to define a processor, for the purpose of PVU-based licensing, to be each processor core on a chip. A dual-core processor chip, for example, has two processor cores.
+
+Licensee can deploy the Program using either Full Capacity licensing or Virtualization Capacity (Sub-Capacity) licensing according to the Passport Advantage Sub-Capacity Licensing Terms (see webpage below). If using Full Capacity licensing, Licensee must obtain PVU entitlements sufficient to cover all activated processor cores* in the physical hardware environment made available to or managed by the Program, except for those servers from which the Program has been permanently removed. If using Virtualization Capacity licensing, Licensee must obtain entitlements sufficient to cover all activated processor cores made available to or managed by the Program, as defined according to the Virtualization Capacity License Counting Rules at http://www.ibm.com/software/lotus/passportadvantage/Counting_Software_licenses_using_specific_virtualization_technologies.html.
+
+* An Activated processor core is a processor core that is available for use in a physical or virtual server, regardless of whether the capacity of the processor core can be or is limited through virtualization technologies, operating system commands, BIOS settings, or similar restrictions.
+
+General Charge Terms
+
+License Type – Simultaneous Use License: 
+"Simultaneous Use" is the unit of measure by which this Program is licensed. The total number of simultaneous executions of the Program at any moment in time within the Licensee's enterprise may not exceed the highest number of Simultaneous Use Licenses authorized by the Proof of Entitlement (PoE). Licensee must have an entitlement for each simultaneous execution of the Program or any Program component in any manner directly or indirectly (for example: via a multiplexing program, device, or application server) through any means.
+
+
+Program-unique Terms
+
+DEFINITIONS
+
+"Application" is any software program that is created by or for Licensee using the Program and which embeds, requires and/or executes the Deployment Software.
+
+"Deployment Software" is the portions of the Program that are integrated with other software programs, tools, and code and embedded into an Application, or which are installed separately from an Application but invoked or called by an Application, or which an Application requires to operate.
+
+Development License:
+For entitlements to the Program acquired by Licensee as evidenced by the notation "Developer Edition" or "Analyst Studio" in the Program Name on a PoE, Licensee may use the Program for internal development purposes only to design, develop, test, run, and/or support Licensee's Application(s). In addition, Licensee may run Program through the Integrated Development Environment (IDE) for internal business operations only.
+
+Deployment License:
+For entitlements to the Deployment Software acquired by Licensee as evidenced by the notation "Limited Use", "Desktop Edition" or "Server Edition" in the Program Name on a PoE, Licensee may use the Deployment Software associated with the Program for a single Licensee Application specifically and directly in furtherance of Licensee's internal business operations only.
+
+For all other entitlements to the Deployment Software acquired by Licensee as evidenced by the notation "Deployment Edition" in the Program Name on a PoE, Licensee may use the Deployment Software associated with the Program for any Licensee Application specifically and directly in furtherance of Licensee's internal business operations only.
+
+CPLEX LP/MIP License
+For entitlements to the Deployment Software acquired by Licensee as evidenced by the notation "CPLEX Optimizer LP" or "CPLEX LP" in the Program Name on a PoE, Licensee may use the Deployment Software associated with the Program for solving continuous Linear Programming (LP) and Quadratic Programming (QP) problems only. 
+
+For entitlements to the Deployment Software acquired by Licensee as evidenced by the notation "CPLEX Optimizer MILP Add-on" or "CPLEX MILP Add-on "in the Program Name on a PoE, Licensee may use the Deployment Software associated with the Program for solving mixed-integer formulations of Linear Programming (LP) problems only. 
+
+Academic Research Edition License:
+If Licensee acquired an "Academic Research Edition" license, as indicated by the notation "Academic Research Edition" in the Program Name on a PoE, Licensee's use of the Program is restricted to use for classroom teaching and non-commercial academic research. Non-commercial academic research means research by students and faculty members where (i) the results of such research are not intended primarily for the benefit of a third party; (ii) such results are made available to anyone without restriction on use, copying or further distribution; and (iii) any copy of any such result is furnished for no more than the cost of reproduction and shipping. Licensee may not use or distribute any Application for commercial purposes inside or outside of Licensee's academic institution.
+
+License Restrictions:
+Licensee agrees that no Application may give direct or exposed access to the Integrated Development Environment (IDE) or to the component library application programming interface of the Program .
+
+
+D/N:  L-ASAY-8DHE3H
+P/N:  L-ASAY-8DHE3H 

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-Name: %nlFragmentName
+Bundle-SymbolicName: org.eclipse.ui.workbench.compatibility.nl1 ;singleton=true
+Bundle-Version: 3.2.100.v201102251823
+Bundle-ClassPath: nl1.jar
+Bundle-Vendor: %nlProviderName
+Fragment-Host: org.eclipse.ui.workbench;bundle-version="[3.0.0,4.0.0)"
+Bundle-Localization: nl_fragment

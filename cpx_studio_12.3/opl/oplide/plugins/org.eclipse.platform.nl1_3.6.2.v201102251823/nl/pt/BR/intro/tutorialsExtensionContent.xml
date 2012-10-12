@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+  <!-- Extension to the SDK Tutorials Page. -->
+  <extensionContent id="org.eclipse.team" name="Equipe/CVS" alt-style="css/tutorials.properties" style="css/tutorials.css" path="tutorials/@">
+    <group label="Equipe/CVS" id="team" style-id="content-group">
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.checkout" label="Registrar Saída de um Projeto CVS" id="cvs_checkout" style-id="content-link">
+        <text>Aprenda a conectar a um repositório CVS e registrar a saída de um projeto.</text>
+      </link>
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.merge" label="Mesclar Ramificações CVS" id="cvs_merge" style-id="content-link">
+        <text>Siga as etapas para mesclar as alterações de uma ramificação CVS em outra.</text>
+      </link>
+    </group>
+  </extensionContent>
+</introContent>

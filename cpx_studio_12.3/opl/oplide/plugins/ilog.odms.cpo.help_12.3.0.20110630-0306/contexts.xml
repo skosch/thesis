@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<contexts>
+   <context id="basicconstInter">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2719.html" label="Precedence constraints on interval variables"/>
+   </context>
+   <context id="cpo_home">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cpoptimizer2517.html" label="CP Optimizer"/>
+   </context>
+   <context id="cumulConst">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2727.html" label="Constraints on cumul function expressions"/>
+   </context>
+   <context id="cumulDesc">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2724.html" label="Cumul function expressions"/>
+   </context>
+   <context id="elemStep">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2725.html" label="Elementary cumul function expressions"/>
+   </context>
+   <context id="expCumul">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2726.html" label="Expressions on cumul function expressions"/>
+   </context>
+   <context id="exprInterval">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2717.html" label="Expressions on interval decision variables"/>
+   </context>
+   <context id="forbid">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2718.html" label="Forbidden values constraints"/>
+   </context>
+   <context id="Functions">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2686.html" label="Piecewise linear functions"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2687.html" label="Step functions"/>
+   </context>
+   <context id="groupCsts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2721.html" label="Constraints on groups of interval variables"/>
+   </context>
+   <context id="interval">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2690.html" label="Interval decision variables"/>
+   </context>
+   <context id="intervalsqevar">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2691.html" label="Interval sequence decision variables"/>
+   </context>
+   <context id="legal_terms">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cpoptimizer2518.html#d4e444092" label="Copyright notice"/>
+   </context>
+   <context id="loggialCsts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2720.html" label="Logical constraints on interval variables"/>
+   </context>
+   <context id="overview">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2897.html" label="Overview"/>
+   </context>
+   <context id="schedsearch">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2772.html" label="Search phases for scheduling"/>
+   </context>
+   <context id="SchedSearchSpace">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2547.html" label="Search space for scheduling models"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2674.html" label="Search space for scheduling models"/>
+   </context>
+   <context id="section1">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2898.html" label="Working with interval variables"/>
+   </context>
+   <context id="section11">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2900.html" label="Writing a constraint with interval variables"/>
+   </context>
+   <context id="section12">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2899.html" label="Writing a goal with interval variables"/>
+   </context>
+   <context id="section13">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2901.html" label="Writing a greedy search"/>
+   </context>
+   <context id="section2">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2902.html" label="Writing a chronological scheduling goal"/>
+   </context>
+   <context id="section4">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2903.html" label="Writing a chronological scheduling goal on sequence variable"/>
+   </context>
+   <context id="section5">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2904.html" label="Writing a custom constraint on a sequence variable"/>
+   </context>
+   <context id="sequencecst">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2722.html" label="Sequence constraints on interval variables and interval sequence variables"/>
+   </context>
+   <context id="solution">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2536.html" label="Solution"/>
+   </context>
+   <context id="startingPts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2774.html" label="Solving lexicographic multi-objective problems"/>
+   </context>
+   <context id="stateCsts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2728.html" label="Constraints on state functions"/>
+   </context>
+   <context id="Step">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2686.html" label="Piecewise linear functions"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2687.html" label="Step functions"/>
+   </context>
+   <context id="var">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/usrcpoptimizer2690.html" label="Interval decision variables"/>
+   </context>
+</contexts>

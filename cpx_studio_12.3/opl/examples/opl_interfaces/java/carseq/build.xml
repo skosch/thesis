@@ -1,0 +1,6 @@
+<project name="carseq" default="run">
+
+  <property name="example.classname" value="carseq.Carseq"/>
+  <import file="../build_common.xml"/>
+
+</project>

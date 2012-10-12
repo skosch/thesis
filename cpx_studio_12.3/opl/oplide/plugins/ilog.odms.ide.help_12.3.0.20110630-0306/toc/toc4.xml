@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="OPL Interfaces" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1170.html">
+   <topic label="Interfaces User’s Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1171.html">
+      <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1172.html">
+         <topic label="About the Interfaces User's Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1173.html"/>
+         <topic label="Using the C++ interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1174.html"/>
+         <topic label="The Java interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1175.html">
+            <topic label="Overview of the Java interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1176.html"/>
+            <topic label="Object creation and factories" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1177.html"/>
+            <topic label="Memory management" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1178.html"/>
+            <topic label="Compatibility with Java CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1179.html"/>
+            <topic label="Compatibility with CP Optimizer Java interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1180.html"/>
+            <topic label="Deployment of Java applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1181.html"/>
+         </topic>
+         <topic label="The .NET interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1182.html">
+            <topic label="Overview of the .NET interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1183.html"/>
+            <topic label="Object creation and factories" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1184.html"/>
+            <topic label="Memory management" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1185.html"/>
+            <topic label="CPLEX goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1186.html"/>
+            <topic label="Compatibility with .NET CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1187.html"/>
+            <topic label="Compatibility with CP Optimizer .NET interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1188.html"/>
+            <topic label="Deployment of .NET applications (Windows only)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1189.html"/>
+         </topic>
+      </topic>
+      <topic label="Tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1190.html">
+         <topic label="Overview of the Tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1191.html"/>
+         <topic label="Creating an OPL model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1192.html"/>
+         <topic label="Specifying a data source" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1193.html"/>
+         <topic label="Generating the Concert model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1194.html"/>
+         <topic label="Solving the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1195.html"/>
+         <topic label="Accessing the solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1196.html"/>
+         <topic label="Using run configuration and projects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1197.html"/>
+      </topic>
+      <topic label="Working with OPL interfaces" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1198.html">
+         <topic label="Using OPL model instances" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1199.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1200.html"/>
+            <topic label="The model definition" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1201.html"/>
+            <topic label="The data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1202.html"/>
+         </topic>
+         <topic label="Services on solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1203.html"/>
+         <topic label="Sending execution output to a file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1204.html"/>
+         <topic label="Custom data sources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1205.html"/>
+         <topic label="Accessing elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1206.html">
+            <topic label="Accessing model elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1207.html"/>
+            <topic label="Iterating through OPL elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1208.html"/>
+         </topic>
+         <topic label="Settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1209.html"/>
+         <topic label="Postprocessing solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1210.html"/>
+         <topic label="Error handling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1211.html"/>
+         <topic label="Debug mode" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1212.html"/>
+         <topic label="Printing data to a stream" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1213.html"/>
+         <topic label="Integrating OPL with Excel using Visual Studio Tools for Office" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1214.html"/>
+         <topic label="Memory management" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Interfaces1215.html"/>
+      </topic>
+   </topic>
+   <topic label="C++ interface reference manual" href="html/refcppopl/html/overview.html">
+      <link toc="toc/refcppopl.xml"/>
+   </topic>
+   <topic label="Java interface reference manual" href="html/refjavaopl/html/overview-summary.html">
+      <link toc="toc/refjavaopl.xml"/>
+   </topic>
+   <topic label=".NET interface reference manual" href="html/refdotnetopl/html/R_Project.htm">
+      <link toc="toc/refdotnetopl.xml"/>
+   </topic>
+</toc>

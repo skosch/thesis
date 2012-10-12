@@ -1,0 +1,19 @@
+<project name="javaknapsack" default="run">
+    <property environment="env"/>
+    <import file="../build_common.xml"/>
+    <condition property="oplrun.binary" value="oplrunjava">
+        <os family="unix"/>
+    </condition>
+    <property name="oplrun.binary" value="oplrun"/>
+
+    <target name="run" depends="compile,platform">
+        <exec executable="${example.home}/bin/${example.platform}/${oplrun.binary}" >
+            <arg value="cutstock_ext_main.mod"/>
+            <arg value="cutstock.dat"/>
+            <env key="PATH" path="${example.home}/bin/${example.platform}${platform.separator}${env.PATH}"/>
+            <env key="LD_LIBRARY_PATH" path="${example.home}/bin/${example.platform}${platform.separator}${env.JAVA_HOME}/jre/bin${platform.separator}${env.JAVA_HOME}/jre/bin/j9vm${platform.separator}${env.JAVA_HOME}/jre/bin/classic"/>
+          <env key="LIBPATH" path="${example.home}/bin/${example.platform}${platform.separator}${env.JAVA_HOME}/jre/bin${platform.separator}${env.JAVA_HOME}/jre/bin/j9vm${platform.separator}${env.JAVA_HOME}/jre/bin/classic"/>    
+        </exec>
+    </target>
+
+</project>

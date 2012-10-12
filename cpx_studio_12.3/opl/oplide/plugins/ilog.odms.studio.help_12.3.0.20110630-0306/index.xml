@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<index>
+   <entry keyword=".NET">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse245.html" title="Availability of 64–bit port for the .NET languages API"/>
+   </entry>
+   <entry keyword=".NET API">
+      <entry keyword="IMPModeler.PiecewiseLinear">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse200.html" title="New feature for Java or .NET users: piecewise linear numeric expression"/>
+      </entry>
+   </entry>
+   <entry keyword="Accessibility">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse270.html" title="Accessibility in the online IBM Information Center documentation"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse271.html" title="CPLEX Optimization Studio accessibility"/>
+      <entry keyword="keyboard shortcuts">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse271.html" title="CPLEX Optimization Studio accessibility"/>
+      </entry>
+   </entry>
+   <entry keyword="aggregated piecewise">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1023021" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="algorithmic settings">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+   </entry>
+   <entry keyword="alldifferent, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse92.html" title="alldifferent"/>
+   </entry>
+   <entry keyword="API">
+      <entry keyword="moved to ILOG Concert">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse166.html" title="The libraries"/>
+      </entry>
+   </entry>
+   <entry keyword="arrays">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022855" title="Types and declarations"/>
+   </entry>
+   <entry keyword="assignment operators">
+      <entry keyword="change from 3.7.x to 4.x and later">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1022883" title="Operators"/>
+      </entry>
+   </entry>
+   <entry keyword="atleast, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse93.html" title="atleast"/>
+   </entry>
+   <entry keyword="atleastatmost, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse94.html" title="atleastatmost"/>
+   </entry>
+   <entry keyword="atmost, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse95.html" title="atmost"/>
+   </entry>
+   <entry keyword="barrier optimizer">
+      <entry keyword="determinism and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse201.html" title="New feature: deterministic parallel barrier algorithm"/>
+      </entry>
+   </entry>
+   <entry keyword="Bender’s decomposition (examples)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse27.html" title="New example: Bender’s decomposition using lazy constraint and user cut callbacks"/>
+   </entry>
+   <entry keyword="Big map threshold option">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+   </entry>
+   <entry keyword="Boolean variables">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022838" title="Types and declarations"/>
+   </entry>
+   <entry keyword="branching">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse148.html" title="Branching (mipsearch)"/>
+   </entry>
+   <entry keyword="bugs fixed">
+      <entry keyword="between 4.0 and 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse132.html" title="Known issues handled"/>
+      </entry>
+      <entry keyword="between 4.0.1 and 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse134.html" title="List of corrections"/>
+      </entry>
+      <entry keyword="between 4.1 and 4.2">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse124.html" title="Known issues handled"/>
+      </entry>
+   </entry>
+   <entry keyword="callback">
+      <entry keyword="delete node (C API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300641055940" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="exiting cut loop">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse22.html#section1300050326794" title="New features in callbacks"/>
+      </entry>
+      <entry keyword="incumbent">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1301234309679" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="informational">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse22.html#section1300640842771" title="New features in callbacks"/>
+      </entry>
+      <entry keyword="lazy constraints (.NET API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050629722" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="lazy constraints (C API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1301324184801" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="lazy constraints (C++ API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050687048" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="lazy constraints (Java API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050332887" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="lazy constraints (Python API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050635097" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="lazy constraints and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300645543945" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="node queries (C++ API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1302618265953" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="node queries (Java API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1302619108156" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="solve (Java API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1299841483202" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="user cut">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse22.html#section1302163554290" title="New features in callbacks"/>
+      </entry>
+      <entry keyword="user cuts (.NET API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050629722" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="user cuts (C API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1301324184801" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="user cuts (C++ API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050687048" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="user cuts (Java API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050332887" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="user cuts (Python API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300050635097" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="user cuts and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300645543945" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="where from">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse22.html#section1300644779455" title="New features in callbacks"/>
+      </entry>
+   </entry>
+   <entry keyword="callback (Python API, release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse189.html" title="Additional documentation of the Python API"/>
+   </entry>
+   <entry keyword="cardinality, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse96.html" title="cardinality"/>
+   </entry>
+   <entry keyword="case, OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse149.html" title="Conditional statements"/>
+   </entry>
+   <entry keyword="changes to the language">
+      <entry keyword="from 3.7 to 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse142.html" title="The modeling language"/>
+      </entry>
+      <entry keyword="from 4.0 to 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+      </entry>
+   </entry>
+   <entry keyword="changes, global">
+      <entry keyword="from 3.7.x to 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse137.html" title="Introduction"/>
+      </entry>
+      <entry keyword="from 4.0 to 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse126.html" title="Major improvements in OPL 4.1"/>
+      </entry>
+      <entry keyword="from 4.1 to 4.2">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse122.html" title="New and changed in OPL 4.2"/>
+      </entry>
+   </entry>
+   <entry keyword="character data type">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+   </entry>
+   <entry keyword="circuit, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse97.html" title="circuit"/>
+   </entry>
+   <entry keyword="ClockType (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse176.html" title="Changes in existing parameters"/>
+   </entry>
+   <entry keyword="code samples">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse131.html" title="Code samples"/>
+   </entry>
+   <entry keyword="Collect profiling information, option">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+   </entry>
+   <entry keyword="comma, optional">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1027161" title="Types and declarations"/>
+   </entry>
+   <entry keyword="compatibility">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse153.html" title="Compatibility"/>
+      <entry keyword="with CPLEX">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse122.html" title="New and changed in OPL 4.2"/>
+      </entry>
+   </entry>
+   <entry keyword="concurrent optimizer (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="condition number">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse186.html" title="MIP kappa"/>
+   </entry>
+   <entry keyword="conditional constraints">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1023013" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="conditional statements">
+      <entry keyword="migration from 3.7.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse149.html" title="Conditional statements"/>
+      </entry>
+   </entry>
+   <entry keyword="constraint programming">
+      <entry keyword="initial statement in models">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse76.html#section1204220281179" title="Background"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse76.html#section1204225636075" title="Background"/>
+      </entry>
+      <entry keyword="not supported in 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021122" title="No longer supported"/>
+      </entry>
+   </entry>
+   <entry keyword="constraint range expressions">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1022964" title="Operators"/>
+   </entry>
+   <entry keyword="constraints">
+      <entry keyword="changes from 3.x to 4.x and later">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse82.html" title="Constraints"/>
+      </entry>
+      <entry keyword="expanding">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse165.html#oplrelnotes.uss_reln_from37to40.1033112" title="The IDE"/>
+      </entry>
+      <entry keyword="migrating from OPL 3.x to OPL 6.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse91.html" title="Constraints, functions, and operators"/>
+      </entry>
+      <entry keyword="syntax of conditions">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1023013" title="Pattern for procedural function call"/>
+      </entry>
+   </entry>
+   <entry keyword="converting scheduling models">
+      <entry keyword="migrating from OPL 3.x to OPL 6.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse112.html" title="Individual language elements"/>
+      </entry>
+   </entry>
+   <entry keyword="cout, script keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+   </entry>
+   <entry keyword="CPLEX connector for The MathWorks MATLAB">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse197.html" title="New feature: CPLEX connector for The MathWorks MATLAB"/>
+   </entry>
+   <entry keyword="CPLEX engine">
+      <entry keyword="warm start">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+      </entry>
+   </entry>
+   <entry keyword="CPLEX parameters">
+      <entry keyword="setting">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse160.html" title="Setting CPLEX parameters"/>
+      </entry>
+   </entry>
+   <entry keyword="CPLEX, ILOG product">
+      <entry keyword="compatibility">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse122.html" title="New and changed in OPL 4.2"/>
+      </entry>
+   </entry>
+   <entry keyword="CPX_PARAM_CLOCKTYPE (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse176.html" title="Changes in existing parameters"/>
+   </entry>
+   <entry keyword="CPX_PARAM_LPMETHOD (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="CPX_PARAM_MIPKAPPASTATS (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse187.html" title="New parameters"/>
+   </entry>
+   <entry keyword="CPX_PARAM_QPMETHOD (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="CPX_PARAM_ROOTTHREADS (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse187.html" title="New parameters"/>
+   </entry>
+   <entry keyword="CPX_PARAM_STARTALG (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="CPXERR_ILL_DEFINED_PWL">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse200.html" title="New feature for Java or .NET users: piecewise linear numeric expression"/>
+   </entry>
+   <entry keyword="CPXlpopt (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="curly brackets, ILOG Script delimiters">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+   </entry>
+   <entry keyword="data">
+      <entry keyword="data blocks in model files">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse141.html" title="Data block in model files"/>
+      </entry>
+      <entry keyword="declaration">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html" title="Types and declarations"/>
+         <entry keyword="migration aspects">
+            <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse81.html" title="Declaration of data and variables"/>
+         </entry>
+      </entry>
+      <entry keyword="initialization">
+         <entry keyword="migration aspects">
+            <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse83.html" title="Data"/>
+         </entry>
+      </entry>
+      <entry keyword="separated from model">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse136.html" title="Separation between data and model"/>
+      </entry>
+      <entry keyword="workaround to the flat-file syntax">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse140.html" title="Flat files"/>
+      </entry>
+   </entry>
+   <entry keyword="data files">
+      <entry keyword="optional delimiters">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse153.html#oplrelnotes.uss_reln_from37to40.1030264" title="Compatibility"/>
+      </entry>
+   </entry>
+   <entry keyword="data types">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html" title="Types and declarations"/>
+      <entry keyword="character">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+      </entry>
+      <entry keyword="enum">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+      </entry>
+      <entry keyword="not supported">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+      </entry>
+      <entry keyword="strings">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+      </entry>
+      <entry keyword="summary table">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020419" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="databases">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse83.html" title="Data"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse138.html" title="Databases"/>
+      <entry keyword="SQL encryption">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse138.html#oplrelnotes.uss_reln_from37to40.1034314" title="Databases"/>
+      </entry>
+   </entry>
+   <entry keyword="DBMapping">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse138.html#oplrelnotes.uss_reln_from37to40.1022500" title="Databases"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021135" title="No longer supported"/>
+   </entry>
+   <entry keyword="debugging">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1037618" title="The IDE"/>
+   </entry>
+   <entry keyword="declaring">
+      <entry keyword="data">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html" title="Types and declarations"/>
+         <entry keyword="migration aspects">
+            <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse81.html" title="Declaration of data and variables"/>
+         </entry>
+      </entry>
+      <entry keyword="identifiers">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020677" title="Summary tables"/>
+      </entry>
+      <entry keyword="summary tables">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020677" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="Default Options dialog box">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+   </entry>
+   <entry keyword="default search">
+      <entry keyword="testing in migrated OPL 3.x models">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse106.html" title="Testing the default search"/>
+      </entry>
+   </entry>
+   <entry keyword="delimiters">
+      <entry keyword="curly brackets">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+      </entry>
+   </entry>
+   <entry keyword="deprecated in 4.0">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse166.html" title="The libraries"/>
+   </entry>
+   <entry keyword="deprecated methods">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse196.html" title="Conversion notes for Concert Technology users: deprecated methods"/>
+   </entry>
+   <entry keyword="determinism">
+      <entry keyword="barrier optimizer and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse201.html" title="New feature: deterministic parallel barrier algorithm"/>
+      </entry>
+   </entry>
+   <entry keyword="deterministic search (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="Display relaxations, OPL Language option">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+   </entry>
+   <entry keyword="display, script keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+   </entry>
+   <entry keyword="distribute, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse98.html" title="distribute"/>
+   </entry>
+   <entry keyword="div, OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024001" title="Operators"/>
+   </entry>
+   <entry keyword="division">
+      <entry keyword="float/integer">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024001" title="Operators"/>
+      </entry>
+   </entry>
+   <entry keyword="dvar, OPL keyword">
+      <entry keyword="vs. var">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1022766" title="Keywords and other name changes"/>
+      </entry>
+   </entry>
+   <entry keyword="encoding">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299681055028" title="Announcements"/>
+   </entry>
+   <entry keyword="encryption of SQL statements">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse138.html#oplrelnotes.uss_reln_from37to40.1034314" title="Databases"/>
+   </entry>
+   <entry keyword="enum data type">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+   </entry>
+   <entry keyword="enumerated values">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022795" title="Types and declarations"/>
+   </entry>
+   <entry keyword="example">
+      <entry keyword="Bender’s decomposition">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse27.html" title="New example: Bender’s decomposition using lazy constraint and user cut callbacks"/>
+      </entry>
+   </entry>
+   <entry keyword="Excel integration">
+      <entry keyword="using Visual Studio Tools for Office 2003">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse169.html#oplrelnotes.uss_reln_from37to40.1033494" title="The .NET API"/>
+      </entry>
+   </entry>
+   <entry keyword="Excel users">
+      <entry keyword="conversion note">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse180.html" title="Conversion notes for Excel connector users"/>
+      </entry>
+   </entry>
+   <entry keyword="execute, ILOG Script block">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse84.html" title="Scripting"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+      <entry keyword="for mipsearch">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse148.html#oplrelnotes.uss_reln_from37to40.1035176" title="Branching (mipsearch)"/>
+      </entry>
+      <entry keyword="to define search phases">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse107.html#oplrelnotes.uss_reln_migration3to5.1033379" title="Defining search phases"/>
+      </entry>
+   </entry>
+   <entry keyword="expanding constraints">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse165.html#oplrelnotes.uss_reln_from37to40.1033112" title="The IDE"/>
+   </entry>
+   <entry keyword="extension classes">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="flat files">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse140.html" title="Flat files"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1022174" title="No longer supported"/>
+   </entry>
+   <entry keyword="float division">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024001" title="Operators"/>
+   </entry>
+   <entry keyword="float+, OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022825" title="Types and declarations"/>
+   </entry>
+   <entry keyword="floatValue, OPL function">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1029717" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="flow control">
+      <entry keyword="CPLEX warm start">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+      </entry>
+   </entry>
+   <entry keyword="forall, statements">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse165.html#oplrelnotes.uss_reln_from37to40.1033112" title="The IDE"/>
+      <entry keyword="if/then/else">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+      </entry>
+      <entry keyword="LB and UB readable">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+      </entry>
+      <entry keyword="migration">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse99.html" title="forall"/>
+      </entry>
+   </entry>
+   <entry keyword="function calls">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="functions">
+      <entry keyword="migrating from OPL 3.x to OPL 6.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse91.html" title="Constraints, functions, and operators"/>
+      </entry>
+      <entry keyword="migration aspects">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse85.html" title="Functions"/>
+      </entry>
+      <entry keyword="on strings">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1029717" title="Pattern for procedural function call"/>
+      </entry>
+      <entry keyword="summary table">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1021729" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="General Settings dialog box">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+   </entry>
+   <entry keyword="globalization">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299681055028" title="Announcements"/>
+   </entry>
+   <entry keyword="histogram (Python API, release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse188.html" title="New reporting features in Python API of CPLEX"/>
+   </entry>
+   <entry keyword="history of OPL">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse76.html" title="Background"/>
+   </entry>
+   <entry keyword="IBM Information Center">
+      <entry keyword="Accessibility">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse270.html" title="Accessibility in the online IBM Information Center documentation"/>
+      </entry>
+   </entry>
+   <entry keyword="IDE">
+      <entry keyword="changes in 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse165.html" title="The IDE"/>
+      </entry>
+      <entry keyword="changes in 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html" title="The IDE"/>
+      </entry>
+   </entry>
+   <entry keyword="identifiers">
+      <entry keyword="declaration">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020677" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="if-then-else">
+      <entry keyword="in 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1023013" title="Pattern for procedural function call"/>
+      </entry>
+      <entry keyword="in 6.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse100.html" title="if-then-else"/>
+      </entry>
+   </entry>
+   <entry keyword="IloConstraint Script extension class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="ILOG License Manager (ILM)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse175.html" title="Changes in licensing"/>
+   </entry>
+   <entry keyword="ILOG Scheduler">
+      <entry keyword="not supported in 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021122" title="No longer supported"/>
+      </entry>
+   </entry>
+   <entry keyword="ILOG Script">
+      <entry keyword="delimiters, curly brackets">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+      </entry>
+      <entry keyword="new extension classes">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+      </entry>
+      <entry keyword="replacing OPL Script">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse154.html" title="Scripting"/>
+      </entry>
+   </entry>
+   <entry keyword="IloOplCplexBasis Script extension class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="IloOplCplexVectors Script extension class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="IloOplGetEnv Script global function">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="IloOplInputFile Script extension class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="IloOplModel class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse163.html#d0e24958" title="Details of the mulprod scripting example"/>
+   </entry>
+   <entry keyword="IloOplModelDefinition class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse163.html#d0e24958" title="Details of the mulprod scripting example"/>
+   </entry>
+   <entry keyword="IloOplOutputFile Script extension class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+   </entry>
+   <entry keyword="import, ILOG Script keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+   </entry>
+   <entry keyword="incumbent callback">
+      <entry keyword="heuristic solutions">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1301234309679" title="Changes in callbacks"/>
+      </entry>
+      <entry keyword="node solutions">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1301234309679" title="Changes in callbacks"/>
+      </entry>
+   </entry>
+   <entry keyword="indefinite QP">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+   </entry>
+   <entry keyword="initialize sections">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse84.html" title="Scripting"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+   </entry>
+   <entry keyword="Installation">
+      <entry keyword="silent installation">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse268.html" title="Silent installation of CPLEX Optimization Studio"/>
+      </entry>
+      <entry keyword="uninstalling">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse269.html" title="Uninstalling CPLEX Optimization Studio"/>
+      </entry>
+   </entry>
+   <entry keyword="int+, OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022825" title="Types and declarations"/>
+   </entry>
+   <entry keyword="integer division operator">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024001" title="Operators"/>
+   </entry>
+   <entry keyword="interactive input syntax">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021243" title="No longer supported"/>
+   </entry>
+   <entry keyword="intValue function on strings">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1029717" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="iterators code sample">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse131.html" title="Code samples"/>
+   </entry>
+   <entry keyword="Java API">
+      <entry keyword="MPModeler.piecewiseLinear">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse200.html" title="New feature for Java or .NET users: piecewise linear numeric expression"/>
+      </entry>
+   </entry>
+   <entry keyword="kappa">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse186.html" title="MIP kappa"/>
+      <entry keyword="QP and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse23.html" title="Quality report: kappa for QP"/>
+      </entry>
+   </entry>
+   <entry keyword="Karush-Kuhn-Tucker condition">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+   </entry>
+   <entry keyword="keywords">
+      <entry keyword="case">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse149.html" title="Conditional statements"/>
+      </entry>
+      <entry keyword="changes from 3.7.x to 4.x and later">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html" title="Keywords and other name changes"/>
+      </entry>
+      <entry keyword="cout">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+      </entry>
+      <entry keyword="display">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+      </entry>
+      <entry keyword="div">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024001" title="Operators"/>
+      </entry>
+      <entry keyword="execute">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+      </entry>
+      <entry keyword="import">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse156.html" title="Moved to scripting"/>
+      </entry>
+      <entry keyword="mod">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024022" title="Operators"/>
+      </entry>
+      <entry keyword="struct">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020617" title="Summary tables"/>
+      </entry>
+      <entry keyword="summary table">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020617" title="Summary tables"/>
+      </entry>
+      <entry keyword="tuple">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020617" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="language">
+      <entry keyword="changes from 3.7 to 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse137.html" title="Introduction"/>
+      </entry>
+      <entry keyword="changes from 4.0 to 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse126.html" title="Major improvements in OPL 4.1"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+      </entry>
+      <entry keyword="changes from 5.5 to 6.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse62.html" title="Language"/>
+      </entry>
+   </entry>
+   <entry keyword="lazy constraint">
+      <entry keyword="presolve parameters and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse11.html#section1300952675947" title="Changes in callbacks"/>
+      </entry>
+   </entry>
+   <entry keyword="length function on strings">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1029717" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="libraries">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse166.html" title="The libraries"/>
+   </entry>
+   <entry keyword="licensing change">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse175.html" title="Changes in licensing"/>
+   </entry>
+   <entry keyword="limitation">
+      <entry keyword=".NET">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse36.html" title="Limitations of the Microsoft .NET Framework languages API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse207.html" title="Limitations of the Microsoft .NET Framework languages API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse219.html" title="Limitations of the Microsoft .NET Framework languages API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse226.html" title="Limitations of the .NET languages API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse241.html" title="Limitations of the .NET languages API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse257.html" title="Limitations of the .NET languages API"/>
+      </entry>
+      <entry keyword="Java">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse35.html" title="Limitations of the Java API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse206.html" title="Limitations of the Java API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse218.html" title="Limitations of the Java API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse225.html" title="Limitations of the Java API"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse240.html" title="Limitations of the Java API"/>
+      </entry>
+   </entry>
+   <entry keyword="literal strings">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022844" title="Types and declarations"/>
+   </entry>
+   <entry keyword="logical operators">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1022898" title="Operators"/>
+   </entry>
+   <entry keyword="main window">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033402" title="The IDE"/>
+   </entry>
+   <entry keyword="main, ILOG Script statement">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse159.html#oplrelnotes.uss_reln_from37to40.1028450" title="Migrating script statements from OPL 3 to OPL 4"/>
+   </entry>
+   <entry keyword="matchAt, OPL function">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1029717" title="Pattern for procedural function call"/>
+   </entry>
+   <entry keyword="MATLAB users">
+      <entry keyword="conversion notes">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse181.html" title="Conversion notes for MATLAB users"/>
+      </entry>
+      <entry keyword="new functions">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse184.html" title="MATLAB new features"/>
+      </entry>
+   </entry>
+   <entry keyword="memory emphasis (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="Microsoft Solver Foundation (MSF) interface">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse185.html" title="MSF interface"/>
+   </entry>
+   <entry keyword="migrating">
+      <entry keyword="script statements from OPL 3 to OPL 4">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse159.html" title="Migrating script statements from OPL 3 to OPL 4"/>
+      </entry>
+   </entry>
+   <entry keyword="MIP incumbent">
+      <entry keyword="writing to file">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299681048310" title="Announcements"/>
+      </entry>
+   </entry>
+   <entry keyword="MIP kappa">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse186.html" title="MIP kappa"/>
+   </entry>
+   <entry keyword="MIPKappaStats (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse187.html" title="New parameters"/>
+   </entry>
+   <entry keyword="mipsearch">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse148.html" title="Branching (mipsearch)"/>
+   </entry>
+   <entry keyword="mod, OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1024022" title="Operators"/>
+   </entry>
+   <entry keyword="Model Browser">
+      <entry keyword="changes in 4.1">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033248" title="The IDE"/>
+      </entry>
+   </entry>
+   <entry keyword="models">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033304" title="The IDE"/>
+      <entry keyword="migrating from OPL 3.x to OPL 6.x with CP">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse78.html" title="Converting an OPL 4.x non-CP model"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse80.html" title="Converting an OPL 3.x non-CP model"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse89.html" title="Converting an OPL 3.x CP model"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse111.html" title="Converting an OPL 3.x CP Scheduling model"/>
+      </entry>
+      <entry keyword="separated from the data">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse136.html" title="Separation between data and model"/>
+      </entry>
+      <entry keyword="standalone">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033304" title="The IDE"/>
+      </entry>
+   </entry>
+   <entry keyword="mulprod1.osc OPL 3 script file">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse159.html#oplrelnotes.uss_reln_from37to40.1028450" title="Migrating script statements from OPL 3 to OPL 4"/>
+   </entry>
+   <entry keyword="multi-commodity flow (MCF) cuts">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse199.html" title="New feature: multi-commodity flow (MCF) cuts"/>
+   </entry>
+   <entry keyword="nearest, OPL function">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1035904" title="Keywords and other name changes"/>
+   </entry>
+   <entry keyword="new error code">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse200.html" title="New feature for Java or .NET users: piecewise linear numeric expression"/>
+   </entry>
+   <entry keyword="nonconvex QP">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+   </entry>
+   <entry keyword="nonzero count (Python API, release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse188.html" title="New reporting features in Python API of CPLEX"/>
+   </entry>
+   <entry keyword="nonzeros">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299679455283" title="Announcements"/>
+   </entry>
+   <entry keyword="not supported">
+      <entry keyword="in 4.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html" title="No longer supported"/>
+      </entry>
+   </entry>
+   <entry keyword="not, logical operator">
+      <entry keyword="from 3.x to 6.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse101.html" title="not"/>
+      </entry>
+   </entry>
+   <entry keyword="nurses example">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse131.html" title="Code samples"/>
+   </entry>
+   <entry keyword="objective function">
+      <entry keyword="syntax">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse147.html" title="Objectives"/>
+      </entry>
+   </entry>
+   <entry keyword="objectives">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse147.html" title="Objectives"/>
+   </entry>
+   <entry keyword="operators">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html" title="Operators"/>
+      <entry keyword="summary table">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020524" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="OPL Script, replaced with ILOG Script">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse154.html" title="Scripting"/>
+   </entry>
+   <entry keyword="OPLactivity class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLalternativeResource class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLarray class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLbasisStatus class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLchar class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLconstraint class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLdata class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLdiscreteEnergy class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLenum class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLerrorReporter class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLfloat class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLfloatRange class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="oplide command">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse130.html#oplrelnotes.uss_reln_from40to41.1032900" title="Command line options"/>
+   </entry>
+   <entry keyword="OPLint class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLinternalError class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLintRange class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLreservoir class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="oplrun">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse130.html#oplrelnotes.uss_reln_from40to41.1033914" title="Command line options"/>
+      <entry keyword="launching from the IDE">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse65.html#d0e10288" title="oplrun"/>
+      </entry>
+   </entry>
+   <entry keyword="OPLruntimeError class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLscriptSolver class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLsemanticError class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLset class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLsetIterator class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLsolver class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLstateResource class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLstring class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLstruct class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLsyntaxError class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="OPLunaryResource class">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse167.html" title="OPL classes deprecated or moved to Concert"/>
+   </entry>
+   <entry keyword="optional">
+      <entry keyword="comma">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1027161" title="Types and declarations"/>
+      </entry>
+      <entry keyword="semi-colon">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1027141" title="Keywords and other name changes"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse147.html" title="Objectives"/>
+      </entry>
+      <entry keyword="syntax changes">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse87.html" title="Optional"/>
+      </entry>
+   </entry>
+   <entry keyword="options">
+      <entry keyword="Collect profiling information">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+      </entry>
+      <entry keyword="Display relaxations">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033505" title="The IDE"/>
+      </entry>
+   </entry>
+   <entry keyword="parallel">
+      <entry keyword="threads">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse10.html" title="Simplified threading and parallel search"/>
+      </entry>
+   </entry>
+   <entry keyword="parallelism">
+      <entry keyword="threads and">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse10.html" title="Simplified threading and parallel search"/>
+      </entry>
+   </entry>
+   <entry keyword="piecewise linear numeric expression (PWL)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse200.html" title="New feature for Java or .NET users: piecewise linear numeric expression"/>
+   </entry>
+   <entry keyword="port changes">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse195.html" title="Conversion notes for all users: port changes"/>
+   </entry>
+   <entry keyword="positive semi-definite">
+      <entry keyword="non">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+      </entry>
+   </entry>
+   <entry keyword="postprocessing">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse158.html" title="Postprocessing"/>
+   </entry>
+   <entry keyword="predicate, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse102.html" title="predicate"/>
+   </entry>
+   <entry keyword="preprocessing">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html" title="Preprocessing"/>
+   </entry>
+   <entry keyword="profiler.prj example">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse131.html" title="Code samples"/>
+   </entry>
+   <entry keyword="projects">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033304" title="The IDE"/>
+      <entry keyword="executing">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033295" title="The IDE"/>
+      </entry>
+   </entry>
+   <entry keyword="Python API">
+      <entry keyword="new topic in User’s Manual">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse189.html" title="Additional documentation of the Python API"/>
+      </entry>
+      <entry keyword="reporting functions (release notes)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse188.html" title="New reporting features in Python API of CPLEX"/>
+      </entry>
+   </entry>
+   <entry keyword="Python API for CPLEX">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse198.html" title="New feature: CPLEX Python API"/>
+   </entry>
+   <entry keyword="Python users">
+      <entry keyword="conversion note">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse179.html" title="Conversion note for Python users"/>
+      </entry>
+   </entry>
+   <entry keyword="QP">
+      <entry keyword="indefinite">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+      </entry>
+      <entry keyword="kappa quality report">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse23.html" title="Quality report: kappa for QP"/>
+      </entry>
+      <entry keyword="nonconvex">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+      </entry>
+   </entry>
+   <entry keyword="quality metrics (Python API, release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse179.html" title="Conversion note for Python users"/>
+   </entry>
+   <entry keyword="range expressions">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse146.html#oplrelnotes.uss_reln_from37to40.1022964" title="Operators"/>
+   </entry>
+   <entry keyword="ranges">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022814" title="Types and declarations"/>
+      <entry keyword="conversion to a set of integers">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022876" title="Types and declarations"/>
+      </entry>
+   </entry>
+   <entry keyword="release notes">
+      <entry keyword="CPLEX V12.2">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse171.html" title="Release notes for CPLEX V12.2"/>
+      </entry>
+   </entry>
+   <entry keyword="release notes CPLEX V12.3">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse6.html" title="Release notes for CPLEX V12.3"/>
+   </entry>
+   <entry keyword="Remove application">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse269.html" title="Uninstalling CPLEX Optimization Studio"/>
+   </entry>
+   <entry keyword="reporting function">
+      <entry keyword="histograms of nonzero counts (Python API)">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse188.html" title="New reporting features in Python API of CPLEX"/>
+      </entry>
+   </entry>
+   <entry keyword="RootAlg (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="RootThreads (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse187.html" title="New parameters"/>
+   </entry>
+   <entry keyword="round, OPL function">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1035904" title="Keywords and other name changes"/>
+   </entry>
+   <entry keyword="samples">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse131.html" title="Code samples"/>
+   </entry>
+   <entry keyword="Scheduler">
+      <entry keyword="not supported in 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021122" title="No longer supported"/>
+      </entry>
+   </entry>
+   <entry keyword="scheduling activities, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse113.html" title="Activities and interval variables"/>
+   </entry>
+   <entry keyword="scheduling alternate internal variables, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse120.html" title="Alternative interval variables"/>
+   </entry>
+   <entry keyword="scheduling breaks, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse115.html" title="Breaks and interval variable intensities"/>
+   </entry>
+   <entry keyword="scheduling cumulative resources, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse118.html" title="Cumulative resources"/>
+   </entry>
+   <entry keyword="scheduling disjunctive, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse117.html" title="Disjunctive resources"/>
+   </entry>
+   <entry keyword="scheduling internal variable intensities, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse115.html" title="Breaks and interval variable intensities"/>
+   </entry>
+   <entry keyword="scheduling internal variables, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse113.html" title="Activities and interval variables"/>
+   </entry>
+   <entry keyword="scheduling language elements">
+      <entry keyword="migrating from OPL 3.x to OPL 6.x">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse112.html" title="Individual language elements"/>
+      </entry>
+   </entry>
+   <entry keyword="scheduling precedence constraints, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse114.html" title="Precedence constraints"/>
+   </entry>
+   <entry keyword="scheduling state resources, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse119.html" title="State resources"/>
+   </entry>
+   <entry keyword="scheduling transition times, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse116.html" title="Transition times"/>
+   </entry>
+   <entry keyword="scripting">
+      <entry keyword="example">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse162.html" title="Migrating the mulprod scripting example - summary"/>
+      </entry>
+      <entry keyword="ILOG Script extension classes">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse128.html" title="ILOG Script extension classes for OPL"/>
+      </entry>
+      <entry keyword="language">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse154.html" title="Scripting"/>
+      </entry>
+      <entry keyword="migrating statements from OPL 3 to OPL 4 and later">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse159.html" title="Migrating script statements from OPL 3 to OPL 4"/>
+      </entry>
+      <entry keyword="migration aspects">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse84.html" title="Scripting"/>
+      </entry>
+   </entry>
+   <entry keyword="search in CP">
+      <entry keyword="general">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse76.html" title="Background"/>
+      </entry>
+      <entry keyword="reducing the search space">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse107.html#oplrelnotes.uss_reln_migration3to5.1032498" title="Defining search phases"/>
+      </entry>
+   </entry>
+   <entry keyword="search phases">
+      <entry keyword="declaring in migrated OPL 3.x models">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse105.html" title="Declaring search phases"/>
+      </entry>
+      <entry keyword="defining">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse107.html" title="Defining search phases"/>
+      </entry>
+      <entry keyword="with selectors">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse107.html#oplrelnotes.uss_reln_migration3to5.1032498" title="Defining search phases"/>
+      </entry>
+   </entry>
+   <entry keyword="search space">
+      <entry keyword="size">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse107.html#oplrelnotes.uss_reln_migration3to5.1032498" title="Defining search phases"/>
+      </entry>
+   </entry>
+   <entry keyword="selectors, in search phases">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse107.html#oplrelnotes.uss_reln_migration3to5.1032498" title="Defining search phases"/>
+   </entry>
+   <entry keyword="semi-colon">
+      <entry keyword="optional/mandatory">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse143.html" title="The semi-colon"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1027141" title="Keywords and other name changes"/>
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse147.html" title="Objectives"/>
+      </entry>
+   </entry>
+   <entry keyword="sequence, migration">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse103.html" title="sequence"/>
+   </entry>
+   <entry keyword="sets">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse150.html#oplrelnotes.uss_reln_from37to40.1022989" title="Pattern for procedural function call"/>
+      <entry keyword="initializing">
+         <entry keyword="from an array">
+            <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse157.html#oplrelnotes.uss_reln_from37to40.1022707" title="Preprocessing"/>
+         </entry>
+      </entry>
+   </entry>
+   <entry keyword="Silent installation">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse268.html" title="Silent installation of CPLEX Optimization Studio"/>
+   </entry>
+   <entry keyword="solution status">
+      <entry keyword="indefinite QP">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+      </entry>
+      <entry keyword="nonconvex QP">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299678943018" title="Announcements"/>
+      </entry>
+   </entry>
+   <entry keyword="solve method (Excel connector, release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse180.html" title="Conversion notes for Excel connector users"/>
+   </entry>
+   <entry keyword="Solver, no support">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021122" title="No longer supported"/>
+   </entry>
+   <entry keyword="spreadsheets">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse83.html" title="Data"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse139.html" title="Creating a connection to a spreadsheets"/>
+   </entry>
+   <entry keyword="SQL encryption">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse138.html#oplrelnotes.uss_reln_from37to40.1034314" title="Databases"/>
+   </entry>
+   <entry keyword="standalone models">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033304" title="The IDE"/>
+   </entry>
+   <entry keyword="Start window">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse129.html#oplrelnotes.uss_reln_from40to41.1033278" title="The IDE"/>
+   </entry>
+   <entry keyword="string comparison">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse12.html" title="String comparisons: impact of encoding on existing applications"/>
+   </entry>
+   <entry keyword="string data type">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021144" title="No longer supported"/>
+   </entry>
+   <entry keyword="struct, deprecated OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1022780" title="Keywords and other name changes"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020617" title="Summary tables"/>
+   </entry>
+   <entry keyword="subject to">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse147.html" title="Objectives"/>
+   </entry>
+   <entry keyword="syntax">
+      <entry keyword="summary of changes in 4.0">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020801" title="Summary tables"/>
+      </entry>
+   </entry>
+   <entry keyword="temporal relaxation">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse246.html" title="Addition of the temporal relaxation parameter"/>
+   </entry>
+   <entry keyword="thisOplModel, implicit model">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse163.html#d0e24958" title="Details of the mulprod scripting example"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse164.html#oplrelnotes.uss_reln_from37to40.1037929" title="Recap: mulprod1.osc vs. mulprod_main.mod"/>
+   </entry>
+   <entry keyword="thread (release notes)">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" title="Changes in behavior of LP concurrent optimizer"/>
+   </entry>
+   <entry keyword="time mode">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse261.html" title="Addition of the time mode parameter"/>
+   </entry>
+   <entry keyword="tuple, OPL keyword">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1022780" title="Keywords and other name changes"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse151.html#oplrelnotes.uss_reln_from37to40.1020617" title="Summary tables"/>
+   </entry>
+   <entry keyword="Uninstall">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse269.html" title="Uninstalling CPLEX Optimization Studio"/>
+   </entry>
+   <entry keyword="user interaction syntax">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse152.html#oplrelnotes.uss_reln_from37to40.1021243" title="No longer supported"/>
+   </entry>
+   <entry keyword="var, ILOG Script keyword">
+      <entry keyword="vs. dvar">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse144.html#oplrelnotes.uss_reln_from37to40.1022766" title="Keywords and other name changes"/>
+      </entry>
+   </entry>
+   <entry keyword="variables">
+      <entry keyword="Boolean">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse145.html#oplrelnotes.uss_reln_from37to40.1022838" title="Types and declarations"/>
+      </entry>
+      <entry keyword="migration quick reference">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse81.html" title="Declaration of data and variables"/>
+      </entry>
+   </entry>
+   <entry keyword="Visual Studio Tools for Office 2003">
+      <entry keyword="integrating OPL with Excel">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse169.html#oplrelnotes.uss_reln_from37to40.1033494" title="The .NET API"/>
+      </entry>
+   </entry>
+   <entry keyword="warm start">
+      <entry keyword="in flow control scripting">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse127.html" title="The language"/>
+      </entry>
+   </entry>
+   <entry keyword="Windows Server 2003">
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse58.html#d0e8931" title="New and changed in OPL 6.0.1"/>
+   </entry>
+   <entry keyword="writing">
+      <entry keyword="MIP incumbent to file">
+         <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse7.html#section1299681048310" title="Announcements"/>
+      </entry>
+   </entry>
+</index>

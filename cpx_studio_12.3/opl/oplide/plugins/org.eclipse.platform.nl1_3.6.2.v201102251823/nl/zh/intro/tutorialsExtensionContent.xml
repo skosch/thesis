@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+  <!-- Extension to the SDK Tutorials Page. -->
+  <extensionContent id="org.eclipse.team" name="小组/CVS" alt-style="css/tutorials.properties" style="css/tutorials.css" path="tutorials/@">
+    <group label="小组/CVS" id="team" style-id="content-group">
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.checkout" label="检出 CVS 项目" id="cvs_checkout" style-id="content-link">
+        <text>了解如何连接至 CVS 存储库并检出项目。</text>
+      </link>
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.merge" label="合并 CVS 分支" id="cvs_merge" style-id="content-link">
+        <text>遵循这些步骤以将更改从一个 CVS 分支合并至另一 CVS 分支。</text>
+      </link>
+    </group>
+  </extensionContent>
+</introContent>

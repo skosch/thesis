@@ -1,0 +1,14 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: A7gT1By4aKHwOIopJvWQwcQGGuk=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: dcBJDUTr8TucAsssG59p96FMh7I=
+
+Name: lib/eclipse-chart-runtime.jar
+SHA1-Digest: /vQtEHBylZjWa8LvZy43xg/Yljw=
+
+Name: ilog/views/eclipse/chart/runtime/ChartRuntimePlugin.class
+SHA1-Digest: MwBvSjbvFdpnhDKe+sLLchqxCJs=
+
+Name: plugin.xml
+SHA1-Digest: DNa8T6da+W0bN6I28GqDr1PIjU8=
+

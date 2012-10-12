@@ -1,0 +1,111 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><title>Using CPLEX for MATLAB</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="doc.css"/><script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script></head><body><div class="General"><div class="header"><div class="content"><h1 class="heading">Using CPLEX for MATLAB</h1></div></div><div class="content">
+
+
+
+<div class="descriptiveTopicContent">
+<div class="para">IBM® ILOG® CPLEX® Optimizers provides
+a tool for solving optimization, or mathematical programming, problems.</div>
+<div class="para">The most basic mathematical programming problem is commonly
+referred to as Linear Programming (LP) problem. The basic form of
+an LP problem is: </div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><tbody>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">Maximize (or Minimize)</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"> <code class="code">f*x</code></div> </td>
+</tr>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">subject to</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"><code class="code">Aeq*x = beq</code></div><div class="para"><code class="code">Aineq*x &lt;=
+bineq</code></div> </td>
+</tr>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">with these bounds</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"><code class="code">l &lt;= x &lt;= u</code></div> </td>
+</tr>
+</tbody></table>
+<div class="para">where <code class="code">Aeq</code> and <code class="code">Aineq</code> are
+matrices, <code class="code">f</code>, <code class="code">beq</code>, <code class="code">bineq</code>, <code class="code">l</code> and <code class="code">u</code> are
+vectors such that the upper bounds <code class="code">u(i)</code> and
+lower bounds <code class="code">l(i)</code> may be positive infinity,
+negative infinity, or any real number. Both sparse and dense format
+can be used in all places where matrices/vectors are used.</div>
+<div class="para"> The elements of data you provide as input for this LP
+problem are: </div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><tbody>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">Objective function coefficients</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"> <code class="code"> f</code></div> </td>
+</tr>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">Constraint coefficients</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"><code class="code"> Aeq</code></div><div class="para"><code class="code"> Aineq</code></div> </td>
+</tr>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">Righthand sides</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"><code class="code"> beq</code> </div><div class="para"><code class="code"> bineq</code></div> </td>
+</tr>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">Upper and lower bounds</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"><code class="code"> u</code></div><div class="para"><code class="code"> l</code></div> </td>
+</tr>
+</tbody></table>
+<div class="para">The optimal solution that CPLEX computes and returns
+is: </div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><tbody>
+<tr valign="top">
+<td rowspan="1" colspan="1"> <div class="para">Variables</div> </td>
+<td rowspan="1" colspan="1"> <div class="para"> <code class="code">x</code> <span class="italics"> </span> </div> </td>
+</tr>
+</tbody></table>
+<div class="para">CPLEX for MATLAB® can also solve several extensions
+to LP:</div>
+<div class="itemizedlist"><ul class="itemizedlist"><li class="itemizedlistItem"><div class="para">Quadratic Programming (QP) problems,
+where the LP objective function is expanded to include quadratic terms.</div>
+</li><li class="itemizedlistItem"><div class="para">Quadratically Constrained Programming
+(QCP) problems that include quadratic terms among the constraints.
+In fact, CPLEX can solve Second Order Cone Programming (SOCP) problems.</div>
+</li><li class="itemizedlistItem"><div class="para">Mixed Integer Programming (MIP) problems,
+where any or all of the LP, QP, or QCP variables are further restricted
+to take integer values in the optimal solution and where MIP itself
+is extended to include constructs like Special Ordered Sets (SOS),
+semi-continuous variables, and indicator variables.</div>
+</li><li class="itemizedlistItem"><div class="para">Least Squares (LSQ) problems, where
+the objective is to minimize a norm. The problem can be constrained
+linearly or quadratically, and the variables may be restricted to
+take integer values in the solution.</div></li></ul></div>
+<div class="para">The standard MATLAB vector and matrix format is used
+for the elements of data that you need to provide. For example, the
+CPLEX for MATLAB Toolbox function <code class="code">cplexlp</code> solves
+the problem specified by</div>
+<pre class="programlisting">   min      f*x 
+   st.      Aineq*x &lt;= bineq 
+            Aeq*x    = beq
+            lb &lt;= x &lt;= ub
+ </pre>
+<div class="para">where <code class="code">f</code>, <code class="code">bineq</code>, <code class="code">beq</code>, <code class="code">lb</code>,
+and <code class="code">ub</code> are MATLAB vectors, and <code class="code">Aineq</code> and <code class="code">Aeq</code> are
+MATLAB matrices. </div>
+<div class="para">The vector <code class="code">x</code> returned by the
+function call</div>
+<pre class="programlisting">x = cplexlp(f,Aineq,beq,Aeq,beq,lb,ub)</pre>
+<div class="para">contains the optimal solution to the specified linear
+programming problem.</div>
+<div class="para">Provided in CPLEX for MATLAB is both a toolbox of functions
+and a class API. The toolbox contains functions for solving optimization
+problems,  where the input matrices are provided to the function and
+results returned. With the class API, objects can be created, and
+those objects carry a state.  </div>
+<div class="itemizedlist"><div class="itemizedlistIntro">
+<div class="para">The benefits of using the Cplex class API include the
+ability to:</div>
+</div><ul class="itemizedlist"><li class="itemizedlistItem"><div class="para">build up a model by manipulating a Cplex
+object.</div></li><li class="itemizedlistItem"><div class="para">use computation methods such as <code class="code">Cplex.solve()</code> and <code class="code">Cplex.refineConflict()</code> that
+modify the object so results can be queried as needed.</div>
+</li><li class="itemizedlistItem"><div class="para">perform restarts after manipulation.</div>
+</li><li class="itemizedlistItem"><div class="para">attach an output parser, a GUI with
+stop buttons, and other controls.</div></li></ul></div>
+</div>
+<div class="eclipseRelatedLinks"><div class="eclipseRelatedLinksLabel">Current section</div><ul class="eclipseRelatedLinks"><li><a href="cplex_matlab3.html" class="bluelink">Getting started with CPLEX for MATLAB</a></li></ul></div></div><div class="footer"><div class="content"><div class="navigation"><a href="cplex_matlab6.html" class="navigation"><span class="previous">PREVIOUS</span></a><span class="separator">&#160;&#160;</span><a href="cplex_matlab8.html" class="navigation"><span class="next">NEXT</span></a></div><div class="copyright">&#169; Copyright IBM Corp. 1987, 2011. <a href="cplex_matlab2.html" class="navigation"><span class="legalterms">Legal Terms</span></a></div></div></div></div></body></html>

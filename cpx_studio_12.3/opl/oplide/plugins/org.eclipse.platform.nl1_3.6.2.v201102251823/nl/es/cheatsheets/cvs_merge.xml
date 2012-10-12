@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="Fusionar ramas de CVS">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      Esta hoja de apuntes muestra los pasos para fusionar cambios de una rama
+      de CVS en otra o en HEAD. Si necesita ayuda en cualquier paso, pulse el
+      icono (?) de la derecha.
+    </description>
+  </intro>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Determinar la información de rama y versión">
+    <description>
+      El primer paso consiste en decidir <b>qué</b> dos ramas se fusionarán,
+      en qué <b>versión</b> se ramificó el contenido y cuál será la rama de
+      <b>destino</b> (dónde irá el resultado de la fusión.)
+      Cuando tenga esta información, podrá pasar al paso siguiente.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm"
+      title="Reservar el proyecto">
+    <description>
+      Antes de fusionar, debe <b>reservar</b> el proyecto que desea fusionar
+      y llevarlo a su espacio de trabajo. Puede hacer esto a través del asistente
+      de importación o añadiendo su repositorio en la perspectiva Exploración de
+      repositorio CVS o puede pulsar el botón (?) para obtener ayuda.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-103.htm"
+      title="Cargar el destino en el espacio de trabajo">
+    <description>
+      En el navegador, pulse con el botón derecho sobre el proyecto y seleccione
+      Sustituir por &gt; Otra rama o versión. Seleccione la rama de destino. Esto cargará el contenido más reciente en el espacio de trabajo.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Fusionar detalles">
+    <description>
+      En el navegador, pulse con el botón derecho sobre el proyecto, seleccione
+      <b>Equipo</b> &gt; <b>Fusionar</b> y complete los pasos del asistente. En este asistente puede especificar los detalles de la fusión.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Trabajar con el editor de fusiones">
+    <description>
+      Fusione los cambios manualmente en el editor de fusiones. En este paso se
+      cargan los cambios necesarios en el espacio de trabajo. Una vez fusionados
+      todos los cambios y el resultado sea satisfactorio, vaya al paso siguiente.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-114.htm"
+      title="Comprometer los cambios">
+    <description>
+      Pulse con el botón derecho sobre el proyecto, seleccione <b>Equipo</b> &gt; <b>Sincronizar
+      con repositorio</b> y comprometa todos los cambios con el repositorio. Este paso finaliza
+      la transferencia de los cambios del espacio de trabajo al repositorio de CVS y finaliza
+      la fusión.
+    </description>
+  </item>
+
+</cheatsheet>

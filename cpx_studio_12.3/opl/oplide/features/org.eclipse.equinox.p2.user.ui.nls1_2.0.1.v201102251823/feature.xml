@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.equinox.p2.user.ui.nls1" label="%featureName" provider-name="%providerName" version="2.0.1.v201102251823">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>%copyright</copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.director.nl1" unpack="false" version="2.0.3.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.core.nl1" unpack="false" version="2.0.3.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.engine.nl1" unpack="false" version="2.0.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.jarprocessor.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.metadata.nl1" unpack="false" version="2.0.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.metadata.repository.nl1" unpack="false" version="1.1.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.artifact.repository.nl1" unpack="false" version="1.1.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.touchpoint.eclipse.nl1" unpack="false" version="2.0.3.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.touchpoint.natives.nl1" unpack="false" version="1.0.201.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.frameworkadmin.nl1" unpack="false" version="2.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.frameworkadmin.equinox.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.console.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.simpleconfigurator.manipulator.nl1" unpack="false" version="2.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.ui.nl1" unpack="false" version="2.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.ui.sdk.nl1" unpack="false" version="1.0.100.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.ui.sdk.scheduler.nl1" unpack="false" version="1.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.updatechecker.nl1" unpack="false" version="1.1.101.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.garbagecollector.nl1" unpack="false" version="1.0.100.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.directorywatcher.nl1" unpack="false" version="1.0.203.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.reconciler.dropins.nl1" unpack="false" version="1.1.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.metadata.generator.nl1" unpack="false" version="1.0.202.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.updatesite.nl1" unpack="false" version="1.0.201.v201102251823"></plugin>
+
+   
+
+   
+
+   <plugin fragment="true" id="org.eclipse.equinox.security.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.security.ui.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.extensionlocation.nl1" unpack="false" version="1.2.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.director.app.nl1" unpack="false" version="1.0.201.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.publisher.nl1" unpack="false" version="1.1.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.repository.tools.nl1" unpack="false" version="2.0.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.repository.nl1" unpack="false" version="2.0.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.nl1" unpack="false" version="3.1.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.filetransfer.nl1" unpack="false" version="4.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.identity.nl1" unpack="false" version="3.1.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.provider.filetransfer.nl1" unpack="false" version="3.1.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.provider.filetransfer.ssl.nl1" unpack="false" version="1.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.provider.filetransfer.httpclient.nl1" unpack="false" version="4.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.provider.filetransfer.httpclient.ssl.nl1" unpack="false" version="1.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ecf.ssl.nl1" unpack="false" version="1.0.100.v201102251823"></plugin>
+
+   
+
+   
+
+   
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.operations.nl1" unpack="false" version="2.0.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.p2.ql.nl1" unpack="false" version="2.0.0.v201102251823"></plugin>
+
+</feature>

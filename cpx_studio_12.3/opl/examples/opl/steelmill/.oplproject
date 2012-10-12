@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project>
+	<version>1.0</version>
+	<description>An inventory matching problem, Constraint Programming</description>
+	<configs>
+		<config category="opl" default="true" name="Basic Configuration">
+			<ref type="data" name="steelmill.dat">
+			</ref>
+			<ref type="model" name="steelmill.mod">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

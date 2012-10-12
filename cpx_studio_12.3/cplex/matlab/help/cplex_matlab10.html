@@ -1,0 +1,197 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><title>Cplex Class API</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="doc.css"/><script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script></head><body><div class="General"><div class="header"><div class="content"><h1 class="heading">Cplex Class API</h1></div></div><div class="content">
+
+
+<div class="descriptiveTopicContent">
+<div class="para">While the CPLEX® for MATLAB® Toolbox functions
+provide the ability to solve a multitude of mathematical programming
+problems, the toolbox design does not support restart. To enable users
+to use decomposition algorithms, the Cplex Class API is also provided
+in CPLEX for MATLAB. </div>
+<div class="para">The Cplex class stores the model and provides methods
+for the solution, analysis, manipulation and reading/writing of the
+model file. All of the data associated with the problem is stored
+in the properties of a Cplex object. These class properties are standard
+MATLAB data structures and can be manipulated directly within MATLAB.
+However, modifying the problem using methods provided in the Cplex
+class enforces consistency, such as ensuring that vectors are of the
+proper length.</div>
+<div class="para">The documentation of the Cplex class provides an introduction
+of properties and methods of the Cplex class in more detail. </div>
+<div class="para">The properties of the Cplex class include:     </div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><colgroup align="left" span="1">
+<col span="1"/>
+<col span="1"/></colgroup><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Cplex.Model</td>
+<td rowspan="1" colspan="1">stores the data of the model </td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.Solution</td>
+<td rowspan="1" colspan="1">stores the solution of the model</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.Param</td>
+<td rowspan="1" colspan="1">stores the parameters (options) of the model</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.Start</td>
+<td rowspan="1" colspan="1">stores the start of the LP model</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.MipStart</td>
+<td rowspan="1" colspan="1">stores the start of the MIP model</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.InfoCallback</td>
+<td rowspan="1" colspan="1">pointer to an informational callback</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.Conflict</td>
+<td rowspan="1" colspan="1">stores the conflict information of a conflicted model</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.Order</td>
+<td rowspan="1" colspan="1">stores the priority order information</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.DisplayFunc</td>
+<td rowspan="1" colspan="1">pointer to a function which provides control of display
+of output</td>
+</tr>
+</tbody></table>
+<div class="para">The following informative methods are provided:</div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><colgroup align="left" span="1">
+<col span="1"/>
+<col span="1"/></colgroup><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Cplex.getVersion</td>
+<td rowspan="1" colspan="1">returns the CPLEX version</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.getProbType</td>
+<td rowspan="1" colspan="1">returns the problem type of the model</td>
+</tr>
+</tbody></table>
+<div class="para">The following methods are provided for reading from and
+writing to files:</div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><colgroup align="left" span="1">
+<col span="1"/></colgroup><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Cplex.readModel</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.writeModel</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.readBasis</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.writeBasis</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.readMipStart</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.writeMipStart</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.readParam</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.writeParam</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.writeConflict</td>
+</tr>
+</tbody></table>
+<div class="para">The following methods are provided to solve and analyze
+the model, solution and mipstart:</div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><colgroup align="left" span="1">
+<col span="1"/></colgroup><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Cplex.solve</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.populate</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.feasOpt</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.refineConflict</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.refineMipStartConflict</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.terminate</td>
+</tr>
+</tbody></table>
+<div class="para">The following methods are provided to solve, set and
+query parameters:</div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><colgroup align="left" span="1">
+<col span="1"/></colgroup><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Cplex.tuneParam</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.setDefault</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.getChgParam</td>
+</tr>
+</tbody></table>
+<div class="para">Although a model can be modified by manipulating the
+MATLAB data structures directly, the following functions are provided
+to make modifications easier:</div>
+<table border="0" cellpadding="5" cellspacing="0" class="NoBorder"><colgroup align="left" span="1">
+<col span="1"/></colgroup><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Cplex.addCols</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.addRows</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.delCols</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.delRows</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.addSOSs</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.addQCs</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Cplex.addIndicators</td>
+</tr>
+</tbody></table>
+<div class="section">
+<h2 class="heading">Setting and querying parameters in the CPLEX Class API</h2>
+<div class="sectionContent">
+<div class="para">To set parameters using the CPLEX Class API, you set
+the current values of the fields in the <code class="code">Param</code> structure
+property of the Cplex class. For example, to set a node limit of 400
+and instruct CPLEX to use traditional branch and cut style search:</div>
+<pre class="programlisting">cpx.Param.mip.limits.nodes.Cur=400; 
+cpx.Param.mip.strategy.search.Cur=1;</pre>
+<div class="tip"><div class="tipLabel">Tip</div>
+<div class="para">If you are already familiar with the names of parameters
+in the Interactive Optimizer, then you quickly recognize names of
+parameters in CPLEX for MATLAB. For example, the command “<code class="code">set
+mip limits nodes 1</code>” in the Interactive Optimizer
+corresponds to “<code class="code">cpx.Param.mip.limits.nodes.Cur
+= 1</code>;” in the CPLEX Class API where <code class="code">cpx</code> is
+an instance of the Cplex class.</div>
+<div class="para">To assist in setting parameters, auto-completion of parameter
+names is available in the MATLAB environment.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="eclipseRelatedLinks"><div class="eclipseRelatedLinksLabel">Current section</div><ul class="eclipseRelatedLinks"><li><a href="cplex_matlab8.html" class="bluelink">Overview of the CPLEX for MATLAB APIs</a></li></ul></div></div><div class="footer"><div class="content"><div class="navigation"><a href="cplex_matlab9.html" class="navigation"><span class="previous">PREVIOUS</span></a><span class="separator">&#160;&#160;</span><a href="cplex_matlab11.html" class="navigation"><span class="next">NEXT</span></a></div><div class="copyright">&#169; Copyright IBM Corp. 1987, 2011. <a href="cplex_matlab2.html" class="navigation"><span class="legalterms">Legal Terms</span></a></div></div></div></div></body></html>

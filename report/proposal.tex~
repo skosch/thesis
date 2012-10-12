@@ -1,0 +1,112 @@
+\documentclass[12pt, landscape]{article}
+\usepackage{graphicx}
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.3in, right=1.6in,top=1.0in, bottom=1.2in]{geometry}
+\usepackage[no-math]{fontspec}
+
+\usepackage{sectsty}
+\usepackage{multicol,scalefnt}
+\usepackage{amsmath, amssymb, amsfonts,  titlesec}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage{fancyhdr,  booktabs, multirow}
+\usepackage[font=small,format=plain,labelfont=it,up,textfont=it,up]{caption}
+\usepackage{listings}
+
+\usepackage{enumitem}
+
+\newlist{alist}{itemize}{1}
+\setlist[alist]{label=--,labelindent=2in,leftmargin=9pt,labelsep=6pt, itemsep=-4pt}
+
+%========= FONT SPECS ============
+\tolerance 8000
+
+\defaultfontfeatures{Mapping=tex-text, Ligatures=Common}
+
+\renewcommand\refname{References} % this sets the name of
+\def\labelitemi{--}
+
+\def\sansfont{\fontspec[Script=Latin,LetterSpace=2.6, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansitalicfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=1.5, FakeSlant=0.2, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+
+\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91]{Inconsolata}}
+
+\renewcommand{\texttt}[1]{{\monofont #1}}
+
+\lstset{
+aboveskip=2\medskipamount, belowskip=2\medskipamount,
+basicstyle=\monofont,
+language=python,
+numbers=left, numberstyle=\tiny,  numbersep=9pt,
+xleftmargin=.4in, frame=l, xrightmargin=.25in
+}
+
+%\titleformat{\section}{\huge\sansnormalfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
+\titleformat{\section}{\fontsize{18pt}{21pt}\selectfont\sansfont}{}{0em}{}
+\titleformat{\subsection}{\fontsize{13pt}{19pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\quad}}{0em}{}
+
+
+\fancyhead[LO, LE]{\sansfont\small ESC499 Proposal -- S. Kosch \normalsize}
+\fancyhead[RO, RE]{\sansfont\small \nouppercase\leftmark}
+\fancyfoot[C]{\sansfont\thepage}
+
+\begin{document}
+\fontsize{12pt}{16pt}\selectfont
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+\baselineskip=16.8pt plus 0pt
+\frenchspacing
+\noindent{\bfseries ESC499 Proposal -- Sebastian Kosch, 997 241 024}
+\section*{\Large\sansfont An improved CP/MIP formulation\\for batch processing of non-identical jobs}
+\vskip 1.2em
+
+Efficiency in manufacturing often boils down to managing limited resources in clever ways in order to perform the given jobs as quickly as possible. One such type of problem, 1|\textit{p-batch; n$<$b; non-identical}|$L_{max}$, is concerned with jobs of non-identical sizes, processing times and due dates that are to be assigned to a resource (e.g. an oven) in batches. The following constraints then apply:
+\vspace{ -0.6em}
+\begin{alist}
+\item{batch sizes must not exceed the resource's capacity,}
+\item{each batch's processing time equals that of the greatest of all the processing times of its jobs, and}
+\item{each batch's lateness $L$ is the difference between its completion time and the the earliest of all the due dates of its jobs.}
+\end{alist}
+\vspace{ -0.4em}
+The objective is to batch jobs together such as to minimize the greatest individual batch lateness $L_{max}$. 
+
+\subsection{Existing literature}
+This problem was recently examined by Malapert \cite{Malapert}, who suggested a global constraint approach implemented as three filtering rules applied each time a job is assigned to a batch. The result is then contrasted with a simple mixed integer programming model, which takes considerably longer to solve.
+
+\subsection{Research plan}
+Constraint programming and Integer Programming alike are viable frameworks to model and solve these types of problems. The MIP formulation given by Malapert can likely be improved by adding additional, tighter constraints to shrink the search space.
+
+I will use Ilog Cplex and CP-Optimizer (2012) to model the given problem in MIP and CP. I will then add additional constraints, based on similar problems, to reduce the size of the solution space, and examine how the solver deals with given example problems to further keep it from going down wrong paths.
+
+My thesis document will include an introductory overview over CP and MIP with its basic solution techniques, and rigorous explanations of the applicability of my constraints.
+
+Ultimately, the goal of my research is to find a simple CP/MIP formulation of the problem that matches or exceeds the performance of Malapert’s global constraint approach.
+
+\begin{thebibliography}{5}
+\bibitem{Malapert} Malapert, A., Guéret C., Rousseau L.M.: A constraint programming approach for a batch processing problem with non-identical job sizes. European Journal of Operational Research 221, 533-545 (2012)
+\end{thebibliography}
+ 
+
+- A sentence about why I think this can be sped up:
+1. Additional bounds can be introduced.
+2. Constraint programming might help.
+- What are the sub-problems I'm going to address
+- What is the metric/the independent variables?
+- What doesn't the research cover?
+
+
+
+Literature Review:
+- Gives credits to those that have laid groundwork
+- Demonstrates my understanding of the problem
+- Shows my ability to evaluate information
+- Convinces the reader that I'm filling an important gap
+- Relies on influential, primary papers
+
+
+
+
+
+
+
+\end{document}
+

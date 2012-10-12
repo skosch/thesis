@@ -1,0 +1,142 @@
+/* Document Defaults */
+body, p, ul, dl, dt, dd {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal; color: #000000; letter-spacing: normal; text-align: left; word-spacing: normal}
+table, td {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 10pt; font-style: normal; font-weight: normal}
+th {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 10pt; font-style: normal; font-weight: bold; color: #ffffff}
+code {font-family: Courier, monospace; font-size: 10pt}
+pre {font-family: Courier, monospace; font-size: 10pt}
+a:active {color: #0000cc}
+a:hover {color: #cc0033}
+a:link {color: #0066ff}
+a:visited {color: #9966ff}
+
+/* Paragraph Styles */
+.Default {font-size: 10pt}
+.AbstractMethod {font-family: Courier, monospace; font-size: 10pt}
+.Body {font-size: 10pt}
+.BulletedList2P {font-size: 10pt}
+.BulletedListP {font-size: 10pt}
+.Callout {font-size: 8pt}
+.CellBody {font-size: 10pt}
+.CellHeading {text-align: center; font-size: 10pt; font-weight: bold}
+.CodeTable {font-family: Courier, monospace; font-size: 10pt}
+.CodeTableInd1 {font-family: Courier, monospace; font-size: 10pt}
+.CodeTableInd2 {font-family: Courier, monospace; font-size: 10pt}
+.Copyright {font-family: Verdana, Helvetica, Arial, sans-serif; font-size:8pt}
+.Definition {font-size: 10pt; margin-left: 140pt; margin-top: -26pt}
+.DefinitionContinued {font-size: 10pt; margin-left: 140pt}
+.DefinitionTerm {font-size: 10pt; font-weight: bold; color: #000080;
+                 margin-top: 15pt; width: 120pt}
+.DefinitionBulletedListP {font-size: 10pt; margin-left: 125pt}
+.Footnote {font-size: 8pt; margin-left: 12pt; margin-top: -8pt}
+.Header2SplitLeft {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 15pt;
+                   font-weight: bold; margin-top: 20px; color: #000080}
+.Header3 {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 12pt; 
+          font-weight: bold; color: #000080}
+.Header3Anchor {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 12pt;
+                font-weight: bold; color: #000080}
+.Header3Center {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 12pt;
+                font-weight: bold; color: #000080; text-align: center}
+.Header3SplitLeft {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 12pt;
+                   font-weight: bold; margin-top: 20px; color: #000080}
+.Header4 {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 10pt; 
+          font-weight: bold; color: #000080}
+.Header5 {font-family: Verdana, Helvetica, Arial, sans-serif; font-size: 10pt;
+          font-weight: bold; font-style: italic; color: #000080}
+.Ignore { }
+.Index { }
+.Index2 { }
+.Index3 { }
+.Index4 { }
+.IndexLetter { font-size: 16pt; color: #000080}
+.Note {font-weight: bold; font-size: 9pt}
+.NoteContinued {font-weight: bold; font-size: 9pt}
+.NoteItemized {font-weight: bold; font-size: 9pt}
+.NoteNumberedList {font-weight: bold; font-size: 9pt}
+.NumberedList {font-size: 10pt}
+.PageName {font-size: 12pt; color: #000080}
+.PlainList2P {font-size: 10pt}
+.PlainListP {font-size: 10pt}
+.Preformatted {font-family: Courier, monospace; font-size: 10pt}
+.PreformattedMeth {font-family: Courier, monospace; font-size: 10pt}
+.PreformattedMethRel {font-family: Courier, monospace; font-size: 10pt}
+.ShadedHeader {background-color: #000080; font-size: 10pt; font-weight: bold;
+               color: #ffffff}
+.StaticMethod {font-family: Courier, monospace; font-size: 10pt}
+.TableTitle {font-size:10pt; font-style: italic; font-weight: bold; text-align: left}
+.TableTitleIndented {font-size:10pt; font-style: italic; font-weight: bold; text-align: left}
+.Title { text-align: left; font-size: 15pt; color: #000080; 
+         font-weight: bold; margin-top: 20px}
+.VirtualMethod {font-family: Courier, monospace; font-size: 10pt}
+
+/* Character Styles */
+.Default { }
+.Code { }
+.RedCode { color: #ff0000 }
+.Emphasis {font-style: italic}
+.IndexLink { }
+.ItalicCode {font-style: italic}
+.LinkToClass { }
+.LinkToMethod { }
+.LinkToNestedClass { }
+.SetAnchorOnChar {font-weight: bold}
+.Strong {font-weight: bold}
+.StrongCode {font-weight: bold}
+.StrongEmphasis {font-style: italic; font-weight: bold}
+.SubScript { }
+.SubScriptCode {vertical-align: sub}
+.SubScriptEm {font-style: italic}
+.SuperScript { }
+.SuperScriptCode {vertical-align: super}
+.SuperScriptEm {font-style: italic}
+.WebJump { }
+
+
+/* Tables */
+.DefaultTable {border-style: solid; border-width: thin;
+               font-size: 10pt; margin-top: 10pt}
+.Borderless {border-style: none; font-size: 10pt; margin-top: 10pt}
+.CodeTable2 {background-color: #eeeeee; border-style: none; 
+             margin-top: 10pt}
+.GreyCodeTable {background-color: #cccccc; border-style: none; 
+             margin-top: 10pt}
+.CodeTableIndented {background-color: #eeeeee; border-style: none;
+                    margin-top: 10pt}
+.ImportantTable {border-style: none; width: 100%; margin-top: 10pt}
+.ImportantTableIndented {border-style: none; width: 100%; margin-top: 10pt}
+
+.InsetTable {background-color: #cccccc; border-style: solid; 
+             border-width:thin;  width: 100%; margin-top: 10pt}
+.NotesTable {border-style: none; width: 100%; margin-top: 10pt}
+.NotesTableIndented {border-style: none; width: 100%; margin-top: 10pt}
+.NoteTable {border-style: none; width: 100%; margin-top: 10pt}
+.NoteTableIndented {border-style: none; width: 100%; margin-top: 10pt}
+.ReminderTable {border-style: none; width: 100%; margin-top: 10pt}
+.ReminderTableIndented {border-style: none; width: 100%; margin-top: 10pt}
+.ShadedHead {border-style: solid; border-width:thin;
+             font-size: 10pt; margin-top:10pt}
+.ShadedHeader {background-color: #000080; font-size: 10pt; font-weight: bold; color: #ffffff}
+.TipTable {border-style: none; width: 100%; margin-top: 10pt}
+.TipTableIndented {border-style: none; width: 100%; margin-top: 10pt}
+.WarningTable {border-style: none; width: 100%; margin-top: 10pt}
+.WarningTableIndented {border-style: none; width: 100%; margin-top: 10pt}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

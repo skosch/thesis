@@ -1,0 +1,33 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><title>Example: cplexmiqpex.m</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="doc.css"/><script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script></head><body><div class="General"><div class="header"><div class="content"><h1 class="heading">Example: cplexmiqpex.m</h1></div></div><div class="content">
+
+
+<div class="descriptiveTopicContent">
+<div class="para">This example uses the function <code class="code">cplexmiqp</code> to
+solve a mixed-integer quadratic programming model.</div>
+<div class="para">The MIQP problem solved in this example is:</div>
+<pre class="programlisting">    Maximize  x1 + 2 x2 + 3 x3 + x4
+              - 0.5 ( 33x1*x1 + 22*x2*x2 + 11*x3*x3 - 12*x1*x2 - 23*x2*x3 )
+    Subject to
+       - x1 +   x2 + x3 + 10 x4 &lt;= 20
+         x1 - 3 x2 + x3         &lt;= 30
+                x2      - 3.5x4  = 0
+    Bounds
+         0 &lt;= x1 &lt;= 40
+         0 &lt;= x2
+         0 &lt;= x3
+         2 &lt;= x4 &lt;= 3
+    Integers
+        x4
+</pre>
+<div class="divBlock">
+<div class="divBlockContent">
+
+
+<div class="para">See also the example file <a class="bluelink" href="matlab:doc cplexmiqpex"><code class="code">cplexmiqpex.m</code></a>.</div>
+</div>
+</div>
+</div>
+<div class="eclipseRelatedLinks"><div class="eclipseRelatedLinksLabel">Current section</div><ul class="eclipseRelatedLinks"><li><a href="cplex_matlab13.html" class="bluelink">Examples of the CPLEX for MATLAB Toolbox</a></li></ul></div></div><div class="footer"><div class="content"><div class="navigation"><a href="cplex_matlab26.html" class="navigation"><span class="previous">PREVIOUS</span></a><span class="separator">&#160;&#160;</span><a href="cplex_matlab28.html" class="navigation"><span class="next">NEXT</span></a></div><div class="copyright">&#169; Copyright IBM Corp. 1987, 2011. <a href="cplex_matlab2.html" class="navigation"><span class="legalterms">Legal Terms</span></a></div></div></div></div></body></html>

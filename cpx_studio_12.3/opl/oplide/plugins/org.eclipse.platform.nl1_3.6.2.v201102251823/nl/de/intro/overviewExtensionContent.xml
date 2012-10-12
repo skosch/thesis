@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="org.eclipse.ui.workbench" name="Workbench" alt-style="css/overview.properties" style="css/overview.css" path="overview/@">
+  		<group style-id="content-group" id="content-group">
+			<link style-id="content-link" label="Grundlegende Informationen zur Workbench" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.user/gettingStarted/intro/overview.htm" id="basics">
+          		<text>Hier lernen Sie die Basiskonzepte der Eclipse-Workbench kennen.</text>
+       		</link>
+       		<link style-id="content-link" label="Teamunterstützung" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.user/concepts/concepts-26.htm" id="team">
+          		<text>Hier erfahren Sie, wie Sie mit anderen Entwicklern zusammenarbeiten können.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

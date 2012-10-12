@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ilog.odms.ide.opl.feature"
+      label="%Feature-Name"
+      version="12.3.0.20110630-0306"
+      provider-name="%Feature-Vendor"
+      plugin="ilog.odms.ide.opl">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="ilog.odms.ide.core"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.help"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"/>
+
+   <plugin
+         id="ilog.odms.ide.intro"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.lpg"
+         download-size="0"
+         install-size="0"
+         version="2.0.14"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opl"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.win32.win32.x86"
+         os="win32"
+         ws="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="ilog.odms.ide.samples.opl"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.ui"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         unpack="false"/>
+
+   <plugin
+         id="org.dom4j"
+         download-size="0"
+         install-size="0"
+         version="1.6.1"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula"
+         download-size="0"
+         install-size="0"
+         version="1.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.swtchart"
+         download-size="0"
+         install-size="0"
+         version="0.6.0"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.win32.win32.x86_64"
+         os="win32"
+         ws="win32"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.remote"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.gtk.linux.x86"
+         os="linux"
+         ws="gtk"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.gtk.linux.x86_64"
+         os="linux"
+         ws="gtk"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="ilog.views.eclipse.gantt.runtime"
+         download-size="0"
+         install-size="0"
+         version="8.7.0.v20100515"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.views.eclipse.framework.runtime"
+         download-size="0"
+         install-size="0"
+         version="8.7.0.v20100515"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.views.eclipse.utilities.runtime"
+         download-size="0"
+         install-size="0"
+         version="8.7.0.v20100515"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.views.eclipse.chart.runtime"
+         download-size="0"
+         install-size="0"
+         version="8.7.0.v20100515"/>
+
+   <plugin
+         id="ilog.odms.studio.help"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"/>
+
+   <plugin
+         id="ilog.odms.cplex.help"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"/>
+
+   <plugin
+         id="ilog.odms.cpo.help"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"/>
+
+</feature>

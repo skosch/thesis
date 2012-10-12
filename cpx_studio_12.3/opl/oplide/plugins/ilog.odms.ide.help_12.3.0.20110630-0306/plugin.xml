@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+    
+  <extension point="org.eclipse.help.toc">
+    <toc file="toc.xml" primary="true" />
+  </extension>
+
+  <extension point="org.eclipse.help.toc">
+      <toc file="toc.xml" primary="true"/>
+      <toc file="toc/toc1.xml" primary="false"/>
+      <toc file="toc/toc2.xml" primary="false"/>
+      <toc file="toc/toc3.xml" primary="false"/>
+      <toc file="toc/toc4.xml" primary="false"/>
+      <toc file="toc/toc5.xml" primary="false"/>
+      <toc file="toc/toc6.xml" primary="false"/>
+      <toc file="toc/toc7.xml" primary="false"/>
+      <toc file="toc/refjsopl.xml"/>
+      <toc file="toc/refcppopl.xml"/>
+      <toc file="toc/refjavaopl.xml"/>
+      <toc file="toc/refdotnetopl.xml"/> 
+  </extension>
+
+  
+  <extension point="org.eclipse.help.contexts">
+    <contexts file="contexts.xml"  />
+    <contexts file="external_contexts.xml" />
+  </extension>
+
+  <extension point="org.eclipse.help.index">
+	    <index file="index.xml"  />
+	    <index file="indexopl.xml"  />
+	    <index file="index-refdotnetopl.xml"  />
+	    <index file="index-refjavaopl.xml" />
+	    <index file="refjs-index.xml"  />	    
+  </extension>
+
+</plugin>

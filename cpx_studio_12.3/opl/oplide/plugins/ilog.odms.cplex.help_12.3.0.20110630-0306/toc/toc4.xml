@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Parameters of CPLEX" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2188.html">
+   <topic label="Parameters Reference Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2189.html">
+      <topic label="Accessing parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2190.html"/>
+      <topic label="Managing sets of parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2191.html"/>
+      <topic label="Parameter names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2192.html"/>
+      <topic label="Correspondence of parameters between APIs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2193.html"/>
+      <topic label="Saving parameter settings to a file in the C API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2194.html"/>
+      <topic label="Topical list of parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2195.html">
+         <topic label="Simplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2196.html"/>
+         <topic label="Barrier" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2197.html"/>
+         <topic label="MIP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2198.html"/>
+         <topic label="MIP general" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2199.html"/>
+         <topic label="MIP strategies" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2200.html"/>
+         <topic label="MIP cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2201.html"/>
+         <topic label="MIP tolerances" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2202.html"/>
+         <topic label="MIP limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2203.html"/>
+         <topic label="Solution polishing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2204.html"/>
+         <topic label="Solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2205.html"/>
+         <topic label="Network" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2206.html"/>
+         <topic label="Parallel optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2207.html"/>
+         <topic label="Sifting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2208.html"/>
+         <topic label="Preprocessing: aggregator, presolver" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2209.html"/>
+         <topic label="Tolerances" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2210.html"/>
+         <topic label="Limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2211.html"/>
+         <topic label="Display and output" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2212.html"/>
+      </topic>
+      <topic label="List of CPLEX parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2213.html">
+         <topic label="advanced start switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2214.html"/>
+         <topic label="constraint aggregation limit for cut generation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2215.html"/>
+         <topic label="preprocessing aggregator fill" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2216.html"/>
+         <topic label="preprocessing aggregator application limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2217.html"/>
+         <topic label="API string encoding switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2218.html"/>
+         <topic label="barrier algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2219.html"/>
+         <topic label="barrier column nonzeros" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2220.html"/>
+         <topic label="barrier crossover algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2221.html"/>
+         <topic label="barrier display information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2222.html"/>
+         <topic label="convergence tolerance for LP and QP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2223.html"/>
+         <topic label="barrier growth limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2224.html"/>
+         <topic label="barrier iteration limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2225.html"/>
+         <topic label="barrier maximum correction limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2226.html"/>
+         <topic label="barrier objective range" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2227.html"/>
+         <topic label="barrier ordering algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2228.html"/>
+         <topic label="convergence tolerance for QC problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2229.html"/>
+         <topic label="barrier starting point algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2230.html"/>
+         <topic label="MIP strategy best bound interval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2231.html"/>
+         <topic label="bound strengthening switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2232.html"/>
+         <topic label="MIP branching direction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2233.html"/>
+         <topic label="backtracking tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2234.html"/>
+         <topic label="MIP cliques switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2235.html"/>
+         <topic label="clock type for computation time" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2236.html"/>
+         <topic label="clone log in parallel optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2237.html"/>
+         <topic label="coefficient reduction setting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2238.html"/>
+         <topic label="variable (column) read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2239.html"/>
+         <topic label="conflict information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2240.html"/>
+         <topic label="MIP covers switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2241.html"/>
+         <topic label="simplex crash ordering" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2242.html"/>
+         <topic label="lower cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2243.html"/>
+         <topic label="number of cutting plane passes" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2244.html"/>
+         <topic label="row multiplier factor for cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2245.html"/>
+         <topic label="upper cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2246.html"/>
+         <topic label="data consistency checking switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2247.html"/>
+         <topic label="dependency switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2248.html"/>
+         <topic label="MIP disjunctive cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2249.html"/>
+         <topic label="MIP dive strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2250.html"/>
+         <topic label="dual simplex pricing algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2251.html"/>
+         <topic label="type of cut limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2252.html"/>
+         <topic label="absolute MIP gap tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2253.html"/>
+         <topic label="relative MIP gap tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2254.html"/>
+         <topic label="integrality tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2255.html"/>
+         <topic label="epsilon used in linearization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2256.html"/>
+         <topic label="Markowitz tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2257.html"/>
+         <topic label="optimality tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2258.html"/>
+         <topic label="perturbation constant" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2259.html"/>
+         <topic label="relaxation for FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2260.html"/>
+         <topic label="feasibility tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2261.html"/>
+         <topic label="mode of FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2262.html"/>
+         <topic label="file encoding switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2263.html"/>
+         <topic label="MIP flow cover cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2264.html"/>
+         <topic label="MIP flow path cut switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2265.html"/>
+         <topic label="feasibility pump switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2266.html"/>
+         <topic label="candidate limit for generating Gomory fractional cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2267.html"/>
+         <topic label="MIP Gomory fractional cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2268.html"/>
+         <topic label="pass limit for generating Gomory fractional cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2269.html"/>
+         <topic label="MIP GUB cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2270.html"/>
+         <topic label="MIP heuristic frequency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2271.html"/>
+         <topic label="MIP implied bound cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2272.html"/>
+         <topic label="MIP integer solution-file switch and prefix" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2273.html"/>
+         <topic label="MIP integer solution limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2274.html"/>
+         <topic label="simplex maximum iteration limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2275.html"/>
+         <topic label="local branching heuristic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2276.html"/>
+         <topic label="MCF cut switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2277.html"/>
+         <topic label="memory reduction switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2278.html"/>
+         <topic label="MIP callback switch between original model and reduced, presolved model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2279.html"/>
+         <topic label="MIP node log display information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2280.html"/>
+         <topic label="MIP emphasis switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2281.html"/>
+         <topic label="MIP node log interval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2282.html"/>
+         <topic label="MIP kappa computation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2283.html"/>
+         <topic label="MIP priority order switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2284.html"/>
+         <topic label="MIP priority order generation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2285.html"/>
+         <topic label="MIP dynamic search switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2286.html"/>
+         <topic label="MIQCP strategy switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2287.html"/>
+         <topic label="MIP MIR (mixed integer rounding) cut switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2288.html"/>
+         <topic label="precision of numerical output in MPS and REW file formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2289.html"/>
+         <topic label="network logging display switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2290.html"/>
+         <topic label="network optimality tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2291.html"/>
+         <topic label="network primal feasibility tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2292.html"/>
+         <topic label="simplex network extraction level" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2293.html"/>
+         <topic label="network simplex iteration limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2294.html"/>
+         <topic label="network simplex pricing algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2295.html"/>
+         <topic label="MIP subproblem algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2296.html"/>
+         <topic label="node storage file switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2297.html"/>
+         <topic label="MIP node limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2298.html"/>
+         <topic label="MIP node selection strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2299.html"/>
+         <topic label="numerical precision emphasis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2300.html"/>
+         <topic label="nonzero element read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2301.html"/>
+         <topic label="absolute objective difference cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2302.html"/>
+         <topic label="lower objective value limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2303.html"/>
+         <topic label="upper objective value limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2304.html"/>
+         <topic label="parallel mode switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2305.html"/>
+         <topic label="simplex perturbation switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2306.html"/>
+         <topic label="simplex perturbation limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2307.html"/>
+         <topic label="absolute MIP gap before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2308.html"/>
+         <topic label="relative MIP gap before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2309.html"/>
+         <topic label="MIP integer solutions to find before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2310.html"/>
+         <topic label="nodes to process before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2311.html"/>
+         <topic label="time before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2312.html"/>
+         <topic label="time spent polishing a solution (deprecated)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2313.html"/>
+         <topic label="maximum number of solutions generated for solution pool by populate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2314.html"/>
+         <topic label="primal simplex pricing algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2315.html"/>
+         <topic label="presolve dual setting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2316.html"/>
+         <topic label="presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2317.html"/>
+         <topic label="linear reduction switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2318.html"/>
+         <topic label="limit on the number of presolve passes made" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2319.html"/>
+         <topic label="node presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2320.html"/>
+         <topic label="simplex pricing candidate list size" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2321.html"/>
+         <topic label="MIP probing level" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2322.html"/>
+         <topic label="time spent probing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2323.html"/>
+         <topic label="indefinite MIQP switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2324.html"/>
+         <topic label="QP Q-matrix nonzero read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2325.html"/>
+         <topic label="primal and dual reduction type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2326.html"/>
+         <topic label="simplex refactoring frequency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2327.html"/>
+         <topic label="relaxed LP presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2328.html"/>
+         <topic label="relative objective difference cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2329.html"/>
+         <topic label="number of attempts to repair infeasible MIP start" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2330.html"/>
+         <topic label="MIP repeat presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2331.html"/>
+         <topic label="RINS heuristic frequency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2332.html"/>
+         <topic label="algorithm for continuous problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2333.html"/>
+         <topic label="algorithm for continuous quadratic optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2334.html"/>
+         <topic label="MIP starting algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2335.html"/>
+         <topic label="auxiliary root threads" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2336.html"/>
+         <topic label="constraint (row) read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2337.html"/>
+         <topic label="scale parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2338.html"/>
+         <topic label="messages to screen switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2339.html"/>
+         <topic label="sifting subproblem algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2340.html"/>
+         <topic label="sifting information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2341.html"/>
+         <topic label="upper limit on sifting iterations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2342.html"/>
+         <topic label="simplex iteration information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2343.html"/>
+         <topic label="simplex singularity repair limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2344.html"/>
+         <topic label="absolute gap for solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2345.html"/>
+         <topic label="maximum number of solutions kept in solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2346.html"/>
+         <topic label="relative gap for solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2347.html"/>
+         <topic label="solution pool intensity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2348.html"/>
+         <topic label="solution pool replacement strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2349.html"/>
+         <topic label="solution target type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2350.html"/>
+         <topic label="MIP strong branching candidate list limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2351.html"/>
+         <topic label="MIP strong branching iterations limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2352.html"/>
+         <topic label="limit on nodes explored when a subMIP is being solved" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2353.html"/>
+         <topic label="symmetry breaking" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2354.html"/>
+         <topic label="global default thread count" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2355.html"/>
+         <topic label="optimizer time limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2356.html"/>
+         <topic label="tree memory limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2357.html"/>
+         <topic label="tuning information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2358.html"/>
+         <topic label="tuning measure" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2359.html"/>
+         <topic label="tuning repeater" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2360.html"/>
+         <topic label="tuning time limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2361.html"/>
+         <topic label="MIP variable selection strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2362.html"/>
+         <topic label="directory for working files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2363.html"/>
+         <topic label="memory available for working storage" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2364.html"/>
+         <topic label="write level for MST, SOL files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2365.html"/>
+         <topic label="MIP zero-half cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2366.html"/>
+      </topic>
+   </topic>
+</toc>

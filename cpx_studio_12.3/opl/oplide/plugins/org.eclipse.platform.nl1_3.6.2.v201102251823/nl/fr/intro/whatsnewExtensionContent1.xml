@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="org.eclipse.ui.workbench.news" name="Plateforme Eclipse" alt-style="css/whatsnew.properties" style="css/whatsnew.css" path="whatsnew/@">
+		<group style-id="content-group" id="content-group">
+       		<link label="Plateforme Eclipse" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.user/whatsNew/platform_whatsnew.html" id="platform-noteworthy" style-id="content-link">
+          		<text>Découvrez les principales nouvelles fonctions de cette version.</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

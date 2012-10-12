@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.equinox.executable.nls1" label="%featureName" version="3.4.2.v201102251823">
+
+   <description>
+      %description
+   </description>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   
+
+   <plugin arch="sparc" fragment="true" id="org.eclipse.equinox.launcher.gtk.solaris.sparc.nl1" os="solaris" version="1.1.2.v201102251823" ws="gtk"></plugin>
+         
+	<plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.gtk.solaris.x86.nl1" os="solaris" version="1.1.2.v201102251823" ws="gtk"></plugin>
+            
+	<plugin arch="sparc" fragment="true" id="org.eclipse.equinox.launcher.motif.solaris.sparc.nl1" os="solaris" version="1.1.2.v201102251823" ws="motif"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.launcher.carbon.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="carbon"></plugin>
+         
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.cocoa.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="cocoa"></plugin>
+           
+   <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.cocoa.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="cocoa"></plugin>
+         
+	<plugin arch="x86_64" fragment="true" id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64.nl1" os="macosx" version="1.1.2.v201102251823" ws="cocoa"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.ppc.nl1" os="linux" version="1.1.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="ppc64" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.ppc64.nl1" os="linux" version="1.0.2.v201102251823" ws="gtk"></plugin>
+         
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.x86.nl1" os="linux" version="1.1.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.x86_64.nl1" os="linux" version="1.1.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.motif.aix.ppc.nl1" os="aix" version="1.1.2.v201102251823" ws="motif"></plugin>
+         
+	
+
+   <plugin arch="ia64_32" fragment="true" id="org.eclipse.equinox.launcher.motif.hpux.ia64_32.nl1" os="hpux" version="1.1.2.v201102251823" ws="motif"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.motif.linux.x86.nl1" os="linux" version="1.1.2.v201102251823" ws="motif"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.win32.win32.x86.nl1" os="win32" version="1.1.2.v201102251823" ws="win32"></plugin>
+         
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.equinox.launcher.win32.win32.x86_64.nl1" os="win32" version="1.1.2.v201102251823" ws="win32"></plugin>
+
+   
+         
+   
+
+   <plugin arch="s390" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.s390.nl1" os="linux" version="1.1.1.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="s390x" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.s390x.nl1" os="linux" version="1.1.1.v201102251823" ws="gtk"></plugin>
+
+
+<copyright>%copyright</copyright></feature>

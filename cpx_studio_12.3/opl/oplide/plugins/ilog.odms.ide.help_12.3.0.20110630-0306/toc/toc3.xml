@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Optimization Programming Language (OPL)" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language567.html">
+   <topic label="Language User’s Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language568.html">
+      <topic label="Introduction to OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language569.html">
+         <topic label="Language overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language570.html">
+            <topic label="Modeling languages" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language571.html"/>
+            <topic label="Mathematical programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language572.html">
+               <topic label="Linear programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language573.html"/>
+               <topic label="Integer programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language574.html"/>
+               <topic label="Nonlinear programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language575.html"/>
+            </topic>
+            <topic label="Constraint programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language576.html">
+               <topic label="Why constraint programming?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language577.html"/>
+               <topic label="OPL CP Optimizer in a nutshell" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language578.html"/>
+            </topic>
+            <topic label="Constraint programming versus mathematical programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language579.html">
+               <topic label="Why a comparison?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language580.html"/>
+               <topic label="Benefits of constraint programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language581.html"/>
+               <topic label="Differences with mathematical programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language582.html"/>
+            </topic>
+            <topic label="Scripting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language583.html"/>
+         </topic>
+         <topic label="A short tour of OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language584.html">
+            <topic label="Linear programming: a production planning example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language585.html">
+               <topic label="How OPL expresses an LP problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language586.html"/>
+               <topic label="The production planning problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language587.html"/>
+               <topic label="Elements of the production model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language588.html"/>
+               <topic label="Displaying results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language589.html"/>
+            </topic>
+            <topic label="Integer programming: the knapsack problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language590.html">
+               <topic label="What is integer programming?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language591.html"/>
+               <topic label="A typical integer program: the knapsack problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language592.html"/>
+            </topic>
+            <topic label="Mixed integer-linear programming: a blending problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language593.html">
+               <topic label="OPL and MILP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language594.html"/>
+               <topic label="The blending problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language595.html"/>
+               <topic label="Elements of the blending model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language596.html"/>
+            </topic>
+            <topic label="Constraint programming: an inventory matching problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language597.html">
+               <topic label="The inventory problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language598.html"/>
+               <topic label="Modeling elements of the inventory problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language599.html"/>
+               <topic label="The search process" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language600.html"/>
+            </topic>
+         </topic>
+         <topic label="Modeling tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language601.html">
+            <topic label="Efficient models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language602.html"/>
+            <topic label="Sparsity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language603.html">
+               <topic label="Sparsity in the transportation problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language604.html"/>
+               <topic label="Exploiting sparsity - a first attempt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language605.html"/>
+               <topic label="Exploiting sparsity - a better model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language606.html"/>
+            </topic>
+            <topic label="About arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language607.html"/>
+            <topic label="Other modeling tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language608.html"/>
+         </topic>
+      </topic>
+      <topic label="The application areas" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language609.html">
+         <topic label="Some examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language610.html">
+            <topic label="Linear programming: a product mix problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language611.html"/>
+            <topic label="Integer programming: a warehouse location problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language612.html"/>
+         </topic>
+         <topic label="Applications of linear and integer programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language613.html">
+            <topic label="Linear programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language614.html">
+               <topic label="What is linear programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language615.html"/>
+               <topic label="A production problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language616.html"/>
+               <topic label="A multi-period production planning problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language617.html"/>
+               <topic label="A blending problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language618.html"/>
+               <topic label="Exploiting sparsity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language619.html"/>
+               <topic label="Sensitivity analysis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language620.html"/>
+            </topic>
+            <topic label="Integer programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language621.html">
+               <topic label="What is integer programming?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language622.html"/>
+               <topic label="Set covering" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language623.html"/>
+               <topic label="Warehouse location" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language624.html"/>
+               <topic label="Fixed-charge problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language625.html"/>
+               <topic label="Integer relaxation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language626.html"/>
+            </topic>
+            <topic label="Mixed integer-linear programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language627.html">
+               <topic label="What is mixed integer-linear programming?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language628.html"/>
+               <topic label="Fixed charge in a production planning problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language629.html"/>
+            </topic>
+            <topic label="Piecewise linear programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language630.html">
+               <topic label="What is piecewise linear programming?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language631.html"/>
+               <topic label="An inventory application with piecewise linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language632.html"/>
+               <topic label="Piecewise-linear vs. linear" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language633.html"/>
+               <topic label="Complexity issues" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language634.html"/>
+            </topic>
+         </topic>
+         <topic label="Applications of constraint programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language635.html">
+            <topic label="What is constraint programming?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language636.html"/>
+            <topic label="The vellino example (column generation)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language637.html">
+               <topic label="Description of the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language638.html"/>
+               <topic label="The models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language639.html"/>
+               <topic label="The results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language640.html"/>
+            </topic>
+            <topic label="The car sequencing example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language641.html">
+               <topic label="What to do and where to find the files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language642.html"/>
+               <topic label="The car sequencing problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language643.html"/>
+               <topic label="Enhancing the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language644.html"/>
+            </topic>
+            <topic label="The time tabling example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language645.html">
+               <topic label="What to do and where to find the files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language646.html"/>
+               <topic label="The data model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language647.html"/>
+               <topic label="Decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language648.html"/>
+               <topic label="Writing the core constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language649.html"/>
+               <topic label="Adding side constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language650.html"/>
+               <topic label="Minimizing the makespans" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language651.html"/>
+               <topic label="Customizing the search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language652.html"/>
+               <topic label="Postprocessing the solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language653.html"/>
+            </topic>
+            <topic label="Modeling and solving a simple problem: house building" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language654.html"/>
+         </topic>
+         <topic label="Quadratic programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language655.html"/>
+         <topic label="Tutorial: Using CPLEX logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language656.html">
+            <topic label="What are logical constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language657.html"/>
+            <topic label="Description of the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language658.html"/>
+            <topic label="Representing the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language659.html">
+               <topic label="What is known?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language660.html"/>
+               <topic label="What is unknown?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language661.html"/>
+               <topic label="What are the constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language662.html"/>
+               <topic label="What is the objective?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language663.html"/>
+            </topic>
+            <topic label="Using logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language664.html"/>
+         </topic>
+      </topic>
+      <topic label="IBM ILOG Script for OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language665.html">
+         <topic label="Introduction to scripting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language666.html">
+            <topic label="What is IBM ILOG Script?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language667.html"/>
+            <topic label="Preprocessing and postprocessing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language668.html">
+               <topic label="General syntax" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language669.html"/>
+               <topic label="Initializing arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language670.html"/>
+               <topic label="Changing option values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language671.html"/>
+               <topic label="Flow control" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language672.html"/>
+            </topic>
+            <topic label="A few tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language673.html"/>
+            <topic label="Common pitfalls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language674.html"/>
+         </topic>
+         <topic label="Tutorial: Flow control and multiple searches" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language675.html">
+            <topic label="The production planning problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language676.html"/>
+            <topic label="Procedure summary" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language677.html"/>
+            <topic label="Detailed steps" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language678.html">
+               <topic label="Defining a “main” block" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language679.html"/>
+               <topic label="Loading the necessary structures" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language680.html"/>
+               <topic label="Generating the optimization model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language681.html"/>
+               <topic label="Solving the current optimization model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language682.html"/>
+               <topic label="Getting the data elements from an IloOplModel instance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language683.html"/>
+               <topic label="Modifying data from “main” scripting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language684.html"/>
+               <topic label="Creating a new OPL model with the modified data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language685.html"/>
+            </topic>
+            <topic label="Doing more with mulprod_main" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language686.html">
+               <topic label="Passing information to another model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language687.html"/>
+               <topic label="Writing an output file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language688.html"/>
+               <topic label="Modifying the CPLEX matrix incrementally" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language689.html"/>
+            </topic>
+            <topic label="Basic flow control script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language690.html"/>
+         </topic>
+         <topic label="Tutorial: Flow control and column generation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language691.html">
+            <topic label="What is model decomposition?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language692.html"/>
+            <topic label="The cutting stock problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language693.html"/>
+            <topic label="Procedure summary" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language694.html"/>
+            <topic label="Detailed steps" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language695.html">
+               <topic label="Preparing the submodel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language696.html"/>
+               <topic label="Solving the master model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language697.html"/>
+               <topic label="Updating the submodel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language698.html"/>
+               <topic label="Solving the submodel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language699.html"/>
+               <topic label="Updating the master model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language700.html"/>
+               <topic label="Preparing the new master model and regenerating its optimization model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language701.html"/>
+               <topic label="Ending objects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language702.html"/>
+            </topic>
+            <topic label="Doing more with cutstock_main" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language703.html"/>
+         </topic>
+         <topic label="Tutorial: Changing default behaviors in flow control" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language704.html">
+            <topic label="What you are going to do" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language705.html"/>
+            <topic label="Setting an initial solution for the CPLEX engine" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language706.html">
+               <topic label="The warmstart model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language707.html"/>
+               <topic label="Default behavior" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language708.html"/>
+               <topic label="Setting the initial solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language709.html"/>
+               <topic label="Conclusion" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language710.html"/>
+            </topic>
+            <topic label="Setting preferences on the search for conflicts and relaxations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language711.html">
+               <topic label="The conflictIterator model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language712.html"/>
+               <topic label="Default behavior" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language713.html"/>
+               <topic label="Setting user-defined preferences" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language714.html"/>
+               <topic label="Conclusion" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language715.html"/>
+            </topic>
+         </topic>
+         <topic label="Searching for relaxation and conflicts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language716.html"/>
+         <topic label="Using IBM ILOG Script in constraint programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language717.html">
+            <topic label="Setting CP parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language718.html"/>
+            <topic label="Defining search phases" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language719.html">
+               <topic label="What is a search phase?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language720.html"/>
+               <topic label="Writing script statements to define search phases" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language721.html"/>
+               <topic label="Multiple search phases" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language722.html"/>
+               <topic label="Specifying variable and value choosers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language723.html"/>
+               <topic label="Scheduling search phases" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language724.html"/>
+            </topic>
+            <topic label="Accessing solutions in postprocessing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language725.html"/>
+         </topic>
+      </topic>
+      <topic label="Advanced features" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language726.html">
+         <topic label="Tutorial: External functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language727.html">
+            <topic label="Context of external functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language728.html">
+               <topic label="Limitations of the language" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language729.html"/>
+               <topic label="Environment prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language730.html"/>
+            </topic>
+            <topic label="Using an external knapsack algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language731.html">
+               <topic label="The problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language732.html"/>
+               <topic label="The code sample" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language733.html"/>
+               <topic label="Where to find the files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language734.html"/>
+               <topic label="Procedure summary" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language735.html"/>
+               <topic label="Writing the Java code" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language736.html"/>
+               <topic label="Using the Java code from OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language737.html"/>
+               <topic label="Using IBM ILOG Script classes to make clean and reusable code" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language738.html"/>
+            </topic>
+            <topic label="Using data from other sources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language739.html">
+               <topic label="Subclassing IloCustomOplDataSource" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language740.html"/>
+               <topic label="Using IBM ILOG Script in data files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language741.html"/>
+            </topic>
+            <topic label="Debugging custom Java code using Eclipse" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language742.html">
+               <topic label="Procedure summary" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language743.html"/>
+               <topic label="Creating an Eclipse project" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language744.html"/>
+               <topic label="Creating a run configuration" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language745.html"/>
+               <topic label="Starting the OPL model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language746.html"/>
+               <topic label="Setting breakpoints and debugging" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language747.html"/>
+            </topic>
+         </topic>
+      </topic>
+      <topic label="Performance and memory usage" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language748.html">
+         <topic label="Performance tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language749.html"/>
+         <topic label="Memory usage" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language750.html">
+            <topic label="If your system runs out of memory" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language751.html"/>
+            <topic label="Building data structures differently" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language752.html"/>
+            <topic label="Terminating data objects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language753.html"/>
+            <topic label="Changing engine parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language754.html"/>
+            <topic label="Using oplrun" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language755.html"/>
+            <topic label="Changing to a 64-bit platform" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language756.html"/>
+            <topic label="Using 4GT tuning" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language757.html"/>
+            <topic label="Scaling down the size of the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language758.html"/>
+         </topic>
+         <topic label="Multi-threading" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language759.html">
+            <topic label="A typical problem to solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language760.html"/>
+            <topic label="From the mathematical model to the OPL code" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language761.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="Language Reference Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language762.html">
+      <topic label="Why an Optimization Programming Language?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language763.html"/>
+      <topic label="OPL, the modeling language" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language764.html">
+         <topic label="Models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language765.html">
+            <topic label="Building a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language766.html"/>
+         </topic>
+         <topic label="Data types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language767.html">
+            <topic label="Basic data types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language768.html">
+               <topic label="Integers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language769.html"/>
+               <topic label="Floats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language770.html"/>
+               <topic label="Strings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language771.html"/>
+               <topic label="Piecewise linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language772.html"/>
+               <topic label="Stepwise functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language773.html"/>
+            </topic>
+            <topic label="Data structures" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language774.html">
+               <topic label="Ranges" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language775.html"/>
+               <topic label="Arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language776.html"/>
+               <topic label="Tuples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language777.html"/>
+               <topic label="Limitations on tuples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language778.html"/>
+               <topic label="Sets" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language779.html"/>
+               <topic label="Sorted and ordered sets" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language780.html"/>
+            </topic>
+         </topic>
+         <topic label="Data sources" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language781.html">
+            <topic label="Data initialization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language782.html">
+               <topic label="Internal and external initialization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language783.html"/>
+               <topic label="Initializing arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language784.html"/>
+               <topic label="Initializing tuples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language785.html"/>
+               <topic label="Initializing sets" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language786.html"/>
+               <topic label="Initialization and memory allocation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language787.html"/>
+            </topic>
+            <topic label="Database initialization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language788.html">
+               <topic label="The oil database example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language789.html"/>
+               <topic label="Supported databases" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language790.html"/>
+               <topic label="Connection to a database" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language791.html"/>
+               <topic label="Reading from a database" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language792.html"/>
+               <topic label="Writing to a database" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language793.html"/>
+            </topic>
+            <topic label="Spreadsheet Input/Output" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language794.html">
+               <topic label="The oilsheet example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language795.html"/>
+               <topic label="Connection to a spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language796.html"/>
+               <topic label="Reading from a spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language797.html"/>
+               <topic label="Writing to a spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language798.html"/>
+            </topic>
+            <topic label="Data consistency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language799.html">
+               <topic label="Purpose" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language800.html"/>
+               <topic label="Data membership consistency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language801.html"/>
+               <topic label="Assertions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language802.html"/>
+            </topic>
+            <topic label="Preprocessing of data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language803.html"/>
+            <topic label="Pitfall of lazy initialization of data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language804.html"/>
+         </topic>
+         <topic label="Decision types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language805.html">
+            <topic label="Decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language806.html"/>
+            <topic label="Expressions of decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language807.html"/>
+            <topic label="Dynamic collection of elements into arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language808.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language809.html"/>
+               <topic label="The all syntax" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language810.html"/>
+               <topic label="Explicit arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language811.html"/>
+               <topic label="Appending arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language812.html"/>
+               <topic label="Initialization of decision variable arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language813.html"/>
+            </topic>
+         </topic>
+         <topic label="Expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language814.html">
+            <topic label="Usage of expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language815.html"/>
+            <topic label="Data and decision variable identifiers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language816.html"/>
+            <topic label="Integer and float expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language817.html"/>
+            <topic label="Aggregate operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language818.html"/>
+            <topic label="Piecewise-linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language819.html"/>
+            <topic label="Set expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language820.html"/>
+            <topic label="Boolean expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language821.html"/>
+         </topic>
+         <topic label="Constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language822.html">
+            <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language823.html"/>
+            <topic label="Using constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language824.html">
+               <topic label="Modeling constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language825.html"/>
+               <topic label="Conditional constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language826.html"/>
+               <topic label="Filtering with constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language827.html"/>
+            </topic>
+            <topic label="Constraint labels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language828.html">
+               <topic label="Why label constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language829.html"/>
+               <topic label="Labeling constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language830.html"/>
+               <topic label="Using indexed labels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language831.html"/>
+               <topic label="Labeled assert statements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language832.html"/>
+               <topic label="Limitations on constraint labeling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language833.html"/>
+               <topic label="Compatibility between constraint names and labels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language834.html"/>
+            </topic>
+            <topic label="Types of constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language835.html">
+               <topic label="Float constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language836.html"/>
+               <topic label="Discrete constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language837.html"/>
+               <topic label="String constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language838.html"/>
+               <topic label="Implicit constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language839.html"/>
+               <topic label="Logical constraints for CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language840.html"/>
+               <topic label="Constraints available in constraint programming" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language841.html"/>
+            </topic>
+            <topic label="Limitations on constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language842.html"/>
+         </topic>
+         <topic label="Formal parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language843.html">
+            <topic label="Basic formal parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language844.html"/>
+            <topic label="Tuples of parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language845.html"/>
+            <topic label="Filtering in tuples of parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language846.html"/>
+         </topic>
+         <topic label="Scheduling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language847.html">
+            <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language848.html"/>
+            <topic label="Piecewise linear and stepwise functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language849.html"/>
+            <topic label="Interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language850.html"/>
+            <topic label="Unary constraints on interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language851.html"/>
+            <topic label="Precedence constraints between interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language852.html"/>
+            <topic label="Constraints on groups of interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language853.html"/>
+            <topic label="A logical constraint between interval variables: presenceOf" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language854.html"/>
+            <topic label="Expressions on interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language855.html"/>
+            <topic label="Sequencing of interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language856.html"/>
+            <topic label="Cumulative functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language857.html"/>
+            <topic label="State functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language858.html"/>
+            <topic label="Notations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language859.html"/>
+         </topic>
+      </topic>
+      <topic label="IBM ILOG Script for OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language860.html">
+         <topic label="Language structure" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language861.html">
+            <topic label="Syntax" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language862.html">
+               <topic label="General" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language863.html"/>
+               <topic label="Compound statements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language864.html"/>
+               <topic label="Comments" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language865.html"/>
+               <topic label="Identifiers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language866.html"/>
+            </topic>
+            <topic label="Expressions in IBM ILOG Script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language867.html">
+               <topic label="Literals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language868.html"/>
+               <topic label="Operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language869.html"/>
+               <topic label="Syntax of different types of expression" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language870.html"/>
+               <topic label="Script variable reference" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language871.html"/>
+               <topic label="Property access" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language872.html"/>
+               <topic label="Assignment operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language873.html"/>
+               <topic label="Function calls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language874.html"/>
+               <topic label="Special keywords" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language875.html"/>
+               <topic label="Special operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language876.html"/>
+               <topic label="Other operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language877.html"/>
+            </topic>
+            <topic label="Statements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language878.html">
+               <topic label="Conditional statement" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language879.html"/>
+               <topic label="Declaration of script variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language880.html"/>
+               <topic label="Function definitions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language881.html"/>
+               <topic label="Default values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language882.html"/>
+            </topic>
+         </topic>
+         <topic label="Built-in values and functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language883.html">
+            <topic label="Numbers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language884.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language885.html"/>
+               <topic label="Decimal numbers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language886.html"/>
+               <topic label="Hexadecimal numbers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language887.html"/>
+               <topic label="Octal numbers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language888.html"/>
+               <topic label="Special numbers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language889.html"/>
+               <topic label="Automatic conversion to a number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language890.html"/>
+               <topic label="Number methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language891.html"/>
+               <topic label="Numeric functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language892.html"/>
+               <topic label="Numeric constants" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language893.html"/>
+               <topic label="Numeric operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language894.html"/>
+            </topic>
+            <topic label="IBM ILOG Script strings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language895.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language896.html"/>
+               <topic label="Automatic conversion to a string" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language897.html"/>
+               <topic label="String properties" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language898.html"/>
+               <topic label="String methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language899.html"/>
+               <topic label="String functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language900.html"/>
+               <topic label="String operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language901.html"/>
+            </topic>
+            <topic label="IBM ILOG Script Booleans" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language902.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language903.html"/>
+               <topic label="Automatic conversion to Boolean" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language904.html"/>
+               <topic label="Boolean methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language905.html"/>
+               <topic label="Logical operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language906.html"/>
+            </topic>
+            <topic label="IBM ILOG Script arrays" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language907.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language908.html"/>
+               <topic label="Array constructor" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language909.html"/>
+               <topic label="Array properties" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language910.html"/>
+               <topic label="Array methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language911.html"/>
+            </topic>
+            <topic label="Objects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language912.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language913.html"/>
+               <topic label="Defining methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language914.html"/>
+               <topic label="this as a keyword" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language915.html"/>
+               <topic label="Object constructor" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language916.html"/>
+               <topic label="User-defined constructors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language917.html"/>
+               <topic label="Built-in methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language918.html"/>
+            </topic>
+            <topic label="Dates" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language919.html">
+               <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language920.html"/>
+               <topic label="Date constructor" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language921.html"/>
+               <topic label="Date methods" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language922.html"/>
+               <topic label="Date functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language923.html"/>
+               <topic label="Date operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language924.html"/>
+            </topic>
+            <topic label="The null value" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language925.html"/>
+            <topic label="The undefined value" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language926.html"/>
+            <topic label="IBM ILOG Script functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language927.html"/>
+            <topic label="Miscellaneous functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language928.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="Language Quick Reference" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language929.html">
+      <topic label="About the Language Quick Reference" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language930.html">
+         <topic label="Presentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language931.html"/>
+         <topic label="What is OPL?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language932.html"/>
+      </topic>
+      <topic label="OPL keywords" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language933.html">
+         <topic label="Summary table of OPL keywords" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language934.html"/>
+         <topic label="all" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language935.html"/>
+         <topic label="and" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language936.html"/>
+         <topic label="assert" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language937.html"/>
+         <topic label="boolean" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language938.html"/>
+         <topic label="constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language939.html"/>
+         <topic label="constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language940.html"/>
+         <topic label="CP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language941.html"/>
+         <topic label="CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language942.html"/>
+         <topic label="cumulFunction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language943.html"/>
+         <topic label="DBConnection" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language944.html"/>
+         <topic label="DBconnection - DEPRECATED" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language945.html"/>
+         <topic label="DBExecute" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language946.html"/>
+         <topic label="DBexecute - DEPRECATED" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language947.html"/>
+         <topic label="DBRead" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language948.html"/>
+         <topic label="DBread - DEPRECATED" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language949.html"/>
+         <topic label="DBUpdate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language950.html"/>
+         <topic label="DBupdate - DEPRECATED" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language951.html"/>
+         <topic label="dexpr" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language952.html"/>
+         <topic label="diff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language953.html"/>
+         <topic label="div" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language954.html"/>
+         <topic label="dvar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language955.html"/>
+         <topic label="else" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language956.html"/>
+         <topic label="execute" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language957.html"/>
+         <topic label="false" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language958.html"/>
+         <topic label="float" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language959.html"/>
+         <topic label="float+" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language960.html"/>
+         <topic label="forall" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language961.html"/>
+         <topic label="from" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language962.html"/>
+         <topic label="if" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language963.html"/>
+         <topic label="in" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language964.html"/>
+         <topic label="include" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language965.html"/>
+         <topic label="infinity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language966.html"/>
+         <topic label="int" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language967.html"/>
+         <topic label="int+" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language968.html"/>
+         <topic label="intensity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language969.html"/>
+         <topic label="inter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language970.html"/>
+         <topic label="interval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language971.html"/>
+         <topic label="invoke" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language972.html"/>
+         <topic label="key" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language973.html"/>
+         <topic label="main" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language974.html"/>
+         <topic label="max" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language975.html"/>
+         <topic label="maximize" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language976.html"/>
+         <topic label="maxint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language977.html"/>
+         <topic label="min" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language978.html"/>
+         <topic label="minimize" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language979.html"/>
+         <topic label="mod" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language980.html"/>
+         <topic label="not in" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language981.html"/>
+         <topic label="optional" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language982.html"/>
+         <topic label="or" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language983.html"/>
+         <topic label="ordered" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language984.html"/>
+         <topic label="piecewise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language985.html"/>
+         <topic label="prepare" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language986.html"/>
+         <topic label="prod" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language987.html"/>
+         <topic label="pwlFunction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language988.html"/>
+         <topic label="range" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language989.html"/>
+         <topic label="reversed" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language990.html"/>
+         <topic label="sequence" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language991.html"/>
+         <topic label="setof" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language992.html"/>
+         <topic label="SheetConnection" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language993.html"/>
+         <topic label="SheetRead" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language994.html"/>
+         <topic label="SheetWrite" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language995.html"/>
+         <topic label="size" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language996.html"/>
+         <topic label="sorted" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language997.html"/>
+         <topic label="stateFunction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language998.html"/>
+         <topic label="stepFunction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language999.html"/>
+         <topic label="stepwise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1000.html"/>
+         <topic label="string" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1001.html"/>
+         <topic label="subject to" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1002.html"/>
+         <topic label="sum" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1003.html"/>
+         <topic label="symdiff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1004.html"/>
+         <topic label="to" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1005.html"/>
+         <topic label="true" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1006.html"/>
+         <topic label="tuple" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1007.html"/>
+         <topic label="types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1008.html"/>
+         <topic label="union" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1009.html"/>
+         <topic label="using" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1010.html"/>
+         <topic label="with" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1011.html"/>
+      </topic>
+      <topic label="OPL functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1012.html">
+         <topic label="Summary table of OPL functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1013.html"/>
+         <topic label="&lt;= (scheduling)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1014.html"/>
+         <topic label="abs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1015.html"/>
+         <topic label="allDifferent" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1016.html"/>
+         <topic label="allMinDistance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1017.html"/>
+         <topic label="allowedAssignments" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1018.html"/>
+         <topic label="alternative" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1019.html"/>
+         <topic label="alwaysConstant" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1020.html"/>
+         <topic label="alwaysEqual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1021.html"/>
+         <topic label="alwaysIn" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1022.html"/>
+         <topic label="alwaysNoState" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1023.html"/>
+         <topic label="append" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1024.html"/>
+         <topic label="asSet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1025.html"/>
+         <topic label="before" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1026.html"/>
+         <topic label="card" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1027.html"/>
+         <topic label="ceil" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1028.html"/>
+         <topic label="count" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1029.html"/>
+         <topic label="cumulFunctionValue" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1030.html"/>
+         <topic label="distToInt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1031.html"/>
+         <topic label="dual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1032.html"/>
+         <topic label="element" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1033.html"/>
+         <topic label="endAtEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1034.html"/>
+         <topic label="endAtStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1035.html"/>
+         <topic label="endBeforeEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1036.html"/>
+         <topic label="endBeforeStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1037.html"/>
+         <topic label="endEval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1038.html"/>
+         <topic label="endOf" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1039.html"/>
+         <topic label="endOfNext" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1040.html"/>
+         <topic label="endOfPrev" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1041.html"/>
+         <topic label="exp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1042.html"/>
+         <topic label="first" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1043.html"/>
+         <topic label="first (scheduling)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1044.html"/>
+         <topic label="floatValue" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1045.html"/>
+         <topic label="floor" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1046.html"/>
+         <topic label="forbiddenAssignments" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1047.html"/>
+         <topic label="forbidEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1048.html"/>
+         <topic label="forbidExtent" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1049.html"/>
+         <topic label="forbidStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1050.html"/>
+         <topic label="frac" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1051.html"/>
+         <topic label="ftoi" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1052.html"/>
+         <topic label="heightAtEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1053.html"/>
+         <topic label="heightAtStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1054.html"/>
+         <topic label="intValue" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1055.html"/>
+         <topic label="inverse" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1056.html"/>
+         <topic label="isomorphism" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1057.html"/>
+         <topic label="item" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1058.html"/>
+         <topic label="last" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1059.html"/>
+         <topic label="last (scheduling)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1060.html"/>
+         <topic label="length" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1061.html"/>
+         <topic label="lengthEval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1062.html"/>
+         <topic label="lengthOf" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1063.html"/>
+         <topic label="lengthOfNext" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1064.html"/>
+         <topic label="lengthOfPrev" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1065.html"/>
+         <topic label="lex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1066.html"/>
+         <topic label="lg" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1067.html"/>
+         <topic label="ln" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1068.html"/>
+         <topic label="log" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1069.html"/>
+         <topic label="matchAt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1070.html"/>
+         <topic label="maxl" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1071.html"/>
+         <topic label="minl" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1072.html"/>
+         <topic label="next" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1073.html"/>
+         <topic label="nextc" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1074.html"/>
+         <topic label="noOverlap" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1075.html"/>
+         <topic label="numberOfSegments" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1076.html"/>
+         <topic label="ord" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1077.html"/>
+         <topic label="overlapLength" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1078.html"/>
+         <topic label="pack" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1079.html"/>
+         <topic label="pow" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1080.html"/>
+         <topic label="presenceOf" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1081.html"/>
+         <topic label="prev" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1082.html"/>
+         <topic label="prev (scheduling)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1083.html"/>
+         <topic label="prevc" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1084.html"/>
+         <topic label="pulse" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1085.html"/>
+         <topic label="rand" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1086.html"/>
+         <topic label="reducedCost" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1087.html"/>
+         <topic label="round" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1088.html"/>
+         <topic label="segmentEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1089.html"/>
+         <topic label="segmentStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1090.html"/>
+         <topic label="segmentValue" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1091.html"/>
+         <topic label="sgn" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1092.html"/>
+         <topic label="sizeEval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1093.html"/>
+         <topic label="sizeOf" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1094.html"/>
+         <topic label="sizeOfNext" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1095.html"/>
+         <topic label="sizeOfPrev" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1096.html"/>
+         <topic label="slack" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1097.html"/>
+         <topic label="span" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1098.html"/>
+         <topic label="sqrt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1099.html"/>
+         <topic label="srand" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1100.html"/>
+         <topic label="standardDeviation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1101.html"/>
+         <topic label="startAtEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1102.html"/>
+         <topic label="startAtStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1103.html"/>
+         <topic label="startBeforeEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1104.html"/>
+         <topic label="startBeforeStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1105.html"/>
+         <topic label="startEval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1106.html"/>
+         <topic label="startOf" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1107.html"/>
+         <topic label="startOfNext" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1108.html"/>
+         <topic label="startOfPrev" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1109.html"/>
+         <topic label="stateFunctionValue" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1110.html"/>
+         <topic label="step" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1111.html"/>
+         <topic label="stepAtEnd" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1112.html"/>
+         <topic label="stepAtStart" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1113.html"/>
+         <topic label="synchronize" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1114.html"/>
+         <topic label="trunc" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1115.html"/>
+         <topic label="typeOfNext" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1116.html"/>
+         <topic label="typeOfPrev" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1117.html"/>
+      </topic>
+      <topic label="IBM ILOG Script keywords and functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1118.html">
+         <topic label="What is a scripting statement?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1119.html"/>
+         <topic label="Keywords common to OPL and IBM ILOG Script" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1120.html"/>
+         <topic label="IBM ILOG Script keywords and functions for OPL models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1121.html"/>
+         <topic label="Array" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1122.html"/>
+         <topic label="break" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1123.html"/>
+         <topic label="continue" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1124.html"/>
+         <topic label="Date" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1125.html"/>
+         <topic label="delete" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1126.html"/>
+         <topic label="eval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1127.html"/>
+         <topic label="for" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1128.html"/>
+         <topic label="function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1129.html"/>
+         <topic label="infinity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1130.html"/>
+         <topic label="Math" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1131.html"/>
+         <topic label="NaN" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1132.html"/>
+         <topic label="new" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1133.html"/>
+         <topic label="null" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1134.html"/>
+         <topic label="Number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1135.html"/>
+         <topic label="Object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1136.html"/>
+         <topic label="return" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1137.html"/>
+         <topic label="static" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1138.html"/>
+         <topic label="String" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1139.html"/>
+         <topic label="this" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1140.html"/>
+         <topic label="typeof" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1141.html"/>
+         <topic label="var" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1142.html"/>
+         <topic label="while" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1143.html"/>
+         <topic label="write" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1144.html"/>
+         <topic label="writeln" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1145.html"/>
+         <topic label="IBM ILOG Script keywords reserved for future use" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1146.html"/>
+      </topic>
+      <topic label="OPL Operators and OPL Syntax" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1147.html">
+         <topic label="Operators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1148.html"/>
+         <topic label="OPL Syntax" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1149.html">
+            <topic label="Data File Grammar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1150.html"/>
+            <topic label="OPL Grammar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1151.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="IBM ILOG Script Reference Manual" href="html/refjsopl/html/intro.html">
+      <link toc="toc/refjsopl.xml"/>
+   </topic>
+   <topic label="Parameters and Settings in OPL" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1152.html">
+      <topic label="OPL language options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1153.html">
+         <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1154.html"/>
+         <topic label="Setting language options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1155.html"/>
+         <topic label="Description of the OPL language options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1156.html"/>
+      </topic>
+      <topic label="Constraint programming options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1157.html">
+         <topic label="Setting CP options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1158.html"/>
+         <topic label="Description of constraint programming options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1159.html">
+            <topic label="Propagation control options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1160.html"/>
+            <topic label="Search control/General options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1161.html"/>
+            <topic label="Search types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1162.html"/>
+            <topic label="Search control/Tolerances" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1163.html"/>
+            <topic label="Search control/Limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1164.html"/>
+            <topic label="Search control/Log control" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1165.html"/>
+         </topic>
+      </topic>
+      <topic label="Mathematical programming options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1166.html">
+         <topic label="Setting MP options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1167.html"/>
+         <topic label="CPLEX parameters and OPL parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1168.html"/>
+         <topic label="Parameters Reference Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Language1169.html"/>
+      </topic>
+   </topic>
+</toc>

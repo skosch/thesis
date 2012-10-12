@@ -1,0 +1,31 @@
+
+                      ILOG License Manager (ILM) 2.6
+
+
+ILOG License Manager (ILM) is ILOG's license manager for network-based
+floating licenses and node-locked licenses.
+
+The installation procedure places ILM in a subdirectory called ilm.
+Here you should have the following files:
+
+ - ilmd      the server daemon
+ - ihostid   gets the hostid used by ILM
+ - ilmcheck  checks license files
+ - ilmlist   checks server daemon
+
+These script files automatically select which executable to launch in
+the subdirectory(ies) depending on your system.
+
+
+GETTING YOUR LICENSE KEY
+
+ihostid displays the hostname, the hostid, and a checksum for the
+current host.  To get your license key, run ihostid, and send the
+information displayed to ILOG.
+
+Example:
+
+% ihostid 
+The hostname of this machine is    republique
+The ILOG-hostid of this machine is 7140214e
+The checksum of this hostid is     43349

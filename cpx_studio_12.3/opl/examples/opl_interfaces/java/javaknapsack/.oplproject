@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project>
+    <version>1.0</version>
+    <configs>
+        <config name="Configuration1" default="true" category="opl">
+            <ref type="model" name="cutstock_ext_main.mod">
+            </ref>
+            <ref type="data" name="cutstock.dat">
+            </ref>
+        </config>
+    </configs>
+    
+</project>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="Fusionner les branches CVS">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      Cet aide-mémoire vous présente les étapes pour fusionner les modification d'une branche
+      CVS vers une autre, ou vers HEAD. Si vous avez besoin d'aide au cours d'une étape,
+      cliquez sur l'icône (?)
+      située sur la droite.
+    </description>
+  </intro>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Déterminer les informations de branche et de version">
+    <description>
+      La première étape consiste à déterminer <b>laquelle</b> des 2 branches doit être fusionnée,
+      à quelle <b>version</b> le contenu a été rattaché à la branche, et quelle sera la branche de
+      <b>destination</b> (la branche vers laquelle le résultat de la fusion sera inséré).
+      Lorsque vous disposez de toutes ces informations, passez à l'étape suivante.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm"
+      title="Réserver le projet">
+    <description>
+      Avant de fusionner, vous devez <b>réserver</b> le projet que vous voulez fusionner
+      et l'insérer dans votre espace de travail. Cette opération peut être effectuée par
+      l'assistant d'importation ou en ajoutant votre référentiel à partir de la perspective
+      Exploration du référentiel CVS ou cliquez sur le bouton (?) pour obtenir de l'aide.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-103.htm"
+      title="Chargement de la destination dans l'espace de travail">
+    <description>
+      Dans le navigateur, cliquez avec le bouton droit sur le projet et sélectionnez
+      Remplacer par &gt; Une autre branche ou version. Sélectionnez la branche de destination. Cette action charger le contenu le plus récent de la branche dans votre espace de travail.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Fusion des informations">
+    <description>
+      Dans le navigateur, cliquez avec le bouton droit sur le projet et sélectionnez
+      <b>Equipe</b> &gt; <b>Fusionner</b>. Spécifiez dans l'assistant le détail des informations
+      de la fusion.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="Utilisation de l'éditeur de fusion">
+    <description>
+      L'éditeur de fusion permet de fusionner manuellement les modifications. Cette étape charge les modifications requises dans l'espace de travail. Une fois que toutes les modification sont fusionnées
+      et que le résultat est concluant, passez à l'étape suivante.
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-114.htm"
+      title="Validation des modifications">
+    <description>
+      Cliquez avec le bouton droit de la souris sur le projet et sélectionnez <b>Equipe</b>
+      &gt; <b>Synchroniser avec le référentiel</b> et valider toutes les modification dans le
+      référentiel. Cette étape permet de finaliser le transfert des modifications de l'espace de
+      travail et finalise la fusion.
+    </description>
+  </item>
+
+</cheatsheet>

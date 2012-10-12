@@ -1,0 +1,2 @@
+all: paper.tex
+	xelatex --papersize=letter paper.tex

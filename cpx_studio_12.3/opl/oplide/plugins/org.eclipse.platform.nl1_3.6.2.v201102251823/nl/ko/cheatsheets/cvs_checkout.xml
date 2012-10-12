@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="CVS 프로젝트 체크아웃">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      이 치트 시트는 CVS 저장소 탐색 방법 및 프로젝트 체크아웃 방법을 보여줍니다. 각 단계의 도움말을 보려면, 오른쪽의 (?) 아이콘을 클릭하십시오.
+    </description>
+  </intro>
+
+  <item
+      title="CVS 저장소 탐색 Perspective 열기"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+      기본 메뉴에서 창 &gt; Perspective 열기 &gt; 기타...를 선택한 다음
+      <b>CVS 저장소 탐색</b> Perspective를 선택하십시오.
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="CVS 저장소 추가"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+      CVS 저장소 보기에서 <b>CVS 저장소 추가</b> 도구 모음 단추를
+      클릭하십시오. 저장소 위치 및 인증 정보를 입력하십시오. 예를 들어, <b>Eclipse</b> 저장소의 경우, 다음과 같이 입력합니다.<br/>
+      <br/>
+      호스트: dev.eclipse.org<br/>
+      저장소 경로: /cvsroot/eclipse<br/>
+      사용자: anonymous<br/>
+      연결 유형: pserver<br/>
+      <br/>
+      다른 필드의 경우, 기본값을 승인하고 완료를 클릭하십시오.
+    </description>
+  </item>
+
+  <item
+      title="프로젝트 위치 지정"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+      새로 추가된 저장소의 <b>HEAD</b> 노드를 확장한 후, 체크아웃하려는
+      프로젝트의 위치를 지정하십시오(예를 들어, 치트 시트 보기의 소스 코드는
+      org.eclipse.ui.cheatsheets에 있음).
+    </description>
+  </item>
+
+  <item
+      title="프로젝트 체크아웃"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+      체크아웃하려는 프로젝트에서 마우스 오른쪽 단추를 클릭한 후 <b>체크아웃</b>을
+선택하십시오. 이는 저장소의 최신 컨텐츠를 작업공간에 다운로드합니다.
+    </description>
+  </item>
+
+  <item
+      title="작업공간 보기"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+      작업공간의 프로젝트를 보려면, 창 &gt; Perspective 열기 &gt; 자원을
+      선택하여 <b>자원</b> Perspective로 전환한 후 <b>프로젝트 탐색기</b> 보기에서
+      프로젝트를 선택하여 볼 수 있습니다. 이제 프로젝트 컨텐츠를 보고 작업할 수
+      있습니다.
+    </description>
+  </item>
+
+</cheatsheet>

@@ -1,0 +1,1649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<toc label=".NET API Reference documentation" topic="html/refdotnetcpoptimizer/html/R_Project.htm">
+
+  
+
+    <topic label="ILOG.Concert Namespace" href="html/refdotnetcpoptimizer/html/N_ILOG_Concert.htm">
+      <topic label="CloneManager Class" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_CloneManager.htm">
+        <topic label="CloneManager Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_CloneManager.htm" />
+        <topic label="CloneManager Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_CloneManager__ctor.htm" />
+        <topic label="CloneManager Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_CloneManager.htm">
+          <topic label="GetClone Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_CloneManager_GetClone.htm" />
+        </topic>
+        <topic label="CloneManager Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_CloneManager.htm">
+          <topic label="Modeler Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_CloneManager_Modeler.htm" />
+        </topic>
+      </topic>
+      <topic label="Exception Class" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_Exception.htm">
+        <topic label="Exception Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_Exception.htm" />
+        <topic label="Exception Constructor " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_Exception__ctor.htm">
+          <topic label="Exception Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_Exception__ctor.htm" />
+          <topic label="Exception Constructor (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_Exception__ctor_1.htm" />
+        </topic>
+        <topic label="Exception Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_Exception.htm" />
+        <topic label="Exception Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_Exception.htm" />
+      </topic>
+      <topic label="IAddable Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IAddable.htm">
+        <topic label="IAddable Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IAddable.htm" />
+        <topic label="IAddable Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IAddable.htm" />
+        <topic label="IAddable Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IAddable.htm">
+          <topic label="Name Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IAddable_Name.htm" />
+        </topic>
+      </topic>
+      <topic label="IAlternative Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IAlternative.htm">
+        <topic label="IAlternative Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IAlternative.htm" />
+        <topic label="IAlternative Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IAlternative.htm" />
+        <topic label="IAlternative Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IAlternative.htm" />
+      </topic>
+      <topic label="IAnd Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IAnd.htm">
+        <topic label="IAnd Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IAnd.htm" />
+        <topic label="IAnd Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IAnd.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IAnd_Add.htm">
+            <topic label="Add Method (IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_Add.htm" />
+            <topic label="Add Method (IConstraint[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_Add_1.htm" />
+            <topic label="Add Method (IConstraint[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_Add_2.htm" />
+          </topic>
+          <topic label="GetEnumerator Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_GetEnumerator.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IAnd_Remove.htm">
+            <topic label="Remove Method (IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_Remove.htm" />
+            <topic label="Remove Method (IConstraint[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_Remove_1.htm" />
+            <topic label="Remove Method (IConstraint[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnd_Remove_2.htm" />
+          </topic>
+        </topic>
+        <topic label="IAnd Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IAnd.htm" />
+      </topic>
+      <topic label="IAnyCollection Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IAnyCollection.htm">
+        <topic label="IAnyCollection Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IAnyCollection.htm" />
+        <topic label="IAnyCollection Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IAnyCollection.htm">
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IAnyCollection_GetIndex.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IAnyCollection_GetValue.htm" />
+        </topic>
+        <topic label="IAnyCollection Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IAnyCollection.htm" />
+      </topic>
+      <topic label="ICollectionHelper Class" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ICollectionHelper.htm">
+        <topic label="ICollectionHelper Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ICollectionHelper.htm" />
+        <topic label="ICollectionHelper Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICollectionHelper__ctor.htm" />
+        <topic label="ICollectionHelper Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ICollectionHelper.htm">
+          <topic label="asIntRange Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICollectionHelper_asIntRange.htm" />
+          <topic label="asIntSet Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICollectionHelper_asIntSet.htm" />
+          <topic label="asNumRange Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICollectionHelper_asNumRange.htm" />
+          <topic label="asNumSet Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICollectionHelper_asNumSet.htm" />
+        </topic>
+      </topic>
+      <topic label="IColumn Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IColumn.htm">
+        <topic label="IColumn Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IColumn.htm" />
+        <topic label="IColumn Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IColumn.htm">
+          <topic label="And Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IColumn_And.htm" />
+        </topic>
+      </topic>
+      <topic label="IConstraint Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IConstraint.htm">
+        <topic label="IConstraint Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IConstraint.htm" />
+        <topic label="IConstraint Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IConstraint.htm" />
+        <topic label="IConstraint Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IConstraint.htm" />
+      </topic>
+      <topic label="IConversion Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IConversion.htm">
+        <topic label="IConversion Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IConversion.htm" />
+        <topic label="IConversion Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IConversion.htm">
+          <topic label="GetType Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IConversion_GetType.htm" />
+        </topic>
+        <topic label="IConversion Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IConversion.htm" />
+      </topic>
+      <topic label="ICopyable Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ICopyable.htm">
+        <topic label="ICopyable Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ICopyable.htm" />
+        <topic label="ICopyable Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ICopyable.htm">
+          <topic label="MakeClone Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICopyable_MakeClone.htm" />
+          <topic label="VisitChildren Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICopyable_VisitChildren.htm" />
+        </topic>
+      </topic>
+      <topic label="ICopyableVisitor Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ICopyableVisitor.htm">
+        <topic label="ICopyableVisitor Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ICopyableVisitor.htm" />
+        <topic label="ICopyableVisitor Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ICopyableVisitor.htm">
+          <topic label="BeginVisit Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICopyableVisitor_BeginVisit.htm" />
+          <topic label="EndVisit Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICopyableVisitor_EndVisit.htm" />
+          <topic label="VisitChild Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICopyableVisitor_VisitChild.htm" />
+        </topic>
+      </topic>
+      <topic label="ICumulFunctionExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ICumulFunctionExpr.htm">
+        <topic label="ICumulFunctionExpr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ICumulFunctionExpr.htm" />
+        <topic label="ICumulFunctionExpr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ICumulFunctionExpr.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICumulFunctionExpr_Add.htm" />
+          <topic label="Sub Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ICumulFunctionExpr_Sub.htm" />
+        </topic>
+        <topic label="ICumulFunctionExpr Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ICumulFunctionExpr.htm" />
+      </topic>
+      <topic label="IDataCollection Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IDataCollection.htm">
+        <topic label="IDataCollection Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IDataCollection.htm" />
+        <topic label="IDataCollection Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IDataCollection.htm">
+          <topic label="IsIntRange Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_IsIntRange.htm" />
+          <topic label="IsIntSet Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_IsIntSet.htm" />
+          <topic label="IsNumRange Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_IsNumRange.htm" />
+          <topic label="IsNumSet Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_IsNumSet.htm" />
+          <topic label="IsSymbolSet Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_IsSymbolSet.htm" />
+          <topic label="IsTupleSet Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_IsTupleSet.htm" />
+          <topic label="Name Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDataCollection_Name.htm" />
+        </topic>
+      </topic>
+      <topic label="IDiscreteDataCollection Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IDiscreteDataCollection.htm">
+        <topic label="IDiscreteDataCollection Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IDiscreteDataCollection.htm" />
+        <topic label="IDiscreteDataCollection Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IDiscreteDataCollection.htm">
+          <topic label="GetEnumerator Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IDiscreteDataCollection_GetEnumerator.htm" />
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IDiscreteDataCollection_GetIndex.htm">
+            <topic label="GetIndex Method (Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IDiscreteDataCollection_GetIndex.htm" />
+            <topic label="GetIndex Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IDiscreteDataCollection_GetIndex_1.htm" />
+            <topic label="GetIndex Method (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IDiscreteDataCollection_GetIndex_2.htm" />
+          </topic>
+        </topic>
+        <topic label="IDiscreteDataCollection Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IDiscreteDataCollection.htm">
+          <topic label="Size Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IDiscreteDataCollection_Size.htm" />
+        </topic>
+      </topic>
+      <topic label="IForAllRange Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IForAllRange.htm">
+        <topic label="IForAllRange Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IForAllRange.htm" />
+        <topic label="IForAllRange Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IForAllRange.htm">
+          <topic label="SetBounds Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IForAllRange_SetBounds.htm" />
+        </topic>
+        <topic label="IForAllRange Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IForAllRange.htm">
+          <topic label="LB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IForAllRange_LB.htm" />
+          <topic label="UB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IForAllRange_UB.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntCollection Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntCollection.htm">
+        <topic label="IIntCollection Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntCollection.htm" />
+        <topic label="IIntCollection Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntCollection.htm">
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IIntCollection_GetIndex.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntCollection_GetValue.htm" />
+        </topic>
+        <topic label="IIntCollection Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIntCollection.htm" />
+      </topic>
+      <topic label="IIntCollectionVar Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntCollectionVar.htm">
+        <topic label="IIntCollectionVar Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntCollectionVar.htm" />
+        <topic label="IIntCollectionVar Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntCollectionVar.htm" />
+      </topic>
+      <topic label="IIntervalSequenceVar Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntervalSequenceVar.htm">
+        <topic label="IIntervalSequenceVar Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntervalSequenceVar.htm" />
+        <topic label="IIntervalSequenceVar Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntervalSequenceVar.htm" />
+        <topic label="IIntervalSequenceVar Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIntervalSequenceVar.htm" />
+      </topic>
+      <topic label="IIntervalVar Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntervalVar.htm">
+        <topic label="IIntervalVar Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntervalVar.htm" />
+        <topic label="IIntervalVar Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntervalVar.htm">
+          <topic label="SetAbsent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntervalVar_SetAbsent.htm" />
+          <topic label="SetIntensity Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntervalVar_SetIntensity.htm" />
+          <topic label="SetOptional Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntervalVar_SetOptional.htm" />
+          <topic label="SetPresent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntervalVar_SetPresent.htm" />
+        </topic>
+        <topic label="IIntervalVar Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIntervalVar.htm">
+          <topic label="EndMax Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_EndMax.htm" />
+          <topic label="EndMin Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_EndMin.htm" />
+          <topic label="Granularity Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_Granularity.htm" />
+          <topic label="Intensity Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_Intensity.htm" />
+          <topic label="IsAbsent Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_IsAbsent.htm" />
+          <topic label="IsPresent Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_IsPresent.htm" />
+          <topic label="LengthMax Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_LengthMax.htm" />
+          <topic label="LengthMin Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_LengthMin.htm" />
+          <topic label="Name Property " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IIntervalVar_Name.htm">
+            <topic label="Name Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_Name.htm" />
+          </topic>
+          <topic label="SizeMax Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_SizeMax.htm" />
+          <topic label="SizeMin Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_SizeMin.htm" />
+          <topic label="StartMax Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_StartMax.htm" />
+          <topic label="StartMin Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntervalVar_StartMin.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntExpr.htm">
+        <topic label="IIntExpr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntExpr.htm" />
+        <topic label="IIntExpr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntExpr.htm" />
+      </topic>
+      <topic label="IIntRange Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntRange.htm">
+        <topic label="IIntRange Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntRange.htm" />
+        <topic label="IIntRange Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntRange.htm">
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IIntRange_GetIndex.htm" />
+        </topic>
+        <topic label="IIntRange Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIntRange.htm">
+          <topic label="LB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntRange_LB.htm" />
+          <topic label="UB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntRange_UB.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntSet Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntSet.htm">
+        <topic label="IIntSet Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntSet.htm" />
+        <topic label="IIntSet Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntSet.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntSet_Add.htm" />
+          <topic label="Contains Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntSet_Contains.htm" />
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IIntSet_GetIndex.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IIntSet_Remove.htm" />
+        </topic>
+        <topic label="IIntSet Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIntSet.htm" />
+      </topic>
+      <topic label="IIntVar Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIntVar.htm">
+        <topic label="IIntVar Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIntVar.htm" />
+        <topic label="IIntVar Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIntVar.htm" />
+        <topic label="IIntVar Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIntVar.htm">
+          <topic label="Max Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntVar_Max.htm" />
+          <topic label="Min Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IIntVar_Min.htm" />
+          <topic label="Name Property " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IIntVar_Name.htm" />
+        </topic>
+      </topic>
+      <topic label="IIsomorphism Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IIsomorphism.htm">
+        <topic label="IIsomorphism Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IIsomorphism.htm" />
+        <topic label="IIsomorphism Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IIsomorphism.htm" />
+        <topic label="IIsomorphism Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IIsomorphism.htm" />
+      </topic>
+      <topic label="ILinearIntExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ILinearIntExpr.htm">
+        <topic label="ILinearIntExpr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ILinearIntExpr.htm" />
+        <topic label="ILinearIntExpr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ILinearIntExpr.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_Add.htm" />
+          <topic label="AddTerm Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ILinearIntExpr_AddTerm.htm">
+            <topic label="AddTerm Method (IIntVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_AddTerm.htm" />
+            <topic label="AddTerm Method (Int32, IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_AddTerm_1.htm" />
+          </topic>
+          <topic label="AddTerms Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ILinearIntExpr_AddTerms.htm">
+            <topic label="AddTerms Method (IIntVar[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_AddTerms.htm" />
+            <topic label="AddTerms Method (Int32[], IIntVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_AddTerms_2.htm" />
+            <topic label="AddTerms Method (IIntVar[], Int32[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_AddTerms_1.htm" />
+            <topic label="AddTerms Method (Int32[], IIntVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_AddTerms_3.htm" />
+          </topic>
+          <topic label="Clear Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_Clear.htm" />
+          <topic label="GetLinearEnumerator Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_GetLinearEnumerator.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ILinearIntExpr_Remove.htm">
+            <topic label="Remove Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_Remove.htm" />
+            <topic label="Remove Method (IIntVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_Remove_1.htm" />
+            <topic label="Remove Method (IIntVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearIntExpr_Remove_2.htm" />
+          </topic>
+        </topic>
+        <topic label="ILinearIntExpr Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ILinearIntExpr.htm">
+          <topic label="Constant Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ILinearIntExpr_Constant.htm" />
+        </topic>
+      </topic>
+      <topic label="ILinearIntExprEnumerator Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ILinearIntExprEnumerator.htm">
+        <topic label="ILinearIntExprEnumerator Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ILinearIntExprEnumerator.htm" />
+        <topic label="ILinearIntExprEnumerator Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ILinearIntExprEnumerator.htm" />
+        <topic label="ILinearIntExprEnumerator Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ILinearIntExprEnumerator.htm">
+          <topic label="IntVar Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ILinearIntExprEnumerator_IntVar.htm" />
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ILinearIntExprEnumerator_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="ILinearNumExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ILinearNumExpr.htm">
+        <topic label="ILinearNumExpr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ILinearNumExpr.htm" />
+        <topic label="ILinearNumExpr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ILinearNumExpr.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_Add.htm" />
+          <topic label="AddTerm Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ILinearNumExpr_AddTerm.htm">
+            <topic label="AddTerm Method (INumVar, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_AddTerm.htm" />
+            <topic label="AddTerm Method (Double, INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_AddTerm_1.htm" />
+          </topic>
+          <topic label="AddTerms Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ILinearNumExpr_AddTerms.htm">
+            <topic label="AddTerms Method (INumVar[], Double[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_AddTerms.htm" />
+            <topic label="AddTerms Method (Double[], INumVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_AddTerms_2.htm" />
+            <topic label="AddTerms Method (INumVar[], Double[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_AddTerms_1.htm" />
+            <topic label="AddTerms Method (Double[], INumVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_AddTerms_3.htm" />
+          </topic>
+          <topic label="Clear Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_Clear.htm" />
+          <topic label="GetLinearEnumerator Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_GetLinearEnumerator.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ILinearNumExpr_Remove.htm">
+            <topic label="Remove Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_Remove.htm" />
+            <topic label="Remove Method (INumVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_Remove_1.htm" />
+            <topic label="Remove Method (INumVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ILinearNumExpr_Remove_2.htm" />
+          </topic>
+        </topic>
+        <topic label="ILinearNumExpr Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ILinearNumExpr.htm">
+          <topic label="Constant Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ILinearNumExpr_Constant.htm" />
+        </topic>
+      </topic>
+      <topic label="ILinearNumExprEnumerator Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ILinearNumExprEnumerator.htm">
+        <topic label="ILinearNumExprEnumerator Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ILinearNumExprEnumerator.htm" />
+        <topic label="ILinearNumExprEnumerator Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ILinearNumExprEnumerator.htm" />
+        <topic label="ILinearNumExprEnumerator Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ILinearNumExprEnumerator.htm">
+          <topic label="NumVar Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ILinearNumExprEnumerator_NumVar.htm" />
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ILinearNumExprEnumerator_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="IloException Class" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IloException.htm">
+        <topic label="IloException Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IloException.htm" />
+        <topic label="IloException Constructor " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IloException__ctor.htm">
+          <topic label="IloException Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IloException__ctor.htm" />
+          <topic label="IloException Constructor (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IloException__ctor_1.htm" />
+        </topic>
+        <topic label="IloException Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IloException.htm" />
+        <topic label="IloException Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IloException.htm" />
+      </topic>
+      <topic label="IModel Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IModel.htm">
+        <topic label="IModel Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IModel.htm" />
+        <topic label="IModel Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IModel.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModel_Add.htm">
+            <topic label="Add Method (IAddable)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_Add.htm" />
+            <topic label="Add Method (IAddable[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_Add_1.htm" />
+            <topic label="Add Method (IAddable[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_Add_2.htm" />
+          </topic>
+          <topic label="GetEnumerator Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_GetEnumerator.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModel_Remove.htm">
+            <topic label="Remove Method (IAddable)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_Remove.htm" />
+            <topic label="Remove Method (IAddable[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_Remove_1.htm" />
+            <topic label="Remove Method (IAddable[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModel_Remove_2.htm" />
+          </topic>
+        </topic>
+        <topic label="IModel Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IModel.htm" />
+      </topic>
+      <topic label="IModeler Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IModeler.htm">
+        <topic label="IModeler Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IModeler.htm" />
+        <topic label="IModeler Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IModeler.htm">
+          <topic label="Abs Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Abs.htm" />
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Add.htm" />
+          <topic label="AddEq Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddEq.htm">
+            <topic label="AddEq Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddEq.htm" />
+            <topic label="AddEq Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddEq_2.htm" />
+            <topic label="AddEq Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddEq_4.htm" />
+            <topic label="AddEq Method (INumExpr, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddEq_1.htm" />
+            <topic label="AddEq Method (INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddEq_3.htm" />
+            <topic label="AddEq Method (Double, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddEq_5.htm" />
+          </topic>
+          <topic label="AddGe Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddGe.htm">
+            <topic label="AddGe Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddGe.htm" />
+            <topic label="AddGe Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddGe_2.htm" />
+            <topic label="AddGe Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddGe_4.htm" />
+            <topic label="AddGe Method (INumExpr, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddGe_1.htm" />
+            <topic label="AddGe Method (INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddGe_3.htm" />
+            <topic label="AddGe Method (Double, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddGe_5.htm" />
+          </topic>
+          <topic label="AddLe Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddLe.htm">
+            <topic label="AddLe Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddLe.htm" />
+            <topic label="AddLe Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddLe_2.htm" />
+            <topic label="AddLe Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddLe_4.htm" />
+            <topic label="AddLe Method (INumExpr, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddLe_1.htm" />
+            <topic label="AddLe Method (INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddLe_3.htm" />
+            <topic label="AddLe Method (Double, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddLe_5.htm" />
+          </topic>
+          <topic label="AddMaximize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddMaximize.htm">
+            <topic label="AddMaximize Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddMaximize.htm" />
+            <topic label="AddMaximize Method (INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddMaximize_1.htm" />
+          </topic>
+          <topic label="AddMinimize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddMinimize.htm">
+            <topic label="AddMinimize Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddMinimize.htm" />
+            <topic label="AddMinimize Method (INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddMinimize_1.htm" />
+          </topic>
+          <topic label="AddObjective Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddObjective.htm">
+            <topic label="AddObjective Method (ObjectiveSense, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddObjective.htm" />
+            <topic label="AddObjective Method (ObjectiveSense, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddObjective_1.htm" />
+          </topic>
+          <topic label="AddRange Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_AddRange.htm">
+            <topic label="AddRange Method (Double, INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddRange.htm" />
+            <topic label="AddRange Method (Double, INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_AddRange_1.htm" />
+          </topic>
+          <topic label="And Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_And.htm">
+            <topic label="And Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And.htm" />
+            <topic label="And Method (IConstraint[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And_3.htm" />
+            <topic label="And Method (IConstraint, IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And_1.htm" />
+            <topic label="And Method (IConstraint[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And_6.htm" />
+            <topic label="And Method (IConstraint, IConstraint, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And_2.htm" />
+            <topic label="And Method (IConstraint[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And_4.htm" />
+            <topic label="And Method (IConstraint[], Int32, Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_And_5.htm" />
+          </topic>
+          <topic label="BoolVar Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_BoolVar.htm">
+            <topic label="BoolVar Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_BoolVar.htm" />
+            <topic label="BoolVar Method (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_BoolVar_1.htm" />
+          </topic>
+          <topic label="BoolVarArray Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_BoolVarArray.htm">
+            <topic label="BoolVarArray Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_BoolVarArray.htm" />
+            <topic label="BoolVarArray Method (Int32, String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_BoolVarArray_1.htm" />
+          </topic>
+          <topic label="Constant Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Constant.htm">
+            <topic label="Constant Method (Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Constant.htm" />
+            <topic label="Constant Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Constant_1.htm" />
+          </topic>
+          <topic label="Diff Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Diff.htm">
+            <topic label="Diff Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Diff.htm" />
+            <topic label="Diff Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Diff_1.htm" />
+            <topic label="Diff Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Diff_2.htm" />
+            <topic label="Diff Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Diff_3.htm" />
+            <topic label="Diff Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Diff_4.htm" />
+            <topic label="Diff Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Diff_5.htm" />
+          </topic>
+          <topic label="Eq Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Eq.htm">
+            <topic label="Eq Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Eq.htm" />
+            <topic label="Eq Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Eq_2.htm" />
+            <topic label="Eq Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Eq_4.htm" />
+            <topic label="Eq Method (INumExpr, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Eq_1.htm" />
+            <topic label="Eq Method (INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Eq_3.htm" />
+            <topic label="Eq Method (Double, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Eq_5.htm" />
+          </topic>
+          <topic label="Ge Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Ge.htm">
+            <topic label="Ge Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Ge.htm" />
+            <topic label="Ge Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Ge_2.htm" />
+            <topic label="Ge Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Ge_4.htm" />
+            <topic label="Ge Method (INumExpr, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Ge_1.htm" />
+            <topic label="Ge Method (INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Ge_3.htm" />
+            <topic label="Ge Method (Double, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Ge_5.htm" />
+          </topic>
+          <topic label="IfThen Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_IfThen.htm">
+            <topic label="IfThen Method (IConstraint, IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IfThen.htm" />
+            <topic label="IfThen Method (IConstraint, IConstraint, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IfThen_1.htm" />
+          </topic>
+          <topic label="IntExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntExpr.htm" />
+          <topic label="IntVar Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_IntVar.htm">
+            <topic label="IntVar Method (Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntVar.htm" />
+            <topic label="IntVar Method (Int32, Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntVar_1.htm" />
+          </topic>
+          <topic label="IntVarArray Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_IntVarArray.htm">
+            <topic label="IntVarArray Method (Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntVarArray.htm" />
+            <topic label="IntVarArray Method (Int32, Int32[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntVarArray_2.htm" />
+            <topic label="IntVarArray Method (Int32, Int32, Int32, String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntVarArray_1.htm" />
+            <topic label="IntVarArray Method (Int32, Int32[], Int32[], String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_IntVarArray_3.htm" />
+          </topic>
+          <topic label="Le Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Le.htm">
+            <topic label="Le Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Le.htm" />
+            <topic label="Le Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Le_2.htm" />
+            <topic label="Le Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Le_4.htm" />
+            <topic label="Le Method (INumExpr, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Le_1.htm" />
+            <topic label="Le Method (INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Le_3.htm" />
+            <topic label="Le Method (Double, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Le_5.htm" />
+          </topic>
+          <topic label="LinearIntExpr Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_LinearIntExpr.htm">
+            <topic label="LinearIntExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_LinearIntExpr.htm" />
+            <topic label="LinearIntExpr Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_LinearIntExpr_1.htm" />
+          </topic>
+          <topic label="LinearNumExpr Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_LinearNumExpr.htm">
+            <topic label="LinearNumExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_LinearNumExpr.htm" />
+            <topic label="LinearNumExpr Method (Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_LinearNumExpr_1.htm" />
+          </topic>
+          <topic label="Max Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Max.htm">
+            <topic label="Max Method (IIntExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_2.htm" />
+            <topic label="Max Method (INumExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_5.htm" />
+            <topic label="Max Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max.htm" />
+            <topic label="Max Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_1.htm" />
+            <topic label="Max Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_3.htm" />
+            <topic label="Max Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_4.htm" />
+            <topic label="Max Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_6.htm" />
+            <topic label="Max Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Max_7.htm" />
+          </topic>
+          <topic label="Maximize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Maximize.htm">
+            <topic label="Maximize Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Maximize.htm" />
+            <topic label="Maximize Method (INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Maximize_1.htm" />
+          </topic>
+          <topic label="Min Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Min.htm">
+            <topic label="Min Method (IIntExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_2.htm" />
+            <topic label="Min Method (INumExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_5.htm" />
+            <topic label="Min Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min.htm" />
+            <topic label="Min Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_1.htm" />
+            <topic label="Min Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_3.htm" />
+            <topic label="Min Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_4.htm" />
+            <topic label="Min Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_6.htm" />
+            <topic label="Min Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Min_7.htm" />
+          </topic>
+          <topic label="Minimize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Minimize.htm">
+            <topic label="Minimize Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Minimize.htm" />
+            <topic label="Minimize Method (INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Minimize_1.htm" />
+          </topic>
+          <topic label="Negative Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Negative.htm">
+            <topic label="Negative Method (IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Negative.htm" />
+            <topic label="Negative Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Negative_1.htm" />
+          </topic>
+          <topic label="Not Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Not.htm">
+            <topic label="Not Method (IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Not.htm" />
+            <topic label="Not Method (IConstraint, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Not_1.htm" />
+          </topic>
+          <topic label="NumExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumExpr.htm" />
+          <topic label="NumVar Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_NumVar.htm">
+            <topic label="NumVar Method (Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVar.htm" />
+            <topic label="NumVar Method (Double, Double, NumVarType)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVar_1.htm" />
+            <topic label="NumVar Method (Double, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVar_3.htm" />
+            <topic label="NumVar Method (Double, Double, NumVarType, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVar_2.htm" />
+          </topic>
+          <topic label="NumVarArray Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_NumVarArray.htm">
+            <topic label="NumVarArray Method (Int32, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray.htm" />
+            <topic label="NumVarArray Method (Int32, Double[], Double[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_4.htm" />
+            <topic label="NumVarArray Method (Int32, Double, Double, NumVarType)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_1.htm" />
+            <topic label="NumVarArray Method (Int32, Double, Double, String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_3.htm" />
+            <topic label="NumVarArray Method (Int32, Double[], Double[], NumVarType[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_5.htm" />
+            <topic label="NumVarArray Method (Int32, Double[], Double[], String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_7.htm" />
+            <topic label="NumVarArray Method (Int32, Double, Double, NumVarType, String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_2.htm" />
+            <topic label="NumVarArray Method (Int32, Double[], Double[], NumVarType[], String[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_NumVarArray_6.htm" />
+          </topic>
+          <topic label="Objective Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Objective.htm">
+            <topic label="Objective Method (ObjectiveSense, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Objective.htm" />
+            <topic label="Objective Method (ObjectiveSense, INumExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Objective_1.htm" />
+          </topic>
+          <topic label="Or Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Or.htm">
+            <topic label="Or Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or.htm" />
+            <topic label="Or Method (IConstraint[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or_3.htm" />
+            <topic label="Or Method (IConstraint, IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or_1.htm" />
+            <topic label="Or Method (IConstraint[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or_6.htm" />
+            <topic label="Or Method (IConstraint, IConstraint, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or_2.htm" />
+            <topic label="Or Method (IConstraint[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or_4.htm" />
+            <topic label="Or Method (IConstraint[], Int32, Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Or_5.htm" />
+          </topic>
+          <topic label="Prod Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Prod.htm">
+            <topic label="Prod Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod.htm" />
+            <topic label="Prod Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_1.htm" />
+            <topic label="Prod Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_2.htm" />
+            <topic label="Prod Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_3.htm" />
+            <topic label="Prod Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_6.htm" />
+            <topic label="Prod Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_8.htm" />
+            <topic label="Prod Method (INumVar, INumVar, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_4.htm" />
+            <topic label="Prod Method (INumVar, Double, INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_5.htm" />
+            <topic label="Prod Method (Double, INumVar, INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Prod_7.htm" />
+          </topic>
+          <topic label="Range Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Range.htm">
+            <topic label="Range Method (Double, INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Range.htm" />
+            <topic label="Range Method (Double, INumExpr, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Range_1.htm" />
+          </topic>
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Remove.htm" />
+          <topic label="ScalProd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_ScalProd.htm">
+            <topic label="ScalProd Method (IIntVar[], IIntVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd.htm" />
+            <topic label="ScalProd Method (IIntVar[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_2.htm" />
+            <topic label="ScalProd Method (INumVar[], INumVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_4.htm" />
+            <topic label="ScalProd Method (INumVar[], Double[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_6.htm" />
+            <topic label="ScalProd Method (INumVar[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_8.htm" />
+            <topic label="ScalProd Method (Double[], INumVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_9.htm" />
+            <topic label="ScalProd Method (Int32[], IIntVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_11.htm" />
+            <topic label="ScalProd Method (Int32[], INumVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_13.htm" />
+            <topic label="ScalProd Method (IIntVar[], IIntVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_1.htm" />
+            <topic label="ScalProd Method (IIntVar[], Int32[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_3.htm" />
+            <topic label="ScalProd Method (INumVar[], INumVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_5.htm" />
+            <topic label="ScalProd Method (INumVar[], Double[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_7.htm" />
+            <topic label="ScalProd Method (Double[], INumVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_10.htm" />
+            <topic label="ScalProd Method (Int32[], IIntVar[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_ScalProd_12.htm" />
+          </topic>
+          <topic label="Square Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Square.htm">
+            <topic label="Square Method (IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Square.htm" />
+            <topic label="Square Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Square_1.htm" />
+          </topic>
+          <topic label="Sum Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IModeler_Sum.htm">
+            <topic label="Sum Method (IIntExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_8.htm" />
+            <topic label="Sum Method (INumExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_18.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum.htm" />
+            <topic label="Sum Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_7.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_10.htm" />
+            <topic label="Sum Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_17.htm" />
+            <topic label="Sum Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_20.htm" />
+            <topic label="Sum Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_21.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_1.htm" />
+            <topic label="Sum Method (IIntExpr[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_9.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_11.htm" />
+            <topic label="Sum Method (INumExpr[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_19.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr, IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_2.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_12.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_3.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr, INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_13.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_4.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr, INumExpr, INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_14.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_5.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr, INumExpr, INumExpr, INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_15.htm" />
+            <topic label="Sum Method (IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_6.htm" />
+            <topic label="Sum Method (INumExpr, INumExpr, INumExpr, INumExpr, INumExpr, INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IModeler_Sum_16.htm" />
+          </topic>
+        </topic>
+        <topic label="IModeler Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IModeler.htm" />
+      </topic>
+      <topic label="IMultiCriterionExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IMultiCriterionExpr.htm" />
+      <topic label="INoOverlap Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INoOverlap.htm">
+        <topic label="INoOverlap Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INoOverlap.htm" />
+        <topic label="INoOverlap Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INoOverlap.htm" />
+        <topic label="INoOverlap Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_INoOverlap.htm" />
+      </topic>
+      <topic label="INumCollection Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumCollection.htm">
+        <topic label="INumCollection Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumCollection.htm" />
+        <topic label="INumCollection Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumCollection.htm">
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumCollection_GetIndex.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumCollection_GetValue.htm" />
+        </topic>
+        <topic label="INumCollection Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_INumCollection.htm" />
+      </topic>
+      <topic label="INumExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumExpr.htm">
+        <topic label="INumExpr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumExpr.htm" />
+        <topic label="INumExpr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumExpr.htm" />
+      </topic>
+      <topic label="INumRange Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumRange.htm">
+        <topic label="INumRange Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumRange.htm" />
+        <topic label="INumRange Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_INumRange.htm">
+          <topic label="LB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_INumRange_LB.htm" />
+          <topic label="UB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_INumRange_UB.htm" />
+        </topic>
+      </topic>
+      <topic label="INumSet Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumSet.htm">
+        <topic label="INumSet Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumSet.htm" />
+        <topic label="INumSet Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumSet.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumSet_Add.htm" />
+          <topic label="Contains Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumSet_Contains.htm" />
+          <topic label="GetIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumSet_GetIndex.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumSet_Remove.htm" />
+        </topic>
+        <topic label="INumSet Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_INumSet.htm" />
+      </topic>
+      <topic label="INumToNumSegmentFunction Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumToNumSegmentFunction.htm">
+        <topic label="INumToNumSegmentFunction Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumToNumSegmentFunction.htm" />
+        <topic label="INumToNumSegmentFunction Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumToNumSegmentFunction.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_Add.htm" />
+          <topic label="AddValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_AddValue.htm" />
+          <topic label="Copy Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_Copy.htm" />
+          <topic label="Dilate Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_Dilate.htm" />
+          <topic label="GetArea Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_GetArea.htm" />
+          <topic label="GetDefinitionIntervalMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_GetDefinitionIntervalMax.htm" />
+          <topic label="GetDefinitionIntervalMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_GetDefinitionIntervalMin.htm" />
+          <topic label="GetMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_GetMax.htm" />
+          <topic label="GetMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_GetMin.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_GetValue.htm" />
+          <topic label="IsSemiConvex Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_IsSemiConvex.htm" />
+          <topic label="Prod Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_Prod.htm" />
+          <topic label="SetMax Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumSegmentFunction_SetMax.htm">
+            <topic label="SetMax Method (INumToNumSegmentFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetMax.htm" />
+            <topic label="SetMax Method (Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetMax_1.htm" />
+            <topic label="SetMax Method (Double, Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetMax_2.htm" />
+          </topic>
+          <topic label="SetMin Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumSegmentFunction_SetMin.htm">
+            <topic label="SetMin Method (INumToNumSegmentFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetMin.htm" />
+            <topic label="SetMin Method (Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetMin_1.htm" />
+            <topic label="SetMin Method (Double, Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetMin_2.htm" />
+          </topic>
+          <topic label="SetPeriodic Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetPeriodic.htm" />
+          <topic label="SetPeriodicValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetPeriodicValue.htm" />
+          <topic label="SetPoints Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetPoints.htm" />
+          <topic label="SetSlope Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetSlope.htm" />
+          <topic label="SetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_SetValue.htm" />
+          <topic label="Shift Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_Shift.htm" />
+          <topic label="Sub Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunction_Sub.htm" />
+        </topic>
+      </topic>
+      <topic label="INumToNumSegmentFunctionCursor Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumToNumSegmentFunctionCursor.htm">
+        <topic label="INumToNumSegmentFunctionCursor Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumToNumSegmentFunctionCursor.htm" />
+        <topic label="INumToNumSegmentFunctionCursor Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumToNumSegmentFunctionCursor.htm">
+          <topic label="GetSegmentMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_GetSegmentMax.htm" />
+          <topic label="GetSegmentMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_GetSegmentMin.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_GetValue.htm" />
+          <topic label="GetValueLeft Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_GetValueLeft.htm" />
+          <topic label="GetValueRight Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_GetValueRight.htm" />
+          <topic label="Next Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_Next.htm" />
+          <topic label="Ok Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_Ok.htm" />
+          <topic label="Previous Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_Previous.htm" />
+          <topic label="Seek Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumSegmentFunctionCursor_Seek.htm" />
+        </topic>
+      </topic>
+      <topic label="INumToNumStepFunction Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumToNumStepFunction.htm">
+        <topic label="INumToNumStepFunction Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumToNumStepFunction.htm" />
+        <topic label="INumToNumStepFunction Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumToNumStepFunction.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Add.htm" />
+          <topic label="AddValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_AddValue.htm" />
+          <topic label="Copy Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Copy.htm" />
+          <topic label="Dilate Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Dilate.htm" />
+          <topic label="GetArea Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_GetArea.htm" />
+          <topic label="GetDefinitionIntervalMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_GetDefinitionIntervalMax.htm" />
+          <topic label="GetDefinitionIntervalMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_GetDefinitionIntervalMin.htm" />
+          <topic label="GetMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_GetMax.htm" />
+          <topic label="GetMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_GetMin.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_GetValue.htm" />
+          <topic label="Prod Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Prod.htm" />
+          <topic label="SetMax Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumStepFunction_SetMax.htm">
+            <topic label="SetMax Method (INumToNumStepFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetMax.htm" />
+            <topic label="SetMax Method (Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetMax_1.htm" />
+          </topic>
+          <topic label="SetMin Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumStepFunction_SetMin.htm">
+            <topic label="SetMin Method (INumToNumStepFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetMin.htm" />
+            <topic label="SetMin Method (Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetMin_1.htm" />
+          </topic>
+          <topic label="SetPeriodic Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumStepFunction_SetPeriodic.htm">
+            <topic label="SetPeriodic Method (INumToNumStepFunction, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetPeriodic.htm" />
+            <topic label="SetPeriodic Method (INumToNumStepFunction, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetPeriodic_1.htm" />
+            <topic label="SetPeriodic Method (INumToNumStepFunction, Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetPeriodic_2.htm" />
+          </topic>
+          <topic label="SetPeriodicValue Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumStepFunction_SetPeriodicValue.htm">
+            <topic label="SetPeriodicValue Method (Double, Double, INumToNumStepFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetPeriodicValue.htm" />
+            <topic label="SetPeriodicValue Method (Double, Double, INumToNumStepFunction, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetPeriodicValue_1.htm" />
+          </topic>
+          <topic label="SetSteps Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetSteps.htm" />
+          <topic label="SetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_SetValue.htm" />
+          <topic label="Shift Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumToNumStepFunction_Shift.htm">
+            <topic label="Shift Method (Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Shift.htm" />
+            <topic label="Shift Method (Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Shift_1.htm" />
+          </topic>
+          <topic label="Sub Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunction_Sub.htm" />
+        </topic>
+      </topic>
+      <topic label="INumToNumStepFunctionCursor Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumToNumStepFunctionCursor.htm">
+        <topic label="INumToNumStepFunctionCursor Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumToNumStepFunctionCursor.htm" />
+        <topic label="INumToNumStepFunctionCursor Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumToNumStepFunctionCursor.htm">
+          <topic label="GetSegmentMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_GetSegmentMax.htm" />
+          <topic label="GetSegmentMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_GetSegmentMin.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_GetValue.htm" />
+          <topic label="Next Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_Next.htm" />
+          <topic label="Ok Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_Ok.htm" />
+          <topic label="Previous Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_Previous.htm" />
+          <topic label="Seek Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_INumToNumStepFunctionCursor_Seek.htm" />
+        </topic>
+      </topic>
+      <topic label="INumVar Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_INumVar.htm">
+        <topic label="INumVar Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_INumVar.htm" />
+        <topic label="INumVar Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_INumVar.htm" />
+        <topic label="INumVar Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_INumVar.htm">
+          <topic label="LB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_INumVar_LB.htm" />
+          <topic label="Name Property " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_INumVar_Name.htm">
+            <topic label="Name Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_INumVar_Name.htm" />
+          </topic>
+          <topic label="Type Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_INumVar_Type.htm" />
+          <topic label="UB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_INumVar_UB.htm" />
+        </topic>
+      </topic>
+      <topic label="IObjective Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IObjective.htm">
+        <topic label="IObjective Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IObjective.htm" />
+        <topic label="IObjective Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IObjective.htm">
+          <topic label="ClearExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IObjective_ClearExpr.htm" />
+        </topic>
+        <topic label="IObjective Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IObjective.htm">
+          <topic label="Expr Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IObjective_Expr.htm" />
+          <topic label="Sense Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IObjective_Sense.htm" />
+        </topic>
+      </topic>
+      <topic label="IOr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IOr.htm">
+        <topic label="IOr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IOr.htm" />
+        <topic label="IOr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IOr.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IOr_Add.htm">
+            <topic label="Add Method (IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_Add.htm" />
+            <topic label="Add Method (IConstraint[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_Add_1.htm" />
+            <topic label="Add Method (IConstraint[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_Add_2.htm" />
+          </topic>
+          <topic label="GetEnumerator Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_GetEnumerator.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_IOr_Remove.htm">
+            <topic label="Remove Method (IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_Remove.htm" />
+            <topic label="Remove Method (IConstraint[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_Remove_1.htm" />
+            <topic label="Remove Method (IConstraint[], Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IOr_Remove_2.htm" />
+          </topic>
+        </topic>
+        <topic label="IOr Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IOr.htm" />
+      </topic>
+      <topic label="IRange Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IRange.htm">
+        <topic label="IRange Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IRange.htm" />
+        <topic label="IRange Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IRange.htm">
+          <topic label="ClearExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IRange_ClearExpr.htm" />
+          <topic label="SetBounds Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_IRange_SetBounds.htm" />
+        </topic>
+        <topic label="IRange Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IRange.htm">
+          <topic label="Expr Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IRange_Expr.htm" />
+          <topic label="LB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IRange_LB.htm" />
+          <topic label="UB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_IRange_UB.htm" />
+        </topic>
+      </topic>
+      <topic label="ISemiContVar Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ISemiContVar.htm">
+        <topic label="ISemiContVar Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ISemiContVar.htm" />
+        <topic label="ISemiContVar Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ISemiContVar.htm" />
+        <topic label="ISemiContVar Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ISemiContVar.htm">
+          <topic label="Name Property " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISemiContVar_Name.htm" />
+          <topic label="SemiContLB Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ISemiContVar_SemiContLB.htm" />
+        </topic>
+      </topic>
+      <topic label="ISolution Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ISolution.htm">
+        <topic label="ISolution Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ISolution.htm" />
+        <topic label="ISolution Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ISolution.htm">
+          <topic label="Add Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_Add.htm">
+            <topic label="Add Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Add.htm" />
+            <topic label="Add Method (IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Add_1.htm" />
+            <topic label="Add Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Add_2.htm" />
+            <topic label="Add Method (IIntVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Add_3.htm" />
+            <topic label="Add Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Add_4.htm" />
+          </topic>
+          <topic label="Contains Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_Contains.htm">
+            <topic label="Contains Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Contains.htm" />
+            <topic label="Contains Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Contains_1.htm" />
+          </topic>
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_End.htm" />
+          <topic label="GetEnd Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetEnd.htm" />
+          <topic label="GetEndMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetEndMax.htm" />
+          <topic label="GetEndMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetEndMin.htm" />
+          <topic label="GetLength Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetLength.htm" />
+          <topic label="GetLengthMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetLengthMax.htm" />
+          <topic label="GetLengthMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetLengthMin.htm" />
+          <topic label="GetMax Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_GetMax.htm">
+            <topic label="GetMax Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetMax.htm" />
+            <topic label="GetMax Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetMax_1.htm" />
+          </topic>
+          <topic label="GetMin Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_GetMin.htm">
+            <topic label="GetMin Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetMin.htm" />
+            <topic label="GetMin Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetMin_1.htm" />
+          </topic>
+          <topic label="GetSize Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetSize.htm" />
+          <topic label="GetSizeMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetSizeMax.htm" />
+          <topic label="GetSizeMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetSizeMin.htm" />
+          <topic label="GetStart Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetStart.htm" />
+          <topic label="GetStartMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetStartMax.htm" />
+          <topic label="GetStartMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetStartMin.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_GetValue.htm">
+            <topic label="GetValue Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetValue.htm" />
+            <topic label="GetValue Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_GetValue_1.htm" />
+          </topic>
+          <topic label="IsAbsent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_IsAbsent.htm" />
+          <topic label="IsFixed Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_IsFixed.htm" />
+          <topic label="IsInDomain Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_IsInDomain.htm" />
+          <topic label="IsPresent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_IsPresent.htm" />
+          <topic label="Remove Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_Remove.htm">
+            <topic label="Remove Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Remove.htm" />
+            <topic label="Remove Method (IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Remove_1.htm" />
+            <topic label="Remove Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Remove_2.htm" />
+            <topic label="Remove Method (IIntVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Remove_3.htm" />
+          </topic>
+          <topic label="SetAbsent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetAbsent.htm" />
+          <topic label="SetDomain Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetDomain.htm" />
+          <topic label="SetEnd Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetEnd.htm" />
+          <topic label="SetEndMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetEndMax.htm" />
+          <topic label="SetEndMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetEndMin.htm" />
+          <topic label="SetLength Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetLength.htm" />
+          <topic label="SetLengthMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetLengthMax.htm" />
+          <topic label="SetLengthMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetLengthMin.htm" />
+          <topic label="SetMax Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_SetMax.htm">
+            <topic label="SetMax Method (IIntVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetMax.htm" />
+            <topic label="SetMax Method (INumVar, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetMax_1.htm" />
+          </topic>
+          <topic label="SetMin Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_SetMin.htm">
+            <topic label="SetMin Method (IIntVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetMin.htm" />
+            <topic label="SetMin Method (INumVar, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetMin_1.htm" />
+          </topic>
+          <topic label="SetOptional Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetOptional.htm" />
+          <topic label="SetPresent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetPresent.htm" />
+          <topic label="SetSize Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetSize.htm" />
+          <topic label="SetSizeMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetSizeMax.htm" />
+          <topic label="SetSizeMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetSizeMin.htm" />
+          <topic label="SetStart Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetStart.htm" />
+          <topic label="SetStartMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetStartMax.htm" />
+          <topic label="SetStartMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetStartMin.htm" />
+          <topic label="SetValue Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_Concert_ISolution_SetValue.htm">
+            <topic label="SetValue Method (IIntVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetValue.htm" />
+            <topic label="SetValue Method (INumVar, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_SetValue_1.htm" />
+          </topic>
+          <topic label="Store Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ISolution_Store.htm" />
+        </topic>
+      </topic>
+      <topic label="ISOS1 Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ISOS1.htm">
+        <topic label="ISOS1 Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ISOS1.htm" />
+        <topic label="ISOS1 Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ISOS1.htm" />
+        <topic label="ISOS1 Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ISOS1.htm">
+          <topic label="NumVars Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ISOS1_NumVars.htm" />
+          <topic label="Values Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ISOS1_Values.htm" />
+        </topic>
+      </topic>
+      <topic label="ISOS2 Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ISOS2.htm">
+        <topic label="ISOS2 Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ISOS2.htm" />
+        <topic label="ISOS2 Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ISOS2.htm" />
+        <topic label="ISOS2 Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ISOS2.htm">
+          <topic label="NumVars Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ISOS2_NumVars.htm" />
+          <topic label="Values Property " href="html/refdotnetcpoptimizer/html/P_ILOG_Concert_ISOS2_Values.htm" />
+        </topic>
+      </topic>
+      <topic label="ISpan Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ISpan.htm">
+        <topic label="ISpan Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ISpan.htm" />
+        <topic label="ISpan Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ISpan.htm" />
+        <topic label="ISpan Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ISpan.htm" />
+      </topic>
+      <topic label="IStateFunction Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IStateFunction.htm" />
+      <topic label="IStateFunctionExpr Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_IStateFunctionExpr.htm">
+        <topic label="IStateFunctionExpr Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_IStateFunctionExpr.htm" />
+        <topic label="IStateFunctionExpr Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_IStateFunctionExpr.htm" />
+        <topic label="IStateFunctionExpr Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_IStateFunctionExpr.htm" />
+      </topic>
+      <topic label="ISynchronize Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ISynchronize.htm">
+        <topic label="ISynchronize Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ISynchronize.htm" />
+        <topic label="ISynchronize Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ISynchronize.htm" />
+        <topic label="ISynchronize Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_Concert_ISynchronize.htm" />
+      </topic>
+      <topic label="ITransitionDistance Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ITransitionDistance.htm">
+        <topic label="ITransitionDistance Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ITransitionDistance.htm" />
+        <topic label="ITransitionDistance Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ITransitionDistance.htm">
+          <topic label="GetSize Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ITransitionDistance_GetSize.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ITransitionDistance_GetValue.htm" />
+          <topic label="SetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ITransitionDistance_SetValue.htm" />
+        </topic>
+      </topic>
+      <topic label="NumVarType Class" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_NumVarType.htm">
+        <topic label="NumVarType Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_NumVarType.htm" />
+        <topic label="NumVarType Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_NumVarType__ctor.htm" />
+        <topic label="NumVarType Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_Concert_NumVarType.htm">
+          <topic label="Bool Field" href="html/refdotnetcpoptimizer/html/F_ILOG_Concert_NumVarType_Bool.htm" />
+          <topic label="Float Field" href="html/refdotnetcpoptimizer/html/F_ILOG_Concert_NumVarType_Float.htm" />
+          <topic label="Int Field" href="html/refdotnetcpoptimizer/html/F_ILOG_Concert_NumVarType_Int.htm" />
+        </topic>
+        <topic label="NumVarType Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_NumVarType.htm">
+          <topic label="GetTypeValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_NumVarType_GetTypeValue.htm" />
+        </topic>
+      </topic>
+      <topic label="ObjectiveSense Class" href="html/refdotnetcpoptimizer/html/T_ILOG_Concert_ObjectiveSense.htm">
+        <topic label="ObjectiveSense Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_Concert_ObjectiveSense.htm" />
+        <topic label="ObjectiveSense Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ObjectiveSense__ctor.htm" />
+        <topic label="ObjectiveSense Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_Concert_ObjectiveSense.htm">
+          <topic label="Maximize Field" href="html/refdotnetcpoptimizer/html/F_ILOG_Concert_ObjectiveSense_Maximize.htm" />
+          <topic label="Minimize Field" href="html/refdotnetcpoptimizer/html/F_ILOG_Concert_ObjectiveSense_Minimize.htm" />
+        </topic>
+        <topic label="ObjectiveSense Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_Concert_ObjectiveSense.htm">
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_Concert_ObjectiveSense_GetValue.htm" />
+        </topic>
+      </topic>
+    </topic>
+    <topic label="ILOG.CP Namespace" href="html/refdotnetcpoptimizer/html/N_ILOG_CP.htm">
+      <topic label="CP Class" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_CP.htm">
+        <topic label="CP Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_CP.htm" />
+        <topic label="CP Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_CP_CP.htm">
+          <topic label="IntervalMax Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntervalMax.htm" />
+          <topic label="IntervalMin Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntervalMin.htm" />
+          <topic label="NoState Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_NoState.htm" />
+        </topic>
+        <topic label="CP Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_CP.htm">
+          <topic label="AbortSearch Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AbortSearch.htm" />
+          <topic label="AddTuple Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AddTuple.htm" />
+          <topic label="Alternative Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Alternative.htm">
+            <topic label="Alternative Method (IIntervalVar, IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Alternative.htm" />
+            <topic label="Alternative Method (IIntervalVar, IIntervalVar[], IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Alternative_1.htm" />
+            <topic label="Alternative Method (IIntervalVar, IIntervalVar[], Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Alternative_3.htm" />
+            <topic label="Alternative Method (IIntervalVar, IIntervalVar[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Alternative_5.htm" />
+            <topic label="Alternative Method (IIntervalVar, IIntervalVar[], IIntExpr, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Alternative_2.htm" />
+            <topic label="Alternative Method (IIntervalVar, IIntervalVar[], Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Alternative_4.htm" />
+          </topic>
+          <topic label="AlwaysConstant Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_AlwaysConstant.htm">
+            <topic label="AlwaysConstant Method (IStateFunction, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysConstant.htm" />
+            <topic label="AlwaysConstant Method (IStateFunction, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysConstant_2.htm" />
+            <topic label="AlwaysConstant Method (IStateFunction, IIntervalVar, Boolean, Boolean)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysConstant_1.htm" />
+            <topic label="AlwaysConstant Method (IStateFunction, Int32, Int32, Boolean, Boolean)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysConstant_3.htm" />
+          </topic>
+          <topic label="AlwaysEqual Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_AlwaysEqual.htm">
+            <topic label="AlwaysEqual Method (ICumulFunctionExpr, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysEqual.htm" />
+            <topic label="AlwaysEqual Method (IStateFunction, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysEqual_2.htm" />
+            <topic label="AlwaysEqual Method (ICumulFunctionExpr, Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysEqual_1.htm" />
+            <topic label="AlwaysEqual Method (IStateFunction, Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysEqual_4.htm" />
+            <topic label="AlwaysEqual Method (IStateFunction, IIntervalVar, Int32, Boolean, Boolean)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysEqual_3.htm" />
+            <topic label="AlwaysEqual Method (IStateFunction, Int32, Int32, Int32, Boolean, Boolean)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysEqual_5.htm" />
+          </topic>
+          <topic label="AlwaysIn Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_AlwaysIn.htm">
+            <topic label="AlwaysIn Method (ICumulFunctionExpr, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysIn.htm" />
+            <topic label="AlwaysIn Method (IStateFunction, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysIn_2.htm" />
+            <topic label="AlwaysIn Method (ICumulFunctionExpr, Int32, Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysIn_1.htm" />
+            <topic label="AlwaysIn Method (IStateFunction, Int32, Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysIn_3.htm" />
+          </topic>
+          <topic label="AlwaysNoState Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_AlwaysNoState.htm">
+            <topic label="AlwaysNoState Method (IStateFunction, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysNoState.htm" />
+            <topic label="AlwaysNoState Method (IStateFunction, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_AlwaysNoState_1.htm" />
+          </topic>
+          <topic label="ArrayEltName Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ArrayEltName.htm" />
+          <topic label="Before Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Before.htm" />
+          <topic label="ClearAbort Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ClearAbort.htm" />
+          <topic label="ClearStartingPoint Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ClearStartingPoint.htm" />
+          <topic label="Constant Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Constant.htm">
+            <topic label="Constant Method (Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Constant.htm" />
+            <topic label="Constant Method (Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Constant_1.htm" />
+          </topic>
+          <topic label="CumulFunctionExpr Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_CumulFunctionExpr.htm">
+            <topic label="CumulFunctionExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_CumulFunctionExpr.htm" />
+            <topic label="CumulFunctionExpr Method (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_CumulFunctionExpr_1.htm" />
+          </topic>
+          <topic label="Diff Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Diff.htm" />
+          <topic label="Div Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Div.htm">
+            <topic label="Div Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Div.htm" />
+            <topic label="Div Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Div_1.htm" />
+            <topic label="Div Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Div_2.htm" />
+          </topic>
+          <topic label="DomainMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_DomainMax.htm" />
+          <topic label="DomainMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_DomainMin.htm" />
+          <topic label="DomainSize Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_DomainSize.htm" />
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_End.htm" />
+          <topic label="EndAtEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndAtEnd.htm">
+            <topic label="EndAtEnd Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndAtEnd.htm" />
+            <topic label="EndAtEnd Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndAtEnd_1.htm" />
+            <topic label="EndAtEnd Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndAtEnd_2.htm" />
+          </topic>
+          <topic label="EndAtStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndAtStart.htm">
+            <topic label="EndAtStart Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndAtStart.htm" />
+            <topic label="EndAtStart Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndAtStart_1.htm" />
+            <topic label="EndAtStart Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndAtStart_2.htm" />
+          </topic>
+          <topic label="EndBeforeEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndBeforeEnd.htm">
+            <topic label="EndBeforeEnd Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndBeforeEnd.htm" />
+            <topic label="EndBeforeEnd Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndBeforeEnd_1.htm" />
+            <topic label="EndBeforeEnd Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndBeforeEnd_2.htm" />
+          </topic>
+          <topic label="EndBeforeStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndBeforeStart.htm">
+            <topic label="EndBeforeStart Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndBeforeStart.htm" />
+            <topic label="EndBeforeStart Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndBeforeStart_1.htm" />
+            <topic label="EndBeforeStart Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndBeforeStart_2.htm" />
+          </topic>
+          <topic label="EndEval Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndEval.htm">
+            <topic label="EndEval Method (IIntervalVar, INumToNumSegmentFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndEval.htm" />
+            <topic label="EndEval Method (IIntervalVar, INumToNumSegmentFunction, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndEval_1.htm" />
+          </topic>
+          <topic label="EndOf Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndOf.htm">
+            <topic label="EndOf Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndOf.htm" />
+            <topic label="EndOf Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndOf_1.htm" />
+          </topic>
+          <topic label="EndOfNext Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndOfNext.htm">
+            <topic label="EndOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndOfNext.htm" />
+            <topic label="EndOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndOfNext_1.htm" />
+          </topic>
+          <topic label="EndOfPrevious Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_EndOfPrevious.htm">
+            <topic label="EndOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndOfPrevious.htm" />
+            <topic label="EndOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndOfPrevious_1.htm" />
+          </topic>
+          <topic label="EndSearch Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_EndSearch.htm" />
+          <topic label="Eq Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Eq.htm">
+            <topic label="Eq Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Eq.htm" />
+            <topic label="Eq Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Eq_1.htm" />
+            <topic label="Eq Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Eq_2.htm" />
+          </topic>
+          <topic label="Equiv Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Equiv.htm" />
+          <topic label="ExplicitValueEval Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_ExplicitValueEval.htm">
+            <topic label="ExplicitValueEval Method (Int32[], Double[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitValueEval.htm" />
+            <topic label="ExplicitValueEval Method (Int32[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitValueEval_2.htm" />
+            <topic label="ExplicitValueEval Method (Int32[], Double[], Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitValueEval_1.htm" />
+            <topic label="ExplicitValueEval Method (Int32[], Int32[], Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitValueEval_3.htm" />
+          </topic>
+          <topic label="ExplicitVarEval Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_ExplicitVarEval.htm">
+            <topic label="ExplicitVarEval Method (IIntVar[], Double[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitVarEval.htm" />
+            <topic label="ExplicitVarEval Method (IIntVar[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitVarEval_2.htm" />
+            <topic label="ExplicitVarEval Method (IIntVar[], Double[], Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitVarEval_1.htm" />
+            <topic label="ExplicitVarEval Method (IIntVar[], Int32[], Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ExplicitVarEval_3.htm" />
+          </topic>
+          <topic label="Exponent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Exponent.htm" />
+          <topic label="FalseConstraint Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_FalseConstraint.htm" />
+          <topic label="First Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_First.htm" />
+          <topic label="Floor Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Floor.htm" />
+          <topic label="ForbidEnd Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ForbidEnd.htm" />
+          <topic label="ForbidExtent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ForbidExtent.htm" />
+          <topic label="ForbidStart Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ForbidStart.htm" />
+          <topic label="Fract Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Fract.htm" />
+          <topic label="Ge Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Ge.htm">
+            <topic label="Ge Method (ICumulFunctionExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge.htm" />
+            <topic label="Ge Method (ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge_1.htm" />
+            <topic label="Ge Method (IIntExpr, ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge_2.htm" />
+            <topic label="Ge Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge_3.htm" />
+            <topic label="Ge Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge_4.htm" />
+            <topic label="Ge Method (Int32, ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge_5.htm" />
+            <topic label="Ge Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Ge_6.htm" />
+          </topic>
+          <topic label="GetDomain Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetDomain.htm" />
+          <topic label="GetDomainSize Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetDomainSize.htm" />
+          <topic label="GetEnd Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetEnd.htm" />
+          <topic label="GetEndMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetEndMax.htm" />
+          <topic label="GetEndMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetEndMin.htm" />
+          <topic label="GetFirst Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetFirst.htm" />
+          <topic label="GetInfo Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetInfo.htm">
+            <topic label="GetInfo Method (CP.DoubleInfo)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetInfo.htm" />
+            <topic label="GetInfo Method (CP.IntInfo)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetInfo_1.htm" />
+          </topic>
+          <topic label="GetIntValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetIntValue.htm" />
+          <topic label="GetLast Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetLast.htm" />
+          <topic label="GetLength Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetLength.htm" />
+          <topic label="GetLengthMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetLengthMax.htm" />
+          <topic label="GetLengthMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetLengthMin.htm" />
+          <topic label="GetMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetMax.htm" />
+          <topic label="GetMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetMin.htm" />
+          <topic label="GetNext Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetNext.htm" />
+          <topic label="GetNumberOfSegments Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetNumberOfSegments.htm">
+            <topic label="GetNumberOfSegments Method (ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetNumberOfSegments.htm" />
+            <topic label="GetNumberOfSegments Method (IStateFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetNumberOfSegments_1.htm" />
+          </topic>
+          <topic label="GetParameter Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetParameter.htm">
+            <topic label="GetParameter Method (CP.DoubleParam)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetParameter.htm" />
+            <topic label="GetParameter Method (CP.IntParam)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetParameter_1.htm" />
+          </topic>
+          <topic label="GetParameterDefault Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetParameterDefault.htm">
+            <topic label="GetParameterDefault Method (CP.DoubleParam)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetParameterDefault.htm" />
+            <topic label="GetParameterDefault Method (CP.IntParam)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetParameterDefault_1.htm" />
+          </topic>
+          <topic label="GetPrev Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetPrev.htm" />
+          <topic label="GetRandomInt Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetRandomInt.htm" />
+          <topic label="GetSegmentEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetSegmentEnd.htm">
+            <topic label="GetSegmentEnd Method (ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSegmentEnd.htm" />
+            <topic label="GetSegmentEnd Method (IStateFunction, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSegmentEnd_1.htm" />
+          </topic>
+          <topic label="GetSegmentStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetSegmentStart.htm">
+            <topic label="GetSegmentStart Method (ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSegmentStart.htm" />
+            <topic label="GetSegmentStart Method (IStateFunction, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSegmentStart_1.htm" />
+          </topic>
+          <topic label="GetSegmentValue Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetSegmentValue.htm">
+            <topic label="GetSegmentValue Method (ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSegmentValue.htm" />
+            <topic label="GetSegmentValue Method (IStateFunction, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSegmentValue_1.htm" />
+          </topic>
+          <topic label="GetSize Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSize.htm" />
+          <topic label="GetSizeMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSizeMax.htm" />
+          <topic label="GetSizeMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetSizeMin.htm" />
+          <topic label="GetStart Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetStart.htm" />
+          <topic label="GetStartMax Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetStartMax.htm" />
+          <topic label="GetStartMin Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetStartMin.htm" />
+          <topic label="GetValue Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_GetValue.htm">
+            <topic label="GetValue Method (IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetValue_1.htm" />
+            <topic label="GetValue Method (IIntVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetValue_2.htm" />
+            <topic label="GetValue Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetValue_3.htm" />
+            <topic label="GetValue Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetValue_4.htm" />
+            <topic label="GetValue Method (ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetValue.htm" />
+            <topic label="GetValue Method (IStateFunction, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_GetValue_5.htm" />
+          </topic>
+          <topic label="Gt Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Gt.htm">
+            <topic label="Gt Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Gt.htm" />
+            <topic label="Gt Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Gt_1.htm" />
+            <topic label="Gt Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Gt_2.htm" />
+          </topic>
+          <topic label="HasObjective Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_HasObjective.htm" />
+          <topic label="HeightAtEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_HeightAtEnd.htm">
+            <topic label="HeightAtEnd Method (IIntervalVar, ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_HeightAtEnd.htm" />
+            <topic label="HeightAtEnd Method (IIntervalVar, ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_HeightAtEnd_1.htm" />
+          </topic>
+          <topic label="HeightAtStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_HeightAtStart.htm">
+            <topic label="HeightAtStart Method (IIntervalVar, ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_HeightAtStart.htm" />
+            <topic label="HeightAtStart Method (IIntervalVar, ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_HeightAtStart_1.htm" />
+          </topic>
+          <topic label="IfThenElse Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IfThenElse.htm" />
+          <topic label="ImpactOfLastBranch Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ImpactOfLastBranch.htm" />
+          <topic label="Imply Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Imply.htm" />
+          <topic label="IntervalSequenceVar Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_IntervalSequenceVar.htm">
+            <topic label="IntervalSequenceVar Method (IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalSequenceVar.htm" />
+            <topic label="IntervalSequenceVar Method (IIntervalVar[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalSequenceVar_1.htm" />
+            <topic label="IntervalSequenceVar Method (IIntervalVar[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalSequenceVar_3.htm" />
+            <topic label="IntervalSequenceVar Method (IIntervalVar[], Int32[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalSequenceVar_2.htm" />
+          </topic>
+          <topic label="IntervalVar Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_IntervalVar.htm">
+            <topic label="IntervalVar Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalVar.htm" />
+            <topic label="IntervalVar Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalVar_1.htm" />
+            <topic label="IntervalVar Method (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalVar_5.htm" />
+            <topic label="IntervalVar Method (Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalVar_2.htm" />
+            <topic label="IntervalVar Method (Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalVar_4.htm" />
+            <topic label="IntervalVar Method (Int32, Int32, Boolean, INumToNumStepFunction, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntervalVar_3.htm" />
+          </topic>
+          <topic label="IntExpr Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntExpr.htm" />
+          <topic label="IntExprArray Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntExprArray.htm" />
+          <topic label="IntTable Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntTable.htm" />
+          <topic label="IntValueChooser Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_IntValueChooser.htm">
+            <topic label="IntValueChooser Method (IValueSelector)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntValueChooser.htm" />
+            <topic label="IntValueChooser Method (IValueSelector[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntValueChooser_1.htm" />
+          </topic>
+          <topic label="IntVar Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_IntVar.htm">
+            <topic label="IntVar Method (Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntVar.htm" />
+            <topic label="IntVar Method (Int32[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntVar_1.htm" />
+          </topic>
+          <topic label="IntVarChooser Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_IntVarChooser.htm">
+            <topic label="IntVarChooser Method (IVarSelector)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntVarChooser.htm" />
+            <topic label="IntVarChooser Method (IVarSelector[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntVarChooser_1.htm" />
+          </topic>
+          <topic label="IsAbsent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsAbsent.htm" />
+          <topic label="IsFixed Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_IsFixed.htm">
+            <topic label="IsFixed Method (ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsFixed.htm" />
+            <topic label="IsFixed Method (IIntervalSequenceVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsFixed_1.htm" />
+            <topic label="IsFixed Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsFixed_2.htm" />
+            <topic label="IsFixed Method (INumVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsFixed_3.htm" />
+            <topic label="IsFixed Method (IStateFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsFixed_4.htm" />
+          </topic>
+          <topic label="IsInDomain Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsInDomain.htm" />
+          <topic label="Isomorphism Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Isomorphism.htm">
+            <topic label="Isomorphism Method (IIntervalVar[], IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Isomorphism.htm" />
+            <topic label="Isomorphism Method (IIntervalVar[], IIntervalVar[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Isomorphism_3.htm" />
+            <topic label="Isomorphism Method (IIntervalVar[], IIntervalVar[], IIntExpr[], Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Isomorphism_1.htm" />
+            <topic label="Isomorphism Method (IIntervalVar[], IIntervalVar[], IIntExpr[], Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Isomorphism_2.htm" />
+          </topic>
+          <topic label="IsPresent Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IsPresent.htm" />
+          <topic label="Last Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Last.htm" />
+          <topic label="Le Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Le.htm">
+            <topic label="Le Method (ICumulFunctionExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le.htm" />
+            <topic label="Le Method (ICumulFunctionExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le_1.htm" />
+            <topic label="Le Method (IIntExpr, ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le_2.htm" />
+            <topic label="Le Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le_3.htm" />
+            <topic label="Le Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le_4.htm" />
+            <topic label="Le Method (Int32, ICumulFunctionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le_5.htm" />
+            <topic label="Le Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Le_6.htm" />
+          </topic>
+          <topic label="LengthEval Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_LengthEval.htm">
+            <topic label="LengthEval Method (IIntervalVar, INumToNumSegmentFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthEval.htm" />
+            <topic label="LengthEval Method (IIntervalVar, INumToNumSegmentFunction, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthEval_1.htm" />
+          </topic>
+          <topic label="LengthOf Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_LengthOf.htm">
+            <topic label="LengthOf Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthOf.htm" />
+            <topic label="LengthOf Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthOf_1.htm" />
+          </topic>
+          <topic label="LengthOfNext Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_LengthOfNext.htm">
+            <topic label="LengthOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthOfNext.htm" />
+            <topic label="LengthOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthOfNext_1.htm" />
+          </topic>
+          <topic label="LengthOfPrevious Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_LengthOfPrevious.htm">
+            <topic label="LengthOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthOfPrevious.htm" />
+            <topic label="LengthOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_LengthOfPrevious_1.htm" />
+          </topic>
+          <topic label="Log Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Log.htm" />
+          <topic label="Lt Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Lt.htm">
+            <topic label="Lt Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Lt.htm" />
+            <topic label="Lt Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Lt_1.htm" />
+            <topic label="Lt Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Lt_2.htm" />
+          </topic>
+          <topic label="Maximize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Maximize.htm">
+            <topic label="Maximize Method (IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Maximize.htm" />
+            <topic label="Maximize Method (IMultiCriterionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Maximize_1.htm" />
+          </topic>
+          <topic label="Member Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Member.htm" />
+          <topic label="Minimize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Minimize.htm">
+            <topic label="Minimize Method (IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Minimize.htm" />
+            <topic label="Minimize Method (IMultiCriterionExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Minimize_1.htm" />
+          </topic>
+          <topic label="Model Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Model.htm" />
+          <topic label="Modulo Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Modulo.htm" />
+          <topic label="Neq Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Neq.htm">
+            <topic label="Neq Method (IConstraint, IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Neq.htm" />
+            <topic label="Neq Method (IIntExpr, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Neq_1.htm" />
+            <topic label="Neq Method (IIntExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Neq_2.htm" />
+            <topic label="Neq Method (Int32, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Neq_3.htm" />
+          </topic>
+          <topic label="Next Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Next.htm" />
+          <topic label="NoOverlap Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_NoOverlap.htm">
+            <topic label="NoOverlap Method (IIntervalSequenceVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap.htm" />
+            <topic label="NoOverlap Method (IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap_5.htm" />
+            <topic label="NoOverlap Method (IIntervalSequenceVar, ITransitionDistance)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap_1.htm" />
+            <topic label="NoOverlap Method (IIntervalVar[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap_6.htm" />
+            <topic label="NoOverlap Method (IIntervalSequenceVar, ITransitionDistance, Boolean)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap_2.htm" />
+            <topic label="NoOverlap Method (IIntervalSequenceVar, ITransitionDistance, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap_4.htm" />
+            <topic label="NoOverlap Method (IIntervalSequenceVar, ITransitionDistance, Boolean, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NoOverlap_3.htm" />
+          </topic>
+          <topic label="NumExprArray Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumExprArray.htm" />
+          <topic label="NumToNumSegmentFunction Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_NumToNumSegmentFunction.htm">
+            <topic label="NumToNumSegmentFunction Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_1.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_2.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double[], Double[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_5.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_3.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double[], Double[], Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_6.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double, Double, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_4.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double[], Double[], Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_7.htm" />
+            <topic label="NumToNumSegmentFunction Method (Double[], Double[], Double, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumSegmentFunction_8.htm" />
+          </topic>
+          <topic label="NumToNumStepFunction Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_NumToNumStepFunction.htm">
+            <topic label="NumToNumStepFunction Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumStepFunction.htm" />
+            <topic label="NumToNumStepFunction Method (Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumStepFunction_1.htm" />
+            <topic label="NumToNumStepFunction Method (Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumStepFunction_2.htm" />
+            <topic label="NumToNumStepFunction Method (Double, Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumStepFunction_3.htm" />
+            <topic label="NumToNumStepFunction Method (Double, Double, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_NumToNumStepFunction_4.htm" />
+          </topic>
+          <topic label="Output Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Output.htm" />
+          <topic label="OverlapLength Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_OverlapLength.htm">
+            <topic label="OverlapLength Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_OverlapLength.htm" />
+            <topic label="OverlapLength Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_OverlapLength_1.htm" />
+            <topic label="OverlapLength Method (IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_OverlapLength_2.htm" />
+            <topic label="OverlapLength Method (IIntervalVar, Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_OverlapLength_3.htm" />
+          </topic>
+          <topic label="Pack Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Pack.htm">
+            <topic label="Pack Method (IIntExpr[], IIntExpr[], Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Pack.htm" />
+            <topic label="Pack Method (IIntExpr[], IIntExpr[], Int32[], IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Pack_1.htm" />
+          </topic>
+          <topic label="PiecewiseLinear Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_PiecewiseLinear.htm">
+            <topic label="PiecewiseLinear Method (INumExpr, Double, Double[], Double[], Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PiecewiseLinear.htm" />
+            <topic label="PiecewiseLinear Method (INumExpr, Double[], Double[], Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PiecewiseLinear_1.htm" />
+          </topic>
+          <topic label="PiecewiseLinearFunction Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_PiecewiseLinearFunction.htm">
+            <topic label="PiecewiseLinearFunction Method (Double[], Double[], Double, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PiecewiseLinearFunction.htm" />
+            <topic label="PiecewiseLinearFunction Method (Double[], Double[], Double, Double, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PiecewiseLinearFunction_1.htm" />
+          </topic>
+          <topic label="Power Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Power.htm">
+            <topic label="Power Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Power.htm" />
+            <topic label="Power Method (INumExpr, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Power_1.htm" />
+            <topic label="Power Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Power_2.htm" />
+          </topic>
+          <topic label="PresenceOf Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PresenceOf.htm" />
+          <topic label="Previous Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Previous.htm" />
+          <topic label="PrintInformation Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_PrintInformation.htm">
+            <topic label="PrintInformation Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PrintInformation.htm" />
+            <topic label="PrintInformation Method (TextWriter)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_PrintInformation_1.htm" />
+          </topic>
+          <topic label="Propagate Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Propagate.htm">
+            <topic label="Propagate Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Propagate.htm" />
+            <topic label="Propagate Method (IConstraint)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Propagate_1.htm" />
+          </topic>
+          <topic label="Pulse Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Pulse.htm">
+            <topic label="Pulse Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Pulse.htm" />
+            <topic label="Pulse Method (IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Pulse_1.htm" />
+            <topic label="Pulse Method (Int32, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Pulse_2.htm" />
+          </topic>
+          <topic label="Quot Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Quot.htm">
+            <topic label="Quot Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Quot.htm" />
+            <topic label="Quot Method (INumExpr, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Quot_1.htm" />
+            <topic label="Quot Method (Double, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Quot_2.htm" />
+          </topic>
+          <topic label="Range Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Range.htm" />
+          <topic label="RegisterLicense Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_RegisterLicense.htm" />
+          <topic label="Restore Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Restore.htm" />
+          <topic label="SelectLargest Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SelectLargest.htm">
+            <topic label="SelectLargest Method (IIntValueEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectLargest.htm" />
+            <topic label="SelectLargest Method (IIntVarEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectLargest_2.htm" />
+            <topic label="SelectLargest Method (IIntValueEval, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectLargest_1.htm" />
+            <topic label="SelectLargest Method (IIntVarEval, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectLargest_3.htm" />
+            <topic label="SelectLargest Method (Double, IIntValueEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectLargest_4.htm" />
+            <topic label="SelectLargest Method (Double, IIntVarEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectLargest_5.htm" />
+          </topic>
+          <topic label="SelectRandomValue Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectRandomValue.htm" />
+          <topic label="SelectRandomVar Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectRandomVar.htm" />
+          <topic label="SelectSmallest Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SelectSmallest.htm">
+            <topic label="SelectSmallest Method (IIntValueEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectSmallest.htm" />
+            <topic label="SelectSmallest Method (IIntVarEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectSmallest_2.htm" />
+            <topic label="SelectSmallest Method (IIntValueEval, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectSmallest_1.htm" />
+            <topic label="SelectSmallest Method (IIntVarEval, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectSmallest_3.htm" />
+            <topic label="SelectSmallest Method (Double, IIntValueEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectSmallest_4.htm" />
+            <topic label="SelectSmallest Method (Double, IIntVarEval)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SelectSmallest_5.htm" />
+          </topic>
+          <topic label="SetOut Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetOut.htm" />
+          <topic label="SetParameter Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SetParameter.htm">
+            <topic label="SetParameter Method (CP.DoubleParam, CP.ParameterValues)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetParameter.htm" />
+            <topic label="SetParameter Method (CP.DoubleParam, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetParameter_1.htm" />
+            <topic label="SetParameter Method (CP.IntParam, CP.ParameterValues)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetParameter_2.htm" />
+            <topic label="SetParameter Method (CP.IntParam, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetParameter_3.htm" />
+          </topic>
+          <topic label="SetStartingPoint Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetStartingPoint.htm" />
+          <topic label="SetWarning Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SetWarning.htm" />
+          <topic label="SizeEval Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SizeEval.htm">
+            <topic label="SizeEval Method (IIntervalVar, INumToNumSegmentFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeEval.htm" />
+            <topic label="SizeEval Method (IIntervalVar, INumToNumSegmentFunction, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeEval_1.htm" />
+          </topic>
+          <topic label="SizeOf Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SizeOf.htm">
+            <topic label="SizeOf Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeOf.htm" />
+            <topic label="SizeOf Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeOf_1.htm" />
+          </topic>
+          <topic label="SizeOfNext Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SizeOfNext.htm">
+            <topic label="SizeOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeOfNext.htm" />
+            <topic label="SizeOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeOfNext_1.htm" />
+          </topic>
+          <topic label="SizeOfPrevious Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_SizeOfPrevious.htm">
+            <topic label="SizeOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeOfPrevious.htm" />
+            <topic label="SizeOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_SizeOfPrevious_1.htm" />
+          </topic>
+          <topic label="Solution Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Solution.htm" />
+          <topic label="Span Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Span.htm">
+            <topic label="Span Method (IIntervalVar, IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Span.htm" />
+            <topic label="Span Method (IIntervalVar, IIntervalVar[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Span_1.htm" />
+          </topic>
+          <topic label="StartAtEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartAtEnd.htm">
+            <topic label="StartAtEnd Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartAtEnd.htm" />
+            <topic label="StartAtEnd Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartAtEnd_1.htm" />
+            <topic label="StartAtEnd Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartAtEnd_2.htm" />
+          </topic>
+          <topic label="StartAtStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartAtStart.htm">
+            <topic label="StartAtStart Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartAtStart.htm" />
+            <topic label="StartAtStart Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartAtStart_1.htm" />
+            <topic label="StartAtStart Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartAtStart_2.htm" />
+          </topic>
+          <topic label="StartBeforeEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartBeforeEnd.htm">
+            <topic label="StartBeforeEnd Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartBeforeEnd.htm" />
+            <topic label="StartBeforeEnd Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartBeforeEnd_1.htm" />
+            <topic label="StartBeforeEnd Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartBeforeEnd_2.htm" />
+          </topic>
+          <topic label="StartBeforeStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartBeforeStart.htm">
+            <topic label="StartBeforeStart Method (IIntervalVar, IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartBeforeStart.htm" />
+            <topic label="StartBeforeStart Method (IIntervalVar, IIntervalVar, IIntExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartBeforeStart_1.htm" />
+            <topic label="StartBeforeStart Method (IIntervalVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartBeforeStart_2.htm" />
+          </topic>
+          <topic label="StartEval Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartEval.htm">
+            <topic label="StartEval Method (IIntervalVar, INumToNumSegmentFunction)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartEval.htm" />
+            <topic label="StartEval Method (IIntervalVar, INumToNumSegmentFunction, Double)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartEval_1.htm" />
+          </topic>
+          <topic label="StartOf Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartOf.htm">
+            <topic label="StartOf Method (IIntervalVar)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartOf.htm" />
+            <topic label="StartOf Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartOf_1.htm" />
+          </topic>
+          <topic label="StartOfNext Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartOfNext.htm">
+            <topic label="StartOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartOfNext.htm" />
+            <topic label="StartOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartOfNext_1.htm" />
+          </topic>
+          <topic label="StartOfPrevious Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StartOfPrevious.htm">
+            <topic label="StartOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartOfPrevious.htm" />
+            <topic label="StartOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StartOfPrevious_1.htm" />
+          </topic>
+          <topic label="StateFunction Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StateFunction.htm">
+            <topic label="StateFunction Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StateFunction.htm" />
+            <topic label="StateFunction Method (ITransitionDistance)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StateFunction_1.htm" />
+            <topic label="StateFunction Method (String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StateFunction_3.htm" />
+            <topic label="StateFunction Method (ITransitionDistance, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StateFunction_2.htm" />
+          </topic>
+          <topic label="StaticLex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StaticLex.htm">
+            <topic label="StaticLex Method (INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StaticLex.htm" />
+            <topic label="StaticLex Method (INumExpr[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StaticLex_4.htm" />
+            <topic label="StaticLex Method (INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StaticLex_1.htm" />
+            <topic label="StaticLex Method (INumExpr[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StaticLex_5.htm" />
+            <topic label="StaticLex Method (INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StaticLex_2.htm" />
+            <topic label="StaticLex Method (INumExpr, INumExpr, INumExpr, INumExpr)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StaticLex_3.htm" />
+          </topic>
+          <topic label="Step Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Step.htm" />
+          <topic label="StepAtEnd Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StepAtEnd.htm">
+            <topic label="StepAtEnd Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StepAtEnd.htm" />
+            <topic label="StepAtEnd Method (IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StepAtEnd_1.htm" />
+          </topic>
+          <topic label="StepAtStart Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_StepAtStart.htm">
+            <topic label="StepAtStart Method (IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StepAtStart.htm" />
+            <topic label="StepAtStart Method (IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_StepAtStart_1.htm" />
+          </topic>
+          <topic label="Store Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Store.htm" />
+          <topic label="Synchronize Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_Synchronize.htm">
+            <topic label="Synchronize Method (IIntervalVar, IIntervalVar[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Synchronize.htm" />
+            <topic label="Synchronize Method (IIntervalVar, IIntervalVar[], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Synchronize_1.htm" />
+          </topic>
+          <topic label="TransitionDistance Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_TransitionDistance.htm">
+            <topic label="TransitionDistance Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TransitionDistance.htm" />
+            <topic label="TransitionDistance Method (Int32, String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TransitionDistance_1.htm" />
+            <topic label="TransitionDistance Method (Int32[][], String)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TransitionDistance_2.htm" />
+          </topic>
+          <topic label="TrueConstraint Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TrueConstraint.htm" />
+          <topic label="TypeOfNext Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_TypeOfNext.htm">
+            <topic label="TypeOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TypeOfNext.htm" />
+            <topic label="TypeOfNext Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TypeOfNext_1.htm" />
+          </topic>
+          <topic label="TypeOfPrevious Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_TypeOfPrevious.htm">
+            <topic label="TypeOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TypeOfPrevious.htm" />
+            <topic label="TypeOfPrevious Method (IIntervalSequenceVar, IIntervalVar, Int32, Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_TypeOfPrevious_1.htm" />
+          </topic>
+          <topic label="Value Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Value.htm" />
+          <topic label="ValueImpact Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ValueImpact.htm" />
+          <topic label="ValueIndex Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_ValueIndex.htm">
+            <topic label="ValueIndex Method (Int32[])" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ValueIndex.htm" />
+            <topic label="ValueIndex Method (Int32[], Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ValueIndex_1.htm" />
+          </topic>
+          <topic label="ValueSuccessRate Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ValueSuccessRate.htm" />
+          <topic label="VarImpact Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_VarImpact.htm" />
+          <topic label="VarLocalImpact Method " href="html/refdotnetcpoptimizer/html/Overload_ILOG_CP_CP_VarLocalImpact.htm">
+            <topic label="VarLocalImpact Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_VarLocalImpact.htm" />
+            <topic label="VarLocalImpact Method (Int32)" href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_VarLocalImpact_1.htm" />
+          </topic>
+          <topic label="VarSuccessRate Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_VarSuccessRate.htm" />
+          <topic label="Warning Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_Warning.htm" />
+        </topic>
+        <topic label="CP Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_CP_CP.htm">
+          <topic label="ObjValue Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_ObjValue.htm" />
+          <topic label="RandomNum Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_RandomNum.htm" />
+          <topic label="Version Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_Version.htm" />
+        </topic>
+      </topic>
+      <topic label="CP.DoubleInfo Class" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_CP_DoubleInfo.htm">
+        <topic label="CP.DoubleInfo Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_CP_DoubleInfo.htm" />
+        <topic label="CP.DoubleInfo Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_DoubleInfo__ctor.htm" />
+        <topic label="CP.DoubleInfo Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_CP_CP_DoubleInfo.htm">
+          <topic label="EffectiveOptimalityTolerance Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleInfo_EffectiveOptimalityTolerance.htm" />
+          <topic label="ExtractionTime Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleInfo_ExtractionTime.htm" />
+          <topic label="SolveTime Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleInfo_SolveTime.htm" />
+          <topic label="TotalTime Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleInfo_TotalTime.htm" />
+        </topic>
+        <topic label="CP.DoubleInfo Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_CP_DoubleInfo.htm" />
+        <topic label="CP.DoubleInfo Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_CP_CP_DoubleInfo.htm">
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_DoubleInfo_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="CP.DoubleParam Class" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_CP_DoubleParam.htm">
+        <topic label="CP.DoubleParam Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_CP_DoubleParam.htm" />
+        <topic label="CP.DoubleParam Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_DoubleParam__ctor.htm" />
+        <topic label="CP.DoubleParam Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_CP_CP_DoubleParam.htm">
+          <topic label="DynamicProbingStrength Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_DynamicProbingStrength.htm" />
+          <topic label="LowerBoundEffort Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_LowerBoundEffort.htm" />
+          <topic label="OptimalityTolerance Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_OptimalityTolerance.htm" />
+          <topic label="RelativeOptimalityTolerance Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_RelativeOptimalityTolerance.htm" />
+          <topic label="RestartGrowthFactor Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_RestartGrowthFactor.htm" />
+          <topic label="RestartProofEmphasis Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_RestartProofEmphasis.htm" />
+          <topic label="TimeLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_DoubleParam_TimeLimit.htm" />
+        </topic>
+        <topic label="CP.DoubleParam Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_CP_DoubleParam.htm" />
+        <topic label="CP.DoubleParam Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_CP_CP_DoubleParam.htm">
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_DoubleParam_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="CP.IntInfo Class" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_CP_IntInfo.htm">
+        <topic label="CP.IntInfo Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_CP_IntInfo.htm" />
+        <topic label="CP.IntInfo Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntInfo__ctor.htm" />
+        <topic label="CP.IntInfo Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_CP_CP_IntInfo.htm">
+          <topic label="EffectiveWorkers Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_EffectiveWorkers.htm" />
+          <topic label="FailStatus Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_FailStatus.htm" />
+          <topic label="MemoryUsage Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_MemoryUsage.htm" />
+          <topic label="NumberOfAuxiliaryVariables Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfAuxiliaryVariables.htm" />
+          <topic label="NumberOfBranches Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfBranches.htm" />
+          <topic label="NumberOfChoicePoints Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfChoicePoints.htm" />
+          <topic label="NumberOfConstraints Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfConstraints.htm" />
+          <topic label="NumberOfConstraintsAggregated Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfConstraintsAggregated.htm" />
+          <topic label="NumberOfConstraintsGenerated Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfConstraintsGenerated.htm" />
+          <topic label="NumberOfFails Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfFails.htm" />
+          <topic label="NumberOfIntegerVariables Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfIntegerVariables.htm" />
+          <topic label="NumberOfIntervalVariables Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfIntervalVariables.htm" />
+          <topic label="NumberOfModelVariables Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfModelVariables.htm" />
+          <topic label="NumberOfSequenceVariables Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfSequenceVariables.htm" />
+          <topic label="NumberOfSolutions Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfSolutions.htm" />
+          <topic label="NumberOfVariables Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntInfo_NumberOfVariables.htm" />
+        </topic>
+        <topic label="CP.IntInfo Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_CP_IntInfo.htm" />
+        <topic label="CP.IntInfo Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_CP_CP_IntInfo.htm">
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_IntInfo_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="CP.IntParam Class" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_CP_IntParam.htm">
+        <topic label="CP.IntParam Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_CP_IntParam.htm" />
+        <topic label="CP.IntParam Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_IntParam__ctor.htm" />
+        <topic label="CP.IntParam Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_CP_CP_IntParam.htm">
+          <topic label="AllDiffInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_AllDiffInferenceLevel.htm" />
+          <topic label="AllMinDistanceInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_AllMinDistanceInferenceLevel.htm" />
+          <topic label="AllNullIntersectInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_AllNullIntersectInferenceLevel.htm" />
+          <topic label="AutomaticReplay Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_AutomaticReplay.htm" />
+          <topic label="BranchLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_BranchLimit.htm" />
+          <topic label="ChoicePointLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_ChoicePointLimit.htm" />
+          <topic label="ConflictLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_ConflictLimit.htm" />
+          <topic label="ConstraintAggregation Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_ConstraintAggregation.htm" />
+          <topic label="CountInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_CountInferenceLevel.htm" />
+          <topic label="CumulFunctionInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_CumulFunctionInferenceLevel.htm" />
+          <topic label="DefaultInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_DefaultInferenceLevel.htm" />
+          <topic label="DistributeInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_DistributeInferenceLevel.htm" />
+          <topic label="DynamicProbing Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_DynamicProbing.htm" />
+          <topic label="ElementInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_ElementInferenceLevel.htm" />
+          <topic label="EqUnionInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_EqUnionInferenceLevel.htm" />
+          <topic label="FailLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_FailLimit.htm" />
+          <topic label="FloatDisplay Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_FloatDisplay.htm" />
+          <topic label="ImpactMeasures Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_ImpactMeasures.htm" />
+          <topic label="IncrementalDisjunctive Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_IncrementalDisjunctive.htm" />
+          <topic label="IntervalSequenceInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_IntervalSequenceInferenceLevel.htm" />
+          <topic label="IntervalSolutionPoolCapacity Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_IntervalSolutionPoolCapacity.htm" />
+          <topic label="LogPeriod Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_LogPeriod.htm" />
+          <topic label="LogVerbosity Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_LogVerbosity.htm" />
+          <topic label="MultiPointEncodingPercentage Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_MultiPointEncodingPercentage.htm" />
+          <topic label="MultiPointNumberOfSearchPoints Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_MultiPointNumberOfSearchPoints.htm" />
+          <topic label="NoOverlapInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_NoOverlapInferenceLevel.htm" />
+          <topic label="PackApproximationSize Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_PackApproximationSize.htm" />
+          <topic label="PartitionInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_PartitionInferenceLevel.htm" />
+          <topic label="PrecedenceInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_PrecedenceInferenceLevel.htm" />
+          <topic label="PropagationLog Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_PropagationLog.htm" />
+          <topic label="RandomSeed Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_RandomSeed.htm" />
+          <topic label="RestartFailLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_RestartFailLimit.htm" />
+          <topic label="RestartTimeMeasurement Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_RestartTimeMeasurement.htm" />
+          <topic label="SearchType Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_SearchType.htm" />
+          <topic label="SeedRandomOnSolve Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_SeedRandomOnSolve.htm" />
+          <topic label="SequenceExpressionInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_SequenceExpressionInferenceLevel.htm" />
+          <topic label="SequenceInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_SequenceInferenceLevel.htm" />
+          <topic label="SetTimesDominanceRule Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_SetTimesDominanceRule.htm" />
+          <topic label="SolutionLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_SolutionLimit.htm" />
+          <topic label="StateFunctionInferenceLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_StateFunctionInferenceLevel.htm" />
+          <topic label="StateFunctionTriangularInequalityCheck Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_StateFunctionTriangularInequalityCheck.htm" />
+          <topic label="StrictNumericalDivision Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_StrictNumericalDivision.htm" />
+          <topic label="TemporalRelaxation Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TemporalRelaxation.htm" />
+          <topic label="TemporalRelaxationAlgorithm Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TemporalRelaxationAlgorithm.htm" />
+          <topic label="TemporalRelaxationIterationLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TemporalRelaxationIterationLimit.htm" />
+          <topic label="TemporalRelaxationLevel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TemporalRelaxationLevel.htm" />
+          <topic label="TemporalRelaxationRowLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TemporalRelaxationRowLimit.htm" />
+          <topic label="TemporalRelaxationUsesEnergyEnvelopes Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TemporalRelaxationUsesEnergyEnvelopes.htm" />
+          <topic label="TimeDisplay Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TimeDisplay.htm" />
+          <topic label="TimeMode Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TimeMode.htm" />
+          <topic label="TraceExtraction Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TraceExtraction.htm" />
+          <topic label="TTEF Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_TTEF.htm" />
+          <topic label="Workers Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_IntParam_Workers.htm" />
+        </topic>
+        <topic label="CP.IntParam Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_CP_IntParam.htm" />
+        <topic label="CP.IntParam Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_CP_CP_IntParam.htm">
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_IntParam_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="CP.ParameterValues Class" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_CP_ParameterValues.htm">
+        <topic label="CP.ParameterValues Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_CP_ParameterValues.htm" />
+        <topic label="CP.ParameterValues Constructor " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_CP_ParameterValues__ctor.htm" />
+        <topic label="CP.ParameterValues Fields" href="html/refdotnetcpoptimizer/html/Fields_T_ILOG_CP_CP_ParameterValues.htm">
+          <topic label="Auto Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Auto.htm" />
+          <topic label="BasFixed Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_BasFixed.htm" />
+          <topic label="Basic Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Basic.htm" />
+          <topic label="BasScientific Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_BasScientific.htm" />
+          <topic label="CPUTime Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_CPUTime.htm" />
+          <topic label="Default Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Default.htm" />
+          <topic label="DepthFirst Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_DepthFirst.htm" />
+          <topic label="ElapsedTime Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_ElapsedTime.htm" />
+          <topic label="Extended Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Extended.htm" />
+          <topic label="HMS Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_HMS.htm" />
+          <topic label="IntFixed Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_IntFixed.htm" />
+          <topic label="IntScientific Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_IntScientific.htm" />
+          <topic label="Low Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Low.htm" />
+          <topic label="Medium Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Medium.htm" />
+          <topic label="MultiPoint Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_MultiPoint.htm" />
+          <topic label="Normal Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Normal.htm" />
+          <topic label="NoTime Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_NoTime.htm" />
+          <topic label="Off Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Off.htm" />
+          <topic label="On Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_On.htm" />
+          <topic label="Quiet Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Quiet.htm" />
+          <topic label="Restart Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Restart.htm" />
+          <topic label="SearchHasFailedNormally Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchHasFailedNormally.htm" />
+          <topic label="SearchHasNotFailed Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchHasNotFailed.htm" />
+          <topic label="SearchStoppedByAbort Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchStoppedByAbort.htm" />
+          <topic label="SearchStoppedByException Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchStoppedByException.htm" />
+          <topic label="SearchStoppedByExit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchStoppedByExit.htm" />
+          <topic label="SearchStoppedByLabel Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchStoppedByLabel.htm" />
+          <topic label="SearchStoppedByLimit Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_SearchStoppedByLimit.htm" />
+          <topic label="Seconds Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Seconds.htm" />
+          <topic label="Standard Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Standard.htm" />
+          <topic label="Terse Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Terse.htm" />
+          <topic label="UnknownFailureStatus Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_UnknownFailureStatus.htm" />
+          <topic label="Verbose Field" href="html/refdotnetcpoptimizer/html/F_ILOG_CP_CP_ParameterValues_Verbose.htm" />
+        </topic>
+        <topic label="CP.ParameterValues Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_CP_ParameterValues.htm" />
+        <topic label="CP.ParameterValues Properties " href="html/refdotnetcpoptimizer/html/Properties_T_ILOG_CP_CP_ParameterValues.htm">
+          <topic label="Value Property " href="html/refdotnetcpoptimizer/html/P_ILOG_CP_CP_ParameterValues_Value.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntValueChooser Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_IIntValueChooser.htm">
+        <topic label="IIntValueChooser Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_IIntValueChooser.htm" />
+        <topic label="IIntValueChooser Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_IIntValueChooser.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_IIntValueChooser_End.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntValueEval Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_IIntValueEval.htm">
+        <topic label="IIntValueEval Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_IIntValueEval.htm" />
+        <topic label="IIntValueEval Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_IIntValueEval.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_IIntValueEval_End.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntVarChooser Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_IIntVarChooser.htm">
+        <topic label="IIntVarChooser Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_IIntVarChooser.htm" />
+        <topic label="IIntVarChooser Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_IIntVarChooser.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_IIntVarChooser_End.htm" />
+        </topic>
+      </topic>
+      <topic label="IIntVarEval Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_IIntVarEval.htm">
+        <topic label="IIntVarEval Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_IIntVarEval.htm" />
+        <topic label="IIntVarEval Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_IIntVarEval.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_IIntVarEval_End.htm" />
+        </topic>
+      </topic>
+      <topic label="ISearchPhase Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_ISearchPhase.htm">
+        <topic label="ISearchPhase Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_ISearchPhase.htm" />
+        <topic label="ISearchPhase Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_ISearchPhase.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_ISearchPhase_End.htm" />
+        </topic>
+      </topic>
+      <topic label="IValueSelector Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_IValueSelector.htm">
+        <topic label="IValueSelector Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_IValueSelector.htm" />
+        <topic label="IValueSelector Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_IValueSelector.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_IValueSelector_End.htm" />
+        </topic>
+      </topic>
+      <topic label="IVarSelector Interface" href="html/refdotnetcpoptimizer/html/T_ILOG_CP_IVarSelector.htm">
+        <topic label="IVarSelector Members" href="html/refdotnetcpoptimizer/html/AllMembers_T_ILOG_CP_IVarSelector.htm" />
+        <topic label="IVarSelector Methods " href="html/refdotnetcpoptimizer/html/Methods_T_ILOG_CP_IVarSelector.htm">
+          <topic label="End Method " href="html/refdotnetcpoptimizer/html/M_ILOG_CP_IVarSelector_End.htm" />
+        </topic>
+      </topic>
+    </topic>
+  
+</toc>

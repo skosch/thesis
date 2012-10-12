@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.rcp.nls1" label="%featureName" plugin="org.eclipse.rcp" provider-name="%providerName" version="3.6.2.v201102251823">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>%copyright</copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/eclipse/updates/3.5"></update>
+   </url>
+
+   <plugin fragment="true" id="com.ibm.icu.nl1" unpack="false" version="4.2.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.commands.nl1" unpack="false" version="3.6.0.v201102251823"></plugin>      
+        
+    <plugin fragment="true" id="org.eclipse.core.databinding.nl1" unpack="false" version="1.3.100.v201102251823"></plugin>         
+
+   <plugin fragment="true" id="org.eclipse.core.databinding.observable.nl1" unpack="false" version="1.3.0.v201102251823"></plugin>       
+             
+  <plugin fragment="true" id="org.eclipse.core.databinding.property.nl1" unpack="false" version="1.3.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.databinding.beans.nl1" unpack="false" version="1.2.100.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.jobs.nl1" unpack="false" version="3.5.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.expressions.nl1" unpack="false" version="3.4.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.runtime.nl1" unpack="false" version="3.6.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.runtime.compatibility.auth.nl1" unpack="false" version="3.2.200.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.osgi.nl1" unpack="false" version="3.6.2.v201102251823"></plugin>
+         
+   <plugin fragment="true" id="org.eclipse.osgi.services.nl1" unpack="false" version="3.2.100.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.help.nl1" unpack="false" version="3.5.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.swt.nl1" unpack="false" version="3.6.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.jface.nl1" unpack="false" version="3.6.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.jface.databinding.nl1" unpack="false" version="1.4.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ui.nl1" unpack="false" version="3.6.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ui.workbench.nl1" unpack="false" version="3.6.2.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.ui.carbon.nl1" os="macosx" unpack="false" version="4.0.100.v201102251823" ws="carbon"></plugin>
+         
+    <plugin fragment="true" id="org.eclipse.ui.cocoa.nl1" os="macosx" unpack="false" version="1.0.2.v201102251823" ws="cocoa"></plugin> 
+                                  
+   <plugin fragment="true" id="org.eclipse.update.configurator.nl1" unpack="false" version="3.3.100.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.simpleconfigurator.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.swt.win32.win32.x86.nl1" os="win32" unpack="false" version="3.6.2.v201102251823" ws="win32"></plugin>
+
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.swt.win32.win32.x86_64.nl1" os="win32" unpack="false" version="3.6.2.v201102251823" ws="win32"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.swt.gtk.linux.x86.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+         
+    <plugin arch="s390x" fragment="true" id="org.eclipse.swt.gtk.linux.s390x.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+         
+    <plugin arch="s390" fragment="true" id="org.eclipse.swt.gtk.linux.s390.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="sparc" fragment="true" id="org.eclipse.swt.gtk.solaris.sparc.nl1" os="solaris" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+         
+   <plugin arch="x86" fragment="true" id="org.eclipse.swt.gtk.solaris.x86.nl1" os="solaris" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.swt.gtk.linux.ppc.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+         
+   <plugin arch="ppc64" fragment="true" id="org.eclipse.swt.gtk.linux.ppc64.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.swt.gtk.linux.x86_64.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.swt.carbon.macosx.nl1" os="macosx" unpack="false" version="3.6.2.v201102251823" ws="carbon"></plugin>
+         
+    <plugin arch="x86" fragment="true" id="org.eclipse.swt.carbon.macosx.nl1" os="macosx" unpack="false" version="3.6.2.v201102251823" ws="carbon"></plugin>
+         
+    <plugin arch="ppc" fragment="true" id="org.eclipse.swt.cocoa.macosx.nl1" os="macosx" unpack="false" version="3.6.2.v201102251823" ws="cocoa"></plugin>
+         
+    <plugin arch="x86" fragment="true" id="org.eclipse.swt.cocoa.macosx.nl1" os="macosx" unpack="false" version="3.6.2.v201102251823" ws="cocoa"></plugin>
+         
+    <plugin arch="x86_64" fragment="true" id="org.eclipse.swt.cocoa.macosx.x86_64.nl1" os="macosx" unpack="false" version="3.6.2.v201102251823" ws="cocoa"></plugin>           
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.swt.motif.aix.ppc.nl1" os="aix" unpack="false" version="3.6.2.v201102251823" ws="motif"></plugin>
+         
+    
+
+   <plugin arch="ia64_32" fragment="true" id="org.eclipse.swt.motif.hpux.ia64_32.nl1" os="hpux" unpack="false" version="3.6.2.v201102251823" ws="motif"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.swt.motif.linux.x86.nl1" os="linux" unpack="false" version="3.6.2.v201102251823" ws="motif"></plugin>   
+
+   <plugin arch="sparc" fragment="true" id="org.eclipse.swt.motif.solaris.sparc.nl1" os="solaris" unpack="false" version="3.6.2.v201102251823" ws="motif"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.swt.photon.qnx.x86.nl1" os="qnx" unpack="false" version="3.6.2.v201102251823" ws="photon"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.rcp.nl1" unpack="false" version="3.6.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.core.contenttype.nl1" unpack="false" version="3.4.100.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.app.nl1" unpack="false" version="1.3.1.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.common.nl1" unpack="false" version="3.6.0.v201102251823"></plugin>         
+         
+    <plugin fragment="true" id="org.eclipse.equinox.ds.nl1" unpack="false" version="1.2.1.v201102251823"></plugin>       
+        
+    <plugin fragment="true" id="org.eclipse.equinox.util.nl1" unpack="false" version="1.0.200.v201102251823"></plugin>
+ 
+   <plugin fragment="true" id="org.eclipse.equinox.preferences.nl1" unpack="false" version="3.3.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.registry.nl1" unpack="false" version="3.5.0.v201102251823"></plugin>
+
+   <plugin fragment="true" id="org.eclipse.equinox.launcher.nl1" unpack="false" version="1.1.1.v201102251823"></plugin>
+
+   <plugin arch="sparc" fragment="true" id="org.eclipse.equinox.launcher.gtk.solaris.sparc.nl1" os="solaris" version="1.1.2.v201102251823" ws="gtk"></plugin>
+         
+    <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.gtk.solaris.x86.nl1" os="solaris" version="1.1.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.carbon.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="carbon"></plugin>
+         
+    <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.carbon.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="carbon"></plugin>
+    
+    <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.cocoa.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="cocoa"></plugin>
+         
+    <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.cocoa.macosx.nl1" os="macosx" version="1.1.2.v201102251823" ws="cocoa"></plugin>       
+            
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64.nl1" os="macosx" version="1.1.2.v201102251823" ws="cocoa"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.ppc.nl1" os="linux" version="1.1.2.v201102251823" ws="gtk"></plugin>
+         
+   <plugin arch="ppc64" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.ppc64.nl1" os="linux" version="1.0.2.v201102251823" ws="gtk"></plugin>
+         
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.x86.nl1" os="linux" version="1.1.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="s390x" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.s390x.nl1" os="linux" version="1.1.1.v201102251823" ws="gtk"></plugin>
+         
+   <plugin arch="s390" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.s390.nl1" os="linux" version="1.1.1.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.motif.linux.x86.nl1" os="linux" version="1.1.2.v201102251823" ws="motif"></plugin>
+
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.equinox.launcher.gtk.linux.x86_64.nl1" os="linux" version="1.1.2.v201102251823" ws="gtk"></plugin>
+
+   <plugin arch="ppc" fragment="true" id="org.eclipse.equinox.launcher.motif.aix.ppc.nl1" os="aix" version="1.1.2.v201102251823" ws="motif"></plugin>
+
+ 
+   <plugin arch="ia64_32" fragment="true" id="org.eclipse.equinox.launcher.motif.hpux.ia64_32.nl1" os="hpux" version="1.1.2.v201102251823" ws="motif"></plugin>  
+ 
+   <plugin arch="x86" fragment="true" id="org.eclipse.equinox.launcher.win32.win32.x86.nl1" os="win32" version="1.1.2.v201102251823" ws="win32"></plugin>
+
+   <plugin arch="x86_64" fragment="true" id="org.eclipse.equinox.launcher.win32.win32.x86_64.nl1" os="win32" version="1.1.2.v201102251823" ws="win32"></plugin>
+
+
+</feature>

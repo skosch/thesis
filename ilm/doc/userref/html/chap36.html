@@ -1,0 +1,64 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:24">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Adding New Keys to a License File  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="154579">
+<h3 class="Header3SplitLeft">Adding New Keys to a License File</h3>
+</a><p class="Body"><a name="145338">
+When you purchase a product or start a product evaluation, ILOG sends you the text of a license file containing the corresponding access key.</a></p>
+<p class="Body"><a name="147948">
+If you don't already have a license file, you have to create one and put the text you have received into it.</a></p>
+<p class="Body"><a name="147949">
+If you already have a license file, you have to merge the new license file into it. First, check whether the site sections in the two license files match. Two site sections match if their site description (<code class="Code">LICENSE</code> line) and the token server hostid (the string in the fourth field of the <code class="Code">SERVER</code> line) are identical; other site information is not significant.</a></p>
+<p class="Body"><a name="145525">
+Here are the cases:</a></p>
+<ul class="BulletedListP"><p><li><a name="152917">The site description and the server hostid match. This is the most common case. Just append the new keys to the end of your license file. If you are replacing old keys with new ones for the same products, delete or comment out the old keys using the <code class="Code">#</code> character.
+</a><p><li><a name="152918">The new site description or the server hostid do not match yours. In this case, you need to create a new license file and put the whole text you have received into it. Add the path of the new license file to the <code class="Code">ILOG_LICENSE_FILE</code> environment variable, as explained in <a href="chap33.html#144861"><span class="Default">"The ILOG_LICENSE_FILE Environment Variable" </span></a>.
+</a><dl class="PlainList2P">
+<p><dt><dd><a name="148825">If the server hostid does not match, you will also have to start a token server on the corresponding machine.
+</a></dl>
+<p><li><a name="148815">Common information in the site section matches, but the new license file contains more information than yours. For example, the new license file contains a <code class="Code">SERVER</code> line but yours does not. Add the missing line(s) to your license file at the appropriate place, then add the new keys as explained in case 1.
+</a><p><li><a name="150633">Common information in the site section match, but your license file contains more information than the new license file. For example, your license file contains a <code class="Code">SERVER</code> line but the new license file does not. In this case, just add the new keys as explained in case 1.
+</a></ul>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap35.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Token Counting  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap37.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: ILM Commands on Unix  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

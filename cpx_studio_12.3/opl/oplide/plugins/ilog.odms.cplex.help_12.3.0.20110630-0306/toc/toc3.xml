@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="File formats supported by CPLEX" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2154.html">
+   <topic label="File Formats Reference Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2155.html">
+      <topic label="Brief descriptions of file formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2156.html"/>
+      <topic label="Reading and entering file formats in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2157.html"/>
+      <topic label="Saving problems in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2158.html"/>
+      <topic label="LP file format: matrix models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2159.html"/>
+      <topic label="MPS file format: industry standard" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2160.html">
+         <topic label="Overview of MPS" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2161.html"/>
+         <topic label="Records in MPS format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2162.html"/>
+         <topic label="Example of MPS file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2163.html"/>
+      </topic>
+      <topic label="Special records in MPS files: CPLEX extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2164.html">
+         <topic label="Overview of MPS extension" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2165.html"/>
+         <topic label="Objective sense and name in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2166.html"/>
+         <topic label="Integer variables in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2167.html"/>
+         <topic label="Special ordered sets (SOS) in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2168.html"/>
+         <topic label="Quadratic objective information in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2169.html"/>
+         <topic label="Quadratically constrained programs (QCP) in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2170.html"/>
+         <topic label="Indicator constraints in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2171.html"/>
+         <topic label="User-defined cuts in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2172.html"/>
+         <topic label="Lazy constraints in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2173.html"/>
+      </topic>
+      <topic label="NET file format: network flow models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2174.html"/>
+      <topic label="PRM file format: parameter settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2175.html"/>
+      <topic label="BAS file format: advanced basis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2176.html"/>
+      <topic label="MST file format: MIP starts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2177.html"/>
+      <topic label="ORD file format: priorities and branching orders" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2178.html"/>
+      <topic label="SOL file format: solution files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2179.html"/>
+      <topic label="FLT file format: filter files for the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2180.html">
+         <topic label="Overview of FLT" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2181.html"/>
+         <topic label="Reading and writing filter files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2182.html"/>
+         <topic label="Syntax of a filter file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2183.html"/>
+         <topic label="Diversity filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2184.html"/>
+         <topic label="Range filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2185.html"/>
+      </topic>
+      <topic label="CSV file format: comma separated values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2186.html"/>
+      <topic label="XML file format: serialized models and solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2187.html"/>
+   </topic>
+</toc>

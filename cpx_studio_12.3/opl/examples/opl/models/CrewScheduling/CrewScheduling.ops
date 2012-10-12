@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<settings>
+
+   <category name="language"/>
+
+   <category name="ide">
+    <setting name="chartsMain" value="false"/>
+  </category>
+
+   <category name="cplex"/>
+
+   <category name="cp"/>
+
+</settings>

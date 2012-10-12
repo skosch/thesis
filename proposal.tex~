@@ -1,0 +1,109 @@
+\documentclass[12pt, landscape]{article}
+\usepackage{graphicx}
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.4in, right=1.74in,top=1.4in, bottom=1.6in]{geometry}
+\usepackage[no-math]{fontspec}
+
+\usepackage{sectsty}
+\usepackage{multicol,scalefnt}
+\usepackage{amsmath, amssymb, amsfonts,  titlesec}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage{fancyhdr,  booktabs, multirow}
+\usepackage[font=small,format=plain,labelfont=it,up,textfont=it,up]{caption}
+\usepackage{listings}
+
+\usepackage{enumitem}
+
+\newlist{alist}{itemize}{1}
+\setlist[alist]{label=--,labelindent=2in,leftmargin=9pt,labelsep=6pt, itemsep=0pt}
+
+%========= FONT SPECS ============
+\tolerance 8000
+
+\defaultfontfeatures{Mapping=tex-text, Ligatures=Common}
+
+\renewcommand\refname{references} % this sets the name of
+\def\labelitemi{--}
+
+\def\sansfont{\fontspec[Script=Latin,LetterSpace=2.6, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansitalicfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=1.5, FakeSlant=0.2, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+
+\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91]{Inconsolata}}
+
+\renewcommand{\texttt}[1]{{\monofont #1}}
+
+\lstset{
+aboveskip=2\medskipamount, belowskip=2\medskipamount,
+basicstyle=\monofont,
+language=python,
+numbers=left, numberstyle=\tiny,  numbersep=9pt,
+xleftmargin=.4in, frame=l, xrightmargin=.25in
+}
+
+%\titleformat{\section}{\huge\sansnormalfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
+\titleformat{\section}{\huge\sansfont}{}{0em}{}
+\titleformat{\subsection}{\fontsize{13pt}{19pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\thesubsection\quad}}{0em}{}
+
+
+\fancyhead[LO, LE]{\sansfont\small An improved batch CP method \normalsize}
+\fancyhead[RO, RE]{\sansfont\small \nouppercase\leftmark}
+\fancyfoot[C]{\sansfont\thepage}
+
+\begin{document}
+\fontsize{12pt}{16pt}\selectfont
+\thispagestyle{empty}
+\pagestyle{fancy}
+
+\baselineskip=16.8pt plus 0pt
+\frenchspacing
+
+\begin{centering}
+\vspace{3em}
+\LARGE\sansfont{Proposal: An improved batch processing CP approach}
+
+\vspace{2em}
+\large
+\sansfont Sebastian Kosch
+
+\vfill
+\normalfont
+\fontsize{12pt}{16pt}\selectfont
+A thesis submitted in conformity with the requirements
+
+for the degree of \textit{Bachelor of Applied Science}
+
+\vspace{2em}
+
+\textmd Division of Engineering Science\\
+University of Toronto\\
+
+2013
+
+\end{centering}
+\pagebreak
+
+
+Abstract (ca. 300 words)
+
+Introduction: 
+- A sentence about the research problem
+- A sentence about the need in industry
+- A sentence about why I think this can be sped up
+- What are the sub-problems I'm going to address
+- What is the metric/the independent variables?
+- What doesn't the research cover?
+
+Literature Review:
+- Gives credits to those that have laid groundwork
+- Demonstrates my understanding of the problem
+- Shows my ability to evaluate information
+- Convinces the reader that I'm filling an important gap
+- Relies on influential, primary papers
+
+
+
+
+
+
+
+\end{document}
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+  <!-- Extension to the SDK Tutorials Page. -->
+  <extensionContent id="org.eclipse.team" name="Team/CVS" alt-style="css/tutorials.properties" style="css/tutorials.css" path="tutorials/@">
+    <group label="Team/CVS" id="team" style-id="content-group">
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.checkout" label="CVS 프로젝트 체크아웃" id="cvs_checkout" style-id="content-link">
+        <text>CVS 저장소 연결 및 프로젝트 체크아웃 방법에 대해 학습합니다.</text>
+      </link>
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.merge" label="CVS 분기 병합" id="cvs_merge" style-id="content-link">
+        <text>특정 CVS 분기의 변경사항을 다른 CVS 분기에 병합하는 단계를 수행합니다.</text>
+      </link>
+    </group>
+  </extensionContent>
+</introContent>

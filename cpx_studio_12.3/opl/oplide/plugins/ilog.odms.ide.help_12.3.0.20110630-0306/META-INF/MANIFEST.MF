@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: ilog.odms.ide.help; singleton:=true
+Bundle-ManifestVersion: 2
+Bundle-Localization: plugin
+Bundle-Name: %Bundle-Name
+Bundle-Version: 12.3.0.20110630-0306
+Eclipse-LazyStart: false
+Bundle-Vendor: %Bundle-Vendor
+
+

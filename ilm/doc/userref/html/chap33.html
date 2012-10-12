@@ -1,0 +1,74 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:24">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>The ILOG_LICENSE_FILE Environment Variable  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="144861">
+<h3 class="Header3SplitLeft">The ILOG_LICENSE_FILE Environment Variable</h3>
+</a><p class="Body"><a name="144865">
+If the environment variable <code class="Code">ILOG_LICENSE_FILE</code> is not set, ILM looks for a license file named:</a></p>
+<ul class="BulletedListP"><p><li><a name="144866">On Unix:
+</a></ul><dl class="PlainListP">
+<p><dt><dd><a name="152729"><code class="Code">/usr/ilog/ilm/access.ilm</code>
+</a></dl>
+<ul class="BulletedListP"><p><li><a name="144867">On Windows:
+</a></ul><dl class="PlainListP">
+<p><dt><dd><a name="152730"><code class="Code">C:\ILOG\ILM\ACCESS.ILM</code>
+</a></dl>
+<p class="Body"><a name="144869">
+If your license file is not at this location, or if you want to use several license files, you need to set the environment variable <code class="Code">ILOG_LICENSE_FILE</code>. If you have one license file (which is usually the case), set <code class="Code">ILOG_LICENSE_FILE</code> to its full path. If you have several license files, set <code class="Code">ILOG_LICENSE_FILE</code> to the list of their paths separated with a colon, on Unix, and with a semi-colon on Windows. For example:</a></p>
+<ul class="BulletedListP"><p><li><a name="145162">On Unix, in Bourne Shell syntax:
+</a></ul><dl class="PlainListP">
+<p><dt><dd><a name="145163"><code class="Code">ILOG_LICENSE_FILE=/home/joe/foo.ilm:/home/bill/bar.ilmexport ILOG_LICENSE_FILE</code>
+</a></dl>
+<ul class="BulletedListP"><p><li><a name="145164">On Unix, in C-Shell syntax:
+</a></ul><dl class="PlainListP">
+<p><dt><dd><a name="145165"><code class="Code">	setenv ILOG_LICENSE_FILE /home/joe/foo.ilm:/home/bill/bar.ilm</code>
+</a></dl>
+<ul class="BulletedListP"><p><li><a name="145166">On Windows:
+</a></ul><dl class="PlainListP">
+<p><dt><dd><a name="145167"><code class="Code">set ILOG_LICENSE_FILE=C:\HOME\JOE\FOO.ILM;C:\HOME\BILL\BAR.ILM</code>
+</a></dl>
+<p class="Body"><a name="145133">
+The <code class="Code">ILOG_LICENSE_FILE</code> variable must be defined in the environment of any user running ILOG licensed products and in the environment of the ILM token server, if any.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap32.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Managing License Files  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap34.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: License File Syntax  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

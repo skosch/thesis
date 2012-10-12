@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Guide to API reference manuals of CPLEX" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2377.html">
+   <topic label="Overview of the APIs of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2378.html">
+      <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2379.html"/>
+      <topic label="Creating and deleting problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2380.html"/>
+      <topic label="Modifying problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2381.html"/>
+      <topic label="Optimizing problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2382.html"/>
+      <topic label="Analyzing solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2383.html"/>
+      <topic label="Generating and keeping a pool of solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2384.html"/>
+      <topic label="Accessing results for continuous models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2385.html"/>
+      <topic label="Accessing results for discrete models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2386.html"/>
+      <topic label="Accessing general problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2387.html"/>
+      <topic label="Accessing MIP problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2388.html"/>
+      <topic label="Accessing QP problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2389.html"/>
+      <topic label="Accessing QCP problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2390.html"/>
+      <topic label="Using MIP starts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2391.html"/>
+      <topic label="Using callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2392.html"/>
+      <topic label="Using logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2393.html"/>
+      <topic label="General utilities" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2394.html"/>
+      <topic label="Reading files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2395.html"/>
+      <topic label="Writing files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2396.html"/>
+      <topic label="Using messages" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2397.html"/>
+      <topic label="Interpreting error codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2398.html"/>
+      <topic label="Interpreting solution status codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2399.html"/>
+      <topic label="Recognizing parameters that differ" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2400.html"/>
+      <topic label="Setting parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2401.html"/>
+   </topic>
+   <topic label="Interpreting solution status codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2402.html"/>
+   <topic label="Interpreting error codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2403.html"/>
+</toc>

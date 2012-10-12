@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ilog.odms.ide.opl.feature.nls1"
+      label="%Feature-Name"
+      version="12.3.0.20110630-0306"
+      provider-name="%Feature-Vendor">
+
+   <plugin
+         id="ilog.odms.ide.ui.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.core.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.samples.opl.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opl.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.opllang.remote.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="ilog.odms.ide.intro.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

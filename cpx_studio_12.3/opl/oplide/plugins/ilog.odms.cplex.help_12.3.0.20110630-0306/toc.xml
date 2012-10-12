@@ -1,0 +1,1429 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<toc label="CPLEX" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/CPLEX1277.html">
+   <topic label="Getting Started with CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1279.html">
+      <topic label="Introducing CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1280.html">
+         <topic label="What is CPLEX?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1281.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1282.html"/>
+            <topic label="CPLEX components" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1283.html"/>
+            <topic label="Optimizer options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1284.html"/>
+         </topic>
+         <topic label="Parallel optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1285.html"/>
+         <topic label="Data entry options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1286.html"/>
+         <topic label="What CPLEX is not" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1287.html"/>
+         <topic label="What you need to know" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1288.html"/>
+         <topic label="What’s in this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1289.html"/>
+         <topic label="Notation in this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1290.html"/>
+         <topic label="Related documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1291.html"/>
+      </topic>
+      <topic label="Setting up CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1292.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1293.html"/>
+         <topic label="Setting up CPLEX on Windows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1294.html"/>
+         <topic label="Setting up CPLEX for on GNU/Linux" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1295.html"/>
+         <topic label="Setting up Eclipse for the Java API of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1296.html"/>
+         <topic label="Setting up the Python API of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1297.html"/>
+         <topic label="Directory structure of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1298.html"/>
+         <topic label="Using the Component Libraries" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1299.html"/>
+      </topic>
+      <topic label="Tutorials" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1300.html">
+         <topic label="Solving an LP with CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1301.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1302.html"/>
+            <topic label="Problem statement" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1303.html"/>
+            <topic label="Using the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1304.html"/>
+            <topic label="Using Concert Technology in C++" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1305.html"/>
+            <topic label="Using Concert Technology in Java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1306.html"/>
+            <topic label="Using Concert Technology in .NET" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1307.html"/>
+            <topic label="Using the Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1308.html"/>
+            <topic label="Using the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1309.html"/>
+         </topic>
+         <topic label="Interactive Optimizer tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1310.html">
+            <topic label="Starting CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1311.html"/>
+            <topic label="Using help" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1312.html"/>
+            <topic label="Entering a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1313.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1314.html"/>
+               <topic label="Entering the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1315.html"/>
+               <topic label="Using the LP format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1316.html"/>
+               <topic label="Entering data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1317.html"/>
+            </topic>
+            <topic label="Displaying a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1318.html">
+               <topic label="Verifying a problem with the display command" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1319.html"/>
+               <topic label="Displaying problem statistics" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1320.html"/>
+               <topic label="Specifying item ranges" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1321.html"/>
+               <topic label="Displaying variable or constraint names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1322.html"/>
+               <topic label="Ordering variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1323.html"/>
+               <topic label="Displaying constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1324.html"/>
+               <topic label="Displaying the objective function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1325.html"/>
+               <topic label="Displaying bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1326.html"/>
+               <topic label="Displaying a histogram of nonzero counts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1327.html"/>
+            </topic>
+            <topic label="Solving a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1328.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1329.html"/>
+               <topic label="Solving the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1330.html"/>
+               <topic label="Solution options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1331.html"/>
+               <topic label="Displaying post-solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1332.html"/>
+            </topic>
+            <topic label="Performing sensitivity analysis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1333.html"/>
+            <topic label="Writing problem and solution files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1334.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1335.html"/>
+               <topic label="Selecting a write file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1336.html"/>
+               <topic label="Writing LP files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1337.html"/>
+               <topic label="Writing basis files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1338.html"/>
+               <topic label="Using path names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1339.html"/>
+            </topic>
+            <topic label="Reading problem files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1340.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1341.html"/>
+               <topic label="Selecting a read file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1342.html"/>
+               <topic label="Reading LP files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1343.html"/>
+               <topic label="Using file extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1344.html"/>
+               <topic label="Reading MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1345.html"/>
+               <topic label="Reading basis files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1346.html"/>
+            </topic>
+            <topic label="Setting CPLEX parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1347.html"/>
+            <topic label="Adding constraints and bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1348.html"/>
+            <topic label="Changing a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1349.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1350.html"/>
+               <topic label="What can be changed?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1351.html"/>
+               <topic label="Changing constraint or variable names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1352.html"/>
+               <topic label="Changing sense" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1353.html"/>
+               <topic label="Changing bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1354.html"/>
+               <topic label="Removing bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1355.html"/>
+               <topic label="Changing coefficients of variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1356.html"/>
+               <topic label="Objective and RHS coefficients" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1357.html"/>
+               <topic label="Deleting entire constraints or variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1358.html"/>
+               <topic label="Changing small values to zero" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1359.html"/>
+            </topic>
+            <topic label="Executing operating system commands" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1360.html"/>
+            <topic label="Quitting CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1361.html"/>
+            <topic label="Advanced features of the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1362.html"/>
+         </topic>
+         <topic label="Concert Technology tutorial for C++ users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1363.html">
+            <topic label="The design of CPLEX in Concert Technology C++ applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1364.html"/>
+            <topic label="Compiling CPLEX in Concert Technology C++ applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1365.html">
+               <topic label="Testing your installation on UNIX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1366.html"/>
+               <topic label="Testing your installation on Windows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1367.html"/>
+               <topic label="In case of problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1368.html"/>
+            </topic>
+            <topic label="The anatomy of an Concert Technology C++ application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1369.html">
+               <topic label="Constructing the environment: IloEnv" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1370.html"/>
+               <topic label="Creating a model: IloModel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1371.html"/>
+               <topic label="Solving the model: IloCplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1372.html"/>
+               <topic label="Querying results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1373.html"/>
+               <topic label="Handling errors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1374.html"/>
+            </topic>
+            <topic label="Building and solving a small LP model in C++" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1375.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1376.html"/>
+               <topic label="Modeling by rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1377.html"/>
+               <topic label="Modeling by columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1378.html"/>
+               <topic label="Modeling by nonzero elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1379.html"/>
+            </topic>
+            <topic label="Writing and reading models and files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1380.html"/>
+            <topic label="Selecting an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1381.html"/>
+            <topic label="Reading a problem from a file: example ilolpex2.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1382.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1383.html"/>
+               <topic label="Reading the model from a file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1384.html"/>
+               <topic label="Selecting the optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1385.html"/>
+               <topic label="Accessing basis information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1386.html"/>
+               <topic label="Querying quality measures" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1387.html"/>
+            </topic>
+            <topic label="Modifying and re-optimizing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1388.html"/>
+            <topic label="Modifying an optimization problem: example ilolpex3.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1389.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1390.html"/>
+               <topic label="Setting CPLEX parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1391.html"/>
+               <topic label="Modifying an optimization problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1392.html"/>
+               <topic label="Starting from a previous basis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1393.html"/>
+               <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1394.html"/>
+            </topic>
+         </topic>
+         <topic label="Concert Technology tutorial for Java users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1395.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1396.html"/>
+            <topic label="Compiling CPLEX in Concert Technology Java applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1397.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1398.html"/>
+               <topic label="Adapting build procedures to your platform" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1399.html"/>
+               <topic label="In case problems arise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1400.html"/>
+            </topic>
+            <topic label="The design of CPLEX in Concert Technology Java applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1401.html"/>
+            <topic label="The anatomy of a Concert Technology Java application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1402.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1403.html"/>
+               <topic label="Create the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1404.html"/>
+               <topic label="Solve the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1405.html"/>
+               <topic label="Query the results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1406.html"/>
+            </topic>
+            <topic label="Building and solving a small LP model in Java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1407.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1408.html"/>
+               <topic label="Modeling by rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1409.html"/>
+               <topic label="Modeling by columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1410.html"/>
+               <topic label="Modeling by nonzeros" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1411.html"/>
+            </topic>
+         </topic>
+         <topic label="Concert Technology tutorial for .NET users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1412.html">
+            <topic label="Presenting the tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1413.html"/>
+            <topic label="What you need to know: prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1414.html"/>
+            <topic label="What you will be doing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1415.html"/>
+            <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1416.html"/>
+            <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1417.html"/>
+            <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1418.html"/>
+            <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1419.html"/>
+         </topic>
+         <topic label="Callable Library tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1420.html">
+            <topic label="The design of the CPLEX Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1421.html"/>
+            <topic label="Compiling and linking Callable Library applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1422.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1423.html"/>
+               <topic label="Building Callable Library applications on UNIX platforms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1424.html"/>
+               <topic label="Building Callable Library applications on Win32 platforms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1425.html"/>
+            </topic>
+            <topic label="How CPLEX works" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1426.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1427.html"/>
+               <topic label="Opening the CPLEX environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1428.html"/>
+               <topic label="Instantiating the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1429.html"/>
+               <topic label="Populating the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1430.html"/>
+               <topic label="Changing the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1431.html"/>
+            </topic>
+            <topic label="Creating a successful Callable Library application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1432.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1433.html"/>
+               <topic label="Prototype the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1434.html"/>
+               <topic label="Identify the routines to call" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1435.html"/>
+               <topic label="Test procedures in the application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1436.html"/>
+               <topic label="Assemble the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1437.html"/>
+               <topic label="Choose an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1438.html"/>
+               <topic label="Observe good programming practices" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1439.html"/>
+               <topic label="Debug your program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1440.html"/>
+               <topic label="Test your application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1441.html"/>
+               <topic label="Use the examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1442.html"/>
+            </topic>
+            <topic label="Building and solving a small LP model in C" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1443.html"/>
+            <topic label="Reading a problem from a file: example lpex2.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1444.html"/>
+            <topic label="Adding rows to a problem: example lpex3.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1445.html"/>
+            <topic label="Performing sensitivity analysis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1446.html"/>
+         </topic>
+         <topic label="Python tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1447.html">
+            <topic label="Design of CPLEX in a Python application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1448.html"/>
+            <topic label="Starting the CPLEX Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1449.html"/>
+            <topic label="Accessing the module cplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1450.html"/>
+            <topic label="Building and solving a small LP with Python" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1451.html"/>
+            <topic label="Reading and writing CPLEX models to files with Python" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1452.html"/>
+            <topic label="Selecting an optimizer in Python" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1453.html"/>
+            <topic label="Example: reading a problem from a file lpex2.py" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1454.html"/>
+            <topic label="Modifying and re-optimizing in the CPLEX Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1455.html"/>
+            <topic label="Example: modifying a model lpex3.py" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1456.html"/>
+            <topic label="Using CPLEX parameters in the CPLEX Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1457.html"/>
+         </topic>
+         <topic label="MSF tutorial for CPLEX users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1458.html">
+            <topic label="CPLEX connector for MSF" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1459.html"/>
+            <topic label="Using CPLEX as a plug-in SFS of MSF" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1460.html"/>
+            <topic label="Using CPLEX as the class CplexSolver in MSF" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1461.html"/>
+            <topic label="Using CPLEX parameters in MSF connector" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1462.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="User's Manual for CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1463.html">
+      <topic label="Meet CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1464.html">
+         <topic label="What is CPLEX?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1465.html"/>
+         <topic label="What does CPLEX do?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1466.html"/>
+         <topic label="What you need to know" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1467.html"/>
+         <topic label="Examples online" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1468.html"/>
+         <topic label="Notation in this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1469.html"/>
+         <topic label="Related documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1470.html"/>
+         <topic label="Online services" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1471.html"/>
+         <topic label="Further reading" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1472.html"/>
+      </topic>
+      <topic label="Languages and APIs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1473.html">
+         <topic label="Concert Technology for C++ users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1474.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1475.html"/>
+            <topic label="Architecture of a CPLEX C++ application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1476.html"/>
+            <topic label="Compiling and linking" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1477.html"/>
+            <topic label="Creating a C++ application with Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1478.html"/>
+            <topic label="Modeling an optimization problem with Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1479.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1480.html"/>
+               <topic label="Creating the environment: IloEnv" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1481.html"/>
+               <topic label="Defining variables and expressions: IloNumVar" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1482.html"/>
+               <topic label="Declaring the objective: IloObjective" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1483.html"/>
+               <topic label="Adding constraints: IloConstraint and IloRange" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1484.html"/>
+               <topic label="Formulating a problem: IloModel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1485.html"/>
+               <topic label="Managing data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1486.html"/>
+            </topic>
+            <topic label="Solving the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1487.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1488.html"/>
+               <topic label="Extracting a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1489.html"/>
+               <topic label="Invoking a solver" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1490.html"/>
+               <topic label="Choosing an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1491.html"/>
+               <topic label="Controlling the optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1492.html"/>
+            </topic>
+            <topic label="Accessing solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1493.html">
+               <topic label="Accessing solution status" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1494.html"/>
+               <topic label="Querying solution data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1495.html"/>
+               <topic label="Accessing basis information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1496.html"/>
+               <topic label="Performing sensitivity analysis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1497.html"/>
+               <topic label="Analyzing infeasible problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1498.html"/>
+               <topic label="Assessing solution quality" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1499.html"/>
+            </topic>
+            <topic label="Modifying a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1500.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1501.html"/>
+               <topic label="Deleting and removing modeling objects" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1502.html"/>
+               <topic label="Changing variable type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1503.html"/>
+            </topic>
+            <topic label="Handling errors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1504.html"/>
+            <topic label="Example: optimizing the diet problem in C++" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1505.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1506.html"/>
+               <topic label="Problem representation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1507.html"/>
+               <topic label="Application description" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1508.html"/>
+               <topic label="Creating multi-dimensional arrays with IloArray" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1509.html"/>
+               <topic label="Using arrays for input or output" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1510.html"/>
+               <topic label="Solving the model with IloCplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1511.html"/>
+               <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1512.html"/>
+            </topic>
+         </topic>
+         <topic label="Concert Technology for Java users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1513.html">
+            <topic label="Architecture of a CPLEX Java application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1514.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1515.html"/>
+               <topic label="Compiling and linking a Java application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1516.html"/>
+            </topic>
+            <topic label="Creating a Java application with Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1517.html"/>
+            <topic label="Modeling an optimization problem with Concert Technology in the Java API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1518.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1519.html"/>
+               <topic label="Using IloModeler" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1520.html"/>
+               <topic label="The active model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1521.html"/>
+               <topic label="Building the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1522.html"/>
+            </topic>
+            <topic label="Solving the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1523.html"/>
+            <topic label="Accessing solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1524.html"/>
+            <topic label="Choosing an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1525.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1526.html"/>
+               <topic label="What does CPLEX solve?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1527.html"/>
+               <topic label="Solving a single continuous model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1528.html"/>
+               <topic label="Solving subsequent continuous relaxations in a MIP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1529.html"/>
+            </topic>
+            <topic label="Controlling CPLEX optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1530.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1531.html"/>
+               <topic label="Parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1532.html"/>
+               <topic label="Priority orders and branching directions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1533.html"/>
+            </topic>
+            <topic label="More solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1534.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1535.html"/>
+               <topic label="Writing solution files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1536.html"/>
+               <topic label="Dual solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1537.html"/>
+               <topic label="Basis information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1538.html"/>
+               <topic label="Infeasible solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1539.html"/>
+               <topic label="Solution quality" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1540.html"/>
+            </topic>
+            <topic label="Advanced modeling with IloLPMatrix" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1541.html"/>
+            <topic label="Modeling by column" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1542.html">
+               <topic label="What is modeling by column?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1543.html"/>
+               <topic label="Procedure for Modeling by Column" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1544.html"/>
+            </topic>
+            <topic label="Example: optimizing the diet problem in Java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1545.html"/>
+            <topic label="Modifying the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1546.html"/>
+         </topic>
+         <topic label="Concert Technology for .NET users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1547.html">
+            <topic label="Prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1548.html"/>
+            <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1549.html"/>
+            <topic label="Step 1: Describe the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1550.html"/>
+            <topic label="Step 2: Open the file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1551.html"/>
+            <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1552.html"/>
+            <topic label="Step 3: Create the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1553.html"/>
+            <topic label="Step 4: Create an array to store the variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1554.html"/>
+            <topic label="Step 5: Specify by row or by column" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1555.html"/>
+            <topic label="Build by Rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1556.html"/>
+            <topic label="Step 6: Set up rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1557.html"/>
+            <topic label="Step 7: Create the variables: build and populate by rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1558.html"/>
+            <topic label="Step 8: Add objective" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1559.html"/>
+            <topic label="Step 9: Add nutritional constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1560.html"/>
+            <topic label="Build by Columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1561.html"/>
+            <topic label="Step 10: Set up columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1562.html"/>
+            <topic label="Step 11: Add empty objective function and constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1563.html"/>
+            <topic label="Step 12: Create variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1564.html"/>
+            <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1565.html"/>
+            <topic label="Step 13: Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1566.html"/>
+            <topic label="Step 14: Display the solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1567.html"/>
+            <topic label="Step 15: End application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1568.html"/>
+            <topic label="Good programming practices" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1569.html"/>
+            <topic label="Step 16: Read the command line (data from user)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1570.html"/>
+            <topic label="Step 17: Show correct use of command line" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1571.html"/>
+            <topic label="Step 18: Enclose the application in try catch statements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1572.html"/>
+            <topic label="Example: optimizing the diet problem in C#.NET" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1573.html"/>
+         </topic>
+         <topic label="Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1574.html">
+            <topic label="Architecture of the Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1575.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1576.html"/>
+               <topic label="Compiling and linking" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1577.html"/>
+            </topic>
+            <topic label="Using the Callable Library in an application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1578.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1579.html"/>
+               <topic label="Initialize the CPLEX environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1580.html"/>
+               <topic label="Instantiate the problem as an object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1581.html"/>
+               <topic label="Put data in the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1582.html"/>
+               <topic label="Optimize the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1583.html"/>
+               <topic label="Change the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1584.html"/>
+               <topic label="Destroy the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1585.html"/>
+               <topic label="Release the CPLEX environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1586.html"/>
+            </topic>
+            <topic label="CPLEX programming practices" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1587.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1588.html"/>
+               <topic label="Variable names and calling conventions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1589.html"/>
+               <topic label="Data types" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1590.html"/>
+               <topic label="Ownership of problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1591.html"/>
+               <topic label="Problem size and memory allocation issues" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1592.html"/>
+               <topic label="Status and return values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1593.html"/>
+               <topic label="Symbolic constants" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1594.html"/>
+               <topic label="Parameter routines" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1595.html"/>
+               <topic label="Null arguments" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1596.html"/>
+               <topic label="Row and column references" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1597.html"/>
+               <topic label="Character strings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1598.html"/>
+               <topic label="Problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1599.html"/>
+               <topic label="Callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1600.html"/>
+               <topic label="Portability" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1601.html"/>
+               <topic label="FORTRAN interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1602.html"/>
+               <topic label="C++ interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1603.html"/>
+            </topic>
+            <topic label="Managing parameters from the Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1604.html"/>
+            <topic label="Example: optimizing the diet problem in the Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1605.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1606.html"/>
+               <topic label="Problem representation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1607.html"/>
+               <topic label="Program description" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1608.html"/>
+               <topic label="Solving the model with CPXlpopt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1609.html"/>
+               <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1610.html"/>
+            </topic>
+            <topic label="Using surplus arguments for array allocations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1611.html"/>
+            <topic label="Example: using query routines lpex7.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1612.html"/>
+         </topic>
+         <topic label="CPLEX for Python users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1613.html">
+            <topic label="Why Python?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1614.html"/>
+            <topic label="Meet the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1615.html"/>
+            <topic label="Modifying and querying problem data in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1616.html"/>
+            <topic label="Using polymorphism in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1617.html"/>
+            <topic label="Example: generating a histogram" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1618.html"/>
+            <topic label="Querying solution information in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1619.html"/>
+            <topic label="Examining variables with nonzero values in a solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1620.html"/>
+            <topic label="Displaying high precision nonzero values of a solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1621.html"/>
+            <topic label="Managing CPLEX parameters in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1622.html"/>
+            <topic label="Using callbacks in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1623.html"/>
+            <topic label="Example: displaying solutions with increased precision from the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1624.html"/>
+            <topic label="Example: examining the simplex tableau in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1625.html"/>
+            <topic label="Example: solving a sequence of related problems in the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1626.html"/>
+            <topic label="Example: complex termination criteria in a callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1627.html"/>
+         </topic>
+      </topic>
+      <topic label="Programming considerations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1628.html">
+         <topic label="Developing CPLEX applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1629.html">
+            <topic label="Tips for successful application development" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1630.html">
+               <topic label="Prototype the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1631.html"/>
+               <topic label="Identify routines to use" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1632.html"/>
+               <topic label="Test interactively" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1633.html"/>
+               <topic label="Assemble data efficiently" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1634.html"/>
+               <topic label="Test data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1635.html"/>
+               <topic label="Test and debug the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1636.html"/>
+               <topic label="Choose an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1637.html"/>
+               <topic label="Program with a view toward maintenance and modifications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1638.html"/>
+            </topic>
+            <topic label="Using the Interactive Optimizer for debugging" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1639.html"/>
+            <topic label="Eliminating common programming errors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1640.html">
+               <topic label="Turn on the data check parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1641.html"/>
+               <topic label="Check your include files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1642.html"/>
+               <topic label="Clean house and try again" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1643.html"/>
+               <topic label="Read your messages" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1644.html"/>
+               <topic label="Check return values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1645.html"/>
+               <topic label="Beware of numbering conventions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1646.html"/>
+               <topic label="Make local variables temporarily global" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1647.html"/>
+               <topic label="Solve the problem you intended" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1648.html"/>
+               <topic label="Special considerations for FORTRAN" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1649.html"/>
+               <topic label="Tell us" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1650.html"/>
+            </topic>
+         </topic>
+         <topic label="Managing input and output" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1651.html">
+            <topic label="Platform limits on files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1652.html"/>
+            <topic label="Selecting an encoding" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1653.html"/>
+            <topic label="Understanding file formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1654.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1655.html"/>
+               <topic label="Working with LP files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1656.html"/>
+               <topic label="Working with MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1657.html"/>
+               <topic label="Converting file formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1658.html"/>
+            </topic>
+            <topic label="Using Concert XML extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1659.html"/>
+            <topic label="Using Concert csvReader" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1660.html"/>
+            <topic label="Managing log files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1661.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1662.html"/>
+               <topic label="Creating, renaming, relocating log files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1663.html"/>
+               <topic label="Closing log files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1664.html"/>
+            </topic>
+            <topic label="Controlling message channels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1665.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1666.html"/>
+               <topic label="Output channels in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1667.html"/>
+               <topic label="Callable Library routines for message channels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1668.html"/>
+               <topic label="Example: Callable Library message channels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1669.html"/>
+               <topic label="Concert Technology message channels" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1670.html"/>
+            </topic>
+         </topic>
+         <topic label="Timing interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1671.html">
+            <topic label="Using the timing interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1672.html"/>
+         </topic>
+         <topic label="Tuning tool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1673.html">
+            <topic label="Meet the tuning tool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1674.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1675.html"/>
+               <topic label="If CPLEX solves your problem to optimality" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1676.html"/>
+               <topic label="If CPLEX finds solutions but does not prove optimality" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1677.html"/>
+               <topic label="Tuning and time limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1678.html"/>
+               <topic label="Tuning results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1679.html"/>
+            </topic>
+            <topic label="Invoking the tuning tool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1680.html"/>
+            <topic label="Example: time limits on tuning in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1681.html"/>
+            <topic label="Fixing parameters and tuning multiple models in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1682.html">
+               <topic label="Invoking the tuning tool in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1683.html"/>
+               <topic label="Fixed parameters to respect" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1684.html"/>
+               <topic label="Files of models to tune" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1685.html"/>
+            </topic>
+            <topic label="Tuning models in the Callable Library (C API)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1686.html"/>
+            <topic label="Callbacks for tuning" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1687.html"/>
+            <topic label="Terminating a tuning session" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1688.html"/>
+         </topic>
+      </topic>
+      <topic label="Continuous optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1689.html">
+         <topic label="Solving LPs: simplex optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1690.html">
+            <topic label="Introducing the primal and dual optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1691.html"/>
+            <topic label="Choosing an optimizer for your LP problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1692.html">
+               <topic label="Overview of LP optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1693.html"/>
+               <topic label="Automatic selection of an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1694.html"/>
+               <topic label="Dual simplex optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1695.html"/>
+               <topic label="Primal simplex optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1696.html"/>
+               <topic label="Network optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1697.html"/>
+               <topic label="Barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1698.html"/>
+               <topic label="Sifting optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1699.html"/>
+               <topic label="Concurrent optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1700.html"/>
+               <topic label="Parameter settings and optimizer choice" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1701.html"/>
+            </topic>
+            <topic label="Tuning LP performance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1702.html">
+               <topic label="Introducing performance tuning for LP models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1703.html"/>
+               <topic label="Preprocessing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1704.html"/>
+               <topic label="Starting from an advanced basis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1705.html"/>
+               <topic label="Simplex parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1706.html"/>
+            </topic>
+            <topic label="Diagnosing performance problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1707.html">
+               <topic label="Lack of memory" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1708.html"/>
+               <topic label="Numeric difficulties" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1709.html"/>
+            </topic>
+            <topic label="Diagnosing LP infeasibility" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1710.html">
+               <topic label="Infeasibility reported by LP optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1711.html"/>
+               <topic label="Coping with an ill-conditioned problem or handling unscaled infeasibilities" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1712.html"/>
+               <topic label="Interpreting solution quality" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1713.html"/>
+               <topic label="Finding a conflict" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1714.html"/>
+               <topic label="Repairing infeasibility: FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1715.html"/>
+            </topic>
+            <topic label="Examples: using a starting basis in LP optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1716.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1717.html"/>
+               <topic label="Example ilolpex6.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1718.html"/>
+               <topic label="Example lpex6.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1719.html"/>
+            </topic>
+         </topic>
+         <topic label="Solving LPs: barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1720.html">
+            <topic label="Introducing the barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1721.html"/>
+            <topic label="Barrier simplex crossover" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1722.html"/>
+            <topic label="Differences between barrier and simplex optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1723.html"/>
+            <topic label="Using the barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1724.html"/>
+            <topic label="Special options in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1725.html"/>
+            <topic label="Controlling crossover" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1726.html"/>
+            <topic label="Using SOL file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1727.html"/>
+            <topic label="Interpreting the barrier log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1728.html">
+               <topic label="Accessing and managing the log file of the barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1729.html"/>
+               <topic label="Sample log file from the barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1730.html"/>
+               <topic label="Preprocessing in the log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1731.html"/>
+               <topic label="Nonzeros in lower triangle of A*A' in the log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1732.html"/>
+               <topic label="Ordering-algorithm time in the log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1733.html"/>
+               <topic label="Cholesky factor in the log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1734.html"/>
+               <topic label="Iteration progress in the log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1735.html"/>
+               <topic label="Infeasibility ratio in the log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1736.html"/>
+            </topic>
+            <topic label="Understanding solution quality from the barrier LP optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1737.html"/>
+            <topic label="Tuning barrier optimizer performance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1738.html">
+               <topic label="Overview of parameters for tuning the barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1739.html"/>
+               <topic label="Memory emphasis: letting the optimizer use disk for storage" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1740.html"/>
+               <topic label="Preprocessing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1741.html"/>
+               <topic label="Detecting and eliminating dense columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1742.html"/>
+               <topic label="Choosing an ordering algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1743.html"/>
+               <topic label="Using a starting-point heuristic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1744.html"/>
+            </topic>
+            <topic label="Overcoming numeric difficulties" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1745.html">
+               <topic label="Default behavior of the barrier optimizer with respect to numeric difficulty" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1746.html"/>
+               <topic label="Numerical emphasis settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1747.html"/>
+               <topic label="Difficulties in the quality of solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1748.html"/>
+               <topic label="Difficulties during optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1749.html"/>
+               <topic label="Difficulties with unbounded problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1750.html"/>
+            </topic>
+            <topic label="Diagnosing infeasibility reported by barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1751.html"/>
+         </topic>
+         <topic label="Solving network-flow problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1752.html">
+            <topic label="Choosing an optimizer: network considerations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1753.html"/>
+            <topic label="Formulating a network problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1754.html"/>
+            <topic label="Example: network optimizer in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1755.html">
+               <topic label="Network flow problem description" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1756.html"/>
+               <topic label="Understanding the network log file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1757.html"/>
+               <topic label="Tuning performance of the network optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1758.html"/>
+            </topic>
+            <topic label="Solving problems with the network optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1759.html">
+               <topic label="Invoking the network optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1760.html"/>
+               <topic label="Network extraction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1761.html"/>
+               <topic label="Preprocessing and the network optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1762.html"/>
+            </topic>
+            <topic label="Example: using the network optimizer with the Callable Library netex1.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1763.html"/>
+            <topic label="Solving network-flow problems as LP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1764.html"/>
+            <topic label="Example: network to LP transformation netex2.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1765.html"/>
+         </topic>
+         <topic label="Solving problems with a quadratic objective (QP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1766.html">
+            <topic label="Distinguishing between convex and nonconvex QPs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1767.html"/>
+            <topic label="Entering QPs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1768.html">
+               <topic label="Matrix view" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1769.html"/>
+               <topic label="Algebraic view" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1770.html"/>
+               <topic label="Examples for entering QPs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1771.html"/>
+               <topic label="Reformulating QPs to save memory" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1772.html"/>
+            </topic>
+            <topic label="Saving QP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1773.html"/>
+            <topic label="Changing problem type in QPs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1774.html"/>
+            <topic label="Changing quadratic terms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1775.html"/>
+            <topic label="Optimizing QPs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1776.html"/>
+            <topic label="Diagnosing QP infeasibility" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1777.html"/>
+            <topic label="Examples: creating a QP, optimizing, finding a solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1778.html">
+               <topic label="Problem description of a quadratic program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1779.html"/>
+               <topic label="Example: iloqpex1.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1780.html"/>
+               <topic label="Example: QPex1.java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1781.html"/>
+               <topic label="Example: qpex1.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1782.html"/>
+            </topic>
+            <topic label="Example: reading a QP from a file qpex2.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1783.html"/>
+         </topic>
+         <topic label="Solving problems with quadratic constraints (QCP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1784.html">
+            <topic label="Identifying a quadratically constrained program (QCP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1785.html">
+               <topic label="Characteristics of a quadratically constrained program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1786.html"/>
+               <topic label="Convexity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1787.html"/>
+               <topic label="Semi-definiteness" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1788.html"/>
+               <topic label="Second order cone programming (SOCP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1789.html"/>
+            </topic>
+            <topic label="Detecting the problem type of a QCP or SOCP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1790.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1791.html"/>
+               <topic label="Concert Technology and QCP problem type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1792.html"/>
+               <topic label="Callable Library and QCP problem type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1793.html"/>
+               <topic label="Interactive Optimizer and QCP problem type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1794.html"/>
+               <topic label="File formats and QCP problem type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1795.html"/>
+            </topic>
+            <topic label="Changing problem type in a QCP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1796.html"/>
+            <topic label="Changing quadratic constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1797.html"/>
+            <topic label="Solving with quadratic constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1798.html"/>
+            <topic label="Numeric difficulties and quadratic constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1799.html"/>
+            <topic label="Examples: QCP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1800.html"/>
+         </topic>
+      </topic>
+      <topic label="Discrete optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1801.html">
+         <topic label="Solving mixed integer programming problems (MIP)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1802.html">
+            <topic label="Stating a MIP problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1803.html"/>
+            <topic label="Preliminary issues" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1804.html">
+               <topic label="Entering MIP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1805.html"/>
+               <topic label="Displaying MIP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1806.html"/>
+               <topic label="Changing problem type in MIPs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1807.html"/>
+               <topic label="Changing variable type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1808.html"/>
+            </topic>
+            <topic label="Using the mixed integer optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1809.html">
+               <topic label="Invoking the optimizer for a MIP model." href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1810.html"/>
+               <topic label="Emphasizing feasibility and optimality" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1811.html"/>
+               <topic label="Terminating MIP optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1812.html"/>
+            </topic>
+            <topic label="Tuning performance features of the mixed integer optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1813.html">
+               <topic label="Branch &amp; cut or dynamic search?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1814.html"/>
+               <topic label="Introducing performance features of the MIP optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1815.html"/>
+               <topic label="Applying cutoff values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1816.html"/>
+               <topic label="Applying tolerance parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1817.html"/>
+               <topic label="Applying heuristics" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1818.html"/>
+               <topic label="When an integer solution is found: the incumbent" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1819.html"/>
+               <topic label="Controlling strategies: diving and backtracking" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1820.html"/>
+               <topic label="Selecting nodes" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1821.html"/>
+               <topic label="Selecting variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1822.html"/>
+               <topic label="Changing branching direction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1823.html"/>
+               <topic label="Solving subproblems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1824.html"/>
+               <topic label="Using node files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1825.html"/>
+               <topic label="Probing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1826.html"/>
+            </topic>
+            <topic label="Cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1827.html">
+               <topic label="What are cuts?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1828.html"/>
+               <topic label="Clique cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1829.html"/>
+               <topic label="Cover cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1830.html"/>
+               <topic label="Disjunctive cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1831.html"/>
+               <topic label="Flow cover cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1832.html"/>
+               <topic label="Flow path cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1833.html"/>
+               <topic label="Gomory fractional cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1834.html"/>
+               <topic label="Generalized upper bound (GUB) cover cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1835.html"/>
+               <topic label="Implied bound cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1836.html"/>
+               <topic label="Mixed integer rounding (MIR) cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1837.html"/>
+               <topic label="Multi-commodity flow (MCF) cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1838.html"/>
+               <topic label="Zero-half cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1839.html"/>
+               <topic label="Adding cuts and re-optimizing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1840.html"/>
+               <topic label="Counting cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1841.html"/>
+               <topic label="Parameters affecting cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1842.html"/>
+            </topic>
+            <topic label="Heuristics" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1843.html">
+               <topic label="What are heuristics?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1844.html"/>
+               <topic label="Node heuristic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1845.html"/>
+               <topic label="Relaxation induced neighborhood search (RINS) heuristic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1846.html"/>
+               <topic label="Solution polishing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1847.html"/>
+               <topic label="Feasibility pump" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1848.html"/>
+            </topic>
+            <topic label="Preprocessing: presolver and aggregator" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1849.html"/>
+            <topic label="Starting from a solution: MIP starts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1850.html"/>
+            <topic label="Issuing priority orders" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1851.html"/>
+            <topic label="Using the MIP solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1852.html"/>
+            <topic label="Progress reports: interpreting the node log" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1853.html"/>
+            <topic label="Troubleshooting MIP performance problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1854.html">
+               <topic label="Introducing trouble shooting for MIP performance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1855.html"/>
+               <topic label="Too much time at node 0" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1856.html"/>
+               <topic label="Trouble finding more than one feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1857.html"/>
+               <topic label="Large number of unhelpful cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1858.html"/>
+               <topic label="Lack of movement in the best node" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1859.html"/>
+               <topic label="Time wasted on overly tight optimality criteria" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1860.html"/>
+               <topic label="Slightly infeasible integer variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1861.html"/>
+               <topic label="Running out of memory" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1862.html"/>
+               <topic label="Difficulty solving subproblems: overcoming degeneracy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1863.html"/>
+               <topic label="Unsatisfactory optimization of subproblems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1864.html"/>
+            </topic>
+            <topic label="Examples: optimizing a simple MIP problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1865.html">
+               <topic label="ilomipex1.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1866.html"/>
+               <topic label="MIPex1.java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1867.html"/>
+               <topic label="MIPex1.cs and MIPex1.vb" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1868.html"/>
+               <topic label="mipex1.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1869.html"/>
+            </topic>
+            <topic label="Example: reading a MIP problem from a file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1870.html">
+               <topic label="ilomipex2.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1871.html"/>
+               <topic label="mipex2.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1872.html"/>
+            </topic>
+         </topic>
+         <topic label="Solution pool: generating and keeping multiple solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1873.html">
+            <topic label="What is the solution pool?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1874.html"/>
+            <topic label="Example: simple facility location problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1875.html"/>
+            <topic label="Filling the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1876.html"/>
+            <topic label="Accumulating incumbents in the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1877.html"/>
+            <topic label="Populating the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1878.html">
+               <topic label="What is populating the solution pool?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1879.html"/>
+               <topic label="Invoking the populate procedure" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1880.html"/>
+               <topic label="Algorithm of the populate procedure" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1881.html"/>
+               <topic label="Example: calling populate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1882.html"/>
+               <topic label="Stopping criteria for the populate procedure" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1883.html"/>
+               <topic label="Stored solutions, populate limit, and pool capacity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1884.html"/>
+            </topic>
+            <topic label="Choosing whether to accumulate or populate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1885.html">
+               <topic label="What’s the difference between accumulating and populating?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1886.html"/>
+               <topic label="Advanced use: interaction of MIP optimization and populate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1887.html"/>
+               <topic label="Example: using populate after MIP optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1888.html"/>
+            </topic>
+            <topic label="Enumerating all solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1889.html">
+               <topic label="How to enumerate all solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1890.html"/>
+               <topic label="Limitations due to continuous variables and finite precision" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1891.html"/>
+               <topic label="Limitations due to unbounded MIP models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1892.html"/>
+               <topic label="Limitations due to numeric difficulties" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1893.html"/>
+            </topic>
+            <topic label="Impact of change on the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1894.html">
+               <topic label="Changes between MIP optimization and populate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1895.html"/>
+               <topic label="Persistence of solutions in the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1896.html"/>
+               <topic label="Model changes and the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1897.html"/>
+            </topic>
+            <topic label="Examining the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1898.html"/>
+            <topic label="Accessing a solution in the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1899.html"/>
+            <topic label="Using solutions from the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1900.html"/>
+            <topic label="Deleting solutions from the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1901.html"/>
+            <topic label="The incumbent and the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1902.html"/>
+            <topic label="Parameters of the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1903.html">
+               <topic label="Which parameters control the solution pool?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1904.html"/>
+               <topic label="Example: quality control through the solution pool gap parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1905.html"/>
+               <topic label="Example: few or many solutions through intensity parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1906.html"/>
+               <topic label="Example: diverse solutions through replacement parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1907.html"/>
+            </topic>
+            <topic label="Filtering the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1908.html">
+               <topic label="What are filters of the solution pool?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1909.html"/>
+               <topic label="Diversity filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1910.html"/>
+               <topic label="Range filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1911.html"/>
+               <topic label="Filter files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1912.html"/>
+               <topic label="Example: controlling properties of solutions with filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1913.html"/>
+               <topic label="Incumbent callback as a filter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1914.html"/>
+            </topic>
+         </topic>
+         <topic label="Using special ordered sets (SOS)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1915.html">
+            <topic label="What is a special ordered set (SOS)?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1916.html"/>
+            <topic label="Example: SOS Type 1 for sizing a warehouse" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1917.html"/>
+            <topic label="Declaring SOS members" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1918.html"/>
+            <topic label="Example: using SOS and priority" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1919.html">
+               <topic label="ilomipex3.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1920.html"/>
+               <topic label="mipex3.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1921.html"/>
+            </topic>
+         </topic>
+         <topic label="Using semi-continuous variables: a rates example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1922.html">
+            <topic label="What are semi-continuous variables?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1923.html"/>
+            <topic label="Describing the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1924.html"/>
+            <topic label="Representing the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1925.html"/>
+            <topic label="Building a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1926.html"/>
+            <topic label="Solving the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1927.html"/>
+            <topic label="Ending the application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1928.html"/>
+            <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1929.html"/>
+         </topic>
+         <topic label="Using piecewise linear functions in optimization: a transport example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1930.html">
+            <topic label="What is a piecewise linear function?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1931.html"/>
+            <topic label="Syntax of piecewise linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1932.html"/>
+            <topic label="Discontinuous piecewise linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1933.html"/>
+            <topic label="Isolated points in piecewise linear functions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1934.html"/>
+            <topic label="Using IloPiecewiseLinear in expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1935.html"/>
+            <topic label="Describing the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1936.html">
+               <topic label="Problem statement" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1937.html"/>
+               <topic label="Variable shipping costs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1938.html"/>
+               <topic label="Model with varying costs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1939.html"/>
+            </topic>
+            <topic label="Developing a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1940.html">
+               <topic label="Creating the environment and model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1941.html"/>
+               <topic label="Representing the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1942.html"/>
+               <topic label="Adding constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1943.html"/>
+               <topic label="Checking convexity and concavity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1944.html"/>
+               <topic label="Adding an objective" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1945.html"/>
+            </topic>
+            <topic label="Solving the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1946.html"/>
+            <topic label="Displaying a solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1947.html"/>
+            <topic label="Ending the application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1948.html"/>
+            <topic label="Complete program: transport.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1949.html"/>
+         </topic>
+         <topic label="Logical constraints in optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1950.html">
+            <topic label="What are logical constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1951.html"/>
+            <topic label="What can be extracted from a model with logical constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1952.html">
+               <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1953.html"/>
+               <topic label="Logical constraints in the C++ API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1954.html"/>
+               <topic label="Logical constraints in the Java API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1955.html"/>
+               <topic label="Logical constraints in the .NET API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1956.html"/>
+            </topic>
+            <topic label="Which nonlinear expressions can be extracted?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1957.html"/>
+            <topic label="Logical constraints for counting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1958.html"/>
+            <topic label="Logical constraints as binary variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1959.html"/>
+            <topic label="How are logical constraints extracted?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1960.html"/>
+         </topic>
+         <topic label="Indicator constraints in optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1961.html">
+            <topic label="What is an indicator constraint?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1962.html"/>
+            <topic label="Example: fixnet.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1963.html"/>
+            <topic label="Indicator constraints in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1964.html"/>
+            <topic label="What are indicator variables?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1965.html"/>
+            <topic label="Restrictions on indicator constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1966.html"/>
+            <topic label="Best practices with indicator constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1967.html"/>
+         </topic>
+         <topic label="Using logical constraints: Food Manufacture 2" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1968.html">
+            <topic label="Introducing the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1969.html"/>
+            <topic label="Describing the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1970.html"/>
+            <topic label="Representing the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1971.html"/>
+            <topic label="Developing the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1972.html"/>
+            <topic label="Formulating logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1973.html"/>
+            <topic label="Solving the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1974.html"/>
+         </topic>
+         <topic label="Early tardy scheduling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1975.html">
+            <topic label="Describing the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1976.html"/>
+            <topic label="Understanding the data file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1977.html"/>
+            <topic label="Reading the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1978.html"/>
+            <topic label="Creating variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1979.html"/>
+            <topic label="Stating precedence constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1980.html"/>
+            <topic label="Stating resource constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1981.html"/>
+            <topic label="Representing the piecewise linear cost function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1982.html"/>
+            <topic label="Transforming the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1983.html"/>
+            <topic label="Solving the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1984.html"/>
+         </topic>
+         <topic label="Using column generation: a cutting stock example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1985.html">
+            <topic label="What is column generation?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1986.html"/>
+            <topic label="Column-wise models in Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1987.html"/>
+            <topic label="Describing the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1988.html"/>
+            <topic label="Representing the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1989.html"/>
+            <topic label="Developing the model: building and modifying" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1990.html">
+               <topic label="The master model and column generator in this application." href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1991.html"/>
+               <topic label="Adding extractable objects: both ways" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1992.html"/>
+               <topic label="Adding columns to a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1993.html"/>
+               <topic label="Changing the type of a variable" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1994.html"/>
+               <topic label="Cut optimization model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1995.html"/>
+               <topic label="Pattern generator model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1996.html"/>
+            </topic>
+            <topic label="Changing the objective function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1997.html"/>
+            <topic label="Solving the problem: using more than one algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1998.html"/>
+            <topic label="Ending the program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex1999.html"/>
+            <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2000.html"/>
+         </topic>
+      </topic>
+      <topic label="Infeasibility and unboundedness" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2001.html">
+         <topic label="Preprocessing and feasibility" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2002.html">
+            <topic label="Issues of infeasibility and unboundedness" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2003.html"/>
+            <topic label="Early reports of infeasibility based on preprocessing reductions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2004.html"/>
+         </topic>
+         <topic label="Managing unboundedness" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2005.html">
+            <topic label="What is unboundedness?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2006.html"/>
+            <topic label="Avoiding unboundedness in a model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2007.html"/>
+            <topic label="Diagnosing unboundedness" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2008.html"/>
+         </topic>
+         <topic label="Diagnosing infeasibility by refining conflicts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2009.html">
+            <topic label="What is a conflict?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2010.html"/>
+            <topic label="What a conflict is not" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2011.html"/>
+            <topic label="How to invoke the conflict refiner" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2012.html"/>
+            <topic label="How a conflict differs from an IIS" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2013.html"/>
+            <topic label="Meet the conflict refiner in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2014.html">
+               <topic label="Limits of the conflict refiner in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2015.html"/>
+               <topic label="A model for the conflict refiner" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2016.html"/>
+               <topic label="Optimizing the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2017.html"/>
+               <topic label="Interpreting the results and detecting conflict" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2018.html"/>
+               <topic label="Displaying a conflict in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2019.html"/>
+            </topic>
+            <topic label="Interpreting conflict" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2020.html">
+               <topic label="Understanding the conflict in the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2021.html"/>
+               <topic label="Deleting a constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2022.html"/>
+               <topic label="Understanding a conflict report" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2023.html"/>
+               <topic label="Summing equality constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2024.html"/>
+               <topic label="Changing a bound" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2025.html"/>
+               <topic label="Adding a constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2026.html"/>
+               <topic label="Changing bounds on cost" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2027.html"/>
+               <topic label="Relaxing a constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2028.html"/>
+            </topic>
+            <topic label="More about the conflict refiner" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2029.html"/>
+            <topic label="Refining a conflict in a MIP start" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2030.html"/>
+            <topic label="Using the conflict refiner in an application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2031.html">
+               <topic label="Example: modifying ilomipex2.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2032.html"/>
+               <topic label="What belongs in an application to refine conflict" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2033.html"/>
+            </topic>
+            <topic label="Comparing a conflict application to Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2034.html">
+               <topic label="Preferences in the conflict refiner" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2035.html"/>
+               <topic label="Groups in the conflict refiner" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2036.html"/>
+            </topic>
+         </topic>
+         <topic label="Repairing infeasibilities with FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2037.html">
+            <topic label="What is FeasOpt?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2038.html"/>
+            <topic label="Invoking FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2039.html"/>
+            <topic label="Specifying preferences" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2040.html"/>
+            <topic label="Example: FeasOpt in Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2041.html"/>
+         </topic>
+      </topic>
+      <topic label="Advanced programming techniques" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2042.html">
+         <topic label="User-cut and lazy-constraint pools" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2043.html">
+            <topic label="What are user cuts and lazy constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2044.html"/>
+            <topic label="What are pools of user cuts or lazy constraints?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2045.html"/>
+            <topic label="Differences between user cuts and lazy constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2046.html"/>
+            <topic label="Limitations on user-cut pools" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2047.html"/>
+            <topic label="Adding user cuts and lazy constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2048.html">
+               <topic label="Using the Component Libraries to add user cuts or lazy constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2049.html"/>
+               <topic label="Using the Interactive Optimizer to add user cuts or lazy constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2050.html"/>
+               <topic label="Reading and writing LP files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2051.html"/>
+               <topic label="Reading and writing SAV files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2052.html"/>
+               <topic label="Reading and writing MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2053.html"/>
+            </topic>
+            <topic label="Deleting user cuts and lazy constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2054.html"/>
+         </topic>
+         <topic label="Using goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2055.html">
+            <topic label="Branch &amp; cut with goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2056.html">
+               <topic label="What is a goal?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2057.html"/>
+               <topic label="Overview of goals in the search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2058.html"/>
+               <topic label="How goals are implemented in branch &amp; cut" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2059.html"/>
+               <topic label="About the method execute in a goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2060.html"/>
+            </topic>
+            <topic label="Special goals in branch &amp; cut" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2061.html">
+               <topic label="Or goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2062.html"/>
+               <topic label="And goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2063.html"/>
+               <topic label="Fail goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2064.html"/>
+               <topic label="Local cut goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2065.html"/>
+               <topic label="Null goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2066.html"/>
+               <topic label="Branch as CPLEX goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2067.html"/>
+               <topic label="Solution goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2068.html"/>
+            </topic>
+            <topic label="Aggregating goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2069.html"/>
+            <topic label="Example: goals in branch &amp; cut" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2070.html"/>
+            <topic label="The goal stack" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2071.html"/>
+            <topic label="Memory management and goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2072.html"/>
+            <topic label="Cuts and goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2073.html"/>
+            <topic label="Injecting heuristic solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2074.html"/>
+            <topic label="Controlling goal-defined search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2075.html"/>
+            <topic label="Example: using node evaluators in a node selection strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2076.html"/>
+            <topic label="Search limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2077.html"/>
+         </topic>
+         <topic label="Using optimization callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2078.html">
+            <topic label="What are callbacks?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2079.html"/>
+            <topic label="Informational callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2080.html">
+               <topic label="What is an informational callback?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2081.html"/>
+               <topic label="Reference documents about informational callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2082.html"/>
+               <topic label="Where to find examples of informational callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2083.html"/>
+               <topic label="What informational callbacks can return" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2084.html"/>
+            </topic>
+            <topic label="Query or diagnostic callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2085.html">
+               <topic label="What are query or diagnostic callbacks?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2086.html"/>
+               <topic label="Where query callbacks are called" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2087.html"/>
+               <topic label="Query callbacks and dynamic search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2088.html"/>
+               <topic label="Query callbacks and parallel search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2089.html"/>
+            </topic>
+            <topic label="Control callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2090.html">
+               <topic label="What are control callbacks?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2091.html"/>
+               <topic label="What control callbacks do" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2092.html"/>
+               <topic label="Control callbacks and dynamic search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2093.html"/>
+               <topic label="Control callbacks and deterministic parallel search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2094.html"/>
+            </topic>
+            <topic label="Implementing callbacks with Concert Technology" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2095.html">
+               <topic label="How callback classes are organized" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2096.html"/>
+               <topic label="Writing callback classes by hand" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2097.html"/>
+               <topic label="Writing callbacks with macros in C++" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2098.html"/>
+               <topic label="Callback interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2099.html"/>
+               <topic label="The continuous callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2100.html"/>
+            </topic>
+            <topic label="Example: deriving the simplex callback ilolpex4.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2101.html"/>
+            <topic label="Implementing callbacks in the Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2102.html">
+               <topic label="Callable Library callback facilities" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2103.html"/>
+               <topic label="Setting callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2104.html"/>
+               <topic label="Callbacks for continuous and discrete problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2105.html"/>
+            </topic>
+            <topic label="Example: using callbacks lpex4.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2106.html"/>
+            <topic label="Example: controlling cuts iloadmipex5.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2107.html"/>
+            <topic label="Interaction between callbacks and parallel optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2108.html"/>
+            <topic label="Return values for callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2109.html"/>
+            <topic label="Terminating without callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2110.html"/>
+         </topic>
+         <topic label="Goals and callbacks: a comparison" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2111.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2112.html"/>
+         </topic>
+         <topic label="Advanced presolve routines" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2113.html">
+            <topic label="Introduction to presolve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2114.html"/>
+            <topic label="A proposed example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2115.html"/>
+            <topic label="Restricting presolve reductions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2116.html">
+               <topic label="When to alert presolve to modifications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2117.html"/>
+               <topic label="Adding constraints to the first solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2118.html"/>
+               <topic label="Primal and dual considerations in presolve reductions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2119.html"/>
+               <topic label="Cuts and presolve reductions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2120.html"/>
+               <topic label="Infeasibility or unboundedness in presolve reductions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2121.html"/>
+               <topic label="Protected variables in presolve reductions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2122.html"/>
+            </topic>
+            <topic label="Manual control of presolve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2123.html"/>
+            <topic label="Modifying a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2124.html"/>
+         </topic>
+         <topic label="Advanced MIP control interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2125.html">
+            <topic label="Introducing the advanced MIP control interface" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2126.html"/>
+            <topic label="Introducing MIP control callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2127.html">
+               <topic label="What are MIP control callbacks?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2128.html"/>
+               <topic label="Thread safety and MIP control callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2129.html"/>
+               <topic label="Presolve and MIP control callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2130.html"/>
+            </topic>
+            <topic label="Heuristic callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2131.html"/>
+            <topic label="Cut callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2132.html"/>
+            <topic label="Branch selection callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2133.html"/>
+            <topic label="Incumbent callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2134.html"/>
+            <topic label="Node selection callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2135.html"/>
+            <topic label="Solve callback" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2136.html"/>
+         </topic>
+         <topic label="Parallel optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2137.html">
+            <topic label="What are parallel optimizers?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2138.html"/>
+            <topic label="Threads" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2139.html">
+               <topic label="Thread safety" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2140.html"/>
+               <topic label="Threads parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2141.html"/>
+               <topic label="Threads and performance considerations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2142.html"/>
+            </topic>
+            <topic label="Determinism of results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2143.html"/>
+            <topic label="Using parallel optimizers in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2144.html"/>
+            <topic label="Using parallel optimizers in the Component Libraries" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2145.html"/>
+            <topic label="Parallel barrier optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2146.html"/>
+            <topic label="Concurrent optimizer in parallel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2147.html"/>
+            <topic label="Parallel MIP optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2148.html">
+               <topic label="Introducing parallel MIP optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2149.html"/>
+               <topic label="Root relaxation and parallel MIP processing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2150.html"/>
+               <topic label="Memory considerations and the parallel MIP optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2151.html"/>
+               <topic label="Output from the parallel MIP optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2152.html"/>
+            </topic>
+            <topic label="Clock settings and time measurement" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_usrmancplex2153.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="File formats supported by CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2154.html">
+      <topic label="File Formats Reference Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2155.html">
+         <topic label="Brief descriptions of file formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2156.html"/>
+         <topic label="Reading and entering file formats in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2157.html"/>
+         <topic label="Saving problems in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2158.html"/>
+         <topic label="LP file format: matrix models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2159.html"/>
+         <topic label="MPS file format: industry standard" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2160.html">
+            <topic label="Overview of MPS" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2161.html"/>
+            <topic label="Records in MPS format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2162.html"/>
+            <topic label="Example of MPS file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2163.html"/>
+         </topic>
+         <topic label="Special records in MPS files: CPLEX extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2164.html">
+            <topic label="Overview of MPS extension" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2165.html"/>
+            <topic label="Objective sense and name in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2166.html"/>
+            <topic label="Integer variables in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2167.html"/>
+            <topic label="Special ordered sets (SOS) in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2168.html"/>
+            <topic label="Quadratic objective information in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2169.html"/>
+            <topic label="Quadratically constrained programs (QCP) in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2170.html"/>
+            <topic label="Indicator constraints in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2171.html"/>
+            <topic label="User-defined cuts in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2172.html"/>
+            <topic label="Lazy constraints in MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2173.html"/>
+         </topic>
+         <topic label="NET file format: network flow models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2174.html"/>
+         <topic label="PRM file format: parameter settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2175.html"/>
+         <topic label="BAS file format: advanced basis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2176.html"/>
+         <topic label="MST file format: MIP starts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2177.html"/>
+         <topic label="ORD file format: priorities and branching orders" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2178.html"/>
+         <topic label="SOL file format: solution files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2179.html"/>
+         <topic label="FLT file format: filter files for the solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2180.html">
+            <topic label="Overview of FLT" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2181.html"/>
+            <topic label="Reading and writing filter files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2182.html"/>
+            <topic label="Syntax of a filter file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2183.html"/>
+            <topic label="Diversity filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2184.html"/>
+            <topic label="Range filters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2185.html"/>
+         </topic>
+         <topic label="CSV file format: comma separated values" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2186.html"/>
+         <topic label="XML file format: serialized models and solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_reffileformatscplex2187.html"/>
+      </topic>
+   </topic>
+   <topic label="Parameters of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2188.html">
+      <topic label="Parameters Reference Manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2189.html">
+         <topic label="Accessing parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2190.html"/>
+         <topic label="Managing sets of parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2191.html"/>
+         <topic label="Parameter names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2192.html"/>
+         <topic label="Correspondence of parameters between APIs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2193.html"/>
+         <topic label="Saving parameter settings to a file in the C API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2194.html"/>
+         <topic label="Topical list of parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2195.html">
+            <topic label="Simplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2196.html"/>
+            <topic label="Barrier" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2197.html"/>
+            <topic label="MIP" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2198.html"/>
+            <topic label="MIP general" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2199.html"/>
+            <topic label="MIP strategies" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2200.html"/>
+            <topic label="MIP cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2201.html"/>
+            <topic label="MIP tolerances" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2202.html"/>
+            <topic label="MIP limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2203.html"/>
+            <topic label="Solution polishing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2204.html"/>
+            <topic label="Solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2205.html"/>
+            <topic label="Network" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2206.html"/>
+            <topic label="Parallel optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2207.html"/>
+            <topic label="Sifting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2208.html"/>
+            <topic label="Preprocessing: aggregator, presolver" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2209.html"/>
+            <topic label="Tolerances" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2210.html"/>
+            <topic label="Limits" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2211.html"/>
+            <topic label="Display and output" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2212.html"/>
+         </topic>
+         <topic label="List of CPLEX parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2213.html">
+            <topic label="advanced start switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2214.html"/>
+            <topic label="constraint aggregation limit for cut generation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2215.html"/>
+            <topic label="preprocessing aggregator fill" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2216.html"/>
+            <topic label="preprocessing aggregator application limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2217.html"/>
+            <topic label="API string encoding switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2218.html"/>
+            <topic label="barrier algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2219.html"/>
+            <topic label="barrier column nonzeros" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2220.html"/>
+            <topic label="barrier crossover algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2221.html"/>
+            <topic label="barrier display information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2222.html"/>
+            <topic label="convergence tolerance for LP and QP problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2223.html"/>
+            <topic label="barrier growth limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2224.html"/>
+            <topic label="barrier iteration limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2225.html"/>
+            <topic label="barrier maximum correction limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2226.html"/>
+            <topic label="barrier objective range" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2227.html"/>
+            <topic label="barrier ordering algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2228.html"/>
+            <topic label="convergence tolerance for QC problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2229.html"/>
+            <topic label="barrier starting point algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2230.html"/>
+            <topic label="MIP strategy best bound interval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2231.html"/>
+            <topic label="bound strengthening switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2232.html"/>
+            <topic label="MIP branching direction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2233.html"/>
+            <topic label="backtracking tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2234.html"/>
+            <topic label="MIP cliques switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2235.html"/>
+            <topic label="clock type for computation time" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2236.html"/>
+            <topic label="clone log in parallel optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2237.html"/>
+            <topic label="coefficient reduction setting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2238.html"/>
+            <topic label="variable (column) read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2239.html"/>
+            <topic label="conflict information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2240.html"/>
+            <topic label="MIP covers switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2241.html"/>
+            <topic label="simplex crash ordering" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2242.html"/>
+            <topic label="lower cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2243.html"/>
+            <topic label="number of cutting plane passes" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2244.html"/>
+            <topic label="row multiplier factor for cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2245.html"/>
+            <topic label="upper cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2246.html"/>
+            <topic label="data consistency checking switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2247.html"/>
+            <topic label="dependency switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2248.html"/>
+            <topic label="MIP disjunctive cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2249.html"/>
+            <topic label="MIP dive strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2250.html"/>
+            <topic label="dual simplex pricing algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2251.html"/>
+            <topic label="type of cut limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2252.html"/>
+            <topic label="absolute MIP gap tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2253.html"/>
+            <topic label="relative MIP gap tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2254.html"/>
+            <topic label="integrality tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2255.html"/>
+            <topic label="epsilon used in linearization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2256.html"/>
+            <topic label="Markowitz tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2257.html"/>
+            <topic label="optimality tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2258.html"/>
+            <topic label="perturbation constant" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2259.html"/>
+            <topic label="relaxation for FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2260.html"/>
+            <topic label="feasibility tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2261.html"/>
+            <topic label="mode of FeasOpt" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2262.html"/>
+            <topic label="file encoding switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2263.html"/>
+            <topic label="MIP flow cover cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2264.html"/>
+            <topic label="MIP flow path cut switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2265.html"/>
+            <topic label="feasibility pump switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2266.html"/>
+            <topic label="candidate limit for generating Gomory fractional cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2267.html"/>
+            <topic label="MIP Gomory fractional cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2268.html"/>
+            <topic label="pass limit for generating Gomory fractional cuts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2269.html"/>
+            <topic label="MIP GUB cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2270.html"/>
+            <topic label="MIP heuristic frequency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2271.html"/>
+            <topic label="MIP implied bound cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2272.html"/>
+            <topic label="MIP integer solution-file switch and prefix" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2273.html"/>
+            <topic label="MIP integer solution limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2274.html"/>
+            <topic label="simplex maximum iteration limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2275.html"/>
+            <topic label="local branching heuristic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2276.html"/>
+            <topic label="MCF cut switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2277.html"/>
+            <topic label="memory reduction switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2278.html"/>
+            <topic label="MIP callback switch between original model and reduced, presolved model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2279.html"/>
+            <topic label="MIP node log display information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2280.html"/>
+            <topic label="MIP emphasis switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2281.html"/>
+            <topic label="MIP node log interval" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2282.html"/>
+            <topic label="MIP kappa computation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2283.html"/>
+            <topic label="MIP priority order switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2284.html"/>
+            <topic label="MIP priority order generation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2285.html"/>
+            <topic label="MIP dynamic search switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2286.html"/>
+            <topic label="MIQCP strategy switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2287.html"/>
+            <topic label="MIP MIR (mixed integer rounding) cut switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2288.html"/>
+            <topic label="precision of numerical output in MPS and REW file formats" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2289.html"/>
+            <topic label="network logging display switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2290.html"/>
+            <topic label="network optimality tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2291.html"/>
+            <topic label="network primal feasibility tolerance" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2292.html"/>
+            <topic label="simplex network extraction level" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2293.html"/>
+            <topic label="network simplex iteration limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2294.html"/>
+            <topic label="network simplex pricing algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2295.html"/>
+            <topic label="MIP subproblem algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2296.html"/>
+            <topic label="node storage file switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2297.html"/>
+            <topic label="MIP node limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2298.html"/>
+            <topic label="MIP node selection strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2299.html"/>
+            <topic label="numerical precision emphasis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2300.html"/>
+            <topic label="nonzero element read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2301.html"/>
+            <topic label="absolute objective difference cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2302.html"/>
+            <topic label="lower objective value limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2303.html"/>
+            <topic label="upper objective value limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2304.html"/>
+            <topic label="parallel mode switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2305.html"/>
+            <topic label="simplex perturbation switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2306.html"/>
+            <topic label="simplex perturbation limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2307.html"/>
+            <topic label="absolute MIP gap before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2308.html"/>
+            <topic label="relative MIP gap before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2309.html"/>
+            <topic label="MIP integer solutions to find before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2310.html"/>
+            <topic label="nodes to process before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2311.html"/>
+            <topic label="time before starting to polish a feasible solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2312.html"/>
+            <topic label="time spent polishing a solution (deprecated)" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2313.html"/>
+            <topic label="maximum number of solutions generated for solution pool by populate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2314.html"/>
+            <topic label="primal simplex pricing algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2315.html"/>
+            <topic label="presolve dual setting" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2316.html"/>
+            <topic label="presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2317.html"/>
+            <topic label="linear reduction switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2318.html"/>
+            <topic label="limit on the number of presolve passes made" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2319.html"/>
+            <topic label="node presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2320.html"/>
+            <topic label="simplex pricing candidate list size" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2321.html"/>
+            <topic label="MIP probing level" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2322.html"/>
+            <topic label="time spent probing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2323.html"/>
+            <topic label="indefinite MIQP switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2324.html"/>
+            <topic label="QP Q-matrix nonzero read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2325.html"/>
+            <topic label="primal and dual reduction type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2326.html"/>
+            <topic label="simplex refactoring frequency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2327.html"/>
+            <topic label="relaxed LP presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2328.html"/>
+            <topic label="relative objective difference cutoff" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2329.html"/>
+            <topic label="number of attempts to repair infeasible MIP start" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2330.html"/>
+            <topic label="MIP repeat presolve switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2331.html"/>
+            <topic label="RINS heuristic frequency" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2332.html"/>
+            <topic label="algorithm for continuous problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2333.html"/>
+            <topic label="algorithm for continuous quadratic optimization" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2334.html"/>
+            <topic label="MIP starting algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2335.html"/>
+            <topic label="auxiliary root threads" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2336.html"/>
+            <topic label="constraint (row) read limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2337.html"/>
+            <topic label="scale parameter" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2338.html"/>
+            <topic label="messages to screen switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2339.html"/>
+            <topic label="sifting subproblem algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2340.html"/>
+            <topic label="sifting information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2341.html"/>
+            <topic label="upper limit on sifting iterations" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2342.html"/>
+            <topic label="simplex iteration information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2343.html"/>
+            <topic label="simplex singularity repair limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2344.html"/>
+            <topic label="absolute gap for solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2345.html"/>
+            <topic label="maximum number of solutions kept in solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2346.html"/>
+            <topic label="relative gap for solution pool" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2347.html"/>
+            <topic label="solution pool intensity" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2348.html"/>
+            <topic label="solution pool replacement strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2349.html"/>
+            <topic label="solution target type" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2350.html"/>
+            <topic label="MIP strong branching candidate list limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2351.html"/>
+            <topic label="MIP strong branching iterations limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2352.html"/>
+            <topic label="limit on nodes explored when a subMIP is being solved" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2353.html"/>
+            <topic label="symmetry breaking" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2354.html"/>
+            <topic label="global default thread count" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2355.html"/>
+            <topic label="optimizer time limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2356.html"/>
+            <topic label="tree memory limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2357.html"/>
+            <topic label="tuning information display" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2358.html"/>
+            <topic label="tuning measure" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2359.html"/>
+            <topic label="tuning repeater" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2360.html"/>
+            <topic label="tuning time limit" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2361.html"/>
+            <topic label="MIP variable selection strategy" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2362.html"/>
+            <topic label="directory for working files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2363.html"/>
+            <topic label="memory available for working storage" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2364.html"/>
+            <topic label="write level for MST, SOL files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2365.html"/>
+            <topic label="MIP zero-half cuts switch" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_refparameterscplex2366.html"/>
+         </topic>
+      </topic>
+   </topic>
+   <topic label="CPLEX examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2367.html">
+      <topic label="Callable Library examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2368.html"/>
+      <topic label="Callable Library examples using cplexx.h" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2369.html"/>
+      <topic label="C++ examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2370.html"/>
+      <topic label="Java examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2371.html"/>
+      <topic label="C#.NET examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2372.html"/>
+      <topic label="VB.NET examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2373.html"/>
+      <topic label="Python examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2374.html"/>
+      <topic label="MATLAB examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2375.html"/>
+      <topic label="Excel examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2376.html"/>
+   </topic>
+   <topic label="Guide to API reference manuals of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2377.html">
+      <topic label="Overview of the APIs of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2378.html">
+         <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2379.html"/>
+         <topic label="Creating and deleting problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2380.html"/>
+         <topic label="Modifying problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2381.html"/>
+         <topic label="Optimizing problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2382.html"/>
+         <topic label="Analyzing solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2383.html"/>
+         <topic label="Generating and keeping a pool of solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2384.html"/>
+         <topic label="Accessing results for continuous models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2385.html"/>
+         <topic label="Accessing results for discrete models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2386.html"/>
+         <topic label="Accessing general problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2387.html"/>
+         <topic label="Accessing MIP problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2388.html"/>
+         <topic label="Accessing QP problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2389.html"/>
+         <topic label="Accessing QCP problem data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2390.html"/>
+         <topic label="Using MIP starts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2391.html"/>
+         <topic label="Using callbacks" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2392.html"/>
+         <topic label="Using logical constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2393.html"/>
+         <topic label="General utilities" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2394.html"/>
+         <topic label="Reading files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2395.html"/>
+         <topic label="Writing files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2396.html"/>
+         <topic label="Using messages" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2397.html"/>
+         <topic label="Interpreting error codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2398.html"/>
+         <topic label="Interpreting solution status codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2399.html"/>
+         <topic label="Recognizing parameters that differ" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2400.html"/>
+         <topic label="Setting parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2401.html"/>
+      </topic>
+      <topic label="Interpreting solution status codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2402.html"/>
+      <topic label="Interpreting error codes by number" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_apioverviewcplex2403.html"/>
+   </topic>
+   <topic label="Callable Library Reference Manual" href="html/refcallablelibrary/html/overview.html">
+      <link toc="toc/refcallablelibrary.xml"/>
+   </topic>
+   <topic label="CPLEX C++ Reference Manual" href="html/refcppcplex/html/overview.html">
+      <link toc="toc/refcppcplex.xml"/>
+   </topic>
+   <topic label="CPLEX Java Reference Manual" href="html/refjavacplex/html/overview-summary.html">
+      <link toc="toc/refjavacplex.xml"/>
+   </topic>
+   <topic label="CPLEX .NET Reference Manual" href="html/refdotnetcplex/html/R_Project.htm">
+      <link toc="toc/refdotnetcplex.xml"/>
+   </topic>
+   <topic label="CPLEX Python Reference Manual" href="html/refpythoncplex/html/overview.html">
+      <link toc="toc/refpythoncplex.xml"/>
+   </topic>
+   <topic label="Interactive Optimizer of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2404.html">
+      <topic label="Commands of the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2405.html">
+         <topic label="Overview of commands" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2406.html"/>
+         <topic label="Table of the commands of the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2407.html"/>
+         <topic label="Managing parameters in the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2408.html"/>
+         <topic label="Saving a parameter specification file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_interactiveoptimizercommands2409.html"/>
+      </topic>
+   </topic>
+   <topic label="CPLEX for MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2410.html">
+      <topic label="Getting started with CPLEX for MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2412.html">
+         <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2413.html"/>
+         <topic label="Installation and licensing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2414.html"/>
+         <topic label="Integration with MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2415.html"/>
+         <topic label="Using CPLEX for MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2416.html"/>
+         <topic label="Overview of the CPLEX for MATLAB APIs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2417.html">
+            <topic label="CPLEX for MATLAB Toolbox" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2418.html"/>
+            <topic label="Cplex Class API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2419.html"/>
+         </topic>
+         <topic label="Programming tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2420.html"/>
+      </topic>
+      <topic label="Examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2421.html">
+         <topic label="Examples of the CPLEX for MATLAB Toolbox" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2422.html">
+            <topic label="Example: runtoolboxexamples.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2423.html"/>
+            <topic label="Example: cplexbilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2424.html"/>
+            <topic label="Example: cplexlpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2425.html"/>
+            <topic label="Example: cplexlsqbilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2426.html"/>
+            <topic label="Example: cplexlsqlinex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2427.html"/>
+            <topic label="Example: cplexlsqmilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2428.html"/>
+            <topic label="Example: cplexlsqmiqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2429.html"/>
+            <topic label="Example: cplexlsqnonneglinex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2430.html"/>
+            <topic label="Example: cplexlsqnonnegmilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2431.html"/>
+            <topic label="Example: cplexlsqnonnegmiqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2432.html"/>
+            <topic label="Example: cplexlsqnonnegqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2433.html"/>
+            <topic label="Example: cplexlsqqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2434.html"/>
+            <topic label="Example: cplexmilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2435.html"/>
+            <topic label="Example: cplexmiqpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2436.html"/>
+            <topic label="Example: cplexqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2437.html"/>
+            <topic label="Example: cplexqpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2438.html"/>
+         </topic>
+         <topic label="Examples of the Cplex Class API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2439.html">
+            <topic label="Example: runclassexamples.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2440.html"/>
+            <topic label="Example: blend.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2441.html"/>
+            <topic label="Example: cplexplot" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2442.html"/>
+            <topic label="Example: cutstock.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2443.html"/>
+            <topic label="Example: diet.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2444.html"/>
+            <topic label="Example: facility.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2445.html"/>
+            <topic label="Example: fixcost1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2446.html"/>
+            <topic label="Example: indefqpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2447.html"/>
+            <topic label="Example: inout1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2448.html"/>
+            <topic label="Example: inout3.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2449.html"/>
+            <topic label="Example: lpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2450.html"/>
+            <topic label="Example: lpex2.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2451.html"/>
+            <topic label="Example: lpex3.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2452.html"/>
+            <topic label="Example: lpex6.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2453.html"/>
+            <topic label="Example: lpex7.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2454.html"/>
+            <topic label="Example: mipex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2455.html"/>
+            <topic label="Example: mipex2.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2456.html"/>
+            <topic label="Example: mipex3.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2457.html"/>
+            <topic label="Example: mipex4.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2458.html"/>
+            <topic label="Example: miqpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2459.html"/>
+            <topic label="Example: populate.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2460.html"/>
+            <topic label="Example: qcpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2461.html"/>
+            <topic label="Example: qpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2462.html"/>
+            <topic label="Example: qpex2.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2463.html"/>
+            <topic label="Example: rates.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2464.html"/>
+            <topic label="Example: steel.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2465.html"/>
+         </topic>
+         <topic label="Example: cplexgui.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2466.html"/>
+      </topic>
+      <topic label="Function reference" href="html/refmatlabcplex/html/main.html">
+         <link toc="toc/refmatlabcplex.xml"/>
+      </topic>
+   </topic>
+   <topic label="CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2467.html">
+      <topic label="Setting up CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2469.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2470.html"/>
+         <topic label="Registering CPLEX for Microsoft Excel as an add-in with Excel 2003" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2471.html"/>
+         <topic label="Registering CPLEX for Microsoft Excel as an add-in with Excel 2007" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2472.html"/>
+      </topic>
+      <topic label="Defining an optimization model in Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2473.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2474.html"/>
+         <topic label="Creating an optimization model in an Excel spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2475.html">
+            <topic label="The four sections of the spreadsheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2476.html"/>
+            <topic label="Data Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2477.html"/>
+            <topic label="Decision Variables Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2478.html"/>
+            <topic label="Objective Function Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2479.html"/>
+            <topic label="Constraints Section" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2480.html"/>
+         </topic>
+         <topic label="Specifying the objective function cell and constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2481.html"/>
+         <topic label="Excel formulas and cell reference notation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2482.html"/>
+         <topic label="Modeling Tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2483.html"/>
+      </topic>
+      <topic label="User interface of CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2484.html">
+         <topic label="The CPLEX Menu" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2485.html"/>
+         <topic label="CPLEX Model Information window" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2486.html"/>
+      </topic>
+      <topic label="Procedures in CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2487.html">
+         <topic label="Accessing help and documentation in CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2488.html"/>
+         <topic label="Loading a problem model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2489.html"/>
+         <topic label="Solving a problem model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2490.html"/>
+         <topic label="Saving a problem model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2491.html"/>
+         <topic label="Adding, updating, or removing a constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2492.html"/>
+         <topic label="Stepping through MIP solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2493.html"/>
+         <topic label="Analyzing solutions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2494.html"/>
+         <topic label="Resetting your worksheet" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2495.html"/>
+         <topic label="CPLEX Model Parameter Settings" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2496.html">
+            <topic label="CPLEX Model Parameter Settings: General" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2497.html"/>
+            <topic label="CPLEX Model Parameter Settings: Algorithmic" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2498.html"/>
+            <topic label="CPLEX Model Parameter Settings: Polishing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2499.html"/>
+            <topic label="CPLEX Advanced Parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2500.html"/>
+         </topic>
+      </topic>
+      <topic label="Examples of CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2501.html">
+         <topic label="blend.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2502.html"/>
+         <topic label="diet.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2503.html"/>
+         <topic label="facility.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2504.html"/>
+         <topic label="fixcost1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2505.html"/>
+         <topic label="foodmanufact.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2506.html"/>
+         <topic label="inout1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2507.html"/>
+         <topic label="lpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2508.html"/>
+         <topic label="mipex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2509.html"/>
+         <topic label="miqpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2510.html"/>
+         <topic label="qcpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2511.html"/>
+         <topic label="qpex1.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2512.html"/>
+         <topic label="rates.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2513.html"/>
+         <topic label="steel.xls" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2514.html"/>
+         <topic label="Using IBM ILOG CPLEX for Microsoft Excel with VBA" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2515.html"/>
+      </topic>
+      <topic label="Glossary of CPLEX for Microsoft Excel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_excel_users_manual2516.html"/>
+   </topic>
+</toc>

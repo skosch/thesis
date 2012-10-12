@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CP Optimizer Extensions User’s Manual" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2830.html">
+   <topic label="Welcome to CP Optimizer Extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2831.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2832.html"/>
+      <topic label="About this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2833.html"/>
+      <topic label="Prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2834.html"/>
+      <topic label="Related documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2835.html"/>
+      <topic label="Installing CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2836.html"/>
+      <topic label="Typographic and naming conventions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2837.html"/>
+   </topic>
+   <topic label="Using constraint propagators" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2838.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2839.html"/>
+      <topic label="Simplest propagator: writing a checker" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2840.html"/>
+      <topic label="Invariants: what to propagate?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2841.html"/>
+      <topic label="Elementary modifiers for variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2842.html"/>
+      <topic label="Defining a new class of constraint propagator" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2843.html"/>
+      <topic label="Example of a propagator" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2844.html"/>
+      <topic label="Programming tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2845.html"/>
+   </topic>
+   <topic label="Using engine extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2846.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2847.html"/>
+      <topic label="When to use engine extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2848.html"/>
+      <topic label="Model extraction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2849.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2850.html"/>
+         <topic label="Extraction process" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2851.html"/>
+         <topic label="Engine representation of variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2852.html"/>
+         <topic label="Engine representation of constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2853.html"/>
+         <topic label="Preprocessing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2854.html"/>
+      </topic>
+      <topic label="Engine extension API classes" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2855.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2856.html"/>
+         <topic label="Implementation classes and handles" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2857.html"/>
+         <topic label="Variables and expressions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2858.html"/>
+         <topic label="Constraints and constraint propagation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2859.html"/>
+         <topic label="Goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2860.html"/>
+      </topic>
+   </topic>
+   <topic label="Writing complex custom constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2861.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2862.html"/>
+      <topic label="Understanding constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2863.html"/>
+      <topic label="Elementary modifiers for decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2864.html"/>
+      <topic label="Invariants: what to propagate?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2865.html"/>
+      <topic label="The constraint propagation algorithm" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2866.html"/>
+      <topic label="Writing your own constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2867.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2868.html"/>
+         <topic label="Implementation classes and handles" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2869.html"/>
+         <topic label="Using ILOCPCONSTRAINTWRAPPERn to wrap constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2870.html"/>
+         <topic label="Writing your own logical constraint" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2871.html"/>
+         <topic label="Using demons to propagate selectively" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2872.html"/>
+         <topic label="Using delta-domains to propagate efficiently" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2873.html"/>
+      </topic>
+      <topic label="Programming tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2874.html">
+         <topic label="Exhaustive propagation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2875.html"/>
+         <topic label="Pushing constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2876.html"/>
+      </topic>
+   </topic>
+   <topic label="Writing goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2877.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2878.html"/>
+      <topic label="Understanding goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2879.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2880.html"/>
+         <topic label="Using macros to create a simple goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2881.html"/>
+         <topic label="Composing goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2882.html"/>
+         <topic label="Goal stack" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2883.html"/>
+         <topic label="Choice points" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2884.html"/>
+         <topic label="Backtracking" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2885.html"/>
+         <topic label="Subgoals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2886.html"/>
+      </topic>
+      <topic label="Writing your own goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2887.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2888.html"/>
+         <topic label="Using ILCGOALn to define a new class of goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2889.html"/>
+         <topic label="Using ILOCPGOALWRAPPER to wrap the goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2890.html"/>
+         <topic label="Example of writing your own goal: implementing IlcInstantiate" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2891.html"/>
+      </topic>
+      <topic label="Programming tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2892.html">
+         <topic label="Arguments to goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2893.html"/>
+         <topic label="Reversible data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2894.html"/>
+         <topic label="Fixing all decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2895.html"/>
+      </topic>
+   </topic>
+   <topic label="Writing custom scheduling constraints and goals" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2896.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2897.html"/>
+      <topic label="Working with interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2898.html"/>
+      <topic label="Writing a goal with interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2899.html"/>
+      <topic label="Writing a constraint with interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2900.html"/>
+      <topic label="Writing a greedy search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2901.html"/>
+      <topic label="Writing a chronological scheduling goal" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2902.html"/>
+      <topic label="Writing a chronological scheduling goal on sequence variable" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2903.html"/>
+      <topic label="Writing a custom constraint on a sequence variable" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/advcpoptimizer2904.html"/>
+   </topic>
+</toc>

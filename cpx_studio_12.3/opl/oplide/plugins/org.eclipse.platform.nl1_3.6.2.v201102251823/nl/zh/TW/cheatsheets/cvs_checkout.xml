@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="移出 CVS 專案">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+本提要說明如何探索 CVS 儲存庫及移出專案。在執行任何步驟時，如需協助，請按一下右邊的 (?) 圖示。
+</description>
+  </intro>
+
+  <item
+      title="開啟「CVS 儲存庫探索」視景"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+從主功能表中，選取「視窗 &gt; 開啟視景 &gt; 其他...」，然後選取 <b>CVS 儲存庫探索</b>視景。
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="新增 CVS 儲存庫"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+在「CVS 儲存庫」視圖中，按一下<b>新增 CVS 儲存庫</b>工具列按鈕。
+輸入儲存庫的位置和鑑別資訊。例如，若儲存庫是 <b>eclipse</b>，請輸入下列資料：<br/>
+      <br/>
+主機：dev.eclipse.org<br/>
+儲存庫路徑：/cvsroot/eclipse<br/>
+使用者：anonymous<br/>
+連線類型：pserver<br/>
+      <br/>
+其他欄位使用預設值，然後按一下「完成」。
+    </description>
+  </item>
+
+  <item
+      title="找出專案"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+在剛新增的儲存庫下方展開 <b>HEAD</b> 節點，找出您要移出的專案
+（例如，如果要尋找提要視圖的程式碼，則應該在 org.eclipse.ui.cheatsheets 中）</description>
+  </item>
+
+  <item
+      title="移出專案"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+用滑鼠右鍵按一下您要移出的專案，然後選取<b>移出</b>。儲存庫的最新內容將會下載至工作區。
+    </description>
+  </item>
+
+  <item
+      title="檢視工作區"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+如果要在工作區查看專案，請透過「視窗 &gt; 開啟視景 &gt; 資源」來切換至<b>資源</b>視景，以在<b>專案瀏覽器</b>視圖中查看專案。您現在可以檢視和使用專案的內容。
+    </description>
+  </item>
+
+</cheatsheet>

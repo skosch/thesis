@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: ilog.odms.ide.opllang.gtk.linux.x86;singleton:=tr
+ ue
+Bundle-NativeCode: liboplb.so;processor=x86;osname=Linux
+Bundle-ManifestVersion: 2
+Bundle-Localization: fragment
+Bundle-Name: %Fragment-Name
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x8
+ 6))
+Bundle-Version: 12.3.0.20110630-0306
+Bundle-ClassPath: .
+Fragment-Host: ilog.odms.ide.opllang
+Bundle-Vendor: %Bundle-Vendor
+
+

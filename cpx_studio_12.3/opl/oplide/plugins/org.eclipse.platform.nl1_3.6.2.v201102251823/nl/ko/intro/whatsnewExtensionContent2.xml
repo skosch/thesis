@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="org.eclipse.ui.workbench" name="갱신사항 및 Eclipse.org" alt-style="css/whatsnew.properties" style="css/whatsnew.css" path="whatsnew/@">
+  	   <group style-id="content-group" id="content-group">
+       		<link style-id="content-link" label="새 갱신사항" url="http://org.eclipse.ui.intro/runAction?pluginId=org.eclipse.platform&amp;class=org.eclipse.platform.internal.LaunchUpdateIntroAction" id="updates">
+          		<text>Eclipse.org에서 최신 갱신사항 가져오기</text>
+       		</link>
+       		<link style-id="content-link" label="Eclipse 커뮤니티" url="http://org.eclipse.ui.intro/openBrowser?url=http://www.eclipse.org" id="eclipse">
+          		<text>커뮤니티에 가입하고 Eclipse.org의 기사와 뉴스 읽기</text>
+       		</link>
+			<group id="rss-news" label="최신 뉴스" expandable="true" expanded="true">
+				<contentProvider id="url=http://www.eclipse.org/home/eclipsenews.rss##welcome_items=5##no_news_url=http://www.eclipse.org/community/##no_news_text=Welcome to the Eclipse Community Page" pluginId="org.eclipse.ui.intro" class="org.eclipse.ui.intro.contentproviders.EclipseRSSViewer">
+				</contentProvider>
+			</group>
+       </group>
+  	</extensionContent>
+</introContent>

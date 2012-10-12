@@ -1,0 +1,106 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><title>Example: steel.m</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="doc.css"/><script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script></head><body><div class="General"><div class="header"><div class="content"><h1 class="heading">Example: steel.m</h1></div></div><div class="content">
+
+
+<div class="descriptiveTopicContent">
+<div class="para">This example illustrates using the Cplex Class API  to
+solve a multiperiod production model.</div>
+<div class="para">The model in this example is an implementation of the
+model called "steelT.mod" on page 58 in the AMPL book by Fourer, Gay
+and Kernighan.  In the AMPL example, a multiperiod production model
+is given, with data for 4 weeks. The parameters for the model are:</div>
+<table border="1" cellpadding="4" cellspacing="0" class="ShadedHead"><colgroup align="left" span="1">
+<col span="1"/>
+<col span="1"/></colgroup><thead>
+<tr bgcolor="#BFD6E7">
+<th valign="top" rowspan="1" colspan="1">Parameter</th>
+<th valign="top" rowspan="1" colspan="1">Description</th>
+</tr>
+</thead><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">nProd</td>
+<td rowspan="1" colspan="1">Number of products</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">nTime</td>
+<td rowspan="1" colspan="1">Number of time periods</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">rate(p)</td>
+<td rowspan="1" colspan="1">Rate of production for product p</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">inv0(p)</td>
+<td rowspan="1" colspan="1">Initial inventoryfor product p</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">avail(t)</td>
+<td rowspan="1" colspan="1">Hours available in time period t</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">market(p)(t)</td>
+<td rowspan="1" colspan="1">Demand for product p in time period t</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">prodcost(p)</td>
+<td rowspan="1" colspan="1">Production cost per unit of product p</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">invcost(p)</td>
+<td rowspan="1" colspan="1">Inventory cost per unit of product p</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">revenue(p)(t)</td>
+<td rowspan="1" colspan="1">Revenue per unit of product p in time period t</td>
+</tr>
+</tbody></table>
+<div class="para">The decision variables of the model are:</div>
+<table border="1" cellpadding="4" cellspacing="0" class="ShadedHead"><colgroup align="left" span="1">
+<col span="1"/>
+<col span="1"/></colgroup><thead>
+<tr bgcolor="#BFD6E7">
+<th valign="top" rowspan="1" colspan="1">Decision Variable </th>
+<th valign="top" rowspan="1" colspan="1">Description</th>
+</tr>
+</thead><tbody valign="top">
+<tr>
+<td rowspan="1" colspan="1">Make(p)(t)</td>
+<td rowspan="1" colspan="1">Amount produced of product p in time period t </td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Inv(p)(t)</td>
+<td rowspan="1" colspan="1">Amount inventoried of product p in time period t</td>
+</tr>
+<tr>
+<td rowspan="1" colspan="1">Sell(p)(t)</td>
+<td rowspan="1" colspan="1">Amount sold of product p in time period t</td>
+</tr>
+</tbody></table>
+<div class="para">The objective function is to</div>
+<pre class="programlisting">maximize sum(over p,t) (revenue(p)(t)*Sell(p)(t) - prodcost(p)*Make(p)(t) - invcost(p)*Inv(p)(t))</pre>
+<div class="itemizedlist"><div class="itemizedlistIntro">
+<div class="para">  The constraints are:</div>
+</div><ul class="itemizedlist"><li class="itemizedlistItem"><div class="para">For each t: (time availability constraint)</div>
+<pre class="programlisting">sum(over p) ((1/rate(p)) * Make(p)(t)) &lt;= avail(t)</pre>
+</li><li class="itemizedlistItem"><div class="para">For each p, (t=0): (balance constraint)</div>
+<pre class="programlisting">Make(p)(0) - Sell(p)(0) - Inv(p)(0) = -inv0(p)</pre>
+</li><li class="itemizedlistItem"><div class="para">For each pair (p,t) (t&gt;0): (balance
+constraint) </div>
+<pre class="programlisting">Make(p)(t) + Inv(p)(t-1) - Sell(p)(t) - Inv(p)(t) = 0
+</pre>
+</li></ul></div>
+<div class="para">The bounds on the variables are as follows. All variables
+are nonnegative ( &gt;= 0 ). For each (p,t), <code class="code">Sell(p)(t) &lt;=
+market(p)(t)</code>. All other variables have infinite upper
+bounds.</div>
+<div class="divBlock">
+<div class="divBlockContent">
+
+
+<div class="para">See also the example file <a class="bluelink" href="matlab:doc steel.m"><code class="code">steel.m</code></a>.</div>
+</div>
+</div>
+</div>
+<div class="eclipseRelatedLinks"><div class="eclipseRelatedLinksLabel">Current section</div><ul class="eclipseRelatedLinks"><li><a href="cplex_matlab30.html" class="bluelink">Examples of the Cplex Class API</a></li></ul></div></div><div class="footer"><div class="content"><div class="navigation"><a href="cplex_matlab55.html" class="navigation"><span class="previous">PREVIOUS</span></a><span class="separator">&#160;&#160;</span><a href="cplex_matlab57.html" class="navigation"><span class="next">NEXT</span></a></div><div class="copyright">&#169; Copyright IBM Corp. 1987, 2011. <a href="cplex_matlab2.html" class="navigation"><span class="legalterms">Legal Terms</span></a></div></div></div></div></body></html>

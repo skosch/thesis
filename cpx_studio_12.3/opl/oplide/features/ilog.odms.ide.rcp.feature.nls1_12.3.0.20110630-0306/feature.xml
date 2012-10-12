@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ilog.odms.ide.rcp.feature.nls1"
+      label="%Feature-Name"
+      version="12.3.0.20110630-0306"
+      provider-name="%Feature-Vendor">
+
+   <includes
+         id="ilog.odms.ide.opl.feature.nls1"
+         version="12.3.0.20110630-0306"/>
+
+   <includes
+         id="ilog.odms.ide.spss.feature.nls1"
+         version="12.3.0.20110630-0306"
+         os="win32"
+         ws="win32"
+         arch="x86"/>
+
+   <plugin
+         id="ilog.odms.ide.rcp.nl1"
+         download-size="0"
+         install-size="0"
+         version="12.3.0.20110630-0306"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

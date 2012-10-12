@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Appendixes" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Reference1274.html">
+   <topic label="Glossary" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Reference1275.html"/>
+   <topic label="OPL error messages" href="html/refcppopl/html/classes/IloOplMessageCatalog.html"/>
+   <topic label="Bibliography" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_opl_Reference1276.html"/>
+</toc>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="检出 CVS 项目">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      此备忘单介绍如何浏览 CVS 存储库并检出项目。如果在任何一步需要帮助，请单击右边的（?）图标。
+    </description>
+  </intro>
+
+  <item
+      title="打开“CVS 存储库研究”透视图"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+      从主菜单选择“窗口”&gt;“打开透视图”&gt;“其他...”，然后选择 <b>CVS 存储库研究</b>透视图。
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="添加 CVS 存储库"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+      在“CVS 存储库”视图中，单击<b>添加 CVS 存储库</b>工具栏按钮。输入存储库的位置和认证信息。例如，对于 <b>eclipse</b> PVCS 存储库，输入以下信息：<br/>
+      <br/>
+      主机：dev.eclipse.org<br/>
+      存储库路径：/cvsroot/eclipse<br/>
+      用户：anonymous<br/>
+      连接类型：pserver<br/>
+      <br/>
+      对于其他项，请使用缺省值，然后单击“完成”。
+    </description>
+  </item>
+
+  <item
+      title="查找项目"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+      在新近添加的存储库中展开 <b>HEAD</b> 节点，然后找到要检出的项目，例如，要查找备忘单视图的源代码（在 org.eclipse.ui.cheatsheets 中）
+    </description>
+  </item>
+
+  <item
+      title="检出项目"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+      右键单击要检出的项目，然后选择<b>检出</b>。此操作将最新内容从存储库下载到工作空间。
+    </description>
+  </item>
+
+  <item
+      title="查看工作空间"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+      要查看工作空间中的项目，请通过选择“窗口”&gt;“打开透视图”&gt;“资源”切换至<b>资源</b>透视图来查看<b>项目资源管理器</b>视图中的项目。现在您就可以查看并处理项目内容。
+    </description>
+  </item>
+
+</cheatsheet>

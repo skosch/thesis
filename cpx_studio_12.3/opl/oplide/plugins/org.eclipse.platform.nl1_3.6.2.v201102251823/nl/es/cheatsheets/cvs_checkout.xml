@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="Reservar un proyecto de CVS">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      Esta hoja de apuntes muestra cómo explorar un repositorio CVS y reservar un
+      proyecto. Si necesita ayuda en cualquier paso, pulse el
+      icono (?) de la derecha.
+        </description>
+  </intro>
+
+  <item
+      title="Abrir la perspectiva Exploración del repositorio CVS"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+      En el menú principal, seleccione Ventana &gt; Abrir perspectiva &gt; Otras...
+      y seleccione la perspectiva <b>Exploración del repositorio de CVS</b>.
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="Añadir un repositorio CVS"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+      En la vista Repositorios de CVS, pulse el botón de la barra de herramientas
+      <b>Añadir repositorio de CVS</b>. Especifique la ubicación e información de
+      autenticación del repositorio. Por ejemplo, para el repositorio de <b>eclipse</b>
+      especifique lo siguiente:<br/>
+      <br/>
+      Host: dev.eclipse.org<br/>
+      Vía de acceso del repositorio: /cvsroot/eclipse<br/>
+      Usuario: anonymous<br/>
+      Tipo de conexión: pserver<br/>
+      <br/>
+      Utilice valores predeterminados para el resto y pulse Finalizar.
+    </description>
+  </item>
+
+  <item
+      title="Localizar el proyecto SWT"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+      Expanda el nodo <b>HEAD</b> bajo el repositorio recién añadido y localice
+      el proyecto que desea reservar (p.ej. para encontrar el código fuente para
+      la vista de la hoja de apuntes, busque en org.eclipse.ui.cheatsheets)
+    </description>
+  </item>
+
+  <item
+      title="Reservar el proyecto"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+      Pulse con el botón derecho sobre el proyecto que desea reservar y seleccione
+      <b>Reservar</b>. Con esto se bajará el último contenido del repositorio en
+      su espacio de trabajo.
+    </description>
+  </item>
+
+  <item
+      title="Ver el espacio de trabajo"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+      Para ver el proyecto en el espacio de trabajo, pase a la perspectiva
+      <b>Recursos</b> a través de Ventana &gt; Abrir perspectiva &gt; Recursos
+      para ver el proyecto en la vista <b>Explorador de proyectos</b>. Ahora puede ver el
+      contenido del proyecto y trabajar con él.
+    </description>
+  </item>
+
+</cheatsheet>

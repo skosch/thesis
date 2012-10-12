@@ -1,0 +1,31 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}This is the first section of introduction.}{4}
+\contentsline {subsection}{\numberline {1.1.1}This is the first subsection.}{5}
+\contentsline {chapter}{\numberline {2}Fundamentals}{7}
+\contentsline {section}{\numberline {2.1}Linear programming models}{7}
+\contentsline {subsection}{\numberline {2.1.1}Problem motivation}{7}
+\contentsline {subsection}{\numberline {2.1.2}Graphical explanation}{7}
+\contentsline {section}{\numberline {2.2}Integer programming models}{7}
+\contentsline {subsection}{\numberline {2.2.1}Solution technique}{7}
+\contentsline {subsection}{\numberline {2.2.2}Other methods}{7}
+\contentsline {section}{\numberline {2.3}Constraint programming models}{7}
+\contentsline {subsection}{\numberline {2.3.1}Concept}{7}
+\contentsline {subsection}{\numberline {2.3.2}Solution}{7}
+\contentsline {subsection}{\numberline {2.3.3}Global constraints}{7}
+\contentsline {chapter}{\numberline {3}Problem description}{9}
+\contentsline {section}{\numberline {3.1}Characteristics of the problem}{9}
+\contentsline {section}{\numberline {3.2}Summary of Malapert's approach}{9}
+\contentsline {section}{\numberline {3.3}Possible ways of attack}{9}
+\contentsline {section}{\numberline {3.4}Test data for evaluation}{9}
+\contentsline {chapter}{\numberline {4}My solution}{11}
+\contentsline {section}{\numberline {4.1}MIP formulation improvements}{11}
+\contentsline {section}{\numberline {4.2}CP formulation improvements}{11}
+\contentsline {chapter}{\numberline {5}Discussion}{13}
+\contentsline {section}{\numberline {5.1}Intro}{14}
+\contentsline {subsection}{\numberline {5.1.1}Chapter 8: Integer Programming}{15}
+\contentsline {subsection}{\numberline {5.1.2}Chapter 9: Building IP models I.}{16}
+\contentsline {subsection}{\numberline {5.1.3}Special kinds of IP models}{17}
+\contentsline {subsection}{\numberline {5.1.4}How to formulate a good model}{18}
+\contentsline {section}{\numberline {5.2}How this could be solved}{19}
+\contentsline {subsection}{\numberline {5.2.1}Possible improvements}{19}
+\contentsline {paragraph}{Limiting batch due date}{19}

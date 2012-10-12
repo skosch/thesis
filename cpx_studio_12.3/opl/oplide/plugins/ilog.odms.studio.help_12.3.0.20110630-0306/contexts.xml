@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<contexts>
+   <context id="changeCapi">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse16.html" label="Changed in Callable Library (C API)"/>
+   </context>
+   <context id="changes">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse50.html" label="Resolved issues"/>
+   </context>
+   <context id="compiletimewarningsDeprecated">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse25.html" label="Compile-time warnings about deprecated items"/>
+   </context>
+   <context id="conversionJavaUsr">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse19.html" label="Deprecated in the Java API"/>
+   </context>
+   <context id="cos_home">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse.html" label="IBM ILOG CPLEX Optimization Studio V12.3"/>
+   </context>
+   <context id="cplex_concurrentopt">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse178.html" label="Changes in behavior of LP concurrent optimizer"/>
+   </context>
+   <context id="cplex_errorcode">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse177.html" label="Changes in error codes"/>
+   </context>
+   <context id="cplex_portchange_power_linux_IBM_JRE">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse182.html" label="Conversion note for users of power32_sles10_4.1"/>
+   </context>
+   <context id="cplex_python_conversion_note">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse179.html" label="Conversion note for Python users"/>
+   </context>
+   <context id="cplexReleaseNotesLicensingChange">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse175.html" label="Changes in licensing"/>
+   </context>
+   <context id="cppDeprecated">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse18.html" label="Deprecated in the C++ API"/>
+   </context>
+   <context id="deprecated">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse17.html" label="Deprecated in the Callable Library (C API)"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse232.html" label="Deprecated Methods"/>
+   </context>
+   <context id="effectiveWorkers">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse46.html" label="New feature: New enumeration field representing effective workers"/>
+   </context>
+   <context id="errorStrings">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse14.html" label="Error-message format-string changed"/>
+   </context>
+   <context id="ExcelConnectorNewFeatures">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse31.html" label="New features for users of Excel"/>
+   </context>
+   <context id="fileformatdeprecatedRMP">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse15.html" label="RMP file format deprecated"/>
+   </context>
+   <context id="inferencer">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse213.html" label="Custom inferencer"/>
+   </context>
+   <context id="isomorphism">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse43.html" label="New feature: Isomorphism constraint"/>
+   </context>
+   <context id="javalimitations">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse35.html" label="Limitations of the Java API"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse206.html" label="Limitations of the Java API"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse218.html" label="Limitations of the Java API"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse225.html" label="Limitations of the Java API"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse240.html" label="Limitations of the Java API"/>
+   </context>
+   <context id="legal_terms">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse2.html#d4e236" label="Copyright notice"/>
+   </context>
+   <context id="logsChanged">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse24.html" label="Log files improved"/>
+   </context>
+   <context id="MATLAB_newfeatures">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse184.html" label="MATLAB new features"/>
+   </context>
+   <context id="MATLABnewFeatuers">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse30.html" label="New features for users of MATLAB"/>
+   </context>
+   <context id="moreInfoFromCallbacks">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse22.html" label="New features in callbacks"/>
+   </context>
+   <context id="MSFinCPLEXV123">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse32.html" label="New features for users of Microsoft Solver Foundation (MSF)"/>
+   </context>
+   <context id="mulicriteria">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse42.html" label="New feature: Multi-criteria objectives"/>
+   </context>
+   <context id="newBendersDecompEg">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse27.html" label="New example: Bender’s decomposition using lazy constraint and user cut callbacks"/>
+   </context>
+   <context id="newdocs">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse189.html" label="Additional documentation of the Python API"/>
+   </context>
+   <context id="newFeature_deterBarr">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse201.html" label="New feature: deterministic parallel barrier algorithm"/>
+   </context>
+   <context id="newFeature_parallelForAll">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse202.html" label="New feature: parallel algorithms available to all users"/>
+   </context>
+   <context id="newport">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse235.html" label="New ports"/>
+   </context>
+   <context id="opl_ide_import_opl_proj">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse73.html" label="Importing OPL 5.x projects"/>
+   </context>
+   <context id="opl_mig_guide_migration">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse69.html" label="Migrating from previous versions of OPL"/>
+   </context>
+   <context id="opl_relnotes_new_in_123">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse5.html" label="Release notes for CPLEX Studio V12.3"/>
+   </context>
+   <context id="opl_relnotes_new_in_60">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse59.html" label="New and changed in OPL 6.0"/>
+   </context>
+   <context id="opl_relnotes_new_in_61">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse57.html" label="New and changed in OPL 6.1"/>
+   </context>
+   <context id="opl_relnotes_new_in_611">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse56.html" label="New and changed in OPL 6.1.1"/>
+   </context>
+   <context id="opl_relnotes_new_in_62">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse55.html" label="New and changed in OPL 6.2"/>
+   </context>
+   <context id="opl_relnotes_new_in_63">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse54.html" label="New and changed in OPL V6.3"/>
+   </context>
+   <context id="opl_relnotes_new_in_64">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse53.html" label="Release notes for CPLEX Studio V12.2"/>
+   </context>
+   <context id="performance">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse222.html" label="Using IBM ILOG CP and CP Optimizer"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse229.html" label="Initial starting solution"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse244.html" label="Improvements to performance"/>
+   </context>
+   <context id="piecewsieLinear">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse41.html" label="New feature: Piecewise linear expressions"/>
+   </context>
+   <context id="plsemiconvex">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse40.html" label="New feature: Generalized objectives for scheduling"/>
+   </context>
+   <context id="propagateLog">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse48.html" label="Conversion notes: Change in search log for propagate"/>
+   </context>
+   <context id="Propogator">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse39.html" label="New feature: New method for custom constraints"/>
+   </context>
+   <context id="python_newreporting">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse188.html" label="New reporting features in Python API of CPLEX"/>
+   </context>
+   <context id="releasenotesCPLEX121">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse191.html" label="New feature: CPLEX connector for Microsoft Excel"/>
+   </context>
+   <context id="relnotes20_port_overview">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse234.html" label="Overview"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse249.html" label="Overview"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse264.html" label="Overview"/>
+   </context>
+   <context id="relnotes_MCFcuts">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse199.html" label="New feature: multi-commodity flow (MCF) cuts"/>
+   </context>
+   <context id="relnotes_pwl_Java">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse200.html" label="New feature for Java or .NET users: piecewise linear numeric expression"/>
+   </context>
+   <context id="relnotes_sequoia_deprecated">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse196.html" label="Conversion notes for Concert Technology users: deprecated methods"/>
+   </context>
+   <context id="relnotes_sequoia_parallel">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse194.html" label="Conversion notes for all users: parallel optimizers enabled by default"/>
+   </context>
+   <context id="relnotes_sequoia_porttable">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse195.html" label="Conversion notes for all users: port changes"/>
+   </context>
+   <context id="resolved">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse215.html" label="Resolved issues"/>
+   </context>
+   <context id="restartgrowth">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse214.html" label="New default value for the RestartGrowthFactor parameter"/>
+   </context>
+   <context id="schedapi">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse212.html" label="Scheduling search API"/>
+   </context>
+   <context id="searchLog">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse49.html" label="Conversion notes: Change in search log display"/>
+   </context>
+   <context id="SearchType">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse44.html" label="New feature: New value and default for the search type"/>
+   </context>
+   <context id="stringComparison">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse12.html" label="String comparisons: impact of encoding on existing applications"/>
+   </context>
+   <context id="temporalRelaxation">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse231.html" label="Generalized bounds on cumulative functions"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse246.html" label="Addition of the temporal relaxation parameter"/>
+   </context>
+   <context id="threadsParallelParamChange">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse10.html" label="Simplified threading and parallel search"/>
+   </context>
+   <context id="trans">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse47.html" label="Conversion notes: Deprecated methods"/>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse210.html" label="Transition based scheduling"/>
+   </context>
+   <context id="workers">
+      <description> </description>
+      <topic href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_COS_Eclipse45.html" label="New feature: New value and default for the workers parameter"/>
+   </context>
+</contexts>

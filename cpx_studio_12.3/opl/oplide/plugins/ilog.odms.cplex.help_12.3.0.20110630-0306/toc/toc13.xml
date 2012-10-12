@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CPLEX for MATLAB" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2410.html">
+   <topic label="Getting started with CPLEX for MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2412.html">
+      <topic label="Introduction" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2413.html"/>
+      <topic label="Installation and licensing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2414.html"/>
+      <topic label="Integration with MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2415.html"/>
+      <topic label="Using CPLEX for MATLAB" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2416.html"/>
+      <topic label="Overview of the CPLEX for MATLAB APIs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2417.html">
+         <topic label="CPLEX for MATLAB Toolbox" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2418.html"/>
+         <topic label="Cplex Class API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2419.html"/>
+      </topic>
+      <topic label="Programming tips" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2420.html"/>
+   </topic>
+   <topic label="Examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2421.html">
+      <topic label="Examples of the CPLEX for MATLAB Toolbox" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2422.html">
+         <topic label="Example: runtoolboxexamples.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2423.html"/>
+         <topic label="Example: cplexbilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2424.html"/>
+         <topic label="Example: cplexlpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2425.html"/>
+         <topic label="Example: cplexlsqbilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2426.html"/>
+         <topic label="Example: cplexlsqlinex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2427.html"/>
+         <topic label="Example: cplexlsqmilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2428.html"/>
+         <topic label="Example: cplexlsqmiqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2429.html"/>
+         <topic label="Example: cplexlsqnonneglinex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2430.html"/>
+         <topic label="Example: cplexlsqnonnegmilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2431.html"/>
+         <topic label="Example: cplexlsqnonnegmiqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2432.html"/>
+         <topic label="Example: cplexlsqnonnegqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2433.html"/>
+         <topic label="Example: cplexlsqqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2434.html"/>
+         <topic label="Example: cplexmilpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2435.html"/>
+         <topic label="Example: cplexmiqpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2436.html"/>
+         <topic label="Example: cplexqcpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2437.html"/>
+         <topic label="Example: cplexqpex.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2438.html"/>
+      </topic>
+      <topic label="Examples of the Cplex Class API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2439.html">
+         <topic label="Example: runclassexamples.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2440.html"/>
+         <topic label="Example: blend.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2441.html"/>
+         <topic label="Example: cplexplot" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2442.html"/>
+         <topic label="Example: cutstock.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2443.html"/>
+         <topic label="Example: diet.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2444.html"/>
+         <topic label="Example: facility.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2445.html"/>
+         <topic label="Example: fixcost1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2446.html"/>
+         <topic label="Example: indefqpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2447.html"/>
+         <topic label="Example: inout1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2448.html"/>
+         <topic label="Example: inout3.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2449.html"/>
+         <topic label="Example: lpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2450.html"/>
+         <topic label="Example: lpex2.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2451.html"/>
+         <topic label="Example: lpex3.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2452.html"/>
+         <topic label="Example: lpex6.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2453.html"/>
+         <topic label="Example: lpex7.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2454.html"/>
+         <topic label="Example: mipex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2455.html"/>
+         <topic label="Example: mipex2.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2456.html"/>
+         <topic label="Example: mipex3.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2457.html"/>
+         <topic label="Example: mipex4.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2458.html"/>
+         <topic label="Example: miqpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2459.html"/>
+         <topic label="Example: populate.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2460.html"/>
+         <topic label="Example: qcpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2461.html"/>
+         <topic label="Example: qpex1.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2462.html"/>
+         <topic label="Example: qpex2.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2463.html"/>
+         <topic label="Example: rates.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2464.html"/>
+         <topic label="Example: steel.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2465.html"/>
+      </topic>
+      <topic label="Example: cplexgui.m" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/cplex_matlab2466.html"/>
+   </topic>
+   <topic label="Function reference" href="html/refmatlabcplex/html/main.html">
+      <link toc="toc/refmatlabcplex.xml"/>
+   </topic>
+</toc>

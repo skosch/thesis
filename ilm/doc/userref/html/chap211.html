@@ -1,0 +1,130 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:21">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Installing a Runtime Key  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="170496">
+<h3 class="Header3SplitLeft">Installing a Runtime Key</h3>
+</a><p class="Body"><a name="170503">
+A runtime key is provided by ILOG for an application which uses one or more ILOG products. You cannot use a runtime key for development; only token, site and node keys can be used for development. A runtime key can only be used for final testing and delivery.</a></p>
+<p class="Body"><a name="170504">
+Unlike other keys, runtime keys are not stored in the license file. A runtime key is directly hard-coded in your application, which makes it completely stand-alone with respect to the ILOG license manager and allows you to run it on a host without a license file.</a></p>
+<p class="Body"><a name="170511">
+A runtime key is provided by ILOG as a piece of C++ code. Here is an example of a runtime key:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">static char *ilm_Views_license =
+"LICENSE Springfield Computing Inc.\n\
+RUNTIME  View 2.400  NEVER  FY7HAJ09UEHA  Y solaris , license: 180 ";
+static int ilm_Views_license_signature = 816213 ;
+</span></pre></td></tr></table><p><p class="Body"><a name="170513">
+This code declares an <code class="Code">ilm_Views_license</code> variable and initializes it to a multi-line string. This string has the same structure as a license file. The first line (<code class="Code">LICENSE</code>) contains a short text describing your site. The next line contains your runtime key for one product with the following format:</a></p>
+<ul class="BulletedListP"><p><li><a name="170514">Field 1: The keyword <code class="Code">RUNTIME</code>.
+</a><p><li><a name="170515">Field 2: The product name.
+</a><p><li><a name="170516">Field 3: The product version number.
+</a><p><li><a name="170517">Field 4: The expiration date of the key, or <code class="Code">NEVER</code> for permanent keys.
+</a><p><li><a name="170518">Field 5:	 A password validating the information in the key.
+</a><p><li><a name="170519">Field 6: Either "Y" or "N" to specify whether or not a banner is to be printed when the license is registered.
+</a><p><li><a name="170520">The next fields contain the list of platforms for which the key is valid. If no platform is specified, the key is valid for any platform.
+</a><p><li><a name="170521">An additional field can be appended. This field, which begins with "<code class="Code">, options:"</code> specifies the options activated in the product. Refer to the product documentation for explanations on the meaning of these options.
+</a><p><li><a name="170596">Another additional field can be appended. This field, which begins with "<code class="Code">, license:</code>" specifies the license rights which are supported by the current key. Refer to your ILOG sales representative for an explanation on the meaning of the licensed rights.
+</a></ul><p class="Body"><a name="170522">
+This code also declares an <code class="Code">ilm_Views_license_signature</code> variable and initializes it with an integer signature corresponding to the <code class="Code">ilm_Views_license</code> variable.</a></p>
+<p class="Body"><a name="170523">
+No information in the runtime key should be modified. Changing any information invalidates the password and the key cannot be used. This includes the site description on the <code class="Code">LICENSE</code> line and the banner Y/N field.</a></p>
+<p class="Body"><a name="170524">
+To install the runtime key, please follow the steps below.</a></p>
+<a name="170525">
+<h4 class="Header4">Step 1. Declare the ilm_license variable in the application main file</h4>
+</a><p class="Body"><a name="170526">
+Edit the application source file which contains the <code class="Code">main()</code> function. Then, copy the declaration of the <code class="Code">ilm_Prod_license</code> variables provided by ILOG to the top level of this file.</a></p>
+<p class="Body"><a name="170530">
+When copying the license string, you should remember that case is significant. Also, don't forget the "<code class="Code">\n\</code>" character sequence at the end of every non-final line.</a></p>
+<p class="Body"><a name="170531">
+The number of spaces or tabulations between fields is not significant, but the <code class="Code">LICENSE</code> or <code class="Code">RUNTIME</code> keyword must be in the first column, with no preceding white space.</a></p>
+<a name="170532">
+<h4 class="Header4">Step 2. Add calls to the license registration functions</h4>
+</a><p class="Body"><a name="170536">
+Every ILOG product provides a license registration function which you must call when your application starts, by passing the corresponding <code class="Code">ilm_Prod_license</code> string and <code class="Code">ilm_Prod_license_signature</code> integer as its arguments. This will enable your application to use the product, unless the function returns a non-null value.</a></p>
+<p class="Body"><a name="170537">
+In some older versions of ILOG products, the license registration function accepts only one argument. In this case, you only need to provide the <code class="Code">ilm_Prod_license</code> information.</a></p>
+<p class="Body"><a name="170538">
+A product registration function is named <span class="Default">xxx</span><code class="Code">RegisterLicense</code>, where <span class="Default">xxx</span><code class="Code"> </code>is the prefix used by the product. This function is declared in the product header file <code class="Code">&lt;</code><span class="Default">ddd</span><code class="Code">/ilm.h&gt;</code>, where <span class="Default">ddd</span> is the product include directory. For example, the registration function for ILOG Views is named <code class="Code">IlvRegisterLicense</code> and is declared in <code class="Code">&lt;ilviews/ilm.h&gt;</code>, while the registration function for Solver is named <code class="Code">IlcRegisterLicense</code> and is declared in <code class="Code">&lt;ilsolver/ilm.h&gt;</code>.</a></p>
+<p class="Body"><a name="170551">
+Some ILOG products share their function name prefix. For example, both ILOG Solver and <span class="Default">ILOG </span>Scheduler use the prefix <code class="Code">Ilc</code>. In this case, to avoid name collision, one of these products provides a registration function which is not named after the <code class="Code">xxxRegisterLicense</code> scheme. You have to read the file <code class="Code">ilm.h</code> in the <code class="Code">include</code> directories of these products to find out the name of their registration functions.</a></p>
+<p class="Body"><a name="170555">
+For every ILOG product used by your application, add a call to the product registration function near the beginning of the <code class="Code">main()</code> function of your application, and abort if it does not return 0. For example, if your application is using ILOG Views and Solver, the main file of your application should look like this, including the changes made in step 1:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">#include &lt;ilviews/ilm.h&gt;
+#include &lt;ilsolver/ilm.h&gt;
+
+static char *ilm_Views_license =
+"LICENSE Springfield Computing Inc.\n\
+RUNTIME  Views   2.400  NEVER    FY7HAJ09UEHA  Y solaris , license: 111";
+static int ilm_Views_license_signature = 816213 ;
+static char* ilm_Solver_license = "LICENSE Springfield Computing Inc.\n\
+RUNTIME  Solver     4.000  01-May-1999 3J767DSF8SDF  N , license: 112";
+static int ilm_Solver_license_signature = 9127 ;
+<span class="Default">
+</span>int main(int argc, char *argv[])
+{
+ if(IlvRegisterLicense(ilm_Views_license, ilm_Views_license_signature))
+    exit(-1);
+ if(IlcRegisterLicense(ilm_Solver_license, ilm_Solver_license_signature)
+    exit(-2);
+ <span class="Default">...
+</span>}
+</span></pre></td></tr></table><p><a name="170563">
+<h4 class="Header4">Step 3. Verify the runtime key</h4>
+</a><p class="Body"><a name="170564">
+To verify the runtime key, rebuild your application with the modified main file. Then, rename your license file <code class="Code">access.ilm</code> to some other name. This file is found in the subdirectory <code class="Code">ilm</code> of your ILOG installation directory. Finally, start your application. </a></p>
+<p class="Body"><a name="170601">
+If the test for key registration fails, your runtime key is not valid; in this case, check step 1-in particular:</a></p>
+<ul class="BulletedListP"><p><li><a name="170568">Look for typing errors in the text. A typical mistake is to type "O" (a capital O) instead of "<span class="Default">0</span>" (zero). Also, remember that case is significant.
+</a><p><li><a name="170569">Check that you didn't forget a "<code class="Code">\n\</code>" sequence at the end of a line.
+</a><p><li><a name="170570">Check that the <code class="Code">LICENSE</code> and <code class="Code">RUNTIME</code> keywords are not preceded by any white space and start at the first column.
+</a></ul><p class="Body"><a name="170604">
+If ILM generates an error message, it can be for the following reasons:</a></p>
+<ul class="BulletedListP"><p><li><a name="170610">You did not register a runtime key with the key registration function of the corresponding product. Check that you have used the right prefix.
+</a><p><li><a name="170614">Your runtime key does not grant you access to the appropriate product functionalities. Please contact your ILOG support service.
+</a><p><li><a name="170617">You runtime key has expired.
+</a><p><li><a name="170618">The key is not yet registered when the errror message was issued. Due to static initialization in C++, this can be the case even if you registered the key in <code class="Code">main()</code>. To check this, simply insert a <code class="Code">printf()</code> command before the key registration.
+</a></ul>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap210.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Installing a Site Key  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap3.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: ILM in Depth " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

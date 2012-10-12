@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project>
+	<version>1.0</version>
+	<description>CallTrafficOptimization</description>
+	<configs>
+		<config category="opl" default="true" name="Configuration 1">
+			<ref type="model" name="calls.mod">
+			</ref>
+			<ref type="data" name="hubs.dat">
+			</ref>
+			<ref type="data" name="links.dat">
+			</ref>
+			<ref type="data" name="markets.dat">
+			</ref>
+			<ref type="data" name="capacity.dat">
+			</ref>
+			<ref type="data" name="volume.dat">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

@@ -1,0 +1,108 @@
+<project name="example">
+
+    <condition property="platform.separator" value=";">
+        <os family="windows"/>
+    </condition>
+    <property name="platform.separator" value=":"/>
+
+    <property environment="env"/>
+
+    <condition property="example.home" value="${env.CPLEX_STUDIO_DIR}/opl">
+        <isset property="env.CPLEX_STUDIO_DIR"/>
+    </condition>
+    <property name="example.home" value="../../../..">
+    </property>
+
+    <path id="example.class.path">
+        <pathelement location="classes"/>
+        <pathelement path="${example.home}/lib/oplall.jar"/>
+    </path>
+
+    <property name="example.classname" value="CLASSNAME-MISSING"/>
+    <property name="example.arg.line" value=""/>
+
+    <target name="run" depends="compile,platform">
+        <java classname="${example.classname}" fork="yes" failonerror="true">
+            <classpath refid="example.class.path"/>
+            <jvmarg value="-Djava.library.path=${example.home}/bin/${example.platform}"/>
+            <jvmarg line="${example.jvmargs}"/>
+            <arg line="${example.arg.line}"/>
+            <env key="PATH" path="${example.home}/bin/${example.platform}${platform.separator}${env.PATH}"/>
+            <env key="LD_LIBRARY_PATH" path="${example.home}/bin/${example.platform}"/>
+            <env key="LIBPATH" path="${example.home}/bin/${example.platform}"/>
+            <env key="LD_NOVERSION" value="1"/>
+            <!-- for Windows since ant is case sensitive for environment variable -->
+            <env key="Path" path="${example.home}/bin/${example.platform}${platform.separator}${env.Path}"/>
+        </java>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="classes"/>
+        <javac debug="true" destdir="classes" srcdir="src">
+            <classpath refid="example.class.path"/>
+        </javac>
+    </target>
+
+    <target name="clean">
+        <delete dir="classes"/>
+    </target>
+
+    <target name="platform">
+        <exec executable="isainfo" os="SunOS" outputproperty="nb_bits">
+            <arg value="-b"/>
+        </exec>
+        <condition property="example.platform" value="x86_win32">
+            <os family="windows" arch="x86"/>
+        </condition>
+        <condition property="example.platform" value="x64_win64">
+            <os family="windows" arch="amd64"/>
+        </condition>
+        <condition property="example.platform" value="ultrasparc32_solaris">
+            <and>
+                <os family="unix" name="SunOS" arch="sparc"/>
+                <equals arg1="${nb_bits}" arg2="32"/>
+            </and>
+        </condition>
+        <condition property="example.platform" value="ultrasparc64_solaris">
+            <and>
+                <or>
+                    <os family="unix" name="SunOS" arch="sparcv9"/>
+                    <os family="unix" name="SunOS" arch="sparc"/>
+                </or>
+                <equals arg1="${nb_bits}" arg2="64"/>
+            </and>
+        </condition>
+        <condition property="example.platform" value="x86-64_sles10_4.1">
+            <os family="unix" name="Linux" arch="amd64"/>
+        </condition>
+        <condition property="example.platform" value="x86_sles10_4.1">
+            <os family="unix" name="Linux"/>
+        </condition>
+        <condition property="example.platform" value="power32_aix5.3_9.0">
+            <and>
+                <os family="unix" name="AIX" arch="ppc"/>
+                <contains string="${os.version}" substring="5."/>
+            </and>
+        </condition>
+        <condition property="example.platform" value="power64_aix5.3_9.0">
+            <and>
+                <os family="unix" name="AIX" arch="ppc64"/>
+                <contains string="${os.version}" substring="5."/>
+            </and>
+        </condition>
+        <condition property="example.platform" value="power7-32_aix">
+            <os family="unix" name="AIX" arch="ppc"/>
+        </condition>
+        <condition property="example.platform" value="power7-64_aix">
+            <os family="unix" name="AIX" arch="ppc64"/>
+        </condition>
+
+        <condition property="example.jvmargs" value="-d64">
+            <os family="unix" name="SunOS" arch="sparcv9"/>
+        </condition>
+        <property name="example.jvmargs" value=""/>
+
+        <fail unless="example.platform" message="Platform '${os.name}-${os.arch}-${os.version}' not supported."/>
+    </target>
+
+</project>

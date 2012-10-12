@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<project>
+	<version>1.0</version>
+	<description>Airline crew scheduling problem, Integer Programming, Constraint Programming</description>
+	<configs>
+		<config category="opl" default="true" name="Configuration1">
+			<ref type="model" name="CrewScheduling.mod">
+			</ref>
+			<ref type="setting" name="CrewScheduling.ops">
+			</ref>
+			<ref type="data" name="pairInit.dat">
+			</ref>
+			<ref type="data" name="solIdx.dat">
+			</ref>
+		</config>
+		<config category="opl" default="false" name="CvrPair_Configuration">
+			<ref type="model" name="cvrpair.mod">
+			</ref>
+			<ref type="data" name="CrewScheduling.dat">
+			</ref>
+			<ref type="data" name="City.dat">
+			</ref>
+			<ref type="data" name="Flights.dat">
+			</ref>
+			<ref type="data" name="Origin.dat">
+			</ref>
+			<ref type="data" name="Destin.dat">
+			</ref>
+			<ref type="data" name="Depart.dat">
+			</ref>
+			<ref type="data" name="Arrive.dat">
+			</ref>
+			<ref type="data" name="coverFlt.dat">
+			</ref>
+		</config>
+		<config category="opl" default="false" name="LP_Configuration">
+			<ref type="model" name="lincrew.mod">
+			</ref>
+			<ref type="data" name="Flights.dat">
+			</ref>
+			<ref type="data" name="pairInit.dat">
+			</ref>
+			<ref type="data" name="City.dat">
+			</ref>
+			<ref type="data" name="Origin.dat">
+			</ref>
+			<ref type="data" name="Destin.dat">
+			</ref>
+		</config>
+		<config category="opl" default="false" name="IP_Configuration">
+			<ref type="model" name="intcrew.mod">
+			</ref>
+			<ref type="data" name="Flights.dat">
+			</ref>
+			<ref type="data" name="City.dat">
+			</ref>
+			<ref type="data" name="Origin.dat">
+			</ref>
+			<ref type="data" name="Destin.dat">
+			</ref>
+			<ref type="data" name="pairInit.dat">
+			</ref>
+		</config>
+	</configs>
+	
+</project>

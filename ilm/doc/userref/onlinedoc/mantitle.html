@@ -1,0 +1,49 @@
+<html>
+<head>
+<script language="JavaScript">
+<!--
+function gotomanual(form)
+{
+var manual=form.othermanuals.options[form.othermanuals.selectedIndex].value;
+  if (manual == "refman") {  
+      newWindow = window.open('../../refman/onlinedoc/index.html', 'refwin');
+      newWindow.focus();
+  }
+  if (manual == "getstart") {  
+        newWindow = window.open('../../getstart/onlinedoc/index.html', 'gswin');
+        newWindow.focus();
+  }
+  if (manual == "relnotes") {  
+      newWindow = window.open('../../relnotes/onlinedoc/index.html', 'relwin');
+      newWindow.focus();
+  }
+}
+
+function windowOpen(filename,windowname) {
+     newWindow = window.open(filename,windowname);
+     newWindow.focus();
+}
+
+//--></script>
+</head>
+<body bgcolor=#000080>
+<table width=100%>
+<tr>
+<td valign=top>
+<a href="http://www.ilog.com" target=homewin><img src="../../icons/logo.gif" alt="ILOG Web Site" border=0></a>
+</td>
+<td valign=top>
+<h2><font color=#ffffff>ILOG License Manager 2.6<br>User's Guide & Reference</font></h2>
+</td>
+<td>
+<img src="../../icons/manuals.gif">
+</td>
+<td>
+<a href="../html/chap1.html" target="ManualBody"><img src="../../icons/first.gif" border=0 alt="First Page"></a>
+<a href="javascript:windowOpen('../../../index.html', 'homewin')"><img src="../../icons/home.gif" alt="Documentation Home Page" border=0></a>
+<a href="../../help/help.html" target="ManualBody"><img src="../../icons/help.gif" alt="How to Use Online Documentation" border=0></a>
+</td>
+</tr>
+</table>
+</body>
+</html>

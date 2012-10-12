@@ -1,0 +1,117 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:18">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Installing a Node Key  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="161701">
+<h3 class="Header3SplitLeft">Installing a Node Key</h3>
+</a><p class="Body"><a name="174561">
+This section describes the steps to install a node key. A node key lets you use a product on a specific machine.</a></p>
+<p class="Body"><a name="175104">
+To be able to provide you with a node key, ILOG needs some information about the machine on which you want to use the product. That's why your shipment may not already contain your node key. Steps 1 and 2 explain how to contact ILOG, provide the required information, and get your node key back.</a></p>
+<p class="Body"><a name="177966">
+On the other hand, if ILOG already has the required information, your shipment may already include a sheet labelled <em class="Emphasis">Access Key </em>which contains your node key. In this case, you don't have to follow Steps 1 and 2, and you can skip to Step 3</p><table class="TipTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/tip.gif"></td>
+   <td><div class="Note"><a name="180144">For an easy start up, all ILOG products are sent with a temporary evaluation license on a separate sheet. If you want to start using this product immediately, and take care of your node license later, see the section <a href="chap17.html#157155"><span class="Default">"Installing an Evaluation Key" </span></a>. But don't forget to order your license key quickly!</a></div><p>
+</td>
+ </tr>
+</table>
+. </a></p>
+<p class="Body"><a name="173009">
+If you have purchased node keys for different machines, please follow the steps in this section for each machine in turn. </a></p>
+<a name="162294">
+<h4 class="Header4">Step 1. Get Your Computer Hostid</h4>
+</a><p class="Body"><a name="163591">
+Log on to the machine where you want to run the ILOG products.</a></p>
+<p class="Body"><a name="163635">
+Then, execute the following command:</a></p>
+<pre><p class="Preformatted"><a name="163593">$ /usr/ilog/ilm/ihostid
+</a></p></pre><p class="Body"><a name="163565">
+This command displays the hostname, hostid, and hostid checksum of the machine. An example output would be:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">The hostname of this machine is    helios
+The hostid of this machine is      6430bd3b
+The checksum of this hostid is     03933
+</span></pre></td></tr></table><p><a name="162318">
+<h4 class="Header4">Step 2. Get the Node Key from ILOG</h4>
+</a><p class="Body"><a name="177437">
+The information displayed by the <code class="Code">ihostid</code> command must be sent to ILOG to get your node key. To do so, follow the instructions in the <em class="Emphasis">Access Key Request </em>form.</a></p>
+<a name="175993">
+<h4 class="Header4">Step 3. Add the Node Key to the License File</h4>
+</a><p class="Body"><a name="174709">
+You should do this step once you have received your node key from ILOG. Here is an example of what you may have received:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">LICENSE Springfield Computing Inc.
+NODE  Views  2.400  NEVER   4RYE61MP4HJ7 1d3c7a9c sun4 , license: 186
+</span></pre></td></tr></table><p><p class="Body"><a name="180545">
+The <code class="Code">LICENSE</code> line identifies your site. The next line contains the node key. If you have purchased licenses for several products, product components, or machines, the text you received may actually contain several node keys.</a></p>
+<p class="Body"><a name="180537">
+Unless it already exists, save the whole text you received as the license file.</a></p>
+<p class="Body"><a name="180538">
+If the license file already exists, edit it using your favorite editor. This file must already contain a <code class="Code">LICENSE</code> line identical to the one you received. If it is not the case, contact your ILOG sales representative. Append the new key or keys to the end of the file. If you are replacing an old key with a new one for the same product on the same machine, delete or comment out the line with the old key; to comment out a line, put a <code class="Code">"#"</code> in the first column.</a></p>
+<a name="163019">
+<h4 class="Header4">Step 4. Set Up the Environment</h4>
+</a><p class="Body"><a name="162593">
+To use ILOG products, the shell variable <code class="Code">ILOG_LICENSE_FILE</code> must be set to the absolute path of the <code class="Code">access.ilm</code> file. To do this, execute one of the following shell commands:</a></p>
+<ul class="BulletedListP"><p><li><a name="162594">If you're using <code class="Code">sh</code> or one of its derivatives, such as <code class="Code">ksh</code> or <code class="Code">bash</code>:
+</a></ul><pre><p class="Preformatted"><a name="162595">$ ILOG_LICENSE_FILE=/usr/ilog/ilm/access.ilm
+$ export ILOG_LICENSE_FILE
+</a></p></pre><ul class="BulletedListP"><p><li><a name="162596">If you're using <code class="Code">csh</code> or one of its derivatives, such as <code class="Code">tcsh</code>:
+</a></ul><pre><p class="Preformatted"><a name="162597">$ setenv ILOG_LICENSE_FILE /usr/ilog/ilm/access.ilm
+</a></p></pre><p class="Body"><a name="162598">
+This can be automated by putting the above commands in your shell startup file - either<code class="Code">.profile</code> if you're using <code class="Code">sh</code>, or<code class="Code">.login</code> file if you're using <code class="Code">csh</code>. This should be done for every ILOG user at your site<code class="Code">.</code></a></p>
+<a name="162384">
+<h4 class="Header4">Step 5. Check the License File</h4>
+</a><p class="Body"><a name="162615">
+To check that the license file has no syntax errors and that the variable <code class="Code">ILOG_LICENSE_FILE</code> is properly set, type:</a></p>
+<pre><p class="Preformatted"><a name="162616">$ /usr/ilog/ilm/ilmcheck
+</a></p></pre><p class="Body"><a name="162617">
+This command should issue the message:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Checking license file "/usr/ilog/ilm/access.ilm"
+     License file "/usr/ilog/ilm/access.ilm" is correct
+</span></pre></td></tr></table><p><p class="Body"><a name="175346">
+Otherwise, something is wrong with the license file or with the setting of <span class="Default">ILOG_LICENSE_FILE</span>. Please read <a href="chap320.html#148899"><span class="Default">"Troubleshooting" </span></a> for help.</a></p>
+<a name="162398">
+<h4 class="Header4">Where to Go from Here?</h4>
+</a><p class="Body"><a name="174156">
+If the previous steps have been successfully carried out, you can start using your ILOG product. Please refer to the product document set for further instructions.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap18.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Installing a Token Key  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap110.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: Installing a Node Runtime Key  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

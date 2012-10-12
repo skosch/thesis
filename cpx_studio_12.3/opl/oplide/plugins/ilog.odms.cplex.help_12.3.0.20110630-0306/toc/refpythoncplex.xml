@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toc label="Python Reference manual">
+    <topic href="html/refpythoncplex/html/help.html" label="Overview"/>
+    <topic label="Everything">
+        <topic label="All Classes">
+            <topic
+                href="html/refpythoncplex/html/cplex.Cplex-class.html" label="cplex.Cplex"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.BarrierCallback-class.html" label="cplex.callbacks.BarrierCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.BranchCallback-class.html" label="cplex.callbacks.BranchCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.BranchCallback.branch_type-class.html" label="cplex.callbacks.BranchCallback.branch_type"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.Callback-class.html" label="cplex.callbacks.Callback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.ContinuousCallback-class.html" label="cplex.callbacks.ContinuousCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.ControlCallback-class.html" label="cplex.callbacks.ControlCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.ControlCallback.feasibility_status-class.html" label="cplex.callbacks.ControlCallback.feasibility_status"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.CrossoverCallback-class.html" label="cplex.callbacks.CrossoverCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.CutCallback-class.html" label="cplex.callbacks.CutCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.HSCallback-class.html" label="cplex.callbacks.HSCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.HSCallback.method-class.html" label="cplex.callbacks.HSCallback.method"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.HeuristicCallback-class.html" label="cplex.callbacks.HeuristicCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.IncumbentCallback-class.html" label="cplex.callbacks.IncumbentCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.IncumbentCallback.solution_source-class.html" label="cplex.callbacks.IncumbentCallback.solution_source"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.LazyConstraintCallback-class.html" label="cplex.callbacks.LazyConstraintCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.LazyConstraintCallback.use_constraint-class.html" label="cplex.callbacks.LazyConstraintCallback.use_constraint"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.MIPCallback-class.html" label="cplex.callbacks.MIPCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.MIPCallback.cut_type-class.html" label="cplex.callbacks.MIPCallback.cut_type"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.MIPInfoCallback-class.html" label="cplex.callbacks.MIPInfoCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.MIPInfoCallback.quality_metric-class.html" label="cplex.callbacks.MIPInfoCallback.quality_metric"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.NodeCallback-class.html" label="cplex.callbacks.NodeCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.OptimizationCallback-class.html" label="cplex.callbacks.OptimizationCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.PresolveCallback-class.html" label="cplex.callbacks.PresolveCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.SimplexCallback-class.html" label="cplex.callbacks.SimplexCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.SolveCallback-class.html" label="cplex.callbacks.SolveCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.TuningCallback-class.html" label="cplex.callbacks.TuningCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.UserCutCallback-class.html" label="cplex.callbacks.UserCutCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.UserCutCallback.use_cut-class.html" label="cplex.callbacks.UserCutCallback.use_cut"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.CplexError-class.html" label="cplex.exceptions.CplexError"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.CplexSolverError-class.html" label="cplex.exceptions.CplexSolverError"/>
+        </topic>
+        <topic label="All Functions">
+            <topic
+                href="html/refpythoncplex/html/cplex-module.html#terminate" label="cplex.terminate"/>
+        </topic>
+        <topic label="All Variables">
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ABORT_STRONGBRANCH" label="cplex.exceptions.error_codes.CPXERR_ABORT_STRONGBRANCH"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ADJ_SIGNS" label="cplex.exceptions.error_codes.CPXERR_ADJ_SIGNS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ADJ_SIGN_QUAD" label="cplex.exceptions.error_codes.CPXERR_ADJ_SIGN_QUAD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ADJ_SIGN_SENSE" label="cplex.exceptions.error_codes.CPXERR_ADJ_SIGN_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ALGNOTLICENSED" label="cplex.exceptions.error_codes.CPXERR_ALGNOTLICENSED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARC_INDEX_RANGE" label="cplex.exceptions.error_codes.CPXERR_ARC_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARRAY_BAD_SOS_TYPE" label="cplex.exceptions.error_codes.CPXERR_ARRAY_BAD_SOS_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARRAY_NOT_ASCENDING" label="cplex.exceptions.error_codes.CPXERR_ARRAY_NOT_ASCENDING"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARRAY_TOO_LONG" label="cplex.exceptions.error_codes.CPXERR_ARRAY_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BADLDWID" label="cplex.exceptions.error_codes.CPXERR_BADLDWID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BADPRODUCT" label="cplex.exceptions.error_codes.CPXERR_BADPRODUCT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_ARGUMENT" label="cplex.exceptions.error_codes.CPXERR_BAD_ARGUMENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_BOUND_SENSE" label="cplex.exceptions.error_codes.CPXERR_BAD_BOUND_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_BOUND_TYPE" label="cplex.exceptions.error_codes.CPXERR_BAD_BOUND_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_CHAR" label="cplex.exceptions.error_codes.CPXERR_BAD_CHAR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_CTYPE" label="cplex.exceptions.error_codes.CPXERR_BAD_CTYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_DIRECTION" label="cplex.exceptions.error_codes.CPXERR_BAD_DIRECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_EXPONENT" label="cplex.exceptions.error_codes.CPXERR_BAD_EXPONENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_EXPO_RANGE" label="cplex.exceptions.error_codes.CPXERR_BAD_EXPO_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_FILETYPE" label="cplex.exceptions.error_codes.CPXERR_BAD_FILETYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_ID" label="cplex.exceptions.error_codes.CPXERR_BAD_ID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_INDCONSTR" label="cplex.exceptions.error_codes.CPXERR_BAD_INDCONSTR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_INDICATOR" label="cplex.exceptions.error_codes.CPXERR_BAD_INDICATOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_LAZY_UCUT" label="cplex.exceptions.error_codes.CPXERR_BAD_LAZY_UCUT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_LUB" label="cplex.exceptions.error_codes.CPXERR_BAD_LUB"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_METHOD" label="cplex.exceptions.error_codes.CPXERR_BAD_METHOD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_NUMBER" label="cplex.exceptions.error_codes.CPXERR_BAD_NUMBER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_OBJ_SENSE" label="cplex.exceptions.error_codes.CPXERR_BAD_OBJ_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PARAM_NAME" label="cplex.exceptions.error_codes.CPXERR_BAD_PARAM_NAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PARAM_NUM" label="cplex.exceptions.error_codes.CPXERR_BAD_PARAM_NUM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PIVOT" label="cplex.exceptions.error_codes.CPXERR_BAD_PIVOT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PRIORITY" label="cplex.exceptions.error_codes.CPXERR_BAD_PRIORITY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PROB_TYPE" label="cplex.exceptions.error_codes.CPXERR_BAD_PROB_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_ROW_ID" label="cplex.exceptions.error_codes.CPXERR_BAD_ROW_ID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SECTION_BOUNDS" label="cplex.exceptions.error_codes.CPXERR_BAD_SECTION_BOUNDS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SECTION_ENDATA" label="cplex.exceptions.error_codes.CPXERR_BAD_SECTION_ENDATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SECTION_QMATRIX" label="cplex.exceptions.error_codes.CPXERR_BAD_SECTION_QMATRIX"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SENSE" label="cplex.exceptions.error_codes.CPXERR_BAD_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SOS_TYPE" label="cplex.exceptions.error_codes.CPXERR_BAD_SOS_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_STATUS" label="cplex.exceptions.error_codes.CPXERR_BAD_STATUS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAS_FILE_SHORT" label="cplex.exceptions.error_codes.CPXERR_BAS_FILE_SHORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAS_FILE_SIZE" label="cplex.exceptions.error_codes.CPXERR_BAS_FILE_SIZE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CALLBACK" label="cplex.exceptions.error_codes.CPXERR_CALLBACK"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CANT_CLOSE_CHILD" label="cplex.exceptions.error_codes.CPXERR_CANT_CLOSE_CHILD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CHILD_OF_CHILD" label="cplex.exceptions.error_codes.CPXERR_CHILD_OF_CHILD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_INDEX_RANGE" label="cplex.exceptions.error_codes.CPXERR_COL_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_REPEATS" label="cplex.exceptions.error_codes.CPXERR_COL_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_REPEAT_PRINT" label="cplex.exceptions.error_codes.CPXERR_COL_REPEAT_PRINT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_ROW_REPEATS" label="cplex.exceptions.error_codes.CPXERR_COL_ROW_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_UNKNOWN" label="cplex.exceptions.error_codes.CPXERR_COL_UNKNOWN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CONFLICT_UNSTABLE" label="cplex.exceptions.error_codes.CPXERR_CONFLICT_UNSTABLE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COUNT_OVERLAP" label="cplex.exceptions.error_codes.CPXERR_COUNT_OVERLAP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COUNT_RANGE" label="cplex.exceptions.error_codes.CPXERR_COUNT_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_DBL_MAX" label="cplex.exceptions.error_codes.CPXERR_DBL_MAX"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_DECOMPRESSION" label="cplex.exceptions.error_codes.CPXERR_DECOMPRESSION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_DUP_ENTRY" label="cplex.exceptions.error_codes.CPXERR_DUP_ENTRY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ENCODING_CONVERSION" label="cplex.exceptions.error_codes.CPXERR_ENCODING_CONVERSION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_BV_BOUND" label="cplex.exceptions.error_codes.CPXERR_EXTRA_BV_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_FR_BOUND" label="cplex.exceptions.error_codes.CPXERR_EXTRA_FR_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_FX_BOUND" label="cplex.exceptions.error_codes.CPXERR_EXTRA_FX_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_INTEND" label="cplex.exceptions.error_codes.CPXERR_EXTRA_INTEND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_INTORG" label="cplex.exceptions.error_codes.CPXERR_EXTRA_INTORG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_SOSEND" label="cplex.exceptions.error_codes.CPXERR_EXTRA_SOSEND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_SOSORG" label="cplex.exceptions.error_codes.CPXERR_EXTRA_SOSORG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FAIL_OPEN_READ" label="cplex.exceptions.error_codes.CPXERR_FAIL_OPEN_READ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FAIL_OPEN_WRITE" label="cplex.exceptions.error_codes.CPXERR_FAIL_OPEN_WRITE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FILE_ENTRIES" label="cplex.exceptions.error_codes.CPXERR_FILE_ENTRIES"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FILE_FORMAT" label="cplex.exceptions.error_codes.CPXERR_FILE_FORMAT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FILTER_VARIABLE_TYPE" label="cplex.exceptions.error_codes.CPXERR_FILTER_VARIABLE_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_DEFAULT" label="cplex.exceptions.error_codes.CPXERR_IIS_DEFAULT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_FEAS" label="cplex.exceptions.error_codes.CPXERR_IIS_FEAS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NOT_INFEAS" label="cplex.exceptions.error_codes.CPXERR_IIS_NOT_INFEAS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_BASIC" label="cplex.exceptions.error_codes.CPXERR_IIS_NO_BASIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_INFO" label="cplex.exceptions.error_codes.CPXERR_IIS_NO_INFO"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_LOAD" label="cplex.exceptions.error_codes.CPXERR_IIS_NO_LOAD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_SOLN" label="cplex.exceptions.error_codes.CPXERR_IIS_NO_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NUM_BEST" label="cplex.exceptions.error_codes.CPXERR_IIS_NUM_BEST"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_OPT_INFEAS" label="cplex.exceptions.error_codes.CPXERR_IIS_OPT_INFEAS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_ABORT" label="cplex.exceptions.error_codes.CPXERR_IIS_SUB_ABORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_IT_LIM" label="cplex.exceptions.error_codes.CPXERR_IIS_SUB_IT_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_OBJ_LIM" label="cplex.exceptions.error_codes.CPXERR_IIS_SUB_OBJ_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_TIME_LIM" label="cplex.exceptions.error_codes.CPXERR_IIS_SUB_TIME_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ILL_DEFINED_PWL" label="cplex.exceptions.error_codes.CPXERR_ILL_DEFINED_PWL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ILOG_LICENSE" label="cplex.exceptions.error_codes.CPXERR_ILOG_LICENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_NOT_BASIC" label="cplex.exceptions.error_codes.CPXERR_INDEX_NOT_BASIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_RANGE" label="cplex.exceptions.error_codes.CPXERR_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_RANGE_HIGH" label="cplex.exceptions.error_codes.CPXERR_INDEX_RANGE_HIGH"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_RANGE_LOW" label="cplex.exceptions.error_codes.CPXERR_INDEX_RANGE_LOW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INT_TOO_BIG" label="cplex.exceptions.error_codes.CPXERR_INT_TOO_BIG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INT_TOO_BIG_INPUT" label="cplex.exceptions.error_codes.CPXERR_INT_TOO_BIG_INPUT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INVALID_NUMBER" label="cplex.exceptions.error_codes.CPXERR_INVALID_NUMBER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IN_INFOCALLBACK" label="cplex.exceptions.error_codes.CPXERR_IN_INFOCALLBACK"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LICENSE_MAX" label="cplex.exceptions.error_codes.CPXERR_LICENSE_MAX"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LICENSE_MIN" label="cplex.exceptions.error_codes.CPXERR_LICENSE_MIN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LIMITS_TOO_BIG" label="cplex.exceptions.error_codes.CPXERR_LIMITS_TOO_BIG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LINE_TOO_LONG" label="cplex.exceptions.error_codes.CPXERR_LINE_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LOCK_CREATE" label="cplex.exceptions.error_codes.CPXERR_LOCK_CREATE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LO_BOUND_REPEATS" label="cplex.exceptions.error_codes.CPXERR_LO_BOUND_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LP_NOT_IN_ENVIRONMENT" label="cplex.exceptions.error_codes.CPXERR_LP_NOT_IN_ENVIRONMENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MIPSEARCH_WITH_CALLBACKS" label="cplex.exceptions.error_codes.CPXERR_MIPSEARCH_WITH_CALLBACKS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MISS_SOS_TYPE" label="cplex.exceptions.error_codes.CPXERR_MISS_SOS_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MSG_NO_CHANNEL" label="cplex.exceptions.error_codes.CPXERR_MSG_NO_CHANNEL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MSG_NO_FILEPTR" label="cplex.exceptions.error_codes.CPXERR_MSG_NO_FILEPTR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MSG_NO_FUNCTION" label="cplex.exceptions.error_codes.CPXERR_MSG_NO_FUNCTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAME_CREATION" label="cplex.exceptions.error_codes.CPXERR_NAME_CREATION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAME_NOT_FOUND" label="cplex.exceptions.error_codes.CPXERR_NAME_NOT_FOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAME_TOO_LONG" label="cplex.exceptions.error_codes.CPXERR_NAME_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAN" label="cplex.exceptions.error_codes.CPXERR_NAN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NEED_OPT_SOLN" label="cplex.exceptions.error_codes.CPXERR_NEED_OPT_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NEGATIVE_SURPLUS" label="cplex.exceptions.error_codes.CPXERR_NEGATIVE_SURPLUS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NET_DATA" label="cplex.exceptions.error_codes.CPXERR_NET_DATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NET_FILE_SHORT" label="cplex.exceptions.error_codes.CPXERR_NET_FILE_SHORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NODE_INDEX_RANGE" label="cplex.exceptions.error_codes.CPXERR_NODE_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NODE_ON_DISK" label="cplex.exceptions.error_codes.CPXERR_NODE_ON_DISK"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_DUAL_UNBOUNDED" label="cplex.exceptions.error_codes.CPXERR_NOT_DUAL_UNBOUNDED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FIXED" label="cplex.exceptions.error_codes.CPXERR_NOT_FIXED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FOR_MIP" label="cplex.exceptions.error_codes.CPXERR_NOT_FOR_MIP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FOR_QCP" label="cplex.exceptions.error_codes.CPXERR_NOT_FOR_QCP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FOR_QP" label="cplex.exceptions.error_codes.CPXERR_NOT_FOR_QP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MILPCLASS" label="cplex.exceptions.error_codes.CPXERR_NOT_MILPCLASS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MIN_COST_FLOW" label="cplex.exceptions.error_codes.CPXERR_NOT_MIN_COST_FLOW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MIP" label="cplex.exceptions.error_codes.CPXERR_NOT_MIP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MIQPCLASS" label="cplex.exceptions.error_codes.CPXERR_NOT_MIQPCLASS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_ONE_PROBLEM" label="cplex.exceptions.error_codes.CPXERR_NOT_ONE_PROBLEM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_QP" label="cplex.exceptions.error_codes.CPXERR_NOT_QP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_SAV_FILE" label="cplex.exceptions.error_codes.CPXERR_NOT_SAV_FILE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_UNBOUNDED" label="cplex.exceptions.error_codes.CPXERR_NOT_UNBOUNDED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BARRIER_LIC" label="cplex.exceptions.error_codes.CPXERR_NO_BARRIER_LIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BARRIER_SOLN" label="cplex.exceptions.error_codes.CPXERR_NO_BARRIER_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BASIC_SOLN" label="cplex.exceptions.error_codes.CPXERR_NO_BASIC_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BASIS" label="cplex.exceptions.error_codes.CPXERR_NO_BASIS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BOUND_SENSE" label="cplex.exceptions.error_codes.CPXERR_NO_BOUND_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BOUND_TYPE" label="cplex.exceptions.error_codes.CPXERR_NO_BOUND_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_COLUMNS_SECTION" label="cplex.exceptions.error_codes.CPXERR_NO_COLUMNS_SECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_CONFLICT" label="cplex.exceptions.error_codes.CPXERR_NO_CONFLICT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_DUAL_SOLN" label="cplex.exceptions.error_codes.CPXERR_NO_DUAL_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ENDATA" label="cplex.exceptions.error_codes.CPXERR_NO_ENDATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ENVIRONMENT" label="cplex.exceptions.error_codes.CPXERR_NO_ENVIRONMENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_FILENAME" label="cplex.exceptions.error_codes.CPXERR_NO_FILENAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ID" label="cplex.exceptions.error_codes.CPXERR_NO_ID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ID_FIRST" label="cplex.exceptions.error_codes.CPXERR_NO_ID_FIRST"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_INT_X" label="cplex.exceptions.error_codes.CPXERR_NO_INT_X"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_KAPPASTATS" label="cplex.exceptions.error_codes.CPXERR_NO_KAPPASTATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_LU_FACTOR" label="cplex.exceptions.error_codes.CPXERR_NO_LU_FACTOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MEMORY" label="cplex.exceptions.error_codes.CPXERR_NO_MEMORY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MIPSTART" label="cplex.exceptions.error_codes.CPXERR_NO_MIPSTART"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MIP_LIC" label="cplex.exceptions.error_codes.CPXERR_NO_MIP_LIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MIQP_LIC" label="cplex.exceptions.error_codes.CPXERR_NO_MIQP_LIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NAMES" label="cplex.exceptions.error_codes.CPXERR_NO_NAMES"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NAME_SECTION" label="cplex.exceptions.error_codes.CPXERR_NO_NAME_SECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NORMS" label="cplex.exceptions.error_codes.CPXERR_NO_NORMS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NUMBER" label="cplex.exceptions.error_codes.CPXERR_NO_NUMBER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NUMBER_BOUND" label="cplex.exceptions.error_codes.CPXERR_NO_NUMBER_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NUMBER_FIRST" label="cplex.exceptions.error_codes.CPXERR_NO_NUMBER_FIRST"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OBJECTIVE" label="cplex.exceptions.error_codes.CPXERR_NO_OBJECTIVE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OBJ_SENSE" label="cplex.exceptions.error_codes.CPXERR_NO_OBJ_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OPERATOR" label="cplex.exceptions.error_codes.CPXERR_NO_OPERATOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OP_OR_SENSE" label="cplex.exceptions.error_codes.CPXERR_NO_OP_OR_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ORDER" label="cplex.exceptions.error_codes.CPXERR_NO_ORDER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_PROBLEM" label="cplex.exceptions.error_codes.CPXERR_NO_PROBLEM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_QP_OPERATOR" label="cplex.exceptions.error_codes.CPXERR_NO_QP_OPERATOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_QUAD_EXP" label="cplex.exceptions.error_codes.CPXERR_NO_QUAD_EXP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_RHS_COEFF" label="cplex.exceptions.error_codes.CPXERR_NO_RHS_COEFF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_RHS_IN_OBJ" label="cplex.exceptions.error_codes.CPXERR_NO_RHS_IN_OBJ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_RNGVAL" label="cplex.exceptions.error_codes.CPXERR_NO_RNGVAL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ROWS_SECTION" label="cplex.exceptions.error_codes.CPXERR_NO_ROWS_SECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ROW_NAME" label="cplex.exceptions.error_codes.CPXERR_NO_ROW_NAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ROW_SENSE" label="cplex.exceptions.error_codes.CPXERR_NO_ROW_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SENSIT" label="cplex.exceptions.error_codes.CPXERR_NO_SENSIT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SOLN" label="cplex.exceptions.error_codes.CPXERR_NO_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SOLNPOOL" label="cplex.exceptions.error_codes.CPXERR_NO_SOLNPOOL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SOS" label="cplex.exceptions.error_codes.CPXERR_NO_SOS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_TREE" label="cplex.exceptions.error_codes.CPXERR_NO_TREE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_VECTOR_SOLN" label="cplex.exceptions.error_codes.CPXERR_NO_VECTOR_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NULL_NAME" label="cplex.exceptions.error_codes.CPXERR_NULL_NAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NULL_POINTER" label="cplex.exceptions.error_codes.CPXERR_NULL_POINTER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ORDER_BAD_DIRECTION" label="cplex.exceptions.error_codes.CPXERR_ORDER_BAD_DIRECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_OVERFLOW" label="cplex.exceptions.error_codes.CPXERR_OVERFLOW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PARAM_INCOMPATIBLE" label="cplex.exceptions.error_codes.CPXERR_PARAM_INCOMPATIBLE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PARAM_TOO_BIG" label="cplex.exceptions.error_codes.CPXERR_PARAM_TOO_BIG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PARAM_TOO_SMALL" label="cplex.exceptions.error_codes.CPXERR_PARAM_TOO_SMALL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_ABORT" label="cplex.exceptions.error_codes.CPXERR_PRESLV_ABORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_BAD_PARAM" label="cplex.exceptions.error_codes.CPXERR_PRESLV_BAD_PARAM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_BASIS_MEM" label="cplex.exceptions.error_codes.CPXERR_PRESLV_BASIS_MEM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_COPYORDER" label="cplex.exceptions.error_codes.CPXERR_PRESLV_COPYORDER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_COPYSOS" label="cplex.exceptions.error_codes.CPXERR_PRESLV_COPYSOS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_CRUSHFORM" label="cplex.exceptions.error_codes.CPXERR_PRESLV_CRUSHFORM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_DUAL" label="cplex.exceptions.error_codes.CPXERR_PRESLV_DUAL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_FAIL_BASIS" label="cplex.exceptions.error_codes.CPXERR_PRESLV_FAIL_BASIS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_INF" label="cplex.exceptions.error_codes.CPXERR_PRESLV_INF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_INForUNBD" label="cplex.exceptions.error_codes.CPXERR_PRESLV_INForUNBD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_NO_BASIS" label="cplex.exceptions.error_codes.CPXERR_PRESLV_NO_BASIS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_NO_PROB" label="cplex.exceptions.error_codes.CPXERR_PRESLV_NO_PROB"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_SOLN_MIP" label="cplex.exceptions.error_codes.CPXERR_PRESLV_SOLN_MIP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_SOLN_QP" label="cplex.exceptions.error_codes.CPXERR_PRESLV_SOLN_QP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_START_LP" label="cplex.exceptions.error_codes.CPXERR_PRESLV_START_LP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_TIME_LIM" label="cplex.exceptions.error_codes.CPXERR_PRESLV_TIME_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_UNBD" label="cplex.exceptions.error_codes.CPXERR_PRESLV_UNBD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_UNCRUSHFORM" label="cplex.exceptions.error_codes.CPXERR_PRESLV_UNCRUSHFORM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRIIND" label="cplex.exceptions.error_codes.CPXERR_PRIIND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRM_DATA" label="cplex.exceptions.error_codes.CPXERR_PRM_DATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRM_HEADER" label="cplex.exceptions.error_codes.CPXERR_PRM_HEADER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PTHREAD_CREATE" label="cplex.exceptions.error_codes.CPXERR_PTHREAD_CREATE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PTHREAD_MUTEX_INIT" label="cplex.exceptions.error_codes.CPXERR_PTHREAD_MUTEX_INIT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QCP_SENSE" label="cplex.exceptions.error_codes.CPXERR_QCP_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QCP_SENSE_FILE" label="cplex.exceptions.error_codes.CPXERR_QCP_SENSE_FILE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QUAD_EXP_NOT_2" label="cplex.exceptions.error_codes.CPXERR_QUAD_EXP_NOT_2"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QUAD_IN_ROW" label="cplex.exceptions.error_codes.CPXERR_QUAD_IN_ROW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_DIVISOR" label="cplex.exceptions.error_codes.CPXERR_Q_DIVISOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_DUP_ENTRY" label="cplex.exceptions.error_codes.CPXERR_Q_DUP_ENTRY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_NOT_INDEF" label="cplex.exceptions.error_codes.CPXERR_Q_NOT_INDEF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_NOT_POS_DEF" label="cplex.exceptions.error_codes.CPXERR_Q_NOT_POS_DEF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_NOT_SYMMETRIC" label="cplex.exceptions.error_codes.CPXERR_Q_NOT_SYMMETRIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RANGE_SECTION_ORDER" label="cplex.exceptions.error_codes.CPXERR_RANGE_SECTION_ORDER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RESTRICTED_VERSION" label="cplex.exceptions.error_codes.CPXERR_RESTRICTED_VERSION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RHS_IN_OBJ" label="cplex.exceptions.error_codes.CPXERR_RHS_IN_OBJ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RIMNZ_REPEATS" label="cplex.exceptions.error_codes.CPXERR_RIMNZ_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RIM_REPEATS" label="cplex.exceptions.error_codes.CPXERR_RIM_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RIM_ROW_REPEATS" label="cplex.exceptions.error_codes.CPXERR_RIM_ROW_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_INDEX_RANGE" label="cplex.exceptions.error_codes.CPXERR_ROW_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_REPEATS" label="cplex.exceptions.error_codes.CPXERR_ROW_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_REPEAT_PRINT" label="cplex.exceptions.error_codes.CPXERR_ROW_REPEAT_PRINT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_UNKNOWN" label="cplex.exceptions.error_codes.CPXERR_ROW_UNKNOWN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SAV_FILE_DATA" label="cplex.exceptions.error_codes.CPXERR_SAV_FILE_DATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SAV_FILE_VALUE" label="cplex.exceptions.error_codes.CPXERR_SAV_FILE_VALUE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SAV_FILE_WRITE" label="cplex.exceptions.error_codes.CPXERR_SAV_FILE_WRITE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SBASE_ILLEGAL" label="cplex.exceptions.error_codes.CPXERR_SBASE_ILLEGAL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SBASE_INCOMPAT" label="cplex.exceptions.error_codes.CPXERR_SBASE_INCOMPAT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SINGULAR" label="cplex.exceptions.error_codes.CPXERR_SINGULAR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_STR_PARAM_TOO_LONG" label="cplex.exceptions.error_codes.CPXERR_STR_PARAM_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SUBPROB_SOLVE" label="cplex.exceptions.error_codes.CPXERR_SUBPROB_SOLVE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SYNCPRIM_CREATE" label="cplex.exceptions.error_codes.CPXERR_SYNCPRIM_CREATE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_THREAD_FAILED" label="cplex.exceptions.error_codes.CPXERR_THREAD_FAILED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TILIM_CONDITION_NO" label="cplex.exceptions.error_codes.CPXERR_TILIM_CONDITION_NO"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TILIM_STRONGBRANCH" label="cplex.exceptions.error_codes.CPXERR_TILIM_STRONGBRANCH"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_COEFFS" label="cplex.exceptions.error_codes.CPXERR_TOO_MANY_COEFFS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_COLS" label="cplex.exceptions.error_codes.CPXERR_TOO_MANY_COLS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_RIMNZ" label="cplex.exceptions.error_codes.CPXERR_TOO_MANY_RIMNZ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_RIMS" label="cplex.exceptions.error_codes.CPXERR_TOO_MANY_RIMS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_ROWS" label="cplex.exceptions.error_codes.CPXERR_TOO_MANY_ROWS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_THREADS" label="cplex.exceptions.error_codes.CPXERR_TOO_MANY_THREADS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TREE_MEMORY_LIMIT" label="cplex.exceptions.error_codes.CPXERR_TREE_MEMORY_LIMIT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TUNE_MIXED" label="cplex.exceptions.error_codes.CPXERR_TUNE_MIXED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_UNIQUE_WEIGHTS" label="cplex.exceptions.error_codes.CPXERR_UNIQUE_WEIGHTS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_UNSUPPORTED_CONSTRAINT_TYPE" label="cplex.exceptions.error_codes.CPXERR_UNSUPPORTED_CONSTRAINT_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_UP_BOUND_REPEATS" label="cplex.exceptions.error_codes.CPXERR_UP_BOUND_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_WORK_FILE_OPEN" label="cplex.exceptions.error_codes.CPXERR_WORK_FILE_OPEN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_WORK_FILE_READ" label="cplex.exceptions.error_codes.CPXERR_WORK_FILE_READ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_WORK_FILE_WRITE" label="cplex.exceptions.error_codes.CPXERR_WORK_FILE_WRITE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_XMLPARSE" label="cplex.exceptions.error_codes.CPXERR_XMLPARSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex-module.html#infinity" label="cplex.infinity"/>
+        </topic>
+    </topic>
+    <topic href="html/refpythoncplex/html/cplex-module.html" label="cplex">
+        <topic label="Classes">
+            <topic
+                href="html/refpythoncplex/html/cplex.Cplex-class.html" label="Cplex"/>
+            <topic
+                href="html/refpythoncplex/html/cplex._internal._matrices.SparsePair-class.html" label="SparsePair"/>
+            <topic
+                href="html/refpythoncplex/html/cplex._internal._matrices.SparseTriple-class.html" label="SparseTriple"/>
+        </topic>
+        <topic label="Functions">
+            <topic
+                href="html/refpythoncplex/html/cplex-module.html#terminate" label="terminate"/>
+        </topic>
+        <topic label="Variables">
+            <topic
+                href="html/refpythoncplex/html/cplex-module.html#infinity" label="infinity"/>
+        </topic>
+    </topic>
+    <topic href="html/refpythoncplex/html/cplex.callbacks-module.html" label="cplex.callbacks">
+        <topic label="Classes">
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.BarrierCallback-class.html" label="BarrierCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.BranchCallback-class.html" label="BranchCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.Callback-class.html" label="Callback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.ContinuousCallback-class.html" label="ContinuousCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.ControlCallback-class.html" label="ControlCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.CrossoverCallback-class.html" label="CrossoverCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.CutCallback-class.html" label="CutCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.HSCallback-class.html" label="HSCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.HeuristicCallback-class.html" label="HeuristicCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.IncumbentCallback-class.html" label="IncumbentCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.LazyConstraintCallback-class.html" label="LazyConstraintCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.MIPCallback-class.html" label="MIPCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.MIPInfoCallback-class.html" label="MIPInfoCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.NodeCallback-class.html" label="NodeCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.OptimizationCallback-class.html" label="OptimizationCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.PresolveCallback-class.html" label="PresolveCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.SimplexCallback-class.html" label="SimplexCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.SolveCallback-class.html" label="SolveCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.TuningCallback-class.html" label="TuningCallback"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.callbacks.UserCutCallback-class.html" label="UserCutCallback"/>
+        </topic>
+    </topic>
+    <topic href="html/refpythoncplex/html/cplex.exceptions-module.html" label="cplex.exceptions">
+        <topic label="Classes">
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.CplexError-class.html" label="CplexError"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.CplexSolverError-class.html" label="CplexSolverError"/>
+        </topic>
+    </topic>
+    <topic
+        href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html" label="cplex.exceptions.error_codes">
+        <topic label="Variables">
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ABORT_STRONGBRANCH" label="CPXERR_ABORT_STRONGBRANCH"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ADJ_SIGNS" label="CPXERR_ADJ_SIGNS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ADJ_SIGN_QUAD" label="CPXERR_ADJ_SIGN_QUAD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ADJ_SIGN_SENSE" label="CPXERR_ADJ_SIGN_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ALGNOTLICENSED" label="CPXERR_ALGNOTLICENSED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARC_INDEX_RANGE" label="CPXERR_ARC_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARRAY_BAD_SOS_TYPE" label="CPXERR_ARRAY_BAD_SOS_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARRAY_NOT_ASCENDING" label="CPXERR_ARRAY_NOT_ASCENDING"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ARRAY_TOO_LONG" label="CPXERR_ARRAY_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BADLDWID" label="CPXERR_BADLDWID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BADPRODUCT" label="CPXERR_BADPRODUCT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_ARGUMENT" label="CPXERR_BAD_ARGUMENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_BOUND_SENSE" label="CPXERR_BAD_BOUND_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_BOUND_TYPE" label="CPXERR_BAD_BOUND_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_CHAR" label="CPXERR_BAD_CHAR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_CTYPE" label="CPXERR_BAD_CTYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_DIRECTION" label="CPXERR_BAD_DIRECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_EXPONENT" label="CPXERR_BAD_EXPONENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_EXPO_RANGE" label="CPXERR_BAD_EXPO_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_FILETYPE" label="CPXERR_BAD_FILETYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_ID" label="CPXERR_BAD_ID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_INDCONSTR" label="CPXERR_BAD_INDCONSTR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_INDICATOR" label="CPXERR_BAD_INDICATOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_LAZY_UCUT" label="CPXERR_BAD_LAZY_UCUT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_LUB" label="CPXERR_BAD_LUB"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_METHOD" label="CPXERR_BAD_METHOD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_NUMBER" label="CPXERR_BAD_NUMBER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_OBJ_SENSE" label="CPXERR_BAD_OBJ_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PARAM_NAME" label="CPXERR_BAD_PARAM_NAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PARAM_NUM" label="CPXERR_BAD_PARAM_NUM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PIVOT" label="CPXERR_BAD_PIVOT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PRIORITY" label="CPXERR_BAD_PRIORITY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_PROB_TYPE" label="CPXERR_BAD_PROB_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_ROW_ID" label="CPXERR_BAD_ROW_ID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SECTION_BOUNDS" label="CPXERR_BAD_SECTION_BOUNDS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SECTION_ENDATA" label="CPXERR_BAD_SECTION_ENDATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SECTION_QMATRIX" label="CPXERR_BAD_SECTION_QMATRIX"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SENSE" label="CPXERR_BAD_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_SOS_TYPE" label="CPXERR_BAD_SOS_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAD_STATUS" label="CPXERR_BAD_STATUS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAS_FILE_SHORT" label="CPXERR_BAS_FILE_SHORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_BAS_FILE_SIZE" label="CPXERR_BAS_FILE_SIZE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CALLBACK" label="CPXERR_CALLBACK"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CANT_CLOSE_CHILD" label="CPXERR_CANT_CLOSE_CHILD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CHILD_OF_CHILD" label="CPXERR_CHILD_OF_CHILD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_INDEX_RANGE" label="CPXERR_COL_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_REPEATS" label="CPXERR_COL_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_REPEAT_PRINT" label="CPXERR_COL_REPEAT_PRINT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_ROW_REPEATS" label="CPXERR_COL_ROW_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COL_UNKNOWN" label="CPXERR_COL_UNKNOWN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_CONFLICT_UNSTABLE" label="CPXERR_CONFLICT_UNSTABLE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COUNT_OVERLAP" label="CPXERR_COUNT_OVERLAP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_COUNT_RANGE" label="CPXERR_COUNT_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_DBL_MAX" label="CPXERR_DBL_MAX"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_DECOMPRESSION" label="CPXERR_DECOMPRESSION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_DUP_ENTRY" label="CPXERR_DUP_ENTRY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ENCODING_CONVERSION" label="CPXERR_ENCODING_CONVERSION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_BV_BOUND" label="CPXERR_EXTRA_BV_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_FR_BOUND" label="CPXERR_EXTRA_FR_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_FX_BOUND" label="CPXERR_EXTRA_FX_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_INTEND" label="CPXERR_EXTRA_INTEND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_INTORG" label="CPXERR_EXTRA_INTORG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_SOSEND" label="CPXERR_EXTRA_SOSEND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_EXTRA_SOSORG" label="CPXERR_EXTRA_SOSORG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FAIL_OPEN_READ" label="CPXERR_FAIL_OPEN_READ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FAIL_OPEN_WRITE" label="CPXERR_FAIL_OPEN_WRITE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FILE_ENTRIES" label="CPXERR_FILE_ENTRIES"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FILE_FORMAT" label="CPXERR_FILE_FORMAT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_FILTER_VARIABLE_TYPE" label="CPXERR_FILTER_VARIABLE_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_DEFAULT" label="CPXERR_IIS_DEFAULT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_FEAS" label="CPXERR_IIS_FEAS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NOT_INFEAS" label="CPXERR_IIS_NOT_INFEAS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_BASIC" label="CPXERR_IIS_NO_BASIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_INFO" label="CPXERR_IIS_NO_INFO"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_LOAD" label="CPXERR_IIS_NO_LOAD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NO_SOLN" label="CPXERR_IIS_NO_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_NUM_BEST" label="CPXERR_IIS_NUM_BEST"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_OPT_INFEAS" label="CPXERR_IIS_OPT_INFEAS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_ABORT" label="CPXERR_IIS_SUB_ABORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_IT_LIM" label="CPXERR_IIS_SUB_IT_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_OBJ_LIM" label="CPXERR_IIS_SUB_OBJ_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IIS_SUB_TIME_LIM" label="CPXERR_IIS_SUB_TIME_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ILL_DEFINED_PWL" label="CPXERR_ILL_DEFINED_PWL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ILOG_LICENSE" label="CPXERR_ILOG_LICENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_NOT_BASIC" label="CPXERR_INDEX_NOT_BASIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_RANGE" label="CPXERR_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_RANGE_HIGH" label="CPXERR_INDEX_RANGE_HIGH"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INDEX_RANGE_LOW" label="CPXERR_INDEX_RANGE_LOW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INT_TOO_BIG" label="CPXERR_INT_TOO_BIG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INT_TOO_BIG_INPUT" label="CPXERR_INT_TOO_BIG_INPUT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_INVALID_NUMBER" label="CPXERR_INVALID_NUMBER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_IN_INFOCALLBACK" label="CPXERR_IN_INFOCALLBACK"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LICENSE_MAX" label="CPXERR_LICENSE_MAX"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LICENSE_MIN" label="CPXERR_LICENSE_MIN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LIMITS_TOO_BIG" label="CPXERR_LIMITS_TOO_BIG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LINE_TOO_LONG" label="CPXERR_LINE_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LOCK_CREATE" label="CPXERR_LOCK_CREATE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LO_BOUND_REPEATS" label="CPXERR_LO_BOUND_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_LP_NOT_IN_ENVIRONMENT" label="CPXERR_LP_NOT_IN_ENVIRONMENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MIPSEARCH_WITH_CALLBACKS" label="CPXERR_MIPSEARCH_WITH_CALLBACKS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MISS_SOS_TYPE" label="CPXERR_MISS_SOS_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MSG_NO_CHANNEL" label="CPXERR_MSG_NO_CHANNEL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MSG_NO_FILEPTR" label="CPXERR_MSG_NO_FILEPTR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_MSG_NO_FUNCTION" label="CPXERR_MSG_NO_FUNCTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAME_CREATION" label="CPXERR_NAME_CREATION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAME_NOT_FOUND" label="CPXERR_NAME_NOT_FOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAME_TOO_LONG" label="CPXERR_NAME_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NAN" label="CPXERR_NAN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NEED_OPT_SOLN" label="CPXERR_NEED_OPT_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NEGATIVE_SURPLUS" label="CPXERR_NEGATIVE_SURPLUS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NET_DATA" label="CPXERR_NET_DATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NET_FILE_SHORT" label="CPXERR_NET_FILE_SHORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NODE_INDEX_RANGE" label="CPXERR_NODE_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NODE_ON_DISK" label="CPXERR_NODE_ON_DISK"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_DUAL_UNBOUNDED" label="CPXERR_NOT_DUAL_UNBOUNDED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FIXED" label="CPXERR_NOT_FIXED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FOR_MIP" label="CPXERR_NOT_FOR_MIP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FOR_QCP" label="CPXERR_NOT_FOR_QCP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_FOR_QP" label="CPXERR_NOT_FOR_QP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MILPCLASS" label="CPXERR_NOT_MILPCLASS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MIN_COST_FLOW" label="CPXERR_NOT_MIN_COST_FLOW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MIP" label="CPXERR_NOT_MIP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_MIQPCLASS" label="CPXERR_NOT_MIQPCLASS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_ONE_PROBLEM" label="CPXERR_NOT_ONE_PROBLEM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_QP" label="CPXERR_NOT_QP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_SAV_FILE" label="CPXERR_NOT_SAV_FILE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NOT_UNBOUNDED" label="CPXERR_NOT_UNBOUNDED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BARRIER_LIC" label="CPXERR_NO_BARRIER_LIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BARRIER_SOLN" label="CPXERR_NO_BARRIER_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BASIC_SOLN" label="CPXERR_NO_BASIC_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BASIS" label="CPXERR_NO_BASIS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BOUND_SENSE" label="CPXERR_NO_BOUND_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_BOUND_TYPE" label="CPXERR_NO_BOUND_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_COLUMNS_SECTION" label="CPXERR_NO_COLUMNS_SECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_CONFLICT" label="CPXERR_NO_CONFLICT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_DUAL_SOLN" label="CPXERR_NO_DUAL_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ENDATA" label="CPXERR_NO_ENDATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ENVIRONMENT" label="CPXERR_NO_ENVIRONMENT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_FILENAME" label="CPXERR_NO_FILENAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ID" label="CPXERR_NO_ID"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ID_FIRST" label="CPXERR_NO_ID_FIRST"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_INT_X" label="CPXERR_NO_INT_X"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_KAPPASTATS" label="CPXERR_NO_KAPPASTATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_LU_FACTOR" label="CPXERR_NO_LU_FACTOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MEMORY" label="CPXERR_NO_MEMORY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MIPSTART" label="CPXERR_NO_MIPSTART"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MIP_LIC" label="CPXERR_NO_MIP_LIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_MIQP_LIC" label="CPXERR_NO_MIQP_LIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NAMES" label="CPXERR_NO_NAMES"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NAME_SECTION" label="CPXERR_NO_NAME_SECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NORMS" label="CPXERR_NO_NORMS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NUMBER" label="CPXERR_NO_NUMBER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NUMBER_BOUND" label="CPXERR_NO_NUMBER_BOUND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_NUMBER_FIRST" label="CPXERR_NO_NUMBER_FIRST"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OBJECTIVE" label="CPXERR_NO_OBJECTIVE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OBJ_SENSE" label="CPXERR_NO_OBJ_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OPERATOR" label="CPXERR_NO_OPERATOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_OP_OR_SENSE" label="CPXERR_NO_OP_OR_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ORDER" label="CPXERR_NO_ORDER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_PROBLEM" label="CPXERR_NO_PROBLEM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_QP_OPERATOR" label="CPXERR_NO_QP_OPERATOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_QUAD_EXP" label="CPXERR_NO_QUAD_EXP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_RHS_COEFF" label="CPXERR_NO_RHS_COEFF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_RHS_IN_OBJ" label="CPXERR_NO_RHS_IN_OBJ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_RNGVAL" label="CPXERR_NO_RNGVAL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ROWS_SECTION" label="CPXERR_NO_ROWS_SECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ROW_NAME" label="CPXERR_NO_ROW_NAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_ROW_SENSE" label="CPXERR_NO_ROW_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SENSIT" label="CPXERR_NO_SENSIT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SOLN" label="CPXERR_NO_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SOLNPOOL" label="CPXERR_NO_SOLNPOOL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_SOS" label="CPXERR_NO_SOS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_TREE" label="CPXERR_NO_TREE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NO_VECTOR_SOLN" label="CPXERR_NO_VECTOR_SOLN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NULL_NAME" label="CPXERR_NULL_NAME"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_NULL_POINTER" label="CPXERR_NULL_POINTER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ORDER_BAD_DIRECTION" label="CPXERR_ORDER_BAD_DIRECTION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_OVERFLOW" label="CPXERR_OVERFLOW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PARAM_INCOMPATIBLE" label="CPXERR_PARAM_INCOMPATIBLE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PARAM_TOO_BIG" label="CPXERR_PARAM_TOO_BIG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PARAM_TOO_SMALL" label="CPXERR_PARAM_TOO_SMALL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_ABORT" label="CPXERR_PRESLV_ABORT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_BAD_PARAM" label="CPXERR_PRESLV_BAD_PARAM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_BASIS_MEM" label="CPXERR_PRESLV_BASIS_MEM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_COPYORDER" label="CPXERR_PRESLV_COPYORDER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_COPYSOS" label="CPXERR_PRESLV_COPYSOS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_CRUSHFORM" label="CPXERR_PRESLV_CRUSHFORM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_DUAL" label="CPXERR_PRESLV_DUAL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_FAIL_BASIS" label="CPXERR_PRESLV_FAIL_BASIS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_INF" label="CPXERR_PRESLV_INF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_INForUNBD" label="CPXERR_PRESLV_INForUNBD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_NO_BASIS" label="CPXERR_PRESLV_NO_BASIS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_NO_PROB" label="CPXERR_PRESLV_NO_PROB"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_SOLN_MIP" label="CPXERR_PRESLV_SOLN_MIP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_SOLN_QP" label="CPXERR_PRESLV_SOLN_QP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_START_LP" label="CPXERR_PRESLV_START_LP"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_TIME_LIM" label="CPXERR_PRESLV_TIME_LIM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_UNBD" label="CPXERR_PRESLV_UNBD"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRESLV_UNCRUSHFORM" label="CPXERR_PRESLV_UNCRUSHFORM"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRIIND" label="CPXERR_PRIIND"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRM_DATA" label="CPXERR_PRM_DATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PRM_HEADER" label="CPXERR_PRM_HEADER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PTHREAD_CREATE" label="CPXERR_PTHREAD_CREATE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_PTHREAD_MUTEX_INIT" label="CPXERR_PTHREAD_MUTEX_INIT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QCP_SENSE" label="CPXERR_QCP_SENSE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QCP_SENSE_FILE" label="CPXERR_QCP_SENSE_FILE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QUAD_EXP_NOT_2" label="CPXERR_QUAD_EXP_NOT_2"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_QUAD_IN_ROW" label="CPXERR_QUAD_IN_ROW"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_DIVISOR" label="CPXERR_Q_DIVISOR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_DUP_ENTRY" label="CPXERR_Q_DUP_ENTRY"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_NOT_INDEF" label="CPXERR_Q_NOT_INDEF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_NOT_POS_DEF" label="CPXERR_Q_NOT_POS_DEF"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_Q_NOT_SYMMETRIC" label="CPXERR_Q_NOT_SYMMETRIC"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RANGE_SECTION_ORDER" label="CPXERR_RANGE_SECTION_ORDER"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RESTRICTED_VERSION" label="CPXERR_RESTRICTED_VERSION"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RHS_IN_OBJ" label="CPXERR_RHS_IN_OBJ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RIMNZ_REPEATS" label="CPXERR_RIMNZ_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RIM_REPEATS" label="CPXERR_RIM_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_RIM_ROW_REPEATS" label="CPXERR_RIM_ROW_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_INDEX_RANGE" label="CPXERR_ROW_INDEX_RANGE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_REPEATS" label="CPXERR_ROW_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_REPEAT_PRINT" label="CPXERR_ROW_REPEAT_PRINT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_ROW_UNKNOWN" label="CPXERR_ROW_UNKNOWN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SAV_FILE_DATA" label="CPXERR_SAV_FILE_DATA"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SAV_FILE_VALUE" label="CPXERR_SAV_FILE_VALUE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SAV_FILE_WRITE" label="CPXERR_SAV_FILE_WRITE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SBASE_ILLEGAL" label="CPXERR_SBASE_ILLEGAL"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SBASE_INCOMPAT" label="CPXERR_SBASE_INCOMPAT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SINGULAR" label="CPXERR_SINGULAR"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_STR_PARAM_TOO_LONG" label="CPXERR_STR_PARAM_TOO_LONG"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SUBPROB_SOLVE" label="CPXERR_SUBPROB_SOLVE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_SYNCPRIM_CREATE" label="CPXERR_SYNCPRIM_CREATE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_THREAD_FAILED" label="CPXERR_THREAD_FAILED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TILIM_CONDITION_NO" label="CPXERR_TILIM_CONDITION_NO"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TILIM_STRONGBRANCH" label="CPXERR_TILIM_STRONGBRANCH"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_COEFFS" label="CPXERR_TOO_MANY_COEFFS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_COLS" label="CPXERR_TOO_MANY_COLS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_RIMNZ" label="CPXERR_TOO_MANY_RIMNZ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_RIMS" label="CPXERR_TOO_MANY_RIMS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_ROWS" label="CPXERR_TOO_MANY_ROWS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TOO_MANY_THREADS" label="CPXERR_TOO_MANY_THREADS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TREE_MEMORY_LIMIT" label="CPXERR_TREE_MEMORY_LIMIT"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_TUNE_MIXED" label="CPXERR_TUNE_MIXED"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_UNIQUE_WEIGHTS" label="CPXERR_UNIQUE_WEIGHTS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_UNSUPPORTED_CONSTRAINT_TYPE" label="CPXERR_UNSUPPORTED_CONSTRAINT_TYPE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_UP_BOUND_REPEATS" label="CPXERR_UP_BOUND_REPEATS"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_WORK_FILE_OPEN" label="CPXERR_WORK_FILE_OPEN"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_WORK_FILE_READ" label="CPXERR_WORK_FILE_READ"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_WORK_FILE_WRITE" label="CPXERR_WORK_FILE_WRITE"/>
+            <topic
+                href="html/refpythoncplex/html/cplex.exceptions.error_codes-module.html#CPXERR_XMLPARSE" label="CPXERR_XMLPARSE"/>
+        </topic>
+    </topic>
+</toc>

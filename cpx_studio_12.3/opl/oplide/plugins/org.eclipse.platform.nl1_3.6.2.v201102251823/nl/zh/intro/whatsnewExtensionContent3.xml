@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<introContent>
+  	<extensionContent id="org.eclipse.ui.workbench.migration" name="移植指南" alt-style="css/whatsnew.properties" style="css/whatsnew.css" path="whatsnew/@">
+		<group filter="plugin=org.eclipse.platform.doc.isv" style-id="content-group" id="content-group">
+       		<link label="从先前发行版迁移" url="http://org.eclipse.ui.intro/showHelpTopic?id=/org.eclipse.platform.doc.isv/porting/eclipse_3_6_porting_guide.html" id="migration" style-id="content-link">
+          		<text>了解需要执行哪些操作才能使旧代码在 Eclipse 3.6 中工作</text>
+       		</link>
+       	</group>
+  	</extensionContent>
+</introContent>

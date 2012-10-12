@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toc version="1.0"><tocitem target="cplex_matlab.html">IBM ILOG CPLEX for MATLAB
+   <tocitem image="$toolbox/matlab/icons/greencircleicon.gif" target="cplex_matlab3.html">Getting started with CPLEX for MATLAB
+      <tocitem target="cplex_matlab4.html">Introduction</tocitem>
+      <tocitem target="cplex_matlab5.html">Installation and licensing</tocitem>
+      <tocitem target="cplex_matlab6.html">Integration with MATLAB</tocitem>
+      <tocitem target="cplex_matlab7.html">Using CPLEX for MATLAB</tocitem>
+      <tocitem target="cplex_matlab8.html">Overview of the CPLEX for MATLAB APIs
+         <tocitem target="cplex_matlab9.html">CPLEX for MATLAB Toolbox</tocitem>
+         <tocitem target="cplex_matlab10.html">Cplex Class API</tocitem>
+      </tocitem>
+      <tocitem target="cplex_matlab11.html">Programming tips</tocitem>
+   </tocitem>
+   <tocitem image="$toolbox/matlab/icons/demoicon.gif" target="cplex_matlab12.html">Examples
+      <tocitem target="cplex_matlab13.html">Examples of the CPLEX for MATLAB Toolbox
+         <tocitem target="cplex_matlab14.html">Example: runtoolboxexamples.m</tocitem>
+         <tocitem target="cplex_matlab15.html">Example: cplexbilpex.m</tocitem>
+         <tocitem target="cplex_matlab16.html">Example: cplexlpex.m</tocitem>
+         <tocitem target="cplex_matlab17.html">Example: cplexlsqbilpex.m</tocitem>
+         <tocitem target="cplex_matlab18.html">Example: cplexlsqlinex.m</tocitem>
+         <tocitem target="cplex_matlab19.html">Example: cplexlsqmilpex.m</tocitem>
+         <tocitem target="cplex_matlab20.html">Example: cplexlsqmiqcpex.m</tocitem>
+         <tocitem target="cplex_matlab21.html">Example: cplexlsqnonneglinex.m</tocitem>
+         <tocitem target="cplex_matlab22.html">Example: cplexlsqnonnegmilpex.m</tocitem>
+         <tocitem target="cplex_matlab23.html">Example: cplexlsqnonnegmiqcpex.m</tocitem>
+         <tocitem target="cplex_matlab24.html">Example: cplexlsqnonnegqcpex.m</tocitem>
+         <tocitem target="cplex_matlab25.html">Example: cplexlsqqcpex.m</tocitem>
+         <tocitem target="cplex_matlab26.html">Example: cplexmilpex.m</tocitem>
+         <tocitem target="cplex_matlab27.html">Example: cplexmiqpex.m</tocitem>
+         <tocitem target="cplex_matlab28.html">Example: cplexqcpex.m</tocitem>
+         <tocitem target="cplex_matlab29.html">Example: cplexqpex.m</tocitem>
+      </tocitem>
+      <tocitem target="cplex_matlab30.html">Examples of the Cplex Class API
+         <tocitem target="cplex_matlab31.html">Example: runclassexamples.m</tocitem>
+         <tocitem target="cplex_matlab32.html">Example: blend.m</tocitem>
+         <tocitem target="cplex_matlab33.html">Example: cplexplot</tocitem>
+         <tocitem target="cplex_matlab34.html">Example: cutstock.m</tocitem>
+         <tocitem target="cplex_matlab35.html">Example: diet.m</tocitem>
+         <tocitem target="cplex_matlab36.html">Example: facility.m</tocitem>
+         <tocitem target="cplex_matlab37.html">Example: fixcost1.m</tocitem>
+         <tocitem target="cplex_matlab38.html">Example: indefqpex1.m</tocitem>
+         <tocitem target="cplex_matlab39.html">Example: inout1.m</tocitem>
+         <tocitem target="cplex_matlab40.html">Example: inout3.m</tocitem>
+         <tocitem target="cplex_matlab41.html">Example: lpex1.m</tocitem>
+         <tocitem target="cplex_matlab42.html">Example: lpex2.m</tocitem>
+         <tocitem target="cplex_matlab43.html">Example: lpex3.m</tocitem>
+         <tocitem target="cplex_matlab44.html">Example: lpex6.m</tocitem>
+         <tocitem target="cplex_matlab45.html">Example: lpex7.m</tocitem>
+         <tocitem target="cplex_matlab46.html">Example: mipex1.m</tocitem>
+         <tocitem target="cplex_matlab47.html">Example: mipex2.m</tocitem>
+         <tocitem target="cplex_matlab48.html">Example: mipex3.m</tocitem>
+         <tocitem target="cplex_matlab49.html">Example: mipex4.m</tocitem>
+         <tocitem target="cplex_matlab50.html">Example: miqpex1.m</tocitem>
+         <tocitem target="cplex_matlab51.html">Example: populate.m</tocitem>
+         <tocitem target="cplex_matlab52.html">Example: qcpex1.m</tocitem>
+         <tocitem target="cplex_matlab53.html">Example: qpex1.m</tocitem>
+         <tocitem target="cplex_matlab54.html">Example: qpex2.m</tocitem>
+         <tocitem target="cplex_matlab55.html">Example: rates.m</tocitem>
+         <tocitem target="cplex_matlab56.html">Example: steel.m</tocitem>
+      </tocitem>
+      <tocitem target="cplex_matlab57.html">Example: cplexgui.m</tocitem>
+   </tocitem>
+   
+<tocitem image="$toolbox/matlab/icons/reficon.gif" target="main.html">Function Reference
+  <tocitem target="main.html">Overview</tocitem>
+  <tocitem target="annotated.html">Class List
+    <tocitem target="classCplex.html">Cplex</tocitem>
+    <tocitem target="classCpxInfo.html">CpxInfo</tocitem>
+  </tocitem>
+  <tocitem target="functions.html">Class Members</tocitem>
+  <tocitem target="files.html">Toolbox functions
+    <tocitem target="cplexbilp-m.html">cplexbilp</tocitem>
+    <tocitem target="cplexlp-m.html">cplexlp</tocitem>
+    <tocitem target="cplexlsqbilp-m.html">cplexlsqbilp</tocitem>
+    <tocitem target="cplexlsqlin-m.html">cplexlsqlin</tocitem>
+    <tocitem target="cplexlsqmilp-m.html">cplexlsqmilp</tocitem>
+    <tocitem target="cplexlsqmiqcp-m.html">cplexlsqmiqcp</tocitem>
+    <tocitem target="cplexlsqnonneglin-m.html">cplexlsqnonneglin</tocitem>
+    <tocitem target="cplexlsqnonnegmilp-m.html">cplexlsqnonnegmilp</tocitem>
+    <tocitem target="cplexlsqnonnegmiqcp-m.html">cplexlsqnonnegmiqcp</tocitem>
+    <tocitem target="cplexlsqnonnegqcp-m.html">cplexlsqnonnegqcp</tocitem>
+    <tocitem target="cplexlsqqcp-m.html">cplexlsqqcp</tocitem>
+    <tocitem target="cplexmilp-m.html">cplexmilp</tocitem>
+    <tocitem target="cplexmiqcp-m.html">cplexmiqcp</tocitem>
+    <tocitem target="cplexmiqp-m.html">cplexmiqp</tocitem>
+    <tocitem target="cplexoptimget-m.html">cplexoptimget</tocitem>
+    <tocitem target="cplexoptimset-m.html">cplexoptimset</tocitem>
+    <tocitem target="cplexqcp-m.html">cplexqcp</tocitem>
+    <tocitem target="cplexqp-m.html">cplexqp</tocitem>
+  </tocitem>
+</tocitem><tocitem image="$toolbox/matlab/icons/webicon.gif" target="http://www-947.ibm.com/support/entry/portal/Overview/Software/WebSphere/IBM_ILOG_CPLEX_Optimization_Studio">IBM ILOG CPLEX Web Site</tocitem></tocitem></toc>

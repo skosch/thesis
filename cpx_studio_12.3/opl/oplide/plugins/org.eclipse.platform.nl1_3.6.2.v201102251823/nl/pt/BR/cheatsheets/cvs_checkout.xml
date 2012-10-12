@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="Efetuar o Registro de Saída de um Projeto CVS">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      Esta folha de dicas mostra como explorar um repositório CVS e efetuar o registro de saída
+      de um projeto. Se você precisar de ajuda para qualquer etapa, clique no ícone (?) à
+      direita.
+    </description>
+  </intro>
+
+  <item
+      title="Abrir a Perspectiva Exploração de Repositórios CVS"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1h.htm">
+    <description>
+      No menu principal, selecione Janela &gt; Abrir Perspectiva &gt; Outro...,
+      em seguida, selecione a perspectiva <b>Exploração de Repositórios CVS</b>.
+    </description>
+    <command
+        serialization="org.eclipse.ui.perspectives.showPerspective(org.eclipse.ui.perspectives.showPerspective.perspectiveId=org.eclipse.team.cvs.ui.cvsPerspective)"
+        confirm="true" translate="" >
+    </command>
+  </item>
+
+  <item
+      title="Incluir um Repositório CVS"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-92.htm">
+    <description>
+      Na visualização Repositórios CVS, clique no botão da barra de ferramentas <b>Incluir
+      Repositório CVS</b>. Digite as informações sobre local e autenticação para
+      o repositório. Por exemplo, para o repositório <b>eclipse</b>, digite o
+      seguinte:<br/>
+      <br/>
+      Host: dev.eclipse.org<br/>
+      Caminho do repositório: /cvsroot/eclipse<br/>
+      Usuário: anonymous<br/>
+      Tipo de conexão: pserver<br/>
+      <br/>
+      Utilize os padrões para o restante, em seguida, clique em Concluir.
+    </description>
+  </item>
+
+  <item
+      title="Localizar o Projeto"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-1i.htm">
+    <description>
+      Expanda o nó <b>PRINCIPAL</b> sob o repositório recém-incluído e localize
+      o projeto que você deseja efetuar o registro de saída (por exemplo, para localizar o código-fonte da
+      visualização de folha de dicas, ele estará em org.eclipse.ui.cheatsheets)
+    </description>
+  </item>
+
+  <item
+      title="Efetuar o Registro de Saída do Projeto"
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm">
+    <description>
+      Clique com o botão direito do mouse no projeto que você deseja efetuar o registro de saída e selecione <b>Efetuar
+      o Registro de Saída</b>. Isso fará download do conteúdo mais recente do repositório para
+      sua área de trabalho.
+    </description>
+  </item>
+
+  <item
+      title="Visualizar a Área de Trabalho"
+      href="/org.eclipse.platform.doc.isv/guide/resInt_workspace.htm">
+    <description>
+      Para visualizar o projeto em sua área de trabalho, alterne para a perspectiva <b>Recurso</b>
+      através de Janela &gt; Abrir Perspectiva &gt; Recurso para visualizar o projeto na
+      visualização <b>Explorador de Projetos</b>. Agora é possível visualizar e trabalhar
+      com o conteúdo do projeto.
+    </description>
+  </item>
+
+</cheatsheet>

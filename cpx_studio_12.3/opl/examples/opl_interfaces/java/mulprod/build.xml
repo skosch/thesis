@@ -1,0 +1,6 @@
+<project name="mulprod" default="run">
+
+  <property name="example.classname" value="mulprod.Mulprod"/>
+  <import file="../build_common.xml"/>
+
+</project>

@@ -1,0 +1,49 @@
+# javafx-rt-windows-i586__V1.2.1_b28.jar
+SHA1-Digest-Manifest: NJO6IRnZizWr+AIFDnLWc90BwzY=
+
+# javafx-rt-windows-i586__V1.2.2_b5.jar
+SHA1-Digest-Manifest: 6do0Efqo8i7NAvVYZ6b/U3ZPYgE=
+
+# jogl-natives-windows-i586__V1.1.1a.jar
+SHA1-Digest-Manifest: DpR2pVidgnI/EISDCDWTh7CKHyE=
+SHA1-Digest-Manifest: /makispaP+1cPqT1Xx0ASDuMc3k=
+
+# javafx-rt-natives-windows-i586__V1.2.1_b28.jar
+SHA1-Digest-Manifest: pImEWhMxOFFKGmXjnnwynHXM7CU=
+
+# javafx-rt-natives-windows-i586__V1.2.2_b5.jar
+SHA1-Digest-Manifest: 9HL24tWCvSreKEll3BwJWdkI+Ek=
+
+# gluegen-rt-natives-windows-i586__V1.0b06a.jar
+SHA1-Digest-Manifest: bOJKwYthgnr872NcgEFH+NhFR5I=
+
+# jogl__V1.1.1a.jar
+SHA1-Digest-Manifest: IXfEDj4Oowy+OExU9tqNX/yEyG4=
+SHA1-Digest-Manifest: PjIv7SwT7j6GiBCsXQzIFX2mqXQ=
+
+# gluegen-rt__V1.0b06a.jar
+SHA1-Digest-Manifest: NFtC8B0eIsy6/C4RBDuy2o/ks6U=
+SHA1-Digest-Manifest: FczEBfUR1EXNH1T9qzDTgDSU5+0=
+
+#JOGL demo runtimes
+
+# jogl.all.jar
+SHA1-Digest-Manifest: PqsWZOzLJR+btL9Z8o8fkij/kQ4=
+
+# gluegen-rt.jar
+SHA1-Digest-Manifest: blhixqDG/fiTK/n6UCFjpLakhEA=
+
+# gluegen-rt-natives-windows-i586.jar
+SHA1-Digest-Manifest: BvDhRfhMJzpFqiz07T8eNyd0oxQ=
+
+# nativewindow.all.jar
+SHA1-Digest-Manifest: fn9HQw0B5l6r/Pr1Fecmpcdn2WE=
+
+# nativewindow-natives-windows-i586.jar
+SHA1-Digest-Manifest: qK678TXlv3+pzgVv99yhAXLbe+0=
+
+# jogl-natives-windows-i586.jar
+SHA1-Digest-Manifest: YGRIjHLZewXvlXva6hdd5fNZJec=
+
+# /applet-launcher.jar
+SHA1-Digest-Manifest: VSuZT2pgKojO7ezuoXEeiY0zAqg=

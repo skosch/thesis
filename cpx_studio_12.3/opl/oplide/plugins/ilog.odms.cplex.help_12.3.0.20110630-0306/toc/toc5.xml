@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="CPLEX examples" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2367.html">
+   <topic label="Callable Library examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2368.html"/>
+   <topic label="Callable Library examples using cplexx.h" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2369.html"/>
+   <topic label="C++ examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2370.html"/>
+   <topic label="Java examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2371.html"/>
+   <topic label="C#.NET examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2372.html"/>
+   <topic label="VB.NET examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2373.html"/>
+   <topic label="Python examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2374.html"/>
+   <topic label="MATLAB examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2375.html"/>
+   <topic label="Excel examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_examplescplex2376.html"/>
+</toc>

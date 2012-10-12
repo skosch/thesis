@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+    
+   <extension point="org.eclipse.help.toc">
+      <toc file="toc.xml" primary="true"/>
+      <toc file="toc/toc1.xml" primary="false"/>
+      <toc file="toc/toc2.xml" primary="false"/>
+      <toc file="toc/toc3.xml" primary="false"/>
+      <toc file="toc/toc4.xml" primary="false"/>
+      <toc file="toc/toc5.xml" primary="false"/>
+      <toc file="toc/toc6.xml" primary="false"/>
+      <toc file="toc/refcallablelibrary.xml" primary="false"/>
+      <toc file="toc/refcppcplex.xml" primary="false"/>
+      <toc file="toc/refjavacplex.xml" primary="false"/>
+      <toc file="toc/refdotnetcplex.xml" primary="false"/>
+      <toc file="toc/refpythoncplex.xml" primary="false"/>
+	  <toc file="toc/refmatlabcplex.xml"/>
+      <toc file="toc/toc12.xml" primary="false"/>
+      <toc file="toc/toc13.xml" primary="false"/>
+      <toc file="toc/toc14.xml" primary="false"/>
+   </extension>
+  
+  <extension point="org.eclipse.help.contexts">
+    <contexts file="contexts.xml"  />
+  </extension>
+
+  <extension point="org.eclipse.help.index">
+	    <index file="index.xml"  />
+	    <index file="index-refcallablelibrary.xml" />
+	    <index file="index-refcppcplex.xml" />
+	    <index file="index-refdotnetcplex.xml" />
+	    <index file="index-refjavacplex.xml" />
+	    <index file="index-refpythoncplex.xml" />
+		<index file="index-refmatlabcplex.xml" />
+  </extension>
+
+</plugin>

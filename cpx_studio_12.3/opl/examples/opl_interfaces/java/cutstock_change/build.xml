@@ -1,0 +1,6 @@
+<project name="cutstock_change" default="run">
+
+  <property name="example.classname" value="cutstock_change.Cutstock_change"/>
+  <import file="../build_common.xml"/>
+
+</project>

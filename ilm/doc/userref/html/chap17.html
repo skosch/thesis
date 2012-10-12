@@ -1,0 +1,89 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:18">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Installing an Evaluation Key  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="157155">
+<h3 class="Header3SplitLeft">Installing an Evaluation Key</h3>
+</a><p class="Body"><a name="175909">
+This section describes the steps required to install an evaluation key. An evaluation key lets you use a product on any machine until a given expiration date. For instance:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">EVAL Views 4.000 01-May-2001 SZU3C1SM45C2 any , license: 186
+</span></pre></td></tr></table><p><p class="Body"><a name="175934">
+The date-May 1, 2001, in the example-is the expiration date for the evaluation.</a></p>
+<a name="157162">
+<h4 class="Header4">Step 1. Create or Edit the License File</h4>
+</a><p class="Body"><a name="180299">
+Unless it already exists, save the whole text you received as the license file.</a></p>
+<p class="Body"><a name="180398">
+If the license file already exists, edit it using your favorite editor. This file must already contain a <code class="Code">LICENSE</code> line identical to the one you received. If it is not the case, contact your ILOG sales representative.</a></p>
+<p class="Body"><a name="180397">
+Append the new key or keys to the end of the file. If you are replacing an old key with a new one for the same product, delete or comment out the line with the old key; to comment out a line, put a <code class="Code">"#"</code> in the first column.</a></p>
+<a name="157166">
+<h4 class="Header4">Step 2. Set Up the Environment</h4>
+</a><p class="Body"><a name="157170">
+To use ILOG products, the shell variable <code class="Code">ILOG_LICENSE_FILE</code> must be set to the absolute path of the license file. To do this, execute the following shell commands:</a></p>
+<ul class="BulletedListP"><p><li><a name="157171">If you're using <code class="Code">sh</code> or one of its derivatives, such as <code class="Code">ksh</code> or <code class="Code">bash</code>:
+</a></ul><pre><p class="Preformatted"><a name="157172">$ ILOG_LICENSE_FILE=/usr/ilog/ilm/access.ilm
+$ export ILOG_LICENSE_FILE
+</a></p></pre><ul class="BulletedListP"><p><li><a name="157173">If you're using <code class="Code">csh</code> or one of its derivatives, such as <code class="Code">tcsh</code>:
+</a></ul><pre><p class="Preformatted"><a name="157174">$ setenv ILOG_LICENSE_FILE /usr/ilog/ilm/access.ilm
+</a></p></pre><p class="Body"><a name="157175">
+This can be automated by putting these commands in your shell startup file. This should be done for every ILOG user at your site.</a></p>
+<a name="157179">
+<h4 class="Header4">Step 3. Check the License File</h4>
+</a><p class="Body"><a name="157180">
+To make sure that the license file has no syntax errors and that the variable <code class="Code">ILOG_LICENSE_FILE</code> is properly set, type:</a></p>
+<pre><p class="Preformatted"><a name="157181">$ /usr/ilog/ilm/ilmcheck
+</a></p></pre><p class="Body"><a name="157182">
+This command should issue the message:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Checking license file "/usr/ilog/ilm/access.ilm"
+     License file "/usr/ilog/ilm/access.ilm" is correct
+</span></pre></td></tr></table><p><p class="Body"><a name="175364">
+Otherwise, something is wrong with the license file or with the setting of <span class="Default">ILOG_LICENSE_FILE</span>. Please read <a href="chap320.html#148899"><span class="Default">"Troubleshooting" </span></a> for help.</a></p>
+<a name="160230">
+<h4 class="Header4">Where to Go from Here?</h4>
+</a><p class="Body"><a name="160234">
+If the previous steps have been successfully carried out, you can start using your ILOG product. Please refer to the product document set for further instructions.</a></p>
+<p class="Body"><a name="160254">
+Remember that every ILOG user at your site should set the <code class="Code">ILOG_LICENSE_FILE</code> variable as explained in Step 2.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap16.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Where to Go from Here?  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap18.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: Installing a Token Key  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

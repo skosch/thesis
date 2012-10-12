@@ -1,0 +1,290 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 13:21:07">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>ilm26bookTOC.html</title>
+<script language="JavaScript" src="../../support/menucode.js"></script>
+<script language="JavaScript">
+<!--
+
+/******************************************************************************
+* User-configurable options.                                                  *
+******************************************************************************/
+
+// Menu table width, either a pixel-value (number) or a percentage value.
+var MTMTableWidth = "100%";
+
+// Name of the frame where the menu is to appear.
+var MTMenuFrame = "ManualContents";
+
+// variable for determining whether a sub-menu always gets a plus-sign
+// regardless of whether it holds another sub-menu or not
+var MTMSubsGetPlus = false;
+
+// variable that defines whether the menu emulates the behaviour of
+// Windows Explorer
+var MTMEmulateWE = true;
+
+// Directory of menu images/icons
+var MTMenuImageDirectory = "../../icons/";
+
+// Variables for controlling colors in the menu document.
+// Regular BODY atttributes as in HTML documents.
+var MTMBGColor = "#cccccc";
+var MTMBackground = "grayback.gif";
+var MTMTextColor = "#000080";
+
+// color for all menu items
+var MTMLinkColor = "black";
+
+// Hover color, when the mouse is over a menu link
+var MTMAhoverColor = "white";
+
+// Foreground color for the tracking & clicked submenu item
+var MTMTrackColor ="#000080";
+var MTMSubExpandColor = "white";
+var MTMSubClosedColor = "white";
+
+// All options regarding the root text and it's icon
+var MTMRootIcon = "book.gif";
+var MTMenuText = "Table of Contents";
+var MTMRootColor = "#000080";
+var MTMRootFont = "Verdana, Helvetica, Arial, sans-serif";
+var MTMRootCSSize = "150%";
+var MTMRootFontSize = "3";
+
+// Font for menu items.
+var MTMenuFont = "Verdana, Helvetica, Arial, sans-serif";
+var MTMenuCSSize = "84%";
+var MTMenuFontSize = "1";
+
+// Variables for style sheet usage
+// 'true' means use a linked style sheet.
+var MTMLinkedSS = false;
+var MTMSSHREF = "style/menu.css";
+
+// Whether you want an open sub-menu to close automagically
+// when another sub-menu is opened.  'true' means auto-close
+var MTMSubsAutoClose = true;
+
+// This variable controls how long it will take for the menu
+// to appear if the tracking code in the content frame has
+// failed to display the menu. Number if in tenths of a second
+// (1/10) so 10 means "wait 1 second".
+var MTMTimeOut = 25;
+
+/******************************************************************************
+* User-configurable list of icons.                                            *
+******************************************************************************/
+
+var MTMIconList = null;
+MTMIconList = new IconList();
+MTMIconList.addIcon(new MTMIcon("menu_link_external.gif", "http://", "pre"));
+MTMIconList.addIcon(new MTMIcon("menu_link_pdf.gif", ".pdf", "post"));
+
+/******************************************************************************
+* User-configurable menu.                                                     *
+******************************************************************************/
+
+// Main menu.
+
+var menu = null;
+menu = new MTMenu();
+menu.MTMAddItem(new MTMenuItem("Chapter 1	 Getting Started Quickly	 ", "chap1.html", "ManualBody"));
+var bmenu1 = null;
+bmenu1 = new MTMenu();
+
+
+bmenu1.MTMAddItem(new MTMenuItem("	 Installing Access Keys on Unix	", "chap12.html", "ManualBody"));
+
+var cmenu1 = null;
+cmenu1 = new MTMenu();
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Installation Directory	", "chap13.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Access Keys	", "chap14.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 License File	", "chap15.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Where to Go from Here?	", "chap16.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Installing an Evaluation Key	", "chap17.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Installing a Token Key	", "chap18.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Installing a Node Key	", "chap19.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Installing a Node Runtime Key	", "chap110.html", "ManualBody"));
+
+
+
+cmenu1.MTMAddItem(new MTMenuItem("	 Installing a Site Key	", "chap111.html", "ManualBody"));
+
+
+bmenu1.items[0].MTMakeSubmenu(cmenu1); 
+
+bmenu1.MTMAddItem(new MTMenuItem("	 Installing Access Keys on Windows	", "chap2.html", "ManualBody"));
+
+var cmenu2 = null;
+cmenu2 = new MTMenu();
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installation Directory	", "chap22.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Access Keys	", "chap23.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 License File	", "chap24.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Where to Go from Here?	", "chap25.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installing an Evaluation Key	", "chap26.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installing a Token Key	", "chap27.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installing a Node Key	", "chap28.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installing a Node Runtime Key	", "chap29.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installing a Site Key	", "chap210.html", "ManualBody"));
+
+
+
+cmenu2.MTMAddItem(new MTMenuItem("	 Installing a Runtime Key	", "chap211.html", "ManualBody"));
+
+bmenu1.items[1].MTMakeSubmenu(cmenu2); 
+menu.items[0].MTMakeSubmenu(bmenu1); 
+
+menu.MTMAddItem(new MTMenuItem("Chapter 2	 ILM in Depth	 ", "chap3.html", "ManualBody"));
+var bmenu2 = null;
+bmenu2 = new MTMenu();
+
+
+bmenu2.MTMAddItem(new MTMenuItem("	 Managing License Files	", "chap32.html", "ManualBody"));
+
+var cmenu3 = null;
+cmenu3 = new MTMenu();
+
+cmenu3.MTMAddItem(new MTMenuItem("	 The ILOG_LICENSE_FILE Environment Variable	", "chap33.html", "ManualBody"));
+
+
+
+cmenu3.MTMAddItem(new MTMenuItem("	 License File Syntax	", "chap34.html", "ManualBody"));
+
+
+
+cmenu3.MTMAddItem(new MTMenuItem("	 Token Counting	", "chap35.html", "ManualBody"));
+
+
+
+cmenu3.MTMAddItem(new MTMenuItem("	 Adding New Keys to a License File	", "chap36.html", "ManualBody"));
+
+
+bmenu2.items[0].MTMakeSubmenu(cmenu3); 
+
+bmenu2.MTMAddItem(new MTMenuItem("	 ILM Commands on Unix	", "chap37.html", "ManualBody"));
+
+var cmenu4 = null;
+cmenu4 = new MTMenu();
+
+cmenu4.MTMAddItem(new MTMenuItem("	 Summary of ILM Commands	", "chap38.html", "ManualBody"));
+
+
+
+cmenu4.MTMAddItem(new MTMenuItem("	 The ilmcheck Command	", "chap39.html", "ManualBody"));
+
+
+
+cmenu4.MTMAddItem(new MTMenuItem("	 The ihostid Command	", "chap310.html", "ManualBody"));
+
+
+
+cmenu4.MTMAddItem(new MTMenuItem("	 The ilmd Command	", "chap311.html", "ManualBody"));
+
+
+
+cmenu4.MTMAddItem(new MTMenuItem("	 The ilmlist Command	", "chap312.html", "ManualBody"));
+
+
+bmenu2.items[1].MTMakeSubmenu(cmenu4); 
+
+bmenu2.MTMAddItem(new MTMenuItem("	 ILM Commands on Windows	", "chap313.html", "ManualBody"));
+
+var cmenu5 = null;
+cmenu5 = new MTMenu();
+
+cmenu5.MTMAddItem(new MTMenuItem("	 Summary of ILM Commands	", "chap314.html", "ManualBody"));
+
+
+
+cmenu5.MTMAddItem(new MTMenuItem("	 The ilmcheck Command 	", "chap315.html", "ManualBody"));
+
+
+
+cmenu5.MTMAddItem(new MTMenuItem("	 The ihostid Command 	", "chap316.html", "ManualBody"));
+
+
+
+cmenu5.MTMAddItem(new MTMenuItem("	 The ilmd Command	", "chap317.html", "ManualBody"));
+
+
+
+cmenu5.MTMAddItem(new MTMenuItem("	 The ilmlist Command	", "chap318.html", "ManualBody"));
+
+
+
+cmenu5.MTMAddItem(new MTMenuItem("	 The ilmserv Command	", "chap319.html", "ManualBody"));
+
+
+bmenu2.items[2].MTMakeSubmenu(cmenu5); 
+
+bmenu2.MTMAddItem(new MTMenuItem("	 Troubleshooting	", "chap320.html", "ManualBody"));
+
+var cmenu6 = null;
+cmenu6 = new MTMenu();
+
+cmenu6.MTMAddItem(new MTMenuItem("	 The ilmcheck Command	", "chap321.html", "ManualBody"));
+
+
+
+cmenu6.MTMAddItem(new MTMenuItem("	 Error messages	", "chap322.html", "ManualBody"));
+
+bmenu2.items[3].MTMakeSubmenu(cmenu6); 
+menu.items[1].MTMakeSubmenu(bmenu2); 
+// -->
+</script>
+</head>
+<body onload="MTMStartMenu();" bgcolor="#dddddd">
+</body>
+</html>

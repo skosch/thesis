@@ -1,0 +1,83 @@
+## ----------------------------------------------------------- -*- Makefile -*-
+##
+## File: lib/Makefile.drv
+##
+## ----------------------------------------------------------------------------
+## 
+## Licensed Materials - Property of IBM
+## 5724-Y29
+## (C) Copyright IBM Corporation 2009, 2010. All Rights Reserved.
+## (C) Copyright ILOG 1992, 2009. All Rights Reserved.
+##
+## Note to U.S. Government Users Restricted Rights: 
+## Use, duplication or disclosure restricted by GSA ADP Schedule 
+## Contract with IBM Corp.
+##
+## ----------------------------------------------------------------------------
+##
+## DB Link All Unix Ports Common Makefile for Dynamically loaded drivers
+## Practically users do not need to change anything in this file.
+## ----------------------------------------------------------------------------
+
+## ----------------------------------------------------------------------------
+## Possible drivers to generate
+## ----------------------------------------------------------------------------
+
+SHLIBS=libdbdb2.$(SHEXT) libdbdb29x.$(SHEXT) \
+	libdbinf9.$(SHEXT) \
+	libdbora9.$(SHEXT) libdbora10.$(SHEXT) libdbora11.$(SHEXT)\
+	libctsyb.$(SHEXT)
+
+all: $(SHLIBS)
+
+## ----------------------------------------------------------------------------
+## IBM DB2
+## ----------------------------------------------------------------------------
+
+libdbdb2.$(SHEXT): $(ODIR)libdbdb2.a
+	ar x $(ODIR)libdbdb2.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libdbdb2.a` $(DB2LIBS)
+	rm -f `ar t $(ODIR)libdbdb2.a`
+
+libdbdb29x.$(SHEXT): $(ODIR)libdbdb29x.a
+	ar x $(ODIR)libdbdb29x.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libdbdb29x.a` $(DB29XLIBS)
+	rm -f `ar t $(ODIR)libdbdb29x.a`
+
+## ----------------------------------------------------------------------------
+## Informix
+## ----------------------------------------------------------------------------
+
+libdbinf9.$(SHEXT): $(ODIR)libdbinf9.a
+	ar x $(ODIR)libdbinf9.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libdbinf9.a` $(INF9LIBS)
+	rm -f `ar t $(ODIR)libdbinf9.a`
+
+## ----------------------------------------------------------------------------
+## Oracle
+## ----------------------------------------------------------------------------
+
+libdbora9.$(SHEXT): $(ODIR)libdbora9.a
+	ar x $(ODIR)libdbora9.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libdbora9.a` $(ORA9LIBS)
+	rm -f `ar t $(ODIR)libdbora9.a`
+
+libdbora10.$(SHEXT): $(ODIR)libdbora10.a
+	ar x $(ODIR)libdbora10.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libdbora10.a` $(ORA10LIBS)
+	rm -f `ar t $(ODIR)libdbora10.a`
+
+libdbora11.$(SHEXT): $(ODIR)libdbora11.a
+	ar x $(ODIR)libdbora11.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libdbora11.a` $(ORA11LIBS)
+	rm -f  `ar t $(ODIR)libdbora11.a`
+
+## ----------------------------------------------------------------------------
+## Sybase
+## ----------------------------------------------------------------------------
+
+libctsyb.$(SHEXT): $(ODIR)libctsyb.a
+	ar x $(ODIR)libctsyb.a
+	$(LD) $(SHFLAGS) `ar t $(ODIR)libctsyb.a` $(SYBLIBS)
+	rm -f `ar t $(ODIR)libctsyb.a`
+

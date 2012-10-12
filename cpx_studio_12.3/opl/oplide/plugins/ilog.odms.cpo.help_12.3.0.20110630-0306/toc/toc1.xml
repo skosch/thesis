@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Getting Started with CP Optimizer" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2519.html">
+   <topic label="Welcome to Getting Started with CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2520.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2521.html"/>
+      <topic label="About this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2522.html"/>
+      <topic label="Prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2523.html"/>
+      <topic label="Related documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2524.html"/>
+      <topic label="Installing CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2525.html"/>
+      <topic label="Location of examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2526.html"/>
+      <topic label="Typographic and naming conventions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2527.html"/>
+   </topic>
+   <topic label="Constraint programming with CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2528.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2529.html"/>
+      <topic label="The three-stage method" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2530.html"/>
+      <topic label="Describe the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2531.html"/>
+      <topic label="Model the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2532.html">
+         <topic label="Decision variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2533.html"/>
+         <topic label="Constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2534.html"/>
+      </topic>
+      <topic label="Solve the problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2535.html">
+         <topic label="Solution" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2536.html"/>
+         <topic label="Search space" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2537.html"/>
+         <topic label="Initial constraint propagation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2538.html"/>
+         <topic label="Constructive search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2539.html"/>
+         <topic label="Constraint propagation during search" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2540.html"/>
+      </topic>
+      <topic label="Testing your installation with a simple application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2541.html"/>
+      <topic label="Scheduling in CP Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2542.html"/>
+      <topic label="Building blocks of scheduling models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2543.html">
+         <topic label="Overview of scheduling" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2544.html"/>
+         <topic label="Modeling time intervals in scheduling problems using interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2545.html"/>
+         <topic label="Modeling constraints on interval variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2546.html"/>
+      </topic>
+      <topic label="Search space for scheduling models" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2547.html"/>
+      <topic label="Testing your installation with a scheduling problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2548.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2549.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2550.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2551.html"/>
+      </topic>
+   </topic>
+   <topic label="Modeling and solving a simple problem with integer variables: map coloring" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2552.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2553.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2554.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2555.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2556.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2557.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2558.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2559.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2560.html"/>
+   </topic>
+   <topic label="Using arrays and objectives: warehouse location" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2561.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2562.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2563.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2564.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2565.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2566.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2567.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2568.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2569.html"/>
+   </topic>
+   <topic label="Using specialized constraints and tuples: scheduling teams" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2570.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2571.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2572.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2573.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2574.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2575.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2576.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2577.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2578.html"/>
+   </topic>
+   <topic label="Using expressions on interval variables: house building with earliness and tardiness costs" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2579.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2580.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2581.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2582.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2583.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2584.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2585.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2586.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2587.html"/>
+   </topic>
+   <topic label="Using no overlap constraints on interval variables: house building with workers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2588.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2589.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2590.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2591.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2592.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2593.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2594.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2595.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2596.html"/>
+   </topic>
+   <topic label="Using interval variables with intensities: house building with resource calendars" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2597.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2598.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2599.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2600.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2601.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2602.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2603.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2604.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2605.html"/>
+   </topic>
+   <topic label="Using cumulative functions: house building with budget and resource pools" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2606.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2607.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2608.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2609.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2610.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2611.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2612.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2613.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2614.html"/>
+   </topic>
+   <topic label="Using alternatives of interval variables: house building with worker allocation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2615.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2616.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2617.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2618.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2619.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2620.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2621.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2622.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2623.html"/>
+   </topic>
+   <topic label="Using state functions: house building with state incompatibilities" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2624.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2625.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2626.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2627.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2628.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2629.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2630.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2631.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2632.html"/>
+   </topic>
+   <topic label="Using search parameters: team building" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2633.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2634.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2635.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2636.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2637.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2638.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2639.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2640.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2641.html"/>
+   </topic>
+   <topic label="Using search phases on integer variables: steel mill" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2642.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2643.html"/>
+      <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2644.html"/>
+      <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2645.html"/>
+      <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2646.html"/>
+      <topic label="Review exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2647.html">
+         <topic label="Exercises" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2648.html"/>
+         <topic label="Suggested answers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2649.html"/>
+      </topic>
+      <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/gscpoptimizer2650.html"/>
+   </topic>
+</toc>

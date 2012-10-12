@@ -1,0 +1,88 @@
+## ----------------------------------------------------------- -*- Makefile -*-
+##
+## File: lib/x86_sles10_4.1/shared_pic/Makefile.drv
+##
+## ----------------------------------------------------------------------------
+## 
+## Licensed Materials - Property of IBM
+## 5724-Y29
+## (C) Copyright IBM Corporation 2009, 2010. All Rights Reserved.
+## (C) Copyright ILOG 1992, 2009. All Rights Reserved.
+##
+## Note to U.S. Government Users Restricted Rights: 
+## Use, duplication or disclosure restricted by GSA ADP Schedule 
+## Contract with IBM Corp.
+##
+## ----------------------------------------------------------------------------
+##
+## ----------------------------------------------------------------------------
+
+ILDMODDIR=shared_pic
+
+SHFLAGS=-shared -o $@ -L$(ILDHOME)/lib/$(SYSTEM)/$(ILDMODDIR) -ldbkernel \
+	-L$(IL_HOME)/lib/$(SYSTEM)/$(ILDMODDIR) -lilog \
+	-lnsl -lm -lstdc++ -ldl
+SHEXT=so
+
+# Share object files with static_pic mode :
+ODIR=../static_pic/
+
+# -----------------------------------------------------------------------------
+# RDBMS shared objects
+# -----------------------------------------------------------------------------
+
+## --------------------
+## IBM DB2
+## --------------------
+
+DB2LIBS=-L$$DB2DIR/lib32 -ldb2
+
+DB29XLIBS=-L$$DB2DIR/lib32 -ldb2
+
+## --------------------
+## Informix
+## --------------------
+
+INF9LIBS=-L$$INFORMIXDIR/lib/esql $$INFORMIXDIR/lib/esql/checkapi.o \
+       -lifsql $$INFORMIXDIR/lib/netstub.a -L$$INFORMIXDIR/lib \
+	-lifasf -lifgen -lifos -lifgls -lifglx -lcrypt
+
+## --------------------
+## Oracle
+## --------------------
+
+ORA9LIBS=-L$$ORACLE_HOME/lib32 \
+	-lclntsh `cat $$ORACLE_HOME/lib32/sysliblist`
+
+ORA10LIBS=-L$$ORACLE_HOME/lib32 \
+	-lclntsh `cat $$ORACLE_HOME/lib32/sysliblist`
+
+ORA11LIBS=-L$$ORACLE_HOME/lib32 \
+	-lclntsh `cat $$ORACLE_HOME/lib32/sysliblist`
+
+## --------------------
+## Sybase
+## --------------------
+
+SYB12LIBS=-L$$SYBASE/$$SYBASE_OCS/lib -lct -lcs -lsybtcl -lcomn -lintl
+
+## For Sybase 15 use the following:
+SYB15LIBS=-L$$SYBASE/$$SYBASE_OCS/lib -lsybct -lsybtcl -lsybcs -lsybcomn \
+	-lsybintl -lsybunic -Wl,-Bdynamic
+
+SYBLIBS=$(SYB12LIBS)
+
+# -----------------------------------------------------------------------------
+# Targets
+# -----------------------------------------------------------------------------
+
+ALL=libdbdb2.so libdbdb29x.so \
+	libctsyb.so \
+	libdbinf9.so \
+	libdbora9.so libdbora10.so libdbora11.so
+
+include ../Makefile.3_2
+
+include ../../Makefile.drv
+
+lnxinfx91.o: $(ODIR)/libdbinf9.a

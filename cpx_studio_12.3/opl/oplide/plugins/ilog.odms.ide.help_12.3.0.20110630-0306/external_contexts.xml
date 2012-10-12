@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<contexts>
+   <context id="opl_message_catalog">
+      <description>The OPL message catalog</description>
+      <topic href="html/refcppopl/html/classes/IloOplMessageCatalog.html" label="OPL message catalog"/>
+   </context>
+</contexts>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<introContent>
+  <!-- Extension to the SDK Tutorials Page. -->
+  <extensionContent id="org.eclipse.team" name="Team/CVS" alt-style="css/tutorials.properties" style="css/tutorials.css" path="tutorials/@">
+    <group label="Team/CVS" id="team" style-id="content-group">
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.checkout" label="Ein CVS-Projekt auschecken" id="cvs_checkout" style-id="content-link">
+        <text>Informationen zum Verbinden eines CVS-Repository und zum Auschecken eines Projekts.</text>
+      </link>
+      <link url="http://org.eclipse.ui.intro/showStandby?partId=org.eclipse.platform.cheatsheet&amp;input=org.eclipse.platform.cvs.merge" label="CVS-Verzweigungen mischen" id="cvs_merge" style-id="content-link">
+        <text>Schritte zum Mischen von Änderungen aus einer CVS-Verzweigung in eine andere.</text>
+      </link>
+    </group>
+  </extensionContent>
+</introContent>

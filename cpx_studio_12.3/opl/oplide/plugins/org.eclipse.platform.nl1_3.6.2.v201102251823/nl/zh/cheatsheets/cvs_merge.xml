@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<cheatsheet title="合并 CVS 分支">
+
+  <intro 
+      href="/org.eclipse.platform.doc.user/reference/ref-cheatsheets.htm">
+    <description>
+      此备忘单介绍将一个 CVS 分支的更改合并到另一 CVS 分支或 HEAD 节点的步骤。如果在任何一步需要帮助，请单击右边的（?）图标。
+    </description>
+  </intro>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="确定分支和版本信息">
+    <description>
+      首先确定要合并的<b>两个分支</b>、分支内容的<b>版本</b>以及<b>目标</b>分支（即合并结果所在的分支）。一旦确定了这些信息，就可以继续下一步。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-96.htm"
+      title="检出项目">
+    <description>
+      合并前，必须<b>检出</b>要合并的项目，并放入工作空间。可通过导入向导或通过从“CVS 存储库研究”透视图添加存储库来完成以上任务，您还可以单击（?）按钮以获取帮助。
+</description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-103.htm"
+      title="将目标装入工作空间中">
+    <description>
+      在导航器中右键单击项目，然后选择“替换为”&gt;“另一分支或版本”。选择目标分支。此操作会将分支的最新内容装入工作空间。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="合并详细信息">
+    <description>
+      再次在导航器中右键单击项目，然后选择<b>小组</b> &gt; <b>合并</b> 并完成向导中的步骤。在此向导中您指定合并详细信息。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-100b.htm"
+      title="使用合并编辑器">
+    <description>
+      在“合并”编辑器中，手工合并更改。此步骤会将需要的更改装入到工作空间中。一旦您合并了所有更改且对结果感到满意，就可以继续下一步。
+    </description>
+  </item>
+
+  <item
+      href="/org.eclipse.platform.doc.user/tasks/tasks-114.htm"
+      title="提交更改">
+    <description>
+      右键单击项目，并选择<b>小组</b> &gt; <b>与存储库同步</b>，然后将所有更改提交至存储库。此步骤最后确定将这些更改从工作空间传送至 CVS 存储库，并最后确定合并。
+    </description>
+  </item>
+
+</cheatsheet>

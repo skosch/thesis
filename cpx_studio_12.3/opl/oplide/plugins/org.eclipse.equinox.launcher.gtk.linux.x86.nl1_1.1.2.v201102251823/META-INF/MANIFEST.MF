@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-Name: %nlFragmentName
+Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.linux.x86.nl1 ;singleton=true
+Bundle-Version: 1.1.2.v201102251823
+Bundle-ClassPath: nl1.jar
+Bundle-Vendor: %nlProviderName
+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.0.0,1.2.0)"
+Bundle-Localization: nl_fragment
+Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86))

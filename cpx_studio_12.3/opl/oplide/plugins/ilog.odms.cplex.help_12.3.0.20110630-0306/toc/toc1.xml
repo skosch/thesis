@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<toc label="Getting Started with CPLEX" topic="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1279.html">
+   <topic label="Introducing CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1280.html">
+      <topic label="What is CPLEX?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1281.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1282.html"/>
+         <topic label="CPLEX components" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1283.html"/>
+         <topic label="Optimizer options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1284.html"/>
+      </topic>
+      <topic label="Parallel optimizers" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1285.html"/>
+      <topic label="Data entry options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1286.html"/>
+      <topic label="What CPLEX is not" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1287.html"/>
+      <topic label="What you need to know" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1288.html"/>
+      <topic label="What’s in this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1289.html"/>
+      <topic label="Notation in this manual" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1290.html"/>
+      <topic label="Related documentation" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1291.html"/>
+   </topic>
+   <topic label="Setting up CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1292.html">
+      <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1293.html"/>
+      <topic label="Setting up CPLEX on Windows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1294.html"/>
+      <topic label="Setting up CPLEX for on GNU/Linux" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1295.html"/>
+      <topic label="Setting up Eclipse for the Java API of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1296.html"/>
+      <topic label="Setting up the Python API of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1297.html"/>
+      <topic label="Directory structure of CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1298.html"/>
+      <topic label="Using the Component Libraries" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1299.html"/>
+   </topic>
+   <topic label="Tutorials" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1300.html">
+      <topic label="Solving an LP with CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1301.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1302.html"/>
+         <topic label="Problem statement" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1303.html"/>
+         <topic label="Using the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1304.html"/>
+         <topic label="Using Concert Technology in C++" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1305.html"/>
+         <topic label="Using Concert Technology in Java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1306.html"/>
+         <topic label="Using Concert Technology in .NET" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1307.html"/>
+         <topic label="Using the Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1308.html"/>
+         <topic label="Using the Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1309.html"/>
+      </topic>
+      <topic label="Interactive Optimizer tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1310.html">
+         <topic label="Starting CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1311.html"/>
+         <topic label="Using help" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1312.html"/>
+         <topic label="Entering a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1313.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1314.html"/>
+            <topic label="Entering the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1315.html"/>
+            <topic label="Using the LP format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1316.html"/>
+            <topic label="Entering data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1317.html"/>
+         </topic>
+         <topic label="Displaying a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1318.html">
+            <topic label="Verifying a problem with the display command" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1319.html"/>
+            <topic label="Displaying problem statistics" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1320.html"/>
+            <topic label="Specifying item ranges" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1321.html"/>
+            <topic label="Displaying variable or constraint names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1322.html"/>
+            <topic label="Ordering variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1323.html"/>
+            <topic label="Displaying constraints" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1324.html"/>
+            <topic label="Displaying the objective function" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1325.html"/>
+            <topic label="Displaying bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1326.html"/>
+            <topic label="Displaying a histogram of nonzero counts" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1327.html"/>
+         </topic>
+         <topic label="Solving a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1328.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1329.html"/>
+            <topic label="Solving the example" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1330.html"/>
+            <topic label="Solution options" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1331.html"/>
+            <topic label="Displaying post-solution information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1332.html"/>
+         </topic>
+         <topic label="Performing sensitivity analysis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1333.html"/>
+         <topic label="Writing problem and solution files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1334.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1335.html"/>
+            <topic label="Selecting a write file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1336.html"/>
+            <topic label="Writing LP files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1337.html"/>
+            <topic label="Writing basis files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1338.html"/>
+            <topic label="Using path names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1339.html"/>
+         </topic>
+         <topic label="Reading problem files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1340.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1341.html"/>
+            <topic label="Selecting a read file format" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1342.html"/>
+            <topic label="Reading LP files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1343.html"/>
+            <topic label="Using file extensions" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1344.html"/>
+            <topic label="Reading MPS files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1345.html"/>
+            <topic label="Reading basis files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1346.html"/>
+         </topic>
+         <topic label="Setting CPLEX parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1347.html"/>
+         <topic label="Adding constraints and bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1348.html"/>
+         <topic label="Changing a problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1349.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1350.html"/>
+            <topic label="What can be changed?" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1351.html"/>
+            <topic label="Changing constraint or variable names" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1352.html"/>
+            <topic label="Changing sense" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1353.html"/>
+            <topic label="Changing bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1354.html"/>
+            <topic label="Removing bounds" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1355.html"/>
+            <topic label="Changing coefficients of variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1356.html"/>
+            <topic label="Objective and RHS coefficients" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1357.html"/>
+            <topic label="Deleting entire constraints or variables" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1358.html"/>
+            <topic label="Changing small values to zero" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1359.html"/>
+         </topic>
+         <topic label="Executing operating system commands" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1360.html"/>
+         <topic label="Quitting CPLEX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1361.html"/>
+         <topic label="Advanced features of the Interactive Optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1362.html"/>
+      </topic>
+      <topic label="Concert Technology tutorial for C++ users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1363.html">
+         <topic label="The design of CPLEX in Concert Technology C++ applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1364.html"/>
+         <topic label="Compiling CPLEX in Concert Technology C++ applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1365.html">
+            <topic label="Testing your installation on UNIX" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1366.html"/>
+            <topic label="Testing your installation on Windows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1367.html"/>
+            <topic label="In case of problems" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1368.html"/>
+         </topic>
+         <topic label="The anatomy of an Concert Technology C++ application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1369.html">
+            <topic label="Constructing the environment: IloEnv" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1370.html"/>
+            <topic label="Creating a model: IloModel" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1371.html"/>
+            <topic label="Solving the model: IloCplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1372.html"/>
+            <topic label="Querying results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1373.html"/>
+            <topic label="Handling errors" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1374.html"/>
+         </topic>
+         <topic label="Building and solving a small LP model in C++" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1375.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1376.html"/>
+            <topic label="Modeling by rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1377.html"/>
+            <topic label="Modeling by columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1378.html"/>
+            <topic label="Modeling by nonzero elements" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1379.html"/>
+         </topic>
+         <topic label="Writing and reading models and files" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1380.html"/>
+         <topic label="Selecting an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1381.html"/>
+         <topic label="Reading a problem from a file: example ilolpex2.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1382.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1383.html"/>
+            <topic label="Reading the model from a file" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1384.html"/>
+            <topic label="Selecting the optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1385.html"/>
+            <topic label="Accessing basis information" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1386.html"/>
+            <topic label="Querying quality measures" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1387.html"/>
+         </topic>
+         <topic label="Modifying and re-optimizing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1388.html"/>
+         <topic label="Modifying an optimization problem: example ilolpex3.cpp" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1389.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1390.html"/>
+            <topic label="Setting CPLEX parameters" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1391.html"/>
+            <topic label="Modifying an optimization problem" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1392.html"/>
+            <topic label="Starting from a previous basis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1393.html"/>
+            <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1394.html"/>
+         </topic>
+      </topic>
+      <topic label="Concert Technology tutorial for Java users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1395.html">
+         <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1396.html"/>
+         <topic label="Compiling CPLEX in Concert Technology Java applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1397.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1398.html"/>
+            <topic label="Adapting build procedures to your platform" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1399.html"/>
+            <topic label="In case problems arise" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1400.html"/>
+         </topic>
+         <topic label="The design of CPLEX in Concert Technology Java applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1401.html"/>
+         <topic label="The anatomy of a Concert Technology Java application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1402.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1403.html"/>
+            <topic label="Create the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1404.html"/>
+            <topic label="Solve the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1405.html"/>
+            <topic label="Query the results" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1406.html"/>
+         </topic>
+         <topic label="Building and solving a small LP model in Java" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1407.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1408.html"/>
+            <topic label="Modeling by rows" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1409.html"/>
+            <topic label="Modeling by columns" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1410.html"/>
+            <topic label="Modeling by nonzeros" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1411.html"/>
+         </topic>
+      </topic>
+      <topic label="Concert Technology tutorial for .NET users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1412.html">
+         <topic label="Presenting the tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1413.html"/>
+         <topic label="What you need to know: prerequisites" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1414.html"/>
+         <topic label="What you will be doing" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1415.html"/>
+         <topic label="Describe" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1416.html"/>
+         <topic label="Model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1417.html"/>
+         <topic label="Solve" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1418.html"/>
+         <topic label="Complete program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1419.html"/>
+      </topic>
+      <topic label="Callable Library tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1420.html">
+         <topic label="The design of the CPLEX Callable Library" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1421.html"/>
+         <topic label="Compiling and linking Callable Library applications" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1422.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1423.html"/>
+            <topic label="Building Callable Library applications on UNIX platforms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1424.html"/>
+            <topic label="Building Callable Library applications on Win32 platforms" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1425.html"/>
+         </topic>
+         <topic label="How CPLEX works" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1426.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1427.html"/>
+            <topic label="Opening the CPLEX environment" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1428.html"/>
+            <topic label="Instantiating the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1429.html"/>
+            <topic label="Populating the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1430.html"/>
+            <topic label="Changing the problem object" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1431.html"/>
+         </topic>
+         <topic label="Creating a successful Callable Library application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1432.html">
+            <topic label="Overview" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1433.html"/>
+            <topic label="Prototype the model" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1434.html"/>
+            <topic label="Identify the routines to call" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1435.html"/>
+            <topic label="Test procedures in the application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1436.html"/>
+            <topic label="Assemble the data" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1437.html"/>
+            <topic label="Choose an optimizer" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1438.html"/>
+            <topic label="Observe good programming practices" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1439.html"/>
+            <topic label="Debug your program" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1440.html"/>
+            <topic label="Test your application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1441.html"/>
+            <topic label="Use the examples" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1442.html"/>
+         </topic>
+         <topic label="Building and solving a small LP model in C" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1443.html"/>
+         <topic label="Reading a problem from a file: example lpex2.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1444.html"/>
+         <topic label="Adding rows to a problem: example lpex3.c" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1445.html"/>
+         <topic label="Performing sensitivity analysis" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1446.html"/>
+      </topic>
+      <topic label="Python tutorial" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1447.html">
+         <topic label="Design of CPLEX in a Python application" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1448.html"/>
+         <topic label="Starting the CPLEX Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1449.html"/>
+         <topic label="Accessing the module cplex" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1450.html"/>
+         <topic label="Building and solving a small LP with Python" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1451.html"/>
+         <topic label="Reading and writing CPLEX models to files with Python" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1452.html"/>
+         <topic label="Selecting an optimizer in Python" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1453.html"/>
+         <topic label="Example: reading a problem from a file lpex2.py" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1454.html"/>
+         <topic label="Modifying and re-optimizing in the CPLEX Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1455.html"/>
+         <topic label="Example: modifying a model lpex3.py" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1456.html"/>
+         <topic label="Using CPLEX parameters in the CPLEX Python API" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1457.html"/>
+      </topic>
+      <topic label="MSF tutorial for CPLEX users" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1458.html">
+         <topic label="CPLEX connector for MSF" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1459.html"/>
+         <topic label="Using CPLEX as a plug-in SFS of MSF" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1460.html"/>
+         <topic label="Using CPLEX as the class CplexSolver in MSF" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1461.html"/>
+         <topic label="Using CPLEX parameters in MSF connector" href="Content/Optimization/Documentation/Optimization_Studio/_pubskel/ps_gscplex1462.html"/>
+      </topic>
+   </topic>
+</toc>

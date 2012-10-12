@@ -1,0 +1,362 @@
+// --------------------------------------------------------------------------
+// Licensed Materials - Property of IBM
+//
+// 5725-A06 5725-A29 5724-Y48 5724-Y49 5724-Y54 5724-Y55
+// Copyright IBM Corporation 1998, 2011. All Rights Reserved.
+//
+// Note to U.S. Government Users Restricted Rights:
+// Use, duplication or disclosure restricted by GSA ADP Schedule
+// Contract with IBM Corp.
+// --------------------------------------------------------------------------
+
+Arr = [
+349
+369
+361
+365
+406
+405
+420
+415
+434
+424
+420
+440
+465
+459
+470
+472
+485
+499
+486
+485
+508
+505
+499
+519
+520
+514
+527
+549
+546
+539
+543
+560
+553
+570
+570
+574
+590
+575
+596
+596
+599
+615
+596
+599
+619
+622
+629
+625
+636
+645
+655
+659
+650
+655
+660
+654
+689
+681
+685
+690
+685
+712
+700
+715
+710
+716
+720
+725
+725
+734
+746
+742
+760
+755
+759
+784
+780
+769
+781
+778
+785
+801
+806
+799
+815
+815
+826
+839
+854
+847
+855
+844
+845
+866
+859
+860
+876
+872
+885
+889
+905
+899
+902
+915
+915
+927
+934
+917
+934
+936
+929
+942
+950
+966
+970
+970
+970
+970
+1004
+995
+996
+1007
+989
+1000
+1024
+1029
+1035
+1030
+1030
+1030
+1055
+1052
+1050
+1054
+1075
+1089
+1097
+1085
+1091
+1095
+1084
+1089
+1120
+1115
+1112
+1136
+1151
+1157
+1145
+1144
+1155
+1160
+1174
+1172
+1180
+1185
+1184
+1210
+1214
+1212
+1247
+1241
+1240
+1234
+1242
+1274
+1290
+1293
+0
+0
+0
+0
+0
+      ];
+/*Arr = #[
+   HNL_OGG_302:   349,
+   HNL_ITO_40:   369,
+   HNL_KOA_80:   361,
+   HNL_LIH_201:   365,
+   HNL_LIH_205:   406,
+   HNL_KOA_82:   420,
+   HNL_OGG_110:   415,
+   HNL_ITO_404:   434,
+   HNL_LIH_33:   465,
+   HNL_OGG_60:   470,
+   HNL_ITO_42:   499,
+   HNL_LIH_211:   486,
+   HNL_OGG_272:   485,
+   HNL_KOA_36:   505,
+   HNL_OGG_204:   499,
+   HNL_ITO_108:   519,
+   HNL_OGG_266:   520,
+   HNL_ITO_44:   549,
+   HNL_LIH_85:   546,
+   HNL_LIH_31:   570,
+   HNL_OGG_34:   574,
+   HNL_KOA_288:   596,
+   HNL_LIH_105:   596,
+   HNL_OGG_206:   599,
+   HNL_OGG_70:   629,
+   HNL_LIH_275:   636,
+   HNL_KOA_104:   655,
+   HNL_OGG_208:   660,
+   HNL_ITO_246:   689,
+   HNL_LIH_103:   681,
+   HNL_OGG_72:   685,
+   HNL_KOA_90:   690,
+   HNL_KOA_216:   715,
+   HNL_LIH_207:   716,
+   HNL_OGG_28:   725,
+   HNL_LIH_73:   746,
+   HNL_OGG_262:   759,
+   HNL_ITO_290:   784,
+   HNL_LIH_109:   781,
+   HNL_KOA_88:   801,
+   HNL_LIH_71:   806,
+   HNL_OGG_212:   815,
+   HNL_KOA_92:   826,
+   HNL_ITO_248:   854,
+   HNL_OGG_106:   844,
+   HNL_LIH_111:   845,
+   HNL_KOA_252:   866,
+   HNL_LIH_263:   876,
+   HNL_OGG_244:   885,
+   HNL_KOA_270:   905,
+   HNL_OGG_26:   915,
+   HNL_ITO_294:   934,
+   HNL_LIH_107:   936,
+   HNL_OGG_112:   950,
+   HNL_KOA_284:   966,
+   HNL_OGG_114:   970,
+   HNL_ITO_74:   1004,
+   HNL_OGG_102:   995,
+   HNL_LIH_249:   996,
+   HNL_ITO_68:   1024,
+   HNL_KOA_96:   1035,
+   HNL_LIH_271:   1030,
+   HNL_OGG_286:   1030,
+   HNL_OGG_224:   1055,
+   HNL_ITO_46:   1089,
+   HNL_LIH_115:   1091,
+   HNL_KOA_202:   1095,
+   HNL_OGG_66:   1115,
+   HNL_LIH_75:   1136,
+   HNL_KOA_282:   1151,
+   HNL_ITO_48:   1174,
+   HNL_LIH_65:   1180,
+   HNL_OGG_228:   1185,
+   HNL_KOA_86:   1210,
+   HNL_LIH_67:   1241,
+   HNL_OGG_78:   1240,
+   HNL_HNL_0:   0,
+   ITO_HNL_41:   440,
+   ITO_HNL_31:   508,
+   ITO_OGG_91:   560,
+   ITO_HNL_43:   590,
+   ITO_HNL_45:   615,
+   ITO_KOA_29:   596,
+   ITO_HNL_247:   760,
+   ITO_HNL_291:   855,
+   ITO_HNL_249:   927,
+   ITO_HNL_295:   1007,
+   ITO_HNL_75:   1075,
+   ITO_HNL_77:   1097,
+   ITO_HNL_65:   1120,
+   ITO_HNL_47:   1157,
+   ITO_OGG_297:   1155,
+   ITO_HNL_49:   1247,
+   ITO_ITO_0:   0,
+   KOA_HNL_81:   424,
+   KOA_HNL_85:   485,
+   KOA_HNL_37:   570,
+   KOA_HNL_103:   619,
+   KOA_HNL_231:   659,
+   KOA_OGG_29:   654,
+   KOA_HNL_109:   720,
+   KOA_HNL_95:   755,
+   KOA_HNL_83:   780,
+   KOA_HNL_219:   839,
+   KOA_OGG_217:   860,
+   KOA_HNL_235:   889,
+   KOA_HNL_255:   934,
+   KOA_HNL_271:   970,
+   KOA_HNL_283:   1029,
+   KOA_ITO_112:   1050,
+   KOA_OGG_233:   1089,
+   KOA_HNL_279:   1160,
+   KOA_HNL_289:   1214,
+   KOA_HNL_87:   1274,
+   KOA_KOA_0:   0,
+   LIH_HNL_272:   420,
+   LIH_HNL_266:   459,
+   LIH_HNL_34:   514,
+   LIH_HNL_206:   539,
+   LIH_HNL_208:   599,
+   LIH_HNL_90:   625,
+   LIH_HNL_216:   650,
+   LIH_OGG_30:   712,
+   LIH_HNL_262:   700,
+   LIH_HNL_88:   734,
+   LIH_HNL_248:   769,
+   LIH_HNL_252:   799,
+   LIH_OGG_118:   847,
+   LIH_HNL_294:   859,
+   LIH_HNL_114:   899,
+   LIH_HNL_74:   929,
+   LIH_HNL_96:   970,
+   LIH_HNL_224:   989,
+   LIH_HNL_66:   1054,
+   LIH_HNL_282:   1084,
+   LIH_HNL_86:   1144,
+   LIH_HNL_78:   1184,
+   LIH_HNL_232:   1234,
+   LIH_HNL_230:   1290,
+   LIH_LIH_0:   0,
+   OGG_HNL_33:   405,
+   OGG_HNL_101:   472,
+   OGG_HNL_273:   527,
+   OGG_ITO_272:   543,
+   OGG_KOA_204:   553,
+   OGG_HNL_275:   575,
+   OGG_HNL_91:   622,
+   OGG_LIH_61:   645,
+   OGG_HNL_207:   655,
+   OGG_HNL_73:   685,
+   OGG_HNL_29:   710,
+   OGG_HNL_209:   725,
+   OGG_HNL_71:   742,
+   OGG_KOA_30:   778,
+   OGG_HNL_111:   785,
+   OGG_HNL_263:   815,
+   OGG_HNL_107:   872,
+   OGG_HNL_69:   902,
+   OGG_LIH_213:   915,
+   OGG_HNL_217:   917,
+   OGG_HNL_215:   942,
+   OGG_HNL_93:   970,
+   OGG_KOA_112:   1000,
+   OGG_HNL_115:   1030,
+   OGG_HNL_257:   1052,
+   OGG_ITO_286:   1085,
+   OGG_HNL_225:   1112,
+   OGG_HNL_233:   1145,
+   OGG_HNL_67:   1172,
+   OGG_HNL_297:   1212,
+   OGG_HNL_229:   1242,
+   OGG_HNL_79:   1293,
+   OGG_OGG_0:   0
+]#;
+*/

@@ -1,0 +1,122 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+<HEAD>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IBM ILOG CPLEX Optimization Studio V12.3</TITLE>
+
+</HEAD>
+
+
+<body>
+<h2>IBM ILOG CPLEX Optimization Studio V12.3</h2>
+
+<p>IBM&reg; ILOG&reg; CPLEX&reg; Optimization Studio provides the fastest way to build efficient optimization models and state-of-the-art applications for the full range of planning and scheduling problems. With its integrated development environment, descriptive modeling language and built-in tools, it supports the entire model development process.
+</p>
+<p>CPLEX Optimization Studio comprises several components. Not all components are available on all platforms.  Consult the Detailed System Requirements page described below for details. Each component is located in a subfolder (subdirectory on UNIX/Linux) of the installation location. The APIs and connectors for each component are in its subfolder (subdirectory), for example the MATLAB, Excel, and AMPL connectors for CPLEX are located in the <code>cplex</code> folder (directory).
+</p>
+<ul>
+<li><code>opl</code>: the OPL modeling environment and integrated development environment (IDE)</li>
+<li><code>cplex</code>:  the CPLEX Optimizers including simplex, barrier, and mixed integer optimizers</li>
+<li><code>cpoptimizer</code>:  the CP Optimizer, utilizing constraint programming technology</li>
+<li><code>concert</code>:  the C++ modeling layer for use with the optimizers</li>
+</ul>
+<p>Other directories:</p>
+<ul>
+<li><code>licenses</code>: license agreement documents</li>
+<li><code>Uninstall</code>: information needed to uninstall the product</li>
+<li><code>properties</code>: inventory information</li>
+</ul>
+
+
+<h3>System requirements</h3>
+<p>For detailed system requirements and platform information, see <a href="https://www-304.ibm.com/support/docview.wss?uid=swg27019100">Detailed System Requirements for IBM ILOG CPLEX Optimization Studio</a>. </p>
+<h4>Note for AIX users</h4>
+<p>The versions of IBM ILOG CPLEX Optimization Studio tuned for Power 7 architecture reside in the subdirectories named <code>power7-32_aix</code> and <code>power7-64_aix</code> in the component directories. The libraries and executable files in these subdirectories operate only on the operating system AIX 6.1 or later and only on Power 7 hardware.  C or C++ applications built with these libraries must use the IBM XL C/C++ for AIX, Version 11.1, or later compilers.</p>
+
+
+
+
+
+
+<h3>Installation on Windows</h3>
+<p>On Windows, the default installation location of IBM ILOG CPLEX Optimization Studio is:</p>
+<code>C:\Program Files\IBM\ILOG\CPLEX_Studio_Academic123</code>
+<p>During installation you may have selected a different location (<code>&lt;Install_dir&gt;</code>).</p>
+
+<h4>IDE</h4>
+<p>You can launch the IDE using a Start Menu entry: <b>Start &gt; All Programs &gt; IBM ILOG &gt; CPLEX Optimization Studio 12.3 &gt; CPLEX Studio IDE</b></p>
+
+<h4>OPL</h4>
+<p>OPL is located in: <code>&lt;Install_dir&gt;\opl</code></p>
+
+<h4>CPLEX</h4>
+<p>CPLEX is located in: <code>&lt;Install_dir&gt;\cplex</code></p>
+
+<h4>CP Optimizer</h4>
+<p>CP Optimizer is located in: <code>&lt;Install_dir&gt;\cpoptimizer</code></p>
+
+<h4>Concert</h4>
+<p>Concert is located in: <code>&lt;Install_dir&gt;\concert</code></p>
+
+<h4>More information</h4>
+<p>For more information on the CPLEX feature on the Windows platform, see <code>&lt;Install_dir&gt;\cplex\readmeWindows.html</code>.</p>
+
+<p>For more information on the CP Optimizer feature on the Windows platform, see <code>&lt;Install_dir&gt;\cpoptimizer\readmeWindows.html</code>.</p>
+
+
+<h3>Installation on UNIX/Linux</h3>
+
+<p>On UNIX, the default installation location of IBM ILOG CPLEX Optimization Studio is: </p>
+<code>/opt/IBM/ILOG/CPLEX_Studio_Academic123</code>
+<p>On Linux, the default installation location of IBM ILOG CPLEX Optimization Studio is: </p>
+<code>/opt/ibm/ILOG/CPLEX_Studio_Academic123</code>
+<p>During installation you may have selected a different location (<code>&lt;Install_dir&gt;</code>).</p>
+<h4>OPL</h4>
+<p>OPL is located in: <code>&lt;Install_dir&gt;/opl</code></p>
+
+<h4>CPLEX</h4>
+<p>CPLEX is located in: <code>&lt;Install_dir&gt;/cplex</code></p>
+
+<h4>CP Optimizer</h4>
+<p>CP Optimizer is located in: <code>&lt;Install_dir&gt;/cpoptimizer</code></p>
+
+<h4>Concert</h4>
+<p>Concert is located in: <code>&lt;Install_dir&gt;/concert</code></p>
+
+
+
+<h4>More information</h4>
+<p>For more information on the CPLEX feature on UNIX/Linux platforms, see <code>&lt;Install_dir&gt;/cplex/readmeUNIX.html</code>.</p>
+
+<p>For more information on the CP Optimizer feature on UNIX/Linux platforms, see <code>&lt;Install_dir&gt;/cpoptimizer/readmeUNIX.html</code>.</p>
+
+
+<h3>Release Notes</h3>
+
+<p>Please refer to the release notes for a complete description of the new features.</p>
+<p>To access the release notes and other documentation:</p>
+<ul>
+<li>On Windows: <b>Start &gt; All Programs &gt; IBM ILOG &gt; CPLEX Optimization Studio 12.3 &gt; Documentation</b></li>
+<li>On UNIX: The documentation is accessible from <code>&lt;Install_dir&gt;/doc/html/en-US/documentation.html</code></li>
+<li>On Linux: To access the documentation: </li>
+<ul>
+<li><code>oplide -nosplash -displayHelp opl</code></li>
+<li><code>oplide -nosplash -displayHelp cplex</code></li>
+<li><code>oplide -nosplash -displayHelp cpo</code></li>
+<li><code>oplide -nosplash -shutdownHelp</code></li>
+</ul>
+</ul>
+
+<h3>Silent installation of CPLEX Optimization Studio</h3>
+<p>Please refer to the documentation for information about silent installation: Introducing IBM ILOG CPLEX Optimization Studio V12.3 &gt; Silent installation of CPLEX Optimization Studio</p>
+
+<h3>Uninstalling CPLEX Optimization Studio</h3>
+<p>Please refer to the documentation for information about uninstalling CPLEX Optimization Studio: Introducing IBM ILOG CPLEX Optimization Studio V12.3 &gt; Uninstalling CPLEX Optimization Studio</p>
+
+
+<h3>Product support</h3>
+<p>For support, tips, and product news, see <a href="http://www-947.ibm.com/support/entry/portal/Overview/Software/WebSphere/IBM_ILOG_CPLEX_Optimization_Studio">Support overview</a>.</p>
+
+</body>
+</html>

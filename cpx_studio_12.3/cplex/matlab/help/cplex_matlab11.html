@@ -1,0 +1,66 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US"><head><title>Programming tips</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><link rel="stylesheet" type="text/css" href="doc.css"/><script type="text/javascript" src="PLUGINS_ROOT/org.eclipse.help/livehelp.js"> </script></head><body><div class="General"><div class="header"><div class="content"><h1 class="heading">Programming tips</h1></div></div><div class="content">
+
+
+<div class="descriptiveTopicContent">
+<div class="para">As you model and solve mathematical programming problems
+with CPLEX® for MATLAB®, you may find it useful to refer
+to the documentation to find answers to your questions.</div>
+<div class="itemizedlist"><div class="itemizedlistIntro">
+<div class="para">Some common questions are answered in this documentation
+as well as the <span class="italics">CPLEX User's Manual</span> available
+in your CPLEX distribution.</div>
+</div><ul class="itemizedlist"><li class="itemizedlistItem"><div class="para"><span class="bold">How do
+I use the MATLAB sparse matrix format with the CPLEX for MATLAB functions
+and classes?</span></div><div class="para">Either sparse
+or dense format can be used in the connector in all places where double
+matrices and vectors are accepted as arguments.</div>
+</li><li class="itemizedlistItem"><div class="para"><span class="bold">How do I understand
+and deal with my infeasible (or unbounded) model?</span></div>
+<div class="para">The section <span class="italics">Infeasibility
+and unboundedness</span> of the <span class="italics">CPLEX User's Manual</span> documents tools
+to help you analyze the source of the infeasibility in a model: the
+preprocessing reduction parameter for distinguishing infeasibility
+from unboundedness, the conflict refiner for detecting minimal sets
+of mutually contradictory bounds and constraints, and FeasOpt for
+repairing infeasibilities.</div>
+</li><li class="itemizedlistItem"><div class="para"><span class="bold">How do I obtain a pool
+of multiple solutions?</span></div><div class="para">The
+section <span class="italics">Discrete optimization  &gt;
+Solution pool: generating and keeping multiple solutions</span> of
+the <span class="italics">CPLEX User's Manual</span> introduces
+the solution pool for storing multiple solutions to a mixed integer
+programming problem (MIP) and explains techniques for generating and
+managing those solutions.</div>
+</li><li class="itemizedlistItem"><div class="para"><span class="bold">How do I get this difficult
+model to solve?</span></div><div class="para">The section <span class="italics">Programming considerations &gt; Tuning tool</span> of
+the <span class="italics">User's Manual</span> documents
+the tuning tool, a utility to aid you in improving the performance
+of your optimization applications, analyzes a model or a group of
+models and suggests a suite of parameter settings for you to use that
+provide better performance than the default parameter settings for
+your model or group of models.</div>
+</li><li class="itemizedlistItem"><div class="para"><span class="bold">How do I invoke parallel
+threads to solve my model faster?</span></div>
+<div class="para">The section <span class="italics">Advanced
+programming techniques  &gt; Parallel optimizers</span> 
+of the <span class="italics">CPLEX User's Manual</span> documents
+the CPLEX parallel optimizers.</div>
+</li><li class="itemizedlistItem"><div class="para"><span class="bold">How do I set algorithm
+control parameters?</span></div><div class="para">The <span class="italics">CPLEX Parameters Reference Manual </span>lists
+all of the parameters and explains their settings. To learn about
+setting parameters when using the toolbox functions, see the function cplexoptimset. For information about setting parameters
+while using the Cplex class API, see Cplex.Param.</div>
+</li><li class="itemizedlistItem"><div class="para"><span class="bold">How do
+I check the consistency of my data?</span></div>
+<div class="para">There is a consistency check which can be controlled
+by the datacheck parameter. The default value of <code class="code">datacheck</code> is
+off, which can improve the performance in the case of valid model
+data. If the <code class="code">datacheck</code> is on, then a detailed
+error message will be displayed in the case of invalid data. For information
+about setting parameters, see Cplex.Param and cplexoptimset.</div>
+</li></ul></div>
+</div>
+<div class="eclipseRelatedLinks"><div class="eclipseRelatedLinksLabel">Current section</div><ul class="eclipseRelatedLinks"><li><a href="cplex_matlab3.html" class="bluelink">Getting started with CPLEX for MATLAB</a></li></ul></div></div><div class="footer"><div class="content"><div class="navigation"><a href="cplex_matlab10.html" class="navigation"><span class="previous">PREVIOUS</span></a><span class="separator">&#160;&#160;</span><a href="cplex_matlab12.html" class="navigation"><span class="next">NEXT</span></a></div><div class="copyright">&#169; Copyright IBM Corp. 1987, 2011. <a href="cplex_matlab2.html" class="navigation"><span class="legalterms">Legal Terms</span></a></div></div></div></div></body></html>

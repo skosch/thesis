@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>IBM ILOG CPLEX Optimization Studio 12.2 Available Platforms (CP Optimizer component)</TITLE>
+	<STYLE>
+	<!--
+		H1 { font-family: "arial", "sans-serif"; color: #406ec1 }
+		H2 { font-family: "arial", "sans-serif"; color: #406ec1 }
+		H3 { font-family: "arial", "sans-serif"; color: #406ec1 }
+		H4 { font-family: "arial", "sans-serif"; color: #406ec1 }
+		HR { color: #406ec1}
+		CODE { font-family: "courier", "courier-new", "serif"; font-size: 12pt}
+		BODY { font-family: "arial", "sans-serif" }
+		TH { background-color: #CCCCFF; font-family: "arial" }
+		TD { font-family: "arial", "sans-serif" }
+		P { font-family: "arial", "sans-serif" }
+		PRE { font-family: "arial", "sans-serif" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY>
+<H2>IBM ILOG CPLEX Optimization Studio 12.2 (CP Optimizer component): Table of supported combinations of machine and library format</H2>
+<H4>Machine and library format:</H4>
+<CODE>&lt;machine&gt;</CODE>: indicates the machine type and the compiler.<BR>
+<CODE>&lt;libformat&gt;</CODE>: indicates the format of the library.
+<BR>
+<BR>
+<HR>
+<TR><TD colspan="3"> <h3 align="left">Unix Platforms</h3></TD></TR>
+The default library format is static.  A format may also include the
+    following designations:
+<ul>
+<li> "pic" for "position independent code", which allows the user to create shared objects</li>
+<li> "mt" for "multi-threaded" which means that re-entrant versions of the UNIX
+     system routines were used, in cases where these are not the default
+     on a platform.</li>
+<li> "stl" for "standard template library" which means that the standard
+     C++ template library is used, again in cases where this is not the
+     default on a platform.</li>
+</ul></P>
+
+<TABLE BORDER="1" BORDERCOLOR="#406EC1" CELLPADDING="6">
+<TR><TD><font color="#406ec1"><B><CODE>&lt;machine&gt;</CODE></B></FONT></TD><TD><font color="#406ec1"><B><CODE>&lt;libformat&gt;</CODE></B></FONT></TD><TD><font color="#406ec1"><B>Platform description</B></FONT></TD></TR>
+<TR VALIGN="top"><TD>power32_aix5.3_9.0</TD>
+                 <TD>static_mt_stl</TD>
+                 <TD>Machine: IBM Power 4 and above <BR>OS: AIX 5.3, 6.1
+                                                    <BR>C++ compiler: IBM XL C/C++ 9.0, 10.1
+                                                    <BR>Java: JDK 5.0, 6.0</TD></TR>
+<TR VALIGN="top"><TD>power64_aix5.3_9.0</TD>
+                 <TD>static_mt_stl</TD>
+                 <TD>Machine: IBM Power 4 and above <BR>OS: AIX 5.3, 6.1
+                                                    <BR>C++ compiler: IBM XL C/C++ 9.0, 10.1 (64-bit)
+                                                    <BR>Java: JDK 5.0, 6.0</TD></TR>
+<TR VALIGN="TOP"><TD>ultrasparc32_9_9</TD>
+                 <TD>static_pic_mt</TD>
+                 <TD>Machine: SUN UltraSPARC<BR>OS: Solaris 9, 10<BR>C++ compiler: Sun Studio 9<BR>Java: JDK 5.0, 6.0 </TD></TR>
+<TR VALIGN="TOP"><TD>ultrasparc64_9_9</TD>
+                 <TD>static_pic_mt</TD>
+                 <TD>Machine: SUN UltraSPARC<BR>OS: Solaris 9, 10<BR>C++ compiler: Sun Studio 9 (64-bit)<BR>Java: JDK 5.0, 6.0</TD></TR>
+<TR VALIGN="TOP"><TD>x86_sles10_4.1</TD>
+                 <TD>static_pic</TD>
+                 <TD>Machine: x86<BR>OS: SUSE Linux Enterprise Server 10,11<BR>&nbsp;&nbsp;&nbsp;Red Hat Enterprise Linux 5.0<BR>C++ compiler: g++ 4.1<BR>Java: JDK 5.0, 6.0</TD></TR>
+<TR VALIGN="TOP"><TD>x86-64_sles10_4.1</TD>
+                 <TD>static_pic</TD>
+                 <TD>Machine: x86-64 (aka AMD64, Opteron, EM64T, ia32e)<BR> OS: SUSE Linux Enterprise Server 10, 11<BR>
+                    &nbsp;&nbsp;&nbsp;Red Hat Enterprise Linux 5.0<BR>
+                    C++ compiler: g++ 4.1 (64-bit)<BR>
+                    Java: JDK 5.0, 6.0</TD>
+</TR>
+<TR VALIGN="TOP"><TD>s390_sles10_4.1</TD>
+                 <TD>static_pic</TD>
+                 <TD>Machine: IBM z9, z10<BR>OS: SUSE Linux Enterprise Server 10,11<BR>&nbsp;&nbsp;&nbsp;Red Hat Enterprise Linux 5.0<BR>C++ compiler: g++ 4.1<BR>NO JAVA SUPPORT</TD></TR>
+<TR VALIGN="TOP"><TD>s390x_sles10_4.1</TD>
+                 <TD>static_pic</TD>
+                 <TD>Machine: IBM z9, z10<BR> OS: SUSE Linux Enterprise Server 10, 11<BR>
+                    &nbsp;&nbsp;&nbsp;Red Hat Enterprise Linux 5.0<BR>
+                    C++ compiler: g++ 4.1 (64-bit)<BR>
+                    NO JAVA SUPPORT</TD>
+<TR VALIGN="TOP"><TD>power32_sles10_4.1</TD>
+                 <TD>static_pic</TD>
+                 <TD>Machine: IBM Power 4 and above<BR>OS: SUSE Linux Enterprise Server 10,11<BR>&nbsp;&nbsp;&nbsp;Red Hat Enterprise Linux 5.0<BR>C++ compiler: g++ 4.1<BR>NO JAVA SUPPORT</TD></TR>
+<TR VALIGN="TOP"><TD>power64_sles10_4.1</TD>
+                 <TD>static_pic</TD>
+                 <TD>Machine: IBM Power 4 and above<BR> OS: SUSE Linux Enterprise Server 10, 11<BR>
+                    &nbsp;&nbsp;&nbsp;Red Hat Enterprise Linux 5.0<BR>
+                    C++ compiler: g++ 4.1 (64-bit)<BR>
+                    NO JAVA SUPPORT</TD>
+</TR>
+<TR VALIGN="TOP"><TD>x86_darwin9_gcc4.0</TD><TD>static_pic</TD><TD>Machine: x86<BR>OS: Mac OS X 10.5, 10.6<BR>C++ compiler: g++ 4.0 (32-bit)<BR>NO JAVA SUPPORT</TD></TR>
+<TR VALIGN="TOP"><TD>x86-64_darwin9_gcc4.0</TD><TD>static_pic</TD><TD>Machine: x86-64 (aka AMD64, Opteron, EM64T, ia32e)<BR>OS: Mac OS X 10.5, 10.6<BR>C++ compiler: g++ 4.0 (64-bit)<BR>NO JAVA SUPPORT</TD></TR>
+</TABLE>
+<BR>
+<HR>
+<tr> <TD colspan="3">  <h3><b>Windows Platforms</b></h3> </TD> </tr>
+The library format delivered is stat_mda, a statically linked library
+for use with the multi-threaded DLL run-time library (/MD option).
+<TABLE BORDER="1" BORDERCOLOR="#406EC1" CELLPADDING="6">
+<TR><TD><font color="#406ec1"><B><CODE>&lt;machine&gt;<CODE></B></FONT></TD><TD><font color="#406ec1"><B><CODE>&lt;libformat&gt;</CODE></B></FONT></TD><TD><font color="#406ec1"><B>Platform description</B></FONT></TD></TR>
+<tr>
+  <TD valign="top">x86_.net2005_8.0</TD><TD valign="top">
+  stat_mda </TD><TD>Machine: x86<BR>OS: Windows XP, Server 2003, Vista<BR>C++ compiler: 
+  Microsoft Visual Studio 2005 SP1<BR>.NET: Framework 2.0, 3.0, 3.5<BR>Java: JDK 5.0, 6.0</TD>
+</tr>
+<TR VALIGN="TOP"><TD>x64_.net2005_8.0</TD><TD>stat_mda</TD><TD>Machine: x64 (aka AMD64, Opteron, EM64T, ia32e)<BR>
+  OS: Windows XP x64, Server 2003 (64-bit), Vista (64-bit)<BR>C++ compiler:
+  Microsoft Visual Studio 2005 SP1 (64-bit)<BR>.NET: Framework 2.0, 3.0, 3.5<BR>Java: JDK 5.0, 6.0</TD>
+</TR>
+<tr>
+  <TD valign="top">x86_windows_vs2008</TD><TD valign="top">
+  stat_mda </TD><TD>Machine: x86<BR>OS: Windows XP, Server 2003, Vista<BR>C++ compiler: 
+  Microsoft Visual Studio 2008 SP1<BR>.NET: Framework 2.0, 3.0, 3.5<BR>Java: JDK 5.0, 6.0</TD>
+</tr>
+<TR VALIGN="TOP"><TD>x64_windows_v2008</TD><TD>stat_mda</TD><TD>Machine: x64 (aka AMD64, Opteron, EM64T, ia32e)<BR>
+  OS: Windows XP x64, Server 2003 (64-bit), Vista (64-bit)<BR>C++ compiler:
+  Microsoft Visual Studio 2008 SP1 (64-bit)<BR>.NET: Framework 2.0, 3.0, 3.5<BR>Java: JDK 5.0, 6.0</TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

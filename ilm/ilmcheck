@@ -1,0 +1,101 @@
+#! /bin/sh
+#
+
+PATH=/usr/ucb:/bin:/usr/bin:/usr/sbin; export PATH
+
+arg0=$0
+ILMDIR=`expr \
+  ${arg0-.}'/' : '\(/\)[^/]*/$' \
+  \| ${arg0-.}'/' : '\(.*[^/]\)//*[^/][^/]*//*$' \
+  \| .`
+
+SYS=`uname -s`
+REL=`uname -r`
+PROC=`uname -m`
+
+case $SYS in
+  SunOS)
+     case $REL in
+       4.1.*) 
+              case $PROC in
+                sun4*) systemtype=sun4 
+                       portclass=sun4
+                       ;;
+                *)     echo "Error : unknown system type $SYS $REL." >&2 
+                       exit 1
+                       ;;
+              esac
+              ;;
+       5.*)   
+              case $PROC in 
+                sun4*) systemtype=solaris 
+                       portclass=solaris
+                       ;;
+                i86pc) systemtype=x86solaris 
+                       portclass=x86solaris
+                       ;; 
+                *)     echo "Error : unknown system type $SYS $REL." >&2
+                       exit 1
+                       ;;
+              esac
+              ;;
+       *)     echo "Error : unknown system type $SYS $REL." >&2
+              exit 1 
+              ;;
+     esac
+     ;;
+
+  HP-UX)
+     portclass=hp9700
+     major=`echo $REL | awk -F'.' '{ print $2 }'`
+     minor=`echo $REL | awk -F'.' '{ print $3 }'`
+     if [ $major -eq 10 -a $minor -ge 20 ]
+     then
+          systemtype=hp_10_1.0
+     else
+          systemtype=hp700
+     fi
+     if [ $major -eq 11 ]
+     then
+          systemtype=hp_10_1.0
+     fi
+     ;;
+
+  AIX)     systemtype=rs6000 
+           portclass=rs6000
+           ;;
+
+  OSF1)    systemtype=alphaosf 
+           portclass=alphaosf
+           ;;
+
+  Linux)   systemtype=linux 
+           portclass=linux
+           ;;
+
+  LynxOS)  systemtype=ppclynx 
+           portclass=ppclynx
+           ;;
+
+  IRIX*)   systemtype=irix5 
+           portclass=irix5
+           ;;
+
+  SINIX-N) systemtype=rmsinix 
+           portclass=rmsinix
+           ;;
+
+  *) echo "Error : unknown system type $SYS $REL." >&2
+     exit 1     
+     ;;
+esac
+
+if [ ! -x $ILMDIR/$systemtype/ilmcheck ]
+then
+  echo "$systemtype/ilmcheck not found. Please install ILM for $portclass." >&2
+  exit 1
+fi
+
+exec $ILMDIR/$systemtype/ilmcheck $*
+
+

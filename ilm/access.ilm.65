@@ -1,0 +1,6 @@
+LICENSE university-toronto, canada
+SERVER 3000 jcb1.mie.utoronto.ca 80643192 41021
+TOKEN CPLEX 11.000 NEVER VPCPE34PWTD7 10 any , options: e m b q use=10 MaintenanceEnd=20071117 , server: jcb1 , license: 1047232
+TOKEN Scheduler 6.500 01-Nov-2008 DKFPP0CYGUKF 10 any , options: MaintenanceEnd=20081101 , server: jcb1 , license: 1047272
+TOKEN Solver 6.500 01-Nov-2008 5TRUJ2C08A55 10 any , options: MaintenanceEnd=20081101 , server: jcb1 , license: 1047252
+TOKEN   OPLStudio  4.000 NEVER       0MWEZ2DPS0PF 3 any , options: ide , license: 731002

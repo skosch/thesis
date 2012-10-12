@@ -1,0 +1,120 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:21">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Installing a Node Key  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="156777">
+<h3 class="Header3SplitLeft">Installing a Node Key</h3>
+</a><p class="Body"><a name="166473">
+This section describes the steps to install a node key. A node key lets you use a product on a specific machine.</a></p>
+<p class="Body"><a name="166691">
+To be able to provide you with a node key, ILOG needs some information about the machine on which you want to use the product. That's why your shipment may not already contain your node key. Steps 1 and 2 explain how to contact ILOG, provide the required information, and get your node key back.</a></p>
+<p class="Body"><a name="166484">
+On the other hand, if ILOG already has the required information, your shipment may already include a sheet labelled <span class="Default">Access Key</span> which contains your node key. In this case, you don't have to follow Steps 1 and 2, and you can skip to Step 3. </p><table class="TipTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/tip.gif"></td>
+   <td><div class="Note"><a name="170252">For an easy start up, all ILOG products are shipped with a temporary evaluation license on a separate sheet. If you want to start using this product immediately, and take care of your node license later, see <a href="chap26.html#156739"><span class="Default">"Installing an Evaluation Key" </span></a>. But don't forget to order your license key quickly!</a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<p class="Body"><a name="166493">
+If you have purchased node keys for different machines, please follow the steps in this section for each machine in turn. </a></p>
+<a name="156870">
+<h3 class="Header3">Step 1. Get your Computer Hostid</h3>
+</a><p class="Body"><a name="164097">
+To get your computer hostid, you should run the executable <code class="Code">IHOSTID.EXE</code> located on the installation CD-ROM.</a></p>
+<p class="Body"><a name="166244">
+To do this, open an MS-DOS command prompt window. Then, call <code class="Code">ILMCHECK</code> from the directory where you have installed ILM by typing the following line:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable"><code class="Code">C:\ILOG\ILM\IHOSTID.EXE
+</code></span></pre></td></tr></table><p><p class="Body"><a name="166266">
+This command displays the hostid and hostid checksum of your computer. An example output would be:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">The hostname of this machine is    helios
+The hostid of this machine is      6430bd3b
+The checksum of this hostid is     03933
+</span></pre></td></tr></table><p><a name="156875">
+<h3 class="Header3">Step 2. Get the License Text from ILOG</h3>
+</a><p class="Body"><a name="162923">
+The information displayed by the <code class="Code">IHOSTID </code>command must be sent to ILOG to get your node key. To do so, follow the instructions in the <em class="Emphasis">Access Key Request </em>form.</a></p>
+<a name="156892">
+<h3 class="Header3">Step 3. Add the Node Key to the License File</h3>
+</a><p class="Body"><a name="156896">
+You should do this step once you have received your license from ILOG. Here is an example of what you may have received:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">LICENSE Springfield Computing Inc.
+NODE Views 2.400 NEVER   4RYE61MP4HJ7 1d3c7a9c pcwin95 , license: 186
+</span></pre></td></tr></table><p><p class="Body"><a name="166523">
+The <code class="Code">LICENSE</code> line identifies your site. The next line contains the node key. If you have purchased licenses for several products, product parts, or machines, the text you received may actually contain several node keys.</a></p>
+<p class="Body"><a name="170843">
+Unless it already exists, save the whole text you received as the license file.</a></p>
+<p class="Body"><a name="170844">
+If the license file already exists, edit it using your favorite editor. This file must already contain a <code class="Code">LICENSE</code> line identical to the one you received. If it is not the case, contact your ILOG sales representative. Append the new key or keys to the end of the file. If you are replacing an old key with a new one for the same product on the same machine, delete or comment out the line with the old key; to comment out a line, put a <code class="Code">"#"</code> in the first column.</a></p>
+<a name="156928">
+<h3 class="Header3">Step 4. Set Up the Environment</h3>
+</a><p class="Body"><a name="166272">
+To use ILOG products, the variable <code class="Code">ILOG_LICENSE_FILE</code> must be set to the absolute path of the <code class="Code">ACCESS.ILM </code>file. If this variable is already set, you can skip to Step 5. Otherwise:</a></p>
+<ul class="BulletedListP"><p><li><a name="166273">Under Windows 95, Windows 98 or Windows Millenium, edit the file <code class="Code">AUTOEXEC.BAT</code> and add the following line:
+</a></ul><pre><p class="Preformatted"><a name="166274">set ILOG_LICENSE_FILE=C:ILOG\ILM\ACCESS.ILM
+</a></p><dl class="PlainList2P">
+<p><dt><dd><a name="168776">Now you need to restart your computer to make this change effective.
+</a></dl>
+</pre><ul class="BulletedListP"><p><li><a name="168785">Under Windows NT, you must be logged on as an Administrator. Open the Control Panel and double-click on the System icon. In the Environment tab, click somewhere in the System Variables box (for example on the OS). Enter <code class="Code">ILOG_LICENSE_FILE</code> in the "Variable" text field and enter the correct value in the "Value" field, as shown in the following illustration:<center><img src=images/ILM.gif ></center>
+
+</a><dl class="PlainList2P">
+<p><dt><dd><a name="169271">Click on the "Set" button. This will set a new System Variable. 
+</a></dl>
+<p><li><a name="170776">Under Windows 2000, you must be logged on as Administrator or have the appropriate privileges. Open the Control Panel and double-click on the System icon. Click on the Advanced tab, then on the "Environment Variables" button. Create a new system variable, and set it to <code class="Code">C:\ILOG\ILM\ACCESS.ILM</code>.
+</a></ul><a name="168783">
+<h3 class="Header3">Step 5. Check the License File</h3>
+</a><p class="Body"><a name="159641">
+To make sure that the license file has no syntax errors and that the system variable <code class="Code">ILOG_LICENSE_FILE</code> is properly set, you should run the executable <code class="Code">ILMCHECK.EXE</code>. To do this, do the same as in Step 1, replacing the command <code class="Code">IHOSTID</code> by the command <code class="Code">ILMCHECK</code>.</a></p>
+<p class="Body"><a name="159592">
+This command should issue the message:</a></p>
+<table class="CodeTable2";><tr><td><pre><span class="CodeTable">Checking license file "C:\ILOG\ILM\ACCESS.ILM"
+     License file "C:\ILOG\ILM\ACCESS.ILM" is correct
+</span></pre></td></tr></table><p><p class="Body"><a name="166530">
+Otherwise, something is wrong with the license file or with the setting of <span class="Default">ILOG_LICENSE_FILE</span>. Please read <a href="chap320.html#148899"><span class="Default">"Troubleshooting" </span></a> for help.</a></p>
+<a name="161208">
+<h3 class="Header3">Where to Go from Here?</h3>
+</a><p class="Body"><a name="159946">
+If the previous steps have been successfully carried out, you can start using your ILOG product. Please refer to the product document set for further instructions.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap27.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: Installing a Token Key  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    <a href="chap29.html">
+    <IMG SRC="../../icons/right.gif" ALT="Next Page: Installing a Node Runtime Key  " 
+     BORDER=0></a>
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>

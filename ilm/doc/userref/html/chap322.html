@@ -1,0 +1,141 @@
+
+ 
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="GENERATOR" content="Quadralay WebWorks Publisher Professional Edition 6.0.5">
+<meta name="TEMPLATEBASE" content="refman2.1_red">
+<meta name="LASTUPDATED" content="03/26/01 15:45:24">
+<link rel="StyleSheet" href="../../support/doc.css" type="text/css" media="screen">
+<title>Error messages  </title>
+<script language="JavaScript" src="../../support/doc.js"></script>
+</head>
+
+<body onLoad="initNavBar(); markMe();" bgcolor="#ffffff">
+<a name="firstpage"></a>
+<a name="154572">
+<h3 class="Header3SplitLeft">Error messages</h3>
+</a><p class="Body"><a name="156266">
+Here's the list of error message that can be generated:</a></p>
+<a name="156314">
+<h5 class="Header5">cannot connect to token server on "host"</h5>
+</a><p class="Body"><a name="149145">
+The licensed product cannot reach the token server running on the <code class="Code">host</code> specified on the <code class="Code">SERVER</code> line of your license file.</a></p>
+<ul class="BulletedListP"><p><li><a name="149011">The machine <code class="Code">host</code> is down or unreachable, or the name <code class="Code">host.domain</code> is required. To check this, run the following command:
+</a></ul><dl class="PlainListP">
+<p><dt><dd><a name="154100">On Unix:	 <code class="Code">$ /usr/etc/ping </code><span class="Default">host</span>
+</a><p><dt><dd><a name="154105">On Windows:	<code class="Code">ping </code><span class="Default">host</span>
+</a></dl>
+<ul class="BulletedListP"><p><li><a name="149117">There is no token server process running on <span class="Default">host</span>. On this machine, look for error messages and warnings in the log file of the License Manager (usually <code class="Code">C:\ILOG\ILM\ILM.LOG</code> or <code class="Code">usr/ilog/ilm/ilm.log</code>). Refer to the sections <a href="chap18.html#157193"><span class="Default">"Installing a Token Key" </span></a> and <a href="chap27.html#167294"><span class="Default"></span></a> for more information. A common source of problems on Windows is that the directory <code class="Code">C:\TEMP</code> does not exist or is periodically emptied.
+</a></ul><a name="156287">
+<h5 class="Header5">invalid password "XXX" in "file"; run ilmcheck</h5>
+</a><p class="Body"><a name="149207">
+The password <code class="Code">XXX</code> in the license file named <code class="Code">file</code> is incorrect. One of the following cases then applies:</a></p>
+<ul class="BulletedListP"><p><li><a name="149566">The password has a typing error. A typical mistake is to type "O" (a capital O) instead of "<span class="Default">0</span>" (zero). Also remember that case is significant.
+</a><p><li><a name="149567">Some information in the key does not match the password. This information could be the expiration date, the number of tokens, the product name or version, the site name, etc.
+</a></ul><p class="Body"><a name="151156">
+Check the key in the license file against the original text provided by ILOG. Also check that you are not using a <code class="Code">RUNTIME</code> key in a license file.</a></p>
+<a name="156288">
+<h5 class="Header5">invalid expiration date "date" in "file"; run ilmcheck</h5>
+</a><p class="Body"><a name="149625">
+The expiration date in the license file named <code class="Code">file</code> is incorrect. The date format is dd-Mmm-yyyy, where Mmm is a three-letter English abbreviation for the month.</a></p>
+<a name="156289">
+<h5 class="Header5">no license available </h5>
+</a><p class="Body"><a name="149627">
+The licensed product cannot be run because doing so would exceed the number of allowed simultaneous users. To see the number of available tokens, as well as tokens checked out, reserved by users, use the <code class="Code">ilmlist</code> command:</a></p>
+<dl class="PlainListP">
+<p><dt><dd><a name="154109">On Unix: 	<span class="Default">$ /usr/ilog/ilm/ilmlist</span>
+</a><p><dt><dd><a name="154110">On Windows:	 <code class="Code">C:\ILOG\ILM\ILMLIST.EXE</code>
+</a></dl>
+<a name="156290">
+<h5 class="Header5">wrong hostid, expected "hostid1", found "hostid2": run ihostid</h5>
+</a><p class="Body"><a name="149372">
+This error message occurs in two cases:</a></p>
+<ul class="BulletedListP"><p><li><a name="149684">When you try to start the token server <code class="Code">ilmd</code> on a host which is not the token server host specified on the <code class="Code">SERVER</code> line of the license file. You must log on to the host with hostid <code class="Code">hostid1</code> to start the token server.
+</a><p><li><a name="150140">When trying to run a licensed product protected by a node key which has been set up for another host. You can run this product only on the machine with hostid <code class="Code">hostid1</code>. 
+</a><dl class="PlainList2P">
+<p><dt><dd><a name="150146">On Windows, the hostid of a machine changes when its hard disk is reformatted. If your hard disk has been reformatted since you have received your key, you should contact ILOG to get a new key.
+</a></dl>
+</ul><p class="Body"><a name="150141">
+To print the hostid of a host, use the <code class="Code">ihostid</code> command.</a></p>
+<a name="156291">
+<h5 class="Header5">access key has expired</h5>
+</a><p class="Body"><a name="151497">
+The licensed product cannot be run because the key has expired. Please contact your ILOG sales representative.</a></p>
+<a name="156292">
+<h5 class="Header5">warning: cannot get hostid : /dev/lan0 is unreadable</h5>
+</a><p class="Body"><a name="151502">
+This error occurs on HP/UX platforms when <code class="Code">/dev/lan0</code> is not readable. </p><table class="NoteTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/note.gif"></td>
+   <td><div class="Note"><a name="155418">On HP/UX, ILM needs read permission on the file <code class="Code">/dev/lan0</code>. You need to grant read permission on this file for all users. To do this, log on as root and type the following command:<code class="Code">$ chmod 644 /dev/lan0</code></a></div><p>
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="156293">
+<h5 class="Header5">license file not found or unreadable; run ilmcheck</h5>
+</a><p class="Body"><a name="149530">
+The license file in <code class="Code">ILOG_LICENSE_FILE</code> does not exist or is unreadable. Check the contents of this variable.</a></p>
+<p class="Body"><a name="155309">
+On Windows, check that the file has no<code class="Code">.txt </code>extension. To do so, type in an MS-DOS command prompt window <code class="Code">"DIR access.ilm"</code>.</p><table class="WarningTable" cellpadding="5" cellspacing="5">
+ <tr>
+   <td align="left" valign="top"><img src="../../icons/warning.gif"></td>
+   <td><div class="Note"><a name="156298">License files must be edited and saved in text format. If you are using Notepad to edit files, this is automatic. If you are using another text editor such as WordPad, you must select the text format option when saving a license file.To check that your file is saved in text format, open an MS-DOS command prompt window and type the following:<code class="Code">TYPE C:\ILOG\ILM\ACCESS.ILM</code></a></div><p><div class="NoteContinued"><a name="156299">Also, beware that some editors will automatically append the extension <code class="Code">.txt</code> to your fie. Furthermore, Windows Explorer may hide this extension. To determine which is the real extension of the file you created, open an MS-DOS command prompt window  ant type the following:<code class="Code">DIR C:\ILOG\ILM</code></a></div><p>
+<div class="NoteContinued"><a name="156300">If the extension is wrong, rename your file in that window. For example, type the following:</a></div><p>
+<div class="NoteContinued"><a name="156301"><code class="Code">CD C:\ILOG\ILM</code></a></div><p>
+<div class="NoteContinued"><a name="156643"><code class="Code">REN access.ilm.txt access.ilm</code></a></div><p>
+
+</td>
+ </tr>
+</table>
+</a></p>
+<a name="156294">
+<h5 class="Header5">no access key found for this product; run ilmcheck</h5>
+</a><p class="Body"><a name="149516">
+The licensed product cannot be run because there is no access key for it. Check whether <code class="Code">ILOG_LICENSE_FILE</code> points to the right license file.</a></p>
+<a name="156295">
+<h5 class="Header5">runtime key not supported in license file</h5>
+</a><p class="Body"><a name="153288">
+Your license file contains a runtime key-a key beginning with the keyword <code class="Code">RUNTIME</code>. Unlike other keys, a runtime key cannot be stored in the license file: you must hard-code it directly in your application. This is explained in the section <a href="chap211.html#170496"><span class="Default">"Installing a Runtime Key" </span></a>; please read it carefully. To use your runtime key, you will have to copy it to your application main source file as the initialization value for the <code class="Code">ilm_Prod_license</code> variable. When doing this:</a></p>
+<ul class="BulletedListP"><p><li><a name="150850">Don't forget to also copy the <code class="Code">LICENSE</code> line of your license file;
+</a><p><li><a name="150851">Add a sequence "<code class="Code">\n\</code>" at the end of every non-final line in the license string.
+</a></ul><p class="Body"><a name="150852">
+Then change the source of the <code class="Code">main()</code> function to use the new registration protocol.</a></p>
+<a name="156296">
+<h5 class="Header5">lockfile erased or modified. Server exiting</h5>
+</a><p class="Body"><a name="153918">
+On Unix, <code class="Code">ilmd</code> uses a lock file <code class="Code">/usr/tmp/ilm_lock</code> in order to avoid having two servers running on the same machine.</a></p>
+<p class="Body"><a name="153919">
+Check if a <code class="Code">crontab</code> does not remove files in <code class="Code">/usr/tmp</code> (or <code class="Code">/tmp</code> if <code class="Code">/usr/tmp</code> is linked to it).</a></p>
+<p class="Body"><a name="154124">
+On Windows NT, the lock file used is <code class="Code">C:\temp\ilm_lock</code>. Verify that this file has not been removed.</a></p>
+
+<hr>
+
+<div class="Copyright">
+ Copyright &#169; 2001 ILOG <br>
+ <a href="http://www.ilog.com">http://www.ilog.com</a><br>
+</div>
+
+<div id="waterMark" style="position:absolute">
+ <table width=100>
+  <tr>
+   <td align=right valign=center>
+    <a href="chap321.html">
+    <IMG SRC="../../icons/left.gif" ALT="Previous Page: The ilmcheck Command  " 
+     BORDER=0></a>
+   
+    <a href="#" onClick="window.scrollTo(0,0)">
+    <IMG SRC="../../icons/top.gif" ALT="Return to Top" BORDER=0></a>
+
+    
+   </td></tr>
+ </table>
+</div> 
+
+</body>
+</html>
