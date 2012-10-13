@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  12 OCT 2012 18:09
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  13 OCT 2012 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1069,7 +1069,28 @@ LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
 File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
-))
+)
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[3])
 \tf@toc=\write3
 \openout3 = `paper.toc'.
 
@@ -1094,7 +1115,6 @@ File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
 . 
 . This font family consists of the following shapes:
 .................................................
-[3]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -1115,29 +1135,7 @@ File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
 . 
 . This font family consists of the following shapes:
 .................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[4
-
-]
+[4]
 Chapter 1.
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -1180,6 +1178,7 @@ Chapter 1.
 . This font family consists of the following shapes:
 .................................................
 [1
+
 
 ]
 *************************************************
@@ -2545,6 +2544,6 @@ Here is how much of TeX's memory you used:
  21641 multiletter control sequences out of 15000+200000
  58430 words of font info for 67 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,13n,61p,900b,448s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,13n,61p,900b,472s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on paper.pdf (23 pages).

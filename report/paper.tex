@@ -199,10 +199,9 @@ We're trying to create an mixed integer linear programming model (MILP). In the 
 \begin{align}
   (d_{max}-d_j)(1-x_{jk}) \geq D_k-d_j \;\;\;\forall j \in J, \forall k \in K
 \end{align}
-This can easily be turned into
+This can easily be turned into the simpler
 \begin{align}
-  x_{jk}d_j-D_k &\geq 0\;\;\;\forall j \in J, \forall k \in K\\
-  d_{max}-D_k &\geq 0\;\;\;\forall k \in K
+  D_k - (d_j - d_{max})x_{jk} \leq d_{max} \;\;\;\forall j \in J, \forall k \in K
 \end{align}
 \subsection{Possible improvements}
 We cannot modify the solution process itself -- that's the whole point of the exercise, after all. Maybe we can preprocess to limit the domains of some decision variables. This is where ``preordering'' may come into play.
