@@ -1,0 +1,970 @@
+IBM ILOG License Manager: "IBM ILOG Optimization Suite for Academic Initiative" is accessing CPLEX 12 with option(s): "e m b q ".
+ ! ----------------------------------------------------------------------------
+ ! Minimization problem - 121 variables, 50 constraints
+ ! OptimalityTolerance  = 10
+ ! Initial process time : 0.00s (0.00s extraction + 0.00s propagation)
+ !  . Log search space  : 329.1 (before), 244.3 (after)
+ !  . Memory usage      : 690.8 Kb (before), 722.8 Kb (after)
+ ! ----------------------------------------------------------------------------
+ !   Branches  Non-fixed                Branch decision                   Best
+         1000         17                       on _itv2  F                    
+         2000         17                       on _itv9                       
+         3000         17                       on _itv9                       
+         4000         17                       on _itv9  F                    
+         5000         17                       on _itv9  F                    
+         6000         17                       on _itv9  F                    
+         7000         17                       on _itv9  F                    
+         8000         17                       on _itv8                       
+         9000         17                       on _itv2                       
+        10000         17                       on _itv9  F                    
+        11000         17                       on _itv9                       
+        12000         17                       on _itv9  F                    
+        13000         17                       on _itv9                       
+        14000         17                       on _itv9                       
+        15000         17                       on _itv9  F                    
+        16000         17                       on _itv9                       
+        17000         17                       on _itv9                       
+        18000         17                       on _itv9                       
+        19000         17                       on _itv9                       
+        20000         17                       on _itv9                       
+ ! Time = 0.07s, Average fail depth = 9, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+        21000         17                       on _itv9                       
+        22000         17                       on _itv9                       
+        23000         17                       on _itv9                       
+        24000         17                       on _itv9  F                    
+        25000         17                       on _itv9  F                    
+        26000         17                       on _itv9                       
+        27000         17                       on _itv9                       
+        28000         17                       on _itv9  F                    
+        29000         17                       on _itv9                       
+        30000         17                       on _itv8                       
+        31000         17                       on _itv9  F                    
+        32000         17                       on _itv9  F                    
+        33000         17                       on _itv9                       
+        34000         17                       on _itv9  F                    
+        35000         17                       on _itv9                       
+        36000         17                       on _itv9                       
+        37000         17                       on _itv9                       
+        38000         17                       on _itv9                       
+        39000         17                       on _itv9  F                    
+        40000         17                       on _itv9                       
+ ! Time = 0.14s, Average fail depth = 9, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+        41000         17                       on _itv9  F                    
+        42000         17                       on _itv9                       
+        43000         17                       on _itv9                       
+        44000         17                       on _itv9                       
+        45000         17                       on _itv9                       
+        46000         17                       on _itv9                       
+        47000         16                       on _itv9  F                    
+        48000         16                       on _itv9                       
+        49000         16                       on _itv9                       
+        50000         16                       on _itv9  F                    
+        51000         17                       on _itv9  F                    
+        52000         17                       on _itv8                       
+        53000         17                       on _itv9  F                    
+        54000         17                       on _itv9                       
+        55000         17                       on _itv9                       
+        56000         17                       on _itv9  F                    
+        57000         16                       on _itv9  F                    
+        58000         16                       on _itv9  F                    
+        59000         16                       on _itv9  F                    
+        60000         16                       on _itv9                       
+ ! Time = 0.20s, Average fail depth = 10, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+        61000         17                       on _itv9                       
+        62000         17                       on _itv9  F                    
+        63000         17                       on _itv9                       
+        64000         19                       on _itv9                       
+        65000         17                       on _itv9  F                    
+        66000         17                       on _itv9  F                    
+        67000         17                       on _itv9  F                    
+        68000         17                       on _itv9                       
+        69000         17                       on _itv9  F                    
+        70000         17                       on _itv9  F                    
+        71000         17                       on _itv9  F                    
+        72000         17                       on _itv9                       
+        73000         17                       on _itv9                       
+        74000         19                       on _itv9  F                    
+        75000         17                       on _itv9                       
+        76000         17                       on _itv9  F                    
+        77000         19                       on _itv9                       
+        78000         17                       on _itv9  F                    
+        79000         17                       on _itv9                       
+        80000         17                       on _itv9                       
+ ! Time = 0.26s, Average fail depth = 10, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+        81000         17                       on _itv8  F                    
+        82000         17                       on _itv9                       
+        83000         17                       on _itv9                       
+        84000         17                       on _itv9                       
+        85000         17                       on _itv9                       
+        86000         17                       on _itv9                       
+        87000         16                       on _itv9                       
+        88000         16                       on _itv9                       
+        89000         16                       on _itv9                       
+        90000         16                       on _itv9                       
+        91000         17                       on _itv9  F                    
+        92000         17                       on _itv9                       
+        93000         17                       on _itv9                       
+        94000         17                       on _itv9                       
+        95000         17                       on _itv9                       
+        96000         17                       on _itv9                       
+        97000         16                       on _itv9                       
+        98000         16                       on _itv9                       
+        99000         16                       on _itv9  F                    
+         100k         16                       on _itv9  F                    
+ ! Time = 0.32s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         101k         16                       on _itv9                       
+         102k         19                       on _itv9                       
+         103k         19                       on _itv9                       
+         104k         19                       on _itv9                       
+         105k         19                       on _itv9                       
+         106k         17                       on _itv9  F                    
+         107k         16                       on _itv9                       
+         108k         19                       on _itv9                       
+         109k         16                       on _itv9  F                    
+         110k         16                       on _itv9                       
+         111k         16                       on _itv9                       
+         112k         21                       on _itv9                       
+         113k         18                       on _itv3                       
+         114k         18                       on _itv3  F                    
+         115k         19                       on _itv4  F                    
+         116k         17                       on _itv5                       
+         117k         17                       on _itv1  F                    
+         118k         17                       on _itv2  F                    
+         119k         17                       on _itv7  F                    
+         120k         17                       on _itv7  F                    
+ ! Time = 0.41s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         121k         17                       on _itv8                       
+         122k         17                       on _itv6                       
+         123k         17                       on _itv6  F                    
+         124k         17                       on _itv8  F                    
+         125k         17                       on _itv2                       
+         126k         18                       on _itv8  F                    
+         127k         17                       on _itv2  F                    
+         128k         18                       on _itv4  F                    
+         129k         18                       on _itv6  F                    
+         130k         18                       on _itv5                       
+         131k         18                       on _itv4                       
+         132k         18                       on _itv9                       
+         133k         17                       on _itv2                       
+         134k         17                       on _itv8  F                    
+         135k         17                       on _itv4  F                    
+         136k         17                       on _itv7                       
+         137k         18                       on _itv2  F                    
+         138k         18                       on _itv6  F                    
+         139k         18                       on _itv2                       
+         140k         17                       on _itv8                       
+ ! Time = 0.52s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         141k         17                       on _itv7                       
+         142k         17                       on _itv8  F                    
+         143k         17                       on _itv4  F                    
+         144k         17                       on _itv6  F                    
+         145k         17                       on _itv5                       
+         146k         17                       on _itv4                       
+         147k         17                       on _itv6                       
+         148k         17                       on _itv4  F                    
+         149k         17                       on _itv6  F                    
+         150k         17                       on _itv1                       
+         151k         17                       on _itv8  F                    
+         152k         17                       on _itv7                       
+         153k         17                       on _itv2                       
+         154k         17                       on _itv3                       
+         155k         17                       on _itv8                       
+         156k         17                       on _itv8                       
+         157k         17                       on _itv2  F                    
+         158k         26                       on _itv4  F                    
+         159k         17                       on _itv9                       
+         160k         17                       on _itv8                       
+ ! Time = 0.62s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         161k         17                       on _itv9                       
+         162k         17                       on _itv9                       
+         163k         17                       on _itv9                       
+         164k         17                       on _itv9                       
+         165k         17                       on _itv9                       
+         166k         16                       on _itv9  F                    
+         167k         16                       on _itv9                       
+         168k         16                       on _itv9                       
+         169k         16                       on _itv9                       
+         170k         19                       on _itv9                       
+         171k         19                       on _itv9                       
+         172k         19                       on _itv8                       
+         173k         19                       on _itv9                       
+         174k         19                       on _itv9  F                    
+         175k         16                       on _itv9  F                    
+         176k         16                       on _itv9                       
+         177k         16                       on _itv9                       
+         178k         16                       on _itv9                       
+         179k         16                       on _itv9  F                    
+         180k         21                       on _itv9                       
+ ! Time = 0.68s, Average fail depth = 10, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         181k         17                       on _itv9  F                    
+         182k         17                       on _itv9  F                    
+         183k         17                       on _itv9  F                    
+         184k         17                       on _itv9  F                    
+         185k         17                       on _itv9  F                    
+         186k         17                       on _itv9  F                    
+         187k         17                       on _itv9  F                    
+         188k         16                       on _itv8                       
+         189k         16                       on _itv9  F                    
+         190k         16                       on _itv9  F                    
+         191k         16                       on _itv9                       
+         192k         17                       on _itv9  F                    
+         193k         19                       on _itv9  F                    
+         194k         19                       on _itv9  F                    
+         195k         19                       on _itv9  F                    
+         196k         19                       on _itv9  F                    
+         197k         17                       on _itv9  F                    
+         198k         16                       on _itv9  F                    
+         199k         19                       on _itv9  F                    
+         200k         16                       on _itv9  F                    
+ ! Time = 0.74s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         201k         16                       on _itv9                       
+         202k         16                       on _itv9  F                    
+         203k         21                       on _itv9  F                    
+         204k         17                       on _itv9                       
+         205k         17                       on _itv9                       
+         206k         17                       on _itv9  F                    
+         207k         17                       on _itv9                       
+         208k         19                       on _itv9                       
+         209k         19                       on _itv9  F                    
+         210k         19                       on _itv9  F                    
+         211k         17                       on _itv9  F                    
+         212k         17                       on _itv9                       
+         213k         17                       on _itv9                       
+         214k         17                       on _itv9                       
+         215k         19                       on _itv9  F                    
+         216k         17                       on _itv9  F                    
+         217k         17                       on _itv9  F                    
+         218k         19                       on _itv9                       
+         219k         17                       on _itv9                       
+         220k         17                       on _itv9                       
+ ! Time = 0.80s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         221k         17                       on _itv9                       
+         222k         17                       on _itv9  F                    
+         223k         17                       on _itv9                       
+         224k         17                       on _itv9  F                    
+         225k         17                       on _itv9  F                    
+         226k         17                       on _itv9                       
+         227k         17                       on _itv9  F                    
+         228k         17                       on _itv9                       
+         229k         19                       on _itv9  F                    
+         230k         17                       on _itv9                       
+         231k         17                       on _itv9  F                    
+         232k         17                       on _itv9                       
+         233k         17                       on _itv9  F                    
+         234k         17                       on _itv9  F                    
+         235k         17                       on _itv9                       
+         236k         19                       on _itv9                       
+         237k         17                       on _itv9                       
+         238k         20                       on _itv9  F                    
+         239k         21                       on _itv9                       
+         240k         21                       on _itv9                       
+ ! Time = 0.87s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         241k         21                       on _itv9  F                    
+         242k         19                       on _itv9                       
+         243k         17                       on _itv9  F                    
+         244k         17                       on _itv9  F                    
+         245k         17                       on _itv9  F                    
+         246k         17                       on _itv9                       
+         247k         19                       on _itv9  F                    
+         248k         19                       on _itv9  F                    
+         249k         21                       on _itv2                       
+         250k         19                       on _itv9  F                    
+         251k         23                       on _itv9  F                    
+         252k         17                       on _itv9                       
+         253k         17                       on _itv9  F                    
+         254k         17                       on _itv9                       
+         255k         17                       on _itv9                       
+         256k         17                       on _itv9  F                    
+         257k         17                       on _itv9                       
+         258k         17                       on _itv9  F                    
+         259k         17                       on _itv9  F                    
+         260k         17                       on _itv9                       
+ ! Time = 0.93s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         261k         17                       on _itv9  F                    
+         262k         17                       on _itv9                       
+         263k         17                       on _itv9                       
+         264k         19                       on _itv9                       
+         265k         19                       on _itv9  F                    
+         266k         17                       on _itv9  F                    
+         267k         17                       on _itv9  F                    
+         268k         17                       on _itv9  F                    
+         269k         17                       on _itv9                       
+         270k         17                       on _itv9  F                    
+         271k         17                       on _itv9                       
+         272k         17                       on _itv9                       
+         273k         17                       on _itv9  F                    
+         274k         19                       on _itv9  F                    
+         275k         19                       on _itv9                       
+         276k         19                       on _itv9  F                    
+         277k         19                       on _itv9  F                    
+         278k         17                       on _itv9  F                    
+         279k         17                       on _itv9                       
+         280k         17                       on _itv9                       
+ ! Time = 0.99s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         281k         17                       on _itv9  F                    
+         282k         17                       on _itv9  F                    
+         283k         17                       on _itv9                       
+         284k         19                       on _itv9  F                    
+         285k         19                       on _itv9  F                    
+         286k         19                       on _itv9  F                    
+         287k         19                       on _itv9  F                    
+         288k         19                       on _itv9  F                    
+         289k         19                       on _itv9  F                    
+         290k         17                       on _itv9  F                    
+         291k         17                       on _itv8                       
+         292k         19                       on _itv9  F                    
+         293k         19                       on _itv9  F                    
+         294k         19                       on _itv9  F                    
+         295k         19                       on _itv9                       
+         296k         19                       on _itv9  F                    
+         297k         19                       on _itv9  F                    
+         298k         17                       on _itv9  F                    
+         299k         19                       on _itv9  F                    
+         300k         19                       on _itv9                       
+ ! Time = 1.05s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         301k         19                       on _itv9  F                    
+         302k         19                       on _itv9  F                    
+         303k         19                       on _itv9                       
+         304k         17                       on _itv9  F                    
+         305k         17                       on _itv9  F                    
+         306k         17                       on _itv9  F                    
+         307k         17                       on _itv9  F                    
+         308k         17                       on _itv9  F                    
+         309k         17                       on _itv9  F                    
+         310k         17                       on _itv9  F                    
+         311k         17                       on _itv9  F                    
+         312k         17                       on _itv9  F                    
+         313k         16                       on _itv9  F                    
+         314k         16                       on _itv9  F                    
+         315k         16                       on _itv9                       
+         316k         16                       on _itv9  F                    
+         317k         19                       on _itv9  F                    
+         318k         19                       on _itv9  F                    
+         319k         19                       on _itv9  F                    
+         320k         19                       on _itv9  F                    
+ ! Time = 1.11s, Average fail depth = 11, Memory usage = 979.1 Kb
+ !   Branches  Non-fixed                Branch decision                   Best
+         321k         19                       on _itv9  F                    
+         322k         17                       on _itv9  F                    
+         323k         16                       on _itv9                       
+         324k         16                       on _itv9  F                    
+         325k         16                       on _itv9  F                    
+         326k         16                       on _itv9  F                    
+         327k         21                       on _itv9  F                    
+         328k         21                       on _itv9  F                    
+         329k         11                 _int68  =    1  F                    
+         330k         11                 _int86  =    1  F                    
+         331k          8                       on _itv9  F                    
+         332k         11                       on _itv9                       
+         333k         12                       on _itv8                       
+         334k         16                       on _itv9  F                    
+         335k          8                       on _itv9  F                    
+         336k          8                       on _itv9                       
+         337k          8                       on _itv9  F                    
+         338k         16                       on _itv9  F                    
+         339k         11                       on _itv9  F                    
+         340k          8                       on _itv9  F                    
+ ! Time = 1.18s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         341k         12                       on _itv9                       
+         342k         13                       on _itv9  F                    
+         343k         11                  _int6  =    0                       
+         344k          8                       on _itv9  F                    
+         345k         11                       on _itv9  F                    
+         346k         17                       on _itv9  F                    
+         347k         16                       on _itv8                       
+         348k         16                       on _itv9  F                    
+         349k         16                       on _itv8  F                    
+         350k         16                       on _itv9  F                    
+         351k         11                       on _itv9  F                    
+         352k          8                       on _itv9  F                    
+         353k         12                       on _itv9  F                    
+         354k         13                       on _itv9  F                    
+         355k         17                       on _itv9  F                    
+         356k         16                       on _itv9  F                    
+         357k         16                       on _itv9                       
+         358k         17                       on _itv8                       
+         359k         17                       on _itv9                       
+         360k         17                       on _itv9  F                    
+ ! Time = 1.25s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         361k         17                       on _itv9                       
+         362k         17                       on _itv9                       
+         363k         17                       on _itv9  F                    
+         364k         17                       on _itv9  F                    
+         365k         17                       on _itv9                       
+         366k         17                       on _itv9                       
+         367k         17                       on _itv9                       
+         368k         17                       on _itv9                       
+         369k         17                       on _itv9  F                    
+         370k         16                       on _itv9  F                    
+         371k         16                       on _itv9                       
+         372k         16                       on _itv9  F                    
+         373k         16                       on _itv9  F                    
+         374k         16                       on _itv9  F                    
+         375k         16                       on _itv9  F                    
+         376k         16                       on _itv9  F                    
+         377k         16                       on _itv9                       
+         378k         17                       on _itv9                       
+         379k         16                       on _itv9                       
+         380k         16                       on _itv9                       
+ ! Time = 1.31s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         381k         16                       on _itv9                       
+         382k         16                       on _itv9  F                    
+         383k         16                       on _itv9  F                    
+         384k         16                       on _itv9  F                    
+         385k         16                       on _itv9  F                    
+         386k         16                       on _itv9                       
+         387k         17                       on _itv9                       
+         388k         16                       on _itv9                       
+         389k         16                       on _itv9                       
+         390k         16                       on _itv8                       
+         391k         16                       on _itv9  F                    
+         392k         16                       on _itv9  F                    
+         393k         16                       on _itv9  F                    
+         394k         16                       on _itv9                       
+         395k         16                       on _itv9                       
+         396k         17                       on _itv9                       
+         397k         17                       on _itv9                       
+         398k         17                       on _itv9                       
+         399k         17                       on _itv9                       
+         400k         17                       on _itv9                       
+ ! Time = 1.37s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         401k         17                       on _itv9  F                    
+         402k         19                       on _itv9  F                    
+         403k         19                       on _itv9  F                    
+         404k         19                       on _itv9                       
+         405k         19                       on _itv9  F                    
+         406k         19                       on _itv9  F                    
+         407k         19                       on _itv8                       
+         408k         17                       on _itv9  F                    
+         409k         17                       on _itv9  F                    
+         410k         17                       on _itv9  F                    
+         411k         17                       on _itv9  F                    
+         412k         17                       on _itv9                       
+         413k         17                       on _itv9  F                    
+         414k         17                       on _itv9  F                    
+         415k         16                       on _itv9  F                    
+         416k         16                       on _itv9  F                    
+         417k         16                       on _itv9  F                    
+         418k         16                       on _itv9  F                    
+         419k         19                       on _itv9  F                    
+         420k         19                       on _itv9  F                    
+ ! Time = 1.43s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         421k         19                       on _itv8                       
+         422k         19                       on _itv9  F                    
+         423k         19                       on _itv9                       
+         424k         17                       on _itv9  F                    
+         425k         16                       on _itv9  F                    
+         426k         16                       on _itv9                       
+         427k         16                       on _itv9  F                    
+         428k         16                       on _itv9  F                    
+         429k         21                       on _itv9  F                    
+         430k         21                       on _itv9  F                    
+         431k         12                       on _itv9  F                    
+         432k          8                 _int89  =    0  F                    
+         433k         10                       on _itv9  F                    
+         434k         11                       on _itv9                       
+         435k          8                       on _itv9  F                    
+         436k         16                       on _itv8                       
+         437k         12                       on _itv9  F                    
+         438k          8                       on _itv9                       
+         439k         12                       on _itv9  F                    
+         440k         16                       on _itv9  F                    
+ ! Time = 1.49s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         441k         13                       on _itv8                       
+         442k          8                       on _itv9  F                    
+         443k         11                       on _itv9                       
+         444k         12                       on _itv9  F                    
+         445k          8                 _int90  =    1  F                    
+         446k          8                       on _itv9  F                    
+         447k          8                       on _itv9  F                    
+         448k         17                       on _itv9  F                    
+         449k         16                       on _itv9                       
+         450k         16                       on _itv9  F                    
+         451k         16                       on _itv9  F                    
+         452k         16                       on _itv9  F                    
+         453k         12                       on _itv9                       
+         454k          8                       on _itv9                       
+         455k          8                       on _itv9                       
+         456k         11                       on _itv9  F                    
+         457k         17                       on _itv9  F                    
+         458k         16                       on _itv9  F                    
+         459k         16                       on _itv9  F                    
+         460k         17                       on _itv9  F                    
+ ! Time = 1.56s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         461k         17                       on _itv9  F                    
+         462k         17                       on _itv9  F                    
+         463k         17                       on _itv9  F                    
+         464k         17                       on _itv9  F                    
+         465k         17                       on _itv9  F                    
+         466k         17                       on _itv9                       
+         467k         17                       on _itv9  F                    
+         468k         17                       on _itv9  F                    
+         469k         17                       on _itv9  F                    
+         470k         17                       on _itv9  F                    
+         471k         17                       on _itv9  F                    
+         472k         16                       on _itv9                       
+         473k         16                       on _itv9                       
+         474k         16                       on _itv9  F                    
+         475k         16                       on _itv9                       
+         476k         16                       on _itv9  F                    
+         477k         16                       on _itv9                       
+         478k         16                       on _itv9                       
+         479k         16                       on _itv9  F                    
+         480k         17                       on _itv9  F                    
+ ! Time = 1.63s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         481k         16                       on _itv9                       
+         482k         16                       on _itv9  F                    
+         483k         16                       on _itv9  F                    
+         484k         16                       on _itv9  F                    
+         485k         16                       on _itv9  F                    
+         486k         16                       on _itv9  F                    
+         487k         16                       on _itv9  F                    
+         488k         16                       on _itv9                       
+         489k         17                       on _itv9                       
+         490k         16                       on _itv9                       
+         491k         16                       on _itv9  F                    
+         492k         16                       on _itv9                       
+         493k         16                       on _itv9                       
+         494k         16                       on _itv9                       
+         495k         16                       on _itv9                       
+         496k         16                       on _itv9                       
+         497k         16                       on _itv9  F                    
+         498k         17                       on _itv9  F                    
+         499k         17                       on _itv7  F                    
+         500k         17                       on _itv9  F                    
+ ! Time = 1.69s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         501k         17                       on _itv9  F                    
+         502k         17                       on _itv9  F                    
+         503k         17                       on _itv9  F                    
+         504k         19                       on _itv9  F                    
+         505k         19                       on _itv9  F                    
+         506k         19                       on _itv9  F                    
+         507k         19                       on _itv9  F                    
+         508k         19                       on _itv9  F                    
+         509k         19                       on _itv9                       
+         510k         19                       on _itv9  F                    
+         511k         19                       on _itv9                       
+         512k         19                       on _itv9                       
+         513k         19                       on _itv9                       
+         514k         19                       on _itv9  F                    
+         515k         19                       on _itv9  F                    
+         516k         19                       on _itv9  F                    
+         517k         19                       on _itv9  F                    
+         518k         19                       on _itv9  F                    
+         519k         19                       on _itv9  F                    
+         520k         19                       on _itv8                       
+ ! Time = 1.75s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         521k         19                       on _itv9  F                    
+         522k         19                       on _itv9  F                    
+         523k         19                       on _itv9  F                    
+         524k         19                       on _itv8                       
+         525k         19                       on _itv9  F                    
+         526k         19                       on _itv9                       
+         527k         19                       on _itv9                       
+         528k         19                       on _itv9                       
+         529k         19                       on _itv9                       
+         530k         19                       on _itv9  F                    
+         531k         19                       on _itv9                       
+         532k         17                       on _itv9                       
+         533k         16                       on _itv9                       
+         534k         16                       on _itv8  F                    
+         535k         16                       on _itv9                       
+         536k         16                       on _itv9                       
+         537k         17                       on _itv8  F                    
+         538k         16                       on _itv9                       
+         539k         16                       on _itv9                       
+         540k         16                       on _itv9                       
+ ! Time = 1.81s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         541k         16                       on _itv9  F                    
+         542k         16                       on _itv9  F                    
+         543k         16                       on _itv9  F                    
+         544k         16                       on _itv9                       
+         545k         16                       on _itv8                       
+         546k         16                       on _itv8                       
+         547k         16                       on _itv9  F                    
+         548k         16                       on _itv9  F                    
+         549k         16                       on _itv9                       
+         550k         16                       on _itv8  F                    
+         551k         16                       on _itv9                       
+         552k         16                       on _itv8  F                    
+         553k         16                       on _itv8                       
+         554k         16                       on _itv9                       
+         555k         19                       on _itv9                       
+         556k         19                       on _itv9                       
+         557k         19                       on _itv9                       
+         558k         19                       on _itv9                       
+         559k         19                       on _itv9  F                    
+         560k         17                       on _itv9                       
+ ! Time = 1.88s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         561k         16                       on _itv9                       
+         562k         16                       on _itv9                       
+         563k         16                       on _itv9                       
+         564k         16                       on _itv9  F                    
+         565k         17                       on _itv8                       
+         566k         17                       on _itv9  F                    
+         567k         17                       on _itv9  F                    
+         568k         17                       on _itv9  F                    
+         569k         17                       on _itv9  F                    
+         570k         17                       on _itv9  F                    
+         571k         16                       on _itv9  F                    
+         572k         16                       on _itv9  F                    
+         573k         16                       on _itv9                       
+         574k         17                       on _itv9                       
+         575k         17                       on _itv9  F                    
+         576k         17                       on _itv9                       
+         577k         17                       on _itv9  F                    
+         578k         17                       on _itv9                       
+         579k         17                       on _itv9                       
+         580k         17                       on _itv9                       
+ ! Time = 1.94s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         581k         17                       on _itv9                       
+         582k         17                       on _itv9                       
+         583k         17                       on _itv9                       
+         584k         17                       on _itv9  F                    
+         585k         17                       on _itv9                       
+         586k         16                       on _itv8                       
+         587k         16                       on _itv9                       
+         588k         16                       on _itv9                       
+         589k         16                       on _itv9  F                    
+         590k         17                       on _itv9  F                    
+         591k         16                       on _itv9  F                    
+         592k         16                       on _itv9  F                    
+         593k         16                       on _itv9  F                    
+         594k         16                       on _itv9                       
+         595k         16                       on _itv8                       
+         596k         16                       on _itv9                       
+         597k         16                       on _itv9                       
+         598k         16                       on _itv9  F                    
+         599k         16                       on _itv9  F                    
+         600k         16                       on _itv9  F                    
+ ! Time = 2.00s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         601k         16                       on _itv9                       
+         602k         16                       on _itv9  F                    
+         603k         17                       on _itv9                       
+         604k         16                       on _itv8  F                    
+         605k         16                       on _itv9                       
+         606k         16                       on _itv9                       
+         607k         16                       on _itv9  F                    
+         608k         16                       on _itv9                       
+         609k         16                       on _itv9  F                    
+         610k         16                       on _itv9  F                    
+         611k         16                       on _itv8  F                    
+         612k         17                       on _itv9                       
+         613k         17                       on _itv9                       
+         614k         17                       on _itv9                       
+         615k         17                       on _itv7                       
+         616k         17                       on _itv9                       
+         617k         17                       on _itv9  F                    
+         618k         19                       on _itv9  F                    
+         619k         19                       on _itv9                       
+         620k         19                       on _itv8                       
+ ! Time = 2.06s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         621k         19                       on _itv9  F                    
+         622k         19                       on _itv9  F                    
+         623k         19                       on _itv9  F                    
+         624k         19                       on _itv9                       
+         625k         19                       on _itv9                       
+         626k         19                       on _itv9  F                    
+         627k         19                       on _itv9                       
+         628k         19                       on _itv9  F                    
+         629k         19                       on _itv9                       
+         630k         19                       on _itv9                       
+         631k         19                       on _itv9                       
+         632k         19                       on _itv9                       
+         633k         19                       on _itv9                       
+         634k         19                       on _itv9  F                    
+         635k         19                       on _itv9  F                    
+         636k         19                       on _itv9  F                    
+         637k         19                       on _itv9  F                    
+         638k         19                       on _itv9                       
+         639k         19                       on _itv9  F                    
+         640k         17                       on _itv9  F                    
+ ! Time = 2.13s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         641k         17                       on _itv9  F                    
+         642k         16                       on _itv9  F                    
+         643k         16                       on _itv9  F                    
+         644k         16                       on _itv9  F                    
+         645k         16                       on _itv9                       
+         646k         16                       on _itv8                       
+         647k         16                       on _itv9                       
+         648k         16                       on _itv9                       
+         649k         16                       on _itv9                       
+         650k         17                       on _itv9                       
+         651k         16                       on _itv9                       
+         652k         16                       on _itv9                       
+         653k         16                       on _itv9                       
+         654k         16                       on _itv9  F                    
+         655k         16                       on _itv9  F                    
+         656k         16                       on _itv9  F                    
+         657k         16                       on _itv9  F                    
+         658k         16                       on _itv9  F                    
+         659k         19                       on _itv9  F                    
+         660k         19                       on _itv9  F                    
+ ! Time = 2.19s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         661k         19                       on _itv9  F                    
+         662k         19                       on _itv9  F                    
+         663k         19                       on _itv9  F                    
+         664k         17                       on _itv9  F                    
+         665k         16                       on _itv9  F                    
+         666k         16                       on _itv9                       
+         667k         16                       on _itv8                       
+         668k         16                       on _itv9  F                    
+         669k         19                       on _itv9                       
+         670k         19                       on _itv8                       
+         671k         19                       on _itv9  F                    
+         672k         19                       on _itv9  F                    
+         673k         19                       on _itv8  F                    
+         674k         17                       on _itv9  F                    
+         675k         16                       on _itv9  F                    
+         676k         16                       on _itv9  F                    
+         677k         16                       on _itv9                       
+         678k         16                       on _itv9  F                    
+         679k         17                       on _itv9                       
+         680k         17                       on _itv9                       
+ ! Time = 2.25s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         681k         17                       on _itv9                       
+         682k         17                       on _itv9                       
+         683k         17                       on _itv9  F                    
+         684k         17                       on _itv9                       
+         685k         16                       on _itv9                       
+         686k         19                       on _itv9                       
+         687k         16                       on _itv8                       
+         688k         17                       on _itv9  F                    
+         689k         17                       on _itv9  F                    
+         690k         17                       on _itv9  F                    
+         691k         17                       on _itv9  F                    
+         692k         17                       on _itv9  F                    
+         693k         17                       on _itv9  F                    
+         694k         17                       on _itv8                       
+         695k         16                       on _itv9  F                    
+         696k         16                       on _itv9  F                    
+         697k         16                       on _itv9  F                    
+         698k         16                       on _itv9  F                    
+         699k         19                       on _itv9  F                    
+         700k         19                       on _itv9  F                    
+ ! Time = 2.31s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         701k         19                       on _itv9  F                    
+         702k         19                       on _itv9  F                    
+         703k         19                       on _itv9                       
+         704k         16                       on _itv9                       
+         705k         16                       on _itv9  F                    
+         706k         16                       on _itv9  F                    
+         707k         16                       on _itv9  F                    
+         708k         16                       on _itv9  F                    
+         709k         21                       on _itv9  F                    
+         710k         21                       on _itv9  F                    
+         711k          8                 _int99  =    0  F                    
+         712k          8                       on _itv9  F                    
+         713k          8                       on _itv9                       
+         714k         11                       on _itv8                       
+         715k         16                       on _itv9  F                    
+         716k         16                 _int78  =    0  F                    
+         717k          8                       on _itv9  F                    
+         718k         10                       on _itv9                       
+         719k         12                       on _itv9  F                    
+         720k         16                       on _itv9  F                    
+ ! Time = 2.38s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         721k          8                       on _itv9  F                    
+         722k          8                       on _itv9                       
+         723k          8                       on _itv9  F                    
+         724k         16                       on _itv9  F                    
+         725k          8                       on _itv9  F                    
+         726k         11                       on _itv9                       
+         727k          8                       on _itv9                       
+         728k         17                       on _itv9                       
+         729k         16                       on _itv9  F                    
+         730k         19                       on _itv9                       
+         731k         16                       on _itv9                       
+         732k         13                       on _itv9  F                    
+         733k          8                       on _itv9                       
+         734k         10                       on _itv9  F                    
+         735k         12                       on _itv9                       
+         736k          8                       on _itv9  F                    
+         737k         16                       on _itv9                       
+         738k         16                       on _itv9  F                    
+         739k         16                       on _itv9  F                    
+         740k         16                       on _itv9  F                    
+ ! Time = 2.44s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         741k         19                       on _itv9                       
+         742k          2                       on _itv9  F                    
+         743k         17                       on _itv9  F                    
+         744k         16                       on _itv9  F                    
+         745k         16                       on _itv9  F                    
+         746k         16                       on _itv9  F                    
+         747k         16                       on _itv9  F                    
+         748k         18                       on _itv9  F                    
+         749k          2                       on _itv9  F                    
+         750k         19                       on _itv9  F                    
+         751k         19                       on _itv9  F                    
+         752k         19                       on _itv9  F                    
+         753k         19                       on _itv9  F                    
+         754k         19                       on _itv8                       
+         755k         19                       on _itv9  F                    
+         756k          4                       on _itv9  F                    
+         757k         16                       on _itv9  F                    
+         758k         19                       on _itv9  F                    
+         759k         16                       on _itv9  F                    
+         760k         16                       on _itv9  F                    
+ ! Time = 2.51s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         761k         16                       on _itv9  F                    
+         762k          4                       on _itv9  F                    
+         763k         21                       on _itv9  F                    
+         764k         21                       on _itv9  F                    
+         765k         11                       on _itv9  F                    
+         766k          8                  _int7  =    0                       
+         767k          8                       on _itv9  F                    
+         768k          8                       on _itv9  F                    
+         769k          2                       on _itv9  F                    
+         770k         16                       on _itv9  F                    
+         771k         13                 _int89  =    1  F                    
+         772k          8                       on _itv9  F                    
+         773k         12                       on _itv9                       
+         774k          3                       on _itv9  F                    
+         775k         16                       on _itv9  F                    
+         776k         11                       on _itv9  F                    
+         777k         12                       on _itv9  F                    
+         778k         12                       on _itv9                       
+         779k          2                       on _itv9  F                    
+         780k         16                       on _itv9  F                    
+ ! Time = 2.57s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         781k          8                       on _itv9  F                    
+         782k         10                       on _itv9  F                    
+         783k         12                       on _itv9                       
+         784k          3                       on _itv9                       
+         785k         16                       on _itv9  F                    
+         786k         16                       on _itv9  F                    
+         787k         17                       on _itv9  F                    
+         788k         16                       on _itv9  F                    
+         789k         11                       on _itv9                       
+         790k         10                       on _itv9  F                    
+         791k          8                       on _itv9  F                    
+         792k         12                 _int79  =    0  F                    
+         793k         16                       on _itv9  F                    
+         794k          2                       on _itv9  F                    
+         795k         17                       on _itv9                       
+         796k         16                       on _itv9  F                    
+         797k         17                       on _itv9  F                    
+         798k         16                       on _itv9  F                    
+         799k         16                       on _itv9  F                    
+         800k          8                       on _itv9  F                    
+ ! Time = 2.64s, Average fail depth = 11, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         801k          8                       on _itv9  F                    
+ *       801k      2.64s                         -                         -18
+         802k         17                       on _itv9  F                 -18
+         803k         17                       on _itv9                    -18
+         804k         16                       on _itv9  F                 -18
+         805k         19                       on _itv9  F                 -18
+         806k         16                       on _itv8                    -18
+         807k         11                       on _itv9                    -18
+         808k         12                       on _itv9  F                 -18
+         809k          8                       on _itv9  F                 -18
+         810k         10                       on _itv9  F                 -18
+         811k         10                       on _itv9  F                 -18
+         812k          3                       on _itv9  F                 -18
+         813k         17                       on _itv9  F                 -18
+         814k         16                       on _itv9                    -18
+         815k         16                       on _itv9  F                 -18
+         816k         16                       on _itv9                    -18
+         817k         16                       on _itv9  F                 -18
+         818k         10                       on _itv9  F                 -18
+         819k         12                       on _itv9  F                 -18
+ ! Time = 2.70s, Average fail depth = 12, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         820k          8                       on _itv9  F                 -18
+         821k          8                       on _itv9                    -18
+         822k         16                       on _itv9  F                 -18
+         823k          3                       on _itv9  F                 -18
+         824k         17                       on _itv9  F                 -18
+         825k         16                       on _itv9  F                 -18
+         826k         19                       on _itv9                    -18
+         827k         16                       on _itv9  F                 -18
+         828k         12                       on _itv9  F                 -18
+         829k          8                       on _itv9  F                 -18
+         830k          8                       on _itv9  F                 -18
+         831k         11                       on _itv9                    -18
+         832k          8                       on _itv9                    -18
+         833k         16                       on _itv9  F                 -18
+         834k          3                       on _itv9                    -18
+         835k         16                       on _itv9  F                 -18
+         836k         16                       on _itv9  F                 -18
+         837k         16                       on _itv9                    -18
+         838k         16                       on _itv9  F                 -18
+         839k         11                       on _itv9                    -18
+ ! Time = 2.76s, Average fail depth = 12, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         840k         10                       on _itv9                    -18
+         841k          8                       on _itv9                    -18
+         842k         13                       on _itv9                    -18
+         843k         16                       on _itv9  F                 -18
+         844k          4                       on _itv9  F                 -18
+         845k         17                       on _itv9  F                 -18
+         846k         16                       on _itv9  F                 -18
+         847k         19                       on _itv9  F                 -18
+         848k         16                       on _itv9  F                 -18
+         849k         16                       on _itv9  F                 -18
+         850k         10                       on _itv9  F                 -18
+         851k         11                       on _itv9                    -18
+         852k         13                       on _itv9                    -18
+         853k         12                       on _itv9  F                 -18
+         854k         16                       on _itv8                    -18
+         855k          2                       on _itv9                    -18
+         856k         16                       on _itv9  F                 -18
+         857k         16                       on _itv9  F                 -18
+         858k         16                       on _itv9  F                 -18
+         859k         16                       on _itv9                    -18
+ ! Time = 2.82s, Average fail depth = 12, Memory usage = 1.0 Mb
+ !   Branches  Non-fixed                Branch decision                   Best
+         860k         10                       on _itv9                    -18
+         861k         12                       on _itv9                    -18
+         862k          8                 _int91  =    1  F                 -18
+         863k          8                       on _itv9  F                 -18
+         864k         12                       on _itv9                    -18
+         865k          3                       on _itv9  F                 -18
+         866k         17                       on _itv9  F                 -18
+         867k         16                       on _itv9  F                 -18
+         868k         17                       on _itv9  F                 -18
+         869k         16                       on _itv9                    -18
+         870k         16                       on _itv9  F                 -18
+         871k         10                       on _itv9                    -18
+         872k         12                       on _itv9                    -18
+         873k          8                       on _itv9                    -18
+         874k          8                       on _itv9  F                 -18

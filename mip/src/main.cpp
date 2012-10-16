@@ -2,12 +2,25 @@
 #include <cmath>
 #include <string>
 #include <cstdlib>
+#include <algorithm>
+#include <vector>
 
 #include <ilcplex/ilocplex.h>
 #include <ilconcert/ilocsvreader.h>
 #include <ilconcert/iloexpression.h>
 
 using namespace std;
+
+
+// explicit data structure makes sorting easier
+struct job{
+  IloNum s;
+  IloNum p;
+  IloNum d;
+};
+bool operator<(const job &a, const job &b) {return a.d < b.d;}
+ 
+
 
 IloNumExpr secondarySumExpr(IloEnv env, IloNumArray coeff, IloArray<IloNumVarArray> matrix, int secondIndex, int coeffsize) {
   // builds an expression in a loop.
@@ -51,7 +64,7 @@ int main(int argc, char *argv[]) {
     xjk_matrix xjk(env, nj);
     
     for(int j=0; j<nj; j++) { // initialize each matrix row (reprs. jobs)
-      xjk[j] = IloNumVarArray(env, nj);
+      xjk[j] = IloNumVarArray(env, nk);
       for(int k=0; k<nk; k++) {
 	xjk[j][k] = IloNumVar(env, 0, 1, ILOINT);
       }
@@ -63,11 +76,13 @@ int main(int argc, char *argv[]) {
     IloNumVarArray Pk(env, nk);
     IloNumVarArray Dk(env, nk);
     IloNumVarArray Ck(env, nk);
-    
+    IloNumVarArray ek(env, nk);
+
     for(int k=0; k<nk; k++) {
       Pk[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT); /// FIX THIS: WHATS UPPER BOUND?
-      Dk[k] = IloNumVar(env, -IloInfinity, Dmax, ILOFLOAT);
+      Dk[k] = IloNumVar(env, 0, Dmax, ILOFLOAT);
       Ck[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT);
+      ek[k] = IloNumVar(env, 0, 1, ILOINT);
     }
 
     // Lmax
@@ -76,9 +91,6 @@ int main(int argc, char *argv[]) {
 
     /************ constants ***********/
 
-    IloNumArray sj(env, nj);
-    IloNumArray pj(env, nj);
-    IloNumArray dj(env, nj);
 
     stringstream filename;
     filename << "../../data/data_" << nj;
@@ -90,13 +102,27 @@ int main(int argc, char *argv[]) {
       return 1;
     }
 
-    IloCsvLine curLine;
+    vector<job> jc(nj); // this structure is necessary to sort the jobs.
+    IloNumArray sj(env,nj);
+    IloNumArray pj(env,nj);
+    IloNumArray dj(env,nj);
 
+    IloCsvLine curLine;
     for(int j=0; j<nj; j++) {
       curLine = csvr.getLineByNumber(j+1);
-      sj[j] = curLine.getIntByPosition(0);
-      pj[j] = curLine.getIntByPosition(1);
-      dj[j] = curLine.getIntByPosition(2);
+      jc[j].s = curLine.getIntByPosition(0);
+      jc[j].p = curLine.getIntByPosition(1);
+      jc[j].d = curLine.getIntByPosition(2);
+    }
+
+    // sort the jobs by non-decreasing due date
+    sort(jc.begin(), jc.end());
+
+    // now put the constants into the IloNumArrays
+    for(int j=0; j<nj; j++) {
+      sj[j] = jc[j].s;
+      pj[j] = jc[j].p;
+      dj[j] = jc[j].d;
     }
 
     /********* objective function *****/
@@ -128,14 +154,15 @@ int main(int argc, char *argv[]) {
 
     // 9. Ck is always Ck of the last, plus current Pk
     //    model.add( IloRange(env, 0, Ck[0] - Pk[0], 0) );
+    model.add( Ck[0] = Pk[0]);
     for(int k=1; k<nk; k++) {
-      model.add( IloRange(env, -IloInfinity, Ck[k-1] + Pk[k] - Ck[k], 0));
+      model.add( IloRange(env, 0, Ck[k-1] + Pk[k] - Ck[k], 0));
     }
 
-    // 10a. Every batch is due when the earliest job is due.
+    // 10. Every batch is due when the earliest job is due.
     for(int k=0; k<nk; k++) {
       for(int j=0; j<nj; j++) {
-	model.add( IloRange(env, 0, Dk[k] - (dj[j] - Dmax)*xjk[j][k], Dmax));
+	model.add( IloRange(env, -IloInfinity, Dk[k] - dj[j]*xjk[j][k] + Dmax*xjk[j][k], Dmax));
       }
     }
 
@@ -146,9 +173,44 @@ int main(int argc, char *argv[]) {
 
     // 12. Lmax
     for(int k=0; k<nk; k++) {
-      model.add( IloRange(env, 0, Ck[k] - Dk[k] - Lmax, 0)) ;
+      model.add( IloRange(env, -IloInfinity, Ck[k] - Dk[k] - Lmax, 0)) ;
     }
 
+    // 13. Grouping empty batches. 
+/**
+    IloNumArray ones(env, nj);
+    for(int j=0; j<nj; j++) ones[j] = int(1);
+
+    for(int k=0; k<nk; k++) {
+      IloNumExpr sumExpression = secondarySumExpr(env, ones, xjk, k, nj);
+      model.add( ek[k] + sumExpression >= 1 );
+      model.add( nj*(ek[k] - 1) + sumExpression <= 0 );
+    }
+    for(int k=1; k<nk; k++) {
+            model.add( ek[k] - ek[k-1] >= 0 );
+    } 
+    model.add( ek[0] == 0 );
+**/
+
+    // 14. Lower bound for Lmax
+    float Lmax_LB = pj[0]*sj[0]/capacity - dj[0];
+    float Lmax_LB_temp = 0;
+    for(int j=1; j<nj; j++) {
+      Lmax_LB_temp = Lmax_LB + dj[j-1] + pj[j]*sj[j]/capacity - dj[j];
+      if(Lmax_LB_temp > Lmax_LB) Lmax_LB = Lmax_LB_temp;
+    }
+
+    model.add( Lmax >= int(Lmax_LB) );
+
+    // 15. Upper bound for Lmax
+    //     Get feasible solution by means of EDD, find Lmax
+
+    // 16. No batches later than necessary. This works because we sorted things.
+    for(int j=0; j<nj; j++) {
+      for(int k=j+1; k<nk; k++) {
+	model.add( xjk[j][k] == 0 );
+      }
+    }
 
     /********* solving the model ******/
     IloCplex cplex(model);
@@ -158,16 +220,16 @@ int main(int argc, char *argv[]) {
     /********** printing results ********/
 
     cout << "Lmax: " << cplex.getValue(Lmax) << endl;
-    cout << "Solution: " << endl;
+    cout << "Solution: " << endl << "  ";
 
-    for(int k=0; k<nk+1; k++) {
+    for(int k=0; k<nk; k++) {
       if(k<10) cout << " ";
       cout << k;
     }
     cout << endl;
     for(int j=0; j<nj; j++) {
       if(j<10) cout << " ";
-      cout << (j+1);
+      cout << (j);
       for(int k=0; k<nk; k++) {
 	cout << (cplex.getValue(xjk[j][k]) == true ? " X" : " ·");
       }
@@ -179,7 +241,6 @@ int main(int argc, char *argv[]) {
     for(int k=0; k<nk; k++) {
       cout << "Batch " << k << ":\t Pk=" << cplex.getValue(Pk[k]) << "\t Dk=" << cplex.getValue(Dk[k]) << "\t Ck=" << cplex.getValue(Ck[k]) << endl;
     }
-
   } catch( IloException& e) {
     cout << "Some error: " << e << endl;
   }

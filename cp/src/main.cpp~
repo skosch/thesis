@@ -1,0 +1,45 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <cstdlib>
+#include <algorithm>
+#include <vector>
+
+#include <ilcplex/ilocplex.h>
+#include <ilcp/cp.h>
+#include <ilconcert/ilocsvreader.h>
+#include <ilconcert/iloexpression.h>
+
+using namespace std;
+
+
+// explicit data structure makes sorting easier
+struct job{
+  IloInt s;
+  IloInt p;
+  IloInt d;
+};
+bool operator<(const job &a, const job &b) {return a.d < b.d;}
+ 
+
+int main(int argc, const char * argv[]){
+  IloEnv env;
+  try {
+    IloModel model(env);
+    IloIntVar x(env, 5, 12, "x");
+    IloIntVar y(env, 2, 17, "y");
+    model.add(x + y == 17);
+    model.add(x - y == 5);
+    IloCP cp(model);
+    if (cp.solve()){
+      cp.out() << std::endl << "Solution:" << std::endl;
+      cp.out() << "x = " << cp.getValue(x) << std::endl;
+      cp.out() << "y = " << cp.getValue(y) << std::endl;
+    }
+  }
+  catch (IloException& ex) {
+    env.out() << "Error: " << ex << std::endl;
+  }
+  env.end();
+  return 0;
+}

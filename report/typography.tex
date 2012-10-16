@@ -1,6 +1,10 @@
 
+%========== DEFINITIONS ==========
+
 \newlist{alist}{itemize}{1}
 \setlist[alist]{label=--,labelindent=2in,leftmargin=9pt,labelsep=6pt, itemsep=0pt}
+
+\def\Lmax{L_{\text{max}}}
 
 %========= FONT SPECS ============
 \tolerance 8000
@@ -11,24 +15,34 @@
 \def\labelitemi{--}
 
 \def\sansfont{\fontspec[Script=Latin,LetterSpace=2.6, Mapping=tex-text]{DIN 1451 Mittelschrift}}
-\def\sansitalicfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeBold=1.5, FakeSlant=0.2, Mapping=tex-text]{DIN 1451 Mittelschrift}}
+\def\sansitalicfont{\fontspec[Script=Latin,LetterSpace=2.6, FakeSlant=0.2, Mapping=tex-text]{DIN 1451 Mittelschrift}}
 
-\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91]{Inconsolata}}
+\def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold]{Inconsolata}}
 
 \renewcommand{\texttt}[1]{{\monofont #1}}
 
+%========== COLOR STUFF ===============
+
+\definecolor{darkred}{rgb}{0.6, 0, 0.00}
+
+
+%============ LISTINGS ==============
 \lstset{
 aboveskip=2\medskipamount, belowskip=2\medskipamount,
 basicstyle=\monofont,
 language=python,
 numbers=left, numberstyle=\tiny,  numbersep=9pt,
-xleftmargin=.4in, frame=l, xrightmargin=.25in
+xleftmargin=.4in, frame=l, xrightmargin=1.74in
 }
+
+
+%============= PAGE LAYOUT ============
 
 %\titleformat{\section}{\huge\sansnormalfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
 \titleformat{\chapter}{\fontsize{32pt}{36pt}\selectfont\sansfont}{}{0em}{}
 \titleformat{\section}{\fontsize{18pt}{22pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
 \titleformat{\subsection}{\fontsize{12pt}{16pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\thesubsection\fontsize{18pt}{22pt}\selectfont\quad}}{0em}{}
+%\titleformat{\paragraph}{\fontsize{12pt}{16pt}\selectfont}{}{}{}
 
 \fancyhead[LE]{\sansfont\small An improved batch CP method \normalsize}
 \fancyhead[RE]{}

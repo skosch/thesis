@@ -1,0 +1,57 @@
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.33]
+      \pgftext[x=-1.5cm, y=4.5cm, rotate=90]{\sansfont\Huge jobs}
+      \pgftext[x=4.5cm, y=10.5cm]{\sansfont\Huge batches}
+
+      \foreach \j in {0,...,9}
+      {
+        \foreach \k in {0,...,9}
+        {
+          \draw[] (\k, \j) circle [radius=0.4];
+        }
+      }
+      \draw [fill] (2,0) circle [radius=0.4];
+      \draw [fill] (2,6) circle [radius=0.4];
+      \draw [fill] (2,9) circle [radius=0.4];
+      \draw [fill] (3,8) circle [radius=0.4];
+      \draw [fill] (4,5) circle [radius=0.4];
+      \draw [fill] (7,1) circle [radius=0.4];
+      \draw [fill] (7,3) circle [radius=0.4];
+      \draw [fill] (8,4) circle [radius=0.4];
+      \draw [fill] (9,2) circle [radius=0.4];
+      \draw [fill] (9,7) circle [radius=0.4];
+    \end{tikzpicture}
+    \caption{Without dominance rule}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.33]
+      \pgftext[x=-1.5cm, y=4.5cm, rotate=90]{\sansfont\Huge jobs}
+      \pgftext[x=4.5cm, y=10.5cm]{\sansfont\Huge batches}
+
+      \foreach \j in {0,...,9}
+      {
+        \foreach \k in {0,...,9}
+        {
+          \draw[] (\k, \j) circle [radius=0.4];
+        }
+      }
+      \draw [fill] (0,0) circle [radius=0.4];
+      \draw [fill] (0,6) circle [radius=0.4];
+      \draw [fill] (0,9) circle [radius=0.4];
+      \draw [fill] (1,8) circle [radius=0.4];
+      \draw [fill] (2,5) circle [radius=0.4];
+      \draw [fill] (3,1) circle [radius=0.4];
+      \draw [fill] (3,3) circle [radius=0.4];
+      \draw [fill] (4,4) circle [radius=0.4];
+      \draw [fill] (5,2) circle [radius=0.4];
+      \draw [fill] (5,7) circle [radius=0.4];
+    \end{tikzpicture}
+    \caption{With dominance rule}
+  \end{subfigure}
+\caption{Dominance rule to eliminate empty batches followed by non-empty batches}\label{fig:dominancerule}
+\end{figure}

@@ -1,0 +1,109 @@
+## ----------------------------------------------------------- -*- Makefile -*-
+##
+## File: lib/Makefile.drv
+##
+## ----------------------------------------------------------------------------
+## 
+## Licensed Materials - Property of IBM
+## 5724-Y29
+## (c) Copyright IBM Corporation 1992, 2009. All Rights Reserved.
+##
+## Note to U.S. Government Users Restricted Rights: 
+## Use, duplication or disclosure restricted by GSA ADP Schedule 
+## Contract with IBM Corp.
+##
+## ----------------------------------------------------------------------------
+##
+## DB Link All Unix Ports Common Makefile for Dynamically loaded drivers
+## Practically users do not need to change anything in this file.
+## ----------------------------------------------------------------------------
+
+KERNEL=-L$$ILDHOME/lib/$(SYSTEM)/$(MODE) -ldbkernel \
+	-L$$IL_HOME/lib/$(SYSTEM)/$(MODE) -lilog
+
+## ----------------------------------------------------------------------------
+## Possible drivers to generate
+## ----------------------------------------------------------------------------
+
+SHLIBS=libdbdb2.$(SHEXT) libdbdb29x.$(SHEXT) \
+	libdbinf72.$(SHEXT) libdbinf9.$(SHEXT) \
+	libdbora9.$(SHEXT) libdbora10.$(SHEXT) libdbora11.$(SHEXT)\
+	libctsyb.$(SHEXT)
+
+all: $(SHLIBS)
+
+## ----------------------------------------------------------------------------
+## IBM DB2
+## ----------------------------------------------------------------------------
+
+DB2OBJS=dbdb2.o reqdb2.o dbasync.o
+
+libdbdb2.$(SHEXT): $(ODIR)libdbdb2.a
+	ar x $(ODIR)libdbdb2.a $(DB2OBJS)
+	$(LD) $(SHFLAGS) $(DB2OBJS) $(KERNEL) $(DB2LIBS)
+	rm -f $(DB2OBJS)
+
+DB29XOBJS=dbdb29x.o reqdb29x.o dbasync.o
+
+libdbdb29x.$(SHEXT): $(ODIR)libdbdb29x.a
+	ar x $(ODIR)libdbdb29x.a $(DB29XOBJS)
+	$(LD) $(SHFLAGS) $(DB29XOBJS) $(KERNEL) $(DB29XLIBS)
+	rm -f $(DB29XOBJS)
+
+## ----------------------------------------------------------------------------
+## Informix
+## ----------------------------------------------------------------------------
+
+INF72OBJS=infx72.o dbinf72.o dbinfcmn72.o reqinf72.o reqinfcmn72.o
+
+libdbinf72.$(SHEXT): $(ODIR)libdbinf72.a
+	ar x $(ODIR)libdbinf72.a $(INF72OBJS)
+	$(LD) $(SHFLAGS) $(INF72OBJS) $(KERNEL) $(INF72LIBS)
+	rm -f $(INF72OBJS)
+
+INF9OBJS=infx91.o dbinf9.o dbinfcmn9.o reqinf9.o reqinfcmn9.o inf9sql.o
+
+libdbinf9.$(SHEXT): $(ODIR)libdbinf9.a
+	ar x $(ODIR)libdbinf9.a $(INF9OBJS)
+	$(LD) $(SHFLAGS) $(INF9OBJS) $(KERNEL) $(INF9LIBS)
+	rm -f $(INF9OBJS)
+
+## ----------------------------------------------------------------------------
+## Oracle
+## ----------------------------------------------------------------------------
+
+ORA9OBJS=dbora9.o reqora9.o dbora9i.o dboracmn9i.o \
+	reqora9i.o reqoracmn9i.o dbasync.o
+
+libdbora9.$(SHEXT): $(ODIR)libdbora9.a
+	ar x $(ODIR)libdbora9.a $(ORA9OBJS)
+	$(LD) $(SHFLAGS) $(ORA9OBJS) $(KERNEL) $(ORA9LIBS)
+	rm -f $(ORA9OBJS)
+
+ORA10OBJS=dbora10.o dbora9_10.o reqora9.o dbora9i.o dboracmn9i.o reqora9i.o \
+	reqoracmn9i.o dbasync.o
+
+libdbora10.$(SHEXT): $(ODIR)libdbora10.a
+	ar x $(ODIR)libdbora10.a $(ORA10OBJS)
+	$(LD) $(SHFLAGS) $(ORA10OBJS) $(KERNEL) $(ORA10LIBS)
+	rm -f $(ORA10OBJS)
+
+ORA11OBJS=dbora11.o dbora10_11.o dbora9_10.o reqora9.o dbora9i.o dboracmn9i.o \
+	reqora9i.o reqoracmn9i.o dbasync.o
+
+libdbora11.$(SHEXT): $(ODIR)libdbora11.a
+	ar x $(ODIR)libdbora11.a $(ORA11OBJS)
+	$(LD) $(SHFLAGS) $(ORA11OBJS) $(KERNEL) $(ORA11LIBS)
+	rm -f $(ORA11OBJS)
+
+## ----------------------------------------------------------------------------
+## Sybase
+## ----------------------------------------------------------------------------
+
+SYBOBJS=dbsyb.o reqsyb.o dbasync.o
+
+libctsyb.$(SHEXT): $(ODIR)libctsyb.a
+	ar x $(ODIR)libctsyb.a $(SYBOBJS)
+	$(LD) $(SHFLAGS) $(SYBOBJS) $(KERNEL) $(SYBLIBS)
+	rm -f $(SYBOBJS)
+

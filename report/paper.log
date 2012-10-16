@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  13 OCT 2012 15:49
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  15 OCT 2012 18:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -464,37 +464,270 @@ LaTeX Info: Redefining \upshape on input line 1905.
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+(/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks18
+)
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box35
+
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(/usr/share/texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks21
+))
+\pgf@x=\dimen151
+\pgf@y=\dimen152
+\pgf@xa=\dimen153
+\pgf@ya=\dimen154
+\pgf@xb=\dimen155
+\pgf@yb=\dimen156
+\pgf@xc=\dimen157
+\pgf@yc=\dimen158
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count171
+\c@pgf@countb=\count172
+\c@pgf@countc=\count173
+\c@pgf@countd=\count174
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-xetex.def on input line 900.
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-xetex.def
+File: pgfsys-xetex.def 2010/02/16  (rcs-revision 1.3)
+
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf-via-dvi.def
+File: pgfsys-common-pdf-via-dvi.def 2008/05/19  (rcs-revision 1.7)
+)))
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count175
+\pgfsyssoftpath@bigbuffer@items=\count176
+)
+(/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(/usr/share/texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen159
+\pgfmath@count=\count177
+\pgfmath@box=\box36
+\pgfmath@toks=\toks22
+\pgfmath@stack@operand=\toks23
+\pgfmath@stack@operation=\toks24
+)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
+(/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count178
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen160
+\pgf@picmaxx=\dimen161
+\pgf@picminy=\dimen162
+\pgf@picmaxy=\dimen163
+\pgf@pathminx=\dimen164
+\pgf@pathmaxx=\dimen165
+\pgf@pathminy=\dimen166
+\pgf@pathmaxy=\dimen167
+\pgf@xx=\dimen168
+\pgf@xy=\dimen169
+\pgf@yx=\dimen170
+\pgf@yy=\dimen171
+\pgf@zx=\dimen172
+\pgf@zy=\dimen173
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen174
+\pgf@path@lasty=\dimen175
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen176
+\pgf@shorten@start@additional=\dimen177
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box37
+\pgf@hbox=\box38
+\pgf@layerbox@main=\box39
+\pgf@picture@serial@count=\count179
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen178
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen179
+\pgf@pt@y=\dimen180
+\pgf@pt@temp=\dimen181
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen182
+\pgf@sys@shading@range@num=\count180
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box40
+))
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box41
+)
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen183
+\pgf@nodesepend=\dimen184
+)
+(/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(/usr/share/texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen185
+\pgffor@skip=\dimen186
+\pgffor@stack=\toks25
+\pgffor@toks=\toks26
+))
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count181
+\pgfplotmarksize=\dimen187
+)
+\tikz@lastx=\dimen188
+\tikz@lasty=\dimen189
+\tikz@lastxsaved=\dimen190
+\tikz@lastysaved=\dimen191
+\tikzleveldistance=\dimen192
+\tikzsiblingdistance=\dimen193
+\tikz@figbox=\box42
+\tikz@tempbox=\box43
+\tikztreelevel=\count182
+\tikznumberofchildren=\count183
+\tikznumberofcurrentchild=\count184
+\tikz@fig@count=\count185
+
+(/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count186
+\pgfmatrixcurrentcolumn=\count187
+\pgf@matrix@numberofcolumns=\count188
+)
+\tikz@expandcount=\count189
+
+(/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
+hs.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+))) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
-\c@tracingmulticols=\count171
-\mult@box=\box35
-\multicol@leftmargin=\dimen151
-\c@unbalance=\count172
-\c@collectmore=\count173
-\doublecol@number=\count174
-\multicoltolerance=\count175
-\multicolpretolerance=\count176
-\full@width=\dimen152
-\page@free=\dimen153
-\premulticols=\dimen154
-\postmulticols=\dimen155
+\c@tracingmulticols=\count190
+\mult@box=\box44
+\multicol@leftmargin=\dimen194
+\c@unbalance=\count191
+\c@collectmore=\count192
+\doublecol@number=\count193
+\multicoltolerance=\count194
+\multicolpretolerance=\count195
+\full@width=\dimen195
+\page@free=\dimen196
+\premulticols=\dimen197
+\postmulticols=\dimen198
 \multicolsep=\skip49
 \multicolbaselineskip=\skip50
-\partial@page=\box36
-\last@line=\box37
-\mult@rightbox=\box38
-\mult@grightbox=\box39
-\mult@gfirstbox=\box40
-\mult@firstbox=\box41
-\@tempa=\box42
-\@tempa=\box43
-\@tempa=\box44
-\@tempa=\box45
-\@tempa=\box46
-\@tempa=\box47
-\@tempa=\box48
-\@tempa=\box49
-\@tempa=\box50
+\partial@page=\box45
+\last@line=\box46
+\mult@rightbox=\box47
+\mult@grightbox=\box48
+\mult@gfirstbox=\box49
+\mult@firstbox=\box50
 \@tempa=\box51
 \@tempa=\box52
 \@tempa=\box53
@@ -503,16 +736,24 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \@tempa=\box56
 \@tempa=\box57
 \@tempa=\box58
-\c@columnbadness=\count177
-\c@finalcolumnbadness=\count178
-\last@try=\dimen156
-\multicolovershoot=\dimen157
-\multicolundershoot=\dimen158
-\mult@nat@firstbox=\box59
-\colbreak@box=\box60
-\multicol@sort@counter=\count179
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\c@columnbadness=\count196
+\c@finalcolumnbadness=\count197
+\last@try=\dimen199
+\multicolovershoot=\dimen200
+\multicolundershoot=\dimen201
+\mult@nat@firstbox=\box68
+\colbreak@box=\box69
+\multicol@sort@counter=\count198
 )
-(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip51
@@ -523,51 +764,53 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks18
-\ex@=\dimen159
+\@emptytoks=\toks27
+Normal \dimen register pool exhausted, switching to extended pool.
+\ex@=\dimen256
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen160
+\pmbraise@=\dimen257
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count180
+\inf@bad=\count199
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count181
-\leftroot@=\count182
+\uproot@=\count200
+\leftroot@=\count201
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count183
-\DOTSCASE@=\count184
+Normal \count register pool exhausted, switching to extended pool.
+\classnum@=\count277
+\DOTSCASE@=\count278
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box61
-\strutbox@=\box62
-\big@size=\dimen161
+\Mathstrutbox@=\box70
+\strutbox@=\box71
+\big@size=\dimen258
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count185
-\c@MaxMatrixCols=\count186
+\macc@depth=\count279
+\c@MaxMatrixCols=\count280
 \dotsspace@=\muskip10
-\c@parentequation=\count187
-\dspbrk@lvl=\count188
-\tag@help=\toks19
-\row@=\count189
-\column@=\count190
-\maxfields@=\count191
-\andhelp@=\toks20
-\eqnshift@=\dimen162
-\alignsep@=\dimen163
-\tagshift@=\dimen164
-\tagwidth@=\dimen165
-\totwidth@=\dimen166
-\lineht@=\dimen167
-\@envbody=\toks21
+\c@parentequation=\count281
+\dspbrk@lvl=\count282
+\tag@help=\toks28
+\row@=\count283
+\column@=\count284
+\maxfields@=\count285
+\andhelp@=\toks29
+\eqnshift@=\dimen259
+\alignsep@=\dimen260
+\tagshift@=\dimen261
+\tagwidth@=\dimen262
+\totwidth@=\dimen263
+\lineht@=\dimen264
+\@envbody=\toks30
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
@@ -583,15 +826,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
-\ttl@box=\box63
+\ttl@box=\box72
 \beforetitleunit=\skip54
 \aftertitleunit=\skip55
-\ttl@plus=\dimen168
-\ttl@minus=\dimen169
-\ttl@toksa=\toks23
-\titlewidth=\dimen170
-\titlewidthlast=\dimen171
-\titlewidthfirst=\dimen172
+\ttl@plus=\dimen265
+\ttl@minus=\dimen266
+\ttl@toksa=\toks32
+\titlewidth=\dimen267
+\titlewidthlast=\dimen268
+\titlewidthfirst=\dimen269
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mathdesign.sty
 Package: mathdesign 2006/01/29 v1.55 Math Design Project
@@ -715,61 +958,62 @@ File: t1mdugm.fd 2006/01/29 Fontinst v1.928 font definitions for T1/mdugm.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen173
-\lightrulewidth=\dimen174
-\cmidrulewidth=\dimen175
-\belowrulesep=\dimen176
-\belowbottomsep=\dimen177
-\aboverulesep=\dimen178
-\abovetopsep=\dimen179
-\cmidrulesep=\dimen180
-\cmidrulekern=\dimen181
-\defaultaddspace=\dimen182
-\@cmidla=\count192
-\@cmidlb=\count193
-\@aboverulesep=\dimen183
-\@belowrulesep=\dimen184
-\@thisruleclass=\count194
-\@lastruleclass=\count195
-\@thisrulewidth=\dimen185
-)
-(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen186
+\heavyrulewidth=\dimen270
+\lightrulewidth=\dimen271
+\cmidrulewidth=\dimen272
+\belowrulesep=\dimen273
+\belowbottomsep=\dimen274
+\aboverulesep=\dimen275
+\abovetopsep=\dimen276
+\cmidrulesep=\dimen277
+\cmidrulekern=\dimen278
+\defaultaddspace=\dimen279
+\@cmidla=\count286
+\@cmidlb=\count287
+\@aboverulesep=\dimen280
+\@belowrulesep=\dimen281
+\@thisruleclass=\count288
+\@lastruleclass=\count289
+\@thisrulewidth=\dimen282
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2012/02/19 v3.2f Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
-\captionmargin=\dimen187
-\captionmargin@=\dimen188
-\captionwidth=\dimen189
-\caption@indent=\dimen190
-\caption@parindent=\dimen191
-\caption@hangindent=\dimen192
+\captionmargin=\dimen283
+\captionmargin@=\dimen284
+\captionwidth=\dimen285
+\caption@indent=\dimen286
+\caption@parindent=\dimen287
+\caption@hangindent=\dimen288
 )
-\c@ContinuedFloat=\count196
+\c@ContinuedFloat=\count290
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
+\c@subfigure=\count291
+\c@subtable=\count292
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count197
-\lst@gtempboxa=\box64
-\lst@token=\toks24
-\lst@length=\count198
-\lst@currlwidth=\dimen193
-\lst@column=\count199
-\lst@pos=\count200
-\lst@lostspace=\dimen194
-\lst@width=\dimen195
-\lst@newlines=\count201
-Normal \count register pool exhausted, switching to extended pool.
-\lst@lineno=\count277
-\lst@maxwidth=\dimen196
+\lst@mode=\count293
+\lst@gtempboxa=\box73
+\lst@token=\toks33
+\lst@length=\count294
+\lst@currlwidth=\dimen289
+\lst@column=\count295
+\lst@pos=\count296
+\lst@lostspace=\dimen290
+\lst@width=\dimen291
+\lst@newlines=\count297
+\lst@lineno=\count298
+\lst@maxwidth=\dimen292
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count278
-\lst@skipnumbers=\count279
-\lst@framebox=\box65
+\c@lstnumber=\count299
+\lst@skipnumbers=\count300
+\lst@framebox=\box74
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -779,16 +1023,16 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip65
-\enit@outerparindent=\dimen197
-\enit@toks=\toks25
-\enit@inbox=\box66
-\enitdp@description=\count280
+\enit@outerparindent=\dimen293
+\enit@toks=\toks34
+\enit@inbox=\box75
+\enitdp@description=\count301
 )
 \@input{typography.aux}
 \openout2 = `typography.aux'.
 
 (./typography.tex
-\enitdp@alist=\count281
+\enitdp@alist=\count302
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -800,40 +1044,40 @@ LaTeX Warning: Unused global option(s):
 (./paper.aux (./coverpage.aux))
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 22.
  (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 19.
-LaTeX Font Info:    Try loading font information for MDB+cmr on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 22.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    ... okay on input line 22.
 
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -842,13 +1086,13 @@ LaTeX Font Info:    ... okay on input line 19.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
-* h-part:(L,W,R)=(101.17755pt, 387.36726pt, 125.75018pt)
+* h-part:(L,W,R)=(79.49744pt, 409.04738pt, 125.75018pt)
 * v-part:(T,H,B)=(101.17755pt, 568.04225pt, 125.75018pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=387.36726pt
+* \textwidth=409.04738pt
 * \textheight=568.04225pt
-* \oddsidemargin=28.90756pt
+* \oddsidemargin=7.22745pt
 * \evensidemargin=53.4802pt
 * \topmargin=-1.15993pt
 * \headheight=12.0pt
@@ -868,18 +1112,19 @@ LaTeX Font Info:    ... okay on input line 19.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+ABD: EveryShipout initializing macros
 
 Package mathdesign/mdugm Warning: Package 'amssymb' shouldn't be used in conjon
-ction with package mdugm, on input line 19.
+ction with package mdugm, on input line 22.
 
 
 Package mathdesign/mdugm Warning: Package 'amsfonts' shouldn't be used in conjo
-nction with package mdugm, on input line 19.
+nction with package mdugm, on input line 22.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count282
+\c@lstlisting=\count303
 \openout2 = `coverpage.aux'.
 
 (./coverpage.tex
@@ -894,7 +1139,7 @@ Package caption Info: End \AtBeginDocument code.
 * OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
 * Mittelschrift' with script 'Latin' and language 'Default'.
 *************************************************
-\g_fontspec_family_DIN 1451 Mittelschrift_int=\count283
+\g_fontspec_family_DIN 1451 Mittelschrift_int=\count304
 *************************************************
 * fontspec warning: "icu-feature-not-exist-in-font"
 * 
@@ -1024,52 +1269,142 @@ Package caption Info: End \AtBeginDocument code.
 (./paper.toc
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
 (Font)              Font shape `T1/mdugm/b/n' tried instead on input line 1.
-LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 3.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
 File: ot1mdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OT1/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OML+mdugm on input line 2.
+LaTeX Font Info:    Try loading font information for OML+mdugm on input line 3.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
 File: omlmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OML/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 2.
+LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 3.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
 File: omsmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMS/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 2.
+LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 3.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
 File: omxmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMX/mdugm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 2.
+LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 3.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
 File: mdamdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDA/mdugm.
 )
-LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 2.
+LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 3.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
 File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
 )
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font DIN 1451 Mittelschrift/B (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font DIN 1451 Mittelschrift/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font DIN 1451 Mittelschrift/BI (it probably doesn't
+. exist).
+.................................................
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(1)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, FakeSlant=0.2,
+. Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->"DIN 1451
+. Mittelschrift/ICU:mapping=tex-text;letterspace=2.6;slant=0.2;mapping=tex-text
+;"
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(1)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, FakeSlant=0.2,
+. Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(1)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, FakeSlant=0.2,
+. Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -1091,8 +1426,8 @@ File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
 . This font family consists of the following shapes:
 .................................................
 [3])
-\tf@toc=\write3
-\openout3 = `paper.toc'.
+\tf@toc=\write4
+\openout4 = `paper.toc'.
 
 
 *************************************************
@@ -1221,211 +1556,7 @@ Chapter 1.
 . 
 . This font family consists of the following shapes:
 .................................................
-[2]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[3]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[4]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[5]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[6
+[2
 
 ]
 Chapter 2.
@@ -1669,7 +1800,7 @@ Chapter 2.
 . 
 . This font family consists of the following shapes:
 .................................................
-[7]
+[3]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -1710,7 +1841,7 @@ Chapter 2.
 . 
 . This font family consists of the following shapes:
 .................................................
-[8
+[4
 
 ]
 Chapter 3.
@@ -1817,50 +1948,422 @@ Chapter 3.
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
-* Font 'Inconsolata' does not contain script 'Latin'.
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
 *************************************************
 *************************************************
 * fontspec warning: "icu-feature-not-exist-in-font"
 * 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font
-* 'Inconsolata' with script 'Latin' and language 'Default'.
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
 *************************************************
-\g_fontspec_family_Inconsolata_int=\count284
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font
-* 'Inconsolata' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font Inconsolata/B (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font Inconsolata/I (it probably doesn't exist).
-.................................................
-.................................................
-. fontspec info: "no-font-shape"
-. 
-. Could not resolve font Inconsolata/BI (it probably doesn't exist).
-.................................................
 .................................................
 . fontspec info: "defining-font"
 . 
-. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
-. [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91].
+. Font family 'DIN1451Mittelschrift(1)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, FakeSlant=0.2,
+. Mapping=tex-text].
 . 
 . This font family consists of the following shapes:
-. 
-. * 'normal' with NFSS spec.:
-. <->s*[0.91]"Inconsolata/ICU:mapping=tex-text;mapping=tex-text;"
 .................................................
-LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
-(Font)              scaled to size 10.92004pt on input line 92.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[5]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(1)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, FakeSlant=0.2,
+. Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 89.
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[6]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+(./figures/dominancerule.tex
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+)
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[7]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(1)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, FakeSlant=0.2,
+. Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[8]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -1872,12 +2375,91 @@ LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
 * OpenType feature 'Ligatures=Common' (+liga) not available for font
 * 'Inconsolata' with script 'Latin' and language 'Default'.
 *************************************************
+\g_fontspec_family_Inconsolata_int=\count305
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Inconsolata/I (it probably doesn't exist).
+.................................................
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font Inconsolata/I (it probably doesn't exist).
+.................................................
 .................................................
 . fontspec info: "defining-font"
 . 
 . Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
 . [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91].
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
+. 
+. This font family consists of the following shapes:
+. 
+. * 'normal' with NFSS spec.:
+. <->s*[0.91]"Inconsolata/ICU:mapping=tex-text;mapping=tex-text;"
+. 
+. * 'bold' with NFSS spec.:
+. 
+. <->s*[0.91]"Inconsolata/ICU:mapping=tex-text;mapping=tex-text;embolden=1.5;"
+.................................................
+LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
+(Font)              scaled to size 10.92004pt on input line 149.
+LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/bx/n' will be
+(Font)              scaled to size 10.92004pt on input line 150.
+
+Overfull \hbox (73.21426pt too wide) in paragraph at lines 156--157
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (99.42258pt too wide) in paragraph at lines 157--158
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (66.66219pt too wide) in paragraph at lines 158--159
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (105.97466pt too wide) in paragraph at lines 160--161
+[][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (7.69348pt too wide) in paragraph at lines 162--163
+[][][][][][][][][][] 
+ []
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
 . 
 . This font family consists of the following shapes:
 .................................................
@@ -1905,6 +2487,46 @@ LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
+* Font 'Inconsolata' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
+. [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'Inconsolata' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
+. [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
 * Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
 *************************************************
 *************************************************
@@ -1942,9 +2564,7 @@ LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
 . 
 . This font family consists of the following shapes:
 .................................................
-[10
-
-]
+[10]
 Chapter 4.
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -2026,7 +2646,9 @@ Chapter 4.
 . 
 . This font family consists of the following shapes:
 .................................................
-[11]
+[11
+
+]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2156,6 +2778,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 . 
 . This font family consists of the following shapes:
 .................................................
+
+Underfull \vbox (badness 3919) has occurred while \output is active []
+
+
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2258,8 +2884,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 . 
 . This font family consists of the following shapes:
 .................................................
-LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 171.
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -2337,7 +2961,7 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
 . 
 . Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
 . [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91].
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
 . 
 . This font family consists of the following shapes:
 .................................................
@@ -2402,9 +3026,9 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <10> not available
 . This font family consists of the following shapes:
 .................................................
 [17]
-Underfull \hbox (badness 6493) in paragraph at lines 194--195
+Overfull \hbox (41.46024pt too wide) in paragraph at lines 268--269
 [] []\T1/mdugm/b/n/10 Ex-am-ple prob-lem[] \T1/mdugm/m/n/12 http://www.scribd.c
-om/doc/49547850/Model-Building-in-
+om/doc/49547850/Model-Building-in-Mathematical-
  []
 
 
@@ -2536,14 +3160,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 18767 strings out of 495716
- 375661 string characters out of 3188883
- 400542 words of memory out of 3000000
- 21641 multiletter control sequences out of 15000+200000
- 58430 words of font info for 67 fonts, out of 3000000 for 9000
+ 27194 strings out of 495716
+ 543948 string characters out of 3188883
+ 618826 words of memory out of 3000000
+ 29866 multiletter control sequences out of 15000+200000
+ 78706 words of font info for 76 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,13n,61p,900b,472s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,13n,61p,844b,1780s stack positions out of 5000i,500n,10000p,200000b,50000s
 
 Output written on paper.pdf (23 pages).

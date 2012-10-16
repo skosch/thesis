@@ -1,0 +1,95 @@
+## ----------------------------------------------------------- -*- Makefile -*-
+##
+## File: lib/x86_sles10.0_4.1/shared/Makefile.drv
+##
+## ----------------------------------------------------------------------------
+## 
+## Licensed Materials - Property of IBM
+## 5724-Y29
+## (c) Copyright IBM Corporation 1992, 2009. All Rights Reserved.
+##
+## Note to U.S. Government Users Restricted Rights: 
+## Use, duplication or disclosure restricted by GSA ADP Schedule 
+## Contract with IBM Corp.
+##
+## ----------------------------------------------------------------------------
+##
+## ----------------------------------------------------------------------------
+
+ILDMODDIR=shared
+
+SHFLAGS=-shared -o $@ -L$(ILDHOME)/lib/$(SYSTEM)/$(ILDMODDIR) -ldbkernel \
+	-L$(IL_HOME)/lib/$(SYSTEM)/$(ILDMODDIR) -lilog -lstdc++ -ldl
+SHEXT=so
+
+# Share object files with static_pic mode :
+ODIR=../static_pic/
+
+# -----------------------------------------------------------------------------
+# RDBMS shared objects
+# -----------------------------------------------------------------------------
+
+## --------------------
+## IBM DB2
+## --------------------
+
+DB2LIBS=-L$$DB2DIR/lib32 -ldb2
+
+DB29XLIBS=-L$$DB2DIR/lib32 -ldb2
+
+## --------------------
+## Informix
+## --------------------
+
+INF72LIBS=-L$$INFORMIXDIR/lib/esql $$INFORMIXDIR/lib/esql/checkapi.o \
+       -lifsql -L$$INFORMIXDIR/lib -lifasf -lifgen -lifos \
+       -lifgls -lnsl -lm -ldl -lifglx
+
+INF9LIBS=-L$$INFORMIXDIR/lib/esql $$INFORMIXDIR/lib/esql/checkapi.o \
+       -lifsql -L$$INFORMIXDIR/lib -lifasf -lifgen -lifos \
+       -lifgls -lnsl -lm -ldl -lifglx -lcrypt
+
+## --------------------
+## My SQL
+## --------------------
+
+MYSQLLIBS=-L$$MYSQL_HOME/lib -lmysqlclient
+
+## --------------------
+## Oracle
+## --------------------
+
+ORA9LIBS=-L$$ORACLE_HOME/lib \
+	-lclntsh `cat $$ORACLE_HOME/lib/sysliblist`
+
+ORA10LIBS=-L$$ORACLE_HOME/lib32 \
+	-lclntsh `cat $$ORACLE_HOME/lib/sysliblist`
+
+ORA11LIBS=-L$$ORACLE_HOME/lib32 \
+	-lclntsh `cat $$ORACLE_HOME/lib/sysliblist`
+
+## --------------------
+## Sybase
+## --------------------
+
+SYB12LIBS=-L$$SYBASE/$$SYBASE_OCS/lib -lct -lcs -lsybtcl -lcomn -lintl -lnsl \
+	-ldl -lm
+
+## For Sybase 15 use the following:
+SYB15LIBS=-L$$SYBASE/$$SYBASE_OCS/lib -lsybct -lsybtcl -lsybcs -lsybcomn \
+	-lsybintl -lsybunic -Wl,-Bdynamic -ldl -lnsl -lm
+
+SYBLIBS=$(SYB12LIBS)
+
+# -----------------------------------------------------------------------------
+# Targets
+# -----------------------------------------------------------------------------
+
+ALL=libctsyb.so libdbinf72.so libdbinf9.so libdbora9.so libdbora10.so \
+	libdbora11.so
+
+include ../Makefile.3_2
+
+include ../../Makefile.drv
+
+lnxinfx91.o: $(ODIR)/libdbinf9.a
