@@ -1,0 +1,26 @@
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.33]
+
+      \draw [<->,thick] (0,20) node (yaxis) [above] {$y$}
+        |- (30,0) node (xaxis) [right] {$x$};
+        
+      \pgftext[x=-1.5cm, y=10cm, rotate=90]{\sansfont\Huge size}
+      \pgftext[x=30cm, y=0cm]{\sansfont\Huge time}
+
+
+    \end{tikzpicture}
+    \caption{With two batches}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.33]
+    
+    \end{tikzpicture}
+    \caption{With dominance rule}
+  \end{subfigure}
+\caption{Overzealous batch elimination can increase $\Lmax$}\label{fig:bnk1}
+\end{figure}

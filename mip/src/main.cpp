@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <algorithm>
 #include <vector>
+#include <deque>
 
 #include <ilcplex/ilocplex.h>
 #include <ilconcert/ilocsvreader.h>
@@ -124,6 +125,45 @@ int main(int argc, char *argv[]) {
       pj[j] = jc[j].p;
       dj[j] = jc[j].d;
     }
+
+    /********* calculate bounds *******/
+
+    // dispatch function for n_k
+    int nk_UB = nj;
+    int j = 0;
+    int jmaxindex = nj-1;
+    int c = 0;
+    int LmaxUB = 0;
+    deque<int> jobs(nj);
+    vector<int> Lj(nj);
+    for(int j=0; j<nj; j++) {jobs[j] = j; Lj[j]=0;}
+
+    for(int k=0; k<nj; k++) { // only go to jmaxindex?
+      j = k+1;
+      while(j <= jmaxindex) {
+	if(pj[j] < pj[k] and sj[j]+sj[k] <= capacity and Lj[j] >= Lj[k]) {
+	  jobs.erase(jobs.begin() + j);
+	  nk_UB--;
+	  // recalculate lateness values of remaining jobs:
+	  c = 0;
+	  for(int lj=0; lj<jobs.size(); lj++) {
+	    Lj[jobs[lj]] = c + pj[jobs[lj]] - dj[jobs[lj]];
+	    c += pj[jobs[lj]];
+	    if(Lj[jobs[lj]] > LmaxUB) {
+	      LmaxUB = Lj[jobs[lj]];
+	      jmaxindex = lj;
+	    }
+	  }
+
+	  // get out of while loop
+	  break;
+	}
+
+	j++;
+      }
+    }
+    cout << "nkUB is " << nk_UB << endl;
+    //    nk = 10;
 
     /********* objective function *****/
 

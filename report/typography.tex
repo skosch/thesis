@@ -6,6 +6,23 @@
 
 \def\Lmax{L_{\text{max}}}
 
+%=========== TIKZ STUFF =========
+
+\usetikzlibrary{fit}
+\makeatletter
+\tikzset{
+  fn/.style={
+    inner sep=0pt,
+    fill=none,
+    draw=none,
+    reset transform,
+    fit={(\pgf@pathminx,\pgf@pathminy) (\pgf@pathmaxx,\pgf@pathmaxy)},
+  },
+  reset transform/.code={\pgftransformreset}
+}
+\makeatother
+
+
 %========= FONT SPECS ============
 \tolerance 8000
 

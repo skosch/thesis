@@ -124,9 +124,74 @@ We can also prune any attempts to leave the first batch empty by adding a constr
 \subsection{Bounding the number of batches \sansitalicfont n\textsuperscript{k}}
 Initially, the number of batches needed is assumed to be equal to the number of jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches needed shrinks the $x_{jk}$ matrix.
 
-Unfortunately, we cannot generally state that optimal solutions never have more batches than other feasible solutions. 
+Unfortunately, we cannot make a general statement that optimal solutions never have more batches than other feasible solutions -- a simple counterexample is shown in figure \ref{fig:bnk1}.\footnote{To be more precise, we cannot state that at least one optimal solution is in the subset of feasible solutions that uses the fewest number of batches -- a dominance situation that could be exploited, were it true.}
+
+\input{figures/bnk1_1050}
+
+It is perhaps possible, however, to generate a feasible solution that is likely to use $n_k < n_j$ and to guarantee that such a solution will never use fewer batches than the optimal solution. To do this, let the initial solution $\pi_0$ be a schedule in which every job is assigned to one batch (i.e. $n_k = n_j$) and the jobs are ordered by non-decreasing due date (i.e. $d_n \leq d_{n+1}$), as in figure \ref{fig:bnk2}.
+
+%\input{figure showing all the jobs in EDD sequence}
+
+
+
+
+Capacity permitting, jobs are now moved into earlier batches to improve the schedule, eliminating the batch they were placed in initially. Every such move reduces $n_k$ by one.
+
+ Two types of moves are possible: \textit{safe} moves and \textit{risky} moves. A move is safe when a job is moved into an earlier batch of longer processing time. A move is risky when a job is moved into an earlier batch of shorter processing time, thus increasing the lateness of that batch.
+
+Moving a job has three effects: 
+
+\begin{alist}
+\item{Effect on the batches after}
+\item{Effect on the batches between, including the new job}
+\item{Effect on the job itself}
+\end{alist}
+
+\begin{table}
+\centering
+\begin{tabular}{r c c}
+\toprule
+              & safe                 & risky \\
+\midrule
+batches after & lateness improves by $p_j$ & lateness improves by $p_a$ \\
+batches between & --- & lateness worsens by $p_j - p_a$ \\
+job itself & lateness improves & lateness improves\\ 
+\bottomrule
+\end{tabular}
+\caption{Lateness effects of safe and risky moves}
+\end{table}
+
+We can easily generate a solution that only contains safe moves.
+We now need to prove that our relaxed solution $\pi_{\text{edd}}$ will never use fewer batches than the optimal solution $\pi_{\text{opt}}$.
+
+For this to be true, we need to show that if there is ever a situation in which we could \textit{either} make $n$ unsafe moves \textit{or} $m>n$ safe ones, using the unsafe ones will never be beneficial if the remaining $m-n$ safe candidates cannot be moved somewhere else.
+
+We're trying to find a relaxation of the problem that is guaranteed to generate as least as many batches as the optimal solution.
+
+
+Whenever there is an alternative between $n$ unsafe moves and $>n$ safe ones, perform $n$ safe ones. Whenever only an unsafe is available, eliminate none and proceed to the next batch.
+
+Unfortunately, we cannot generally state that optimal solutions never have more batches than other feasible solutions: when a job $j_b$ is moved into a prior batch holding $j_a$ and $d_b > d_a$ as well as $p_a < p_b$, it can sometimes happen that $\Lmax$ is increased.
+
+\subsubsection{Some stuff to try}
+
+We can try only considering jobs \textit{before} $\Lmax$, because anything after that job wouldn't be moved in an optimal solution. 
+
+\begin{alist}
+\item {Never move a job into a batch with greater lateness than itself. This would never improve $\Lmax$ and is therefore a dangerous elimination.}
+\item {
+\end{alist}
+  
+
+We can, however, use a dispatch rule to get an upper bound on the number of batches used.
 
 Does the optimal schedule always ever have more batches than a non-optimal schedule? 
+
+
+\section{Known constraints, unused}
+Anything that comes \textit{after} $\Lmax$ doesn't matter. If $L$ is decreasing after $\Lmax$, the jobs must not be stacked ever.
+
+
 
 
 \section{Constraint Programming model}

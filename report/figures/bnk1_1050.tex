@@ -1,0 +1,29 @@
+
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.2, font=\scriptsize]
+
+      \draw [<->,thick] (0,12) node (yaxis) [above] {\sansitalicfont s}
+        |- (25,0) node (xaxis) [right] {\sansitalicfont t};
+      \draw[dotted] (0,10) -- (25,10);
+        \draw (0,0) rectangle (5,7) node[fn] {$p = 10$\\$d = 10$\\$L = 0$};
+        \draw (5,0) rectangle (20, 3) node[fn] {$p = 30, d=20, L=10$};
+        
+    \end{tikzpicture}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.2, font=\scriptsize]
+
+      \draw [<->,thick] (0,12) node (yaxis) [above] {\sansitalicfont s}
+        |- (25,0) node (xaxis) [right] {\sansitalicfont t};
+      \draw[dotted] (0,10) -- (25,10);
+        \draw (0,0) rectangle (5,7) node[fn] {$p = 10$\\$d = 10$\\$L = 20$};
+        \draw (0,7) rectangle (15, 10) node[fn] {$p = 30, d=20, L=0$};
+    
+    \end{tikzpicture}
+  \end{subfigure}
+\caption{Overzealous batch elimination can increase $\Lmax$}\label{fig:bnk1}
+\end{figure}
