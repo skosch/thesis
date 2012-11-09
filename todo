@@ -1,0 +1,17 @@
+1. Use cumulative constraint to strengthen inferences about bin-packing in a
+temporal way
+2. Think about cardinality constraint: number of different pj's vs. number of
+different possible batch sizes (e.g., one batch will have to have the size of
+the longest job)
+3. Think about empty space that will happen
+4. Korf bin packing: Generate a bin at every branch, reason about why one bin
+packing is better than another
+5. Reason about the max TIME a batch can take given a partial assignment, and
+then clip that time to select possible batches a batch can go into.
+6. The first batch has to contain the earliest job. Once the first batch is
+packed, the second batch has to contain the next earliest job.
+
+TODO: 
+generate more problem instances
+write up constraints used so far
+compare

@@ -12,12 +12,14 @@
 %\usepackage[font=small,format=plain,labelfont=it,textfont=it]{caption}
 \usepackage{caption,subcaption}
 \usepackage{listings}
+\usepackage{algpseudocode, algorithm}
 % \usepackage[T1]{fontenc} 
 \usepackage{enumitem}
 
  \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
 \include{typography}
 
+\usepackage[pdfpagelayout=TwoPageRight, hidelinks]{hyperref}
 
 \begin{document}
 \frontmatter
@@ -47,11 +49,163 @@ An introduction to and illustration of MIP models
 \subsection{Solution}
 \subsection{Global constraints}
 
-\chapter{Problem description}
+\chapter{Modelling the problem}
 \section{Characteristics of the problem}
-\section{Summary of Malapert's approach}
-In MIP terms, Malapert's approach was to minimize $\Lmax$ subject to the following constraints:
 
+...
+
+\section{Bounds on variables known a priori}
+
+\subsection{Lower bound on {\sansitalicfont L}\textsubscript{max}}
+A lower bound on $\Lmax$ can be found using the lower bound on the completion
+date of each bucket $q$, where a bucket is defined as the set of batches with
+due date $\delta_q$:
+\begin{alignat}{2}
+& \Lmax \geq C_{\text{max},q} - \delta_q \quad && \forall q
+\end{alignat}
+This works because the buckets up to bucket $q$ are guaranteed to contain all
+jobs with due dates $d \leq \delta_q$, since the batches within the buckets are
+ordered by earliest due date (EDD) in the optimal solution. The buckets up to
+bucket $q$ will likely also contain some later ($d > \delta_q$) jobs in the
+optimal solution but this does not affect the validity of the lower bound.
+
+%To find a lower bound on $C_{\text{max},q}$, we can exploit the fact that every
+%batch needs to span its jobs. If we order the jobs up to bucket $q$ by non-increasing processing
+%time $p$, then we can use algorithm \ref{alg:findcmax} to find
+%$C_{\text{max},q}$:
+%\begin{algorithm}
+%\begin{algorithmic}
+%\State $J^{\star} \gets J$ \Comment{initialize all jobs as unassigned jobs}
+%\State $n_k \gets 1$; $S_k \gets \{0\}$; $P_k \gets \{0\}$ \Comment{Create one
+%empty batch of size and length zero}
+%\State sort $J^{\star}$ by processing time, non-increasing
+%\Repeat
+%  \State $j \gets J^{\star}$.pop() \Comment{select job for assignment, longest job
+%first}
+%  \Loop $\;$ through all $n_k$ existing batches $k$, first batch first
+%    \State $k_p \gets \emptyset$ \Comment{no feasible batch}
+%    \State $c_\text{min} = b$ \Comment{currently known minimum remaining
+%    capacity}
+%    \If{$s_j < b-S_k$ and $b-S_k < c_\text{min}$}
+%      \State $k_p \gets k_p$; $c_\text{min} \gets b-S_k$
+%    \EndIf
+%  \EndLoop
+%  \If{$|k_p| = 1$}
+%      \State $S_{k_p} \gets S_{k_p} + s_j$ \Comment{assign job $j$ to batch $k_p$}
+%  \Else
+%    \State $n_k \gets n_k + 1$\Comment{open new batch}
+%    \State $S_{n_k} \gets s_j$; $P_{n_k} \gets p_j$ \Comment{assign $s_j$ and $p_j$ to the new batch}
+%  \EndIf
+%\Until{$J^{\star}$ is empty}
+%\end{algorithmic}
+%\caption{Finding $C_{\text{max},q}$}
+%\label{alg:findcmax}
+%\end{algorithm}
+%
+%The algorithm is based on the following reasoning: no matter the assignment, one
+%batch will have the length $P_k$ of the longest job $\max(p_j)$.
+%Since we ordered and assigned the jobs by $p_j$, this will be the first batch
+%$k_1$.
+%Continue filling $k_1$ until some job $j_c$ exceeds capacity. This job
+%must go into another batch $k_2$. Swapping $j_l$ with any of the already assigned jobs
+%in $k_1$ (capacity allowing) increases $C_\text{max}$. Even if ``leaving
+%capacity'' in $k_1$ for later, better-fitting open jobs may seem desirable --
+%these other open jobs will necessarily be shorter than $j_c$, so such a move
+%will again serve to increase $C_\text{max}$. Open jobs that fit into
+%previous batches with some remaining capacity should be assigned to the batch
+%with the \textit{minimum} feasible remaining capacity $c_\text{min}$. This
+%avoids unnecessarily precluding shorter (still open) but slightly larger jobs
+%from being assigned to previous batches wherever possible. 
+%
+%A combination of shorter jobs may be a better fit to a previous batch than a
+%single, longer job in terms of using remaining capacity, but what matters is
+%only the processing time.
+%
+
+Now we need to find $C_{\text{max},q}$, or at least a lower bound on it, in
+polynomial time. The simplest approach simply considers the ``total elastic area'',
+i.e. the sum of all $s_j p_j$ products:
+\begin{alignat}{2}
+& C_{\text{max},q} \geq \big\lceil\frac{1}{b} \sum_{j : d_j \leq \delta_q} s_j
+p_j\big\rceil \quad
+&& \forall q
+\end{alignat}
+A better lower bound on $C_{\text{max},q}$ would be given by a
+preemptive-cumulative schedule. Unfortunately, minimizing $C_{\text{max}}$ for
+such problems is equivalent to solving a standard bin-packing problem, which
+requires exponential time. 
+
+\subsection{Upper bound on {\sansitalicfont L}\textsubscript{max}}
+An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
+feasible, if not optimal, schedule. A good approach could be the ``best-fit''
+heuristic proposed in the original paper. {\color{darkred} This has not been
+implemented yet.}
+
+\subsection{Bounding the number of batches \sansitalicfont n\textsuperscript{k}}
+Initially, the number of batches needed is assumed to be equal to the number of jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches needed shrinks the $x_{jk}$ matrix.
+
+Unfortunately, we cannot make a general statement that optimal solutions never have more batches than other feasible solutions -- a simple counterexample is shown in figure \ref{fig:bnk1}.\footnote{To be more precise, we cannot state that at least one optimal solution is in the subset of feasible solutions that uses the fewest number of batches -- a dominance situation that could be exploited, were it true.}
+
+. . .
+
+. . .
+\vfil
+\input{figures/bnk1_1050}
+
+{\color{darkred} I have a long list of ideas here, none of which I've been able
+to prove right or wrong, so I've commented them out and made this page end here.}
+
+%It is perhaps possible, however, to generate a feasible solution that is likely to use $n_k < n_j$ and to guarantee that such a solution will never use fewer batches than the optimal solution. To do this, let the initial solution $\pi_0$ be a schedule in which every job is assigned to one batch (i.e. $n_k = n_j$) and the jobs are ordered by non-decreasing due date (i.e. $d_n \leq d_{n+1}$), as in figure \ref{fig:bnk2}.
+%
+%\input{figure showing all the jobs in EDD sequence}
+%
+%Capacity permitting, jobs are now moved into earlier batches to improve the schedule, eliminating the batch they were placed in initially. Every such move reduces $n_k$ by one.
+%
+%Two types of moves are possible: \textit{safe} moves and \textit{risky} moves. A move is safe when a job is moved into an earlier batch of longer processing time. A move is risky when a job is moved into an earlier batch of shorter processing time, thus increasing the lateness of that batch.
+%
+%Moving a job has three effects: 
+%
+%\begin{alist}
+%\item{Effect on the batches after}
+%\item{Effect on the batches between, including the new job}
+%\item{Effect on the job itself}
+%\end{alist}
+%
+%\begin{table}
+%\centering
+%\begin{tabular}{r c c}
+%\toprule
+%              & safe                 & risky \\
+%\midrule
+%batches after & lateness improves by $p_j$ & lateness improves by $p_a$ \\
+%batches between & --- & lateness worsens by $p_j - p_a$ \\
+%job itself & lateness improves & lateness improves\\ 
+%\bottomrule
+%\end{tabular}
+%\caption{Lateness effects of safe and risky moves}
+%\end{table}
+%
+%We can easily generate a solution that only contains safe moves.
+%We now need to prove that our relaxed solution $\pi_{\text{edd}}$ will never use fewer batches than the optimal solution $\pi_{\text{opt}}$.
+%
+%For this to be true, we need to show that if there is ever a situation in which we could \textit{either} make $n$ unsafe moves \textit{or} $m>n$ safe ones, using the unsafe ones will never be beneficial if the remaining $m-n$ safe candidates cannot be moved somewhere else.
+%
+%We're trying to find a relaxation of the problem that is guaranteed to generate as least as many batches as the optimal solution.
+%
+%
+%Whenever there is an alternative between $n$ unsafe moves and $>n$ safe ones, perform $n$ safe ones. Whenever only an unsafe is available, eliminate none and proceed to the next batch.
+%
+%Unfortunately, we cannot generally state that optimal solutions never have more batches than other feasible solutions: when a job $j_b$ is moved into a prior batch holding $j_a$ and $d_b > d_a$ as well as $p_a < p_b$, it can sometimes happen that $\Lmax$ is increased.
+%
+%\subsubsection{Some stuff to try}
+%
+%We can try only considering jobs \textit{before} $\Lmax$, because anything after that job wouldn't be moved in an optimal solution. 
+%
+%
+
+\section{MIP model used}
+\subsection{Original approach}
+This is Malapert's original approach:
 \begin{alignat}{2}
   &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J \\
   &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\\
@@ -64,35 +218,6 @@ In MIP terms, Malapert's approach was to minimize $\Lmax$ subject to the followi
 \end{alignat}
 
 The constraint \ref{malapp-edd} is the EDD constraint.
-
-\section{Improved bounds in MIP}
-
-\subsection{Lower bound on {\sansitalicfont L}\textsubscript{max}}
-
-A lower bound on $\Lmax$ can be found using the completion date of the fully elastic cumulative solution and comparing it with the latest due date:
-\begin{align}
-& \Lmax \geq \frac{1}{b} \sum_{j \in J} s_j p_j - \mathrm{max}(d_j) \label{eq:lmaxlb}
-\end{align}
-The right hand side involves no decision variables and can be computed in $O(n_j)$ beforehand. This is a valid lower bound: no batch configuration will ever achieve a tighter packing than a fully elastic solution. Even if, in the elastic case, the job with the last due date is scheduled last, it will have a lateness $L_{\text{last}}$ equal to the term in \ref{eq:lmaxlb}. Any other scheduling in the elastic case will result in a worse $L_{\text{last}}$. Since $\Lmax \geq L_{\text{last}}$, this is a lower bound.
-
-In fact, we can go one step further and calculate this lower bound $L_{\text{last}}$ for all sorted subsets $M$ of $J$. First, sort all jobs by non-decreasing due date. This can be done in $O(n_j \log n_j)$. Then the subset $M_1$ contains the job with the earliest due date, $M_2$ contains $M_1$ as well as the next job, etc. until $M_{n_j}$ contains all jobs. The above consideration is certainly true for every subset $M$ containing $m$ jobs.
-
-The reasoning is analogous to that behind the EDD rule. Suppose we assigned a job with a later-than-earliest due date first, then $L_{\text{last},M_1}$ would be reduced; however the earliest-due job would then have to be scheduled at a later point, say in $M_5$: this would increase $L_{\text{last},M_5}$ by an amount not less than was saved by $L_{\text{last},M_1}$. Since we need the lowest possible value for $L_{\text{last}}$ to be certain of its validity as a lower bound, that would be unacceptable. The constraints are thus:
-\begin{alignat}{2}
-& \Lmax \geq \frac{1}{b} \sum_{j_1 \in J}^{j_m \in J} s_j p_j - d_m \quad && \forall m \in \{1, \dots, n_j\}
-\end{alignat}
-and require prior sorting of jobs by due dates.
-
-\subsection{Upper bound on {\sansitalicfont L}\textsubscript{max}}
-An upper bound on $\Lmax$ can be found by using a dispatch rule to find a feasible, if not optimal, schedule. I present several dispatch rules:
-
-\paragraph{\fontsize{12pt}{14pt}\selectfont Earliest due date first} This is a basic one: The given formulation lacks a rule that ensures that no empty batch is followed by a non-empty batch. Empty batches have no processing time and a due date only bounded by $d_\text{max}$, so they can be sequenced between non-empty batches without negatively affecting $\Lmax$. Since, however, desirable schedules have no empty batches
-
-\subsection{No postponing of jobs to later batches}
-Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
-\begin{alignat}{2}
-  & x_{jk} = 0 \quad && \forall j,k : j > k
-\end{alignat}
 
 \subsection{Grouping empty batches}
 The given formulation lacks a rule that ensures that no empty batch is followed by a non-empty batch. Empty batches have no processing time and a due date only bounded by $d_\text{max}$, so they can be sequenced between non-empty batches without negatively affecting $\Lmax$. Since, however, desirable schedules have no empty batches scattered throughout, we can easily reduce the search space by disallowing such arrangements. The idea is illustrated in Figure \ref{fig:dominancerule}.
@@ -121,93 +246,99 @@ We can also prune any attempts to leave the first batch empty by adding a constr
 
 {\color{darkred} This, while it works just fine, actually takes longer than without it.}
 
-\subsection{Bounding the number of batches \sansitalicfont n\textsuperscript{k}}
-Initially, the number of batches needed is assumed to be equal to the number of jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches needed shrinks the $x_{jk}$ matrix.
-
-Unfortunately, we cannot make a general statement that optimal solutions never have more batches than other feasible solutions -- a simple counterexample is shown in figure \ref{fig:bnk1}.\footnote{To be more precise, we cannot state that at least one optimal solution is in the subset of feasible solutions that uses the fewest number of batches -- a dominance situation that could be exploited, were it true.}
-
-\input{figures/bnk1_1050}
-
-It is perhaps possible, however, to generate a feasible solution that is likely to use $n_k < n_j$ and to guarantee that such a solution will never use fewer batches than the optimal solution. To do this, let the initial solution $\pi_0$ be a schedule in which every job is assigned to one batch (i.e. $n_k = n_j$) and the jobs are ordered by non-decreasing due date (i.e. $d_n \leq d_{n+1}$), as in figure \ref{fig:bnk2}.
-
-%\input{figure showing all the jobs in EDD sequence}
-
-
-
-
-Capacity permitting, jobs are now moved into earlier batches to improve the schedule, eliminating the batch they were placed in initially. Every such move reduces $n_k$ by one.
-
- Two types of moves are possible: \textit{safe} moves and \textit{risky} moves. A move is safe when a job is moved into an earlier batch of longer processing time. A move is risky when a job is moved into an earlier batch of shorter processing time, thus increasing the lateness of that batch.
-
-Moving a job has three effects: 
-
-\begin{alist}
-\item{Effect on the batches after}
-\item{Effect on the batches between, including the new job}
-\item{Effect on the job itself}
-\end{alist}
-
-\begin{table}
-\centering
-\begin{tabular}{r c c}
-\toprule
-              & safe                 & risky \\
-\midrule
-batches after & lateness improves by $p_j$ & lateness improves by $p_a$ \\
-batches between & --- & lateness worsens by $p_j - p_a$ \\
-job itself & lateness improves & lateness improves\\ 
-\bottomrule
-\end{tabular}
-\caption{Lateness effects of safe and risky moves}
-\end{table}
-
-We can easily generate a solution that only contains safe moves.
-We now need to prove that our relaxed solution $\pi_{\text{edd}}$ will never use fewer batches than the optimal solution $\pi_{\text{opt}}$.
-
-For this to be true, we need to show that if there is ever a situation in which we could \textit{either} make $n$ unsafe moves \textit{or} $m>n$ safe ones, using the unsafe ones will never be beneficial if the remaining $m-n$ safe candidates cannot be moved somewhere else.
-
-We're trying to find a relaxation of the problem that is guaranteed to generate as least as many batches as the optimal solution.
-
-
-Whenever there is an alternative between $n$ unsafe moves and $>n$ safe ones, perform $n$ safe ones. Whenever only an unsafe is available, eliminate none and proceed to the next batch.
-
-Unfortunately, we cannot generally state that optimal solutions never have more batches than other feasible solutions: when a job $j_b$ is moved into a prior batch holding $j_a$ and $d_b > d_a$ as well as $p_a < p_b$, it can sometimes happen that $\Lmax$ is increased.
-
-\subsubsection{Some stuff to try}
-
-We can try only considering jobs \textit{before} $\Lmax$, because anything after that job wouldn't be moved in an optimal solution. 
-
-\begin{alist}
-\item {Never move a job into a batch with greater lateness than itself. This would never improve $\Lmax$ and is therefore a dangerous elimination.}
-\item {
-\end{alist}
-  
-
-We can, however, use a dispatch rule to get an upper bound on the number of batches used.
-
-Does the optimal schedule always ever have more batches than a non-optimal schedule? 
-
-
-\section{Known constraints, unused}
-Anything that comes \textit{after} $\Lmax$ doesn't matter. If $L$ is decreasing after $\Lmax$, the jobs must not be stacked ever.
-
-
-
-
-\section{Constraint Programming model}
-The same problem can be formulated as a basic constraint programming model without global constraints: 
+\subsection{No postponing of jobs to later batches}
+Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
 \begin{alignat}{2}
- &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J \\
-  &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\\
-  &P_k = \max(p_j x_{jk}) \quad && \forall k \in K\\
-  &C_{k-1} + P_{k} = C_k \quad && \forall k \in K\\
-  &D_k = \min(d_j x_{jk}) \quad && \forall k \in K\\
-  &D_{k-1} \leq D_k \quad && \forall k \in K \label{malapp-edd} \\
-  &\Lmax = \max(C_k - D_k) \quad && \forall k \in K\\[2ex]
-  &C_k \geq 0, P_k \geq 0 \text{ and } D_k \geq 0 \quad && \forall k \in K  
+  & x_{jk} = 0 \quad && \forall j,k : j > k
 \end{alignat}
 
-Batches are interval variables who have start and end times and precedence constraints of the type \texttt{IloEndAtStart(env, batch1, batch2, 0)}. 
+
+
+\section{CP model}
+
+This is where all the CP constraints are.
+
+\subsection{Bin-packing constraint}
+This makes sure the jobs are distributed into the batches such that no batch
+exceeds the capacity $b$:
+\begin{align}
+\mathtt{pack}(J, K, b)
+\end{align}
+
+\subsection{Temporal constraints}
+These constraints are implemented using \texttt{IntervalVariable} objects, which
+offer properties such as \texttt{lengthOf} or \texttt{endOf}.
+
+\begin{alignat}{2}
+& P_k \geq \underset{j : B_j = k}{\max} \; p_j \quad &&
+\forall k \in K \\
+& D_k \leq \underset{j : B_j = k}{\min}\; d_j \quad && \forall k \in K \\
+& C_k + P_{k+1} = C_{k+1} \quad && \forall k \in K \\
+& \Lmax \geq \underset{k}{\max} \;(C_k - D_k) && 
+\end{alignat}
+
+The first constraint ensures that each batch is as long as its longest job. 
+
+The second constraint ensures that the earliest-due job sets the due date. This
+constraint relies on the matrix $x_{jk}$ representing the job-batch assignments,
+and the value $\min(d_j x_{jk})$ for a given batch $k$ is always zero (unless said
+batch contains all jobs). As a result, this was implemented in a custom
+propagator routine.
+
+The third constraints defines $\Lmax$.
+
+\subsection{Constraint on number of batches with length
+\sansitalicfont{P\textsubscript{k}} = \sansitalicfont{p}}
+
+Since batches take on the processing time of their longest job, there is at
+least one batch with $P = \underset{j}{\max} p_j $:
+\begin{align}
+\mathtt{globalCardinality}( |P_k = \underset{j}{\max} \; p_j| = 1 ) 
+\end{align}
+
+We can proceed to fill batches with jobs, ordered by non-increasing processing
+time. The next batch will then have to be at least as long as the first job we
+assign to it, giving us another cardinality constraint. We can continue doing
+this until all jobs are assigned to batches. {\color{darkred} This can surely be
+improved somehow by realizing a priori that some jobs must go before others?}
+
+Furthermore, if all jobs have different processing times, all batches will have
+different processing times as well. If $m$ out of $n_j$ jobs have different
+processing times, we can still enforce \texttt{k\_alldifferent}$(P_k, m)$.
+Propagation rules for this constraint were given in \cite{Lardeux}. 
+
+\subsection{Temporal constraints on a job's start date}
+Given any partial assignment of jobs, we can reason that
+\begin{alist}
+\item{if the first batch with a due date later than the job is $k$, then the job
+cannot be part of a batch after $k$ -- this would result in a non-EDD sequence
+of batches.}
+\item{if the first batches up to $k-1$ offer not enough capacity for $j$ due to
+the given partial assignment, then the job cannot be part of a batch before
+$k$.}
+\end{alist}
+Since batches are \textit{not} dynamically created like in Malapert's solution
+but fixed from the start, any partial assignment that fails due to these
+constraints cannot be part of an optimal solution.
+
+This constraint is redundant with both the $(C_{k+1}\geq C_k)$ and
+\texttt{packing} constraints, but may help accelerate the propagation in some
+cases.
+
+\subsection{Cumulative constraint}
+
+\subsection{Grouping empty batches}
+Just like in the MIP model, we can force empty batches to the back and thus
+establish dominance of certain solutions. The implementation is much easier than
+in the MIP model:
+\begin{alignat}{2}
+& \mathtt{IfThen}( C_{k+2} > C_{k}, C_{k+1} > C_{k} ) \quad && \forall k \in
+\{k_1, \dots, k_{n_k-2}\}
+\end{alignat}
+
+\section{Other known properties, unused so far}
+Anything that comes \textit{after} $\Lmax$ doesn't matter. If $L$ is decreasing after $\Lmax$, the jobs must not be stacked ever. In other words: don't ever consider an assignment where 
+
 
 \section{Test data for evaluation}
 Malapert uses benchmark data by Daste. For design purposes, I created my own set of randomized job lists, with $s_j, p_j \in [1, 20]$ and $d_j \in [1, 10n]$ where $n$ is the number of jobs. Here is the Python code used:

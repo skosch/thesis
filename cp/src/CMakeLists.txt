@@ -2,7 +2,7 @@
 set (rhea_VERISON_MAJOR 0)
 set (rhea_VERSION_MINOR 1)
 
-add_executable(thesis_cp main.cpp)
+add_executable(thesis_cp main.cpp MinNonzeroDuedateI.cpp)
 
 SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/bin")
 

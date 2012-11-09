@@ -22,6 +22,7 @@
 }
 \makeatother
 
+%========= ALGO STUFF ============
 
 %========= FONT SPECS ============
 \tolerance 8000
@@ -37,6 +38,7 @@
 \def\monofont{\fontspec[Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold]{Inconsolata}}
 
 \renewcommand{\texttt}[1]{{\monofont #1}}
+\renewcommand{\mathtt}[1]{{\text{\monofont #1}}\,}
 
 %========== COLOR STUFF ===============
 
@@ -61,7 +63,7 @@ xleftmargin=.4in, frame=l, xrightmargin=1.74in
 \titleformat{\subsection}{\fontsize{12pt}{16pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\thesubsection\fontsize{18pt}{22pt}\selectfont\quad}}{0em}{}
 %\titleformat{\paragraph}{\fontsize{12pt}{16pt}\selectfont}{}{}{}
 
-\fancyhead[LE]{\sansfont\small An improved batch CP method \normalsize}
+\fancyhead[LE]{\sansfont\small Scheduling non-identical jobs on a batch resource \normalsize}
 \fancyhead[RE]{}
 \fancyhead[LO]{}
 \fancyhead[RO]{\sansfont\small \nouppercase\rightmark}
@@ -72,3 +74,8 @@ xleftmargin=.4in, frame=l, xrightmargin=1.74in
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[C]{\sansfont\thepage}
 }
+
+%====== CHAR REPLACEMENTS ======%
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+

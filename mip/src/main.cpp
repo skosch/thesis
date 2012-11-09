@@ -44,51 +44,22 @@ int main(int argc, char *argv[]) {
     // declarations
     IloModel model(env);
     int nj;
-
-    if(argc >= 2) {
+    int nk;
+    if(argc == 2) {
       nj = atoi(argv[1]);
+      nk = nj;
+    }
+    else if(argc == 3) {
+      nj = atoi(argv[1]);
+      nk = atoi(argv[2]);
+      cout << "nk accepted!" << endl;
     } else {
       nj = 10;
+      nk = nj;
     }
 
-    int nk = nj;
     int capacity = 20;
     int Dmax = 2000;
-
-    /************ variables ***********/
-    
-    // x_jk
-    // This is an array of j*j binary variables.
-
-    typedef IloArray<IloNumVarArray> xjk_matrix;
-
-    xjk_matrix xjk(env, nj);
-    
-    for(int j=0; j<nj; j++) { // initialize each matrix row (reprs. jobs)
-      xjk[j] = IloNumVarArray(env, nk);
-      for(int k=0; k<nk; k++) {
-	xjk[j][k] = IloNumVar(env, 0, 1, ILOINT);
-      }
-    }
-
-    // P_k, D_k, C_k
-    // One for each of j batches
-
-    IloNumVarArray Pk(env, nk);
-    IloNumVarArray Dk(env, nk);
-    IloNumVarArray Ck(env, nk);
-    IloNumVarArray ek(env, nk);
-
-    for(int k=0; k<nk; k++) {
-      Pk[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT); /// FIX THIS: WHATS UPPER BOUND?
-      Dk[k] = IloNumVar(env, 0, Dmax, ILOFLOAT);
-      Ck[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT);
-      ek[k] = IloNumVar(env, 0, 1, ILOINT);
-    }
-
-    // Lmax
-    // This one is used in the objective.
-    IloNumVar Lmax(env, -IloInfinity, IloInfinity, ILOFLOAT);
 
     /************ constants ***********/
 
@@ -163,7 +134,44 @@ int main(int argc, char *argv[]) {
       }
     }
     cout << "nkUB is " << nk_UB << endl;
-    //    nk = 10;
+    //nk = nk_UB;
+
+
+    /************ variables ***********/
+    
+    // x_jk
+    // This is an array of j*j binary variables.
+
+    typedef IloArray<IloNumVarArray> xjk_matrix;
+
+    xjk_matrix xjk(env, nj);
+    
+    for(int j=0; j<nj; j++) { // initialize each matrix row (reprs. jobs)
+      xjk[j] = IloNumVarArray(env, nk);
+      for(int k=0; k<nk; k++) {
+	xjk[j][k] = IloNumVar(env, 0, 1, ILOINT);
+      }
+    }
+
+    // P_k, D_k, C_k
+    // One for each of j batches
+
+    IloNumVarArray Pk(env, nk);
+    IloNumVarArray Dk(env, nk);
+    IloNumVarArray Ck(env, nk);
+    IloNumVarArray ek(env, nk);
+
+    for(int k=0; k<nk; k++) {
+      Pk[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT); /// FIX THIS: WHATS UPPER BOUND?
+      Dk[k] = IloNumVar(env, 0, Dmax, ILOFLOAT);
+      Ck[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT);
+      ek[k] = IloNumVar(env, 0, 1, ILOINT);
+    }
+
+    // Lmax
+    // This one is used in the objective.
+    IloNumVar Lmax(env, -IloInfinity, IloInfinity, ILOFLOAT);
+
 
     /********* objective function *****/
 
@@ -217,7 +225,7 @@ int main(int argc, char *argv[]) {
     }
 
     // 13. Grouping empty batches. 
-/**
+
     IloNumArray ones(env, nj);
     for(int j=0; j<nj; j++) ones[j] = int(1);
 
@@ -230,17 +238,26 @@ int main(int argc, char *argv[]) {
             model.add( ek[k] - ek[k-1] >= 0 );
     } 
     model.add( ek[0] == 0 );
-**/
+
 
     // 14. Lower bound for Lmax
-    float Lmax_LB = pj[0]*sj[0]/capacity - dj[0];
-    float Lmax_LB_temp = 0;
-    for(int j=1; j<nj; j++) {
-      Lmax_LB_temp = Lmax_LB + dj[j-1] + pj[j]*sj[j]/capacity - dj[j];
-      if(Lmax_LB_temp > Lmax_LB) Lmax_LB = Lmax_LB_temp;
-    }
-
-    model.add( Lmax >= int(Lmax_LB) );
+    float Lmax_LB = -IloIntMax; //pj[0]*sj[0]/capacity - dj[0];
+    float Cmax_LB_temp = 0;
+    for(int j=0; j<nj; j++) {
+      Cmax_LB_temp += pj[j]*sj[j]/capacity;
+      if(j < nj-1) {
+        if(dj[j+1] == dj[j]) {cout<<"same duedate: " << j << endl; continue;} // still the same bucket
+      } 
+        // new bucket, update Lmax_LB if necessary
+        if(Cmax_LB_temp - dj[j] > Lmax_LB) {
+          Lmax_LB = Cmax_LB_temp - dj[j];
+          cout << "Updating LmaxLB to " << Lmax_LB << ". C=" << Cmax_LB_temp <<
+          ", d=" << dj[j];
+        
+      }
+    } 
+    cout << "LmaxLB:" << Lmax_LB << endl;
+    model.add( Lmax >= ceil(Lmax_LB));
 
     // 15. Upper bound for Lmax
     //     Get feasible solution by means of EDD, find Lmax
@@ -254,24 +271,43 @@ int main(int argc, char *argv[]) {
 
     /********* solving the model ******/
     IloCplex cplex(model);
+    cplex.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
     cplex.solve();
     cout << cplex.getStatus() << endl;
 
     /********** printing results ********/
 
     cout << "Lmax: " << cplex.getValue(Lmax) << endl;
+    cout << "Lmax_LB: " << int(Lmax_LB) << endl;
+    cout << "Jobs:" << endl;
+    for(int j=0; j<nj; j++) {
+      if(j<10) cout << " ";
+      cout << j << "\t" << "s=" << sj[j] << " p=" << pj[j] << " d=" << dj[j] <<
+      endl;
+    }
     cout << "Solution: " << endl << "  ";
-
+ cout << "Batch completion dates:" << endl;
     for(int k=0; k<nk; k++) {
       if(k<10) cout << " ";
-      cout << k;
+      cout << cplex.getValue(Ck[k]);
     }
+    cout << endl << "Batch due dates:" << endl;
+    for(int k=0; k<nk; k++) {
+      if(k<10) cout << " ";
+      cout << cplex.getValue((Dk[k]));
+    }
+    cout << endl << "Batch lateness:" << endl;
+    for(int k=0; k<nk; k++) {
+      if(k<10) cout << " ";
+      cout << cplex.getValue((Ck[k] - Dk[k]));
+    }
+
     cout << endl;
     for(int j=0; j<nj; j++) {
       if(j<10) cout << " ";
       cout << (j);
       for(int k=0; k<nk; k++) {
-	cout << (cplex.getValue(xjk[j][k]) == true ? " X" : " ·");
+        cout << (cplex.getValue(xjk[j][k]) == true ? " X" : " ·");
       }
       cout << endl;
     }

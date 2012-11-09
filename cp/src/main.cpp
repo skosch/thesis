@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+
 #include <cstdlib>
+#include <stdlib.h>
 #include <algorithm>
 #include <vector>
 
@@ -9,6 +11,8 @@
 #include <ilcp/cp.h>
 #include <ilconcert/ilocsvreader.h>
 #include <ilconcert/iloexpression.h>
+
+#include "MinNonzeroDuedateI.h"
 
 using namespace std;
 
@@ -21,12 +25,17 @@ struct job{
 };
 bool operator<(const job &a, const job &b) {return a.d < b.d;}
 
+const char* charcat(string first, int second, int third) {
+  stringstream res;
+  res << first << second << "_" << third;
+  return res.str().c_str();
+}
 
 IloIntExpr secondarySumExpr(IloEnv env, IloIntArray coeff, IloArray<IloIntVarArray> matrix, int secondIndex, int coeffsize) {
   // builds an expression in a loop.
   // input: coeff, matrix
   // output: sum over all i for given secondindex: coeff[i] * matrix[i][secondIndex]
-  
+
   IloIntExpr result(env);
   for(int i = 0; i<coeffsize; i++) { 
     result += (coeff[i] * matrix[i][secondIndex]);
@@ -35,28 +44,30 @@ IloIntExpr secondarySumExpr(IloEnv env, IloIntArray coeff, IloArray<IloIntVarArr
 
 }
 
-IloIntExprArray secondaryProdArray(IloEnv env, IloIntArray coeff, IloArray<IloIntVarArray> matrix, int secondIndex, int coeffsize) {
-  IloIntExprArray result(env, coeffsize);
-  for(int i=0; i<coeffsize; i++) {
+/*** Custom propagators ***/
+IloConstraint MinNonzeroDuedate(IloIntVar Dk, IloArray<IloIntVarArray> matrix, IloIntArray
+    dj, int k) {
+  return IloCustomConstraint(Dk.getEnv(), new (Dk.getEnv())
+      MinNonzeroDuedateI(Dk, matrix, dj, k));
+}
 
-    result[i] = coeff[i] * matrix[i][secondIndex];
+
+// Same as secondaryProdArray, but doesn't include zeros
+IloIntExprArray secondaryProdArray(IloEnv env, IloIntArray coeff,
+    IloArray<IloIntVarArray> matrix, int secondIndex, int coeffsize) {
+  IloIntExprArray result(env); 
+  for(int i=0; i<coeffsize; i++) {
+    result.add(coeff[i]*matrix[i][secondIndex]); 
   }
   return result;
 }
 
-IloIntExprArray secondaryNZProdArray(IloEnv env, IloIntArray coeff, IloArray<IloIntVarArray> matrix, int secondIndex, int coeffsize) {
-  IloIntExprArray result(env);
-  for(int i=0; i<coeffsize; i++) {
-    if(matrix[i][secondIndex] > 0) result.add(IloIntExpr(coeff[i]));
-  }
-  return result;
-}
 
 
 int main(int argc, const char * argv[]){
   IloEnv env;
   try {
-  // declarations
+    // declarations
     IloModel model(env);
     int nj;
 
@@ -78,7 +89,7 @@ int main(int argc, const char * argv[]){
     for(int j=0; j<nj; j++) {
       xjk[j] = IloIntVarArray(env, nk);
       for(int k=0; k<nk; k++) {
-	xjk[j][k] = IloIntVar(env, 0, 1);
+        xjk[j][k] = IloIntVar(env, 0, 1, charcat("xjk_", j, k));
       }
     }
 
@@ -87,15 +98,15 @@ int main(int argc, const char * argv[]){
     IloIntervalVarArray J(env, nj); // the jobs
 
     for(int k=0; k < nk; k++) {
-      Dk[k] = IloIntVar(env, 0, Dmax);
-      K[k] = IloIntervalVar(env);
+      Dk[k] = IloIntVar(env, 0, Dmax, charcat("Dk_", k, 0));
+      K[k] = IloIntervalVar(env, charcat("Kinterval_", k, 0));
       K[k].setStartMin(0);
     }
 
-    IloIntVar Lmax(env, -IloInfinity, IloInfinity);
+    IloIntVar Lmax(env, -IloInfinity, IloInfinity, "Lmax");
 
     /*************** constants *************/
-   
+
 
     stringstream filename;
     filename << "../../data/data_" << nj;
@@ -124,7 +135,7 @@ int main(int argc, const char * argv[]){
     sort(jc.begin(), jc.end());
 
     // now put the constants into the IloIntArrays
-      cout << "Batches:" << endl;
+    cout << "Batches:" << endl;
     for(int j=0; j<nj; j++) {
       sj[j] = jc[j].s;
       pj[j] = jc[j].p;
@@ -142,7 +153,7 @@ int main(int argc, const char * argv[]){
     IloIntVar batchesUsed(env, 0, nk); 
     IloIntVarArray batchloads(env, nk, 0, capacity);
     IloIntVarArray assignments(env, nj, 0, nk);
-    
+
 
     /*********** objective function ************/
 
@@ -154,30 +165,13 @@ int main(int argc, const char * argv[]){
 
     // batches are as long as their longest job
     // jobs in a batch are given by max(pj[j where assignments[j]=k])
-    
+
 
     for(int k = 0; k<nk; k++) {
       for(int j = 0; j<nj; j++) {
-	model.add( xjk[j][k] == (assignments[j]==k) );
+        model.add( xjk[j][k] == (assignments[j]==k) );
       }
     }
-    /*
-    // batches span their jobs
-    for(int k=0; k<nk; k++) {
-
-      IloIntExprArray prodArray = secondaryProdArray(env, pj, xjk, k, nj);
-
-      model.add( IloLengthOf(K[k]) ==  4); //IloMax(prodArray) );
-      model.add( Dk[k] == 6);
-      /*
-	IloIntervalVarArray includantJob(env,1);
-	includantJob[0] = J[j];
-	model.add(IloIfThen(env, assignments[j]==k, IloSpan(env, K[k], includantJob)));
-      
-    }
-    */
-
-
 
     // 8. batches are as long as their longest job
     for(int k=0; k<nk; k++) {
@@ -189,15 +183,14 @@ int main(int argc, const char * argv[]){
 
     // 9. batches are due as early as the earliest job
     for(int k=0; k<nk; k++) {
-      IloIntExprArray prodExpression = secondaryNZProdArray(env, dj, xjk, k, nj);
-      model.add( Dk[k] == IloMin(prodExpression) );
+      model.add( MinNonzeroDuedate(Dk[k], xjk, dj, k));
     }
 
     // 10. Lmax definition
-    //  Latenesses: { Dk[k] - IloEndOf(K[k]) }
+    //  Latenesses: { IloEndOf(K[k]) - Dk[k]}
     IloIntExprArray L(env, nk);
     for(int k=0; k<nk; k++) {
-      L[k] = Dk[k] - IloEndOf(K[k]);
+      L[k] = IloEndOf(K[k]) - Dk[k];
     }
     model.add( Lmax == IloMax(L) );
 
@@ -206,36 +199,84 @@ int main(int argc, const char * argv[]){
       model.add(IloEndAtStart(env, K[k-1], K[k], 0));
     }
 
-    /************** solve the model ************/
 
+    // 14. Lower bound for Lmax
+    float Lmax_LB = -IloIntMax; //pj[0]*sj[0]/capacity - dj[0];
+    float Cmax_LB_temp = 0;
+    for(int j=0; j<nj; j++) {
+      Cmax_LB_temp += pj[j]*sj[j]/capacity;
+      if(j < nj-1) {
+        if(dj[j+1] == dj[j]) {cout<<"same duedate: " << j << endl; continue;} // still the same bucket
+      } 
+      // new bucket, update Lmax_LB if necessary
+      if(Cmax_LB_temp - dj[j] > Lmax_LB) {
+        Lmax_LB = Cmax_LB_temp - dj[j];
+        cout << "Updating LmaxLB to " << Lmax_LB << ". C=" << Cmax_LB_temp <<
+          ", d=" << dj[j];
+
+      }
+    } 
+    cout << "LmaxLB:" << Lmax_LB << endl;
+    model.add( Lmax >= ceil(Lmax_LB));
+
+    // 15. Upper bound for Lmax
+    //     Get feasible solution by means of EDD, find Lmax
+    // model.add( Lmax <= 25); // this doesn't really help much.
+
+    // 16. No batches later than necessary. This works because we sorted things.
+    for(int j=0; j<nj; j++) {
+      for(int k=j+1; k<nk; k++) {
+        model.add( xjk[j][k] == 0 );
+      }
+    }
+
+    // 17. No empty batches in the middle
+    for(int k=0; k<nk-2; k++) {
+      model.add(IloIfThen( env, IloEndOf(K[k+2]) > IloEndOf(K[k]),
+            IloEndOf(K[k+1]) > IloEndOf(K[k])));
+    } 
+
+    /************** solve the model ************/
+    //cout << model << endl;
     IloCP cp(model);
-    cp.setParameter(IloCP::OptimalityTolerance, 1);
-    cp.setParameter(IloCP::TimeLimit, 5);
+
+    // cp.setParameter(IloCP::OptimalityTolerance, 1);
+    // cp.setParameter(IloCP::TimeLimit, 20);
+    //cp.setParameter(IloCP::PropagationLog, IloCP::Verbose);
+    cp.setParameter(IloCP::SearchType, IloCP::DepthFirst);
     cp.solve();
 
- /********** printing results ********/
+    /********** printing results ********/
 
-        cout << "Lmax: " << cp.getValue(batchloads[4]) << endl;
+    cout << "Lmax: " << cp.getValue(Lmax) << endl;
     cout << "Solution: " << endl << "  ";
-
+    cout << "-----" << endl;
+    cout << "Batch completion dates:" << endl;
     for(int k=0; k<nk; k++) {
       if(k<10) cout << " ";
       cout << cp.getValue(IloEndOf(K[k]));
     }
-   for(int k=0; k<nk; k++) {
+    cout << endl << "Batch due dates:" << endl;
+    for(int k=0; k<nk; k++) {
       if(k<10) cout << " ";
       cout << cp.getValue((Dk[k]));
     }
+    cout << endl << "Batch lateness:" << endl;
+    for(int k=0; k<nk; k++) {
+      if(k<10) cout << " ";
+      cout << cp.getValue((L[k]));
+    }
+
     cout << endl;
-       for(int j=0; j<nj; j++) {
+    for(int j=0; j<nj; j++) {
       if(j<10) cout << " ";
       cout << (j);
       for(int k=0; k<nk; k++) {
-	cout << (cp.getValue(xjk[j][k]) == true ? " X" : " ·");
+        cout << (cp.getValue(xjk[j][k]) == true ? " X" : " ·");
       }
       cout << endl;
     }
-    
+
     // printing batch results
 
     for(int k=0; k<nk; k++) {
