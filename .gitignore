@@ -1,0 +1,5 @@
+# ignore all object files and everything in bin/
+*.[oa]
+mip/bin/*
+cp/bin/*
+
