@@ -109,6 +109,78 @@ thesis_bender/fast:
 	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/build
 .PHONY : thesis_bender/fast
 
+BBNode.o: BBNode.cpp.o
+.PHONY : BBNode.o
+
+# target to build an object file
+BBNode.cpp.o:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o
+.PHONY : BBNode.cpp.o
+
+BBNode.i: BBNode.cpp.i
+.PHONY : BBNode.i
+
+# target to preprocess a source file
+BBNode.cpp.i:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/BBNode.cpp.i
+.PHONY : BBNode.cpp.i
+
+BBNode.s: BBNode.cpp.s
+.PHONY : BBNode.s
+
+# target to generate assembly for a file
+BBNode.cpp.s:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/BBNode.cpp.s
+.PHONY : BBNode.cpp.s
+
+Job.o: Job.cpp.o
+.PHONY : Job.o
+
+# target to build an object file
+Job.cpp.o:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/Job.cpp.o
+.PHONY : Job.cpp.o
+
+Job.i: Job.cpp.i
+.PHONY : Job.i
+
+# target to preprocess a source file
+Job.cpp.i:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/Job.cpp.i
+.PHONY : Job.cpp.i
+
+Job.s: Job.cpp.s
+.PHONY : Job.s
+
+# target to generate assembly for a file
+Job.cpp.s:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/Job.cpp.s
+.PHONY : Job.cpp.s
+
+RootNode.o: RootNode.cpp.o
+.PHONY : RootNode.o
+
+# target to build an object file
+RootNode.cpp.o:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o
+.PHONY : RootNode.cpp.o
+
+RootNode.i: RootNode.cpp.i
+.PHONY : RootNode.i
+
+# target to preprocess a source file
+RootNode.cpp.i:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/RootNode.cpp.i
+.PHONY : RootNode.cpp.i
+
+RootNode.s: RootNode.cpp.s
+.PHONY : RootNode.s
+
+# target to generate assembly for a file
+RootNode.cpp.s:
+	cd /home/sebastian/thesis/bender && $(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/RootNode.cpp.s
+.PHONY : RootNode.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -142,6 +214,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... thesis_bender"
+	@echo "... BBNode.o"
+	@echo "... BBNode.i"
+	@echo "... BBNode.s"
+	@echo "... Job.o"
+	@echo "... Job.i"
+	@echo "... Job.s"
+	@echo "... RootNode.o"
+	@echo "... RootNode.i"
+	@echo "... RootNode.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -2,7 +2,7 @@
 set (rhea_VERISON_MAJOR 0)
 set (rhea_VERSION_MINOR 1)
 
-add_executable(thesis_bender main.cpp)
+add_executable(thesis_bender main.cpp BBNode.cpp RootNode.cpp Job.cpp)
 
 SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/bin")
 

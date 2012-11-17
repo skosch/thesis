@@ -69,14 +69,89 @@ src/CMakeFiles/thesis_bender.dir/main.cpp.o.provides: src/CMakeFiles/thesis_bend
 
 src/CMakeFiles/thesis_bender.dir/main.cpp.o.provides.build: src/CMakeFiles/thesis_bender.dir/main.cpp.o
 
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o: src/CMakeFiles/thesis_bender.dir/flags.make
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o: src/BBNode.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis_bender.dir/BBNode.cpp.o -c /home/sebastian/thesis/bender/src/BBNode.cpp
+
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis_bender.dir/BBNode.cpp.i"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sebastian/thesis/bender/src/BBNode.cpp > CMakeFiles/thesis_bender.dir/BBNode.cpp.i
+
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis_bender.dir/BBNode.cpp.s"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sebastian/thesis/bender/src/BBNode.cpp -o CMakeFiles/thesis_bender.dir/BBNode.cpp.s
+
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.requires:
+.PHONY : src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.requires
+
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.provides: src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.provides.build
+.PHONY : src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.provides
+
+src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.provides.build: src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o
+
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o: src/CMakeFiles/thesis_bender.dir/flags.make
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o: src/RootNode.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis_bender.dir/RootNode.cpp.o -c /home/sebastian/thesis/bender/src/RootNode.cpp
+
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis_bender.dir/RootNode.cpp.i"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sebastian/thesis/bender/src/RootNode.cpp > CMakeFiles/thesis_bender.dir/RootNode.cpp.i
+
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis_bender.dir/RootNode.cpp.s"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sebastian/thesis/bender/src/RootNode.cpp -o CMakeFiles/thesis_bender.dir/RootNode.cpp.s
+
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.requires:
+.PHONY : src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.requires
+
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.provides: src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.provides.build
+.PHONY : src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.provides
+
+src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.provides.build: src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o
+
+src/CMakeFiles/thesis_bender.dir/Job.cpp.o: src/CMakeFiles/thesis_bender.dir/flags.make
+src/CMakeFiles/thesis_bender.dir/Job.cpp.o: src/Job.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/thesis_bender.dir/Job.cpp.o"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis_bender.dir/Job.cpp.o -c /home/sebastian/thesis/bender/src/Job.cpp
+
+src/CMakeFiles/thesis_bender.dir/Job.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis_bender.dir/Job.cpp.i"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sebastian/thesis/bender/src/Job.cpp > CMakeFiles/thesis_bender.dir/Job.cpp.i
+
+src/CMakeFiles/thesis_bender.dir/Job.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis_bender.dir/Job.cpp.s"
+	cd /home/sebastian/thesis/bender/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sebastian/thesis/bender/src/Job.cpp -o CMakeFiles/thesis_bender.dir/Job.cpp.s
+
+src/CMakeFiles/thesis_bender.dir/Job.cpp.o.requires:
+.PHONY : src/CMakeFiles/thesis_bender.dir/Job.cpp.o.requires
+
+src/CMakeFiles/thesis_bender.dir/Job.cpp.o.provides: src/CMakeFiles/thesis_bender.dir/Job.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/Job.cpp.o.provides.build
+.PHONY : src/CMakeFiles/thesis_bender.dir/Job.cpp.o.provides
+
+src/CMakeFiles/thesis_bender.dir/Job.cpp.o.provides.build: src/CMakeFiles/thesis_bender.dir/Job.cpp.o
+
 # Object files for target thesis_bender
 thesis_bender_OBJECTS = \
-"CMakeFiles/thesis_bender.dir/main.cpp.o"
+"CMakeFiles/thesis_bender.dir/main.cpp.o" \
+"CMakeFiles/thesis_bender.dir/BBNode.cpp.o" \
+"CMakeFiles/thesis_bender.dir/RootNode.cpp.o" \
+"CMakeFiles/thesis_bender.dir/Job.cpp.o"
 
 # External object files for target thesis_bender
 thesis_bender_EXTERNAL_OBJECTS =
 
 bin/thesis_bender: src/CMakeFiles/thesis_bender.dir/main.cpp.o
+bin/thesis_bender: src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o
+bin/thesis_bender: src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o
+bin/thesis_bender: src/CMakeFiles/thesis_bender.dir/Job.cpp.o
 bin/thesis_bender: src/CMakeFiles/thesis_bender.dir/build.make
 bin/thesis_bender: src/CMakeFiles/thesis_bender.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/thesis_bender"
@@ -87,6 +162,9 @@ src/CMakeFiles/thesis_bender.dir/build: bin/thesis_bender
 .PHONY : src/CMakeFiles/thesis_bender.dir/build
 
 src/CMakeFiles/thesis_bender.dir/requires: src/CMakeFiles/thesis_bender.dir/main.cpp.o.requires
+src/CMakeFiles/thesis_bender.dir/requires: src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o.requires
+src/CMakeFiles/thesis_bender.dir/requires: src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o.requires
+src/CMakeFiles/thesis_bender.dir/requires: src/CMakeFiles/thesis_bender.dir/Job.cpp.o.requires
 .PHONY : src/CMakeFiles/thesis_bender.dir/requires
 
 src/CMakeFiles/thesis_bender.dir/clean:

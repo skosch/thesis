@@ -71,7 +71,7 @@ src/preinstall:
 src/CMakeFiles/thesis_bender.dir/all:
 	$(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/depend
 	$(MAKE) -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles  1 2 3 4
 	@echo "Built target thesis_bender"
 .PHONY : src/CMakeFiles/thesis_bender.dir/all
 
@@ -81,7 +81,7 @@ all: src/CMakeFiles/thesis_bender.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/thesis_bender.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastian/thesis/bender/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastian/thesis/bender/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/thesis_bender.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebastian/thesis/bender/CMakeFiles 0
 .PHONY : src/CMakeFiles/thesis_bender.dir/rule
