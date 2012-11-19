@@ -1,0 +1,31 @@
+/*
+ * RootNode.h
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#ifndef ROOTNODE_H_
+#define ROOTNODE_H_
+
+#include <vector>
+#include "Job.h"
+#include "BBNode.h"
+
+class RootNode {
+public:
+	RootNode(std::vector<Job> *all_jobs, int capacity, int nk = 0);
+	virtual ~RootNode();
+
+	int run();
+
+private:
+	std::vector<Job> *all_jobs;
+	int nk, capacity;
+	IloNumVarArray is_inbatch;
+	IloNumArray sj, pj, dj;
+	IloEnv env;
+	IloModel model;
+};
+
+#endif /* ROOTNODE_H_ */

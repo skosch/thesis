@@ -1,0 +1,120 @@
+!SESSION 2012-11-16 15:58:51.658 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_26
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 16:04:18.406
+!MESSAGE Indexed 'decomp' (0 sources, 13 headers) in 0.18 sec: 0 declarations; 0 references; 13 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+!SESSION 2012-11-16 16:11:28.767 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_26
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 16:24:50.232
+!MESSAGE Indexed 'bender' (4 sources, 56 headers) in 11.88 sec: 30,097 declarations; 47,100 references; 42 unresolved inclusions; 218 syntax errors; 5,959 unresolved names (7.17%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 16:33:51.388
+!MESSAGE Indexed 'bender' (3 sources, 137 headers) in 5.08 sec: 32,698 declarations; 64,791 references; 32 unresolved inclusions; 218 syntax errors; 4,014 unresolved names (3.95%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 16:37:39.322
+!MESSAGE Indexed 'bender' (3 sources, 137 headers) in 3.14 sec: 32,722 declarations; 65,146 references; 15 unresolved inclusions; 218 syntax errors; 3,832 unresolved names (3.77%)
+!SESSION 2012-11-16 16:38:04.228 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_26
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 16:44:17.734
+!MESSAGE Indexed 'bender' (3 sources, 206 headers) in 11.80 sec: 33,155 declarations; 66,464 references; 37 unresolved inclusions; 280 syntax errors; 3,836 unresolved names (3.71%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 16:52:51.726
+!MESSAGE Indexed 'bender' (3 sources, 229 headers) in 7.78 sec: 45,093 declarations; 86,447 references; 5 unresolved inclusions; 227 syntax errors; 4,073 unresolved names (3.00%)
+
+!ENTRY org.eclipse.cdt.ui 4 0 2012-11-16 17:36:34.547
+!MESSAGE cannot work without definition
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 17:36:40.305
+!MESSAGE Indexed 'bender' (4 sources, 230 headers) in 5.75 sec: 45,114 declarations; 86,473 references; 5 unresolved inclusions; 227 syntax errors; 4,074 unresolved names (3.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:37:30.413
+!MESSAGE Indexed 'bender' (4 sources, 230 headers) in 5.28 sec: 45,144 declarations; 86,600 references; 5 unresolved inclusions; 227 syntax errors; 4,081 unresolved names (3.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:41:42.552
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 5.93 sec: 45,345 declarations; 87,206 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:42:35.279
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 5.73 sec: 45,345 declarations; 87,206 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:43:59.739
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 4.75 sec: 45,346 declarations; 87,206 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:46:55.785
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 4.46 sec: 45,346 declarations; 87,206 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:56:49.712
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 4.49 sec: 45,346 declarations; 87,205 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 18:57:24.161
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 4.50 sec: 45,346 declarations; 87,205 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 19:28:42.941
+!MESSAGE Indexed 'bender' (4 sources, 232 headers) in 4.93 sec: 45,349 declarations; 87,223 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 20:39:57.653
+!MESSAGE Indexed 'bender' (6 sources, 234 headers) in 4.82 sec: 45,377 declarations; 87,304 references; 6 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 20:40:49.136
+!MESSAGE Indexed 'bender' (6 sources, 234 headers) in 4.49 sec: 45,377 declarations; 87,304 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-16 21:22:04.583
+!MESSAGE Indexed 'bender' (6 sources, 234 headers) in 4.32 sec: 45,378 declarations; 87,335 references; 5 unresolved inclusions; 227 syntax errors; 4,077 unresolved names (2.98%)
+
+!ENTRY org.eclipse.core.jobs 4 2 2012-11-17 00:28:56.702
+!MESSAGE An internal error occurred during: "Launching thesis_bender".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.resetBuildConfiguration(AbstractCLaunchDelegate.java:758)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.finalLaunchCheck(AbstractCLaunchDelegate.java:748)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:835)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2012-11-17 00:29:05.521
+!MESSAGE An internal error occurred during: "Launching thesis_bender".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.resetBuildConfiguration(AbstractCLaunchDelegate.java:758)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.finalLaunchCheck(AbstractCLaunchDelegate.java:748)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:835)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2012-11-17 00:29:05.523
+!MESSAGE An internal error occurred during: "Launching thesis_bender".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.resetBuildConfiguration(AbstractCLaunchDelegate.java:758)
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate.finalLaunchCheck(AbstractCLaunchDelegate.java:748)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:835)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:703)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:937)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1141)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2012-11-17 12:44:33.653 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_26
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-11-17 17:16:39.334
+!MESSAGE Indexed 'bender' (6 sources, 234 headers) in 15.16 sec: 45,444 declarations; 87,832 references; 5 unresolved inclusions; 227 syntax errors; 4,074 unresolved names (2.97%)

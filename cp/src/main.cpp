@@ -13,6 +13,7 @@
 #include <ilconcert/iloexpression.h>
 
 #include "MinNonzeroDuedateI.h"
+#include "MaxProcessingTimeI.h"
 
 using namespace std;
 
@@ -45,12 +46,25 @@ IloIntExpr secondarySumExpr(IloEnv env, IloIntArray coeff, IloArray<IloIntVarArr
 }
 
 /*** Custom propagators ***/
-IloConstraint MinNonzeroDuedate(IloIntVar Dk, IloArray<IloIntVarArray> matrix, IloIntArray
+IloConstraint MinNonzeroDuedate(IloIntVar Dk, IloIntVarArray assignments, IloIntArray
     dj, int k) {
   return IloCustomConstraint(Dk.getEnv(), new (Dk.getEnv())
-      MinNonzeroDuedateI(Dk, matrix, dj, k));
+      MinNonzeroDuedateI(Dk, assignments, dj, k));
 }
 
+IlcConstraint IlcMaxProcessingTime(IloCP cp, IlcIntervalVar K, IlcIntVarArray assignments,
+IlcIntArray pj, int k) {
+  //IloCP cp = K.getCP();
+  return new (cp.getHeap()) IlcMaxProcessingTimeI(cp, K, assignments, pj, k);
+}
+
+ILOCPCONSTRAINTWRAPPER4(MaxProcessingTime, cp, IloIntervalVar, K,
+IloIntVarArray, assignments, IloIntArray, pj, IloInt, k) {
+  use(cp, K);
+  use(cp, assignments);
+  return IlcMaxProcessingTime(cp, cp.getInterval(K),
+  cp.getIntVarArray(assignments), cp.getIntArray(pj),k);
+};
 
 // Same as secondaryProdArray, but doesn't include zeros
 IloIntExprArray secondaryProdArray(IloEnv env, IloIntArray coeff,
@@ -70,11 +84,21 @@ int main(int argc, const char * argv[]){
     // declarations
     IloModel model(env);
     int nj;
+    bool verboseoutput = false;
+    string datafilename;
 
     if(argc >= 2) {
       nj = atoi(argv[1]);
     } else {
       nj = 10;
+    }
+
+    if(argc >= 3 && !strcmp(argv[2], "v")) {
+        verboseoutput=true;
+    }
+
+    if(argc >= 4) {
+      datafilename = argv[3];
     }
 
     int nk = nj;
@@ -97,20 +121,20 @@ int main(int argc, const char * argv[]){
     IloIntervalVarArray K(env, nk); // the batches
     IloIntervalVarArray J(env, nj); // the jobs
 
-    for(int k=0; k < nk; k++) {
-      Dk[k] = IloIntVar(env, 0, Dmax, charcat("Dk_", k, 0));
-      K[k] = IloIntervalVar(env, charcat("Kinterval_", k, 0));
-      K[k].setStartMin(0);
-    }
+
 
     IloIntVar Lmax(env, -IloInfinity, IloInfinity, "Lmax");
 
     /*************** constants *************/
 
-
     stringstream filename;
-    filename << "../../data/data_" << nj;
-
+   
+    if(datafilename.length() > 0) {
+      filename << datafilename;
+    } else {
+      filename << "../../data/data_" << nj;
+    }
+    cout << filename.str() << endl;
     IloCsvReader csvr(env, filename.str().c_str());
 
     if(csvr.getNumberOfItems()-1 != nj) {
@@ -143,17 +167,37 @@ int main(int argc, const char * argv[]){
       cout << "Batch " << j << ": " << sj[j] << "\t" << pj[j] << "\t" << dj[j] << endl;
     }
 
+    IloCumulFunctionExpr cumulResource(env);
     for(int j=0; j<nj; j++) {
-      J[j] = IloIntervalVar(env);
-      J[j].setLengthMin(pj[j]);
-      J[j].setLengthMax(pj[j]);
+  //    J[j] = IloIntervalVar(env, pj[j], charcat("Jobinterval_", j, 0));
+  //    cumulResource += IloPulse(J[j], sj[j]);
     }
 
     // number of non-empty batches
-    IloIntVar batchesUsed(env, 0, nk); 
+    IloIntVar batchesUsed(env, 0, nk, "batchesused");
+
+
     IloIntVarArray batchloads(env, nk, 0, capacity);
     IloIntVarArray assignments(env, nj, 0, nk);
 
+    for(int j=0; j < nj; j++) {
+      assignments[j] = IloIntVar(env, 0, nk, charcat("assignment_j", j, 0));
+    }
+
+    // instantiate Dk and Pk
+    for(int k=0; k < nk; k++) {
+      Dk[k] = IloIntVar(env, 0, Dmax, charcat("Dk_", k, 0));
+      batchloads[k] = IloIntVar(env, 0, capacity, charcat("batchload_k", k, 0));
+
+      //Pk[k] = IloIntVar(env, 0, 0, charcat("Pk_", k, 0));
+      //Pk[k] = 0;
+      K[k] = IloIntervalVar(env, charcat("Kinterval_", k, 0));
+      K[k].setStartMin(0);
+    }
+
+    // calculate a lower bound on the number of batches
+
+    // calculate some global cardinality constraints
 
     /*********** objective function ************/
 
@@ -161,11 +205,21 @@ int main(int argc, const char * argv[]){
 
     /*********** constraints *****************/
 
+    // use bin packing to ensure no capacity overloada
     model.add(IloPack(env, batchloads, assignments, sj, batchesUsed));
 
-    // batches are as long as their longest job
-    // jobs in a batch are given by max(pj[j where assignments[j]=k])
+    // use a cumulative constraint from time 0 through sum(pj) that keeps the
+    // sum of sj's between 0 and capacity
+    // model.add(IloAlwaysIn(env, cumulResource, 0, IloSum(pj), 0, capacity));
 
+    // Now make sure the J[j]'s coincide with the batches
+    for(int j=0; j<nj; j++) {
+      for(int k=0; k<nk; k++) {
+  //      model.add(IloIfThen(env, assignments[j]==k, IloStartOf(J[j]) ==
+  //      IloStartOf(K[k])));
+
+      }
+    }
 
     for(int k = 0; k<nk; k++) {
       for(int j = 0; j<nj; j++) {
@@ -178,12 +232,19 @@ int main(int argc, const char * argv[]){
       IloIntExprArray prodExpression = secondaryProdArray(env, pj, xjk, k, nj);
       //cout << prodExpression << endl;
       model.add( IloLengthOf(K[k]) == IloMax(prodExpression) );
+    //  for(int j=0; j<nj; j++) {
+    //    IloIntervalVarArray jobJ(env, 1);
+    //    jobJ[0] = J[j];
+    //    model.add(IloIfThen(env, assignments[j]==k, IloSpan(env,K[k], jobJ)));
+      //}
+   //   model.add( MaxProcessingTime(env, K[k], assignments, pj, k));
+    // model.add( IloLengthOf(K[k]) >= Pk[k] );
     }
 
 
     // 9. batches are due as early as the earliest job
     for(int k=0; k<nk; k++) {
-      model.add( MinNonzeroDuedate(Dk[k], xjk, dj, k));
+      model.add( MinNonzeroDuedate(Dk[k], assignments, dj, k));
     }
 
     // 10. Lmax definition
@@ -196,7 +257,7 @@ int main(int argc, const char * argv[]){
 
     // 11. Sequential setup
     for(int k=1; k<nk; k++) {
-      model.add(IloEndAtStart(env, K[k-1], K[k], 0));
+       model.add(IloEndAtStart(env, K[k-1], K[k], 0));
     }
 
 
@@ -225,9 +286,10 @@ int main(int argc, const char * argv[]){
 
     // 16. No batches later than necessary. This works because we sorted things.
     for(int j=0; j<nj; j++) {
-      for(int k=j+1; k<nk; k++) {
-        model.add( xjk[j][k] == 0 );
-      }
+        model.add( assignments[j] <= j );
+        for(int k=nj+1; k<nk; k++) {
+       //   model.add(xjk[j][k] == 0);
+        }
     }
 
     // 17. No empty batches in the middle
@@ -236,13 +298,23 @@ int main(int argc, const char * argv[]){
             IloEndOf(K[k+1]) > IloEndOf(K[k])));
     } 
 
+    // 18. globalCardinality on batch lengths
+    IloIntExprArray allBatchLengths(env);
+    for(int k=0; k < nk; k++) {
+      allBatchLengths.add(IloLengthOf(K[k]));
+    }
+    model.add( IloCount( allBatchLengths, IloMax(pj)) == 1);
+
+
     /************** solve the model ************/
     //cout << model << endl;
     IloCP cp(model);
 
     // cp.setParameter(IloCP::OptimalityTolerance, 1);
     // cp.setParameter(IloCP::TimeLimit, 20);
-    //cp.setParameter(IloCP::PropagationLog, IloCP::Verbose);
+    if(verboseoutput) {
+      cp.setParameter(IloCP::PropagationLog, IloCP::Verbose);
+    }
     cp.setParameter(IloCP::SearchType, IloCP::DepthFirst);
     cp.solve();
 
@@ -281,7 +353,10 @@ int main(int argc, const char * argv[]){
 
     for(int k=0; k<nk; k++) {
       //      cout << "Batch " << k << ":\t Pk=" << cp.getValue(Pk[k]) << "\t Dk=" << cp.getValue(Dk[k]) << "\t Ck=" << cp.getValue(Ck[k]) << endl;
+
+      // Lastly, print the solve time
     }
+      cout << cp.getInfo(IloCP::SolveTime) << endl;
   }
   catch (IloException& ex) {
     env.out() << "Error: " << ex << " " << ex.getMessage() << std::endl;

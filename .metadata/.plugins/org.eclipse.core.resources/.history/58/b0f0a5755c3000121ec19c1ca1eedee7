@@ -1,0 +1,31 @@
+/*
+ * BBNode.h
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#ifndef BBNODE_H_
+#define BBNODE_H_
+
+
+class BBNode {
+public:
+	BBNode(vector<Job> *jobs, vector<int> jobs_in_batch, vector<int> jobs_in_rest, int *Lmax_incumbent, vector<vector<int>> *best_solution, vector<vector<int>> *current_solution, int k, int *nk);
+	int run(); // returns 0 if was unsuccessful against incumbent, 1 if had children
+virtual ~BBNode();
+private:
+	vector<Job> *jobs;
+	vector<int> jobs_in_batch;
+	vector<int> jobs_in_rest;
+
+	int *Lmax_incumbent;
+	vector<vector<int> > *best_solution;
+	vector<vector<int> > *current_solution;
+
+
+	int k; // the current batch being assigned. k_root=0, first level has k1 assigned, etc.
+	int *nk; // the total number of batches, which may be able to the number of jobs.
+};
+
+#endif /* BBNODE_H_ */

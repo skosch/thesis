@@ -13,11 +13,11 @@ class MinNonzeroDuedateI : public IloPropagatorI {
   private:
     // data members for the constraint
     IloIntVar _Dk;
-    IloArray<IloIntVarArray> _matrix;
+    IloIntVarArray _assignments;
     IloIntArray _dj;
     int _k;
   public:
-    MinNonzeroDuedateI(IloIntVar Dk, IloArray<IloIntVarArray> matrix, IloIntArray
+    MinNonzeroDuedateI(IloIntVar Dk, IloIntVarArray assignments, IloIntArray
     dj, int k);
     void execute();
     IloPropagatorI * makeClone(IloEnv env) const;

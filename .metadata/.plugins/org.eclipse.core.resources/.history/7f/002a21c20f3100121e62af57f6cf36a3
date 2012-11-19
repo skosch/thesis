@@ -1,0 +1,119 @@
+/*
+ * RootNode.cpp
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#include "RootNode.h"
+
+using namespace std;
+
+RootNode::RootNode(vector<Job> *all_jobs, int capacity, int nk, int Dmax) {
+	this->all_jobs = all_jobs;
+	this->capacity = capacity;
+	if(nk == 0) {
+		this->nk = this->all_jobs->size();
+	} else {
+		this->nk = nk;
+	}
+	this->Dmax = Dmax;
+
+	model = IloModel(env);
+
+	sj = IloNumArray(env, all_jobs->size());
+	pj = IloNumArray(env, all_jobs->size());
+	dj = IloNumArray(env, all_jobs->size());
+
+	for(int j=0; j<all_jobs->size(); j++) {
+		Job jj = (*all_jobs)[j];
+		sj[j] = jj.s; // I realize this can be done inline, but eclipse keeps whining
+		pj[j] = jj.p;
+		dj[j] = jj.d;
+	}
+
+	Lmax_incumbent = 35;
+	best_solution = vector<int>(all_jobs->size(), 0);
+	current_solution = vector<int>(all_jobs->size(), 0);
+}
+
+RootNode::~RootNode() {
+}
+
+int RootNode::run() {
+	/* create MIP model to create a child from the jobs
+	 * then keep going until we've explored all the children.
+	 */
+	cout << "Running root node." << endl;
+
+	model = IloModel(env);
+
+	is_inbatch = IloBoolVarArray(env, all_jobs->size());
+	for(int j=0; j<all_jobs->size(); j++) {
+		is_inbatch[j] = IloBoolVar(env, 0, 1);
+	}
+
+	model.add(IloScalProd(sj, is_inbatch) <= capacity);
+
+	Dk = IloNumVar(env, 0, IloMax(dj));
+	Pk = IloNumVar(env, 0, IloMax(pj));
+	// define Dk
+	for(int j=0; j<all_jobs->size(); j++) {
+		model.add(IloRange(env, -IloInfinity, Dk - dj[j]*is_inbatch[j] + Dmax*is_inbatch[j], Dmax));
+	}
+	// define Pk
+	for(int j=0; j<all_jobs->size(); j++) {
+		model.add(IloRange(env, 0, Pk - pj[j]*is_inbatch[j], IloInfinity));
+	}
+	// make sure we're not trying things worse than the incumbent Lmax
+	model.add( Pk - Dk <= Lmax_incumbent );
+
+	model.add( IloSum(is_inbatch) >= floor(capacity/IloMax(sj))); // min number of jobs in batch
+	model.add( Dk == IloMin(dj)); // batch must contain min due date.
+
+	// add model objective here later
+
+	IloCplex cplex(model);
+	while(cplex.solve()) { // keep solving until there are no more children
+		cout << "Solving the root node" << endl;
+		// create child and give it the MIP solution
+		vector<int> child_jobs_in_batch, child_jobs_in_rest; // this is given to the child node to use
+
+		for(int j=0; j<all_jobs->size(); j++) { // fill this with the MIP solution
+			if(cplex.getValue(is_inbatch[j]) > 0) {
+				child_jobs_in_batch.push_back(j);
+			} else {
+				child_jobs_in_rest.push_back(j);
+			}
+
+		}
+
+		// remove solution from model and update the incumbent Lmax value
+		IloNumExpr currentSolutionSum(env);
+		for(int i=0; i<all_jobs->size(); i++) {
+	//		cout << i << ",";
+			if(cplex.getValue(is_inbatch[i]) > 0) currentSolutionSum += is_inbatch[i];
+		}
+/*		cout << "This is root node ";
+		for(int j=0; j<all_jobs->size(); j++) {
+			cout << (cplex.getValue(is_inbatch[j]) > 0 ? 1 : 0 ) << " ";
+		}
+		cout << endl;*/
+
+//		cout << "Creating child" << endl;
+		BBNode* child = new BBNode(&sj, &pj, &dj, child_jobs_in_batch, child_jobs_in_rest, &Lmax_incumbent, &best_solution, &current_solution, 0, 1, &nk, capacity, Dmax);
+
+		child->run(); // let the child take care of things, wait until it's done.
+
+
+		model.add( currentSolutionSum <= (IloNum) (child_jobs_in_batch.size() - 1));
+
+		// kill child
+		delete child;
+
+		//cplex.extract(model); // prepare for re-solving the MIP
+	}
+
+	return 0;
+}
+

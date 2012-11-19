@@ -9,6 +9,7 @@
 #define ROOTNODE_H_
 
 #include <vector>
+#include <cmath>
 #include "Job.h"
 #include "BBNode.h"
 
@@ -24,8 +25,8 @@ private:
 	std::vector<Job> *all_jobs;
 	IloEnv env;
 	IloModel model;
-	IloNumVarArray is_inbatch;
-	IloNumVar Dk, Pk;
+	IloBoolVarArray is_inbatch;
+	IloNumVar  Pk;
 
 	// given to the children for them to use
 	int nk, capacity;

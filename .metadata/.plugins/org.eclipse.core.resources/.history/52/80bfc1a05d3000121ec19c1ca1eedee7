@@ -1,0 +1,19 @@
+/*
+ * job.cpp
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#include "Job.h"
+namespace std {
+
+Job::Job(IloNum s, IloNum p, IloNum d) {
+	this->s = s; this->p = p; this->d = d;
+}
+
+Job::~Job() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace std */

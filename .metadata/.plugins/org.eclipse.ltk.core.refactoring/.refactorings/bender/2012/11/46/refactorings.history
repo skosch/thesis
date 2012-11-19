@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;bender/src/job.h&apos; to &apos;Job.h&apos;" description="Rename resource &apos;job.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/job.h" name="Job.h" stamp="1353114156064" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;bender/src/job.cpp&apos; to &apos;Job.cpp&apos;" description="Rename resource &apos;job.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/job.cpp" name="Job.cpp" stamp="1353114160923" updateReferences="true"/>
+</session>

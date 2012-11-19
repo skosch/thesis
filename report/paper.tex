@@ -256,17 +256,27 @@ Since the jobs are already sorted by non-decreasing due dates, it makes sense to
 
 \section{CP model}
 
-This is where all the CP constraints are.
+[Some introduction ...]
 
-\subsection{Bin-packing constraint}
+\subsection{Bin-packing and cumulative constraints}
 This makes sure the jobs are distributed into the batches such that no batch
 exceeds the capacity $b$:
 \begin{align}
 \mathtt{pack}(J, K, b)
 \end{align}
 
+The cumulative constraint functions similarly, but instead of packing
+discrete bins, it enforces non-overlapping constraint on the temporal
+(\texttt{IntervalVariable}) $J$ variables. {\color{darkred} For this to work
+directly with the \texttt{assignments} array used by \texttt{pack} (i.e. without
+a $x_{jk}$ matrix), it seems I need to define my own search goal class -- I
+still need to do this).}
+\begin{align}
+\mathtt{cumul}(J, b)
+\end{align}
+
 \subsection{Temporal constraints}
-These constraints are implemented using \texttt{IntervalVariable} objects, which
+These constraints are implemented using \texttt{IntervalVar} objects, which
 offer properties such as \texttt{lengthOf} or \texttt{endOf}.
 
 \begin{alignat}{2}
@@ -278,37 +288,93 @@ offer properties such as \texttt{lengthOf} or \texttt{endOf}.
 \end{alignat}
 
 The first constraint ensures that each batch is as long as its longest job. 
+The second constraint ensures that the earliest-due job sets the due date.
+The third constraint defines batch completion dates, and the fourth constraint defines $\Lmax$.
 
-The second constraint ensures that the earliest-due job sets the due date. This
-constraint relies on the matrix $x_{jk}$ representing the job-batch assignments,
-and the value $\min(d_j x_{jk})$ for a given batch $k$ is always zero (unless said
-batch contains all jobs). As a result, this was implemented in a custom
-propagator routine.
-
-The third constraints defines $\Lmax$.
+The first two temporal constraints were {\color{darkred}(rather, will be)}
+implemented in custom constraint propagator classes using the job assignments
+propagated by the bin-packing constraint. They exploit the temporal features of
+\texttt{IntervalVar}s.
 
 \subsection{Constraint on number of batches with length
-\sansitalicfont{P\textsubscript{k}} = \sansitalicfont{p}}
+{\sansitalicfont P\textsubscript{k}} > {\sansitalicfont p}}
 
 Since batches take on the processing time of their longest job, there is at
 least one batch with $P = \underset{j}{\max} p_j $:
 \begin{align}
 \mathtt{globalCardinality}( |P_k = \underset{j}{\max} \; p_j| = 1 ) 
 \end{align}
-
 We can proceed to fill batches with jobs, ordered by non-increasing processing
-time. The next batch will then have to be at least as long as the first job we
-assign to it, giving us another cardinality constraint. We can continue doing
-this until all jobs are assigned to batches. {\color{darkred} This can surely be
+time, based on algorithm \ref{alg:findBatchlengthCards}.
+\begin{algorithm}
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\State $J^{\star} \gets J$ \Comment{initialize all jobs as unassigned jobs}
+\State $n_k \gets 1$; $S_k \gets \{0\}$; $P_{k,\text{min}} \gets \{0\}$ \Comment{Create one
+empty batch of size and length zero}
+\State sort $J^{\star}$ by processing time, non-increasing
+\Repeat
+  \State $j \gets J^{\star}$.pop() \Comment{select job for assignment, longest job
+first}
+  \Loop $\;$ through all $n_k$ existing batches $k$, first batch first
+    \State $k_p \gets \emptyset$ \Comment{no feasible batch}
+    \State $c_\text{min} = b$ \Comment{currently known minimum remaining
+    capacity}
+    \If{$s_j < b-S_k$ and $b-S_k < c_\text{min}$}
+      \State $k_p \gets k_p$; $c_\text{min} \gets b-S_k$
+    \EndIf
+  \EndLoop
+  \If{$|k_p| = 1$}
+      \State $S_{k_p} \gets S_{k_p} + s_j$ \Comment{assign job $j$ to batch $k_p$}
+  \Else
+    \If{$n_k < LB(n_k)$}
+      \State $n_k \gets n_k + 1$\Comment{open new batch}
+      \State $S_{n_k} \gets s_j$; $P_{n_k,\text{min}} \gets p_j$ \Comment{assign $s_j$ and $p_j$ to the new batch}
+    \Else
+      \State leave the loop now and end.
+    \EndIf
+  \EndIf
+\Until{$J^{\star}$ is empty}
+\end{algorithmic}
+\caption{Generating lower bounds on batch lengths}
+\label{alg:findBatchlengthCards}
+\end{algorithm}
+
+At the end of this algorithm, we can state:
+\begin{alignat}{2}
+& \mathtt{globalCardinality}( |P_{k-1,\text{min}} > P_k \geq P_{k,\text{min}} | =
+1) \quad && \forall k \in \{k_0,\dots,k_{LB(n_k)}\}
+\end{alignat}
+
+The algorithm sorts jobs by non-increasing $p$, and then fills batches job by
+job. If a job fits into a previous batch, it is assigned there. If a job fits
+into multiple previous batches, it is assigned to the batch with the smallest
+remaining capacity. {\color{darkred} As I found out today, this is called
+\textit{best-fit decreasing rule}. I can expand on why this works, if
+necessary.}
+
+Unfortunately, the optimal solution may perform better in terms of ``vertical''
+($s_j$) bin packing, and may thus
+require fewer batches. We therefore need to find a lower bound $LB(n_k)$ on the
+number of batches, and we can only guarantee the first $LB(n_k)$ of the above
+constraints to hold in the optimal solution. Finding a true lower bound is a
+two-dimensional bin packing problem, which runs in exponential time
+{\color{darkred} $\dots$ so we have to come up with an even lower bound -- right
+now I can only think of $j_0$, the number of jobs ordered by decreasing $s_j$
+that can never fit into a batch together.}
+
+{\color{darkred} This whole method can surely be
 improved somehow by realizing a priori that some jobs must go before others?}
 
 Furthermore, if all jobs have different processing times, all batches will have
-different processing times as well. If $m$ out of $n_j$ jobs have different
+different processing times as well: \texttt{alldifferent}$(P_k)$. If $m$ out of $n_j$ jobs have different
 processing times, we can still enforce \texttt{k\_alldifferent}$(P_k, m)$.
-Propagation rules for this constraint were given in \cite{Lardeux}. 
+Propagation rules for this constraint were given in \cite{Lardeux}.
+{\color{darkred} I can't find anything on this w.r.t. CP Optimizer, so I may
+have to implement this myself $\dots$ time permitting.} 
 
 \subsection{Temporal constraints on a job's start date}
-Given any partial assignment of jobs, we can reason that
+Given any partial assignment of jobs and an open job $j$, we can reason that
 \begin{alist}
 \item{if the first batch with a due date later than the job is $k$, then the job
 cannot be part of a batch after $k$ -- this would result in a non-EDD sequence
@@ -325,7 +391,30 @@ This constraint is redundant with both the $(C_{k+1}\geq C_k)$ and
 \texttt{packing} constraints, but may help accelerate the propagation in some
 cases.
 
-\subsection{Cumulative constraint}
+\subsection{Restricting the search to {\sansitalicfont before
+L}\textsubscript{max}}
+Once a feasible (but possibly non-optimal) solution is found that has $\Lmax$ in
+batch $k_{\Lmax}$, then this solution dominates all solutions with other job
+configurations 
+\textit{after} $k_{\Lmax}$ -- improving $L$ in those batches has no impact on $\Lmax$,
+and worsening it never leads to a better solution.
+
+Therefore, once all jobs are assigned to a feasible solution, the search should be limited
+to the following jobs:
+\begin{alist}
+\item{those jobs in the first batch that are due with the second batch $k_2$ or
+later,}
+\item{all jobs in batches $\{k_2, \dots, k_{\Lmax-1}\}$,}
+\item{all jobs in $k_{\Lmax}$ for which $p_j > j_{\Lmax}$,}
+\item{$j_{\Lmax}$ itself, but it can only be scheduled earlier.}
+\end{alist}
+
+Once another, better feasible solution is found, this constraint on
+``searchable'' variables must be updated. If no better solution is found using
+those variables, the solution is optimal. {\color{darkred} I think this could
+maybe speed up the search, but I have no idea how to implement this dominance
+rule as a constraint. The documentation offers \texttt{SearchPhase} functions
+that can guide the search, but I haven't experimented with that yet.}
 
 \subsection{Grouping empty batches}
 Just like in the MIP model, we can force empty batches to the back and thus
@@ -336,9 +425,26 @@ in the MIP model:
 \{k_1, \dots, k_{n_k-2}\}
 \end{alignat}
 
-\section{Other known properties, unused so far}
-Anything that comes \textit{after} $\Lmax$ doesn't matter. If $L$ is decreasing after $\Lmax$, the jobs must not be stacked ever. In other words: don't ever consider an assignment where 
+\subsection{No postponing of jobs to later batches}
+Just like in the MIP model, jobs should never go into a batch with an index
+greater than their own:
+\begin{alignat}{2}
+  & x_{jk} = 0 \quad && \forall j,k : j > k
+\end{alignat}
+This is implemented as $\mathtt{assignments}_j \leq k$. 
 
+{\color{darkred} This constraint is analogous to the concept of finding an upper
+bound on $n_k$ -- essentially, it would be very helpful to find an upper bound
+on the latest batch for \textit{every} job.}
+
+%\section{Other known properties, unused so far}
+%Anything that comes \textit{after} $\Lmax$ doesn't matter. If $L$ is decreasing after $\Lmax$, the jobs must not be stacked ever. In other words: don't ever consider an assignment where 
+
+\section{Open questions}
+\begin{alist}
+\item{Is there a dominance rule that reduces the size of the problem because two
+jobs can be ``fused together'' (WHATS THE WORD?) to be considered as one?}
+\end{alist}
 
 \section{Test data for evaluation}
 Malapert uses benchmark data by Daste. For design purposes, I created my own set of randomized job lists, with $s_j, p_j \in [1, 20]$ and $d_j \in [1, 10n]$ where $n$ is the number of jobs. Here is the Python code used:

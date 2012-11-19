@@ -1,0 +1,25 @@
+/*
+ * RootNode.h
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#ifndef ROOTNODE_H_
+#define ROOTNODE_H_
+
+namespace std {
+
+class RootNode {
+public:
+	RootNode(vector<Job> *all_jobs);
+	virtual ~RootNode();
+
+	int run();
+
+private:
+	vector<Job> *all_jobs;
+};
+
+} /* namespace std */
+#endif /* ROOTNODE_H_ */

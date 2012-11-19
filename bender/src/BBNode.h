@@ -12,6 +12,8 @@
 #define UNSUCCESSFUL_NODE 0
 
 #include <vector>
+#include <iterator>
+#include <algorithm>
 #include "Job.h"
 
 class BBNode {
@@ -31,8 +33,9 @@ private:
 
 	IloEnv env;
 	IloModel model;
-	IloNumVarArray is_inbatch;
-	IloNumVar Dk, Pk;
+	IloBoolVarArray is_inbatch;
+	IloNumVar Pk;
+	std::vector<IloIntExpr*> additionalConstraints;
 
 	int starttime;
 	int nj;

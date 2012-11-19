@@ -109,6 +109,30 @@ thesis_cp/fast:
 	cd /home/sebastian/thesis/cp && $(MAKE) -f src/CMakeFiles/thesis_cp.dir/build.make src/CMakeFiles/thesis_cp.dir/build
 .PHONY : thesis_cp/fast
 
+MaxProcessingTimeI.o: MaxProcessingTimeI.cpp.o
+.PHONY : MaxProcessingTimeI.o
+
+# target to build an object file
+MaxProcessingTimeI.cpp.o:
+	cd /home/sebastian/thesis/cp && $(MAKE) -f src/CMakeFiles/thesis_cp.dir/build.make src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o
+.PHONY : MaxProcessingTimeI.cpp.o
+
+MaxProcessingTimeI.i: MaxProcessingTimeI.cpp.i
+.PHONY : MaxProcessingTimeI.i
+
+# target to preprocess a source file
+MaxProcessingTimeI.cpp.i:
+	cd /home/sebastian/thesis/cp && $(MAKE) -f src/CMakeFiles/thesis_cp.dir/build.make src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.i
+.PHONY : MaxProcessingTimeI.cpp.i
+
+MaxProcessingTimeI.s: MaxProcessingTimeI.cpp.s
+.PHONY : MaxProcessingTimeI.s
+
+# target to generate assembly for a file
+MaxProcessingTimeI.cpp.s:
+	cd /home/sebastian/thesis/cp && $(MAKE) -f src/CMakeFiles/thesis_cp.dir/build.make src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.s
+.PHONY : MaxProcessingTimeI.cpp.s
+
 MinNonzeroDuedateI.o: MinNonzeroDuedateI.cpp.o
 .PHONY : MinNonzeroDuedateI.o
 
@@ -166,6 +190,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... thesis_cp"
+	@echo "... MaxProcessingTimeI.o"
+	@echo "... MaxProcessingTimeI.i"
+	@echo "... MaxProcessingTimeI.s"
 	@echo "... MinNonzeroDuedateI.o"
 	@echo "... MinNonzeroDuedateI.i"
 	@echo "... MinNonzeroDuedateI.s"

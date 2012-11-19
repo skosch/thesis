@@ -1,0 +1,26 @@
+/*
+ * Job.h
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#ifndef JOB_H_
+#define JOB_H_
+
+#include <ilcplex/ilocplex.h>
+#include <ilconcert/ilocsvreader.h>
+#include <ilconcert/iloexpression.h>
+
+namespace std {
+
+class Job {
+public:
+	Job(IloNum s, IloNum p, IloNum d);
+	IloNum s, p, d;
+	IloNum getS(){return s;}
+	friend bool operator<(const Job& a, const Job& b) const {return a.d < b.d;}
+};
+
+} /* namespace std */
+#endif /* JOB_H_ */

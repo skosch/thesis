@@ -14,6 +14,6 @@ endif (BOOST_FOUND)
 
 target_link_libraries (thesis_mip ilocplex concert cplex)
 
-target_link_libraries (thesis_mip m pthread)
+target_link_libraries (thesis_mip m pthread rt)
 
 target_link_libraries(thesis_mip gsl gslcblas)

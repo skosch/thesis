@@ -1,0 +1,29 @@
+/usr/bin/make all 
+cd /home/sebastian/thesis/bender && /usr/bin/cmake -H/home/sebastian/thesis/bender -B/home/sebastian/thesis/bender --check-build-system CMakeFiles/Makefile.cmake 0
+cd /home/sebastian/thesis/bender && /usr/bin/cmake -E cmake_progress_start /home/sebastian/thesis/bender/CMakeFiles /home/sebastian/thesis/bender/src/CMakeFiles/progress.marks
+cd /home/sebastian/thesis/bender && /usr/bin/make -f CMakeFiles/Makefile2 src/all
+make[1]: Entering directory `/home/sebastian/thesis/bender'
+/usr/bin/make -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/depend
+make[2]: Entering directory `/home/sebastian/thesis/bender'
+cd /home/sebastian/thesis/bender && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/sebastian/thesis/bender /home/sebastian/thesis/bender/src /home/sebastian/thesis/bender /home/sebastian/thesis/bender/src /home/sebastian/thesis/bender/src/CMakeFiles/thesis_bender.dir/DependInfo.cmake --color=
+Scanning dependencies of target thesis_bender
+make[2]: Leaving directory `/home/sebastian/thesis/bender'
+/usr/bin/make -f src/CMakeFiles/thesis_bender.dir/build.make src/CMakeFiles/thesis_bender.dir/build
+make[2]: Entering directory `/home/sebastian/thesis/bender'
+/usr/bin/cmake -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles 1
+[ 25%] Building CXX object src/CMakeFiles/thesis_bender.dir/main.cpp.o
+cd /home/sebastian/thesis/bender/src && /usr/bin/clang++    -Wall -g -std=c++0x -DIL_STD -g -I/home/sebastian/thesis/bender/../cpx_studio_12.2/cplex/include -I/home/sebastian/thesis/bender/../cpx_studio_12.2/concert/include    -o CMakeFiles/thesis_bender.dir/main.cpp.o -c /home/sebastian/thesis/bender/src/main.cpp
+/usr/bin/cmake -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles 2
+[ 50%] Building CXX object src/CMakeFiles/thesis_bender.dir/BBNode.cpp.o
+cd /home/sebastian/thesis/bender/src && /usr/bin/clang++    -Wall -g -std=c++0x -DIL_STD -g -I/home/sebastian/thesis/bender/../cpx_studio_12.2/cplex/include -I/home/sebastian/thesis/bender/../cpx_studio_12.2/concert/include    -o CMakeFiles/thesis_bender.dir/BBNode.cpp.o -c /home/sebastian/thesis/bender/src/BBNode.cpp
+/usr/bin/cmake -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles 3
+[ 75%] Building CXX object src/CMakeFiles/thesis_bender.dir/RootNode.cpp.o
+cd /home/sebastian/thesis/bender/src && /usr/bin/clang++    -Wall -g -std=c++0x -DIL_STD -g -I/home/sebastian/thesis/bender/../cpx_studio_12.2/cplex/include -I/home/sebastian/thesis/bender/../cpx_studio_12.2/concert/include    -o CMakeFiles/thesis_bender.dir/RootNode.cpp.o -c /home/sebastian/thesis/bender/src/RootNode.cpp
+Linking CXX executable ../bin/thesis_bender
+cd /home/sebastian/thesis/bender/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/thesis_bender.dir/link.txt --verbose=0
+clang: warning: argument unused during compilation: '-std=c++0x'
+make[2]: Leaving directory `/home/sebastian/thesis/bender'
+/usr/bin/cmake -E cmake_progress_report /home/sebastian/thesis/bender/CMakeFiles  1 2 3 4
+[100%] Built target thesis_bender
+make[1]: Leaving directory `/home/sebastian/thesis/bender'
+/usr/bin/cmake -E cmake_progress_start /home/sebastian/thesis/bender/CMakeFiles 0

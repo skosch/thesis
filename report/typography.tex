@@ -40,6 +40,8 @@
 \renewcommand{\texttt}[1]{{\monofont #1}}
 \renewcommand{\mathtt}[1]{{\text{\monofont #1}}\,}
 
+\renewcommand{\normalsize}{\fontsize{12pt}{16pt}\selectfont}
+
 %========== COLOR STUFF ===============
 
 \definecolor{darkred}{rgb}{0.6, 0, 0.00}
@@ -62,6 +64,7 @@ xleftmargin=.4in, frame=l, xrightmargin=1.74in
 \titleformat{\section}{\fontsize{18pt}{22pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\thesection\quad}}{0em}{}
 \titleformat{\subsection}{\fontsize{12pt}{16pt}\selectfont\sansfont}{\protect\makebox[0pt][r]{\thesubsection\fontsize{18pt}{22pt}\selectfont\quad}}{0em}{}
 %\titleformat{\paragraph}{\fontsize{12pt}{16pt}\selectfont}{}{}{}
+
 
 \fancyhead[LE]{\sansfont\small Scheduling non-identical jobs on a batch resource \normalsize}
 \fancyhead[RE]{}

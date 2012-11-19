@@ -1,0 +1,20 @@
+/*
+ * RootNode.h
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#ifndef ROOTNODE_H_
+#define ROOTNODE_H_
+
+namespace std {
+
+class RootNode {
+public:
+	RootNode();
+	virtual ~RootNode();
+};
+
+} /* namespace std */
+#endif /* ROOTNODE_H_ */

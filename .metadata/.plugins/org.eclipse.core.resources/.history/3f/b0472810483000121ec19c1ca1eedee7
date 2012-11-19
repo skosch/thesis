@@ -1,0 +1,86 @@
+#include <iostream>
+#include <sstream>
+#include <cmath>
+#include <string>
+#include <cstdlib>
+#include <algorithm>
+#include <vector>
+#include <deque>
+
+#include <ilcplex/ilocplex.h>
+#include <ilconcert/ilocsvreader.h>
+#include <ilconcert/iloexpression.h>
+
+#include "BBNode.h"
+
+using namespace std;
+
+struct job{
+	IloNum s;
+	IloNum p;
+	IloNum d;
+} typedef job;
+bool operator<(const job &a, const job &b) {return a.d < b.d;}
+
+vector<job> getSortedJobs(IloEnv env, string datafilename, int nj) {
+	stringstream filename;
+	if(datafilename.length() > 0) {
+		filename << datafilename;
+	} else {
+		filename << "../../data/data_" << nj;
+	}
+	cout << "Loading file: " << filename.str() << endl;
+	IloCsvReader csvr(env, filename.str().c_str());
+
+    if(csvr.getNumberOfItems()-1 != nj) {
+      cout << "Error: Expected " << nj << " jobs, but found " << csvr.getNumberOfItems() << " in CSV file. Aborting.\n";
+      return 1;
+    }
+
+    vector<job> jc(nj); // this structure is necessary to sort the jobs.
+
+    IloCsvLine curLine;
+    for(int j=0; j<nj; j++) {
+      curLine = csvr.getLineByNumber(j+1);
+      jc[j].s = curLine.getIntByPosition(0);
+      jc[j].p = curLine.getIntByPosition(1);
+      jc[j].d = curLine.getIntByPosition(2);
+    }
+
+    // sort the jobs by non-decreasing due date
+    sort(jc.begin(), jc.end());
+    return jc;
+}
+
+int main(int argc, char *argv[]) {
+	// read in job lists
+	int nj, nk;
+	string datafilename;
+
+    if(argc >= 2) {
+      nj = atoi(argv[1]);
+      nk = nj;
+    } else {
+      nj = 10;
+    }
+
+    if(argc >= 3 && !strcmp(argv[2], "v")) {
+      //  verboseoutput=true;
+    }
+
+    if(argc >= 4) {
+      datafilename = argv[3];
+    }
+	// create heuristic solution to find a bound on Lmax
+
+	// create root node
+	BBNode(NULL);
+	// let root node create children
+
+	// track solving progress
+
+	// get and print solution
+
+	cout << "We're done here. Thanks." << endl;
+	return 0;
+}

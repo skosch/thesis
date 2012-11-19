@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <cstdlib>
+#include <algorithm>
+#include <vector>
+#include <deque>
+
+#include <ilcplex/ilocplex.h>
+#include <ilconcert/ilocsvreader.h>
+#include <ilconcert/iloexpression.h>
+
+#include "BBNode.h"
+
+using namespace std;
+
+int main(int argc, char *argv[]) {
+	// read in job lists
+
+	// create heuristic solution to find a bound on Lmax
+
+	// create root node
+	BBNode(NULL);
+	// let root node create children
+
+	// track solving progress
+
+	// get and print solution
+
+	cout << "We're done here. Thanks." << endl;
+	return 0;
+}

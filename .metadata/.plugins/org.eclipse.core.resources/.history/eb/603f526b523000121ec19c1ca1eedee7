@@ -1,0 +1,21 @@
+/*
+ * job.cpp
+ *
+ *  Created on: Nov 16, 2012
+ *      Author: sebastian
+ */
+
+#include "job.h"
+
+namespace std {
+
+job::job() {
+	// TODO Auto-generated constructor stub
+
+}
+
+job::~job() {
+	// TODO Auto-generated destructor stub
+}
+
+} /* namespace std */

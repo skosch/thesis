@@ -92,16 +92,41 @@ src/CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o.provides: src/CMakeFiles/t
 
 src/CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o.provides.build: src/CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o
 
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o: src/CMakeFiles/thesis_cp.dir/flags.make
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o: src/MaxProcessingTimeI.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/sebastian/thesis/cp/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o"
+	cd /home/sebastian/thesis/cp/src && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o -c /home/sebastian/thesis/cp/src/MaxProcessingTimeI.cpp
+
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.i"
+	cd /home/sebastian/thesis/cp/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/sebastian/thesis/cp/src/MaxProcessingTimeI.cpp > CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.i
+
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.s"
+	cd /home/sebastian/thesis/cp/src && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/sebastian/thesis/cp/src/MaxProcessingTimeI.cpp -o CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.s
+
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.requires:
+.PHONY : src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.requires
+
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.provides: src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/thesis_cp.dir/build.make src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.provides.build
+.PHONY : src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.provides
+
+src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.provides.build: src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o
+
 # Object files for target thesis_cp
 thesis_cp_OBJECTS = \
 "CMakeFiles/thesis_cp.dir/main.cpp.o" \
-"CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o"
+"CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o" \
+"CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o"
 
 # External object files for target thesis_cp
 thesis_cp_EXTERNAL_OBJECTS =
 
 bin/thesis_cp: src/CMakeFiles/thesis_cp.dir/main.cpp.o
 bin/thesis_cp: src/CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o
+bin/thesis_cp: src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o
 bin/thesis_cp: src/CMakeFiles/thesis_cp.dir/build.make
 bin/thesis_cp: src/CMakeFiles/thesis_cp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/thesis_cp"
@@ -113,6 +138,7 @@ src/CMakeFiles/thesis_cp.dir/build: bin/thesis_cp
 
 src/CMakeFiles/thesis_cp.dir/requires: src/CMakeFiles/thesis_cp.dir/main.cpp.o.requires
 src/CMakeFiles/thesis_cp.dir/requires: src/CMakeFiles/thesis_cp.dir/MinNonzeroDuedateI.cpp.o.requires
+src/CMakeFiles/thesis_cp.dir/requires: src/CMakeFiles/thesis_cp.dir/MaxProcessingTimeI.cpp.o.requires
 .PHONY : src/CMakeFiles/thesis_cp.dir/requires
 
 src/CMakeFiles/thesis_cp.dir/clean:
