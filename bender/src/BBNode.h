@@ -14,6 +14,7 @@
 #include <vector>
 #include <iterator>
 #include <algorithm>
+#include <cmath>
 #include "Job.h"
 
 class BBNode {

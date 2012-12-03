@@ -33,14 +33,14 @@ BBNode::BBNode(IloNumArray *sj, IloNumArray *pj, IloNumArray* dj, vector<int> jo
 	// update the current assignment:
 	// put the jobs_in_batch into batch k.
 	//cout << "Updating current solution" << endl;
-	//cout << "Now testing:";
+	cout << "Now testing:";
 	for(int j=0; j<jobs_in_batch.size(); j++) {
 		(*current_solution)[(int) jobs_in_batch[j]] = k;
 	}
 	for(int j=0; j<(*current_solution).size(); j++) {
-		//cout << (*current_solution)[j] << " ";
+		cout << (*current_solution)[j] << " ";
 	}
-	//cout << endl;
+	cout << endl;
 	//cout << "Node created!" << endl;
 }
 
@@ -73,21 +73,20 @@ int BBNode::run() {
 			//	cout << "Length of batch:" << P_batch << endl;
 	// find a lower bound on the lateness of the rest
 	//int Lmax_rest_interval;
+
+	/*
 	float moving_elastic_LB_enddate = starttime + P_batch;
 	for(int j=0; j<jobs_in_rest.size(); j++) { // they're already sorted by due date
+		// move one forward
 		moving_elastic_LB_enddate += (*pj)[jobs_in_rest[j]] * (*sj)[jobs_in_rest[j]] / capacity;
-		if((*dj)[jobs_in_rest[j]] < (*dj)[jobs_in_rest[ (j<jobs_in_rest.size()-1 ? j+1 : j) ]])
+		// only check this if we're at the end of a bucket (ie if the next job is due later, or the last job)
+		//if((*dj)[jobs_in_rest[j]] < (*dj)[jobs_in_rest[ (j<jobs_in_rest.size()-1 ? j+1 : j) ]])
 		if(moving_elastic_LB_enddate > (*dj)[jobs_in_rest[j]] + (*Lmax_incumbent) - 1) {
-			// even with elastic EDD, we couldn't make the rest be less than the incumbent.
-			// don't even bother with this node :(
-	/*		cout << "Didn't make it past elastic EDD:" << endl;
-			cout << "jobs_in_rest[j=" << j << "] has dj=" << (int)(*dj)[jobs_in_rest[j]] << endl;
-			cout << "Lmax_incumbent is " << *Lmax_incumbent << endl;
-			cout << "current edd enddate is " << moving_elastic_LB_enddate << endl;*/
-			//cout << "EDD fail: Rest start: " << (starttime+P_batch) << " moving LBend: " << moving_elastic_LB_enddate << " duedate[" << (int) jobs_in_rest[j] << "]: " << (int)(*dj)[jobs_in_rest[j]] << endl;
 			return UNSUCCESSFUL_NODE;
 		}
 	}
+	*/
+
 	// create CP model and find cumulative Lmax of rest jobs -- this is a stricter test but takes longer.
 
 
@@ -113,14 +112,14 @@ int BBNode::run() {
 		}
 
 
-		if(Lmax_batch < (*Lmax_incumbent)) {
+		if(Lmax_current < (*Lmax_incumbent)) {
 			// update best_solution:
 			(*best_solution) = (*current_solution);
 			(*Lmax_incumbent) = Lmax_current;
 			cout << "Successful leaf node! New Lmax: " << Lmax_current << endl;
 			return SUCCESSFUL_NODE;
 		} else { // well, we were so close :(
-			//cout << "Unsuccessful leaf node!" << endl;
+			cout << "Unsuccessful leaf node!" << endl;
 			return UNSUCCESSFUL_NODE;
 		}
 	}
@@ -174,7 +173,107 @@ int BBNode::run() {
 
 		// always try and make the batch as full as possible.
 		//model.add(IloMaximize(env, IloScalProd((rest_sj), is_inbatch)));
-		model.add(IloMaximize(env, IloSum(is_inbatch)));
+		//model.add(IloMaximize(env, IloSum(is_inbatch)));
+		IloIntVar Lmax_mip(env, 0, (*Lmax_incumbent));
+		model.add(IloMinimize(env, Lmax_mip));
+
+		// My Beck modification:
+
+		IloArray<IloBoolVarArray> yji(env, nj);
+		for(int j=0; j<nj; j++) {
+			yji[j] = IloBoolVarArray(env, nj);
+			for(int i=0; i<nj; i++) {
+				yji[j][i] = IloBoolVar(env);
+				model.add( yji[j][i] + is_inbatch[j] + is_inbatch[i] >= 1);
+				model.add( 2*(1-yji[j][i]) >= is_inbatch[j] + is_inbatch[i]);
+			}
+			IloNumExpr rest_areas(env);
+			for(int i=0; i<=j; i++) {
+				rest_areas += (yji[j][i] * ((*pj)[jobs_in_rest[i]] * (*sj)[jobs_in_rest[i]] / capacity));
+			}
+			model.add( IloConstraint((*dj)[jobs_in_rest[j]] + (*Lmax_incumbent) - 1 >= Pk + rest_areas));
+		}
+
+
+
+		/********* time-indexed cumul constraint *********/
+		// ** Find an upper bound on cumul nt:
+
+		int nt = 0; // number of time points
+
+		// first, sort the jobs by due date, except for the longest job, which is added after.
+		int maxp = 0;
+		bool maxp_skipped = false; // pretend the batch is as long as the longest job, but add this only once
+		for(int j=0; j<nj; j++) {
+			nt += (*pj)[jobs_in_rest[j]];
+			if((*pj)[jobs_in_rest[j]] > maxp) maxp = (*pj)[jobs_in_rest[j]];
+		}
+
+		vector<int> st(nt,0);
+		int lt=0, lj=0;
+		while(lj < nj) {
+			if((capacity - st[lt]) >= (*sj)[jobs_in_rest[lj]]) {
+				if((*pj)[jobs_in_rest[lj]] == maxp && !maxp_skipped) {
+					for(int llt=lt; llt<lt+(*pj)[jobs_in_rest[lj]]; llt++) st[llt] += (*sj)[jobs_in_rest[lj]];
+					lj++;
+				} else {
+					maxp_skipped = true;
+					lj++;
+				}
+			}
+			lt++;
+		}
+		nt = lt + maxp;
+
+		IloArray<IloBoolVarArray> ujt(env, nj);
+		IloArray<IloBoolVarArray> vjt(env, nj);
+		IloBoolVarArray tb(env, nt);
+
+		for(int j=0; j<nj; j++) {
+			// initialize variables as variable objects in the model
+			ujt[j] = IloBoolVarArray(env, nt);
+			vjt[j] = IloBoolVarArray(env, nt);
+			for(int t=0; t<nt; t++) {
+				ujt[j][t] = IloBoolVar(env);
+				vjt[j][t] = IloBoolVar(env);
+			}
+		}
+
+		for(int t=0; t<nt; t++) {
+			tb[t] = IloBoolVar(env);
+			model.add(t <= Pk + nt*(1-tb[t])); // forces tb=0 if t > Pk
+			model.add(t + (nt * tb[t]) >= Pk + 1); // forces tb=1 if t <= Pk
+		}
+
+		for(int j=0; j<nj; j++) {
+		model.add(IloSum( ujt[j]) == 1); // every job starts once
+
+			for(int t=0; t<nt; t++) {
+				// no job after its latest finish date
+				model.add(  (starttime + t + (IloInt)(*pj)[jobs_in_rest[j]]) * ujt[j][t] <=  (IloInt)(*dj)[jobs_in_rest[j]] + (*Lmax_incumbent) - 1 );
+				model.add( Lmax_mip >= (starttime + t + (IloInt)(*pj)[jobs_in_rest[j]]) * ujt[j][t] - (IloInt)(*dj)[jobs_in_rest[j]]);
+				// batched jobs start at 0, others after Pk
+				model.add( ujt[j][0] == is_inbatch[j] );
+
+				//model.add( (1-vjt[j][t]) + is_inbatch[j] + (1-tb[t]) >= 1); // forces (1-vjt)=1 if j is after batch and t is in
+				//model.add( 2*(vjt[j][t]) >= (is_inbatch[j]) + (tb[t])); //
+				//model.add( vjt[j][t] == (1-tb[t]) + is_inbatch[j] * (2*tb[t] - 1) );
+				model.add( 2*vjt[j][t] >= 1 + is_inbatch[j] - tb[t]);
+				model.add( vjt[j][t] <= 1 + is_inbatch[j] - tb[t]);
+				model.add( ujt[j][t] <= vjt[j][t]);
+			}
+		}
+
+		// cumulative constraint
+		for(int j=0; j<nj; j++) {
+			for(int t=0; t<nt; t++) {
+				// first, generate inner sum over Tjt
+
+				for(int tt= (t-(*pj)[jobs_in_rest[j]] + 1 > 0 ? t-(*pj)[jobs_in_rest[j]] + 1 : 0); tt <= t; tt++) {
+					model.add( (IloInt)(*sj)[jobs_in_rest[j]] * ujt[j][tt] <= capacity );
+				}
+			}
+		}
 
 		IloCplex cplex(model);
 		//IloBool nextSolution = cplex.solve();
@@ -220,6 +319,9 @@ int BBNode::run() {
 				if(cplex.getValue(is_inbatch[i]) > 0) {
 					(*currentSolutionSum) += is_inbatch[i];
 				}
+				if(cplex.getValue(is_inbatch[i]) == 0) {
+					(*currentSolutionSum) += (1-is_inbatch[i]);
+				}
 			}
 			for(int i=0; i<child_jobs_in_batch.size(); i++) {
 				(*current_solution)[child_jobs_in_batch[i]] = 0;
@@ -227,7 +329,7 @@ int BBNode::run() {
 			}
 			//cout << "CurSolSum: " << currentSolutionSum << endl;
 		//	cout << "<= than: " << (int) child_jobs_in_batch.size() - 1 << endl;
-			model.add( (*currentSolutionSum) <= (IloNum) (child_jobs_in_batch.size() - 1) );
+			model.add( (*currentSolutionSum) <= nj - 1 );
 			//cout << "CurSolSum: " << (*currentSolutionSum) << endl;
 			model.add( Pk - dmin_in_batch <= (*Lmax_incumbent) ); //update this!
 			// kill child

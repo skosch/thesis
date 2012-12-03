@@ -32,7 +32,7 @@ RootNode::RootNode(vector<Job> *all_jobs, int capacity, int nk, int Dmax) {
 		dj[j] = jj.d;
 	}
 
-	Lmax_incumbent = 60;
+	Lmax_incumbent = 32;
 	best_solution = vector<int>(all_jobs->size(), 0);
 	current_solution = vector<int>(all_jobs->size(), 0);
 }
@@ -55,19 +55,14 @@ int RootNode::run() {
 
 	model.add(IloScalProd(sj, is_inbatch) <= capacity);
 
-	//Dk = IloNumVar(env, 0, IloMax(dj));
 	Pk = IloNumVar(env, 0, IloMax(pj));
-	// define Dk
-	//for(int j=0; j<all_jobs->size(); j++) {
-	//	model.add(IloRange(env, -IloInfinity, Dk - dj[j]*is_inbatch[j] + Dmax*is_inbatch[j], Dmax));
-	//}
 	// define Pk
 	for(int j=0; j<all_jobs->size(); j++) {
 		model.add(IloRange(env, 0, Pk - pj[j]*is_inbatch[j], IloInfinity));
 	}
 	// make sure we're not trying things worse than the incumbent Lmax
-	model.add( Pk - IloMin(dj) <= Lmax_incumbent );
-//floor(capacity/IloMax(sj))
+	model.add( Pk - IloMin(dj) <= Lmax_incumbent - 1);
+
 	model.add( IloSum(is_inbatch) >= 1); // min number of jobs in batch
 
 	// make sure the batch contains at least one of the earliest jobs
@@ -80,6 +75,23 @@ int RootNode::run() {
 	}
 	//model.add(forceEarliest);
 	model.add(forceEarliest >= 1);
+
+	// My Beck modification:
+
+	IloArray<IloBoolVarArray> yji(env, all_jobs->size());
+	for(int j=0; j<all_jobs->size(); j++) {
+		yji[j] = IloBoolVarArray(env, all_jobs->size());
+		for(int i=0; i<all_jobs->size(); i++) {
+			yji[j][i] = IloBoolVar(env);
+			model.add( yji[j][i] + is_inbatch[j] + is_inbatch[i] >= 1);
+			model.add( 2*(1-yji[j][i]) >= is_inbatch[j] + is_inbatch[i]);
+		}
+		IloNumExpr rest_areas(env);
+		for(int i=0; i<=j; i++) {
+			rest_areas += (yji[j][i] * (pj[i] * sj[i] / capacity));
+		}
+		model.add( IloConstraint((dj)[j] + Lmax_incumbent - 1 >= Pk + rest_areas));
+	}
 
 
 	// add model objective here later
