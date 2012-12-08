@@ -12,7 +12,7 @@ using namespace std;
 BBNode::BBNode(IloNumArray *sj, IloNumArray *pj, IloNumArray* dj, vector<int> jobs_in_batch,
 		vector<int> jobs_in_rest, int* Lmax_incumbent,
 		vector<int>* best_solution,
-		vector<int>* current_solution, int starttime, int k, int* nk, int capacity, int Dmax) {
+		vector<int>* current_solution, int starttime, int k, int* nk, int capacity, int Dmax, int* nodesVisited, double* timeCounter) {
 	//cout << "Creating child" << endl;
 	// copy all parameters into variables
 	this->sj = sj;
@@ -29,6 +29,10 @@ BBNode::BBNode(IloNumArray *sj, IloNumArray *pj, IloNumArray* dj, vector<int> jo
 	this->Dmax = Dmax;
 	this->nj = jobs_in_rest.size();
 	this->starttime = starttime;
+	this->nodesVisited = nodesVisited;
+	this->timeCounter = timeCounter;
+
+	(*nodesVisited)++;
 
 	// update the current assignment:
 	// put the jobs_in_batch into batch k.
@@ -129,9 +133,9 @@ int BBNode::run() {
 		 * then keep going until we've explored all the children.
 		 */
 		model = IloModel(env);
-		is_inbatch = IloBoolVarArray(env, nj); // assumed ordering just like jobs_in_rest, values don't matter
+		is_inbatch = IloIntVarArray(env, nj); // assumed ordering just like jobs_in_rest, values don't matter
 		for(int j=0; j<nj; j++) {
-			is_inbatch[j] = IloBoolVar(env);
+			is_inbatch[j] = IloIntVar(env, 0, 1);
 		}
 
 		// batch_sj; consisting of all sizes of jobs in jobs_in_rest
@@ -174,24 +178,17 @@ int BBNode::run() {
 		// always try and make the batch as full as possible.
 		//model.add(IloMaximize(env, IloScalProd((rest_sj), is_inbatch)));
 		//model.add(IloMaximize(env, IloSum(is_inbatch)));
-		IloIntVar Lmax_mip(env, 0, (*Lmax_incumbent));
+		IloNumVar Lmax_mip(env, 0, (*Lmax_incumbent));
 		model.add(IloMinimize(env, Lmax_mip));
 
 		// My Beck modification:
 
-		IloArray<IloBoolVarArray> yji(env, nj);
 		for(int j=0; j<nj; j++) {
-			yji[j] = IloBoolVarArray(env, nj);
-			for(int i=0; i<nj; i++) {
-				yji[j][i] = IloBoolVar(env);
-				model.add( yji[j][i] + is_inbatch[j] + is_inbatch[i] >= 1);
-				model.add( 2*(1-yji[j][i]) >= is_inbatch[j] + is_inbatch[i]);
-			}
 			IloNumExpr rest_areas(env);
 			for(int i=0; i<=j; i++) {
-				rest_areas += (yji[j][i] * ((*pj)[jobs_in_rest[i]] * (*sj)[jobs_in_rest[i]] / capacity));
+				rest_areas += ((1 - is_inbatch[i]) * ((*pj)[jobs_in_rest[i]] * (*sj)[jobs_in_rest[i]] / capacity)); // yji[j][i] *
 			}
-			model.add( IloConstraint((*dj)[jobs_in_rest[j]] + (*Lmax_incumbent) - 1 >= Pk + rest_areas));
+			model.add( IloConstraint((*dj)[jobs_in_rest[j]] + (*Lmax_incumbent) - 1 - starttime >= Pk + rest_areas));
 		}
 
 
@@ -214,10 +211,10 @@ int BBNode::run() {
 		while(lj < nj) {
 			if((capacity - st[lt]) >= (*sj)[jobs_in_rest[lj]]) {
 				if((*pj)[jobs_in_rest[lj]] == maxp && !maxp_skipped) {
-					for(int llt=lt; llt<lt+(*pj)[jobs_in_rest[lj]]; llt++) st[llt] += (*sj)[jobs_in_rest[lj]];
+					maxp_skipped = true;
 					lj++;
 				} else {
-					maxp_skipped = true;
+					for(int llt=lt; llt<lt+(*pj)[jobs_in_rest[lj]]; llt++) st[llt] += (*sj)[jobs_in_rest[lj]];
 					lj++;
 				}
 			}
@@ -226,24 +223,21 @@ int BBNode::run() {
 		nt = lt + maxp;
 
 		IloArray<IloBoolVarArray> ujt(env, nj);
-		IloArray<IloBoolVarArray> vjt(env, nj);
-		IloBoolVarArray tb(env, nt);
-
+	/*	IloArray<IloBoolVarArray> vjt(env, nj);
+		IloBoolVarArray tb(env, nt);*/
 		for(int j=0; j<nj; j++) {
 			// initialize variables as variable objects in the model
-			ujt[j] = IloBoolVarArray(env, nt);
-			vjt[j] = IloBoolVarArray(env, nt);
+			ujt[j] = IloBoolVarArray(env, (nt));
 			for(int t=0; t<nt; t++) {
-				ujt[j][t] = IloBoolVar(env);
-				vjt[j][t] = IloBoolVar(env);
+				ujt[j][t] = IloBoolVar(env,0, (*dj)[jobs_in_rest[j]] + (*Lmax_incumbent) - 1);
 			}
 		}
 
-		for(int t=0; t<nt; t++) {
+	/*	for(int t=0; t<nt; t++) {
 			tb[t] = IloBoolVar(env);
 			model.add(t <= Pk + nt*(1-tb[t])); // forces tb=0 if t > Pk
 			model.add(t + (nt * tb[t]) >= Pk + 1); // forces tb=1 if t <= Pk
-		}
+		}*/
 
 		for(int j=0; j<nj; j++) {
 		model.add(IloSum( ujt[j]) == 1); // every job starts once
@@ -254,15 +248,9 @@ int BBNode::run() {
 				model.add( Lmax_mip >= (starttime + t + (IloInt)(*pj)[jobs_in_rest[j]]) * ujt[j][t] - (IloInt)(*dj)[jobs_in_rest[j]]);
 				// batched jobs start at 0, others after Pk
 				model.add( ujt[j][0] == is_inbatch[j] );
-
-				//model.add( (1-vjt[j][t]) + is_inbatch[j] + (1-tb[t]) >= 1); // forces (1-vjt)=1 if j is after batch and t is in
-				//model.add( 2*(vjt[j][t]) >= (is_inbatch[j]) + (tb[t])); //
-				//model.add( vjt[j][t] == (1-tb[t]) + is_inbatch[j] * (2*tb[t] - 1) );
-				model.add( 2*vjt[j][t] >= 1 + is_inbatch[j] - tb[t]);
-				model.add( vjt[j][t] <= 1 + is_inbatch[j] - tb[t]);
-				model.add( ujt[j][t] <= vjt[j][t]);
 			}
 		}
+
 
 		// cumulative constraint
 		for(int j=0; j<nj; j++) {
@@ -275,23 +263,49 @@ int BBNode::run() {
 			}
 		}
 
+		for(int i=0; i<nj; i++) {
+			for(int j=0; j<nj; j++) {
+				for(int t=1; t<(*pj)[jobs_in_rest[j]]; t++) {
+					model.add(ujt[i][t] <= (1 - is_inbatch[j]));
+				}
+			}
+		}
+
+		/* safe eliminations constraint*/
+
+		IloNumVar smin(env, 0, capacity - IloMin((*pj)));
+		IloBoolVarArray longer_than_Pk(env, nj);
+		for(int j=0; j<nj; j++) {
+			longer_than_Pk[j] = IloBoolVar(env);
+			model.add(capacity - IloScalProd(rest_sj, is_inbatch) <= (capacity * longer_than_Pk[j] + 1) * (IloNum)(*sj)[jobs_in_rest[j]]);
+			model.add(Pk + longer_than_Pk[j]*2* nt >= (IloNum)(*pj)[jobs_in_rest[j]] + nt*is_inbatch[j]);
+			model.add(Pk - (1-longer_than_Pk[j])*2* nt <= (IloNum)(*pj)[jobs_in_rest[j]] -1 + nt*is_inbatch[j]);
+		}
+
 		IloCplex cplex(model);
 		//IloBool nextSolution = cplex.solve();
-		cplex.setOut(env.getNullStream()); // shut the fuck up, cplex
+		//cplex.setOut(env.getNullStream()); // shut the fuck up, cplex
+		//cplex.setError(env.getNullStream());
+
 		//cplex.setParam(IloCplex::MIPEmphasis, IloCplex::MIPEmphasisFeasibility);
 
 		// -======= before we solve: let's print what we know about the model =======
 
 		cout << "Size of isinbatch:" << is_inbatch.getSize() << endl;
 
+		cplex.setParam(IloCplex::ClockType, 1);
+		double timeneeded = cplex.getCplexTime();
 
 		while(cplex.solve()) { // keep solving until there are no more children
-
+			cout << "Just solved again, status is: " << cplex.getStatus() << endl;
+			//cout << "Last cursolsum is now " << cplex.getValue(additionalConstraints[additionalConstraints.size()-1]) << endl;
+			timeneeded = cplex.getCplexTime() - timeneeded;
+			(*timeCounter) += timeneeded;
 			// create child and give it the MIP solution
 			vector<int> child_jobs_in_batch(0), child_jobs_in_rest(0); // this is given to the child node to use
 
 			for(int j=0; j<nj; j++) { // fill this with the MIP solution
-				if(cplex.getValue(is_inbatch[j]) > 0) {
+				if(cplex.getValue(is_inbatch[j]) > 0.1) {
 					child_jobs_in_batch.push_back((int) jobs_in_rest[j]);
 				} else {
 					//cout << "Pushed into rest" << endl;
@@ -300,14 +314,14 @@ int BBNode::run() {
 
 			}
 
-			cout << "This is child node proposing sumS=" << cplex.getObjValue() << " and Pk=" << cplex.getValue(Pk) << ":";
+			cout << "Just solved the MIP and propose sumS=" << cplex.getObjValue() << " and Pk=" << cplex.getValue(Pk) << ":";
 					for(int j=0; j<nj; j++) {
-						cout << (cplex.getValue(is_inbatch[j]) > 0 ? 1 : 0 ) << " ";
+						cout << (cplex.getValue(is_inbatch[j])) << " ";
 					}
-					cout << endl;
+					cout << endl << " and will now run the child node: " << endl;
 
 
-			BBNode* child = new BBNode(sj, pj, dj, child_jobs_in_batch, child_jobs_in_rest, Lmax_incumbent, best_solution, current_solution, P_batch + starttime, this->k + 1, nk, capacity, Dmax);
+			BBNode* child = new BBNode(sj, pj, dj, child_jobs_in_batch, child_jobs_in_rest, Lmax_incumbent, best_solution, current_solution, P_batch + starttime, this->k + 1, nk, capacity, Dmax, nodesVisited, timeCounter);
 
 			child->run(); // let the child take care of things, wait until it's done.
 
@@ -316,35 +330,24 @@ int BBNode::run() {
 			additionalConstraints.push_back(currentSolutionSum);
 			(*currentSolutionSum) *= 0;
 			for(int i=0; i<nj; i++) {
-				if(cplex.getValue(is_inbatch[i]) > 0) {
-					(*currentSolutionSum) += is_inbatch[i];
-				}
-				if(cplex.getValue(is_inbatch[i]) == 0) {
+				if(cplex.getValue(is_inbatch[i]) > 0.1) {
 					(*currentSolutionSum) += (1-is_inbatch[i]);
+				} else {
+					(*currentSolutionSum) += (is_inbatch[i]);
 				}
 			}
 			for(int i=0; i<child_jobs_in_batch.size(); i++) {
 				(*current_solution)[child_jobs_in_batch[i]] = 0;
-
 			}
-			//cout << "CurSolSum: " << currentSolutionSum << endl;
-		//	cout << "<= than: " << (int) child_jobs_in_batch.size() - 1 << endl;
-			model.add( (*currentSolutionSum) <= nj - 1 );
-			//cout << "CurSolSum: " << (*currentSolutionSum) << endl;
+
+			model.add( (*currentSolutionSum) >= 1 ); // <= nj - 1
 			model.add( Pk - dmin_in_batch <= (*Lmax_incumbent) ); //update this!
+			//cplex.extract(model);
 			// kill child
 			delete child;
-
-
-
-			//nextSolution = cplex.solve();
-			//cout << "Solving again: " << nextSolution << endl;
-			//cout << "New val of CurSolSum: " << cplex.getValue(currentSolutionSum) << endl;
-			//cplex.extract(model); // prepare for re-solving the MIP
+			timeneeded = cplex.getCplexTime();
 		}
-		//cplex.refineConflict()
-		//cout << "Done solving -- no more!" << endl;
+
 
 		return 1;
 }
-

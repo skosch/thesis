@@ -287,8 +287,10 @@ int main(int argc, char *argv[]) {
 
 
     IloCplex cplex(model);   
-    
-    int timeneeded = cplex.getCplexTime();
+    cplex.setParam(IloCplex::ClockType, 1);
+    cplex.setParam(IloCplex::MIPDisplay  , 3);   // MIP node log display information
+    cplex.setParam(IloCplex::MIPInterval , 1);  // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
+    double timeneeded = cplex.getCplexTime();
 
     cplex.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
     cplex.solve();

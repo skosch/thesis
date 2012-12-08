@@ -20,6 +20,7 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{los}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Fundamentals}{3}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -66,28 +67,46 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.6}Grouping empty batches}{12}{subsection.3.4.6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.7}No postponing of jobs to later batches}{12}{subsection.3.4.7}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.5}Decomposition approach}{13}{section.3.5}}
-\newlabel{dc:eq1}{{3.26}{13}{Decomposition approach\relax }{equation.3.5.26}{}}
-\newlabel{dc:eq3}{{3.28}{13}{Decomposition approach\relax }{equation.3.5.28}{}}
-\newlabel{dc:eq4}{{3.29}{13}{Decomposition approach\relax }{equation.3.5.29}{}}
-\newlabel{dc:eq8}{{3.33}{13}{Decomposition approach\relax }{equation.3.5.33}{}}
-\newlabel{dc:eq9}{{3.34}{13}{Decomposition approach\relax }{equation.3.5.34}{}}
-\newlabel{dc:eq14}{{3.39}{13}{Decomposition approach\relax }{equation.3.5.39}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Notation used in the decomposition model\relax }}{14}{table.caption.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.6}Open questions}{14}{section.3.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Test data for evaluation}{14}{section.3.7}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}My solution}{17}{chapter.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Branch-and-bound by batch in chronological order}{13}{subsection.3.5.1}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces MIP node class code overview\relax }}{13}{algorithm.2}}
+\newlabel{alg:bbnode_mip1}{{2}{13}{MIP node class code overview\relax \relax }{algorithm.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{14}{figure.caption.4}}
+\newlabel{fig:decomp_diagram1}{{3.3}{14}{Batch-by-batch decomposition using MIP only\relax \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Using MIP and cumulative packing after the batch}{14}{subsubsection*.5}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Notation used in the decomposition model\relax }}{14}{table.caption.7}}
+\newlabel{dc:eq1}{{3.27}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.27}{}}
+\newlabel{dc:eq3}{{3.29}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.29}{}}
+\newlabel{dc:eq4}{{3.30}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.30}{}}
+\newlabel{dc:eq5}{{3.31}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.31}{}}
+\newlabel{dc:eq6}{{3.32}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.32}{}}
+\newlabel{dc:eq7}{{3.33}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.33}{}}
+\newlabel{dc:eq8}{{3.34}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.34}{}}
+\newlabel{dc:eq9}{{3.35}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.35}{}}
+\newlabel{dc:eq10}{{3.36}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.36}{}}
+\newlabel{dc:eq11}{{3.37}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.37}{}}
+\newlabel{dc:eq12}{{3.38}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.38}{}}
+\newlabel{dc:eq13}{{3.39}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.39}{}}
+\@writefile{los}{\contentsline {model}{\numberline {3.5.1}{\ignorespaces MIP model in batch-by-batch branch-and-bound\relax }}{15}{model.caption.6}}
+\newlabel{model:decomp_mip}{{3.5.1}{15}{MIP model in batch-by-batch branch-and-bound\relax \relax }{model.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Using CP and cumulative packing after the batch}{16}{subsubsection*.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Potential improvements}{17}{subsection.3.5.2}}
+\@writefile{toc}{\contentsline {paragraph}{Improve the initial $L_{\text  {max,incumbent}}$}{17}{paragraph*.9}}
+\@writefile{toc}{\contentsline {paragraph}{Improve $L_{\text  {max,incumbent}}$ during search}{17}{paragraph*.10}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Open questions}{17}{section.3.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Test data for evaluation}{17}{section.3.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}My solution}{19}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}MIP formulation improvements}{17}{section.4.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}CP formulation improvements}{17}{section.4.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{19}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}MIP formulation improvements}{19}{section.4.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}CP formulation improvements}{19}{section.4.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{21}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Intro}{20}{section.5.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Chapter 8: Integer Programming}{21}{subsection.5.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Chapter 9: Building IP models I.}{22}{subsection.5.1.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Special kinds of IP models}{23}{subsection.5.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}How to formulate a good model}{24}{subsection.5.1.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}How this could be solved}{25}{section.5.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Possible improvements}{25}{subsection.5.2.1}}
-\@writefile{toc}{\contentsline {paragraph}{Limiting batch due date}{25}{paragraph*.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Intro}{22}{section.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Chapter 8: Integer Programming}{23}{subsection.5.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Chapter 9: Building IP models I.}{24}{subsection.5.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Special kinds of IP models}{25}{subsection.5.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.4}How to formulate a good model}{26}{subsection.5.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}How this could be solved}{27}{section.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Possible improvements}{27}{subsection.5.2.1}}
+\@writefile{toc}{\contentsline {paragraph}{Limiting batch due date}{27}{paragraph*.11}}

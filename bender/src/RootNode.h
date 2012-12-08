@@ -27,7 +27,7 @@ private:
 	IloModel model;
 	IloBoolVarArray is_inbatch;
 	IloNumVar  Pk;
-
+	std::vector<IloIntExpr*> additionalConstraints;
 	// given to the children for them to use
 	int nk, capacity;
 	int Dmax;
@@ -35,7 +35,8 @@ private:
 	int Lmax_incumbent;
 	std::vector<int> best_solution;
 	std::vector<int> current_solution;
-
+	int nodesVisited = 0;
+	double timeCounter = 0;
 };
 
 #endif /* ROOTNODE_H_ */

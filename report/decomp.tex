@@ -1,0 +1,153 @@
+\section{Decomposition approach}
+
+Instead of solving the entire problem using one model, we can solve the problem
+step by step, using the best techiques available for each subproblem. This
+approach is inspired by a method called \textit{Benders' decomposition}.
+
+\subsection{Branch-and-bound by batch in chronological order}
+A basic version of this approach uses branch-and-bound to transverse the search
+tree. At each node on level $\ell$, a single MIP and/or CP model is run to
+assign jobs to batch $k = \ell$. The remaining jobs are passed to the children
+nodes, which assign jobs to the next batch, and so on -- until a solution, and
+thus a new upper bound on $\Lmax$, is found. Several constraints are used to
+prune parts of the search tree that are known to offer only solutions worse than
+this upper bound. Figure \ref{fig:decomp_diagram1} shows an example in which a
+MIP model is used to assign jobs to the batch at every node.
+\begin{algorithm}
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\State update \textit{currentAssignments} \Comment{this keeps track of where we are
+in the tree}
+\If{no jobs given to this node} \Comment{if this is a leaf node, i.e. all jobs
+are assigned to batches}
+  \State calculate $L_{\text{max,current}}$ based on \textit{currentAssignments}
+  \If{$L_{\text{max,current}}$ < $L_{\text{max,incumbent}}$}
+    \State $L_{\text{max,incumbent}} \gets L_{\text{max,current}}$
+    \State \textit{bestAssignments} $\gets$ \textit{currentAssignments}
+  \EndIf
+  \State return to parent node
+\EndIf
+\State set up MIP model \Comment{as described below}
+\Repeat
+  \State $x_j \gets$ model.solve($x_j$) \Comment{let model assign jobs to the
+  batch}
+  \State spawn and run child node with all $\{j | x_j = 0\}$ \Comment{pass
+  unassigned jobs to children}
+  \State add constraint to keep this solution from recurring \Comment{this
+  happens once the child node returns}
+\Until{model has no more solutions}
+\State return to parent node
+\end{algorithmic}
+\caption{MIP node class code overview}
+\label{alg:bbnode_mip1}
+\end{algorithm}
+Algorithm \ref{alg:bbnode_mip1} outlines what happens at each node: the model
+finds the best jobs to assign to the batch according to some rule, lets the
+children handle the remaining jobs, and tries the next best solution once the
+first child has explored its subtree and backtracked.
+\input{figures/decomp_diagram1.tex}
+\subsubsection{Using MIP and cumulative packing after the batch}
+The first version of the branch-and-bound batch-by-batch decomposition uses a
+MIP model at each node to assign jobs to the respective batch. The remaining
+jobs are packed such as to minimize their $\Lmax$, with a relaxation of the
+batching requirement, i.e., as if on a cumulative resource. This is implemented
+using cumulative constraints over indexed time points as shown in Model
+\ref{model:decomp_mip}.
+\begin{model}
+\begin{alignat}{3}
+\text{Min.}\quad & L_{\text{max,cumul}} && \\ 
+\text{s. t.}\quad & \label{dc:eq1} \sum_j s_j x_j \leq b \quad && \forall j \in J \\
+& P_k \geq p_j x_j \quad && \forall j \in J \\
+& \label{dc:eq3} \sum_j x_j \geq 1 \quad && \forall \{j \in J | d_j = \min(d_j)\} \\
+& \label{dc:eq4} P_k + \frac{1}{b} \sum_{i} s_i p_i \leq d_j +
+L_{\text{max,incmb}} - 1 - v_k \quad && \forall j \in J, \forall \{i \in J | d_i
+\leq d_j\} \\[2ex]
+& \label{dc:eq5} \sum_t u_{jt} = 1 \quad && \forall j \in J \\
+& \label{dc:eq6} \sum_j \sum_{t' \in T_{jt}} u_{jt'} \leq b \quad && \forall t \in \mathcal{H} \\
+& \label{dc:eq7} (v_k + t + p_j) u_{jt} \leq d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J, \forall t \in \mathcal{H} \\
+& \label{dc:eq8} L_{\text{max,cumul}} \geq (v_k + t + p_j) u_{jt} - d_j \quad && \forall j \in J, \forall t \in \mathcal{H} \\
+& \label{dc:eq9} u_{j,t=1} = x_j \quad && \forall j \in J \\
+& \label{dc:eq10} u_{it} \leq (1 - x_j) \quad && \forall i,j \in J, \forall t
+\in \mathcal{H} \setminus \{2\} \\[2ex]
+& \label{dc:eq11} b - \sum_j s_j x_j \leq (b w_j + 1) s_j \quad && \forall j \in J \\
+& \label{dc:eq12} P_k + 2w_j n_t \geq p_j + n_t x_j \quad && \forall j \in J\\
+& \label{dc:eq13} P_k - 2(1 - w_j)n_t \leq p_j +n_t x_j - 1 \quad && \forall j
+\in J
+\end{alignat}
+\caption{MIP model in batch-by-batch branch-and-bound}
+\label{model:decomp_mip}
+\end{model}
+
+\begin{table}[h]
+\begin{tabular}{l p{5in}}
+$x_j$ & is 1 iff job $j$ is assigned to the batch \\
+$u_{jt}$ & is 1 iff job $j$ starts in time slot $t$ \\
+$T_{jt}$ & is the set of all time slots occupied by job $j$ if it ended at time
+$t$, that is $T_{jt} = \{t - p_j + 1, \dots, t\}$ \\
+$v_k$ & is the start time of the batch at the given node in the search tree \\
+$L_{\text{max,incmb}}$ & is the incumbent (known best) value of and thus an
+upper bound on $\Lmax$ \\
+$\mathcal{H}$ & is the set of all indexed time points $\{1, \dots, n_t\}$ \\
+$w_j$ & is 1 iff job $j$ is either longer than the batch ($p_j > P_k$) or
+already part of the batch ($x_j = 1$)
+\end{tabular}
+\caption{Notation used in the decomposition model}
+\end{table}
+
+The above model implements a time-indexed cumulative constraint on the
+non-batched jobs. Constraints \eqref{dc:eq1} through \eqref{dc:eq3} ensure that the
+batch stays below capacity, define the duration of the batch $P_k$ and force at
+least one of the earliest-due jobs into the batch.
+
+Constraints \eqref{dc:eq4} express the interval relaxation used to ensure that no
+jobs exceed their latest allowable finish date given any batch assignment. Even
+jobs that are assigned to the batch have to fulfill this requirement.
+
+Constraints \eqref{dc:eq5} and \eqref{dc:eq6} implement the cumulative nature of the
+post-batch assignments by ensuring that each job starts only once, and no jobs
+overlap on a given resource at any time (for the purposes of this model, the
+batch machine is considered divisible into $b$ unary resources).
+
+Constraints \eqref{dc:eq7} again limit the possible end dates of a
+job, but unlike \eqref{dc:eq4}, they use the time assignments on the cumulative
+resource to determine end dates. Constraints \eqref{dc:eq8} define the value of
+$L_{\text{max,cumul}}$, the maximum lateness of any job in the non-batched set.
+
+Constraint \eqref{dc:eq9} force batched jobs to start at $t = 0$, while \eqref{dc:eq10} force \textit{all} jobs to start either at $t = 0$ or after the last batched job ends.
+
+Constraints \eqref{dc:eq10} enforce a dominance rule: jobs must be assigned to
+the batch such that the remaining capacity, $b_r = b - \sum_j s_j x_j$, is less than
+the size $s_j$ of the \textit{smallest} job from the set of non-batched jobs that
+are \textit{not longer} than the current batch. That is, if there exists an
+non-batched job $j$ with $p_j \leq P_k$ and $s_j \leq b_r$, then the current
+assignment of jobs is infeasible in the model. The reasoning goes as follows:
+given any feasible schedule, assume there is a batch $k_a$ with $b_r$ remaining capacity
+and a later batch $k_b$ containing a job $j$ such that $s_j \leq b_r$ and $p_j \leq
+P_{k_a}$. Then job $j$ can always be moved to batch $k_a$ without negatively affecting the
+quality of the solution: if the schedule was optimal, then moving $j$ will not
+affect $\Lmax$ at all (otherwise, it was no optimal schedule); if the schedule
+was not optimal, then $\Lmax$ will stay constant (unless $j$ was the longest job
+in $k_b$ and $\Lmax$ occured in or in a batch after $k_b$, in which case $\Lmax$ will
+be improved).
+
+This rule is implemented by means of a binary variable $w_j$, which, as defined
+by constraints \eqref{dc:eq11} and \eqref{dc:eq12}, is 1 iff $p_j > P_k \lor x_j
+= 1$. These are the cases in which a job $j$ is \textit{not} to be considered in \eqref{dc:eq10}, and so $w_j$ is used to scale $s_j$ to a value
+insignificantly large in the eyes of the constraint's less-than relation.
+
+\subsubsection{Using CP and cumulative packing after the batch}
+This approach is equivalent, but we now use CP to select the batch assignments,
+again based on a minimized $\Lmax$ among the non-batched jobs. 
+
+
+\subsection{Potential improvements}
+\paragraph{Improve the initial $L_{\text{max,incumbent}}$} A better initial
+upper bound on $\Lmax$ can help prune some branches of the search tree from the
+outset. There are several dispatch rules (or maybe other heuristics?) that could
+be explored to do this better.
+\paragraph{Improve $L_{\text{max,incumbent}}$ during search} It may be useful to
+use a heuristic like above to ``complete the schedule'' once a promising partial
+schedule has been generated. I have yet to identify situations where this is
+always helpful.
+
+

@@ -1,0 +1,38 @@
+\tikzset{
+  treenode/.style = {align=center, inner sep=4pt, text centered,
+    font=\sansfont\fontsize{11pt}{12pt}\selectfont},
+  root/.style = {treenode},% arbre rouge noir, noeud noir
+  nchild/.style = {treenode,
+     },% arbre rouge noir, noeud rouge
+  leaf/.style = {treenode}% arbre rouge noir, nil
+}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[->,>=stealth',level/.style={sibling distance = 3cm/#1,
+  level distance = 1.5cm}, scale=0.7]
+\node (Root) [root] {MIP}
+ child{ node [nchild] {MIP} 
+            child{ node [nchild] {MIP}}
+            child{ node [nchild] {MIP}
+              child{ node [leaf] {Solution 1}}
+						}                            
+    }
+    child{ node [nchild] {MIP} }
+    child{ node [nchild] {MIP} 
+            child{ node [nchild] {MIP} %2, left
+                    child{ node [leaf] {Solution 2}} 
+                  }
+            child{ node [nchild] {MIP} }
+		};
+  \begin{scope}[every node/.style={right}]
+    \path (Root -| Root-3-2) ++(1.5cm,0) node {\fontsize{10pt}{10pt}\selectfont $k=1$};
+    \path (Root-1 -| Root-3-2) ++(1.5cm,0) node
+    {\fontsize{10pt}{10pt}\selectfont $k=2$};
+    \path (Root-1-1 -| Root-3-2) ++(1.5cm,0) node
+    {\fontsize{10pt}{10pt}\selectfont $k=3$};
+  \end{scope}
+
+   \end{tikzpicture}
+\caption{Batch-by-batch decomposition using MIP only}\label{fig:decomp_diagram1}
+\end{figure}

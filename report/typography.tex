@@ -82,3 +82,12 @@ xleftmargin=.4in, frame=l, xrightmargin=1.74in
 \let\oldemptyset\emptyset
 \let\emptyset\varnothing
 
+%===== LONG EQUATION THINGS =====%
+\DeclareFloatingEnvironment[
+  fileext=los,
+  listname=List of Models,
+  name=Model,
+  placement=tbhp,
+  within=section
+]{model}
+

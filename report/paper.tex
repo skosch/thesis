@@ -3,8 +3,9 @@
 
 \usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.1in, right=1.74in,top=1.4in, bottom=1.74in]{geometry}
 \usepackage[no-math]{fontspec}
-
+\usepackage{newfloat}
 \usepackage{sectsty, tikz, color}
+\usetikzlibrary{shapes,arrows}
 \usepackage{multicol}
 \usepackage{amsmath, amssymb, amsfonts,  titlesec}
 \usepackage[urw-garamond]{mathdesign}
@@ -440,74 +441,7 @@ on the latest batch for \textit{every} job.}
 %\section{Other known properties, unused so far}
 %Anything that comes \textit{after} $\Lmax$ doesn't matter. If $L$ is decreasing after $\Lmax$, the jobs must not be stacked ever. In other words: don't ever consider an assignment where 
 
-\section{Decomposition approach}
-
-\begin{alignat}{2}
-& \label{dc:eq1} \sum_j s_j x_j \leq b \quad && \forall j \in J \\
-& P_k \geq p_j x_j \quad && \forall j \in J \\
-& \label{dc:eq3} \sum_j x_j \geq 1 \quad && \forall j : d_j = \min(d_j) \\[2ex]
-& \label{dc:eq4} \sum_t u_{jt} = 1 \quad && \forall j \in J \\
-& (t + p_j) u_{jt}  \leq (d_j + L_{\text{max,incmb}} - 1) \quad &&
-\forall j \in J, \forall t \in \mathcal{H} \\
-& u_{jt} \geq (1-x_j) P_k \quad && \forall j \in J, \forall t \in \mathcal{H} \\
-& u_{jt} \leq (1-x_j) M \quad && \forall j \in J, \forall t \in \mathcal{H} \\
-& \label{dc:eq8} \sum_j \sum_{t' \in T_{jt}} w_{jr} u_{jt'} \leq 1 \quad && \forall r
-\in \{1, \dots, b\}, \forall t \in \mathcal{H} \\[2ex]
-& \label{dc:eq9} v_{jr} \leq r + b(1 - w^b_{jr}) \quad && \forall j \in J, \forall r \in
-\{1,\dots, b\} \\
-& v_{jr} + b w^b_{jr} \geq r + 1 \quad && \forall j \in J, \forall r \in \{1,\dots,b\}
-\\
-& v_{jr} + s_j + b(1 - w^a_{jr}) \geq r \quad && \forall j \in J, \forall r \in
-\{1, \dots, b\} \\
-& v_{jr} + s_j + 1 \leq r + b w^a_{jr} \quad && \forall j \in J, \forall r \in
-\{1,\dots,b\} \\[2ex]
-& w^a_{jr} + w^b_{jr} + w_{jr} \geq 1 \quad && \forall j \in J, \forall r \in
-\{1,\dots,b\} \\
-& \label{dc:eq14} 2(1-w_{jr}) \geq w^a_{jr} + w^b_{jr} \quad && \forall j \in J, \forall r \in \{1,\dots,b\}
-\end{alignat}
-
-\begin{table}
-\begin{tabular}{l p{5in}}
-$x_j$ & is 1 iff job $j$ is assigned to the batch \\
-$u_{jt}$ & is 1 iff job $j$ starts in time slot $t$ \\
-$M$  & is an arbitrary number larger than the latest time slot's index \\
-$T_{jt}$ & is the set of all time slots occupied by job $j$ if it ended at time
-$t$, that is $T_{jt} = \{t - p_j, \dots, t\}$ \\
-$w_{jr}$ & is 1 iff job $j$ uses resource $r$ at any time -- this depends on
-$v_{jr}$ \\
-$v_{jr}$ & the smallest resource index $r$ used by job $j$ at any time, i.e. the
-job uses resources $\{v_{jr},\dots,v_{jr}+s_j\}$ \\
-$w^a_{jr}$ & is 1 iff resource $r$ has a lower index than the value of
-$v_{jr}+s_j$. If $w^a_{jr} = 0$, resource $r$ is never used by job $j$ \\
-$w^b_{jr}$ & is 1 iff resource $r$ has a higher index than the value of
-$v_{jr}$. If $w^b_{jr} = 0$, resource $r$ is never used by job $j$ \\
-$w_{jr}$ & is 1 iff $w^a_{jr} = 1 \land w^b_{jr} = 1$, i.e. if job $j$ used
-resource $r$ at any time
-\end{tabular}
-\caption{Notation used in the decomposition model}
-\end{table}
-
-The above model implements a time-indexed cumulative constraint on the
-non-batched jobs. Constraints \ref{dc:eq1} through \ref{dc:eq3} ensure that the
-batch stays below capacity, define the duration of the batch $P_k$ and force at
-least one of the earliest-due jobs into the batch. Constraints \ref{dc:eq4}
-through \ref{dc:eq8} express the cumulative constraint: all jobs can only start
-once, and iff a job starts a time $t$, it must finish before its latest
-acceptable finish date $(d_j + L_{\text{max,incumbent}} - 1)$. The next two
-constraints ensure that batched jobs start at $t = 0$ and all others start after
-$t = P_k$. The double-sum in constraint \ref{dc:eq8} implements the cumulative
-constraint: no two jobs can overlap on a resource (for the purposes of this
-model, the batch machine is considered divisible into $b$ unary resources).
-
-The next six constraints \ref{dc:eq9} through \ref{dc:eq14} do nothing but
-define the value of $w_{jr}$, which represents whether job $j$ uses resource $r$
-at any time. The first two constraints define $w^b_{jr}$, which is 1 iff the
-job's highest resource index is greater than $r$. The next two constraints
-define $w^a_{jr}$, which is 1 iff the job's lowest resource index (that is,
-$v_{jr}$) is lower than $r$. Both conditions need to be fulfilled for $w_{jr} =
-1$, which is expressed in the next two constraints.
-
-
+\input{decomp.tex}
 \section{Open questions}
 \begin{alist}
 \item{Is there a dominance rule that reduces the size of the problem because two
