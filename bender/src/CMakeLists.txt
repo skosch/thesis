@@ -12,7 +12,7 @@ if (BOOST_FOUND)
   target_link_libraries (rhea ${Boost_LIBRARIES})
 endif (BOOST_FOUND)
 
-target_link_libraries (thesis_bender ilocplex concert cplex)
+target_link_libraries (thesis_bender ilocplex cp concert )
 
 target_link_libraries (thesis_bender m pthread rt)
 

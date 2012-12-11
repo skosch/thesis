@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../cpx_studio_12.2/concert/include/ilconcert/iloadvcollection.h
+ilconcert/ilocollectioni.h
+-
+
 ../cpx_studio_12.2/concert/include/ilconcert/iloalg.h
 ilconcert/iloenv.h
 -
@@ -30,6 +34,14 @@ ilconcert/iloexpression.h
 ilconcert/ilolinear.h
 -
 
+../cpx_studio_12.2/concert/include/ilconcert/iloanyexpri.h
+ilconcert/iloextractable.h
+-
+ilconcert/iloexpression.h
+-
+ilconcert/iloexpressioni.h
+-
+
 ../cpx_studio_12.2/concert/include/ilconcert/iloanyset.h
 ilconcert/iloany.h
 -
@@ -50,6 +62,18 @@ ilconcert/iloexpression.h
 
 ../cpx_studio_12.2/concert/include/ilconcert/ilocollection.h
 ilconcert/iloenv.h
+-
+
+../cpx_studio_12.2/concert/include/ilconcert/ilocollectioni.h
+ilconcert/ilocollection.h
+-
+ilconcert/ilosys.h
+-
+ilconcert/ilohash.h
+-
+ilconcert/iloany.h
+-
+ilconcert/ilolinkedlist.h
 -
 
 ../cpx_studio_12.2/concert/include/ilconcert/ilocsvreader.h
@@ -80,6 +104,12 @@ math.h
 stdlib.h
 -
 ctype.h
+-
+
+../cpx_studio_12.2/concert/include/ilconcert/iloevaluator.h
+ilconcert/iloenv.h
+-
+ilconcert/ilomapi.h
 -
 
 ../cpx_studio_12.2/concert/include/ilconcert/iloexpression.h
@@ -130,6 +160,16 @@ ilconcert/iloexpression.h
 
 ../cpx_studio_12.2/concert/include/ilconcert/ilolinkedlist.h
 ilconcert/iloenv.h
+-
+
+../cpx_studio_12.2/concert/include/ilconcert/ilomapi.h
+ilconcert/ilocollection.h
+-
+ilconcert/ilotupleset.h
+-
+ilconcert/iloextractable.h
+-
+ilconcert/ilosymbol.h
 -
 
 ../cpx_studio_12.2/concert/include/ilconcert/ilomemmgr.h
@@ -240,6 +280,16 @@ ilconcert/iloalg.h
 ilconcert/ilohash.h
 -
 
+../cpx_studio_12.2/concert/include/ilconcert/ilosymbol.h
+ilconcert/iloany.h
+-
+ilconcert/iloanyexpri.h
+-
+ilconcert/iloadvcollection.h
+-
+locale.h
+-
+
 ../cpx_studio_12.2/concert/include/ilconcert/ilosys.h
 unistd.h
 -
@@ -320,6 +370,20 @@ stdarg.h
 setjmp.h
 -
 
+../cpx_studio_12.2/concert/include/ilconcert/ilotupleset.h
+ilconcert/iloanyset.h
+-
+
+../cpx_studio_12.2/concert/include/ilconcert/ilsched/ilosatomi.h
+ilconcert/iloexpression.h
+-
+ilconcert/ilsched/ilosbasic.h
+-
+ilconcert/iloparami.h
+-
+ilconcert/iloevaluator.h
+-
+
 ../cpx_studio_12.2/concert/include/ilconcert/ilsched/ilosbasic.h
 ilconcert/ilosys.h
 -
@@ -386,6 +450,18 @@ ilcplex/cplex.h
 ilcplex/ilocplexi.h
 -
 
+../cpx_studio_12.2/cpoptimizer/include/ilcp/cp.h
+ilconcert/iloalg.h
+-
+ilconcert/ilomodel.h
+-
+ilconcert/ilotupleset.h
+-
+ilconcert/ilosmodel.h
+-
+ilconcert/ilsched/ilosatomi.h
+-
+
 /home/sebastian/thesis/bender/src/BBNode.cpp
 BBNode.h
 /home/sebastian/thesis/bender/src/BBNode.h
@@ -402,8 +478,14 @@ cmath
 Job.h
 /home/sebastian/thesis/bender/src/Job.h
 
+/home/sebastian/thesis/bender/src/Job.cpp
+Job.h
+/home/sebastian/thesis/bender/src/Job.h
+
 /home/sebastian/thesis/bender/src/Job.h
 ilcplex/ilocplex.h
+-
+ilcp/cp.h
 -
 ilconcert/ilocsvreader.h
 -
@@ -421,6 +503,30 @@ cmath
 -
 Job.h
 /home/sebastian/thesis/bender/src/Job.h
+BBNode.h
+/home/sebastian/thesis/bender/src/BBNode.h
+
+/home/sebastian/thesis/bender/src/main.cpp
+iostream
+-
+sstream
+-
+cmath
+-
+string
+-
+cstdlib
+-
+algorithm
+-
+vector
+-
+deque
+-
+Job.h
+/home/sebastian/thesis/bender/src/Job.h
+RootNode.h
+/home/sebastian/thesis/bender/src/RootNode.h
 BBNode.h
 /home/sebastian/thesis/bender/src/BBNode.h
 

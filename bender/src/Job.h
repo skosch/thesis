@@ -9,13 +9,13 @@
 #define JOB_H_
 
 #include <ilcplex/ilocplex.h>
+#include <ilcp/cp.h>
 #include <ilconcert/ilocsvreader.h>
 #include <ilconcert/iloexpression.h>
 
 
-
 class Job {
-public:
+	public:
 	Job(double s, double p, double d);
 	IloNum s, p, d;
 	virtual ~Job();

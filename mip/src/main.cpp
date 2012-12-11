@@ -282,6 +282,14 @@ int main(int argc, char *argv[]) {
       }
     }
 
+    // 17. No batch should have empty space if safe eliminations are possible
+   /* for(int k=0; k<nk-1; k++) {
+      for(int j=0; j<nj; j++) {
+        model.add(IloIfThen(env, (pj[j] <= Pk[k] && dj[j] >= Dk[k+1]),
+        capacity-secondarySumExpr(env, sj, xjk, k, nj) <= sj[j]));
+      }
+    }*/
+
     /********* solving the model ******/
 
 

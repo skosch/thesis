@@ -21,103 +21,6 @@
 		<project id="thesis_bender.null.1" name="thesis_bender"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
-		<buildTargets>
-			<target name="Build" path="[Targets]/[exe] thesis_bender" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildArguments>-C "/home/sebastian/thesis/bender" </buildArguments>
-				<buildTarget>thesis_bender</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="Clean" path="[Targets]/[exe] thesis_bender" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/cmake</buildCommand>
-				<buildArguments>-E chdir "/home/sebastian/thesis/bender/src" "/usr/bin/cmake" -P "CMakeFiles/thesis_bender.dir/cmake_clean.cmake"</buildArguments>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="[exe] thesis_bender" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>thesis_bender</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="[exe] thesis_bender/fast" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>thesis_bender/fast</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name=": all" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>all</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name=": clean" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>clean</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="[obj] main.cpp.o" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>main.cpp.o</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="[pre] main.cpp.i" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>main.cpp.i</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="[to asm] main.cpp.s" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>main.cpp.s</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name=": rebuild_cache" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>rebuild_cache</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name=": all" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>all</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name=": clean" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>/usr/bin/make</buildCommand>
-				<buildTarget>clean</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-			<target name="Run CMake" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
-				<buildCommand>cmake</buildCommand>
-				<buildArguments>-E chdir bin/ cmake -G "Unix Makefiles" ../</buildArguments>
-				<buildTarget/>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-		</buildTargets>
-	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
 		<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
@@ -141,6 +44,112 @@
 			</scannerInfoProvider>
 		</profile>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name="Build" path="[Targets]/[exe] thesis_bender" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/sebastian/thesis/bender" </buildArguments>
+				<buildTarget>thesis_bender</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] thesis_bender" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/sebastian/thesis/bender/src" "/usr/bin/cmake" -P "CMakeFiles/thesis_bender.dir/cmake_clean.cmake"</buildArguments>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="[exe] thesis_bender" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>thesis_bender</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="[exe] thesis_bender/fast" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>thesis_bender/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name=": all" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name=": clean" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="[obj] main.cpp.o" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>main.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="[pre] main.cpp.i" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>main.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="[to asm] main.cpp.s" path="src" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>main.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name=": rebuild_cache" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>rebuild_cache</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name=": all" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name=": clean" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+			<target name="Run CMake" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>cmake</buildCommand>
+				<buildArguments>-E chdir bin/ cmake -G "Unix Makefiles" ../</buildArguments>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+				<runAllBuilders>true</runAllBuilders>
+			</target>
+		</buildTargets>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.pathentry">
 		<pathentry include="/home/sebastian/thesis/cpx_studio_12.2/cplex/include" kind="inc" path="" system="true"/>
 		<pathentry include="/home/sebastian/thesis/cpx_studio_12.2/concert/include" kind="inc" path="" system="true"/>
@@ -151,6 +160,7 @@
 		<pathentry include="/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed" kind="inc" path="" system="true"/>
 		<pathentry include="/usr/include/c++/4.6/" kind="inc" path="" system="true"/>
 		<pathentry include="/usr/include/c++/4.6/x86_64-linux-gnu/" kind="inc" path="" system="true"/>
+		<pathentry include="/home/sebastian/thesis/cpx_studio_12.2/cpoptimizer/include" kind="inc" path="" system="true"/>
 		<pathentry excluding="**/CMakeFiles/" kind="out" path=""/>
 		<pathentry kind="src" path=""/>
 	</storageModule>

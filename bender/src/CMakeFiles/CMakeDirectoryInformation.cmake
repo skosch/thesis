@@ -11,6 +11,7 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "../cpx_studio_12.2/cplex/include"
+  "../cpx_studio_12.2/cpoptimizer/include"
   "../cpx_studio_12.2/concert/include"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
