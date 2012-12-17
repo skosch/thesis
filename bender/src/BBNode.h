@@ -19,12 +19,12 @@
 
 class BBNode {
 public:
-	BBNode(IloNumArray *sj, IloNumArray *pj, IloNumArray* dj, std::vector<int> jobs_in_batch, std::vector<int> jobs_in_rest, int *Lmax_incumbent, std::vector<int> *best_solution, std::vector<int> *current_solution, int starttime, int k, int *nk, int capacity, int Dmax, int* nodesVisited, double* timeCounter);
+	BBNode(IloIntArray *sj, IloIntArray *pj, IloIntArray* dj, std::vector<int> jobs_in_batch, std::vector<int> jobs_in_rest, int *Lmax_incumbent, std::vector<int> *best_solution, std::vector<int> *current_solution, int starttime, int k, int *nk, int capacity, int Dmax, int* nodesVisited, double* timeCounter);
 	int run(); // returns 0 if was unsuccessful against incumbent, 1 if had children
 	virtual ~BBNode();
 
 private:
-	IloNumArray *sj, *pj, *dj;
+	IloIntArray *sj, *pj, *dj;
 	std::vector<int> jobs_in_batch;
 	std::vector<int> jobs_in_rest;
 
@@ -35,7 +35,6 @@ private:
 	IloEnv env;
 	IloModel model;
 	IloIntVarArray is_inbatch;
-	IloNumVar Pk;
 	std::vector<IloIntExpr*> additionalConstraints;
 
 	int starttime;

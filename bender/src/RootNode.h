@@ -25,13 +25,13 @@ private:
 	std::vector<Job> *all_jobs;
 	IloEnv env;
 	IloModel model;
-	IloBoolVarArray is_inbatch;
+	IloIntVarArray is_inbatch;
 	IloNumVar  Pk;
 	std::vector<IloIntExpr*> additionalConstraints;
 	// given to the children for them to use
 	int nk, capacity;
 	int Dmax;
-	IloNumArray sj, pj, dj;
+	IloIntArray sj, pj, dj;
 	int Lmax_incumbent;
 	std::vector<int> best_solution;
 	std::vector<int> current_solution;

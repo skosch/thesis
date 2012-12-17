@@ -169,8 +169,8 @@ int main(int argc, const char * argv[]){
 
     IloCumulFunctionExpr cumulResource(env);
     for(int j=0; j<nj; j++) {
-  //    J[j] = IloIntervalVar(env, pj[j], charcat("Jobinterval_", j, 0));
-  //    cumulResource += IloPulse(J[j], sj[j]);
+      J[j] = IloIntervalVar(env, (IloInt)pj[j], charcat("Jobinterval_", j, 0));
+      
     }
 
     // number of non-empty batches
@@ -210,15 +210,15 @@ int main(int argc, const char * argv[]){
 
     // use a cumulative constraint from time 0 through sum(pj) that keeps the
     // sum of sj's between 0 and capacity
-    // model.add(IloAlwaysIn(env, cumulResource, 0, IloSum(pj), 0, capacity));
+    model.add(IloAlwaysIn(env, cumulResource, 0, IloSum(pj), 0, capacity));
 
     // Now make sure the J[j]'s coincide with the batches
     for(int j=0; j<nj; j++) {
       for(int k=0; k<nk; k++) {
-  //      model.add(IloIfThen(env, assignments[j]==k, IloStartOf(J[j]) ==
-  //      IloStartOf(K[k])));
-
+        model.add(IloIfThen(env, assignments[j]==k, IloStartOf(J[j]) ==
+        IloStartOf(K[k])));
       }
+      cumulResource += IloPulse(J[j],(IloInt) sj[j]);
     }
 
     for(int k = 0; k<nk; k++) {

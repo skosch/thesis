@@ -1,6 +1,6 @@
 \section{Bounds on variables known a priori}
 
-\subsection{Lower bound on {\sansitalicfont L}\textsubscript{max}}
+\subsection[Lower bound on $\Lmax$]{Lower bound on {\sansitalicfont L}\textsubscript{max}}
 A lower bound on $\Lmax$ can be found using the lower bound on the completion
 date of each bucket $q$, where a bucket is defined as the set of batches with
 due date $\delta_q$:
@@ -70,34 +70,81 @@ Now we need to find $C_{\text{max},q}$, or at least a lower bound on it, in
 polynomial time. The simplest approach simply considers the ``total elastic area'',
 i.e. the sum of all $s_j p_j$ products:
 \begin{alignat}{2}
-& C_{\text{max},q} \geq \big\lceil\frac{1}{b} \sum_{j : d_j \leq \delta_q} s_j
+& C_{\text{max},q} \geq \big\lceil\frac{1}{b} \sum_{j} s_j
 p_j\big\rceil \quad
-&& \forall q
+&& \forall q, \forall \{ j \in J | d_j \leq \delta_q \}
 \end{alignat}
 A better lower bound on $C_{\text{max},q}$ would be given by a
 preemptive-cumulative schedule. Unfortunately, minimizing $C_{\text{max}}$ for
 such problems is equivalent to solving a standard bin-packing problem, which
 requires exponential time. 
 
-\subsection{Upper bound on {\sansitalicfont L}\textsubscript{max}}
+\subsection[Upper bound on $\Lmax$]{Upper bound on {\sansitalicfont L}\textsubscript{max}}
 An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
 feasible, if not optimal, schedule. A good approach could be the ``best-fit''
 heuristic proposed in the original paper. {\color{darkred} This has not been
 implemented yet.}
 
-\subsection{Bounding the number of batches \sansitalicfont n\textsuperscript{k}}
-Initially, the number of batches needed is assumed to be equal to the number of jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches needed shrinks the $x_{jk}$ matrix.
+\subsection[Bounding the number of batches $n_k$]{Bounding the number of batches \sansitalicfont n\textsubscript{k}}
+Initially, the number of batches needed is assumed to be equal to the number of
+jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches
+needed shrinks the $x_{jk}$ matrix, and prunes potential search branches in
+branch-and-bound decomposition approaches.
+
+\input{figures/bnk1_1050}
 
 Unfortunately, we cannot make a general statement that optimal solutions never have more batches than other feasible solutions -- a simple counterexample is shown in figure \ref{fig:bnk1}.\footnote{To be more precise, we cannot state that at least one optimal solution is in the subset of feasible solutions that uses the fewest number of batches -- a dominance situation that could be exploited, were it true.}
 
-. . .
+Starting out with a one-job-per-batch schedule sorted by EDD, we can explore
+all feasible batch configurations recursively. To generate any other feasible
+schedule (including the optimal solution), jobs $j$ are rescheduled (``moved back'')
+from their original batch $k_\text{origin}$ into a prior batch
+$k_\text{earlier}$. This eliminates $k_\text{origin}$ and requires, of course,
+that $k_\text{earlier}$ has sufficient capacity. If the job's processing time
+$p_j$ exceeds that of $k_\text{earlier}$, then the lateness of batches between
+$k_\text{earlier}$ and $k_\text{origin}$ will increase; the merit of such a move
+cannot be judged in prior, so it is an \textit{unsafe} batch elimination.
+\textit{Safe} eliminations, on the other hand, will never worsen $\Lmax$, and
+only they can be considered when bounding $n_k$ a priori.
 
-. . .
-\vfil
-\input{figures/bnk1_1050}
+Algorithm \ref{alg:bounding_nk} outlines a recursive method to find an upper
+bound on $n_k$, recognizing safe batch eliminations only.
 
-{\color{darkred} I have a long list of ideas here, none of which I've been able
-to prove right or wrong, so I've commented them out and made this page end here.}
+\begin{algorithm}[h]
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\If{no open jobs left} \Comment{if this is a ``leaf node'' in the recursion}
+  \State update UB$(n_k)$
+\EndIf
+\State find the combination of unsafe later jobs that fills up the capacity
+most, leaving us with capacity $b_r$ 
+\State find all combinations $x$ of safe later jobs that fit into $b_r$
+\Repeat
+  \State $x$ = next safe job combination
+  \State \textit{ignoreJobs} $\gets x$ \Comment{make the moves, let the next recursion
+  level deal with the rest of the jobs}
+  \State spawn and run child node with $J \setminus$ \textit{ignoreJobs}
+  \State \textit{ignoreJobs} $\gets$ \textit{ignoreJobs} $\setminus x$
+\Until{all combinations have been explored}
+\State return
+\end{algorithmic}
+\caption{Recursive algorithm to find an upper bound on $n_k$}
+\label{alg:bounding_nk}
+\end{algorithm}
+
+This algorithm evidently requires exponential time. A relaxed variant is a
+possible option: if only a single unsafe move \textit{into} a batch is possible,
+no safe eliminations into that batch are considered at all and we skip to the
+next batch. This would greatly speed up the recursion but also significantly
+weaken the usefulness of the resulting upper bound.
+
+In a brach-and-bound decomposition approach in which batches are modelled
+individually, an upper bound on $n_k$ could be used to limit the depth of the
+search tree, or, in combination with a method to determine a lower bound on the
+remaining jobs' $n_k$ at every node, to actively prune the search tree during
+the search. The latter method, however, would also run in exponential time as
+it, again, would require knapsack-type reasoning unless we use a much less powerful
+relaxation.
 
 %It is perhaps possible, however, to generate a feasible solution that is likely to use $n_k < n_j$ and to guarantee that such a solution will never use fewer batches than the optimal solution. To do this, let the initial solution $\pi_0$ be a schedule in which every job is assigned to one batch (i.e. $n_k = n_j$) and the jobs are ordered by non-decreasing due date (i.e. $d_n \leq d_{n+1}$), as in figure \ref{fig:bnk2}.
 %
@@ -147,3 +194,20 @@ to prove right or wrong, so I've commented them out and made this page end here.
 %
 %
 
+\begin{comment}
+Certain things:
+\begin{alist}
+\item{When a safe and an unsafe host are available, and we are the last guest,
+and the safe host is before the unsafe one, always choose the safe host. (Is this
+only true for the last guest?)}
+\item{Not moving a job back means it must become a host itself.}
+\end{alist}
+
+Open questions: 
+\begin{alist}
+\item{A job's lateness can only worsen by $p_j$ at a time. Thus, performing safe
+elimination on any $\Lmax$ job will make the new host the new $\Lmax$. Is this
+true? What implication does that have on what the final schedule looks like?}
+
+\end{alist}
+\end{comment}

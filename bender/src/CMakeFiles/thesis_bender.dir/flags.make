@@ -4,5 +4,5 @@
 # compile CXX with /usr/bin/clang++
 CXX_FLAGS = -Wall -g -std=c++0x -DIL_STD -ffloat-store -m64 -DILOUSEMT -D_REENTRANT -DILM_REENTRANT -g -I/home/sebastian/thesis/bender/../cpx_studio_12.2/cplex/include -I/home/sebastian/thesis/bender/../cpx_studio_12.2/cpoptimizer/include -I/home/sebastian/thesis/bender/../cpx_studio_12.2/concert/include   
 
-CXX_DEFINES = 
+CXX_DEFINES = -DBENDER_MIP
 

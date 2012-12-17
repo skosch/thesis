@@ -1,7 +1,6 @@
-\section{MIP model used}
-\subsection{Original approach}
-This is Malapert's original approach:
-\begin{model}
+\section{MIP model}
+Malapert's original MIP approach is given in Model \ref{model:malapertmip}. 
+\begin{model}[h]
 \begin{alignat}{2}
   &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J \\
   &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\\
@@ -13,6 +12,7 @@ This is Malapert's original approach:
   &C_k \geq 0, P_k \geq 0 \text{ and } D_k \geq 0 \quad && \forall k \in K  
 \end{alignat}
 \caption{Malapert's original MIP model}
+\label{model:malapertmip}
 \end{model}
 
 The constraint \ref{malapp-edd} is the EDD constraint.
@@ -34,7 +34,8 @@ To implement this, we can write constraints in terms of an additional  set of bi
 & n_j (e_k-1) + \sum_{j \in J} x_{jk} \leq 0 \quad && \forall k \in K. \label{eq:emptybatch2}
 \end{alignat}
 
-Constraint \ref{eq:emptybatch1} enforces $e_k = 1$ when the batch $k$ is empty. Constraint \ref{eq:emptybatch2} enforces $e_k = 0$ otherwise, since the sum term will never exceed $n_j$. The rule \ref{eq:emptybatch0} can now be expressed as $e_{k-1} = 1 \rightarrow e_k = 1$, and implemented as follows:
+Constraints \eqref{eq:emptybatch1} enforce $e_k = 1$ when the batch $k$ is
+empty. Constraints \eqref{eq:emptybatch2} enforce $e_k = 0$ otherwise, since the sum term will never exceed $n_j$. The rule \ref{eq:emptybatch0} can now be expressed as $e_{k-1} = 1 \rightarrow e_k = 1$, and implemented as follows:
 
 \begin{alignat}{2}
 & e_k - e_{k-1} \geq 0 \quad && \forall k \in K.
@@ -47,7 +48,7 @@ We can also prune any attempts to leave the first batch empty by adding a constr
 \subsection{No postponing of jobs to later batches}
 Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
 \begin{alignat}{2}
-  & x_{jk} = 0 \quad && \forall j,k : j > k
+  & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \}
 \end{alignat}
 
 

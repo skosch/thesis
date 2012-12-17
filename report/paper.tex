@@ -15,7 +15,7 @@
 \usepackage{listings}
 \usepackage{algpseudocode, algorithm}
 % \usepackage[T1]{fontenc} 
-\usepackage{enumitem}
+\usepackage{enumitem,verbatim}
 
  \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
 \include{typography}
@@ -23,16 +23,19 @@
 \usepackage[pdfpagelayout=TwoPageRight, hidelinks]{hyperref}
 
 \begin{document}
+\begin{comment}
 \frontmatter
 
 \include{coverpage}
 %\include{firstpage}
 
 \tableofcontents
-
+\end{comment}
+\pagestyle{fancy}
 \mainmatter
 \pagebreak
 \vskip 4em
+\begin{comment}
 \chapter{Introduction}
 
 \chapter{Fundamentals}
@@ -49,7 +52,7 @@ An introduction to and illustration of MIP models
 \subsection{Concept}
 \subsection{Solution}
 \subsection{Global constraints}
-
+\end{comment}
 \chapter{Modelling the problem}
 \section{Characteristics of the problem}
 
@@ -59,12 +62,11 @@ An introduction to and illustration of MIP models
 \input{mipmodel.tex}
 
 \input{cpmodel.tex}
-
 \input{decomp.tex}
 
 \input{testresults.tex}
 
-
+\begin{comment}
 \chapter{My solution}
 \section{MIP formulation improvements}
 \section{CP formulation improvements}
@@ -75,7 +77,7 @@ An introduction to and illustration of MIP models
 \pagebreak
 
 \vskip 4em
-
+\end{comment}
 
 \end{document}
 

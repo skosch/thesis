@@ -1,3 +1,4 @@
+\newpage
 \section{Empirical results}
 Malapert uses benchmark data by Daste. For design purposes, I created my own set of randomized job lists, with $s_j, p_j \in [1, 20]$ and $d_j \in [1, 10n]$ where $n$ is the number of jobs. Here is the Python code used:
 
@@ -9,11 +10,14 @@ random.seed(None)
 
 for i in range(11, 20) + range(10,100,10):
     for j in range(1, 10):
-        with open( "data_" + str(i) + "_" + str(j), "wb") as csvfile:
+        with open( "data_" + str(i) + "_" + str(j), "wb")
+                   as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=",")
             csvwriter.writerow(['s_j', 'p_j', 'd_j'])
             for job in range(i):
-                csvwriter.writerow([random.randrange(1,20), random.randrange(1,20), random.randrange(1,5*i)])
+                csvwriter.writerow([random.randrange(1,20),
+                                random.randrange(1,20),
+                                random.randrange(1,5*i)])
         csvfile.close()
 \end{lstlisting}
 
@@ -26,4 +30,6 @@ job sets are used per number of jobs, represented as $\left[\{10.0, \dots, 10.9\
 on an i7 Q740 CPU, which has $2 \times 4$ cores. Cplex supports multithreading
 and as such, elapsed wall clock time is significantly lower in most cases.
 \input{figures/results_graph.tex}
+
+The CP branch-and-bound model times out on most instances and is not shown here.
 

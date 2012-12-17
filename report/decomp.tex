@@ -13,7 +13,7 @@ thus a new upper bound on $\Lmax$, is found. Several constraints are used to
 prune parts of the search tree that are known to offer only solutions worse than
 this upper bound. Figure \ref{fig:decomp_diagram1} shows an example in which a
 MIP model is used to assign jobs to the batch at every node.
-\begin{algorithm}
+\begin{algorithm}[h]
 \fontsize{9pt}{11.5pt}\selectfont
 \begin{algorithmic}
 \State update \textit{currentAssignments} \Comment{this keeps track of where we are
@@ -45,15 +45,13 @@ Algorithm \ref{alg:bbnode_mip1} outlines what happens at each node: the model
 finds the best jobs to assign to the batch according to some rule, lets the
 children handle the remaining jobs, and tries the next best solution once the
 first child has explored its subtree and backtracked.
-\input{figures/decomp_diagram1.tex}
 \subsubsection{Using MIP and cumulative packing after the batch}
+\input{figures/decomp_diagram1.tex}
 The first version of the branch-and-bound batch-by-batch decomposition uses a
 MIP model at each node to assign jobs to the respective batch. The remaining
 jobs are packed such as to minimize their $\Lmax$, with a relaxation of the
-batching requirement, i.e., as if on a cumulative resource. This is implemented
-using cumulative constraints over indexed time points as shown in Model
-\ref{model:decomp_mip}.
-\begin{model}
+batching requirement, i.e., as if on a cumulative resource. 
+\begin{model}[h!]
 \begin{alignat}{3}
 \text{Min.}\quad & L_{\text{max,cumul}} && \\ 
 \text{s. t.}\quad & \label{dc:eq1} \sum_j s_j x_j \leq b \quad && \forall j \in J \\
@@ -94,7 +92,7 @@ already part of the batch ($x_j = 1$)
 \caption{Notation used in the decomposition model}
 \end{table}
 
-The above model implements a time-indexed cumulative constraint on the
+Model \ref{model:decomp_mip} implements a time-indexed cumulative constraint on the
 non-batched jobs. Constraints \eqref{dc:eq1} through \eqref{dc:eq3} ensure that the
 batch stays below capacity, define the duration of the batch $P_k$ and force at
 least one of the earliest-due jobs into the batch.
@@ -113,9 +111,9 @@ job, but unlike \eqref{dc:eq4}, they use the time assignments on the cumulative
 resource to determine end dates. Constraints \eqref{dc:eq8} define the value of
 $L_{\text{max,cumul}}$, the maximum lateness of any job in the non-batched set.
 
-Constraint \eqref{dc:eq9} force batched jobs to start at $t = 0$, while \eqref{dc:eq10} force \textit{all} jobs to start either at $t = 0$ or after the last batched job ends.
+Constraints \eqref{dc:eq9} force batched jobs to start at $t = 0$, while \eqref{dc:eq10} force \textit{all} jobs to start either at $t = 0$ or after the last batched job ends.
 
-Constraints \eqref{dc:eq10} enforce a dominance rule: jobs must be assigned to
+Constraints \eqref{dc:eq11} enforce a dominance rule: jobs must be assigned to
 the batch such that the remaining capacity, $b_r = b - \sum_j s_j x_j$, is less than
 the size $s_j$ of the \textit{smallest} job from the set of non-batched jobs that
 are \textit{not longer} than the current batch. That is, if there exists an
@@ -135,9 +133,40 @@ by constraints \eqref{dc:eq11} and \eqref{dc:eq12}, is 1 iff $p_j > P_k \lor x_j
 = 1$. These are the cases in which a job $j$ is \textit{not} to be considered in \eqref{dc:eq10}, and so $w_j$ is used to scale $s_j$ to a value
 insignificantly large in the eyes of the constraint's less-than relation.
 
+After a solution is found, a child node in the search tree has run the subtree
+and returned, a constraint of the form 
+\begin{alignat}{2}
+& \sum_j x_j + \sum_i (1-x_i) \leq n_j - 1 \quad && \forall \{j \in J | x_j =
+1\}, \forall \{i \in J | x_i = 0 \}
+\end{alignat}
+is added to the model before the solver is called again, to exclude the last
+solution from the set of feasible solutions. 
+
 \subsubsection{Using CP and cumulative packing after the batch}
 This approach is equivalent, but we now use CP to select the batch assignments,
 again based on a minimized $\Lmax$ among the non-batched jobs. 
+
+\begin{model}[h]
+\begin{alignat}{2}
+\mathrm{Min.} \quad & \Lmax \quad && \\
+\mathrm{s.t.} \quad & \mathtt{IfThen}(x_j = 0, \startOf(j) \geq P_k) \quad && \forall j
+\in J \\
+& \mathtt{IfThen}(\startOf(j) \geq 2, x_j = 0) \quad && \forall j \in J \\
+& \mathtt{IfThen}(x_j = 1, \startOf(j) = 0) \quad && \forall j \in J \\
+& \mathtt{IfThen}(\startOf(j) = 1, x_j = 1) \quad && \forall j \in J \\
+& P_k \geq x_j p_j \quad && \forall j \in J \\
+& \endOf(j) = d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J \\
+& \Lmax \geq \endOf(j) - d_j \quad && \forall j \in J \\
+& \mathtt{IfThen}(p_j \leq P_k \land x_j = 0, b - \sum_{j \in J} s_j
+x_j \leq s_j) \quad && \forall j \in J \\
+& P_k + \frac{1}{b} \sum_i s_i p_i \leq d_j + L_{\text{max,incmb}} - 1 - v_k
+\quad && \forall j \in J, \forall \{i \in J | d_i \leq d_j\} \\
+& \sum_j x_j \geq 1 \quad && \forall \{ j \in J | d_j = \min(d_j) \} \\
+& \mathtt{cumul}(J, b) \quad & &  
+\end{alignat}
+\caption{CP model in batch-by-batch branch-and-bound}
+\label{model:decomp_cp}
+\end{model}
 
 
 \subsection{Potential improvements}
