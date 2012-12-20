@@ -1,0 +1,42 @@
+
+Introduction
+  Problem motivation
+  Problem definition
+    Intuitive and formal
+Literature review
+  General MIP and CP
+    Who are the "founders" of MIP and CP?
+    HP Williams
+    Benders
+  Batch processing
+    Azizoglu
+    Dupont
+    Sabouni
+  MIP
+    Grossmann
+  CP
+    Baptiste
+    Malapert (how does he fit into the picture?)
+MIP model
+  Malapert's model (formal listing)
+  My model
+    formal listing
+    explanation of improvements
+CP model
+  formal listing
+  explanation of constraints
+  possible improvements that failed or haven't been tried -- refer to appendix
+Decomposition
+  formal listing - MIP
+  explanation of constraints
+  formal listing - CP
+  Explanation of constraints
+Experiments
+  Setup
+  Results
+Discussion
+Ideas for next steps
+
+Appendix
+  Ideas that failed -- with extensive proofs.
+  

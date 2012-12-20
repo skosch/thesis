@@ -35,28 +35,45 @@
 \mainmatter
 \pagebreak
 \vskip 4em
-\begin{comment}
 \chapter{Introduction}
+This paper discusses three different approaches, and several variations on them,
+to solving the problem of scheduling non-identical jobs on a batch processing
+machine. Batch processing machines, for the purposes of this paper, can process
+multiple, non-identical jobs simultaneously -- but all jobs must be loaded into and
+unloaded from the machine at once, which introduces a considerable twist on the ``simple
+parallel resources'' known from other cases.
 
-\chapter{Fundamentals}
-Some introductory paragraphs on minimization/maximization problems.
-\section{Linear programming models}
-An introduction to and illustration of LP models.
-\subsection{Problem motivation}
-\subsection{Graphical explanation}
-\section{Integer programming models}
-An introduction to and illustration of MIP models
-\subsection{Solution technique}
-\subsection{Other methods}
-\section{Constraint programming models}
-\subsection{Concept}
-\subsection{Solution}
-\subsection{Global constraints}
-\end{comment}
+The machines in question represents real-life resources like autoclaves or
+ovens, which can process multiple items at a time, but often cannot be opened at
+random -- in fact, such machines often need to wait for the largest item in the
+batch to be done before the next batch can be inserted.
+
+\section{Problem definition}
+\section{Organization of this paper}
+
+\chapter{Literature Review}
+\section{General MIP and CP}
+  \begin{alist}
+    \item{Who are the "founders" of MIP and CP?}
+    \item{HP Williams}
+    \item{Benders}
+  \end{alist}
+\section{Batch processing}
+\begin{alist}
+    \item{Azizoglu}
+    \item{Dupont}
+    \item{Sabouni}
+    \end{alist}
+\subsection{MIP}
+\begin{alist}
+    \item{Grossmann}
+    \end{alist}
+\subsection{CP}
+\begin{alist}
+    \item{Baptiste}
+    \item{Malapert (how does he fit into the picture?)}
+\end{alist}
 \chapter{Modelling the problem}
-\section{Characteristics of the problem}
-
-...
 \input{variablebounds.tex}
 
 \input{mipmodel.tex}
