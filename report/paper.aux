@@ -20,7 +20,12 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{los}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Problem definition}{1}{section.1.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Organization of this paper}{1}{section.1.2}}
+\citation{graham_notation}
+\citation{brucker}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Optimal solution to an example problem with eight jobs ($s_j$ and $p_j$ not shown for the two small jobs)\relax }}{2}{figure.caption.1}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:intro_tetris}{{1.1}{2}{Optimal solution to an example problem with eight jobs ($s_j$ and $p_j$ not shown for the two small jobs)\relax \relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Organization of this paper}{2}{section.1.2}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -34,62 +39,62 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}Bounds on variables known a priori}{5}{section.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.1}Lower bound on $L_{\text  {max}}$}{5}{subsection.3.1.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Upper bound on $L_{\text  {max}}$}{5}{subsection.3.1.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text  {max}}$\relax }}{6}{figure.caption.1}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:bnk1}{{3.1}{6}{Overzealous batch elimination can increase $\Lmax $\relax \relax }{figure.caption.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text  {max}}$\relax }}{6}{figure.caption.2}}
+\newlabel{fig:bnk1}{{3.1}{6}{Overzealous batch elimination can increase $\Lmax $\relax \relax }{figure.caption.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Bounding the number of batches $n_k$}{6}{subsection.3.1.3}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Recursive algorithm to find an upper bound on $n_k$\relax }}{7}{algorithm.1}}
 \newlabel{alg:bounding_nk}{{1}{7}{Recursive algorithm to find an upper bound on $n_k$\relax \relax }{algorithm.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}MIP model}{7}{section.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Grouping empty batches}{7}{subsection.3.2.1}}
-\newlabel{eq:emptybatch0}{{3.11}{7}{Grouping empty batches\relax }{equation.3.2.11}{}}
-\newlabel{malapp-edd}{{3.8}{8}{MIP model\relax }{equation.3.2.8}{}}
-\@writefile{los}{\contentsline {model}{\numberline {3.2.1}{\ignorespaces Malapert's original MIP model\relax }}{8}{model.caption.2}}
-\newlabel{model:malapertmip}{{3.2.1}{8}{Malapert's original MIP model\relax \relax }{model.caption.2}{}}
-\newlabel{eq:emptybatch1}{{3.12}{8}{Grouping empty batches\relax }{equation.3.2.12}{}}
-\newlabel{eq:emptybatch2}{{3.13}{8}{Grouping empty batches\relax }{equation.3.2.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches\relax }}{8}{figure.caption.3}}
-\newlabel{fig:dominancerule}{{3.2}{8}{Dominance rule to eliminate empty batches followed by non-empty batches\relax \relax }{figure.caption.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}No postponing of jobs to later batches}{9}{subsection.3.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}CP model}{9}{section.3.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Bin-packing and cumulative constraints}{9}{subsection.3.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Temporal constraints}{9}{subsection.3.3.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Constraint on the number of batches with length $P_k > p$}{10}{subsection.3.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Improved MIP model}{7}{section.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Grouping empty batches}{7}{subsection.3.3.1}}
+\newlabel{c:malapp-edd}{{3.9}{8}{MIP model\relax }{equation.3.2.9}{}}
+\@writefile{los}{\contentsline {model}{\numberline {3.2.1}{\ignorespaces Malapert's original MIP model\relax }}{8}{model.caption.3}}
+\newlabel{model:malapertmip}{{3.2.1}{8}{Malapert's original MIP model\relax \relax }{model.caption.3}{}}
+\newlabel{eq:emptybatch0}{{3.12}{8}{Grouping empty batches\relax }{equation.3.3.12}{}}
+\newlabel{eq:emptybatch1}{{3.13}{8}{Grouping empty batches\relax }{equation.3.3.13}{}}
+\newlabel{eq:emptybatch2}{{3.14}{8}{Grouping empty batches\relax }{equation.3.3.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches\relax }}{9}{figure.caption.4}}
+\newlabel{fig:dominancerule}{{3.2}{9}{Dominance rule to eliminate empty batches followed by non-empty batches\relax \relax }{figure.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}No postponing of jobs to later batches}{9}{subsection.3.3.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}CP model}{9}{section.3.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Bin-packing and cumulative constraints}{9}{subsection.3.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Temporal constraints}{10}{subsection.3.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.3}Constraint on the number of batches with length $P_k > p$}{10}{subsection.3.4.3}}
 \citation{Lardeux}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Generating lower bounds on batch lengths\relax }}{11}{algorithm.2}}
 \newlabel{alg:findBatchlengthCards}{{2}{11}{Generating lower bounds on batch lengths\relax \relax }{algorithm.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Temporal constraints on a job's start date}{11}{subsection.3.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Grouping empty batches}{12}{subsection.3.3.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.6}No postponing of jobs to later batches}{12}{subsection.3.3.6}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Decomposition approach}{12}{section.3.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Branch-and-bound by batch in chronological order}{12}{subsection.3.4.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{13}{figure.caption.5}}
-\newlabel{fig:decomp_diagram1}{{3.3}{13}{Batch-by-batch decomposition using MIP only\relax \relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.4}Temporal constraints on a job's start date}{12}{subsection.3.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.5}Grouping empty batches}{12}{subsection.3.4.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.6}No postponing of jobs to later batches}{12}{subsection.3.4.6}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Decomposition approach}{12}{section.3.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Branch-and-bound by batch in chronological order}{13}{subsection.3.5.1}}
 \@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces MIP node class code overview\relax }}{13}{algorithm.3}}
 \newlabel{alg:bbnode_mip1}{{3}{13}{MIP node class code overview\relax \relax }{algorithm.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Using MIP and cumulative packing after the batch}{13}{subsubsection*.4}}
-\newlabel{dc:eq1}{{3.27}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.27}{}}
-\newlabel{dc:eq3}{{3.29}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.29}{}}
-\newlabel{dc:eq4}{{3.30}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.30}{}}
-\newlabel{dc:eq5}{{3.31}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.31}{}}
-\newlabel{dc:eq6}{{3.32}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.32}{}}
-\newlabel{dc:eq7}{{3.33}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.33}{}}
-\newlabel{dc:eq8}{{3.34}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.34}{}}
-\newlabel{dc:eq9}{{3.35}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.35}{}}
-\newlabel{dc:eq10}{{3.36}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.36}{}}
-\newlabel{dc:eq11}{{3.37}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.37}{}}
-\newlabel{dc:eq12}{{3.38}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.38}{}}
-\newlabel{dc:eq13}{{3.39}{14}{Using MIP and cumulative packing after the batch\relax }{equation.3.4.39}{}}
-\@writefile{los}{\contentsline {model}{\numberline {3.4.1}{\ignorespaces MIP model in batch-by-batch branch-and-bound\relax }}{14}{model.caption.6}}
-\newlabel{model:decomp_mip}{{3.4.1}{14}{MIP model in batch-by-batch branch-and-bound\relax \relax }{model.caption.6}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Notation used in the decomposition model\relax }}{15}{table.caption.7}}
-\@writefile{toc}{\contentsline {subsubsection}{Using CP and cumulative packing after the batch}{16}{subsubsection*.8}}
-\@writefile{los}{\contentsline {model}{\numberline {3.4.2}{\ignorespaces CP model in batch-by-batch branch-and-bound\relax }}{16}{model.caption.9}}
-\newlabel{model:decomp_cp}{{3.4.2}{16}{CP model in batch-by-batch branch-and-bound\relax \relax }{model.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Potential improvements}{17}{subsection.3.4.2}}
-\@writefile{toc}{\contentsline {paragraph}{Improve the initial $L_{\text  {max,incumbent}}$}{17}{paragraph*.10}}
-\@writefile{toc}{\contentsline {paragraph}{Improve $L_{\text  {max,incumbent}}$ during search}{17}{paragraph*.11}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Empirical results}{18}{section.3.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Comparison of CPU time used by various models}{18}{subsection.3.5.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Comparison of CPU time used by different models.\relax }}{19}{figure.caption.12}}
-\newlabel{fig:comp_times}{{3.4}{19}{Comparison of CPU time used by different models.\relax \relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Using MIP and cumulative packing after the batch}{13}{subsubsection*.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{14}{figure.caption.6}}
+\newlabel{fig:decomp_diagram1}{{3.3}{14}{Batch-by-batch decomposition using MIP only\relax \relax }{figure.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Notation used in the decomposition model\relax }}{14}{table.caption.8}}
+\newlabel{dc:eq1}{{3.28}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.28}{}}
+\newlabel{dc:eq3}{{3.30}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.30}{}}
+\newlabel{dc:eq4}{{3.31}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.31}{}}
+\newlabel{dc:eq5}{{3.32}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.32}{}}
+\newlabel{dc:eq6}{{3.33}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.33}{}}
+\newlabel{dc:eq7}{{3.34}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.34}{}}
+\newlabel{dc:eq8}{{3.35}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.35}{}}
+\newlabel{dc:eq9}{{3.36}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.36}{}}
+\newlabel{dc:eq10}{{3.37}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.37}{}}
+\newlabel{dc:eq11}{{3.38}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.38}{}}
+\newlabel{dc:eq12}{{3.39}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.39}{}}
+\newlabel{dc:eq13}{{3.40}{15}{Using MIP and cumulative packing after the batch\relax }{equation.3.5.40}{}}
+\@writefile{los}{\contentsline {model}{\numberline {3.5.1}{\ignorespaces MIP model in batch-by-batch branch-and-bound\relax }}{15}{model.caption.7}}
+\newlabel{model:decomp_mip}{{3.5.1}{15}{MIP model in batch-by-batch branch-and-bound\relax \relax }{model.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Using CP and cumulative packing after the batch}{16}{subsubsection*.9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Potential improvements}{16}{subsection.3.5.2}}
+\@writefile{toc}{\contentsline {paragraph}{Improve the initial $L_{\text  {max,incumbent}}$}{16}{paragraph*.11}}
+\@writefile{toc}{\contentsline {paragraph}{Improve $L_{\text  {max,incumbent}}$ during search}{16}{paragraph*.12}}
+\@writefile{los}{\contentsline {model}{\numberline {3.5.2}{\ignorespaces CP model in batch-by-batch branch-and-bound\relax }}{17}{model.caption.10}}
+\newlabel{model:decomp_cp}{{3.5.2}{17}{CP model in batch-by-batch branch-and-bound\relax \relax }{model.caption.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Empirical results}{17}{section.3.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Comparison of CPU time used by various models}{18}{subsection.3.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Comparison of CPU time used by different models.\relax }}{19}{figure.caption.13}}
+\newlabel{fig:comp_times}{{3.4}{19}{Comparison of CPU time used by different models.\relax \relax }{figure.caption.13}{}}

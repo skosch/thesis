@@ -48,8 +48,50 @@ ovens, which can process multiple items at a time, but often cannot be opened at
 random -- in fact, such machines often need to wait for the largest item in the
 batch to be done before the next batch can be inserted.
 
+Malapert proposed a custom constraint programming algorithm consisting of a set of
+filtering rules to solve the problem. He achieved considerably better speeds
+than with a simple mixed-integer model. In this paper, we present 1) an
+improvement to his MIP model, 2) a CP model and 3) a decomposition approach to
+``divide and conquer'' the problem.
+
 \section{Problem definition}
+We model the problem as follows: assume we are given a set of jobs $J$, each of
+which has a processing time (or ``length'') $p_j$ and a size (or ``capacity
+requirement'') $s_j$ -- this notation follows Malapert's paper. Each job also
+has a due date $d_j$. The machine is characterized by its capacity $b$, and in
+every batch, the jobs' summed sizes must not exceed this number. All values are
+integer.
+
+The machine can only process one batch $k$ of jobs at a time, and batches always
+take as long as the longest job in the batch (i.e. $P_k = \max_{j \in k}(p_j)$).
+Our objective is to minimize the lateness $L$ of the latest job in $J$, where
+$L$ is the difference between the job's completion time $C_j$ and its due date
+$d_j$ -- in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
+completion time, however, is the completion time of the batch, which in turn
+finishes with its \textit{longest} job as stated above.
+
+Malapert uses the format established by Graham et al. \cite{graham_notation} to
+summarize the problem as $1|\textit{p-batch}; b < n;
+\textit{non-identical}|\Lmax$, where $\textit{p-batch};b<n$ represents the
+parallel-batch nature and the finite capacity of the resource. A simpler version
+with identical job sizes was shown to be strongly NP-hard by Brucker et al.
+\cite{brucker}, and this problem, then, is no less difficult.
+
+It helps to visualize the jobs before delving into the technicalities of
+scheduling them. Figure \ref{fig:intro_tetris} shows a solution to a sample
+problem with eight jobs and a resource with capacity $b = 20$.
+
+\input{figures/intro_tetris.tex}
 \section{Organization of this paper}
+After reviewing some of the most relevant publications on both general MIP/CP models and
+batch scheduling problems, we first describe Malapert's original MIP model in
+section \ref{sec:malapertmipmodel}. We then present possible improvements to the
+model. Section \ref{sec:cpmodel} introduces a CP formulation of the same
+problem. Sections \ref{sec:mipdecomp} and \ref{sec:cpdecomp} describe a
+decomposition approach.
+
+An empirical comparison of the methods and a discussion of the results follow in
+sections \ref{sec:results} and \ref{sec:discussion}.
 
 \chapter{Literature Review}
 \section{General MIP and CP}
