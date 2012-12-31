@@ -238,7 +238,7 @@ int main(int argc, char *argv[]) {
     }
 
     // 13. Grouping empty batches. 
-
+#ifdef MIP_IMPROVEMENTS
     IloNumArray ones(env, nj);
     for(int j=0; j<nj; j++) ones[j] = int(1);
 
@@ -281,7 +281,7 @@ int main(int argc, char *argv[]) {
 	model.add( xjk[j][k] == 0 );
       }
     }
-
+#endif
     // 17. No batch should have empty space if safe eliminations are possible
    /* for(int k=0; k<nk-1; k++) {
       for(int j=0; j<nj; j++) {
@@ -299,7 +299,7 @@ int main(int argc, char *argv[]) {
     cplex.setParam(IloCplex::MIPDisplay  , 3);   // MIP node log display information
     cplex.setParam(IloCplex::MIPInterval , 1);  // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
     double timeneeded = cplex.getCplexTime();
-
+    cplex.setParam(IloCplex::Threads, 1);
     cplex.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
     cplex.solve();
     cout << cplex.getStatus() << endl;
@@ -309,7 +309,7 @@ int main(int argc, char *argv[]) {
     /********** printing results ********/
 
     cout << "Lmax: " << cplex.getValue(Lmax) << endl;
-    cout << "Lmax_LB: " << int(Lmax_LB) << endl;
+//    cout << "Lmax_LB: " << int(Lmax_LB) << endl;
     cout << "Jobs:" << endl;
     for(int j=0; j<nj; j++) {
       if(j<10) cout << " ";

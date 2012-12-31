@@ -5,6 +5,7 @@ assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
 batches, the number of jobs being a trivial upper bound on the number of
 batches required; it also enforces an earliest-due-date-first (EDD) ordering of
 the batches (constraint \ref{c:malapp-edd}).
+
 \begin{model}[h]
 \begin{alignat}{2}
 \mathrm{Min.}\quad & \Lmax && \\
@@ -22,8 +23,34 @@ the batches (constraint \ref{c:malapp-edd}).
 \end{model}
 
 \section{Improved MIP model}
-\subsection{Grouping empty batches}
-The given formulation lacks a rule that ensures that no empty batch is followed by a non-empty batch. Empty batches have no processing time and a due date only bounded by $d_\text{max}$, so they can be sequenced between non-empty batches without negatively affecting $\Lmax$. Since, however, desirable schedules have no empty batches scattered throughout, we can easily reduce the search space by disallowing such arrangements. The idea is illustrated in Figure \ref{fig:dominancerule}.
+Several improvements can be made to Malapert's MIP model in the form of
+additional constraints shown in Model \ref{model:improvedmip}, as  
+described in greater detail in the subsections below.
+
+\begin{model}[h]
+\begin{alignat}{2}
+& \sum_{j \in J} x_{j,k-1} = 0 \rightarrow \sum_{j \in J} x_{jk} = 0 \quad &&
+\forall k \in K \\
+& e_k + \sum_{j \in J} x_{jk} \geq 1 \quad && \forall k \in K \\
+& n_j (e_k-1) + \sum_{j \in J} x_{jk} \leq 0 \quad && \forall k \in K \\
+& e_k - e_{k-1} \geq 0 \quad && \forall k \in K \\
+& x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \} \\
+& \Lmax \geq \big\lceil\frac{1}{b} \sum_{j} s_j
+p_j\big\rceil - \delta_q \quad
+&& \forall q, \forall \{ j \in J | d_j \leq \delta_q \}
+\end{alignat}
+\caption{Improvements to Malapert's original MIP model}
+\label{model:improvedmip}
+\end{model}
+
+\subsection{Grouping empty batches} The given
+formulation lacks a rule that ensures that no empty batch is followed by a
+non-empty batch. Empty batches have no processing time and a due date only
+bounded by $d_\text{max}$, so they can be sequenced between non-empty batches
+without negatively affecting $\Lmax$. Since, however, desirable schedules have
+no empty batches scattered throughout, we can easily reduce the search space by
+disallowing such arrangements. The idea is illustrated in Figure
+\ref{fig:dominancerule}.
 
 \input{figures/dominancerule}
 
@@ -48,7 +75,6 @@ empty. Constraints \eqref{eq:emptybatch2} enforce $e_k = 0$ otherwise, since the
 
 We can also prune any attempts to leave the first batch empty by adding a constraint $e_0 = 0$.
 
-{\color{darkred} This, while it works just fine, actually takes longer than without it.}
 
 \subsection{No postponing of jobs to later batches}
 Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
@@ -56,4 +82,40 @@ Since the jobs are already sorted by non-decreasing due dates, it makes sense to
   & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \}
 \end{alignat}
 
+\subsection[Lower bound on $\Lmax$]{Lower bound on {\sansitalicfont L}\textsubscript{max}}
+Let a \textit{bucket} $q$ denote the set of all batches with due date $\delta_q$.
+Then the completion date $C_q$ of this bucket is the completion date of the
+last-scheduled batch with due date $\delta_q$, and the lateness of the bucket
+$q$ is $L_q = C_q - \delta_q$. Since all batches up to and including those in
+bucket $q$ are guaranteed to contain all jobs with due dates $d \leq \delta_q$
+-- as ensured by the EDD ordering of batches -- the lower bound on every
+bucket's lateness $LB(L_q)$ is a valid lower bound on $\Lmax$. In other words,
+jobs with due date $d \leq \delta_q$ will be found only in batches up to and
+including the last
+batch of bucket $q$. This provides a lower bound on the lateness of bucket $q$:
+\begin{alignat}{2}
+& \Lmax \geq C_{\text{max},q} - \delta_q \quad && \forall q
+\end{alignat}
+The buckets up to bucket $q$ will likely also contain some later ($d >
+\delta_q$) jobs in the optimal solution but this does not affect the validity of
+the lower bound.
+
+Now we need to find $C_{\text{max},q}$, or at least a lower bound on it, in
+polynomial time. The simplest approach simply considers the jobs' total ``area''
+(or ``energy''), i.e. the sum of all $s_j p_j$ products:
+\begin{alignat}{2}
+& C_{\text{max},q} \geq \big\lceil\frac{1}{b} \sum_{j} s_j
+p_j\big\rceil \quad
+&& \forall q, \forall \{ j \in J | d_j \leq \delta_q \}
+\end{alignat}
+A better lower bound on $C_{\text{max},q}$ would be given by a
+preemptive-cumulative schedule. Unfortunately, minimizing $C_{\text{max}}$ for
+such problems is equivalent to solving a standard bin-packing problem, which
+requires exponential time.\footnote{In a preemptive-cumulative schedule, jobs
+may be stopped and restarted mid-execution, but occupy a constant amount $s_j$
+on the resource while executing. In such a schedule, minimizing the makespan is
+as difficult as solving a bin-packing problem: we can break jobs into small
+pieces (no longer than the smallest common divisor of the jobs' lengths $p$) and
+then pack them together such as to minimize the number of small time slots
+needed.}
 

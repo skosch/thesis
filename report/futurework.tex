@@ -1,0 +1,162 @@
+\chapter{Unexplored ideas}
+\section{MIP model}
+\subsection[Upper bound on $\Lmax$]{Upper bound on {\sansitalicfont L}\textsubscript{max}}
+An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
+feasible, if not optimal, schedule. A good approach could be the ``best-fit''
+heuristic proposed in the original paper. {\color{darkred} This has not been
+implemented yet.}
+
+\subsection[Bounding the number of batches $n_k$]{Bounding the number of batches \sansitalicfont n\textsubscript{k}}
+Initially, the number of batches needed is assumed to be equal to the number of
+jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches
+needed shrinks the $x_{jk}$ matrix, and prunes potential search branches in
+branch-and-bound decomposition approaches.
+
+\input{figures/bnk1_1050} %fig:bnk1 (50/10 example)
+
+Unfortunately, we cannot make a general statement that optimal solutions never
+have more batches than other feasible solutions -- a simple counterexample is
+shown in figure \ref{fig:bnk1}.\footnote{To be more precise, we cannot state
+that at least one optimal solution is in the subset of feasible solutions that
+uses the fewest number of batches -- a dominance situation that could be
+exploited, were it true.}
+
+Starting out with a one-job-per-batch schedule sorted by EDD, we can explore
+all feasible batch configurations recursively. To generate any other feasible
+schedule (including the optimal solution), jobs $j$ are rescheduled (``moved back'')
+from their original batch $k_\text{origin}$ into a prior batch
+$k_\text{earlier}$. This eliminates $k_\text{origin}$ and requires, of course,
+that $k_\text{earlier}$ has sufficient capacity. If the job's processing time
+$p_j$ exceeds that of $k_\text{earlier}$, then the lateness of batches between
+$k_\text{earlier}$ and $k_\text{origin}$ will increase; the merit of such a move
+cannot be judged in prior, so it is an \textit{unsafe} batch elimination.
+\textit{Safe} eliminations, on the other hand, will never worsen $\Lmax$, and
+only they can be considered when bounding $n_k$ a priori.
+
+Algorithm \ref{alg:bounding_nk} outlines a recursive method to find an upper
+bound on $n_k$, recognizing safe batch eliminations only.
+
+\begin{algorithm}[h]
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\If{no open jobs left} \Comment{if this is a ``leaf node'' in the recursion}
+  \State update UB$(n_k)$
+\EndIf
+\State find the combination of unsafe later jobs that fills up the capacity
+most, leaving us with capacity $b_r$ 
+\State find all combinations $x$ of safe later jobs that fit into $b_r$
+\Repeat
+  \State $x$ = next safe job combination
+  \State \textit{ignoreJobs} $\gets x$ \Comment{make the moves, let the next recursion
+  level deal with the rest of the jobs}
+  \State spawn and run child node with $J \setminus$ \textit{ignoreJobs}
+  \State \textit{ignoreJobs} $\gets$ \textit{ignoreJobs} $\setminus x$
+\Until{all combinations have been explored}
+\State return
+\end{algorithmic}
+\caption{Recursive algorithm to find an upper bound on $n_k$}
+\label{alg:bounding_nk}
+\end{algorithm}
+
+This algorithm evidently requires exponential time. A relaxed variant is a
+possible option: if only a single unsafe move \textit{into} a batch is possible,
+no safe eliminations into that batch are considered at all and we skip to the
+next batch. This would greatly speed up the recursion but also significantly
+weaken the usefulness of the resulting upper bound.
+
+In a brach-and-bound decomposition approach in which batches are modelled
+individually, an upper bound on $n_k$ could be used to limit the depth of the
+search tree, or, in combination with a method to determine a lower bound on the
+remaining jobs' $n_k$ at every node, to actively prune the search tree during
+the search. The latter method, however, would also run in exponential time as
+it, again, would require knapsack-type reasoning unless we use a much less powerful
+relaxation.
+
+\section{CP Model}
+\subsection[Constraint on the number of batches with length $P_k >
+p$]{Constraint on number of batches with length {\sansitalicfont
+P\textsubscript{k}} > {\sansitalicfont p}}
+
+Since \marginpar{\em\small I haven't found an elegant way to turn this into a
+gcc constraint, but I also fail to see how it would be useful -- this constraint
+matches \textrm{all} feasible solutions, not just a superset of the optimal
+one.} batches take on the processing time of their longest job, there is at
+least one batch with $P = \underset{j}{\max} p_j $. We can proceed to fill batches with jobs, ordered by non-increasing processing
+time, based on algorithm \ref{alg:findBatchlengthCards}. 
+
+\begin{algorithm}[h!]
+\fontsize{9pt}{11.5pt}\selectfont \begin{algorithmic} \State $J^{\star} \gets J$
+\Comment{initialize all jobs as unassigned jobs} \State $n_k \gets 1$; $S_k
+\gets \{0\}$; $P_{k,\text{min}} \gets \{0\}$ \Comment{Create one empty batch of
+size and length zero} \State sort $J^{\star}$ by processing time, non-increasing
+\Repeat \State $j \gets J^{\star}$.pop() \Comment{select job for assignment,
+longest job first} \Loop $\;$ through all $n_k$ existing batches $k$, first
+batch first \State $k_p \gets \emptyset$ \Comment{no feasible batch} \State
+$c_\text{min} = b$ \Comment{currently known minimum remaining capacity} \If{$s_j
+< b-S_k$ and $b-S_k < c_\text{min}$} \State $k_p \gets k_p$; $c_\text{min} \gets
+b-S_k$ \EndIf \EndLoop \If{$|k_p| = 1$} \State $S_{k_p} \gets S_{k_p} + s_j$
+\Comment{assign job $j$ to batch $k_p$} \Else \If{$n_k < LB(n_k)$} \State $n_k
+\gets n_k + 1$\Comment{open new batch} \State $S_{n_k} \gets s_j$;
+$P_{n_k,\text{min}} \gets p_j$ \Comment{assign $s_j$ and $p_j$ to the new batch}
+\Else \State leave the loop now and end.  \EndIf \EndIf \Until{$J^{\star}$ is
+empty} \end{algorithmic} \caption{Generating lower bounds on batch lengths}
+\label{alg:findBatchlengthCards} \end{algorithm}
+At the end of this algorithm, we can state: \begin{alignat}{2} &
+\mathtt{globalCardinality}( |P_{k-1,\text{min}} > P_k \geq P_{k,\text{min}} |
+\geq 1) \quad && \forall k \in \{k_0,\dots,k_{LB(n_k)}\} \end{alignat}
+
+The algorithm sorts jobs by non-increasing $p$, and then fills batches job by
+job. If a job fits into a previous batch, it is assigned there. If a job fits
+into multiple previous batches, it is assigned to the batch with the smallest
+remaining capacity. This is called \textit{best-fit decreasing} rule,
+and works as follows: let $J^\star$ be the set of jobs sorted by $p$, then at
+least one batch will be as long as the longest job $j^\star_1$. If the next $n$
+jobs fit into this batch, then there is at least one batch not shorter than
+$j^\star_{n+1}$, and similarly for subsequent batches. 
+
+Unfortunately, the optimal solution may perform better than the packing heuristic in
+terms of ``vertical'' ($s_j$) bin packing, and may thus require fewer batches.
+We therefore need to find a lower bound $LB(n_k)$ on the number of batches, and
+we can only guarantee the first $LB(n_k)$ of the above constraints to hold in
+the optimal solution. Finding a true lower bound is a two-dimensional bin
+packing problem, which runs in exponential time, so we
+have to come up with an even lower bound -- right now I can only think of $j_0$,
+the number of jobs ordered by decreasing $s_j$ that can never fit into a batch
+together.
+
+\subsection[Constraint on the number of batches with due date $D_k >
+d$]{Constraint on number of batches with length {\sansitalicfont
+D\textsubscript{k}} > {\sansitalicfont d}}
+
+In a similar fashion, we can determine that the second batch must be due no
+later than the earliest-due job $j_{m+1}$ that can \textit{not} fit into the first
+batch -- if we sort jobs by due date and fit the earliest $m$ jobs into the first
+batch -- and so on for subsequent batches. Once again, since best-fit decreasing
+may not perform optimally in terms of ``vertical'' packing, this may not be
+valid for batches beyond the known $LB(n_k)$.
+
+\subsection[All-different constraints on $P_k$ and $D_k$]{All-different
+constraints on {\sansitalicfont P\textsubscript{k}} and {\sansitalicfont
+D\textsubscript{k}}}
+
+Furthermore, if all jobs have different processing times, \marginpar{\em\small I haven't found a way to implement this efficiently in CP
+Optimizer; I also don't quite see how it would constrain anything.}all batches will have different
+processing times as well: \texttt{alldifferent}$(P_k)$. If $m$ out of $n_j$ jobs
+have different processing times, we can still enforce
+\texttt{k\_alldifferent}$(P_k, m)$. 
+
+Similarly, we knows that the constraint \texttt{k\_alldifferent}$(D_k, m)$ must
+be true if $m$ out of $n_j$ jobs have different due dates.
+\begin{comment}
+\section{Decompositions}
+\subsection{Move-back decomposition}
+Turn it into a satisfiability problem for $\L_{\text{max,inc}} - 1$.
+
+
+Another possible way to set up a branch-and-bound search for solutions works as
+follows: first, consider all jobs to be assigned to individual batches, i.e.
+$B_j = k_j \; \forall j \in J$. Compute the $\Lmax$ for this schedule. Then, at
+every level of the search tree, move a job $j$ into any earlier batch $k \leq
+k_j$, but only if that move does not violate $k$'s capacity and only if it
+improves $\Lmax$. Not moving a job is permissible but no two jobs 
+\end{comment}

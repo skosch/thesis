@@ -316,6 +316,7 @@ int main(int argc, const char * argv[]){
       cp.setParameter(IloCP::PropagationLog, IloCP::Verbose);
     }
     cp.setParameter(IloCP::SearchType, IloCP::DepthFirst);
+    cp.setParameter(IloCP::Threads, 1);
     cp.solve();
 
     /********** printing results ********/

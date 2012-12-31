@@ -1,7 +1,8 @@
 \documentclass[13pt, letterpaper, twoside]{book}
 \usepackage{graphicx}
 
-\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.1in, right=1.74in,top=1.4in, bottom=1.74in]{geometry}
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.1in,
+right=1.74in,top=1.4in, bottom=1.74in]{geometry}
 \usepackage[no-math]{fontspec}
 \usepackage{newfloat}
 \usepackage{sectsty, tikz, color, pgfplots}
@@ -116,7 +117,6 @@ sections \ref{sec:results} and \ref{sec:discussion}.
     \item{Malapert (how does he fit into the picture?)}
 \end{alist}
 \chapter{Modelling the problem}
-\input{variablebounds.tex}
 
 \input{mipmodel.tex}
 
@@ -124,6 +124,9 @@ sections \ref{sec:results} and \ref{sec:discussion}.
 \input{decomp.tex}
 
 \input{testresults.tex}
+\input{discussion.tex}
+\input{futurework.tex}
+
 
 \begin{comment}
 \chapter{My solution}

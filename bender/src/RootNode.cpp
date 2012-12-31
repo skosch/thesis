@@ -168,6 +168,7 @@ int RootNode::run() {
 	cplex.setError(env.getNullStream());
 
 	cplex.setParam(IloCplex::ClockType, 1);
+		cplex.setParam(IloCplex::Threads, 1);
 	double timeneeded = cplex.getCplexTime();
 	while(cplex.solve()) { // keep solving until there are no more children
 		timeneeded = cplex.getCplexTime() - timeneeded;
