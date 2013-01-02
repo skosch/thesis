@@ -1,0 +1,39 @@
+
+Jobs:
+ 0	s=3 p=2 d=2     C=2   L=0
+ 1	s=8 p=17 d=9    C=19  L=10
+ 2	s=4 p=6 d=13    C=25  L=12
+ 3	s=15 p=14 d=17  C=39  L=22
+ 4	s=15 p=11 d=27  C=50  L=23
+ 5	s=16 p=1 d=32   C=51  L=19
+ 6	s=10 p=18 d=32  C=69  L=37
+ 7	s=14 p=19 d=33  C=88  L=55
+ 8	s=14 p=8 d=39   C=96  L=57 LMAX -- Lmax will happen before batch 8
+ 9	s=7 p=7 d=47    C=103 L=56  
+Solution: 
+  Batch completion dates:
+ 11 29 29 30 44 63 63 71 78 78
+Batch due dates:
+ 0 0 0 0 12 31 31 39 46 46
+Batch lateness:
+ 11 29 29 30 32 32 32 32 32 32
+ 0 X · · · · · · · · ·
+ 1 · X · · · · · · · ·
+ 2 · · · · X · · · · ·
+ 3 · · · · X · · · · ·
+ 4 X · · · · · · · · ·
+ 5 · · · X · · · · · ·
+ 6 · X · · · · · · · ·
+ 7 · · · · · X · · · ·
+ 8 · · · · · · · X · ·
+ 9 · · · · · · · · X ·
+Batch 0:	 Pk=11	 Dk=0	 Ck=11
+Batch 1:	 Pk=18	 Dk=0	 Ck=29
+Batch 2:	 Pk=0	 Dk=0	 Ck=29
+Batch 3:	 Pk=1	 Dk=0	 Ck=30
+Batch 4:	 Pk=14	 Dk=12	 Ck=44
+Batch 5:	 Pk=19	 Dk=31	 Ck=63
+Batch 6:	 Pk=0	 Dk=31	 Ck=63
+Batch 7:	 Pk=8	 Dk=39	 Ck=71
+Batch 8:	 Pk=7	 Dk=46	 Ck=78
+Batch 9:	 Pk=0	 Dk=46	 Ck=78

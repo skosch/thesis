@@ -29,7 +29,7 @@ $k_\text{earlier}$. This eliminates $k_\text{origin}$ and requires, of course,
 that $k_\text{earlier}$ has sufficient capacity. If the job's processing time
 $p_j$ exceeds that of $k_\text{earlier}$, then the lateness of batches between
 $k_\text{earlier}$ and $k_\text{origin}$ will increase; the merit of such a move
-cannot be judged in prior, so it is an \textit{unsafe} batch elimination.
+cannot be judged a priori, so it is an \textit{unsafe} batch elimination.
 \textit{Safe} eliminations, on the other hand, will never worsen $\Lmax$, and
 only they can be considered when bounding $n_k$ a priori.
 
@@ -147,16 +147,32 @@ have different processing times, we can still enforce
 
 Similarly, we knows that the constraint \texttt{k\_alldifferent}$(D_k, m)$ must
 be true if $m$ out of $n_j$ jobs have different due dates.
-\begin{comment}
-\section{Decompositions}
-\subsection{Move-back decomposition}
-Turn it into a satisfiability problem for $\L_{\text{max,inc}} - 1$.
 
+\section{Decompositions}
+\subsection{Potential heuristics}
+\paragraph{Improve the initial $L_{\text{max,incumbent}}$} A better initial
+upper bound on $\Lmax$ can help prune some branches of the search tree from the
+outset. There are several dispatch rules (or maybe other heuristics?) that could
+be explored to do this better.
+\paragraph{Improve $L_{\text{max,incumbent}}$ during search} It may be useful to
+use a heuristic like above to ``complete the schedule'' once a promising partial
+schedule has been generated. I have yet to identify situations where this is
+always helpful.
+
+\subsection{Move-back decomposition}
 
 Another possible way to set up a branch-and-bound search for solutions works as
-follows: first, consider all jobs to be assigned to individual batches, i.e.
-$B_j = k_j \; \forall j \in J$. Compute the $\Lmax$ for this schedule. Then, at
-every level of the search tree, move a job $j$ into any earlier batch $k \leq
-k_j$, but only if that move does not violate $k$'s capacity and only if it
-improves $\Lmax$. Not moving a job is permissible but no two jobs 
-\end{comment}
+follows: first, consider all jobs to be ``single'', i.e. assigned to individual
+batches such that $B_j = k_j \; \forall j \in J$. Compute the $\Lmax$ for this
+schedule. Then, at every level of the search tree, move a single job $j$ into any
+earlier batch $k \leq k_j$, but only if that move does not violate $k$'s
+capacity and only if it improves $\Lmax$. 
+
+If we start with a schedule of single jobs and only allow moving jobs into
+earlier batches, we maintain the EDD ordering of batches. More importantly, such
+moves will never shift the position of $\Lmax$ to the right:
+
+\begin{proof}
+In any partial schedule following EDD, let $k$ be the batch with maximum
+lateness. It has processing time $p_
+\end{proof}

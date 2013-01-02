@@ -238,7 +238,7 @@ int main(int argc, char *argv[]) {
     }
 
     // 13. Grouping empty batches. 
-#ifdef MIP_IMPROVEMENTS
+// #ifdef MIP_IMPROVEMENTS
     IloNumArray ones(env, nj);
     for(int j=0; j<nj; j++) ones[j] = int(1);
 
@@ -281,7 +281,7 @@ int main(int argc, char *argv[]) {
 	model.add( xjk[j][k] == 0 );
       }
     }
-#endif
+// #endif
     // 17. No batch should have empty space if safe eliminations are possible
    /* for(int k=0; k<nk-1; k++) {
       for(int j=0; j<nj; j++) {
@@ -311,10 +311,14 @@ int main(int argc, char *argv[]) {
     cout << "Lmax: " << cplex.getValue(Lmax) << endl;
 //    cout << "Lmax_LB: " << int(Lmax_LB) << endl;
     cout << "Jobs:" << endl;
+    int cumulCj = 0;
     for(int j=0; j<nj; j++) {
       if(j<10) cout << " ";
-      cout << j << "\t" << "s=" << sj[j] << " p=" << pj[j] << " d=" << dj[j] <<
-      endl;
+
+      cumulCj += pj[j];
+
+      cout << j << "\t" << "s=" << sj[j] << " p=" << pj[j] << " d=" << dj[j];
+      cout << "\t" << "C=" << cumulCj << "\t L=" << cumulCj - dj[j] << endl;
     }
     cout << "Solution: " << endl << "  ";
  cout << "Batch completion dates:" << endl;

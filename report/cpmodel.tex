@@ -31,8 +31,7 @@ propagation slightly. Constraints \eqref{cpcs:pk}, \eqref{cpcs:dk},
 \eqref{cpcs:ck} and \eqref{cpcs:lmax} define $P_k$, $D_k$, $C_k$ (batch
 completion time) and $\Lmax$, respectively.
 
-
-
+\begin{comment}
 \subsection{Temporal constraints on a job's start date} Given any partial
 assignment of jobs and an open job $j$, we can reason that \begin{alist}
 \item{if the first batch with a due date later than the job is $k$, then the job
@@ -47,20 +46,21 @@ solution.
 This constraint is redundant with both the $(C_{k+1}\geq C_k)$ and
 \texttt{packing} constraints, but may help accelerate the propagation in some
 cases.
+\end{comment}
 
-\subsection{Grouping empty batches} Just like in the MIP model, we can force
+\subsection{Grouping empty batches} We can force
 empty batches to the back and thus establish dominance of certain solutions. The
-implementation is much easier than in the MIP model: \begin{alignat}{2} &
-\mathtt{IfThen}( C_{k+2} > C_{k}, C_{k+1} > C_{k} ) \quad && \forall k \in
-\{k_1, \dots, k_{n_k-2}\} \end{alignat}
+implementation is much easier than in the MIP model: 
+\begin{alignat}{2} &
+\mathtt{IfThen}( P_k = 0, P_{k+1} = 0 ) \quad && \forall k \in
+\{k_1, \dots, k_{n_k-1}\}
+\end{alignat}
 
 \subsection{No postponing of jobs to later batches} Just like in the MIP model,
 jobs should never go into a batch with an index greater than their own:
-\begin{alignat}{2} & x_{jk} = 0 \quad && \forall j,k : j > k \end{alignat} This
-is implemented as $\mathtt{assignments}_j \leq k$. 
+\begin{alignat}{2}
+& B_j \leq k \quad && \forall \{j \in J, k \in K | j > k \}
+\end{alignat}
 
-{\color{darkred} This constraint is analogous to the concept of finding an upper
-bound on $n_k$ -- essentially, it would be very helpful to find an upper bound
-on the latest batch for \textit{every} job.}
 
 

@@ -2,7 +2,7 @@
 
 Instead of solving the entire problem using one model, we can solve the problem
 step by step, using the best techiques available for each subproblem. This
-approach is inspired by a method called \textit{Benders' decomposition}.
+approach is inspired by a method called \textit{Benders decomposition}.
 
 \subsection{Branch-and-bound by batch in chronological order}
 A basic version of this approach uses branch-and-bound to transverse the search
@@ -61,13 +61,13 @@ batching requirement, i.e., as if on a cumulative resource.
 L_{\text{max,incmb}} - 1 - v_k \quad && \forall j \in J, \forall \{i \in J | d_i
 \leq d_j\} \\[2ex]
 & \label{dc:eq5} \sum_t u_{jt} = 1 \quad && \forall j \in J \\
-& \label{dc:eq6} \sum_j \sum_{t' \in T_{jt}} u_{jt'} \leq b \quad && \forall t \in \mathcal{H} \\
+& \label{dc:eq6} \sum_j \sum_{t' \in T_{jt}} s_j u_{jt'} \leq b \quad && \forall t \in \mathcal{H} \\
 & \label{dc:eq7} (v_k + t + p_j) u_{jt} \leq d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J, \forall t \in \mathcal{H} \\
 & \label{dc:eq8} L_{\text{max,cumul}} \geq (v_k + t + p_j) u_{jt} - d_j \quad && \forall j \in J, \forall t \in \mathcal{H} \\
-& \label{dc:eq9} u_{j,t=1} = x_j \quad && \forall j \in J \\
+& \label{dc:eq9} u_{j,t=0} = x_j \quad && \forall j \in J \\
 & \label{dc:eq10} u_{it} \leq (1 - x_j) \quad && \forall i,j \in J, \forall t
-\in \mathcal{H} \setminus \{2\} \\[2ex]
-& \label{dc:eq11} b - \sum_j s_j x_j \leq (b w_j + 1) s_j \quad && \forall j \in J \\
+\in \{1, \dots, p_j - 1\} \\[2ex]
+& \label{dc:eq11} b - \sum_{i \in J} s_i x_i \leq (b w_j + 1) s_j \quad && \forall j \in J \\
 & \label{dc:eq12} P_k + 2w_j n_t \geq p_j + n_t x_j \quad && \forall j \in J\\
 & \label{dc:eq13} P_k - 2(1 - w_j)n_t \leq p_j +n_t x_j - 1 \quad && \forall j
 \in J
@@ -85,9 +85,10 @@ $t$, that is $T_{jt} = \{t - p_j + 1, \dots, t\}$ \\
 $v_k$ & is the start time of the batch at the given node in the search tree \\
 $L_{\text{max,incmb}}$ & is the incumbent (known best) value of and thus an
 upper bound on $\Lmax$ \\
-$\mathcal{H}$ & is the set of all indexed time points $\{1, \dots, n_t\}$ \\
+$\mathcal{H}$ & is the set of all indexed time points $\{0, \dots, n_t - 1\}$ \\
 $w_j$ & is 1 iff job $j$ is either longer than the batch ($p_j > P_k$) or
-already part of the batch ($x_j = 1$)
+already part of the batch ($x_j = 1$). Neither condition must be fulfilled for constraint
+\eqref{dc:eq11} to have an effect on job $j$
 \end{tabular}
 \caption{Notation used in the decomposition model}
 \end{table}
@@ -103,80 +104,87 @@ jobs that are assigned to the batch have to fulfill this requirement.
 
 Constraints \eqref{dc:eq5} and \eqref{dc:eq6} implement the cumulative nature of the
 post-batch assignments by ensuring that each job starts only once, and no jobs
-overlap on a given resource at any time (for the purposes of this model, the
-batch machine is considered divisible into $b$ unary resources).
+overlap on a given resource at any time.
 
 Constraints \eqref{dc:eq7} again limit the possible end dates of a
 job, but unlike \eqref{dc:eq4}, they use the time assignments on the cumulative
 resource to determine end dates. Constraints \eqref{dc:eq8} define the value of
 $L_{\text{max,cumul}}$, the maximum lateness of any job in the non-batched set.
 
-Constraints \eqref{dc:eq9} force batched jobs to start at $t = 0$, while \eqref{dc:eq10} force \textit{all} jobs to start either at $t = 0$ or after the last batched job ends.
+Constraints \eqref{dc:eq9} force batched jobs to start at $t = 0$, while
+\eqref{dc:eq10} force \textit{all} jobs to start either at $t = 0$ or after the
+last batched job ends.
 
 Constraints \eqref{dc:eq11} enforce a dominance rule: jobs must be assigned to
-the batch such that the remaining capacity, $b_r = b - \sum_j s_j x_j$, is less than
-the size $s_j$ of the \textit{smallest} job from the set of non-batched jobs that
-are \textit{not longer} than the current batch. That is, if there exists an
-non-batched job $j$ with $p_j \leq P_k$ and $s_j \leq b_r$, then the current
-assignment of jobs is infeasible in the model. The reasoning goes as follows:
-given any feasible schedule, assume there is a batch $k_a$ with $b_r$ remaining capacity
-and a later batch $k_b$ containing a job $j$ such that $s_j \leq b_r$ and $p_j \leq
-P_{k_a}$. Then job $j$ can always be moved to batch $k_a$ without negatively affecting the
-quality of the solution: if the schedule was optimal, then moving $j$ will not
-affect $\Lmax$ at all (otherwise, it was no optimal schedule); if the schedule
-was not optimal, then $\Lmax$ will stay constant (unless $j$ was the longest job
-in $k_b$ and $\Lmax$ occured in or in a batch after $k_b$, in which case $\Lmax$ will
-be improved).
+the batch such that the remaining capacity, $b_r = b - \sum_j s_j x_j$, is less
+than the size $s_j$ of the \textit{smallest} job from the set of non-batched
+jobs that are \textit{not longer} than the current batch. That is, if there
+exists an non-batched job $j$ with $p_j \leq P_k$ and $s_j \leq b_r$, then the
+current assignment of jobs is infeasible in the model. The reasoning goes as
+follows: given any feasible schedule, assume there is a batch $k_a$ with $b_r$
+remaining capacity and a later batch $k_b$ containing a job $j$ such that $s_j
+\leq b_r$ and $p_j \leq P_{k_a}$. Then job $j$ can always be moved to batch
+$k_a$ without negatively affecting the quality of the solution: if the schedule
+was optimal, then moving $j$ will not affect $\Lmax$ at all (otherwise, it was
+no optimal schedule); if the schedule was not optimal, then $\Lmax$ will stay
+constant (unless $j$ was the longest job in $k_b$ and $\Lmax$ occured in or in a
+batch after $k_b$, in which case $\Lmax$ will be improved).
 
 This rule is implemented by means of a binary variable $w_j$, which, as defined
 by constraints \eqref{dc:eq11} and \eqref{dc:eq12}, is 1 iff $p_j > P_k \lor x_j
-= 1$. These are the cases in which a job $j$ is \textit{not} to be considered in \eqref{dc:eq10}, and so $w_j$ is used to scale $s_j$ to a value
-insignificantly large in the eyes of the constraint's less-than relation.
+= 1$. These are the cases in which a job $j$ is \textit{not} to be considered in
+\eqref{dc:eq10}, and so $w_j$ is used to scale $s_j$ to a value insignificantly
+large in the eyes of the constraint's less-than relation.
 
 After a solution is found, a child node in the search tree has run the subtree
 and returned, a constraint of the form 
 \begin{alignat}{2}
 & \sum_j x_j + \sum_i (1-x_i) \leq n_j - 1 \quad && \forall \{j \in J | x_j =
 1\}, \forall \{i \in J | x_i = 0 \}
-\end{alignat}
+\end{alignat}\marginpar{\em\small I still can't think of anything tighter ...}
 is added to the model before the solver is called again, to exclude the last
 solution from the set of feasible solutions. 
 
 \subsubsection{Using CP and cumulative packing after the batch}
 This approach is equivalent, but we now use CP to select the batch assignments,
-again based on a minimized $\Lmax$ among the non-batched jobs. 
+again based on a minimized $\Lmax$ among the non-batched jobs. Model
+\ref{model:decomp_cp} uses interval variables $j$ to represent the jobs;
+time constraints on the jobs (``est'', ``lft'' etc.) are represented as
+equations involving the terms $\startOf(j)$ and $\endOf(j)$.
+
+Contraints \eqref{dcp:eq1} through \eqref{dcp:eq4} bi-directionally define the
+relationship between a job's $x_j$ and $\startOf(j)$: $x_j = 1$ is equivalent
+with a start time of $t = 0$, and $x_j = 0$ is equivalent with a start time of
+$t \geq P_k$. The term $\sum_{i \in J} p_i$ is used as a large constant as it is
+greater than any job's start time.
+
+Constraint \eqref{dcp:eq8} is equivalent to constraints \eqref{dc:eq11} through
+\eqref{dc:eq13} in Model \ref{model:decomp_mip} above. The cumulative constraint
+\eqref{dcp:eq9} ensures that jobs do not overlap. 
 
 \begin{model}[h]
 \begin{alignat}{2}
 \mathrm{Min.} \quad & \Lmax \quad && \\
-\mathrm{s.t.} \quad & \mathtt{IfThen}(x_j = 0, \startOf(j) \geq P_k) \quad && \forall j
-\in J \\
-& \mathtt{IfThen}(\startOf(j) \geq 2, x_j = 0) \quad && \forall j \in J \\
-& \mathtt{IfThen}(x_j = 1, \startOf(j) = 0) \quad && \forall j \in J \\
-& \mathtt{IfThen}(\startOf(j) = 1, x_j = 1) \quad && \forall j \in J \\
-& P_k \geq x_j p_j \quad && \forall j \in J \\
+\mathrm{s.t.} \quad 
+& \label{dcp:eq1} \startOf(j) \geq (1-x_j) P_k \quad && \forall j \in J \\
+& \startOf(j) \leq (1-x_j) \sum_{i \in J} p_i \quad && \forall j \in J \\
+& x_j \geq \frac{ \frac{1}{2} - \startOf(j) }{ \sum_{i \in J} p_i } \quad &&
+\forall j \in J \\
+& \label{dcp:eq4} x_j \leq 1+\frac{ \frac{1}{2} - \startOf(j)}{\sum_{i \in J} p_i } \quad &&
+\forall j \in J \\
+& P_k \geq \underset{j \in J}{\max}(x_j p_j) \quad && \\
 & \endOf(j) = d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J \\
 & \Lmax \geq \endOf(j) - d_j \quad && \forall j \in J \\
-& \mathtt{IfThen}(p_j \leq P_k \land x_j = 0, b - \sum_{j \in J} s_j
+& \label{dcp:eq8} \mathtt{IfThen}(p_j \leq P_k \land x_j = 0, b - \sum_{j \in J} s_j
 x_j \leq s_j) \quad && \forall j \in J \\
 & P_k + \frac{1}{b} \sum_i s_i p_i \leq d_j + L_{\text{max,incmb}} - 1 - v_k
 \quad && \forall j \in J, \forall \{i \in J | d_i \leq d_j\} \\
 & \sum_j x_j \geq 1 \quad && \forall \{ j \in J | d_j = \min(d_j) \} \\
-& \mathtt{cumul}(J, b) \quad & &  
+& \label{dcp:eq9} \mathtt{cumul}(J, b) \quad & &  
 \end{alignat}
 \caption{CP model in batch-by-batch branch-and-bound}
 \label{model:decomp_cp}
 \end{model}
 
-
-\subsection{Potential improvements}
-\paragraph{Improve the initial $L_{\text{max,incumbent}}$} A better initial
-upper bound on $\Lmax$ can help prune some branches of the search tree from the
-outset. There are several dispatch rules (or maybe other heuristics?) that could
-be explored to do this better.
-\paragraph{Improve $L_{\text{max,incumbent}}$ during search} It may be useful to
-use a heuristic like above to ``complete the schedule'' once a promising partial
-schedule has been generated. I have yet to identify situations where this is
-always helpful.
 
 

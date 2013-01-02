@@ -54,6 +54,7 @@ BBNode::~BBNode() {
 	for(int i=0; i<additionalConstraints.size(); i++) {
 		delete additionalConstraints[i];
 	}
+	env.end();
 }
 
 #ifdef BENDER_MIP

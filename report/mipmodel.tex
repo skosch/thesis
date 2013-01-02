@@ -67,7 +67,9 @@ To implement this, we can write constraints in terms of an additional  set of bi
 \end{alignat}
 
 Constraints \eqref{eq:emptybatch1} enforce $e_k = 1$ when the batch $k$ is
-empty. Constraints \eqref{eq:emptybatch2} enforce $e_k = 0$ otherwise, since the sum term will never exceed $n_j$. The rule \ref{eq:emptybatch0} can now be expressed as $e_{k-1} = 1 \rightarrow e_k = 1$, and implemented as follows:
+empty. Constraints \eqref{eq:emptybatch2} enforce $e_k = 0$ otherwise, since the
+sum term will never exceed $n_j$. The rule \eqref{eq:emptybatch0} can now be
+expressed as $e_{k-1} = 1 \rightarrow e_k = 1$, and implemented as follows:
 
 \begin{alignat}{2}
 & e_k - e_{k-1} \geq 0 \quad && \forall k \in K.

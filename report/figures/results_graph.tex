@@ -3,7 +3,7 @@
 
 \begin{tikzpicture}
   \begin{semilogyaxis}[xlabel=Jobs, ylabel=Time (seconds), width=\textwidth,
-  height=0.8\textwidth]
+  height=0.8\textwidth,legend pos=south east]
   \addplot[color=black, mark=triangle ] coordinates { % MIP model times
   (10, 5.441)
   (11, 25.18)
@@ -28,6 +28,11 @@
 (10, 7.59)
 (11, 9.31)
 (12, 11.72)
+(13, 5)
+(14, 10.83)
+(15, 24.28)
+(16, 27.44)
+(17, 165.82)
   };
   \addlegendentry{Branch-and-bound MIP}
   \addplot[color=black, mark=o] coordinates {
