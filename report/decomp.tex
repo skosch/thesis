@@ -4,7 +4,8 @@ Instead of solving the entire problem using one model, we can solve the problem
 step by step, using the best techiques available for each subproblem. This
 approach is inspired by a method called \textit{Benders decomposition}.
 
-\subsection{Branch-and-bound by batch in chronological order}
+\subsection{Branch-and-bound by batch in chronological
+order}\label{sec:mipdecomp}
 A basic version of this approach uses branch-and-bound to transverse the search
 tree. At each node on level $\ell$, a single MIP and/or CP model is run to
 assign jobs to batch $k = \ell$. The remaining jobs are passed to the children
@@ -145,7 +146,8 @@ and returned, a constraint of the form
 is added to the model before the solver is called again, to exclude the last
 solution from the set of feasible solutions. 
 
-\subsubsection{Using CP and cumulative packing after the batch}
+\subsubsection{Using CP and cumulative packing after the
+batch}\label{sec:cpdecomp}
 This approach is equivalent, but we now use CP to select the batch assignments,
 again based on a minimized $\Lmax$ among the non-batched jobs. Model
 \ref{model:decomp_cp} uses interval variables $j$ to represent the jobs;
@@ -174,7 +176,7 @@ Constraint \eqref{dcp:eq8} is equivalent to constraints \eqref{dc:eq11} through
 \forall j \in J \\
 & P_k \geq \underset{j \in J}{\max}(x_j p_j) \quad && \\
 & \endOf(j) = d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J \\
-& \Lmax \geq \endOf(j) - d_j \quad && \forall j \in J \\
+& \Lmax \geq \underset{j \in J}{\max}(\endOf(j) - d_j) \quad &&  \\
 & \label{dcp:eq8} \mathtt{IfThen}(p_j \leq P_k \land x_j = 0, b - \sum_{j \in J} s_j
 x_j \leq s_j) \quad && \forall j \in J \\
 & P_k + \frac{1}{b} \sum_i s_i p_i \leq d_j + L_{\text{max,incmb}} - 1 - v_k

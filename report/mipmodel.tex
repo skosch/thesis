@@ -1,4 +1,4 @@
-\section{MIP model}
+\section{MIP model}\label{sec:malapertmipmodel}
 Malapert's original MIP approach, as given in Model \ref{model:malapertmip},
 uses a set of binary decision variables $x_{jk}$ to represent whether job $j$ is
 assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
@@ -22,7 +22,7 @@ the batches (constraint \ref{c:malapp-edd}).
 \label{model:malapertmip}
 \end{model}
 
-\section{Improved MIP model}
+\section{Improved MIP model}\label{sec:improvedmipmodel}
 Several improvements can be made to Malapert's MIP model in the form of
 additional constraints shown in Model \ref{model:improvedmip}, as  
 described in greater detail in the subsections below.
@@ -81,7 +81,7 @@ We can also prune any attempts to leave the first batch empty by adding a constr
 \subsection{No postponing of jobs to later batches}
 Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
 \begin{alignat}{2}
-  & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \}
+  & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \} \label{eq:mipnopp}
 \end{alignat}
 
 \subsection[Lower bound on $\Lmax$]{Lower bound on {\sansitalicfont L}\textsubscript{max}}

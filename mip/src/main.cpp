@@ -19,7 +19,7 @@ struct job{
   IloNum p;
   IloNum d;
 };
-bool operator<(const job &a, const job &b) {return a.d < b.d;}
+bool operator<(const job &a, const job &b) {return (a.d < b.d and a.p <= b.p);}
  
 
 
@@ -60,6 +60,7 @@ int main(int argc, char *argv[]) {
 
     if(argc >= 3 && !strcmp(argv[2], "v")) {
       //  verboseoutput=true;
+
     }
 
     if(argc >= 4) {
@@ -147,8 +148,8 @@ int main(int argc, char *argv[]) {
       }
     }
     cout << "nkUB is " << nk_UB << endl;
-    //nk = nk_UB;
-
+    //nk = atoi(argv[2]);
+    cout << "nk is " << nk << endl;
 
     /************ variables ***********/
     
@@ -173,7 +174,7 @@ int main(int argc, char *argv[]) {
     IloNumVarArray Dk(env, nk);
     IloNumVarArray Ck(env, nk);
     IloNumVarArray ek(env, nk);
-
+    
     for(int k=0; k<nk; k++) {
       Pk[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT); /// FIX THIS: WHATS UPPER BOUND?
       Dk[k] = IloNumVar(env, 0, Dmax, ILOFLOAT);
@@ -213,6 +214,11 @@ int main(int argc, char *argv[]) {
       }
     }
 
+    for(int k=0; k<nk; k++) {
+      IloNumExpr sumExpression = secondarySumExpr(env, pj, xjk, k, nj);
+      model.add( Pk[k] <= sumExpression );
+    }
+
     // 9. Ck is always Ck of the last, plus current Pk
     //    model.add( IloRange(env, 0, Ck[0] - Pk[0], 0) );
     model.add( Ck[0] = Pk[0]);
@@ -246,6 +252,10 @@ int main(int argc, char *argv[]) {
       IloNumExpr sumExpression = secondarySumExpr(env, ones, xjk, k, nj);
       model.add( ek[k] + sumExpression >= 1 );
       model.add( nj*(ek[k] - 1) + sumExpression <= 0 );
+    
+     //every batch must be full
+  // model.add( Pk[k] >= 1 );
+
     }
     for(int k=1; k<nk; k++) {
             model.add( ek[k] - ek[k-1] >= 0 );
@@ -292,11 +302,9 @@ int main(int argc, char *argv[]) {
 
     /********* solving the model ******/
 
-
-
     IloCplex cplex(model);   
     cplex.setParam(IloCplex::ClockType, 1);
-    cplex.setParam(IloCplex::MIPDisplay  , 3);   // MIP node log display information
+    cplex.setParam(IloCplex::MIPDisplay  , 5);   // MIP node log display information
     cplex.setParam(IloCplex::MIPInterval , 1);  // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
     double timeneeded = cplex.getCplexTime();
     cplex.setParam(IloCplex::Threads, 1);

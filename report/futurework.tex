@@ -1,12 +1,12 @@
-\chapter{Unexplored ideas}
+\chapter{Unexplored ideas}\label{sec:futurework}
 \section{MIP model}
 \subsection[Upper bound on $\Lmax$]{Upper bound on {\sansitalicfont L}\textsubscript{max}}
 An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
 feasible, if not optimal, schedule. A good approach could be the ``best-fit''
-heuristic proposed in the original paper. {\color{darkred} This has not been
-implemented yet.}
+heuristic proposed in Malapert's paper. 
 
-\subsection[Bounding the number of batches $n_k$]{Bounding the number of batches \sansitalicfont n\textsubscript{k}}
+\subsection[Bounding the number of batches $n_k$]{Bounding the number of batches
+\sansitalicfont n\textsubscript{k}}\label{sec:bounding_nk}
 Initially, the number of batches needed is assumed to be equal to the number of
 jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches
 needed shrinks the $x_{jk}$ matrix, and prunes potential search branches in
@@ -64,7 +64,7 @@ no safe eliminations into that batch are considered at all and we skip to the
 next batch. This would greatly speed up the recursion but also significantly
 weaken the usefulness of the resulting upper bound.
 
-In a brach-and-bound decomposition approach in which batches are modelled
+In a branch-and-bound decomposition approach in which batches are modelled
 individually, an upper bound on $n_k$ could be used to limit the depth of the
 search tree, or, in combination with a method to determine a lower bound on the
 remaining jobs' $n_k$ at every node, to actively prune the search tree during
@@ -164,15 +164,55 @@ always helpful.
 Another possible way to set up a branch-and-bound search for solutions works as
 follows: first, consider all jobs to be ``single'', i.e. assigned to individual
 batches such that $B_j = k_j \; \forall j \in J$. Compute the $\Lmax$ for this
-schedule. Then, at every level of the search tree, move a single job $j$ into any
+schedule. Then, at every level of the search tree, move some single job $j$ into any
 earlier batch $k \leq k_j$, but only if that move does not violate $k$'s
-capacity and only if it improves $\Lmax$. 
+capacity. 
 
-If we start with a schedule of single jobs and only allow moving jobs into
-earlier batches, we maintain the EDD ordering of batches. More importantly, such
-moves will never shift the position of $\Lmax$ to the right:
+If we start with a schedule of single jobs and only allow moving single jobs
+into earlier batches (and any schedule can be produced by a sequence of such
+moves!), we maintain the EDD ordering of batches. More importantly, such moves
+will never shift the position of $\Lmax$ to the right:
 
-\begin{proof}
-In any partial schedule following EDD, let $k$ be the batch with maximum
-lateness. It has processing time $p_
-\end{proof}
+In any partial schedule following EDD, let $k$ be the batch
+with maximum lateness $L_k = \Lmax$. It has processing time $p_k$. Then the lateness of the
+batch before $k$ must be $L_{k-1} \geq L_k - p_k$ as a consequence of the EDD
+sequencing. Any batch following $k$ can have a lateness no greater than $L_k -
+1$.
+
+\begin{alist}
+\item{Moving any single job from a batch following $k$ into a batch before $k$ will
+worsen $\Lmax$, but not change its position. Such a move is never necessary to
+arrive at an optimal solution.}
+\item{Moving back any single job from a
+batch before $k$ \textit{safely}\footnote{for the meaning of ``safe'' and
+``unsafe'' moves, compare section \ref{sec:bounding_nk}.} will improve $\Lmax$,
+but not change its position.}
+\item{Moving back a single pre-$k$ job $j$ from a batch
+$\beta$ into an earlier batch $\alpha$ \textit{unsafely} will reduce $L_k$ by
+$p_\alpha$; $\Lmax$ may still be in $k$, or it may be found in any batch between
+(and including) $\alpha$ and $\beta$, since their lateness
+$L_{[\alpha,\dots,\beta]}$ is now increased by $p_j - p_\alpha$.}
+\item{If the
+max-lateness job $j$ is single itself, it can be moved from $k$ into an earlier
+batch $\alpha$. If this is done \textit{safely}, the batch immediately preceding
+$k$ will still have a lateness $L_{k-1} \geq L_k - p_j$. All batches after $k$
+will have their lateness reduced by $p_j$, but since their maximum lateness did
+not exceed $L_k - 1$ before the move, it will now be at least 1 less than that
+of batch $k-1$.}
+\item{If the max-lateness job
+$j$ was moved back \textit{unsafely} into a batch $\alpha$, batches between and
+including $\alpha$ and $k-1$ now have their lateness increased by $p_j - p_\alpha$,
+while batches after $k$ have their lateness decreased by $p_\alpha$. Again,
+batch $L_{k-1}$ would exceed the maximum lateness of batches after $k$.}
+\end{alist}
+
+This shows that after a sequence of operations in which single jobs are moved into
+earlier batches, $\Lmax$ will never shift to the right. In fact, this means that
+all jobs after the $\Lmax$-job in a single-job EDD schedule can be ignored in
+the scheduling problem entirely, although this turns out to be quite
+inconsequential as that job is often at or near the end of the single-job EDD
+schedule, resulting from the fact that $L_{k-1} \geq L_k - p_k$. By the same
+token, high-quality solutions often have their $\Lmax$ in an early batch. This
+may give rise to some sort of decomposition method in which jobs are
+strategically moved back, and where we are trying to move $\Lmax$ to the left as
+much as possible. 

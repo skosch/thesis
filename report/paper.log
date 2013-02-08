@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  1 JAN 2013 19:38
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  2 JAN 2013 03:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1622,46 +1622,46 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 . 
 . This font family consists of the following shapes:
 .................................................
-LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 59
+LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 60
 .
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
 File: ot1mdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OT1/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OML+mdugm on input line 59
+LaTeX Font Info:    Try loading font information for OML+mdugm on input line 60
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
 File: omlmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OML/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 59
+LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 60
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
 File: omsmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMS/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 59
+LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 60
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
 File: omxmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMX/mdugm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 59
+LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 60
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
 File: mdamdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDA/mdugm.
 )
-LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 59
+LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 60
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
@@ -1695,14 +1695,14 @@ File: mdbmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDB/mdugm.
 
 ]
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <12> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 74.
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 75.
 
 
-LaTeX Warning: Citation `graham_notation' on page 2 undefined on input line 74.
+LaTeX Warning: Citation `graham_notation' on page 2 undefined on input line 75.
 
 
 
-LaTeX Warning: Citation `brucker' on page 2 undefined on input line 79.
+LaTeX Warning: Citation `brucker' on page 2 undefined on input line 80.
 
 (./figures/intro_tetris.tex
 *************************************************
@@ -1961,26 +1961,6 @@ Underfull \hbox (badness 1297) in paragraph at lines 24--24
 . 
 . This font family consists of the following shapes:
 .................................................
-
-LaTeX Warning: Reference `sec:malapertmipmodel' on page 2 undefined on input li
-ne 89.
-
-
-LaTeX Warning: Reference `sec:cpmodel' on page 2 undefined on input line 90.
-
-
-LaTeX Warning: Reference `sec:mipdecomp' on page 2 undefined on input line 91.
-
-
-LaTeX Warning: Reference `sec:cpdecomp' on page 2 undefined on input line 91.
-
-
-LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 95.
-
-
-LaTeX Warning: Reference `sec:discussion' on page 2 undefined on input line 95.
-
-
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -3356,9 +3336,9 @@ LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
 . This font family consists of the following shapes:
 .................................................
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 21.
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 22.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 41.
+put line 42.
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -3605,7 +3585,7 @@ put line 41.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (21.20659pt too wide) in paragraph at lines 80--93
+Overfull \hbox (21.20659pt too wide) in paragraph at lines 81--94
 [][] 
  []
 
@@ -5391,6 +5371,16 @@ LaTeX Warning: Citation `daste1' on page 15 undefined on input line 5.
 
 LaTeX Warning: Citation `daste2' on page 15 undefined on input line 5.
 
+
+Underfull \hbox (badness 3724) in paragraph at lines 13--13
+\T1/mdugm/m/it/9 way --- I sup-pose the
+ []
+
+
+Underfull \hbox (badness 2744) in paragraph at lines 13--13
+\T1/mdugm/m/it/9 num-ber of batches re-
+ []
+
 (./figures/results_graph.tex
 Overfull \hbox (9.83456pt too wide) in paragraph at lines 44--45
  [][] 
@@ -6432,8 +6422,109 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <8> not available
 (Font)              Font shape `T1/mdugm/b/n' tried instead on input line 153.
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 (Font)              Font shape `T1/mdugm/b/n' tried instead on input line 153.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[22])
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -6475,11 +6566,11 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
 . 
 . This font family consists of the following shapes:
 .................................................
-[22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
+[24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
  (./paper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 144.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 144.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 148.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 148.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -6487,15 +6578,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 144.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 148.
  ) 
 Here is how much of TeX's memory you used:
- 41955 strings out of 495716
- 902103 string characters out of 3188883
- 1071001 words of memory out of 3000000
- 44349 multiletter control sequences out of 15000+200000
+ 41959 strings out of 495716
+ 902170 string characters out of 3188883
+ 1071653 words of memory out of 3000000
+ 44353 multiletter control sequences out of 15000+200000
  123157 words of font info for 122 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,19n,74p,657b,1881s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on paper.pdf (22 pages).
+Output written on paper.pdf (24 pages).

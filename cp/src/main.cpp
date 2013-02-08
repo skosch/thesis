@@ -24,7 +24,7 @@ struct job{
   IloInt p;
   IloInt d;
 };
-bool operator<(const job &a, const job &b) {return a.d < b.d;}
+bool operator<(const job &a, const job &b)  {return (a.d < b.d and a.p <= b.p);}
 
 const char* charcat(string first, int second, int third) {
   stringstream res;
@@ -169,8 +169,7 @@ int main(int argc, const char * argv[]){
 
     IloCumulFunctionExpr cumulResource(env);
     for(int j=0; j<nj; j++) {
-      J[j] = IloIntervalVar(env, (IloInt)pj[j], charcat("Jobinterval_", j, 0));
-      
+      J[j] = IloIntervalVar(env, (IloInt)pj[j], (IloInt)IloMax(pj), false, 0, charcat("Jobinterval_", j, 0));
     }
 
     // number of non-empty batches
@@ -232,13 +231,10 @@ int main(int argc, const char * argv[]){
       IloIntExprArray prodExpression = secondaryProdArray(env, pj, xjk, k, nj);
       //cout << prodExpression << endl;
       model.add( IloLengthOf(K[k]) == IloMax(prodExpression) );
-    //  for(int j=0; j<nj; j++) {
-    //    IloIntervalVarArray jobJ(env, 1);
-    //    jobJ[0] = J[j];
-    //    model.add(IloIfThen(env, assignments[j]==k, IloSpan(env,K[k], jobJ)));
-      //}
-   //   model.add( MaxProcessingTime(env, K[k], assignments, pj, k));
-    // model.add( IloLengthOf(K[k]) >= Pk[k] );
+      for(int j=0; j<nj; j++) {
+        model.add( IloLengthOf(J[j]) == IloLengthOf(K[k]) * xjk[j][k] +
+        IloLengthOf(J[j])*(1-xjk[j][k]));
+      }
     }
 
 
@@ -316,7 +312,7 @@ int main(int argc, const char * argv[]){
       cp.setParameter(IloCP::PropagationLog, IloCP::Verbose);
     }
     cp.setParameter(IloCP::SearchType, IloCP::DepthFirst);
-    cp.setParameter(IloCP::Threads, 1);
+    cp.setParameter(IloCP::Workers, 1);
     cp.solve();
 
     /********** printing results ********/
