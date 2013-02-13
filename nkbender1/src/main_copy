@@ -428,3 +428,53 @@ try {
 	cout << "We're done here. Thanks." << endl;
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/*IloModel cp_ct(env);
+		IloCumulFunctionExpr cumulResource(env);
+		IloIntervalVarArray jobs(env, j+1);
+		IloIntVar batchesUsed(env, 0, j+1, "batchesused");
+		IloIntVarArray batchloads(env, j+1, 0, capacity);
+		IloIntVarArray assignments(env, j+1, 0, j+1);
+
+		IloIntVarArray endtimes(env, j+1);
+		IloIntArray sj_ct(env, j+1);
+		for(int ji=0; ji<=j; ji++) {
+			sj_ct[ji] = sj[ji];
+			assignments[ji] = IloIntVar(env, 0, j+1);
+			batchloads[ji] = IloIntVar(env, 0, capacity);
+
+			jobs[ji] = IloIntervalVar(env, pj[ji], IloMax(pj), false, 0);
+			endtimes[ji] = IloIntVar(env, 0, IloSum(pj)); // bounds can be tightened
+			cp_ct.add(IloEndOf(jobs[ji]) <= dj[ji] + Lmaxinc);
+			cp_ct.add(IloEndOf(jobs[ji]) == endtimes[ji]);
+			cumulResource += IloPulse(jobs[ji], sj[ji]);
+		}
+		cp_ct.add(IloAlwaysIn(env, cumulResource, 0, IloSum(pj), 0, capacity));
+
+		cp_ct.add(IloPack(env, batchloads, assignments, sj_ct, batchesUsed));
+		cp_ct.add(IloMinimize(env, IloMax(endtimes)));
+		IloCP cp_ct_solver(cp_ct);
+		cout << "Solving for j" << j << endl;
+		cout << cp_ct_solver.solve() << endl;
+		cout << "Min completion date:" << cp_ct_solver.getObjValue() << endl;*/
+
+

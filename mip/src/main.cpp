@@ -19,7 +19,9 @@ struct job{
   IloNum p;
   IloNum d;
 };
-bool operator<(const job &a, const job &b) {return (a.d < b.d and a.p <= b.p);}
+bool operator<(const job &a, const job &b) {
+return a.d < b.d or (a.d == b.d and a.p <= b.p);
+}
  
 
 
@@ -29,7 +31,7 @@ IloNumExpr secondarySumExpr(IloEnv env, IloNumArray coeff, IloArray<IloNumVarArr
   // output: sum over all i for given secondindex: coeff[i] * matrix[i][secondIndex]
   
   IloNumExpr result(env);
-  for(int i = 0; i<coeffsize; i++) { 
+  for(int i = 0; i<coeffsize; i++) {
     result += (coeff[i] * matrix[i][secondIndex]);
   }
   return result;
@@ -59,8 +61,7 @@ int main(int argc, char *argv[]) {
     }
 
     if(argc >= 3 && !strcmp(argv[2], "v")) {
-      //  verboseoutput=true;
-
+      // verboseoutput=true;
     }
 
     if(argc >= 4) {
@@ -126,30 +127,30 @@ int main(int argc, char *argv[]) {
     for(int k=0; k<nj; k++) { // only go to jmaxindex?
       j = k+1;
       while(j <= jmaxindex) {
-	if(pj[j] < pj[k] and sj[j]+sj[k] <= capacity and Lj[j] >= Lj[k]) {
-	  jobs.erase(jobs.begin() + j);
-	  nk_UB--;
-	  // recalculate lateness values of remaining jobs:
-	  c = 0;
-	  for(int lj=0; lj<jobs.size(); lj++) {
-	    Lj[jobs[lj]] = c + pj[jobs[lj]] - dj[jobs[lj]];
-	    c += pj[jobs[lj]];
-	    if(Lj[jobs[lj]] > LmaxUB) {
-	      LmaxUB = Lj[jobs[lj]];
-	      jmaxindex = lj;
-	    }
-	  }
+if(pj[j] < pj[k] and sj[j]+sj[k] <= capacity and Lj[j] >= Lj[k]) {
+jobs.erase(jobs.begin() + j);
+nk_UB--;
+// recalculate lateness values of remaining jobs:
+c = 0;
+for(int lj=0; lj<jobs.size(); lj++) {
+Lj[jobs[lj]] = c + pj[jobs[lj]] - dj[jobs[lj]];
+c += pj[jobs[lj]];
+if(Lj[jobs[lj]] > LmaxUB) {
+LmaxUB = Lj[jobs[lj]];
+jmaxindex = lj;
+}
+}
 
-	  // get out of while loop
-	  break;
-	}
+// get out of while loop
+break;
+}
 
-	j++;
+j++;
       }
     }
     cout << "nkUB is " << nk_UB << endl;
-    //nk = atoi(argv[2]);
-    cout << "nk is " << nk << endl;
+    //nk = nk_UB;
+
 
     /************ variables ***********/
     
@@ -163,7 +164,7 @@ int main(int argc, char *argv[]) {
     for(int j=0; j<nj; j++) { // initialize each matrix row (reprs. jobs)
       xjk[j] = IloNumVarArray(env, nk);
       for(int k=0; k<nk; k++) {
-	xjk[j][k] = IloNumVar(env, 0, 1, ILOINT);
+xjk[j][k] = IloNumVar(env, 0, 1, ILOINT);
       }
     }
 
@@ -174,7 +175,7 @@ int main(int argc, char *argv[]) {
     IloNumVarArray Dk(env, nk);
     IloNumVarArray Ck(env, nk);
     IloNumVarArray ek(env, nk);
-    
+
     for(int k=0; k<nk; k++) {
       Pk[k] = IloNumVar(env, 0, IloInfinity, ILOFLOAT); /// FIX THIS: WHATS UPPER BOUND?
       Dk[k] = IloNumVar(env, 0, Dmax, ILOFLOAT);
@@ -210,17 +211,12 @@ int main(int argc, char *argv[]) {
       // cout << "sj[" << j << "] = " << sj[j] << endl;
       // cout << "dj[" << j << "] = " << dj[j] << endl;
       for(int k=0; k<nk; k++) {
-	model.add( IloRange(env, 0, Pk[k] - pj[j] * xjk[j][k], IloInfinity));
+model.add( IloRange(env, 0, Pk[k] - pj[j] * xjk[j][k], IloInfinity));
       }
     }
 
-    for(int k=0; k<nk; k++) {
-      IloNumExpr sumExpression = secondarySumExpr(env, pj, xjk, k, nj);
-      model.add( Pk[k] <= sumExpression );
-    }
-
     // 9. Ck is always Ck of the last, plus current Pk
-    //    model.add( IloRange(env, 0, Ck[0] - Pk[0], 0) );
+    // model.add( IloRange(env, 0, Ck[0] - Pk[0], 0) );
     model.add( Ck[0] = Pk[0]);
     for(int k=1; k<nk; k++) {
       model.add( IloRange(env, 0, Ck[k-1] + Pk[k] - Ck[k], 0));
@@ -229,7 +225,7 @@ int main(int argc, char *argv[]) {
     // 10. Every batch is due when the earliest job is due.
     for(int k=0; k<nk; k++) {
       for(int j=0; j<nj; j++) {
-	model.add( IloRange(env, -IloInfinity, Dk[k] - dj[j]*xjk[j][k] + Dmax*xjk[j][k], Dmax));
+model.add( IloRange(env, -IloInfinity, Dk[k] - dj[j]*xjk[j][k] + Dmax*xjk[j][k], Dmax));
       }
     }
 
@@ -243,8 +239,8 @@ int main(int argc, char *argv[]) {
       model.add( IloRange(env, -IloInfinity, Ck[k] - Dk[k] - Lmax, 0)) ;
     }
 
-    // 13. Grouping empty batches. 
-// #ifdef MIP_IMPROVEMENTS
+    // 13. Grouping empty batches.
+
     IloNumArray ones(env, nj);
     for(int j=0; j<nj; j++) ones[j] = int(1);
 
@@ -252,14 +248,10 @@ int main(int argc, char *argv[]) {
       IloNumExpr sumExpression = secondarySumExpr(env, ones, xjk, k, nj);
       model.add( ek[k] + sumExpression >= 1 );
       model.add( nj*(ek[k] - 1) + sumExpression <= 0 );
-    
-     //every batch must be full
-  // model.add( Pk[k] >= 1 );
-
     }
     for(int k=1; k<nk; k++) {
             model.add( ek[k] - ek[k-1] >= 0 );
-    } 
+    }
     model.add( ek[0] == 0 );
 
 
@@ -270,7 +262,7 @@ int main(int argc, char *argv[]) {
       Cmax_LB_temp += pj[j]*sj[j]/capacity;
       if(j < nj-1) {
         if(dj[j+1] == dj[j]) {cout<<"same duedate: " << j << endl; continue;} // still the same bucket
-      } 
+      }
         // new bucket, update Lmax_LB if necessary
         if(Cmax_LB_temp - dj[j] > Lmax_LB) {
           Lmax_LB = Cmax_LB_temp - dj[j];
@@ -278,36 +270,39 @@ int main(int argc, char *argv[]) {
           ", d=" << dj[j];
         
       }
-    } 
+    }
     cout << "LmaxLB:" << Lmax_LB << endl;
     model.add( Lmax >= ceil(Lmax_LB));
 
     // 15. Upper bound for Lmax
-    //     Get feasible solution by means of EDD, find Lmax
+    // Get feasible solution by means of EDD, find Lmax
 
     // 16. No batches later than necessary. This works because we sorted things.
     for(int j=0; j<nj; j++) {
       for(int k=j+1; k<nk; k++) {
-	model.add( xjk[j][k] == 0 );
+model.add( xjk[j][k] == 0 );
       }
     }
-// #endif
+
     // 17. No batch should have empty space if safe eliminations are possible
    /* for(int k=0; k<nk-1; k++) {
-      for(int j=0; j<nj; j++) {
-        model.add(IloIfThen(env, (pj[j] <= Pk[k] && dj[j] >= Dk[k+1]),
-        capacity-secondarySumExpr(env, sj, xjk, k, nj) <= sj[j]));
-      }
-    }*/
+for(int j=0; j<nj; j++) {
+model.add(IloIfThen(env, (pj[j] <= Pk[k] && dj[j] >= Dk[k+1]),
+capacity-secondarySumExpr(env, sj, xjk, k, nj) <= sj[j]));
+}
+}*/
 
     /********* solving the model ******/
 
-    IloCplex cplex(model);   
+
+
+    IloCplex cplex(model);
     cplex.setParam(IloCplex::ClockType, 1);
-    cplex.setParam(IloCplex::MIPDisplay  , 5);   // MIP node log display information
-    cplex.setParam(IloCplex::MIPInterval , 1);  // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
-    double timeneeded = cplex.getCplexTime();
+    cplex.setParam(IloCplex::MIPDisplay , 3); // MIP node log display information
+    cplex.setParam(IloCplex::MIPInterval , 1); // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
     cplex.setParam(IloCplex::Threads, 1);
+    double timeneeded = cplex.getCplexTime();
+
     cplex.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
     cplex.solve();
     cout << cplex.getStatus() << endl;
@@ -317,18 +312,14 @@ int main(int argc, char *argv[]) {
     /********** printing results ********/
 
     cout << "Lmax: " << cplex.getValue(Lmax) << endl;
-//    cout << "Lmax_LB: " << int(Lmax_LB) << endl;
+    cout << "Lmax_LB: " << int(Lmax_LB) << endl;
     cout << "Jobs:" << endl;
-    int cumulCj = 0;
     for(int j=0; j<nj; j++) {
       if(j<10) cout << " ";
-
-      cumulCj += pj[j];
-
-      cout << j << "\t" << "s=" << sj[j] << " p=" << pj[j] << " d=" << dj[j];
-      cout << "\t" << "C=" << cumulCj << "\t L=" << cumulCj - dj[j] << endl;
+      cout << j << "\t" << "s=" << sj[j] << " p=" << pj[j] << " d=" << dj[j] <<
+      endl;
     }
-    cout << "Solution: " << endl << "  ";
+    cout << "Solution: " << endl << " ";
  cout << "Batch completion dates:" << endl;
     for(int k=0; k<nk; k++) {
       if(k<10) cout << " ";

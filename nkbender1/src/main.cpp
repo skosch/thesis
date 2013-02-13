@@ -11,6 +11,20 @@
 
 using namespace std;
 
+struct rjob{
+	int s;
+	int p;
+	int d;
+	int r;
+	int pk;
+	int dk;
+
+	rjob() {};
+	bool operator<(const rjob &b) const {
+		return this->p > b.p;
+		//return abs(this->pk - this->p) < abs(b.p - this->pk); // this may have an effect
+	}
+};
 
 
 vector<Job> getSortedJobs(IloEnv env, string datafilename, int nj) {
@@ -39,244 +53,38 @@ vector<Job> getSortedJobs(IloEnv env, string datafilename, int nj) {
     }
 
     // sort the jobs by non-decreasing due date
-    sort(jc.begin(), jc.end(), CompareByDuedate());
+    sort(jc.begin(), jc.end());
+
+    for(int j=0; j<nj; j++) cout << ((Job)jc[j]).d << endl;
+
     return jc;
 }
 
-int moveChosenJobs( IloIntArray Lksingle, int nj, int njm, int capacity, IloIntArray sj, IloIntArray pj, IloIntArray dj,  vector<int> jmtoj) {
-	IloEnv env;
-	int Lmax_result = 0;
-	try {
-
-		 // ********************create a CP to get all the impossible moves (im) quickly
-		    	typedef IloArray<IloNumVarArray> xjh_matrix;
-
-		    	cout << "c1" << endl;
-		    	cout << nj << " " << njm << endl;
-		    	IloModel cp_im(env);
-
-		    	xjh_matrix xjh_im(env, nj);
-		    	for(int jm=0; jm<njm; jm++) {
-					xjh_im[jm] = IloNumVarArray(env, jmtoj[jm]);
-					cout << "jm is now " << jm << ", now generate " << (int) jmtoj[jm] << " vars." << endl;
-					for(int k=0; k<jmtoj[jm]; k++) {
-						xjh_im[jm][k] = IloNumVar(env, 0, 1, ILOINT);
-					}
-		    	}
-		    	cout << "c12" << endl;
-		    	IloIntVarArray sk(env, nj);
-		    	IloIntVarArray movesIntoK(env, nj);
-		    	for(int k=0; k<nj; k++) {
-		    		sk[k] = IloIntVar(env, 0, IloInfinity);
-		    		movesIntoK[k] = IloIntVar(env, 0, njm);
-
-		    		IloNumExpr addedsizes(env);
-		    		for(int jm=0; jm<njm; jm++) if(k < jmtoj[jm]) addedsizes += xjh_im[jm][k] * sj[jmtoj[jm]];
-		    		cp_im.add( sk[k] == IloInt(pj[k]) + addedsizes);
-
-		    		IloNumExpr moves_sum(env);
-		    		for(int jm=0; jm<njm; jm++) if(k < jmtoj[jm]) moves_sum += xjh_im[jm][k];
-		    		cp_im.add( movesIntoK[k] == moves_sum );
-		    	}
-		    	cp_im.add( IloMax(sk) > capacity );
 
 
-		    	for(int jm=0; jm<njm; jm++) cp_im.add( IloSum(xjh_im[jm]) <= 1);
+vector<int> sortRemJ(vector<int> remJ, vector<Job> jc, int Dk, int Pk) {
+	// sort the remJ vector based on
 
-		    	// solve the cp_im
-		    	IloNumExpr sum_xjh(env);
-		    	for(int jm=0; jm<njm; jm++) sum_xjh += IloSum(xjh_im[jm]);
+	vector<rjob> rjobs;
+	for(int i=0; i<remJ.size(); i++) {
+		rjob nj;
+		nj.d = (int)(jc[remJ[i]].d);
+		nj.p = (int)(jc[remJ[i]].p);
+		nj.s = (int)(jc[remJ[i]].s);
+		nj.r = remJ[i];
+		nj.dk = Dk;
+		nj.pk = Pk;
 
-		    	//cp_im.add(IloMinimize(env,sum_xjh));
-		    // ************************ create MIP
+		rjobs.push_back(nj);
+	}
 
-		    	cout << "c3" << endl;
-		    	// MIP declarations
-		    	IloModel mip(env);
-		    	cout << "c4" << endl;
-		    	xjh_matrix xjh(env, njm);
-		    	xjh_matrix isafterhost(env, njm);
-		    	xjh_matrix isafterjob(env, njm);
-		    	xjh_matrix csjk(env, njm); // L-shift modifier from safe (after job)
-		    	xjh_matrix cujk(env, njm); // L-shift modifier from unsafe (after host)
-		    	for(int jm=0; jm<njm; jm++) {
-		    		xjh[jm] = IloNumVarArray(env, nj);
-		    		isafterhost[jm] = IloNumVarArray(env, nj);
-		    		isafterjob[jm] = IloNumVarArray(env, nj);
-		    		csjk[jm] = IloNumVarArray(env, nj);
-		    		cujk[jm] = IloNumVarArray(env, nj);
-		    		for(int k=0; k<nj; k++) {
-		    			xjh[jm][k] = IloNumVar(env, 0, 1, ILOINT);
-		    			isafterhost[jm][k] = IloNumVar(env, 0, 1, ILOINT);
-		    			isafterjob[jm][k] = IloNumVar(env, 0, 1, ILOINT);
-		    			csjk[jm][k] = IloNumVar(env, -pj[jmtoj[jm]], 0, ILOINT);
-		    			cujk[jm][k] = IloNumVar(env, 0, pj[jmtoj[jm]], ILOINT);
-		    		}
-		    	}
+	sort(rjobs.begin(), rjobs.end());
 
-		    	IloNumVarArray Pk(env, nj);
-		    	IloNumVar Lmax(env, 0, IloInfinity, ILOINT);
-		    	for(int k=0; k<nj; k++) {
-		    		Pk[k] = IloNumVar(env, 0, IloMax(pj), ILOINT); // can be ILOFLOAT too
-		    	}
-
-		    	IloNumVarArray PH(env, njm);
-		    	for(int jm=0; jm<njm; jm++) PH[jm] = IloNumVar(env, 0, IloMax(pj), ILOINT);
-
-		    	/***************** CONSTRAINTS ****************/
-
-		    	// add the no-good constraints from the CP above
-		    	/*IloCP cp_im_solver(cp_im);
-
-		    	//vector<vector<IloExtractable*>> mip_ngconstraints(njm-1);
-		    	vector<vector<IloExtractable*>> cp_im_ngconstraints(njm);
-
-		    	IloConstraint nc_number = (sum_xjh == 1);
-		    	cp_im.add(nc_number);
-
-		    	IloConstraint card_number = ( IloCount(movesIntoK, 1) == 1);
-		    	cp_im.add(card_number);
-
-		    	for(int nc=0; nc<njm; nc++) {
-		    		cp_im.remove(card_number);
-		    		cp_im.remove(nc_number);
-		    		nc_number = (sum_xjh == nc+1);
-		    		card_number = ( IloCount(movesIntoK, nc+1) == 1 );
-		    		cp_im.add(nc_number);
-		    		cp_im.add(card_number);
-
-		    		cp_im.add( IloCount(movesIntoK, 0) == nj-1 );
-
-
-		    		cout << "We are now adding constraints with nc = " << nc+1 << endl;
-		    		cp_im_solver.setParameter(IloCP::LogVerbosity, IloCP::Quiet);
-					cp_im_solver.startNewSearch();
-					int counter = 0;
-					while(cp_im_solver.next()) {
-						counter++;
-						//IloExtractable* mip_ngconstraint = new IloNumExpr(env);
-						IloExtractable* cp_im_ngconstraint = new IloNumExpr(env);
-						//((vector<IloExtractable*>) mip_ngconstraints[nc]).push_back(mip_ngconstraint);
-						cp_im_ngconstraints[nc].push_back(cp_im_ngconstraint);
-						IloNumExpr mip_sum(env);
-						IloNumExpr cp_im_sum(env);
-						for(int jm=0; jm<njm; jm++)
-							for(int k=0; k<jmtoj[jm]; k++)
-								if(cp_im_solver.getValue(xjh_im[jm][k])) {
-									mip_sum += xjh[jm][k];
-									cp_im_sum += xjh_im[jm][k];
-								}
-						//(*mip_ngconstraint) = (mip_sum <= cp_im_solver.getValue(sum_xjh) - 1);
-						(*cp_im_ngconstraint) = (cp_im_sum <= cp_im_solver.getValue(sum_xjh) - 1);
-						mip.add(mip_sum <= cp_im_solver.getValue(sum_xjh) - 1);
-					}
-					cp_im_solver.endSearch();
-					for(int i=0; i < ((vector<IloExtractable*>)cp_im_ngconstraints[nc]).size(); i++) {
-						cp_im.add( IloExtractable(*(cp_im_ngconstraints[nc][i]))  );
-					}
-					cout << "Added " <<  cp_im_ngconstraints[nc].size() << " constraints, should be " << counter << endl;
-		    	} */
-
-		    	cout << "Solve the MIP now!" << endl;
-
-		    	// every job is moved somewhere.
-		    	for(int jm=0; jm<njm; jm++) mip.add( IloSum(xjh[jm]) == 1);
-
-		    	// define isafterhost:
-		    	for(int jm=0; jm<njm; jm++) {
-		    		for(int k=0; k<nj; k++) {
-		    			IloNumExpr sumExpression(env);
-		    			for(int h=k; h<nj; h++) sumExpression += xjh[jm][h];
-		    			mip.add( isafterhost[jm][k] == sumExpression );
-		    		}
-		    	}
-
-		    	// define isafterjob:
-		    	for(int jm=0; jm<njm; jm++) {
-		    		for(int k=0; k<nj; k++) {
-		    			mip.add( isafterjob[jm][k] >= IloNum((k - jmtoj[jm])/nj + 1/(2*nj)) );
-		    			mip.add( isafterjob[jm][k] <= IloNum((k - jmtoj[jm])/nj + 1 + 1/(2*nj)));
-		    			mip.add( isafterjob[jm][k] >= 0 );
-		    			mip.add( isafterjob[jm][k] <= 1 );
-		    		}
-		    	}
-
-		    	// define Pk:
-		    	for(int k=0; k<nj; k++) mip.add(Pk[k] >= IloNum(pj[k]));
-
-		    	for(int jm=0; jm<njm; jm++) {
-		    		for(int k=0; k<nj; k++) {
-		    			mip.add(Pk[k] >= IloNum(pj[jmtoj[jm]]) * xjh[jm][k]);
-		    		}
-		    	}
-
-		    	// define the length of jm's host
-		    	for(int jm=0; jm<njm; jm++) {
-		    		for(int k=0; k<nj; k++) {
-		    			mip.add( PH[jm]  >= Pk[k] - (1-xjh[jm][k]) * IloMax(pj) );
-		    		}
-		    		mip.add( PH[jm] >= 0 );
-		    	}
-
-		    	// define the shift modifiers c (csjk) and c' (cujk)
-		    	for(int k=0; k<nj; k++) {
-		    		for(int jm=0; jm<njm; jm++) {
-		    			mip.add(csjk[jm][k] == IloNum(-pj[jmtoj[jm]]) * isafterjob[jm][k]);
-		    			mip.add(cujk[jm][k] >= IloNum(pj[jmtoj[jm]]) * isafterhost[jm][k] - PH[jm]);
-		    		}
-		    	}
-
-		    	// define Lmax
-		    	for(int k=0; k<nj; k++) {
-		    		IloNumExpr c_sum(env);
-		    		for(int jm=0; jm<njm; jm++) c_sum += csjk[jm][k] + cujk[jm][k];
-		    		mip.add( Lmax >= Lksingle[k] + c_sum);
-		    	}
-
-		    	// add that jobs can't be moved to where another job just left
-		    	for(int jm=0; jm<njm; jm++) {
-		    		for(int jmo=0; jmo!=jm && jmo<njm; jmo++) {
-		    			mip.add( xjh[jmo][(int)jmtoj[jm]] == 0 );
-		    		}
-		    	}
-
-
-
-		    	// capacity constraint
-		    	for(int k=0; k<nj; k++) {
-		    		IloNumExpr s_sum(env);
-		    		for(int jm=0; jm<njm; jm++) s_sum += sj[jmtoj[jm]] * xjh[jm][k];
-
-		    		mip.add( s_sum + sj[k] <= capacity );
-		    	}
-
-		    	mip.add( IloMinimize(env, Lmax) );
-
-		    	// SOLVE NOW!
-		    	cout << "Solve the MIP now!" << endl;
-		    	IloCplex cplex(mip);
-		    	cplex.solve();
-		    	cout << cplex.getStatus() << endl;
-
-		    	cout << "Lmax: " << cplex.getValue(Lmax) << endl;
-		    	Lmax_result = cplex.getValue(Lmax);
-		    	cout << "We moved the following jobs: " << endl;
-		    	for(int jm=0; jm<njm; jm++) {
-		    		int xjresult = 0;
-		    		for(int k=0; k<nj; k++) if(cplex.getValue(xjh[jm][k])) xjresult = k;
-		    		cout << "Job " << jmtoj[jm] << " into batch ";
-		    		cout << xjresult << endl;
-		    	}
-
-		    	cout << "Cleaning up models ..." << endl;
-		    	//cp_im.end();
-		    	//mip.end();
-
-		    } catch(IloException& e) {
-		    	cout << "Error " << e << endl;
-		    }
-		    env.end();
-	return Lmax_result;
+	vector<int> result;
+	for(int i=0; i<rjobs.size(); i++) {
+		result.push_back((rjobs[i]).r);
+	}
+	return result;
 }
 
 
@@ -288,6 +96,8 @@ int main(int argc, char *argv[]) {
 
 	// read in job lists
 	int nj, njm;
+	int LmaxLB = -IloInfinity;
+	int LmaxUB = IloInfinity;
 	string datafilename;
 
 	int capacity = 20;
@@ -303,7 +113,17 @@ int main(int argc, char *argv[]) {
     }
 
     if(argc >= 4) {
-      datafilename = argv[3];
+      LmaxLB = atoi(argv[3]);
+      cout << "Min Lmax: " << LmaxLB << endl;
+    }
+
+    if(argc >= 5) {
+      LmaxUB = atoi(argv[4]);
+      cout << "Max Lmax: " << LmaxUB << endl;
+    }
+
+    if(argc >= 6) {
+      datafilename = argv[5];
     }
 
     //int njm = 15;
@@ -321,6 +141,7 @@ int main(int argc, char *argv[]) {
 		sj[j] = jj.s; // I realize this can be done inline, but eclipse keeps whining
 		pj[j] = jj.p;
 		dj[j] = jj.d;
+		cout << "Job " << j << ": due " << dj[j] << endl;
 	}
 
 	// find the single latenesses
@@ -330,68 +151,96 @@ int main(int argc, char *argv[]) {
 		t += pj[j];
 		Lksingle[j] = t - dj[j];
 	}
+	int fromHereIgnore = nj-1;
+	for(int j=nj-1; j>=0; j--) {
+		if(Lksingle[j] == IloMax(Lksingle)) {
+			fromHereIgnore = j+1;
+			break;
+		}
+	}
+	cout << "Ignore all jobs after " << fromHereIgnore << endl;
+
+	int njfull = nj;
+	nj = fromHereIgnore;
+
+	IloNum Lmaxinc = IloMin(IloMax(Lksingle), LmaxUB);
+	cout << "Lmaxinc before safe moves: " << Lmaxinc << endl;
+	// create an safe-move upper bound on Lmax. This is important, possibly.
+
+	vector<int> Bj(nj);
+	vector<int> Pk(nj);
+	int Lmaxincnew, Lmaxincbest = 0;
+	int Lmaxinc_diff = IloInfinity;
+		Lmaxincnew = -IloInfinity;
+
+			cout << "Now using unsafety tolerance " << (Lmaxinc_diff > IloSum(pj) ? 0 : IloMax(Lmaxinc - 1,0)) << endl;
+
+			vector<bool> xj(nj, true); // true = job is a host, false = job has been moved
+			for(int j=0; j<nj; j++) {
+				if(!xj[j]) continue; // moved jobs can't be hosts, try the next one.
+				int csj = 0;
+				Bj[j] = j;
+				Pk[j] = pj[j];
+				vector<int> remJ;
+				for(int r=j+1; r<nj; r++) {
+					if(pj[r] <= pj[j] + 1 && xj[r]) {
+						remJ.push_back(r); // all remaining feasible guests
+					}
+				}
+				if(remJ.size() > 0) {
+					vector<int> cremJ(remJ.size());
+					cremJ = sortRemJ(remJ, jc, (int)(dj[j]), (int)(pj[j]));
+
+					for(int i=0; i<cremJ.size(); i++) {
+						if(capacity - sj[j] - csj >= sj[cremJ[i]]) {
+							xj[cremJ[i]] = false;
+							csj += sj[cremJ[i]];
+							Bj[cremJ[i]] = j;
+							if (Pk[j] < pj[cremJ[i]]) Pk[j] = pj[cremJ[i]];
+						}
+
+						if (capacity == csj) break;
+					}
+				}
+			}
+			t = 0;
+
+			for(int j=0; j<nj; j++) {
+				if(xj[j]) {
+					t += Pk[j];
+					if(t - dj[j] > Lmaxincnew) Lmaxincnew = t - dj[j];
+				}
+			}
+			cout << "New Lmaxincnew: " << Lmaxincnew << endl;
+			if(Lmaxinc > Lmaxincnew) {
+				Lmaxinc_diff = Lmaxinc - Lmaxincnew;
+				Lmaxinc = Lmaxincnew;
+				if(Lmaxincnew < Lmaxincbest) Lmaxincbest = Lmaxincnew;
+			}
+			cout << "Difference: " << Lmaxinc_diff << endl;
+
+
+	cout << "Lmaxinc after safe moves: " << Lmaxinc << endl;
+
+	cout << "Initial solution:" << endl;
+	for(int j=0; j<nj; j++) cout << Bj[j] << " ";
+	cout << endl;
+
+	// find a lower bound on the completion time of job j.
+
+	vector<int> lb_ct(nj);
+	t = 0;
+	for(int j=0; j<nj; j++) {
+		t += ceil(pj[j] * sj[j] / capacity);
+		lb_ct[j] = t;
+	}
 
     // create MIP or CP to find the best jobs to move.
 try {
 	IloModel mip_cj(env);
-	IloNum Lmaxinc = 500;
 
-	IloIntVarArray xj(env, nj);
-	for(int j=0; j<nj; j++) xj[j] = IloNumVar(env, 0, 1, ILOINT);
 
 	typedef IloArray<IloNumVarArray> xjh_matrix;
-	xjh_matrix modifiedby(env, nj);
-	xjh_matrix fits_v(env, nj);
-	xjh_matrix fits_h(env, nj);
-	xjh_matrix fitsjk(env, nj);
-
-	for(int j=0; j<nj; j++) {
-		modifiedby[j] = IloNumVarArray(env, nj);
-		fits_v[j] = IloNumVarArray(env, nj);
-		fits_h[j] = IloNumVarArray(env, nj);
-		fitsjk[j] = IloNumVarArray(env, nj);
-		for(int k=0; k<nj; k++) {
-			modifiedby[j][k] = IloNumVar(env, 0, 1, ILOINT);
-			fits_h[j][k] = IloNumVar(env, 0, 1, ILOINT);
-			fits_v[j][k] = IloNumVar(env, 0, 1, ILOINT);
-			fitsjk[j][k] = IloNumVar(env, 0, 1, ILOINT);
-
-			// define modifiedby
-			IloNumExpr xj_sum(env);
-			for(int i=0; i<k; i++) xj_sum += xj[i];
-			if(k>j) {
-				mip_cj.add( modifiedby[j][k] == xj[j]);
-			} else {
-				mip_cj.add( modifiedby[j][k] == 0);
-			}
-
-			// define fitsv_jk
-			mip_cj.add( fits_v[j][k] * capacity + sj[j] >= capacity - sj[k] + 1 );
-			mip_cj.add( sj[j] <= (capacity - sj[k]) + (1-fits_v[j][k])*capacity );
-
-			// define fitsh_jk
-			mip_cj.add( fits_h[j][k] * 10*Lmaxinc + pj[j] >= (pj[k]+Lmaxinc-Lksingle[k]) + 1 );
-			mip_cj.add( pj[j] <= (pj[k]+Lmaxinc-Lksingle[k]) + (1-fits_h[j][k])*Lmaxinc*10 );
-
-
-			// define fitsjk
-			mip_cj.add( fitsjk[j][k] <= 0.5 * (fits_h[j][k] + fits_v[j][k]));
-			mip_cj.add( fitsjk[j][k] >= (fits_h[j][k] + fits_v[j][k] - 1));
-		}
-		IloNumExpr fits_sum(env);
-		for(int k=0; k<j; k++) fits_sum += fitsjk[j][k];
-		mip_cj.add( fits_sum >= xj[j] );
-	}
-
-	IloNumVar Lmax(env, -IloInfinity, IloInfinity, ILOINT);
-
-	/*for(int k=0; k<nj; k++) {
-		IloNumExpr modifiersum(env);
-		for(int j=0; j<nj; j++) modifiersum += pj[j] * modifiedby[j][k];
-		mip_cj.add( Lmax >= Lksingle[k] - modifiersum);
-	}*/
-
-	mip_cj.add( IloSum(xj) == njm );
 
 	// END XJ CONSTRAINTS
 	// BEGIN XJH CONSTRAINTS
@@ -399,24 +248,18 @@ try {
 	// create xjh matrix (triangular)
 
 	xjh_matrix xjh(env, nj);
-	xjh_matrix isafterhost(env, nj);
-	xjh_matrix isafterjob(env, nj);
-	xjh_matrix csjk(env, nj); // L-shift modifier from safe (after job)
-	xjh_matrix cujk(env, nj); // L-shift modifier from unsafe (after host)
 	for(int j=0; j<nj; j++) {
 		xjh[j] = IloNumVarArray(env, nj);
-		isafterhost[j] = IloNumVarArray(env, nj);
-		isafterjob[j] = IloNumVarArray(env, nj);
-		csjk[j] = IloNumVarArray(env, nj);
-		cujk[j] = IloNumVarArray(env, nj);
 		for(int k=0; k<nj; k++) {
 			xjh[j][k] = IloNumVar(env, 0, 1, ILOINT);
-			isafterhost[j][k] = IloNumVar(env, 0, 1, ILOINT);
-			isafterjob[j][k] = IloNumVar(env, 0, 1, ILOINT);
-			csjk[j][k] = IloNumVar(env, -pj[j], 0, ILOINT);
-			cujk[j][k] = IloNumVar(env, 0, pj[j], ILOINT);
 		}
 	}
+
+
+	/* total
+	IloNumExpr totalsum(env);
+	for(int j=0; j<nj; j++) totalsum += IloSum(xjh[j]);
+	//mip_cj.add( totalsum == njm ); */
 
 	// jobs can only be moved back
 	for(int j=0; j<nj; j++) {
@@ -425,74 +268,62 @@ try {
 		}
 	}
 
+	/* jobs after the single-EDD Lmax shouldn't be considered at all
+	for(int j=fromHereIgnore; j<nj; j++) {
+		for(int k=0; k<nj; k++) {
+			//mip_cj.add( xjh[j][k] == 0);
+		}
+	}*/
+
+	// moves that violate capacities by themselves shouldn't be considered at all
+	// moves that violate single-EDD Lmaxinc deadlines shouldn't be considered at all
+
+	for(int j=0; j<nj; j++) {
+		for(int k=j; k<nj; k++) {
+			if(sj[j] + sj[k] >= capacity + 1) mip_cj.add( xjh[j][k] == 0 );
+			if((pj[j] - pj[k]) + (lb_ct[k]-dj[j]) >= Lmaxinc + 1) mip_cj.add( xjh[j][k] == 0);
+		}
+	}
+	// if the unsafety margin + theoretical min lateness exceeds Lmaxinc + 1, don't consider.
+
 	IloNumVarArray Pk(env, nj);
+	// define Pk
 	for(int k=0; k<nj; k++) {
-		Pk[k] = IloNumVar(env, 0, IloMax(pj), ILOINT); // can be ILOFLOAT too
-	}
-
-	IloNumVarArray PH(env, nj); // this is the processing time of j's host
-	for(int j=0; j<nj; j++) PH[j] = IloNumVar(env, 0, IloMax(pj), ILOINT);
-
-
-
-	// create capacity constraints (no move can cause a capacity exceedance)
-
-	// every job is moved somewhere if xj[j] == 1.
-	for(int j=0; j<nj; j++) mip_cj.add( IloSum(xjh[j]) == xj[j]);
-
-	// define isafterhost:
-	for(int j=0; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			IloNumExpr sumExpression(env);
-			for(int h=k; h<j; h++) sumExpression += xjh[j][h];
-			mip_cj.add( isafterhost[j][k] == sumExpression );
-		}
-	}
-
-	// define isafterjob: (1 if k>j and xj=1)
-	for(int j=0; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			mip_cj.add( isafterjob[j][k] >= (k - j)/(1.00*nj) + 1/(2*nj) + xj[j] - 1);
-			mip_cj.add( isafterjob[j][k] <= (0.5) * (xj[j] + (k - j)/(1.00*nj) + 1 + 1/(2*(1.00*nj)) ));
-		}
-	}
-
-	// define Pk as the max of single Pk and biggest guest:
-	for(int k=0; k<nj; k++) mip_cj.add(Pk[k] >= IloNum(pj[k]));
-
-	for(int j=0; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			mip_cj.add(Pk[k] >= IloNum(pj[j]) * xjh[j][k]);
-		}
-	}
-
-	// define the minimum length of jm's host
-	for(int j=0; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			mip_cj.add( PH[j]  >= Pk[k] - (1-xjh[j][k]) * IloMax(pj) );
-		}
-		mip_cj.add( PH[j] >= 0 );
-	}
-
-	// define the shift modifiers c (csjk) and c' (cujk)
-	for(int k=0; k<nj; k++) {
+		Pk[k] = IloNumVar(env, pj[k], IloMax(pj)+1, ILOFLOAT);
 		for(int j=0; j<nj; j++) {
-			mip_cj.add(csjk[j][k] == IloNum(-pj[j]) * isafterjob[j][k]);
-			mip_cj.add(cujk[j][k] >= IloNum(pj[j]) * isafterhost[j][k] - PH[j]);
+			mip_cj.add(Pk[k] >= pj[j]*xjh[j][k]);
 		}
 	}
 
 	// define Lmax
+	IloNumVar Lmax(env, LmaxLB, Lmaxinc, ILOINT);
+
 	for(int k=0; k<nj; k++) {
 		IloNumExpr c_sum(env);
-		for(int j=0; j<nj; j++) c_sum += csjk[j][k] + cujk[j][k];
-		mip_cj.add( Lmax >= Lksingle[k] + c_sum);
+		for(int ki=0; ki<=k; ki++) c_sum += Pk[ki] - pj[ki] + (-pj[ki] * IloSum(xjh[ki]));
+		mip_cj.add( Lmax >= Lksingle[k] + c_sum - IloSum(xjh[k])*Lmaxinc); //
 	}
+
+	/* lower bound on Lmax
+	for(int d=0; d<nj-1; d++) {
+		if(dj[d] == dj[d+1]) continue;
+		IloNumExpr areas(env);
+		for(int j=0; j<=d; j++) areas += (sj[j]*pj[j]);
+		for(int j=d+1; j<nj; j++) {
+			IloNumExpr isInBucket(env);
+			for(int kd=0; kd<=d; kd++) isInBucket += xjh[j][kd];
+			areas += isInBucket * sj[j]*pj[j];
+		}
+		//mip_cj.add( Lmax >= areas/capacity - dj[d]);
+	}*/
+
 
 	// add that jobs can't be moved to where another job just left
 	for(int j=0; j<nj; j++) {
-		for(int jo=0; jo!=j && jo<nj; jo++) {
-			mip_cj.add( xjh[jo][(int)j] == 0 );
+		for(int k=0; k<nj; k++) {
+			IloNumExpr xjhk_sum(env);
+			for(int jo=0; jo<nj; jo++) xjhk_sum += xjh[k][jo];
+			mip_cj.add( xjh[j][k] + xjhk_sum <= 1);
 		}
 	}
 
@@ -504,33 +335,109 @@ try {
 		mip_cj.add( s_sum + sj[k] <= capacity );
 	}
 
+	// vertical constraint (if a job fits lengthwise safely and is single, it can't fit sizewise.)
+	for(int j=0; j<nj; j++) {
+		for(int k=0; k<j; k++) {
+			IloNumExpr sizeInK(env);
+			for(int i=k; i<nj; i++) sizeInK += sj[i] * xjh[i][k];
+			mip_cj.add(IloIfThen(env, (Pk[k] >= pj[j] + Lmax && IloSum(xjh[j])<=0.1 && IloSum(xjh[k])<=0.1 ), capacity-( sj[k] + sizeInK ) + 1 <= sj[j]));
+		}
+	}
+
+	// every job can only be moved into one other
+	IloNumExpr batchxjs(env);
+	for(int j=0; j<nj; j++) {
+		mip_cj.add(IloSum(xjh[j]) <= 1);
+
+		/*IloNumArray weights(env, nj);
+		/for(int k=0; k<nj; k++) {
+			weights[k] = (10000*IloMin(pj[j], pj[k])+(nj-k));
+			cout << weights[k] << endl;
+		}*/
+
+		mip_cj.add(IloSOS1(env, xjh[j]));
+	}
+
+	/* find pairs of jobs that are mutually exclusive
+	for(int k=0; k<nj; k++) {
+		for(int j1=k+1; j1<nj; j1++) {
+			for(int j2=j1+1; j2<nj; j2++) {
+				if(sj[j1] + sj[j2] >= capacity - sj[k] + 1) { //
+					mip_cj.add(xjh[j1][k] + xjh[j2][k] <= (1-IloSum(xjh[k])));
+					mip_cj.add(xjh[j1][k] + xjh[j2][k] <= 1);
+					IloNumVarArray sospair(env);
+					sospair.add(xjh[j1][k]);
+					sospair.add(xjh[j2][k]);
+					mip_cj.add(IloSOS1(env, sospair));
+				}
+			}
+		}
+	}*/
+
 	mip_cj.add( IloMinimize(env, Lmax) );
 
 	IloCplex mip_cj_solver(mip_cj);
-	mip_cj_solver.solve();
 
+	// add initial solution
+
+    //IloNumVarArray startVar(env);
+    //IloNumArray startVal(env);
+/*
+    for (int j = 0; j < nj; ++j)
+        for (int k = 0; k < nj; ++k) {
+        	int start;
+        	if(Bj[j] == k && j != k) {start = 1;} else {start = 0;}
+
+      //      startVar.add(xjh[j][k]);
+        //    startVal.add(start);
+        }
+    //mip_cj_solver.addMIPStart(startVar, startVal);
+
+    //startVal.end();
+    //startVar.end();
+*/
+	mip_cj_solver.setParam(IloCplex::ClockType, 1);
+	mip_cj_solver.setParam(IloCplex::MIPDisplay , 3); // MIP node log display information
+	mip_cj_solver.setParam(IloCplex::MIPInterval , 1); // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
+	mip_cj_solver.setParam(IloCplex::Threads, 1);
+
+	//mip_cj_solver.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
+
+	ifstream solfile("/tmp/mipsolutions");
+	if(solfile) {
+		//mip_cj_solver.readMIPStarts("/tmp/mipsolutions");
+		mip_cj_solver.setParam(IloCplex::AdvInd, 1);
+	}
+	if(mip_cj_solver.solve()) {
+		//mip_cj_solver.writeMIPStart("/tmp/mipsolutions");
+	}
 	cout << mip_cj_solver.getStatus() << endl;
 
 	cout << "Lmax: " << mip_cj_solver.getValue(Lmax) << endl;
 	cout << "We moved the following jobs: " << endl;
 			    	for(int j=0; j<nj; j++) {
 			    		int xjresult = 0;
-			    		for(int k=0; k<nj; k++) if(mip_cj_solver.getValue(xjh[j][k])) {xjresult = k;
+			    		for(int k=0; k<nj; k++) if(mip_cj_solver.getValue(xjh[j][k]) > 0.1) {xjresult = k;
 			    		cout << "Job " << j << " into batch ";
 			    		cout << xjresult << endl;}
 			    	}
-	cout << "Total xjs: " << mip_cj_solver.getValue(IloSum(xj)) << endl;
-	cout << "Total xjs: " << mip_cj_solver.getValue(IloSum(xjh[0])) << endl;
 
-/*
-	for(int k=0; k<nj; k++) {
+
+	/*for(int k=0; k<nj; k++) {
 		for(int j=0; j<nj; j++) {
-			cout << "Job " << j << " changes batch " << k << " by " << mip_cj_solver.getValue(csjk[j][k]+cujk[j][k]) << endl;
-
+			cout << "---" << endl;
+			cout << "Job " << j << "'s host is before batch " << k << "?" << mip_cj_solver.getValue(isafterhost[j][k]) << endl;
+			cout << "Total length of the host of job " << j << ":" << mip_cj_solver.getValue(PH[j]) << endl;
 		}
-	}
-*/
+	}*/
 
+	for(int j=0; j<nj; j++) {
+		int c_sum = 0;
+		IloNumExpr sizeInK(env);
+		for(int i=0; i<nj; i++) sizeInK += sj[i] * xjh[i][j];
+		for(int ki=0; ki<=j; ki++) c_sum += mip_cj_solver.getValue(Pk[ki]) - pj[ki] + (-pj[ki] * mip_cj_solver.getValue(IloSum(xjh[ki])));
+		cout << "Job " << j << ":\ts=" << sj[j] << "\tp=" << pj[j] << "\td=" << dj[j] << "\tL=(" << Lksingle[j] << "+" << c_sum << "-" << mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << ")=" << Lksingle[j] + c_sum- mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << "\tPk=" << mip_cj_solver.getValue(Pk[j]) << "\tTotal size:" << mip_cj_solver.getValue( sj[j] + sizeInK ) <<  endl;
+	}
 
 } catch(IloException& e ) {
 	cout << "Error, dude!: " << e << endl;

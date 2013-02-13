@@ -185,7 +185,7 @@ int main(int argc, const char * argv[]){
 
     // instantiate Dk and Pk
     for(int k=0; k < nk; k++) {
-      Dk[k] = IloIntVar(env, 0, Dmax, charcat("Dk_", k, 0));
+      //Dk[k] = IloIntVar(env, 0, Dmax, charcat("Dk_", k, 0));
       batchloads[k] = IloIntVar(env, 0, capacity, charcat("batchload_k", k, 0));
 
       //Pk[k] = IloIntVar(env, 0, 0, charcat("Pk_", k, 0));
@@ -199,8 +199,10 @@ int main(int argc, const char * argv[]){
     // calculate some global cardinality constraints
 
     /*********** objective function ************/
-
-    model.add(IloMinimize(env, Lmax));
+    IloIntExpr Cmax(env);
+    for(int k=0; k<nk; k++) Cmax += IloLengthOf(K[k]);
+    
+    model.add(IloMinimize(env, Cmax));
 
     /*********** constraints *****************/
 
@@ -213,6 +215,7 @@ int main(int argc, const char * argv[]){
 
     // Now make sure the J[j]'s coincide with the batches
     for(int j=0; j<nj; j++) {
+    model.add(IloEndOf(J[j]) <= dj[j] + atoi(argv[2]));
       for(int k=0; k<nk; k++) {
         model.add(IloIfThen(env, assignments[j]==k, IloStartOf(J[j]) ==
         IloStartOf(K[k])));
@@ -240,16 +243,16 @@ int main(int argc, const char * argv[]){
 
     // 9. batches are due as early as the earliest job
     for(int k=0; k<nk; k++) {
-      model.add( MinNonzeroDuedate(Dk[k], assignments, dj, k));
+      //model.add( MinNonzeroDuedate(Dk[k], assignments, dj, k));
     }
 
     // 10. Lmax definition
     //  Latenesses: { IloEndOf(K[k]) - Dk[k]}
     IloIntExprArray L(env, nk);
     for(int k=0; k<nk; k++) {
-      L[k] = IloEndOf(K[k]) - Dk[k];
+      //L[k] = IloEndOf(K[k]) - Dk[k];
     }
-    model.add( Lmax == IloMax(L) );
+   // model.add( Lmax == IloMax(L) );
 
     // 11. Sequential setup
     for(int k=1; k<nk; k++) {
@@ -274,7 +277,7 @@ int main(int argc, const char * argv[]){
       }
     } 
     cout << "LmaxLB:" << Lmax_LB << endl;
-    model.add( Lmax >= ceil(Lmax_LB));
+   // model.add( Lmax >= ceil(Lmax_LB));
 
     // 15. Upper bound for Lmax
     //     Get feasible solution by means of EDD, find Lmax
@@ -290,8 +293,8 @@ int main(int argc, const char * argv[]){
 
     // 17. No empty batches in the middle
     for(int k=0; k<nk-2; k++) {
-      model.add(IloIfThen( env, IloEndOf(K[k+2]) > IloEndOf(K[k]),
-            IloEndOf(K[k+1]) > IloEndOf(K[k])));
+  //    model.add(IloIfThen( env, IloEndOf(K[k+2]) > IloEndOf(K[k]),
+    //        IloEndOf(K[k+1]) > IloEndOf(K[k])));
     } 
 
     // 18. globalCardinality on batch lengths
@@ -317,7 +320,9 @@ int main(int argc, const char * argv[]){
 
     /********** printing results ********/
 
-    cout << "Lmax: " << cp.getValue(Lmax) << endl;
+    cout << "Cmax: " << cp.getValue(Cmax) << endl;
+
+    return;
     cout << "Solution: " << endl << "  ";
     cout << "-----" << endl;
     cout << "Batch completion dates:" << endl;

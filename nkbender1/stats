@@ -1,0 +1,36 @@
+42 -> 33
+(301)
+
+35 -> 33
+42 -> 33
+(284)
+
+33 -> 23
+35 -> 2
+42 -> 23
+(267)
+
+33 -> 23
+25 -> 2
+42 -> 23
+46 -> 30
+(250) [improvement of 17 -- next cannot be better than 233]
+
+PRELIM SOLUTION FOR 20_4: Lmax is 15 (took 19.5 sec without any SOS, 14.82 with
+SOS.) 
+
+PRELIM SOLUTION FOR 30_1: Lmax is 21
+PRELIM SOLUTION FOR 40_1: Lmax is 49 (took 66.3 sec, now 14.79)
+PRELIM SOLUTION FOR 40_2: Lmax is 61 (took 17.3 sec)
+PRELIM SOLUTION FOR 40_3: Lmax is 32 (took 17.7 sec)
+PRELIM SOLUTION FOR 40_4: Lmax is 43 (took 1.89 sec )
+PRELIM SOLUTION FOR 40_5: Lmax is 41 (took 170. sec, now 47.1, now 25.91 sec,
+now 43.1 sec)
+PRELIM SOLUTION FOR 40_6: Lmax is 29 (took 46.68 sec)
+
+PRELIM SOLUTION FOR 50_1: Lmax is 
+
+50_1: Lmax is 52, took 662 s
+50_2: Lmax is 132 (took 7.14 sec)
+50_3: 
+
