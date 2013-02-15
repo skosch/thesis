@@ -2,16 +2,16 @@
 \chapter{Results}
 \section{Empirical comparison of described models}\label{sec:results}
 The models were tested on a set of job lists. Malapert's paper uses benchmark
-job lists by Daste et al. \cite{daste1, daste2}. Since neither publication is
+job lists by \citet{daste1, daste2}. Since neither publication is
 available online, I created my own set of randomized job lists for the purposes
 of this paper, with $s_j, p_j \in [1, 20]$ and $d_j \in [1, 10n_j]$ where $n_j$ is
-the number of jobs. Ten different sample job sets are used per unique value of
-$n_j$. The times shown in figure \ref{fig:comp_times} are averaged over those
-ten instances for each $n_j$.
+the number of jobs.\footnote{These instances will be updated to reflect the
+feature distributions used in Daste et al.} Ten different sample job sets are
+used per unique value of $n_j$. The times shown in figure \ref{fig:comp_times}
+are averaged over those ten instances for each $n_j$.
 
-The \marginpar{\em\small I have not yet measured ``solution quality'' in any way
---- I suppose the number of batches required would be a good metric?} models were run on an i7 Q740 CPU in single-thread mode, with 8 GB RAM.
-Solving was aborted after a time of 300 seconds (5 minutes).
+The models were run on an i7 Q740 CPU in single-thread mode, with 8 GB RAM.
+Solving was aborted after a time of 3600 seconds (1 hour).
 
 The CP branch-and-bound model times out on most instances and is not shown here.
 The CP model times out on one 12-job instance and gets progressively worse with

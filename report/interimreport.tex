@@ -1,0 +1,165 @@
+\documentclass[13pt, letterpaper, oneside]{book}
+\usepackage{graphicx}
+
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.2in,
+right=1in,top=1.3in, bottom=1.4in]{geometry}
+\usepackage[no-math]{fontspec}
+\usepackage{newfloat}
+\usepackage{sectsty, tikz, color, pgfplots}
+\usetikzlibrary{shapes,arrows}
+\usepackage{multicol}
+\usepackage{amsmath, amssymb, amsfonts,  titlesec}
+\usepackage[urw-garamond]{mathdesign}
+\usepackage{fancyhdr, booktabs, longtable}
+%\usepackage[font=small,format=plain,labelfont=it,textfont=it]{caption}
+\usepackage{caption,subcaption}
+\usepackage{listings}
+\usepackage{algpseudocode, algorithm,setspace}
+% \usepackage[T1]{fontenc} 
+\usepackage{enumitem,verbatim,natbib}
+
+ \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
+\include{typography}
+
+\usepackage[pdfpagelayout=TwoPageRight, hidelinks]{hyperref}
+
+\begin{document}
+%\begin{comment}
+\frontmatter
+
+\include{coverpage}
+%\include{firstpage}
+
+\tableofcontents
+%\end{comment}
+\pagestyle{fancy}
+\mainmatter
+\pagebreak
+\vskip 4em
+
+- Introduction (stays the same)
+- Background MIP/CP, Literature Review, Description of Malapert's approach
+  - What are we trying to improve upon?
+- Progress to Date; outline what was done and why.
+- Experimental results
+- Future work
+- Citations
+- TOC, List of Figures and Tables, Title Page required
+
+\chapter{Introduction}
+This paper discusses three different approaches, and several variations on them,
+to solving the problem of scheduling non-identical jobs on a batch processing
+machine. Batch processing machines, for the purposes of this paper, can process
+multiple, non-identical jobs simultaneously -- but all jobs must be loaded into
+and unloaded from the machine at once, which introduces a considerable twist on
+the ``simple parallel resources'' known from typical example problems in
+existing literature.
+
+The machines in question represents real-life resources like autoclaves or
+ovens, which can process multiple items at a time, but often cannot be opened at
+random -- in fact, such machines often need to wait for the largest item in the
+batch to be done before the next batch can be inserted.
+
+Malapert proposed a custom constraint programming algorithm consisting of a set of
+filtering rules to solve the problem. He achieved considerably better speeds
+than with a simple mixed-integer model. In this paper, we present 1) an
+improvement to his MIP model, 2) a CP model and 3) a decomposition approach to
+``divide and conquer'' the problem.
+
+\section{Problem definition}
+We describe the problem as follows: assume we are given a set of jobs $J$, each of
+which has a processing time (or ``length'') $p_j$ and a size (or ``capacity
+requirement'') $s_j$ -- this notation follows Malapert's paper. Each job also
+has a due date $d_j$. The machine is characterized by its capacity $b$, and in
+every batch, the jobs' summed sizes must not exceed this number. All values are
+integer.
+
+The machine can only process one batch $k$ of jobs at a time, and batches always
+take as long as the longest job in the batch (i.e. $P_k = \max_{j \in k}(p_j)$).
+Our objective is to minimize the lateness $L$ of the latest job in $J$, where
+$L$ is the difference between the job's completion time $C_j$ and its due date
+$d_j$ -- in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
+completion time, however, is the completion time of the batch, which in turn
+finishes with its \textit{longest} job as stated above.
+
+Malapert uses the format established by Graham et al. \cite{graham_notation} to
+summarize the problem as $1|\textit{p-batch}; b < n;
+\textit{non-identical}|\Lmax$, where $\textit{p-batch};b<n$ represents the
+parallel-batch nature and the finite capacity of the resource. A simpler version
+with identical job sizes was shown to be strongly NP-hard by Brucker et al.
+\cite{brucker}, and this problem, then, is no less difficult.
+
+It helps to visualize the jobs before delving into the technicalities of
+scheduling them. Figure \ref{fig:intro_tetris} shows a solution to a sample
+problem with eight jobs and a resource with capacity $b = 20$.
+
+\input{figures/intro_tetris.tex}
+\section{Organization of this paper}
+After reviewing some of the most relevant publications on both general MIP/CP models and
+batch scheduling problems, we first describe Malapert's original MIP model in
+section \ref{sec:malapertmipmodel}. We then present possible improvements to the
+model in \ref{sec:improvedmipmodel}. Section \ref{sec:cpmodel} introduces a CP formulation of the same
+problem. Sections \ref{sec:mipdecomp} and \ref{sec:cpdecomp} describe a
+decomposition approach.
+
+An empirical comparison of the methods and a discussion of the results follow in
+sections \ref{sec:results} and \ref{sec:discussion}. Ideas for future work are
+listed in \ref{sec:futurework}.
+
+
+
+\chapter{Literature Review}
+% citet{Azizoglu} results in [2002]
+% citep{Azizoglu} results in [Azizoglu et al., 2002]
+% citep*{Azizoglu} results in [Azizoglu and Miller, 2002]
+
+Papers I have read so far:
+\section{General MIP and CP}
+  \begin{alist}
+    \item{Fundamentals of mathematical programming}
+    \item{Benders}
+  \end{alist}
+\section{Batch processing}
+\begin{alist}
+    \item{\citep{Azizoglu}}
+    \item{Dupont}
+    \item{Sabouni}
+    \end{alist}
+\subsection{MIP}
+\begin{alist}
+    \item{Grossmann}
+    \end{alist}
+\subsection{CP}
+\begin{alist}
+    \item{Baptiste}
+    \item{Malapert (how does he fit into the picture?)}
+\end{alist}
+\chapter{Modelling the problem}
+
+\input{mipmodel.tex}
+
+\input{cpmodel.tex}
+\input{decomp.tex}
+
+\input{testresults.tex}
+\input{discussion.tex}
+\input{futurework.tex}
+
+
+\begin{comment}
+\chapter{My solution}
+\section{MIP formulation improvements}
+\section{CP formulation improvements}
+
+\chapter{Discussion}
+
+
+\end{comment}
+\pagebreak
+
+\bibliographystyle{plainnat}
+\bibliography{bibliography}{}
+\vskip 4em
+
+\end{document}
+

@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Azizoglu and Webster(2000)]{Azizoglu}
+Meral Azizoglu and Scott Webster.
+\newblock Scheduling a batch processing machine with non-identical job sizes.
+\newblock \emph{International Journal of Production Research}, 38\penalty0
+  (10):\penalty0 2173 -- 2184, 2000.
+\newblock ISSN 00207543.
+\newblock URL
+  \url{http://search.ebscohost.com.myaccess.library.utoronto.ca/login.aspx?direct=true\&db=buh\&AN=3815312\&site=ehost-live}.
+
+\end{thebibliography}

@@ -1,53 +1,63 @@
-\documentclass[13pt, letterpaper, twoside]{book}
+\documentclass[13pt, letterpaper, oneside]{book}
 \usepackage{graphicx}
 
-\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.1in,
-right=1.74in,top=1.4in, bottom=1.74in]{geometry}
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.2in,
+right=1in,top=1.3in, bottom=1.4in]{geometry}
 \usepackage[no-math]{fontspec}
 \usepackage{newfloat}
 \usepackage{sectsty, tikz, color, pgfplots}
 \usetikzlibrary{shapes,arrows}
 \usepackage{multicol}
 \usepackage{amsmath, amssymb, amsfonts,  titlesec}
-\usepackage[urw-garamond]{mathdesign}
+\usepackage[urw-garamond,cal=cmcal]{mathdesign}
 \usepackage{fancyhdr, booktabs, longtable}
 %\usepackage[font=small,format=plain,labelfont=it,textfont=it]{caption}
 \usepackage{caption,subcaption}
 \usepackage{listings}
-\usepackage{algpseudocode, algorithm}
+\usepackage{algpseudocode, algorithm,setspace}
 % \usepackage[T1]{fontenc} 
-\usepackage{enumitem,verbatim}
+\usepackage{enumitem,verbatim,natbib}
 
  \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
 \include{typography}
 
-\usepackage[pdfpagelayout=TwoPageRight, hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
-\begin{comment}
+%\begin{comment}
 \frontmatter
 
 \include{coverpage}
 %\include{firstpage}
 
 \tableofcontents
-\end{comment}
+%\end{comment}
 \pagestyle{fancy}
 \mainmatter
 \pagebreak
 \vskip 4em
+
+- Introduction (stays the same)
+- Background MIP/CP, Literature Review, Description of Malapert's approach
+  - What are we trying to improve upon?
+- Progress to Date; outline what was done and why.
+- Experimental results
+- Future work
+- Citations
+- TOC, List of Figures and Tables, Title Page required
+\fontsize{12pt}{17pt}\selectfont
 \chapter{Introduction}
 This paper discusses three different approaches, and several variations on them,
 to solving the problem of scheduling non-identical jobs on a batch processing
 machine. Batch processing machines, for the purposes of this paper, can process
-multiple, non-identical jobs simultaneously -- but all jobs must be loaded into
+multiple, non-identical jobs simultaneously---but all jobs must be loaded into
 and unloaded from the machine at once, which introduces a considerable twist on
 the ``simple parallel resources'' known from typical example problems in
 existing literature.
 
 The machines in question represents real-life resources like autoclaves or
 ovens, which can process multiple items at a time, but often cannot be opened at
-random -- in fact, such machines often need to wait for the largest item in the
+random---in fact, such machines often need to wait for the largest item in the
 batch to be done before the next batch can be inserted.
 
 Malapert proposed a custom constraint programming algorithm consisting of a set of
@@ -59,7 +69,7 @@ improvement to his MIP model, 2) a CP model and 3) a decomposition approach to
 \section{Problem definition}
 We describe the problem as follows: assume we are given a set of jobs $J$, each of
 which has a processing time (or ``length'') $p_j$ and a size (or ``capacity
-requirement'') $s_j$ -- this notation follows Malapert's paper. Each job also
+requirement'') $s_j$. Each job also
 has a due date $d_j$. The machine is characterized by its capacity $b$, and in
 every batch, the jobs' summed sizes must not exceed this number. All values are
 integer.
@@ -68,16 +78,16 @@ The machine can only process one batch $k$ of jobs at a time, and batches always
 take as long as the longest job in the batch (i.e. $P_k = \max_{j \in k}(p_j)$).
 Our objective is to minimize the lateness $L$ of the latest job in $J$, where
 $L$ is the difference between the job's completion time $C_j$ and its due date
-$d_j$ -- in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
+$d_j$---in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
 completion time, however, is the completion time of the batch, which in turn
 finishes with its \textit{longest} job as stated above.
 
-Malapert uses the format established by Graham et al. \cite{graham_notation} to
+Malapert uses the standard format established by Graham et al. to
 summarize the problem as $1|\textit{p-batch}; b < n;
 \textit{non-identical}|\Lmax$, where $\textit{p-batch};b<n$ represents the
 parallel-batch nature and the finite capacity of the resource. A simpler version
-with identical job sizes was shown to be strongly NP-hard by Brucker et al.
-\cite{brucker}, and this problem, then, is no less difficult.
+with identical job sizes was shown to be strongly NP-hard in \citep{Brucker};
+this problem, then, is no less difficult.
 
 It helps to visualize the jobs before delving into the technicalities of
 scheduling them. Figure \ref{fig:intro_tetris} shows a solution to a sample
@@ -96,30 +106,108 @@ An empirical comparison of the methods and a discussion of the results follow in
 sections \ref{sec:results} and \ref{sec:discussion}. Ideas for future work are
 listed in \ref{sec:futurework}.
 
+\chapter{Background}
+% citet{Azizoglu} results in [2002]
+% citep{Azizoglu} results in [Azizoglu et al., 2002]
+% citep*{Azizoglu} results in [Azizoglu and Miller, 2002]
+Many optimization problems, and scheduling problems in particular, are
+combinatorial in nature. The number of possible solutions grows exponentially
+with the number of input variables, and even with fast computers it is
+impossible to explore all of them individually to find the best one
+(also called ``full enumeration'', or ``brute-force'' search) in a reasonable
+amount of time. Often, however, it is possible to reason about subsets of
+solutions that are known to be suboptimal a priori. This limits the search
+space, allowing us to solve many instances of difficult combinatorial problems
+in few hours, minutes or even seconds.
 
+Such constrained searches are often implemented in either of two ways (or
+variants of them): as a \textit{Constraint Programming model} (CP) or as a
+\textit{Mixed Integer Programming model} (MIP). In this section I will briefly
+introduce the concepts behind both CP and MIP and review recent work on problems
+similar to the one dealt with here.
 
-\chapter{Literature Review}
-Papers I have read so far:
-\section{General MIP and CP}
-  \begin{alist}
-    \item{Fundamentals of mathematical programming}
-    \item{Benders}
-  \end{alist}
-\section{Batch processing}
+\section{Algorithmic concepts}
+\subsection{Constraint Programming}
+A constraint program specifies relationships, \textit{constraints}, that must
+hold between input variables in the form of mathematical equations or
+inequalities. Every input variable is assigned a set $\mathcal{D}$ of potential
+values it can assume, its \textit{domain}. The solving algorithm begins by
+assigning a value to one of the variables. Using the constraints, the solver can
+then often reduce the other variables' domains, i.e. eliminate other potential
+values of other variables. These domain reductions may themselves trigger domain
+reductions in other variables, and so on, in a process called
+\textit{propagation}. Propagation can lead to one of three results:
 \begin{alist}
-    \item{Azizoglu}
-    \item{Dupont}
-    \item{Sabouni}
-    \end{alist}
-\subsection{MIP}
-\begin{alist}
-    \item{Grossmann}
-    \end{alist}
-\subsection{CP}
-\begin{alist}
-    \item{Baptiste}
-    \item{Malapert (how does he fit into the picture?)}
+\item{an inconsistency, in which a variable's domain is reduced to an empty set.
+That is, the given constraints allow for none of that variable's
+potential values given the values assigned to other variables. As a result, the
+solver will \textit{backtrack}, i.e. undo one or more of previous assignments
+made, and assign other values.}
+\item{a consistent solution, in which every variable's domain is reduced to a single value
+(a singleton). If we are searching for an optimal solution, this may replace an
+incumbent solution if it is better.}
+\item{some reduced domains, but neither a solution nor an inconsistency. In this
+case, the solver assigns more values to variables to trigger more propagation,
+until a solution or an inconsistency is reached.}
 \end{alist}
+
+Without formally introducing different notions of inconsistency, it should be
+noted that a problem can have no solution even when all variables have
+non-empty domains. (See figure).
+
+Unlike in MIP, constraints in CP are not restricted to expressions that are
+linear in the input variables. Furthermore, so-called \textit{global
+constraints} can be used that act on entire sets of variables at once. They are
+implemented as custom algorithms that rely on specific knowledge about the
+problem and are often based on results from graph theory. Global constraints can
+be powerful tools; a classic example is the \texttt{alldifferent} constraint
+which ensures that a set of variables take on unique values. While a number of
+not-equal relationships between the variables can achieve the same effect after
+several propagations, the global constraint reduces the domains of all involved
+variables in one fell swoop such that for each variable, only the values remain
+that are consistent with those of all the other variables.
+
+\subsection{Mixed Integer Programming}
+Similar to CP searches, MIP searches can be thought of as trees, where every
+branch represents an assignment of a value to a domain and every leaf represents
+a feasible solution. The difference lies in the way MIP explores this search tree.
+
+MIP models are Linear Programming models (LPs) in which some of the decision
+variables are declared integers--thus the name, and thus the restriction to
+linear constraints. Like LP models, MIP models also require an objection
+function to be minimized. The MIP solver first solves the problem as an LP,
+which generally results in fractional values for most variables, such as $x =
+a$. It then branches on possible values for $x$: either $x < a$ or $x > a$. If
+$a$ is integral, $x = a$.  The MIP solution at a node $n$ also serves as a
+\textit{lower bound} $LB_n$ on solutions in the respective subtrees: once a
+solution with an objective value of $v$ is found, $v$ becomes an \textit{upper
+bound} on the optimal objective value and all yet unexplored subtrees with $LB_n
+\geq v$ need no longer be searched (``pruning'' the subtree). This procedure is
+called \textit{branch-and-bound} and the most basic method used to solve integer
+programming problems. Other methods exist, e.g. \textit{branch-and-cut}, and are
+often used in conjunction with branch-and-bound in today's solvers.
+
+\section{Literature}
+The problem at hand is based on the work of \citet{Malapert}, who proposed a global
+constraint \texttt{sequenceEDD} to be used in combination with \texttt{pack} to
+solve it to optimality. The \texttt{sequenceEDD} constraint is implemented as
+four distinct filtering rules applied at relevant domain changes: three to update
+bounds on $\Lmax$ based on different conditions, and one to limit the number of
+batches based on the marginal cost difference between adding a job to an empty batch vs. an
+existing one. The performance of the new global constraint dwarfed that of a
+simple MIP model of the same problem.
+
+Other authors have examined similar problems: \citet{Azizoglu} provide an exact
+method and a heuristic for the same problem, but minimize makespan
+($C_\text{max}$) instead of $\Lmax$, as have \cite{Dupont}. Similar exact
+methods have been proposed for multi-agent variants with different objective
+functions \citep{Sabouni}, for makespan minimization on single batch machines
+\citep{Kashan}, and for makespan minimization on parallel batch machines with
+different release dates \citep{Ozturk}. A more extensive review of MIP model
+applications in batch processing is given by \citet{Grossmann}.
+
+
+
 \chapter{Modelling the problem}
 
 \input{mipmodel.tex}
@@ -140,10 +228,12 @@ Papers I have read so far:
 \chapter{Discussion}
 
 
+\end{comment}
 \pagebreak
 
+\bibliographystyle{plainnat}
+\bibliography{bibliography}{}
 \vskip 4em
-\end{comment}
 
 \end{document}
 

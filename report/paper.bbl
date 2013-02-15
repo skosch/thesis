@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Azizoglu and Webster(2000)]{Azizoglu}
+Meral Azizoglu and Scott Webster.
+\newblock Scheduling a batch processing machine with non-identical job sizes.
+\newblock \emph{International Journal of Production Research}, 38\penalty0
+  (10):\penalty0 2173 -- 2184, 2000.
+
+\bibitem[Brucker et~al.(1998)Brucker, Gladky, Hoogeveen, Kovalyov, Potts,
+  Tautenhahn, and van~de Velde]{Brucker}
+Peter Brucker, Andrei Gladky, Han Hoogeveen, Mikhail~Y. Kovalyov, Chris~N.
+  Potts, Thomas Tautenhahn, and Steef~L. van~de Velde.
+\newblock Scheduling a batching machine.
+\newblock \emph{Journal of Scheduling}, 1\penalty0 (1):\penalty0 31--54, 1998.
+
+\bibitem[Daste et~al.(2008{\natexlab{a}})Daste, Gueret, and Lahlou]{daste1}
+Denis Daste, Christelle Gueret, and Chams Lahlou.
+\newblock A branch-and-price algorithm to minimize the maximum lateness on a
+  batch processing machine.
+\newblock In \emph{Proceedings of the 11\textsuperscript{th} International
+  Workshop on Project Management and Scheduling PMS`08, Istanbul, Turkey},
+  pages 64--69, 2008{\natexlab{a}}.
+
+\bibitem[Daste et~al.(2008{\natexlab{b}})Daste, Gueret, and Lahlou]{daste2}
+Denis Daste, Christelle Gueret, and Chams Lahlou.
+\newblock Génération de colonnes pour l’ordonnancement d’une machine à
+  traitement par fournées.
+\newblock In \emph{7\textsuperscript{ème} conférence internationale de
+  modélisation et simulation (MOSIM 2008), Paris, France}, volume~3, pages
+  64--69, 2008{\natexlab{b}}.
+
+\bibitem[Dupont and Dhaenens-Flipo(2002)]{Dupont}
+Lionel Dupont and Clarisse Dhaenens-Flipo.
+\newblock Minimizing the makespan on a batch machine with non-identical job
+  sizes: an exact procedure.
+\newblock \emph{Computers \& Operations Research}, 29\penalty0 (7):\penalty0
+  807 -- 819, 2002.
+
+\bibitem[Grossmann(1992)]{Grossmann}
+Ignacio~E. Grossmann.
+\newblock Mixed-integer optimization techniques for the design and scheduling
+  of batch processes.
+\newblock Technical Report Paper 203, Carnegie Mellon University Engineering
+  Design Research Center and Department of Chemical Engineering, 1992.
+
+\bibitem[Kashan et~al.(2009)Kashan, Karimi, and Ghomi]{Kashan}
+Ali~Husseinzadeh Kashan, Behrooz Karimi, and S.~M. T.~Fatemi Ghomi.
+\newblock A note on minimizing makespan on a single batch processing machine
+  with nonidentical job sizes.
+\newblock \emph{Theoretical Computer Science}, 410\penalty0 (27-29):\penalty0
+  2754--2758, 2009.
+
+\bibitem[Malapert et~al.(2012)Malapert, Guéret, and Rousseau]{Malapert}
+Arnaud Malapert, Christelle Guéret, and Louis-Martin Rousseau.
+\newblock A constraint programming approach for a batch processing problem with
+  non-identical job sizes.
+\newblock \emph{European Journal of Operational Research}, 221:\penalty0
+  533--545, 2012.
+
+\bibitem[Ozturk et~al.(2012)Ozturk, Espinouse, Mascolo, and Gouin]{Ozturk}
+Onur Ozturk, Marie-Laure Espinouse, Maria~Di Mascolo, and Alexia Gouin.
+\newblock Makespan minimisation on parallel batch processing machines with
+  non-identical job sizes and release dates.
+\newblock \emph{International Journal of Production Research}, 50\penalty0
+  (20):\penalty0 6022--6035, 2012.
+
+\bibitem[Sabouni and Jolai(2010)]{Sabouni}
+M.T.~Yazdani Sabouni and F.~Jolai.
+\newblock Optimal methods for batch processing problem with makespan and
+  maximum lateness objectives.
+\newblock \emph{Applied Mathematical Modelling}, 34\penalty0 (2):\penalty0 314
+  -- 324, 2010.
+
+\end{thebibliography}
