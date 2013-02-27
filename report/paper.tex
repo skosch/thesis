@@ -31,20 +31,13 @@ right=1in,top=1.3in, bottom=1.4in]{geometry}
 %\include{firstpage}
 
 \tableofcontents
+\listoffigures
+\listoftables
 %\end{comment}
 \pagestyle{fancy}
 \mainmatter
 \pagebreak
 \vskip 4em
-
-- Introduction (stays the same)
-- Background MIP/CP, Literature Review, Description of Malapert's approach
-  - What are we trying to improve upon?
-- Progress to Date; outline what was done and why.
-- Experimental results
-- Future work
-- Citations
-- TOC, List of Figures and Tables, Title Page required
 \fontsize{12pt}{17pt}\selectfont
 \chapter{Introduction}
 This paper discusses three different approaches, and several variations on them,
@@ -60,11 +53,13 @@ ovens, which can process multiple items at a time, but often cannot be opened at
 random---in fact, such machines often need to wait for the largest item in the
 batch to be done before the next batch can be inserted.
 
-Malapert proposed a custom constraint programming algorithm consisting of a set of
-filtering rules to solve the problem. He achieved considerably better speeds
-than with a simple mixed-integer model. In this paper, we present 1) an
-improvement to his MIP model, 2) a CP model and 3) a decomposition approach to
-``divide and conquer'' the problem.
+\citet{Malapert} proposed a global constraint programming algorithm consisting
+of a set of filtering rules to solve the problem. He achieved considerably
+better speeds than with a simple mixed-integer model, but it seems plausible
+that the new global constraint is unnecessary to achieve this performance;
+simple MIP, CP or decomposition approaches are easier to implement and extend.
+In this paper, we present 1) an improvement to his MIP model, 2) a CP model and
+3) a decomposition approach to ``divide and conquer'' the problem.
 
 \section{Problem definition}
 We describe the problem as follows: assume we are given a set of jobs $J$, each of
@@ -102,7 +97,7 @@ model in \ref{sec:improvedmipmodel}. Section \ref{sec:cpmodel} introduces a CP f
 problem. Sections \ref{sec:mipdecomp} and \ref{sec:cpdecomp} describe a
 decomposition approach.
 
-An empirical comparison of the methods and a discussion of the results follow in
+An empirical comparison of the new models and a discussion of the results follow in
 sections \ref{sec:results} and \ref{sec:discussion}. Ideas for future work are
 listed in \ref{sec:futurework}.
 
@@ -194,8 +189,7 @@ solve it to optimality. The \texttt{sequenceEDD} constraint is implemented as
 four distinct filtering rules applied at relevant domain changes: three to update
 bounds on $\Lmax$ based on different conditions, and one to limit the number of
 batches based on the marginal cost difference between adding a job to an empty batch vs. an
-existing one. The performance of the new global constraint dwarfed that of a
-simple MIP model of the same problem.
+existing one. The new global was shown to significantly outperform a simple MIP model of the same problem.
 
 Other authors have examined similar problems: \citet{Azizoglu} provide an exact
 method and a heuristic for the same problem, but minimize makespan
@@ -205,8 +199,6 @@ functions \citep{Sabouni}, for makespan minimization on single batch machines
 \citep{Kashan}, and for makespan minimization on parallel batch machines with
 different release dates \citep{Ozturk}. A more extensive review of MIP model
 applications in batch processing is given by \citet{Grossmann}.
-
-
 
 \chapter{Modelling the problem}
 

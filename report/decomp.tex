@@ -142,7 +142,7 @@ and returned, a constraint of the form
 \begin{alignat}{2}
 & \sum_j x_j + \sum_i (1-x_i) \leq n_j - 1 \quad && \forall \{j \in J | x_j =
 1\}, \forall \{i \in J | x_i = 0 \}
-\end{alignat}\marginpar{\em\small I still can't think of anything tighter ...}
+\end{alignat}
 is added to the model before the solver is called again, to exclude the last
 solution from the set of feasible solutions. 
 
@@ -152,7 +152,7 @@ This approach is equivalent, but we now use CP to select the batch assignments,
 again based on a minimized $\Lmax$ among the non-batched jobs. Model
 \ref{model:decomp_cp} uses interval variables $j$ to represent the jobs;
 time constraints on the jobs (``est'', ``lft'' etc.) are represented as
-equations involving the terms $\startOf(j)$ and $\endOf(j)$.
+functions such as $\startOf(j)$ and $\endOf(j)$.
 
 Contraints \eqref{dcp:eq1} through \eqref{dcp:eq4} bi-directionally define the
 relationship between a job's $x_j$ and $\startOf(j)$: $x_j = 1$ is equivalent

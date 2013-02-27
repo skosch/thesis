@@ -1,4 +1,16 @@
 \chapter{Future Work}\label{sec:futurework}
+\section{Schedule}
+Current work on a new MIP model (not shown in this document) will continue. I
+will particularly try to incorporate bounds on $\Lmax$ and $C_\text{max}$ as
+given in papers such as \citep{Azizoglu} and \citep{Dupont}. Some of the CP
+model improvements described below shall be implemented as well, and I intend to
+finish the experiments by late Feburary.
+
+The next step, an extensive discussion of the results, is planned for early
+March. This will involve researching how different test instances affect solving
+time in different models. A final draft of the thesis shall be finished by
+mid-March.
+
 \section{MIP model}
 \subsection[Upper bound on $\Lmax$]{Upper bound on {\sansitalicfont L}\textsubscript{max}}
 An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
@@ -77,10 +89,7 @@ relaxation.
 p$]{Constraint on number of batches with length {\sansitalicfont
 P\textsubscript{k}} > {\sansitalicfont p}}
 
-Since \marginpar{\em\small I haven't found an elegant way to turn this into a
-gcc constraint, but I also fail to see how it would be useful -- this constraint
-matches \textrm{all} feasible solutions, not just a superset of the optimal
-one.} batches take on the processing time of their longest job, there is at
+Since batches take on the processing time of their longest job, there is at
 least one batch with $P = \underset{j}{\max} p_j $. We can proceed to fill batches with jobs, ordered by non-increasing processing
 time, based on algorithm \ref{alg:findBatchlengthCards}. 
 
@@ -102,8 +111,9 @@ $P_{n_k,\text{min}} \gets p_j$ \Comment{assign $s_j$ and $p_j$ to the new batch}
 empty} \end{algorithmic} \caption{Generating lower bounds on batch lengths}
 \label{alg:findBatchlengthCards} \end{algorithm}
 At the end of this algorithm, we can state: \begin{alignat}{2} &
-\mathtt{globalCardinality}( |P_{k-1,\text{min}} > P_k \geq P_{k,\text{min}} |
-\geq 1) \quad && \forall k \in \{k_0,\dots,k_{LB(n_k)}\} \end{alignat}
+\mathtt{globalCardinality}(\{1,\dots,n_j\},
+\{P_{k,\text{min}}, \dots, P_{k-1,\text{min}} - 1\}, P_k) \quad && \forall k \in \{k_0,\dots,k_{LB(n_k)}\}, \end{alignat}
+where the constraint takes three arguments (\mathtt{cards}, \mathtt{vals} and \mathtt{vars}) and $P_{k,\text{min}}$ denotes the minimum length of batch $k$.
 
 The algorithm sorts jobs by non-increasing $p$, and then fills batches job by
 job. If a job fits into a previous batch, it is assigned there. If a job fits
@@ -119,9 +129,8 @@ terms of ``vertical'' ($s_j$) bin packing, and may thus require fewer batches.
 We therefore need to find a lower bound $LB(n_k)$ on the number of batches, and
 we can only guarantee the first $LB(n_k)$ of the above constraints to hold in
 the optimal solution. Finding a true lower bound is a two-dimensional bin
-packing problem, which runs in exponential time, so we
-have to come up with an even lower bound -- right now I can only think of $j_0$,
-the number of jobs ordered by decreasing $s_j$ that can never fit into a batch
+packing problem, which is NP-hard. A possible but naive lower bound is $j_0$,
+the number of jobs, ordered by decreasing $s_j$, that can never fit into a batch
 together.
 
 \subsection[Constraint on the number of batches with due date $D_k >
@@ -139,16 +148,16 @@ valid for batches beyond the known $LB(n_k)$.
 constraints on {\sansitalicfont P\textsubscript{k}} and {\sansitalicfont
 D\textsubscript{k}}}
 
-Furthermore, if all jobs have different processing times, \marginpar{\em\small I haven't found a way to implement this efficiently in CP
-Optimizer; I also don't quite see how it would constrain anything.}all batches will have different
-processing times as well: \texttt{alldifferent}$(P_k)$. If $m$ out of $n_j$ jobs
-have different processing times, we can still enforce
-\texttt{k\_alldifferent}$(P_k, m)$. 
+Furthermore, if all jobs have different processing times, all batches will have different
+processing times as well: \texttt{alldifferent}$(P_k)$. If $m$ out of $n_j$
+jobs have different processing times, we can still enforce
+\texttt{k\_alldifferent}$(P_k, m)$. Some work on \texttt{k\_alldifferent}
+constraints has been done in \citep{Lardeux}. 
 
 Similarly, we knows that the constraint \texttt{k\_alldifferent}$(D_k, m)$ must
 be true if $m$ out of $n_j$ jobs have different due dates.
 
-\section{Decompositions}
+\section{Decompositions, other approaches}
 \subsection{Potential heuristics}
 \paragraph{Improve the initial $L_{\text{max,incumbent}}$} A better initial
 upper bound on $\Lmax$ can help prune some branches of the search tree from the
@@ -159,7 +168,7 @@ use a heuristic like above to ``complete the schedule'' once a promising partial
 schedule has been generated. I have yet to identify situations where this is
 always helpful.
 
-\subsection{Move-back decomposition}
+\subsection{Move-back search}
 
 Another possible way to set up a branch-and-bound search for solutions works as
 follows: first, consider all jobs to be ``single'', i.e. assigned to individual

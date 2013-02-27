@@ -1,0 +1,16 @@
+\section{MIP model II}\label{sec:koschmipmodel}
+\begin{model}[h]
+\begin{alignat}{2}
+\mathrm{Min.}\quad & \Lmax && \\
+\mathrm{s.t.}\quad &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J \\
+  &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\\
+  &p_j x_{jk} \leq P_k \quad && \forall j \in J, \forall k \in K\\
+  &C_{k-1} + P_{k} = C_k \quad && \forall k \in K\\
+  &(d_{max} - d_j)(1 - x_{jk}) + d_j \geq D_k \quad && \forall j \in J, \forall k \in K\\
+  &D_{k-1} \leq D_k \quad && \forall k \in K \label{c:malapp-edd} \\
+  &C_k - D_k \leq \Lmax \quad && \forall k \in K\\[2ex]
+  &C_k \geq 0, P_k \geq 0 \text{ and } D_k \geq 0 \quad && \forall k \in K  
+\end{alignat}
+\caption{Malapert's original MIP model}
+\label{model:malapertmip}
+\end{model}

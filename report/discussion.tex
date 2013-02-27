@@ -1,3 +1,11 @@
 \chapter{Discussion}\label{sec:discussion}
 The improved MIP model currently performs best, mostly owed to constraint
 \eqref{eq:mipnopp} which excludes a large number of potential batch assignments.
+
+The batch-by-batch decomposition using MIP to assemble batches, while an
+improvement over Malapert's MIP model, is not satisfactory; the relaxations are
+too lax for the decomposition to compensate for the overhead of a naive
+branch-and-bound search.
+
+The goal is to solve instances with up to 50 jobs in less than an hour (a
+performance comparable to that of Malapert's global constraint).

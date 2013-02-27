@@ -1,36 +1,17 @@
-42 -> 33
-(301)
+With 99 different p's, 20_2: 2.3 sec, Lmax = 431
+With 20 different p's, 20_2: 1.93 sec, Lmax = 472
+With 20 different ps: 20_7: 20.13 sec, Lmax = 428
+With 99 different ps: 20_7: 14.52 sec, Lmax = 398
 
-35 -> 33
-42 -> 33
-(284)
+30:
+22.8 (777)
+25.8 (726)
+64.69 (523)
+1300+ (658-665), but 603 (707) with 5*(p/5) and 24 (53) with int(p/5) and 43 (36)
+with p/5.0
 
-33 -> 23
-35 -> 2
-42 -> 23
-(267)
+With p/10 and d/10, it takes 351.84 and confirms Lmax = 665.
 
-33 -> 23
-25 -> 2
-42 -> 23
-46 -> 30
-(250) [improvement of 17 -- next cannot be better than 233]
-
-PRELIM SOLUTION FOR 20_4: Lmax is 15 (took 19.5 sec without any SOS, 14.82 with
-SOS.) 
-
-PRELIM SOLUTION FOR 30_1: Lmax is 21
-PRELIM SOLUTION FOR 40_1: Lmax is 49 (took 66.3 sec, now 14.79)
-PRELIM SOLUTION FOR 40_2: Lmax is 61 (took 17.3 sec)
-PRELIM SOLUTION FOR 40_3: Lmax is 32 (took 17.7 sec)
-PRELIM SOLUTION FOR 40_4: Lmax is 43 (took 1.89 sec )
-PRELIM SOLUTION FOR 40_5: Lmax is 41 (took 170. sec, now 47.1, now 25.91 sec,
-now 43.1 sec)
-PRELIM SOLUTION FOR 40_6: Lmax is 29 (took 46.68 sec)
-
-PRELIM SOLUTION FOR 50_1: Lmax is 
-
-50_1: Lmax is 52, took 662 s
-50_2: Lmax is 132 (took 7.14 sec)
-50_3: 
+With ceil(p/10.0) and d/10.0, it takes 12 sec to get Lmax=732
+With floor(p/10.0) and d/10.0, it takes 17.5 sec to get Lmax=61.2
 
