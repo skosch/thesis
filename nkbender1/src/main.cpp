@@ -8,8 +8,12 @@
 #include <deque>
 
 #include "Job.h"
+#define FUZZ 0.1
 
 using namespace std;
+
+	typedef IloArray<IloNumVarArray> xjh_matrix;
+	typedef IloArray<IloNumArray> xjh_nummatrix;
 
 struct rjob{
 	int s;
@@ -115,6 +119,7 @@ float minCmax(vector<Job> jc, int index, int capacity, float smallerfactor) {
 	}
 	return totallength/smallerfactor;
 }
+
 
 int main(int argc, char *argv[]) {
 
@@ -262,7 +267,7 @@ int main(int argc, char *argv[]) {
 	for(int j=0; j<nj; j++) {
 		t += ceil(pj[j] * sj[j] / capacity);
 		lb_ct[j] = (float) minCmax(jc, j, capacity, smallerfactor);
-		cout << "Min Lateness of job " << j << " is " << lb_ct[j] << " instead of " << t << endl;
+		//cout << "Min Lateness of job " << j << " is " << lb_ct[j] << " instead of " << t << endl;
 	}
 
     // create MIP or CP to find the best jobs to move.
@@ -270,7 +275,6 @@ try {
 	IloModel mip_cj(env);
 
 
-	typedef IloArray<IloNumVarArray> xjh_matrix;
 
 	// END XJ CONSTRAINTS
 	// BEGIN XJH CONSTRAINTS
@@ -331,12 +335,15 @@ try {
 	}
 
 	// define Lmax
+	IloNumExprArray Lk(env, nj);
 	IloNumVar Lmax(env, LmaxLB, Lmaxinc, ILOFLOAT);
 
 	for(int k=0; k<nj; k++) {
+		Lk[k] = IloNumExpr(env);
 		IloNumExpr c_sum(env);
 		for(int ki=0; ki<=k; ki++) c_sum += Pk[ki] - pj[ki] + (-pj[ki] * IloSum(xjh[ki]));
-		mip_cj.add( Lmax >= Lksingle[k] + c_sum - IloSum(xjh[k])*Lmaxinc); //
+		Lk[k] = 1.0 * Lksingle[k] + c_sum - IloSum(xjh[k])*Lmaxinc;
+		mip_cj.add( Lmax >= Lksingle[k] + c_sum - IloSum(xjh[k])*Lmaxinc );
 	}
 
 	/* lower bound on Lmax
@@ -370,14 +377,19 @@ try {
 		mip_cj.add( s_sum + sj[k] <= capacity );
 	}
 
-	// vertical constraint (if a job fits lengthwise safely and is single, it can't fit sizewise.)
+	IloArray<IloBoolVarArray> j_toolongfor_k(env, nj);
+
+
 	for(int j=0; j<nj; j++) {
 		for(int k=0; k<j; k++) {
+			if(sj[k] + sj[j] - 1 >= capacity) continue;
 			IloNumExpr sizeInK(env);
 			for(int i=k; i<nj; i++) sizeInK += sj[i] * xjh[i][k];
-			mip_cj.add(IloIfThen(env, (Pk[k] >= pj[j] + Lmax && IloSum(xjh[j]) <= 0.1 && IloSum(xjh[k])<=0.1 ), capacity-( sj[k] + sizeInK ) + 1 <= sj[j]));
+//Pk[k]
+			mip_cj.add(IloIfThen(env, (Lmax + pj[j] <= Pk[k] && IloSum(xjh[j]) <= 0.1 && IloSum(xjh[k])<=0.1 ), capacity-( sj[k] + sizeInK ) + 1 <= sj[j]));
 		}
 	}
+
 
 	// vertical constraint (if a job fits lengthwise better than another job and is single, it can't fit sizewise.)
 	for(int k=0; k<nj-1; k++) {
@@ -430,43 +442,54 @@ try {
 		}
 	}*/
 
+
+	// add psi-2 dominance rules:
+
+
+
+
+
 	mip_cj.add( IloMinimize(env, Lmax) );
 
 	IloCplex mip_cj_solver(mip_cj);
 
-	// add initial solution
+	cout << "Now adding static psi-2 dominance rules ..." << endl;
+	for(int j1=0; j1<nj-1; j1++) {
+		for(int j2=j1+1; j2<nj; j2++) {
+			for(int k1=0; k1<j1-1; k1++) {
+				for(int k2=k1+1; k2<j1; k2++) {
+					// order now: k1, k2, j1, j2
+					if(pj[j1] > pj[k1] or pj[j2] > pj[k1] or pj[j1] > pj[k2] or pj[j2] > pj[k2]) continue;
+					if(capacity - sj[k1] < sj[j1] or capacity - sj[k1] < sj[j2] or capacity - sj[k2] < sj[j1] or capacity - sj[k2] < sj[j2]) continue;
+					IloNumExpr nsumk1(env);
+					IloNumExpr nsumk2(env);
+					for(int j=0; j<nj; j++) {
+						if(j==j1 or j==j2) continue;
+						nsumk1 += xjh[j][k1];
+						nsumk2 += xjh[j][k2];
+					}
+					cout << "We just added a constraint!" << endl;
+					// if k1 and k2 are hosts, and j1 and j2 are in k1 and k2, and
+					mip_cj_solver.addLazyConstraint( 2 * ( IloSum(xjh[k1]) + IloSum(xjh[k2]) + (2 - xjh[j1][k1] - xjh[j1][k2] - xjh[j2][k1] - xjh[j2][k2]) + (nsumk1 + nsumk2) ) >= xjh[j1][k2] + xjh[j2][k1]);
+					cout << "Adding dominance rule: " << j1 << "->" << k1 << " and " << j2 << "->" << k2 << endl;
+				}
+			}
+		}
+	}
 
-    //IloNumVarArray startVar(env);
-    //IloNumArray startVal(env);
-/*
-    for (int j = 0; j < nj; ++j)
-        for (int k = 0; k < nj; ++k) {
-        	int start;
-        	if(Bj[j] == k && j != k) {start = 1;} else {start = 0;}
 
-      //      startVar.add(xjh[j][k]);
-        //    startVal.add(start);
-        }
-    //mip_cj_solver.addMIPStart(startVar, startVal);
 
-    //startVal.end();
-    //startVar.end();
-*/
+
 	mip_cj_solver.setParam(IloCplex::ClockType, 1);
 	mip_cj_solver.setParam(IloCplex::MIPDisplay , 3); // MIP node log display information
 	mip_cj_solver.setParam(IloCplex::MIPInterval , 1); // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
 	mip_cj_solver.setParam(IloCplex::Threads, 1);
-
+	//mip_cj_solver.setParam(IloCplex::TiLim, 10);
 	//mip_cj_solver.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
 
-	ifstream solfile("/tmp/mipsolutions");
-	if(solfile) {
-		//mip_cj_solver.readMIPStarts("/tmp/mipsolutions");
-		mip_cj_solver.setParam(IloCplex::AdvInd, 1);
-	}
-	if(mip_cj_solver.solve()) {
-		//mip_cj_solver.writeMIPStart("/tmp/mipsolutions");
-	}
+	mip_cj_solver.solve();
+
+
 	cout << mip_cj_solver.getStatus() << endl;
 
 	cout << "Lmax: " << mip_cj_solver.getValue(Lmax) << endl;
@@ -492,7 +515,7 @@ try {
 		IloNumExpr sizeInK(env);
 		for(int i=0; i<nj; i++) sizeInK += sj[i] * xjh[i][j];
 		for(int ki=0; ki<=j; ki++) c_sum += mip_cj_solver.getValue(Pk[ki]) - pj[ki] + (-pj[ki] * mip_cj_solver.getValue(IloSum(xjh[ki])));
-		cout << "Job " << j << ":\ts=" << sj[j] << "\tp=" << pj[j] << "\td=" << dj[j] << "\tL=(" << Lksingle[j] << "+" << c_sum << "-" << mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << ")=" << Lksingle[j] + c_sum- mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << "\tPk=" << mip_cj_solver.getValue(Pk[j]) << "\tTotal size:" << mip_cj_solver.getValue( sj[j] + sizeInK ) <<  endl;
+		cout << "Job " << j << ":\ts=" << sj[j] << "\tp=" << pj[j] << "\td=" << dj[j] << "\tL=(" << Lksingle[j] << "+" << c_sum << "-" << mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << ")=" << Lksingle[j] + c_sum- mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << "=" << mip_cj_solver.getValue(Lk[j]) << "\t\t\tPk=" << mip_cj_solver.getValue(Pk[j]) << "\tTotal size:" << mip_cj_solver.getValue( sj[j] + sizeInK ) <<  endl;
 	}
 
 } catch(IloException& e ) {

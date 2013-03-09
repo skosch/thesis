@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  15 FEB 2013 18:52
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  27 FEB 2013 11:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1456,7 +1456,11 @@ tly
 LaTeX Warning: Unused global option(s):
     [13pt].
 
-(./paper.aux (./coverpage.aux))
+(./paper.aux (./coverpage.aux)
+
+LaTeX Warning: Label `model:malapertmip' multiply defined.
+
+)
 \openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
@@ -5808,7 +5812,7 @@ Chapter 4.
 . This font family consists of the following shapes:
 .................................................
 (./figures/results_graph.tex
-Overfull \hbox (9.8352pt too wide) in paragraph at lines 44--45
+Overfull \hbox (9.82738pt too wide) in paragraph at lines 52--53
  [][] 
  []
 
@@ -6989,7 +6993,7 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 . 
 . This font family consists of the following shapes:
 .................................................
-[25])
+[25]) (./mip2model.tex
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -7031,6 +7035,32 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 . This font family consists of the following shapes:
 .................................................
 [26]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+
+Overfull \hbox (66.2436pt too wide) in paragraph at lines 13--13
+[] 
+ []
+
+)
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -7170,13 +7200,16 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 230.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 230.
  ) 
 Here is how much of TeX's memory you used:
- 42370 strings out of 495716
- 907380 string characters out of 3188883
- 1080273 words of memory out of 3000000
- 44732 multiletter control sequences out of 15000+200000
+ 42383 strings out of 495716
+ 907586 string characters out of 3188883
+ 1080355 words of memory out of 3000000
+ 44742 multiletter control sequences out of 15000+200000
  130022 words of font info for 132 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,19n,74p,657b,1880s stack positions out of 5000i,500n,10000p,200000b,50000s
