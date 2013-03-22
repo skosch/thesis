@@ -12,6 +12,8 @@
 \def\startOf{\mathtt{startOf}}
 \def\endOf{\mathtt{endOf}}
 
+\renewcommand{\le}{\leqslant}\renewcommand{\leq}{\leqslant} \renewcommand{\ge}{\geqslant}\renewcommand{\geq}{\geqslant}
+
 %=========== TIKZ STUFF =========
 
 \usetikzlibrary{fit}
@@ -32,6 +34,21 @@
     \tikzset{%
         dotsfill/.style={draw,pattern=dots},
     }
+
+\pgfdeclarepatternformonly[\StripesSize]{MyStripes}{\pgfqpoint{-1pt}{-1pt}}{\pgfqpoint{4pt}{4pt}}{\pgfqpoint{\StripesSize}{\StripesSize}}%
+{
+  \pgfsetlinewidth{0.3pt}
+  \pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+  \pgfpathlineto{\pgfqpoint{3.1pt}{3.1pt}}
+  \pgfusepath{stroke}
+}
+
+\newdimen\StripesSize
+\tikzset{
+    StripesSize/.code={\StripesSize=#1},
+    StripesSize=3pt
+}
+
 
 %========= ALGO STUFF ============
 

@@ -1,0 +1,26 @@
+\begin{figure}
+  \centering
+    \begin{tikzpicture}[font=\scriptsize]
+
+      \fill[fill={rgb:black,1;white,16}] (0,0) -- (0,4) -- (3,5) -- (4.6,3.2) -- (3,0) -- cycle;
+      \draw [<->,thick] (0,6) node (yaxis) [above] {\sansitalicfont
+      x\textsubscript{2}}
+        |- (6,0) node (xaxis) [right] {\sansitalicfont x\textsubscript{1}};
+
+      \foreach \x in {1,...,5} \node at (\x,-0.3) {\sansfont \x};
+      \foreach \y in {1,...,5} \node at (-0.3, \y) {\sansfont \y};
+
+      \draw (0, 4) -- (3,5);
+      \draw (3, 0) -- (4.6,3.2);
+      \draw (3, 5) -- (4.6,3.2);
+      \draw [thick] (4.5,6) -- (5.833,2); 
+
+      \foreach \x in {0,...,5} \foreach \y in {0,...,5}
+        \draw (\x, \y) node[circle,fill=black, inner sep=0pt, minimum width=3pt,
+        radius=2.5pt] {};
+     
+      \draw (4,3) node[circle,fill=white, inner sep=-0.9pt, draw=black, line 
+      width=0.4pt] {\scriptsize$\times$};
+    \end{tikzpicture}
+ \caption{Graphical representation of a typical MIP problem}\label{fig:mipplot1}
+ \end{figure}
