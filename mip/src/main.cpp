@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
     }
 
 
-    int capacity = 20;
+    int capacity = 10;
     int Dmax = 2000;
 
     /************ constants ***********/

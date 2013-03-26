@@ -1,16 +1,15 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Optimal solution to an example problem with eight jobs ($s_j$ and $p_j$ not shown for the two small jobs)\relax }}{3}{figure.caption.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Graphical representation of a typical LP problem\relax }}{6}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Graphical representation of a typical MIP problem\relax }}{8}{figure.caption.7}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Graphical representation of a typical MIP problem\relax }}{9}{figure.caption.8}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Graphical representation of a typical LP problem\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Graphical representation of a typical MIP problem\relax }}{9}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches (circles represent the $x_{jk}$ variables; a filled circle stands for $x_{jk} = 1$)\relax }}{12}{figure.caption.11}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{16}{figure.caption.14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches (circles represent the $x_{jk}$ variables; a filled circle stands for $x_{jk} = 1$)\relax }}{14}{figure.caption.16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{18}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of CPU time used by different models to find an optimal schedule and prove its optimality.\relax }}{22}{figure.caption.19}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of CPU time used by different models to find an optimal schedule and prove its optimality.\relax }}{25}{figure.caption.24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text {max}}$\relax }}{25}{figure.caption.20}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text {max}}$\relax }}{28}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -12,7 +12,7 @@
 
 using namespace std;
 
-	typedef IloArray<IloNumVarArray> xjh_matrix;
+	typedef IloArray<IloBoolVarArray> xjh_matrix;
 	typedef IloArray<IloNumArray> xjh_nummatrix;
 
 struct rjob{
@@ -120,6 +120,21 @@ float minCmax(vector<Job> jc, int index, int capacity, float smallerfactor) {
 	return totallength/smallerfactor;
 }
 
+IloNumExpr xjksum(IloArray<IloBoolVarArray> xjk, int row, int firstindex = 0, int lastindex = -1, bool rowtocol = false) {
+	if(rowtocol) {
+		lastindex = (lastindex == -1 ? xjk.getSize()-1 : lastindex);
+		IloNumExpr result(xjk.getEnv());
+		for(int i = firstindex; i <= lastindex; i++) result += xjk[i][row];
+		return result;
+	} else {
+		lastindex = (lastindex == -1 ? xjk[0].getSize()-1 : lastindex);
+		IloNumExpr result(xjk.getEnv());
+		for(int i = firstindex; i <= lastindex; i++) result += xjk[row][i];
+		return result;
+	}
+
+}
+
 
 int main(int argc, char *argv[]) {
 
@@ -128,7 +143,8 @@ int main(int argc, char *argv[]) {
 	IloEnv env;
 
 	// read in job lists
-	int nj, njm;
+	int nj;
+	float njm;
 	int LmaxLB = -IloInfinity;
 	int LmaxUB = IloInfinity;
 	string datafilename;
@@ -194,7 +210,7 @@ int main(int argc, char *argv[]) {
 	}
 	cout << "Ignore all jobs after " << fromHereIgnore << endl;
 
-	int njfull = nj;
+	//int njfull = nj;
 	nj = fromHereIgnore;
 
 	IloNum Lmaxinc = IloMin(IloMax(Lksingle), LmaxUB);
@@ -283,9 +299,9 @@ try {
 
 	xjh_matrix xjh(env, nj);
 	for(int j=0; j<nj; j++) {
-		xjh[j] = IloNumVarArray(env, nj);
-		for(int k=0; k<nj; k++) {
-			xjh[j][k] = IloNumVar(env, 0, 1, ILOINT);
+		xjh[j] = IloBoolVarArray(env, j+1);
+		for(int k=0; k<j+1; k++) {
+			xjh[j][k] = IloBoolVar(env);
 		}
 	}
 
@@ -297,30 +313,17 @@ try {
 
 	// jobs can only be moved back
 	for(int j=0; j<nj; j++) {
-		for(int k=j; k<nj; k++) {
+		for(int k=j+1; k<nj; k++) {
 			mip_cj.add( xjh[j][k] == 0 );
 		}
 	}
 
-	/* jobs after the single-EDD Lmax shouldn't be considered at all
+	/* jobs after the single-EDD Lmax shouldn't be considered at all */
 	for(int j=fromHereIgnore; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			//mip_cj.add( xjh[j][k] == 0);
-		}
-	}*/
-
-	// moves that violate capacities by themselves shouldn't be considered at all
-	// moves that violate single-EDD Lmaxinc deadlines shouldn't be considered at all
-	int deadline_violations = 0;
-	for(int j=0; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			if(sj[j] + sj[k] >= capacity + 1) mip_cj.add( xjh[j][k] == 0 );
-			if((pj[j] - pj[k]) + (lb_ct[k]-dj[j]) >= Lmaxinc + 1) {
-				//mip_cj.add( xjh[j][k] == 0);
-				deadline_violations++;
-			}
-		}
+			mip_cj.add( xjh[j][j] == 1);
 	}
+
+
 
 	cout << "Banned " << deadline_violations << " moves due to deadline violations." << endl;
 	// if the unsafety margin + theoretical min lateness exceeds Lmaxinc + 1, don't consider.
@@ -329,7 +332,7 @@ try {
 	// define Pk
 	for(int k=0; k<nj; k++) {
 		Pk[k] = IloNumVar(env, pj[k], IloMax(pj)+1, ILOFLOAT);
-		for(int j=0; j<nj; j++) {
+		for(int j=k; j<nj; j++) {
 			mip_cj.add(Pk[k] >= pj[j]*xjh[j][k]);
 		}
 	}
@@ -341,9 +344,9 @@ try {
 	for(int k=0; k<nj; k++) {
 		Lk[k] = IloNumExpr(env);
 		IloNumExpr c_sum(env);
-		for(int ki=0; ki<=k; ki++) c_sum += Pk[ki] - pj[ki] + (-pj[ki] * IloSum(xjh[ki]));
-		Lk[k] = 1.0 * Lksingle[k] + c_sum - IloSum(xjh[k])*Lmaxinc;
-		mip_cj.add( Lmax >= Lksingle[k] + c_sum - IloSum(xjh[k])*Lmaxinc );
+		for(int ki=0; ki<=k; ki++) c_sum += Pk[ki] - pj[ki] + (-pj[ki] * (1.0-xjh[ki][ki]));
+		Lk[k] = 1.0 * Lksingle[k] + c_sum - (1.0-xjh[k][k])*Lmaxinc;
+		mip_cj.add( Lmax >= Lksingle[k] + c_sum - (1.0-xjh[k][k])*Lmaxinc );
 	}
 
 	/* lower bound on Lmax
@@ -362,10 +365,9 @@ try {
 
 	// add that jobs can't be moved to where another job just left
 	for(int j=0; j<nj; j++) {
-		for(int k=0; k<nj; k++) {
-			IloNumExpr xjhk_sum(env);
-			for(int jo=0; jo<nj; jo++) xjhk_sum += xjh[k][jo];
-			mip_cj.add( xjh[j][k] + xjhk_sum <= 1);
+		for(int k=0; k<j; k++) {
+
+			mip_cj.add( xjh[j][k] <= xjh[k][k] + FUZZ);
 		}
 	}
 
@@ -373,20 +375,37 @@ try {
 	for(int k=0; k<nj; k++) {
 		IloNumExpr s_sum(env);
 		for(int j=0; j<nj; j++) s_sum += sj[j] * xjh[j][k];
-
-		mip_cj.add( s_sum + sj[k] <= capacity );
+		mip_cj.add( s_sum <= capacity );
 	}
 
-	IloArray<IloBoolVarArray> j_toolongfor_k(env, nj);
+	/* new vertical constraint
+	IloArray<IloBoolVarArray> j_toolongfor_k(env,nj);
+	for(int j=0; j<nj; j++) {
+		j_toolongfor_k[j] = IloBoolVarArray(env,nj);
+		for(int k=0; k<j; k++) {
+			j_toolongfor_k[j][k] = IloBoolVar(env);
+			if(sj[k] + sj[j] - 1 >= capacity) continue;
+			IloNumExpr sizeInK(env);
+			for(int i=k; i<nj; i++) sizeInK += sj[i] * xjh[i][k];
+			//mip_cj.add( j_toolongfor_k[j][k] >= (pj[j] - Pk[k])/IloMax(pj) - 0.5/IloMax(pj) );
+			//mip_cj.add( j_toolongfor_k[j][k] <= (pj[j] - Pk[k])/IloMax(pj) - 0.5/IloMax(pj) + 1.0);
+			//mip_cj.add(  capacity * (0 + IloSum(xjh[j]) + IloSum(xjh[k])) + 0.5 >= capacity-( sj[k] + sizeInK ) - sj[j] );
+			mip_cj.add(IloIfThen(env, Pk[k]-IloInfinity >= pj[j], j_toolongfor_k[j][k]==0));
 
+		}
+	}
+*/
 
+	/* original vertical constraint*/
 	for(int j=0; j<nj; j++) {
 		for(int k=0; k<j; k++) {
 			if(sj[k] + sj[j] - 1 >= capacity) continue;
 			IloNumExpr sizeInK(env);
 			for(int i=k; i<nj; i++) sizeInK += sj[i] * xjh[i][k];
-//Pk[k]
-			mip_cj.add(IloIfThen(env, (Lmax + pj[j] <= Pk[k] && IloSum(xjh[j]) <= 0.1 && IloSum(xjh[k])<=0.1 ), capacity-( sj[k] + sizeInK ) + 1 <= sj[j]));
+			//pj[j] + IloInfinity <= Pk[k]
+			// IloInfinity <= Pk[k]
+			//mip_cj.add(IloIfThen(env, (capacity-( sizeInK ) >= sj[j] && pj[j] <= Pk[k]) , xjh[j][j] <= FUZZ || xjh[k][k] <= FUZZ ));
+			mip_cj.add(IloIfThen(env, (xjh[j][k] >= 5 && xjksum(xjh, j, 0, j-1) <= FUZZ && xjksum(xjh,k,0,k-1) <= FUZZ ), capacity-(sizeInK ) + 1 <= sj[j]));
 		}
 	}
 
@@ -415,15 +434,13 @@ try {
 	// every job can only be moved into one other
 	IloNumExpr batchxjs(env);
 	for(int j=0; j<nj; j++) {
-		mip_cj.add(IloSum(xjh[j]) <= 1);
-
+		mip_cj.add(IloSum(xjh[j]) == 1);
 		/*IloNumArray weights(env, nj);
 		/for(int k=0; k<nj; k++) {
 			weights[k] = (10000*IloMin(pj[j], pj[k])+(nj-k));
 			cout << weights[k] << endl;
 		}*/
-
-		mip_cj.add(IloSOS1(env, xjh[j]));
+		//mip_cj.add(IloSOS1(env, xjh[j]));
 	}
 
 	/* find pairs of jobs that are mutually exclusive
@@ -432,7 +449,8 @@ try {
 			for(int j2=j1+1; j2<nj; j2++) {
 				if(sj[j1] + sj[j2] >= capacity - sj[k] + 1) { //
 					mip_cj.add(xjh[j1][k] + xjh[j2][k] <= (1-IloSum(xjh[k])));
-					mip_cj.add(xjh[j1][k] + xjh[j2][k] <= 1);
+					mip_cj.add(xjh[j1][k] + xjh[j2][k] <= 1)2	Total size:14
+Job 7:	s=6	p=92	d=0	L=(395+-251-774)=-630=-324			Pk=92	;
 					IloNumVarArray sospair(env);
 					sospair.add(xjh[j1][k]);
 					sospair.add(xjh[j2][k]);
@@ -453,7 +471,7 @@ try {
 
 	IloCplex mip_cj_solver(mip_cj);
 
-	cout << "Now adding static psi-2 dominance rules ..." << endl;
+	cout << "Now adding static psi-2-in-2 dominance rules ..." << endl;
 	for(int j1=0; j1<nj-1; j1++) {
 		for(int j2=j1+1; j2<nj; j2++) {
 			for(int k1=0; k1<j1-1; k1++) {
@@ -468,25 +486,79 @@ try {
 						nsumk1 += xjh[j][k1];
 						nsumk2 += xjh[j][k2];
 					}
-					cout << "We just added a constraint!" << endl;
 					// if k1 and k2 are hosts, and j1 and j2 are in k1 and k2, and
-					mip_cj_solver.addLazyConstraint( 2 * ( IloSum(xjh[k1]) + IloSum(xjh[k2]) + (2 - xjh[j1][k1] - xjh[j1][k2] - xjh[j2][k1] - xjh[j2][k2]) + (nsumk1 + nsumk2) ) >= xjh[j1][k2] + xjh[j2][k1]);
-					cout << "Adding dominance rule: " << j1 << "->" << k1 << " and " << j2 << "->" << k2 << endl;
+					mip_cj_solver.addLazyConstraint( 2 * ( (1-xjh[k1][k1]) + (1-xjh[k2][k2]) + (2 - xjh[j1][k1] - xjh[j1][k2] - xjh[j2][k1] - xjh[j2][k2]) + (nsumk1 + nsumk2) ) >= xjh[j1][k2] + xjh[j2][k1]);
 				}
 			}
 		}
 	}
 
+	// moves that violate capacities by themselves shouldn't be considered at all
+	// moves that violate single-EDD Lmaxinc deadlines shouldn't be considered at all
+	int deadline_violations = 0;
+	for(int j=0; j<nj; j++) {
+		for(int k=0; k<j; k++) {
+			if(sj[j] + sj[k] >= capacity + 1) mip_cj_solver.addLazyConstraint( xjh[j][k] == 0 );
+			if((pj[j] - pj[k]) + (lb_ct[k]-dj[j]) >= Lmaxinc + 1) {
+				mip_cj_solver.addLazyConstraint( xjh[j][k] == 0);
+				deadline_violations++;
+			}
+		}
+	}
 
+
+/*
+	for(int j=0; j<nj; j++) {
+		for(int k=0; k<nj; k++) {
+			if(sj[k] + sj[j] - 1 >= capacity) continue;
+			IloNumExpr sizeInK(env);
+			for(int i=k; i<nj; i++) sizeInK += sj[i] * xjh[i][k];
+			mip_cj_solver.addLazyConstraint(IloRange(env, capacity- sj[k] - sj[j], sizeInK + capacity * (j_toolongfor_k[j][k] + IloSum(xjh[j]) + IloSum(xjh[k])) + 0.5, IloInfinity));
+		}
+	} */
+
+/*
+	cout << "Now adding static psi-3-in-2 dominance rules ..." << endl;
+	for(int j1=0; j1<nj-1; j1++) {
+		for(int j2=j1+1; j2<nj; j2++) {
+			for(int j3=j2+1; j3<nj; j3++) {
+			for(int k1=0; k1<j1-1; k1++) {
+				for(int k2=k1+1; k2<j1; k2++) {
+					// order now: k1, k2, j1, j2
+					if(pj[j1] > pj[k1] or pj[j2] > pj[k1] or pj[j1] > pj[k2] or pj[j2] > pj[k2] or pj[j3] > pj[k1] or pj[j3] > pj[k2]) continue;
+					if(capacity - sj[k1] < sj[j1] + sj[j3] or capacity - sj[k1] < sj[j2] or capacity - sj[k2] < sj[j1] or capacity - sj[k2] < sj[j2]) continue;
+					IloNumExpr nsumk1(env);
+					IloNumExpr nsumk2(env);
+					for(int j=0; j<nj; j++) {
+						if(j==j1 or j==j2) continue;
+						nsumk1 += xjh[j][k1];
+						nsumk2 += xjh[j][k2];
+					}
+					// if k1 and k2 are hosts, and j1 and j2 are in k1 and k2, and
+					cout << "Adding psi-3-in-2-strict constraint" << endl;
+					mip_cj_solver.addLazyConstraint( 2 * ( IloSum(xjh[k1]) + IloSum(xjh[k2]) + (2 - xjh[j1][k1] - xjh[j1][k2] - xjh[j2][k1] - xjh[j2][k2]) + (nsumk1 + nsumk2) ) >= xjh[j1][k2] + xjh[j2][k1] + xjh[j3][k2]);
+				}
+			}
+			}
+		}
+	}
+*/
 
 
 	mip_cj_solver.setParam(IloCplex::ClockType, 1);
 	mip_cj_solver.setParam(IloCplex::MIPDisplay , 3); // MIP node log display information
 	mip_cj_solver.setParam(IloCplex::MIPInterval , 1); // Controls the frequency of node logging when the MIP display parameter is set higher than 1.
 	mip_cj_solver.setParam(IloCplex::Threads, 1);
-	//mip_cj_solver.setParam(IloCplex::TiLim, 10);
+	mip_cj_solver.setParam(IloCplex::TiLim, 1000);
+	mip_cj_solver.setParam(IloCplex::TuningTiLim, 100);
+	//mip_cj_solver.setParam(IloCplex::Reduce, 1);
+	//mip_cj_solver.setParam(IloCplex::VarSel, 4);
+	//mip_cj_solver.setParam(IloCplex::HeurFreq, 50);
+	//mip_cj_solver.setParam(IloCplex::CutPass, 1);
 	//mip_cj_solver.setParam(IloCplex::NodeSel, IloCplex::DFS); // depth-first
-
+	//mip_cj_solver.setParam(IloCplex::Cliques, 3);
+	//mip_cj_solver.tuneParam();
+	//mip_cj_solver.writeParam("/tmp/tunedparams");
 	mip_cj_solver.solve();
 
 
@@ -513,17 +585,19 @@ try {
 	for(int j=0; j<nj; j++) {
 		int c_sum = 0;
 		IloNumExpr sizeInK(env);
-		for(int i=0; i<nj; i++) sizeInK += sj[i] * xjh[i][j];
-		for(int ki=0; ki<=j; ki++) c_sum += mip_cj_solver.getValue(Pk[ki]) - pj[ki] + (-pj[ki] * mip_cj_solver.getValue(IloSum(xjh[ki])));
-		cout << "Job " << j << ":\ts=" << sj[j] << "\tp=" << pj[j] << "\td=" << dj[j] << "\tL=(" << Lksingle[j] << "+" << c_sum << "-" << mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << ")=" << Lksingle[j] + c_sum- mip_cj_solver.getValue(IloSum(xjh[j]))*Lmaxinc << "=" << mip_cj_solver.getValue(Lk[j]) << "\t\t\tPk=" << mip_cj_solver.getValue(Pk[j]) << "\tTotal size:" << mip_cj_solver.getValue( sj[j] + sizeInK ) <<  endl;
+		for(int i=0; i<nj; i++) sizeInK += xjh[i][j] * sj[i];
+		for(int ki=0; ki<=j; ki++) c_sum += mip_cj_solver.getValue(Pk[ki]) - pj[ki] + (-pj[ki] * mip_cj_solver.getValue(1.0-xjh[ki][ki]));
+		cout << "Job " << j << ":\ts=" << sj[j] << "\tp=" << pj[j] << "\td=" << dj[j] << "\tL=(" << Lksingle[j] << "+" << c_sum << "-" << mip_cj_solver.getValue(1.0-xjh[j][j])*Lmaxinc << ")=" << Lksingle[j] + c_sum - mip_cj_solver.getValue(1.0-xjh[j][j])*Lmaxinc << "=" << mip_cj_solver.getValue(Lk[j]) << "\t\t\tPk=" << mip_cj_solver.getValue(Pk[j]) << "\tTotal size:" << mip_cj_solver.getValue( sizeInK ) <<  endl;
 	}
-
+	cout << endl;
+	cout << mip_cj_solver.getValue(Lmax) << endl;
+	cout << mip_cj_solver.getTime() << " seconds" << endl;
 } catch(IloException& e ) {
 	cout << "Error, dude!: " << e << endl;
 }
-    cout << "Closing modelling environment ..." << endl;
+
     env.end();
 
-	cout << "We're done here. Thanks." << endl;
+
 	return 0;
 }

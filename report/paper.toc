@@ -3,41 +3,53 @@
 \contentsline {section}{\numberline {1.2}Organization of this paper}{2}{section.1.2}
 \contentsline {chapter}{\numberline {2}Background}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}Constraint Programming}{4}{section.2.1}
-\contentsline {section}{\numberline {2.2}Mixed Integer Programming}{6}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Linear Programming}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Solving MIP models using branch-and-bound}{7}{subsection.2.2.2}
-\contentsline {section}{\numberline {2.3}Literature}{9}{section.2.3}
-\contentsline {chapter}{\numberline {3}Modelling the problem}{10}{chapter.3}
-\contentsline {section}{\numberline {3.1}MIP model}{10}{section.3.1}
-\contentsline {section}{\numberline {3.2}Improved MIP model}{11}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Grouping empty batches}{11}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}No postponing of jobs to later batches}{12}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Lower bound on $L_{\text {max}}$}{13}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}CP model}{14}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Grouping empty batches}{14}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}No postponing of jobs to later batches}{15}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}Decomposition approach}{15}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Branch-and-bound by batch in chronological order}{15}{subsection.3.4.1}
-\contentsline {subsubsection}{Using MIP and cumulative packing after the batch}{15}{subsubsection*.13}
-\contentsline {subsubsection}{Using CP and cumulative packing after the batch}{19}{subsubsection*.17}
-\contentsline {chapter}{\numberline {4}Results}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Empirical comparison of described models}{21}{section.4.1}
-\contentsline {chapter}{\numberline {5}Discussion}{23}{chapter.5}
-\contentsline {chapter}{\numberline {6}Future Work}{24}{chapter.6}
-\contentsline {section}{\numberline {6.1}Schedule}{24}{section.6.1}
-\contentsline {section}{\numberline {6.2}MIP model}{24}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Upper bound on $L_{\text {max}}$}{24}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Bounding the number of batches $n_k$}{24}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}CP Model}{26}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Constraint on the number of batches with length $P_k > p$}{26}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Constraint on the number of batches with due date $D_k > d$}{27}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}All-different constraints on $P_k$ and $D_k$}{28}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Decompositions, other approaches}{28}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Potential heuristics}{28}{subsection.6.4.1}
-\contentsline {paragraph}{Improve the initial $L_{\text {max,incumbent}}$}{28}{paragraph*.21}
-\contentsline {paragraph}{Improve $L_{\text {max,incumbent}}$ during search}{28}{paragraph*.22}
-\contentsline {subsection}{\numberline {6.4.2}Move-back search}{28}{subsection.6.4.2}
-\contentsline {section}{\numberline {6.5}MIP model II}{30}{section.6.5}
-\contentsline {chapter}{\numberline {A}Appendix: Tables}{33}{appendix.A}
-\contentsline {section}{\numberline {A.1}Hello. This is the first part of the first Appendix}{33}{section.A.1}
-\contentsline {chapter}{\numberline {B}Appendix: Code}{34}{appendix.B}
+\contentsline {subsection}{\numberline {2.1.1}Propagation}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Consistency}{5}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Global constraints}{6}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Constraint Programming and Scheduling}{7}{section.2.2}
+\contentsline {section}{\numberline {2.3}Mixed Integer Programming}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Linear Programming}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Solving MIP models using branch-and-bound}{9}{subsection.2.3.2}
+\contentsline {subsubsection}{Branch-and-cut methods}{11}{subsubsection*.11}
+\contentsline {subsubsection}{Special ordered sets}{11}{subsubsection*.12}
+\contentsline {subsubsection}{Lazy constraints}{11}{subsubsection*.13}
+\contentsline {section}{\numberline {2.4}Scheduling using CP and MIP}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Common types of scheduling problems}{11}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Temporal problems in CP}{11}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Temporal problems in MIP}{11}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Literature}{11}{section.2.5}
+\contentsline {chapter}{\numberline {3}Modelling the problem}{12}{chapter.3}
+\contentsline {section}{\numberline {3.1}MIP model}{12}{section.3.1}
+\contentsline {section}{\numberline {3.2}Improved MIP model}{12}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Grouping empty batches}{13}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}No postponing of jobs to later batches}{15}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Lower bound on $L_{\text {max}}$}{15}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}CP model}{16}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Grouping empty batches}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}No postponing of jobs to later batches}{17}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Decomposition approach}{17}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Branch-and-bound by batch in chronological order}{17}{subsection.3.4.1}
+\contentsline {subsubsection}{Using MIP and cumulative packing after the batch}{18}{subsubsection*.18}
+\contentsline {subsubsection}{Using CP and cumulative packing after the batch}{21}{subsubsection*.22}
+\contentsline {section}{\numberline {3.5}A move-based MIP model}{21}{section.3.5}
+\contentsline {chapter}{\numberline {4}Results}{24}{chapter.4}
+\contentsline {section}{\numberline {4.1}Empirical comparison of described models}{24}{section.4.1}
+\contentsline {chapter}{\numberline {5}Discussion}{26}{chapter.5}
+\contentsline {chapter}{\numberline {6}Future Work}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}Schedule}{27}{section.6.1}
+\contentsline {section}{\numberline {6.2}MIP model}{27}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Upper bound on $L_{\text {max}}$}{27}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Bounding the number of batches $n_k$}{27}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}CP Model}{29}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Constraint on the number of batches with length $P_k > p$}{29}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Constraint on the number of batches with due date $D_k > d$}{30}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}All-different constraints on $P_k$ and $D_k$}{31}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Decompositions, other approaches}{31}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Potential heuristics}{31}{subsection.6.4.1}
+\contentsline {paragraph}{Improve the initial $L_{\text {max,incumbent}}$}{31}{paragraph*.26}
+\contentsline {paragraph}{Improve $L_{\text {max,incumbent}}$ during search}{31}{paragraph*.27}
+\contentsline {subsection}{\numberline {6.4.2}Move-back search}{31}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}MIP model II}{33}{section.6.5}
+\contentsline {chapter}{\numberline {A}Appendix: Tables}{36}{appendix.A}
+\contentsline {section}{\numberline {A.1}Hello. This is the first part of the first Appendix}{36}{section.A.1}
+\contentsline {chapter}{\numberline {B}Appendix: Code}{37}{appendix.B}

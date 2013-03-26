@@ -8,7 +8,7 @@ right=1in,top=1.3in, bottom=1.4in]{geometry}
 \usepackage{sectsty, tikz, color, pgfplots}
 \usetikzlibrary{shapes,arrows}
 \usepackage{multicol}
-\usepackage{amsmath, amssymb, amsfonts,  titlesec}
+\usepackage{amsmath, amssymb, amsfonts, amsthm, titlesec}
 \usepackage[urw-garamond,cal=cmcal]{mathdesign}
 \usepackage{fancyhdr, booktabs, longtable}
 %\usepackage[font=small,format=plain,labelfont=it,textfont=it]{caption}
@@ -105,6 +105,18 @@ An empirical comparison of the new models and a discussion of the results follow
 sections \ref{sec:results} and \ref{sec:discussion}. Ideas for future work are
 listed in \ref{sec:futurework}.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% BACKGROUND INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \chapter{Background}
 % citet{Azizoglu} results in [2002]
 % citep{Azizoglu} results in [Azizoglu et al., 2002]
@@ -126,44 +138,124 @@ introduce the concepts behind both CP and MIP and review recent work on problems
 similar to the one dealt with here.
 
 \section{Constraint Programming}
-A constraint program specifies relationships, \textit{constraints}, that must
-hold between input variables in the form of mathematical equations or
-inequalities. Every input variable is assigned a set $\mathcal{D}$ of potential
-values it can assume, its \textit{domain}. The solving algorithm begins by
-assigning a value to one of the variables. Using the constraints, the solver can
-then often reduce the other variables' domains, i.e. eliminate other potential
-values of other variables. These domain reductions may themselves trigger domain
-reductions in other variables, and so on, in a process called
-\textit{propagation}. Propagation can lead to one of three results:
-\begin{alist}
-\item{an inconsistency, in which a variable's domain is reduced to an empty set.
-That is, the given constraints allow for none of that variable's
-potential values given the values assigned to other variables. As a result, the
-solver will \textit{backtrack}, i.e. undo one or more of previous assignments
-made, and assign other values.}
-\item{a consistent solution, in which every variable's domain is reduced to a single value
-(a singleton). If we are searching for an optimal solution, this may replace an
-incumbent solution if it is better.}
-\item{some reduced domains, but neither a solution nor an inconsistency. In this
-case, the solver assigns more values to variables to trigger more propagation,
-until a solution or an inconsistency is reached.}
-\end{alist}
 
-Without formally introducing different notions of inconsistency, it should be
-noted that a problem can have no solution even when all variables have
-non-empty domains. (See figure).
+Many problems can be understood as a situation in which a set of values is to be
+chosen according to certain rules, but since the number of possible combinations
+of values is enormous, attempting to test all of them is infeasible.
 
-Unlike in MIP, constraints in CP are not restricted to expressions that are
-linear in the input variables. Furthermore, so-called \textit{global
-constraints} can be used that act on entire sets of variables at once. They are
-implemented as custom algorithms that rely on specific knowledge about the
-problem and are often based on results from graph theory. Global constraints can
-be powerful tools; a classic example is the \texttt{alldifferent} constraint
-which ensures that a set of variables take on unique values. While a number of
-not-equal relationships between the variables can achieve the same effect after
-several propagations, the global constraint reduces the domains of all involved
-variables in one fell swoop such that for each variable, only the values remain
-that are consistent with those of all the other variables.
+
+Constraint programming (CP) is a formal framework for the formulation and
+solution of such problems. CP models consist of a set of variables $V = \{x_1,
+\dots, x_n\}$, each $x_i$ of which has a domain $\mathcal{D}_i$, the set of
+values that could conceivably be assigned to it. The CP problem is defined by a
+set of relationships that must hold between the variables. Model
+\ref{mod:cpsample} illustrates the concept.
+
+\begin{model}
+\begin{align}
+x &\in \{1,\dots,10\}\\
+y &\in \{9,\dots,20\}\\
+z &\in \{1,\dots,50\}\\
+x &> y\\
+z &\geq xy - 42
+\end{align}
+\caption{A simple CP model}
+\label{mod:cpsample}
+\end{model}
+Here, $x, y, z$ are the variables with their respective domains.
+
+\subsection{Propagation}
+We can choose a variable and a value to assign to it, and explore the
+consequences of this assignment. Assign $x = 5$, then based on the constraint $x
+> y$ only values $< 5$ are permissible for $y$, but none are available in
+$\mathcal{D}_y$. The assignment $x = 5$ leads to an \textit{inconsistency}, and
+another value must be chosen.
+ 
+If we choose $x = 10$ (which, clearly, is the only feasible value for $x$, since all
+others violate $x > y$), $y$ is limited to $y = 9$. This means that $z \geq 9 \cdot
+10 - 42 = 48$, thus $z = \{48, 49, 50\}$.
+ 
+This process of successive elimination is known as
+\textit{propagation}, and it is the core of all CP solver algorithms. In
+propagation, a variable is assigned a fixed value, and the constraints are used
+to reduce the domains of other variables accordingly, until no constraints are
+violated.
+
+\subsection{Consistency}
+Propagation is commonly seen as a way to enforce consistency. It can be
+triggered by fixing a variable to a value, but also by systematic evaluation of
+constraints. Let any two variables in a problem be involved in a binary
+constraint $C$, such as $x > y$ above. If their domains are reduced such that
+they fulfill $C$ (that is, $\forall a \exists b$ such that $a \in
+\mathcal{D}_x, b \in \mathcal{D}_y, C(x = a, y = b) = \mathtt{true}$), they are
+\textit{arc-consistent} with regards to $C$. Propagation will commonly enforce
+arc consistency across all variables and constraints.
+ 
+Arc consistency alone is not sufficient to guarantee the existence of a solution
+(satisfiability), unless the graph of variables and constraints is acyclic.
+Consider the following problem (Model \ref{mod:unsatcp}):
+ 
+\begin{model}[h!]
+\begin{align}
+x_1 &= x_2\\
+x_1 &= x_3\\
+x_2 &= x_4\\
+x_3 &\neq x_4\\
+x_1, x_2, x_3, x_4 &\in \{1, 2\}
+\end{align}
+\caption{Unsatisfiable CP problem}
+\label{mod:unsatcp}
+\end{model}
+The model is arc-consistent but has no solution: forcing any variable to assume
+a fixed value will result in at least constraint being violated.
+ 
+The notion of arc consistency (two variables) can be extended, e.g. to three
+variables related through binary constraints (\textit{path consistency}) or
+to constraints involving more than two variables, where every value assigned to
+a variable $x$ must be consistent with all of all other variables' values
+(\textit{generalized arc consistency}).
+
+\subsection{Global constraints}
+Propagation makes use of graph-theory based algorithms that enforce a form of
+consistency on the variables involved in a constraint. Most constraints are
+formulated in the form of binary relationships involving a single operator (e.g.
+$\geq, =$ or $\neq$). But it is often possible and beneficial to impose
+constraints on groups of variables at once. Consider the following classic
+example:
+\begin{model}[h!]
+\begin{align}
+x_1 &\neq x_2\\
+x_2 &\neq x_3\\
+x_3 &\neq x_4\\
+x_4 &\neq x_1\\
+x_1 &\neq x_3\\
+x_2 &\neq x_4\\
+x_1, x_2, x_3, x_4 &\in \{1, 2, 3\}
+\end{align}
+\caption{A clique of not-equal constraints}
+\label{mod:cpalldiff}
+\end{model}
+This model prescribes that the variables $x_1, x_2, x_3, x_4$ are to take on
+different values. The model is arc consistent. To find a solution (or
+insatisfiability), a value has to be assigned to three of the variables, and the
+solver has to propagate the domain reductions after every assignment. Consider,
+on the other hand, the use of a specialized constraint called
+\texttt{alldifferent}$(x_1, x_2, x_3, x_4)$. This constraint, implemented as a
+custom algorithm, can speed up the propagation rapidly. In the case of our
+example, the constraint can infer that the number of variables exceeds the
+number of available values. The solver can conclude that the problem is
+insatisfiable without any propagation.
+
+Such specialized or ``global'' constraints can efficiently exploit properties
+that hold for certain relationships among groups of variables, and that would
+not be available if the relationship were expressed as a set of binary
+constraints.
+ 
+
+\section{Constraint Programming and Scheduling}
+
+Scheduling involves assigning activities of certain lengths to resources of
+limited capacity.
 
 \section{Mixed Integer Programming}
 \subsection{Linear Programming}
@@ -237,26 +329,45 @@ At this point, the solution is $x_1 = 4.6, x_2 = 3.2$.
 The solver then chooses a variable, based on heuristics, and \textit{branches}
 on it. In this case, assume that we branch on $x_2$, which means that we set
 $x_2 \leq 3.0 \lor x_2 \leq 4.0$. We now have two new MIPs, as shown in figure
-\ref{fig:mipplot2}.\input{figures/mipplot2}
+\ref{fig:mipplot2}. Both of these new subproblems are need solving.\footnote{In
+this example, the optimal value for $x_2$ was
+within $\pm1$ of its LP value.  This is often the case, and it is not
+immediately obvious from the figure why fixing $x_2 = 3.0 \lor x_2 = 4.0$ is
+insufficient. In some problems, however, the shaded polyhedron protudes
+relatively far diagonally through the grid of integer solutions, in which case
+branching on $\leq \lfloor x_i \rfloor$ and $\geq \lceil x_i \rceil$ is
+necessary to capture the optimal feasible solution.} At
+this point, another heuristic decides which subproblem is solved first.
+Again, the chosen subproblem is first solved in its LP relaxation, and the above
+procedure is repeated until an integral solution is found. If this solution is
+the best solution known so far, it is stored as the \textit{incumbent}. The
+solver then \textit{backtracks}: it undoes some of the previously fixed variables,
+and explores other (previously unsolved) subproblems.
 
-In this case, the optimal value for $x_2$ was within $\pm1$ of its LP value.
-This is often the case, and 
+This behaviour can be visualized as a search tree in which every node represents
+a decision between two subproblems. At every node, a subproblem is chosen, the
+subproblem's LP relaxation is run, and the next variable is chosen to be
+branched on.
 
+When the solver backtracks to a previous node to explore another subproblem, say
+$P_1$, it can compare the LP solution of $P_1$ with the current incumbent's
+solution. Since a solution will never improve with additional integrality
+constraints, the subtree of $P_1$ can be ignored if the objective value of the
+LP solution to $P_1$ is worse than that of the current incumbent. This
+``pruning'' of the search tree during the search is referred to as
+\textit{bounding}, and is what allows many MIP models to be solved in less time than
+their theoretically exponential complexity suggests.
 
+\subsubsection{Branch-and-cut methods}
 
-. The current solution from
-the LP relaxation is fractional and thus infeasible. The search tree 
+\subsubsection{Special ordered sets}
 
-which generally results in fractional values for most variables, such as $x =
-a$. It then branches on possible values for $x$: either $x < a$ or $x > a$. If
-$a$ is integral, $x = a$.  The MIP solution at a node $n$ also serves as a
-\textit{lower bound} $LB_n$ on solutions in the respective subtrees: once a
-solution with an objective value of $v$ is found, $v$ becomes an \textit{upper
-bound} on the optimal objective value and all yet unexplored subtrees with $LB_n
-\geq v$ need no longer be searched (``pruning'' the subtree). This procedure is
-called \textit{branch-and-bound} and the most basic method used to solve integer
-programming problems. Other methods exist, e.g. \textit{branch-and-cut}, and are
-often used in conjunction with branch-and-bound in today's solvers.
+\subsubsection{Lazy constraints}
+
+\section{Scheduling using CP and MIP}
+\subsection{Common types of scheduling problems}
+\subsection{Temporal problems in CP}
+\subsection{Temporal problems in MIP}
 
 \section{Literature}
 The problem at hand is based on the work of \citet{Malapert}, who proposed a global
@@ -276,12 +387,218 @@ functions \citep{Sabouni}, for makespan minimization on single batch machines
 different release dates \citep{Ozturk}. A more extensive review of MIP model
 applications in batch processing is given by \citet{Grossmann}.
 
-\chapter{Modelling the problem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% MY CONTRIBUTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{mipmodel.tex}
+
+\chapter{Modelling the problem} 
+In this section we present the models examined.
+Beginning with the MIP model used by Malapert, we explore several additional
+constraints that, while redundant, tighten the search space. We comment on the
+performance of the approaches (see section \ref{chapter:results} for a
+comprehensive comparison of performance). We present a CP model and a
+decomposition-based approach using either MIP or CP. Finally, we introduce a new
+approach to setting up a MIP model that significantly improves upon the original
+MIP and outperforms all other models presented in this paper.
+
+\section{MIP model}\label{sec:malapertmipmodel}
+As a baseline to compare other models' performance to, we first replicated
+Malapert's original MIP approach, as given in Model \ref{model:malapertmip}. It
+uses a set of binary decision variables $x_{jk}$ to represent whether job $j$ is
+assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
+batches, the number of jobs being a trivial upper bound on the number of batches
+required; it also enforces an earliest-due-date-first (EDD) ordering of the
+batches (constraint \ref{c:malapp-edd}).
+
+\begin{model}[h]
+\begin{alignat}{2}
+\mathrm{Min.}\quad & \Lmax && \\
+\mathrm{s.t.}\quad &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J \\
+  &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\\
+  &p_j x_{jk} \leq P_k \quad && \forall j \in J, \forall k \in K\\
+  &C_{k-1} + P_{k} = C_k \quad && \forall k \in K\\
+  &(d_{max} - d_j)(1 - x_{jk}) + d_j \geq D_k \quad && \forall j \in J, \forall k \in K\\
+  &D_{k-1} \leq D_k \quad && \forall k \in K \label{c:malapp-edd} \\
+  &C_k - D_k \leq \Lmax \quad && \forall k \in K\\[2ex]
+  &C_k \geq 0, P_k \geq 0 \text{ and } D_k \geq 0 \quad && \forall k \in K  
+\end{alignat}
+\caption{Malapert's original MIP model}
+\label{model:malapertmip}
+\end{model}
+
+\section{Improved MIP model}\label{sec:improvedmipmodel}
+Several improvements can be made to Malapert's MIP model in the form of
+additional constraints shown in Model \ref{model:improvedmip}, as  
+described in greater detail in the subsections below.
+
+\begin{model}[h]
+\begin{alignat}{2}
+& \sum_{j \in J} x_{j,k-1} = 0 \rightarrow \sum_{j \in J} x_{jk} = 0 \quad &&
+\forall k \in K \\
+& e_k + \sum_{j \in J} x_{jk} \geq 1 \quad && \forall k \in K \\
+& n_j (e_k-1) + \sum_{j \in J} x_{jk} \leq 0 \quad && \forall k \in K \\
+& e_k - e_{k-1} \geq 0 \quad && \forall k \in K \\
+& x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \} \\
+& \Lmax \geq \big\lceil\frac{1}{b} \sum_{j} s_j
+p_j\big\rceil - \delta_q \quad
+&& \forall q, \forall \{ j \in J | d_j \leq \delta_q \}
+\end{alignat}
+\caption{Improvements to Malapert's original MIP model}
+\label{model:improvedmip}
+\end{model}
+
+\subsection{Grouping empty batches} The given
+formulation lacks a rule that ensures that no empty batch is followed by a
+non-empty batch. Empty batches have no processing time and a due date only
+bounded by $d_\text{max}$, so they can be sequenced between non-empty batches
+without negatively affecting $\Lmax$. Since, however, desirable schedules have
+no empty batches scattered throughout, we can easily reduce the search space by
+disallowing such arrangements. The idea is illustrated in Figure
+\ref{fig:dominancerule}.
+
+\input{figures/dominancerule}
+
+A mathematical formulation is
+\begin{alignat}{2}
+& \sum_{j \in J} x_{j,k-1} = 0 \rightarrow \sum_{j \in J} x_{jk} = 0 \quad && \forall k \in K. \label{eq:emptybatch0}
+\end{alignat}
+
+To implement this, we can write constraints in terms of an additional  set of binary variables, $e_k$, indicating whether a batch $k$ is empty or not:
+
+\begin{alignat}{2}
+& e_k + \sum_{j \in J} x_{jk} \geq 1 \quad && \forall k \in K, \label{eq:emptybatch1} \\
+& n_j (e_k-1) + \sum_{j \in J} x_{jk} \leq 0 \quad && \forall k \in K. \label{eq:emptybatch2}
+\end{alignat}
+
+Constraints \eqref{eq:emptybatch1} enforce $e_k = 1$ when the batch $k$ is
+empty. Constraints \eqref{eq:emptybatch2} enforce $e_k = 0$ otherwise, since the
+sum term will never exceed $n_j$. The rule \eqref{eq:emptybatch0} can now be
+expressed as $e_{k-1} = 1 \rightarrow e_k = 1$, and implemented as follows:
+
+\begin{alignat}{2}
+& e_k - e_{k-1} \geq 0 \quad && \forall k \in K.
+\end{alignat}
+
+We can also prune any attempts to leave the first batch empty by adding a constraint $e_0 = 0$.
+
+
+\subsection{No postponing of jobs to later batches}
+Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
+\begin{alignat}{2}
+  & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \} \label{eq:mipnopp}
+\end{alignat}
+
+\subsection[Lower bound on $\Lmax$]{Lower bound on {\sansitalicfont L}\textsubscript{max}}
+Let a \textit{bucket} $q$ denote the set of all batches with due date $\delta_q$.
+Then the completion date $C_q$ of this bucket is the completion date of the
+last-scheduled batch with due date $\delta_q$, and the lateness of the bucket
+$q$ is $L_q = C_q - \delta_q$. Since all batches up to and including those in
+bucket $q$ are guaranteed to contain all jobs with due dates $d \leq \delta_q$
+-- as ensured by the EDD ordering of batches -- the lower bound on every
+bucket's lateness $LB(L_q)$ is a valid lower bound on $\Lmax$. In other words,
+jobs with due date $d \leq \delta_q$ will be found only in batches up to and
+including the last
+batch of bucket $q$. This provides a lower bound on the lateness of bucket $q$:
+\begin{alignat}{2}
+& \Lmax \geq C_{\text{max},q} - \delta_q \quad && \forall q
+\end{alignat}
+The buckets up to bucket $q$ will likely also contain some later ($d >
+\delta_q$) jobs in the optimal solution but this does not affect the validity of
+the lower bound.
+
+Now we need to find $C_{\text{max},q}$, or at least a lower bound on it, in
+polynomial time. The simplest approach simply considers the jobs' total ``area''
+(or ``energy''), i.e. the sum of all $s_j p_j$ products:
+\begin{alignat}{2}
+& C_{\text{max},q} \geq \big\lceil\frac{1}{b} \sum_{j} s_j
+p_j\big\rceil \quad
+&& \forall q, \forall \{ j \in J | d_j \leq \delta_q \}
+\end{alignat}
+A better lower bound on $C_{\text{max},q}$ would be given by a
+preemptive-cumulative schedule. Unfortunately, minimizing $C_{\text{max}}$ for
+such problems is equivalent to solving a standard bin-packing problem, which
+requires exponential time.\footnote{In a preemptive-cumulative schedule, jobs
+may be stopped and restarted mid-execution, but occupy a constant amount $s_j$
+on the resource while executing. In such a schedule, minimizing the makespan is
+as difficult as solving a bin-packing problem: we can break jobs into small
+pieces (no longer than the smallest common divisor of the jobs' lengths $p$) and
+then pack them together such as to minimize the number of small time slots
+needed.}
 
 \input{cpmodel.tex}
 \input{decomp.tex}
+
+\section{A move-based MIP model}
+This approach is based on the idea of preserving EDD ordering among the batches.
+ 
+Initially, all jobs are assigned to a single batch, ordered by non-decreasing
+due date, and by non-decreasing processing time in case of a tie between two
+jobs. For the purposes of this paper, we refer to this schedule as the
+\textit{single-EDD} schedule. We can calculate the lateness
+$L_{k,\text{single}}$ of every job in this schedule in linear time.
+
+For the purpose of this discussion, we use the following terminology: in any
+batch $k$ holding multiple jobs in an EDD schedule, let \textit{host job} denote
+the earliest-due job in the batch, and \textit{guest jobs} all other jobs. If a
+batch $k$ only holds one job $j$, then job $j$ is said to be \textit{single}.
+ 
+We now observe the following two things:
+ 
+\begin{proposition}
+Consider a schedule in which batches are ordered by EDD. Then moving job $j$
+from batch $k_\beta$ into an earlier batch $k_\alpha$ will preserve EDD ordering
+if $j$ is single in $k_\beta$ and if $k_\alpha$ is not empty.
+\end{proposition}
+\begin{proof}
+Moving $j$ into $k_\alpha$ will leave $D_\alpha$ unaffected, since $k_\alpha$ is
+not empty, i.e. there is a host job in $k_\alpha$. Since the original schedule
+was EDD-ordered, the host in $k_\alpha$ is due earlier than $j$.
+ 
+Batch $k_\beta$ will be reduced to zero processing time, but batches after
+$k_\beta$ will still be due after $k_{\beta - 1}$, so EDD ordering is preserved.
+\end{proof}
+ 
+\begin{proposition}
+Starting from a single-EDD schedule, moving single jobs back into earlier
+non-empty batches will generate all possible EDD schedules.
+\end{proposition}
+\begin{proof}
+The order in which moves are performed is arbitrary; moves are independent of
+each other (capacity requirements notwithstanding).
+\end{proof}
+ 
+Consider a single-EDD schedule, that is, for every job and batch, the indices
+match: $B_j = j \forall j$ (where $B_j$ denotes the batch $j$ is assigned to).
+Moving $j$ from batch $k_j$ into an earlier batch $k_\alpha$ has the following
+effect:
+\begin{itemize}
+\item{the lateness of all batches after $k_j$ is reduced by $p_j$,}
+\item{the lateness of all batches after $k_\alpha$ is increased by $\max(0,p_j -
+P_\alpha)$. This includes all batches after $k_j$.}
+\end{itemize}
+Since only the host job (with index $j = k$) in any batch $k$ is relevant to
+$\Lmax$, we can understand the lateness of batch $k$ as its single-EDD lateness
+$L_{k,\text{single}}$, modified by summed effect all moves have on it as listed
+above.
+ 
+The following expression defines the lateness of a batch $k$ based on this
+calculation:
+ 
+\begin{alignat}{2}
+& L_k = L_{k,\text{single}} - \sum_{i = 1}^{k-1} \sum_{h = 0}^{k-2} x_{ih} p_i
++ \sum_{h = 0}^{k-1} P_h - p_h - (\sum_{h=0}^{k-1} x_{kh}) L_\text{max,inc}
+\quad && \forall k \in K
+\end{alignat}
+ 
+where $x_{jk}$ is 1 iff job $j$ is moved back into batch $k$.
+
+
 
 \input{testresults.tex}
 \input{discussion.tex}
