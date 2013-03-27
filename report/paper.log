@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  25 MAR 2013 17:41
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  27 MAR 2013 02:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2747,35 +2747,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 272.
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 266.
 
 Package natbib Warning: Citation `papadimitriou' on page 7 undefined on input l
-ine 272.
+ine 266.
 
 
 Package natbib Warning: Citation `karmarkar' on page 7 undefined on input line 
-272.
+266.
 
 (./figures/lpplot1.tex
 *************************************************
@@ -3062,47 +3042,6 @@ Package natbib Warning: Citation `karmarkar' on page 7 undefined on input line
 . This font family consists of the following shapes:
 .................................................
 [7]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[8]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -3649,6 +3588,47 @@ Package natbib Warning: Citation `karmarkar' on page 7 undefined on input line
 . 
 . This font family consists of the following shapes:
 .................................................
+[8]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
 [9]
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -3750,106 +3730,6 @@ Package natbib Warning: Citation `karmarkar' on page 7 undefined on input line
 . 
 . This font family consists of the following shapes:
 .................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'Inconsolata' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font
-* 'Inconsolata' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
-. [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'Inconsolata' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font
-* 'Inconsolata' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
-. [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'Inconsolata' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font
-* 'Inconsolata' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
-. [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
 [10]
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -3891,7 +3771,208 @@ Package natbib Warning: Citation `karmarkar' on page 7 undefined on input line
 . 
 . This font family consists of the following shapes:
 .................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'Inconsolata' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
+. [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'Inconsolata' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
+. [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'Inconsolata' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font
+* 'Inconsolata' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'Inconsolata(0)' created for font 'Inconsolata' with options
+. [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,Mapping=tex-text,Scale=0.91, AutoFakeBold].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
 [11]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[12]
 Chapter 3.
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -3914,8 +3995,8 @@ Chapter 3.
 . This font family consists of the following shapes:
 .................................................
 
-LaTeX Warning: Reference `chapter:results' on page 12 undefined on input line 4
-04.
+LaTeX Warning: Reference `chapter:results' on page 13 undefined on input line 4
+13.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -4003,7 +4084,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[12
+[13
 
 ] (./figures/dominancerule.tex
 *************************************************
@@ -4127,48 +4208,48 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[13]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
 [14]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[15]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -4232,15 +4313,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 .................................................
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 497.
+(hyperref)                removing `math shift' on input line 506.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 497.
+(hyperref)                removing `subscript' on input line 506.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 497.
+(hyperref)                removing `math shift' on input line 506.
 
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -4282,7 +4363,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 . 
 . This font family consists of the following shapes:
 .................................................
-[15] (./cpmodel.tex
+[16] (./cpmodel.tex
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -4829,7 +4910,7 @@ Underfull \hbox (badness 1320) in paragraph at lines 2--5
 . 
 . This font family consists of the following shapes:
 .................................................
-[16]
+[17]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -5120,7 +5201,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[17] (./figures/decomp_diagram1.tex
+[18] (./figures/decomp_diagram1.tex
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -5370,47 +5451,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[18]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
 [19]
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -5453,6 +5493,47 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . This font family consists of the following shapes:
 .................................................
 [20]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[21]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -7037,48 +7118,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[21]
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-*************************************************
-* fontspec warning: "script-not-exist"
-* 
-* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
-*************************************************
-*************************************************
-* fontspec warning: "icu-feature-not-exist-in-font"
-* 
-* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
-* Mittelschrift' with script 'Latin' and language 'Default'.
-*************************************************
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
-. Mittelschrift' with options [Mapping=tex-text,
-. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
-. 
-. This font family consists of the following shapes:
-.................................................
-[22] (./testresults.tex
+[22]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -7120,6 +7160,194 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . This font family consists of the following shapes:
 .................................................
 [23]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[24]
+
+LaTeX Warning: Reference `sec:movebackproof' on page 25 undefined on input line
+ 653.
+
+
+LaTeX Warning: Reference `mbm:eq6' on page 25 undefined on input line 666.
+
+
+LaTeX Warning: Reference `mbm:eq7' on page 25 undefined on input line 666.
+
+
+LaTeX Warning: Reference `mbm:eq7' on page 25 undefined on input line 670.
+
+
+LaTeX Warning: Reference `mbm:eq8' on page 25 undefined on input line 670.
+
+
+LaTeX Warning: Reference `mbm:eq7' on page 25 undefined on input line 676.
+
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[25]
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[26]
+
+LaTeX Warning: Reference `sec:movebackproof' on page 27 undefined on input line
+ 702.
+
+(./testresults.tex
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'DIN 1451 Mittelschrift' does not contain script 'Latin'.
+*************************************************
+*************************************************
+* fontspec warning: "icu-feature-not-exist-in-font"
+* 
+* OpenType feature 'Ligatures=Common' (+liga) not available for font 'DIN 1451
+* Mittelschrift' with script 'Latin' and language 'Default'.
+*************************************************
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'DIN1451Mittelschrift(0)' created for font 'DIN 1451
+. Mittelschrift' with options [Mapping=tex-text,
+. Ligatures=Common,Script=Latin,LetterSpace=2.6, Mapping=tex-text].
+. 
+. This font family consists of the following shapes:
+.................................................
+[27]
 Chapter 4.
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -7187,7 +7415,7 @@ Overfull \hbox (9.8304pt too wide) in paragraph at lines 52--53
 . 
 . This font family consists of the following shapes:
 .................................................
-[24
+[28
 
 ]
 *************************************************
@@ -7230,7 +7458,7 @@ Overfull \hbox (9.8304pt too wide) in paragraph at lines 52--53
 . 
 . This font family consists of the following shapes:
 .................................................
-[25]
+[29]
 Chapter 5.
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -7273,7 +7501,7 @@ Chapter 5.
 . 
 . This font family consists of the following shapes:
 .................................................
-[26
+[30
 
 ]
 Chapter 6.
@@ -7463,7 +7691,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 . 
 . This font family consists of the following shapes:
 .................................................
-[27
+[31
 
 ] (./figures/bnk1_1050.tex
 *************************************************
@@ -7594,7 +7822,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[28]
+[32]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -7952,7 +8180,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 . 
 . This font family consists of the following shapes:
 .................................................
-[29]
+[33]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -8067,7 +8295,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 . 
 . This font family consists of the following shapes:
 .................................................
-[30]
+[34]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -8215,7 +8443,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 . This font family consists of the following shapes:
 .................................................
 
-Package natbib Warning: Citation `Lardeux' on page 31 undefined on input line 1
+Package natbib Warning: Citation `Lardeux' on page 35 undefined on input line 1
 55.
 
 *************************************************
@@ -8340,7 +8568,7 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 . 
 . This font family consists of the following shapes:
 .................................................
-[31]) (./mip2model.tex
+[35]) (./mip2model.tex
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -8381,7 +8609,7 @@ LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
 . 
 . This font family consists of the following shapes:
 .................................................
-[32]
+[36]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -8448,7 +8676,7 @@ Overfull \hbox (80.69739pt too wide) in paragraph at lines 13--13
 . 
 . This font family consists of the following shapes:
 .................................................
-[33] (./paper.bbl
+[37] (./paper.bbl
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
@@ -8491,7 +8719,7 @@ Missing character: There is no ’ in font mdugmr8t!
 . 
 . This font family consists of the following shapes:
 .................................................
-[34
+[38
 
 ])
 *************************************************
@@ -8534,7 +8762,7 @@ Missing character: There is no ’ in font mdugmr8t!
 . 
 . This font family consists of the following shapes:
 .................................................
-[35]
+[39]
 Appendix A.
 *************************************************
 * fontspec warning: "script-not-exist"
@@ -8596,7 +8824,7 @@ Appendix A.
 . 
 . This font family consists of the following shapes:
 .................................................
-[36
+[40
 
 ]
 Appendix B.
@@ -8640,17 +8868,17 @@ Appendix B.
 . 
 . This font family consists of the following shapes:
 .................................................
-[37
+[41
 
 ]
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 629.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 629.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
 (./paper.aux (./coverpage_cardboard.aux) (./coverpage.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 629.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 629.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 755.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 755.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -8661,15 +8889,15 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 629.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 755.
  ) 
 Here is how much of TeX's memory you used:
- 42508 strings out of 495716
- 909631 string characters out of 3188883
- 1083767 words of memory out of 3000000
- 44852 multiletter control sequences out of 15000+200000
+ 42517 strings out of 495716
+ 909735 string characters out of 3188883
+ 1088269 words of memory out of 3000000
+ 44861 multiletter control sequences out of 15000+200000
  130030 words of font info for 133 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,19n,74p,657b,1880s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,22n,74p,657b,1880s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on paper.pdf (43 pages).
+Output written on paper.pdf (47 pages).

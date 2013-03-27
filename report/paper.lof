@@ -4,12 +4,12 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Graphical representation of a typical LP problem\relax }}{8}{figure.caption.8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Graphical representation of a typical MIP problem\relax }}{9}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches (circles represent the $x_{jk}$ variables; a filled circle stands for $x_{jk} = 1$)\relax }}{14}{figure.caption.16}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{18}{figure.caption.19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches (circles represent the $x_{jk}$ variables; a filled circle stands for $x_{jk} = 1$)\relax }}{15}{figure.caption.13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{19}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of CPU time used by different models to find an optimal schedule and prove its optimality.\relax }}{25}{figure.caption.24}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of CPU time used by different models to find an optimal schedule and prove its optimality.\relax }}{29}{figure.caption.24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text {max}}$\relax }}{28}{figure.caption.25}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text {max}}$\relax }}{32}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

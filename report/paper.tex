@@ -251,12 +251,6 @@ that hold for certain relationships among groups of variables, and that would
 not be available if the relationship were expressed as a set of binary
 constraints.
  
-
-\section{Constraint Programming and Scheduling}
-
-Scheduling involves assigning activities of certain lengths to resources of
-limited capacity.
-
 \section{Mixed Integer Programming}
 \subsection{Linear Programming}
 Mixed Integer Programs (or ``MIP
@@ -358,11 +352,26 @@ LP solution to $P_1$ is worse than that of the current incumbent. This
 \textit{bounding}, and is what allows many MIP models to be solved in less time than
 their theoretically exponential complexity suggests.
 
-\subsubsection{Branch-and-cut methods}
+\subsection{Branch-and-cut methods}
 
-\subsubsection{Special ordered sets}
+\subsection{Special ordered sets}
 
-\subsubsection{Lazy constraints}
+\subsection{Lazy constraints in MIP}\label{sec:lazyconstraints}
+Achieving fast search times in MIP requires striking a delicate balance between
+keeping the model small (reducing the time needed to solve the LP relaxations)
+and formulating the model tightly (pruning more branches off the search tree).
+Often, the way certain constraints can be used to perform pre-solve reductions
+plays into the performance also, and is difficult to predict.
+
+\textit{Lazy constraints} are one way to avoid this problem. They are expressed
+as regular linear constraints and checked against whenever the model encounters
+a new solution. Lazy constraints that were violated are then added to the model
+to be used in future instances.
+
+This is particularly useful when a problem lends itself to the generation of
+vast sets of constraints involving few variables, but most of these constraints
+are likely not needed. In such cases, lazy constraints can greatly speed up
+solution times.
 
 \section{Scheduling using CP and MIP}
 \subsection{Common types of scheduling problems}
@@ -577,13 +586,13 @@ Consider a single-EDD schedule, that is, for every job and batch, the indices
 match: $B_j = j \forall j$ (where $B_j$ denotes the batch $j$ is assigned to).
 Moving $j$ from batch $k_j$ into an earlier batch $k_\alpha$ has the following
 effect:
-\begin{itemize}
+\begin{alist}
 \item{the lateness of all batches after $k_j$ is reduced by $p_j$,}
-\item{the lateness of all batches after $k_\alpha$ is increased by $\max(0,p_j -
-P_\alpha)$. This includes all batches after $k_j$.}
-\end{itemize}
-Since only the host job (with index $j = k$) in any batch $k$ is relevant to
-$\Lmax$, we can understand the lateness of batch $k$ as its single-EDD lateness
+\item{the lateness of all batches after $k_\alpha$, including those after $k_j$, is increased by $\max(0,p_j -
+P_\alpha)$.}
+\end{alist}
+Since, in any batch $k$, only the host job (with index $j = k$) is relevant to
+$\Lmax$, always being the earliest-due, we can understand the lateness of batch $k$ as its single-EDD lateness
 $L_{k,\text{single}}$, modified by summed effect all moves have on it as listed
 above.
  
@@ -591,14 +600,131 @@ The following expression defines the lateness of a batch $k$ based on this
 calculation:
  
 \begin{alignat}{2}
-& L_k = L_{k,\text{single}} - \sum_{i = 1}^{k-1} \sum_{h = 0}^{k-2} x_{ih} p_i
-+ \sum_{h = 0}^{k-1} P_h - p_h - (\sum_{h=0}^{k-1} x_{kh}) L_\text{max,inc}
-\quad && \forall k \in K
+& L_k = L_{k,\text{single}} - \sum_{h=0}^{k} P_h - p_h(2 - x_{hh}) \quad &&
+\forall k \in K
 \end{alignat}
  
-where $x_{jk}$ is 1 iff job $j$ is moved back into batch $k$.
+where $x_{jk}$ is 1 iff job $j$ is moved back into batch $k$. The sum term
+represents the effects that all moves have on previous batches up to, and
+including, $k$: $x_{hh} = 1$ iff job $h$ is not moved from its single-EDD batch
+$h$, and so the sum term evaluates to $P_h - p_h$ for a batch in which the host
+was not moved. If $h$ has guests, then $P_h - p_h$ may be positive; otherwise it
+will be zero. Effectively, for batch $h$, the time $\max(0, P_h-p_h)$ is added
+to $L_k$. If, however, job $h$ was moved out of its batch, then the batch
+will have a processing time of $P_h = p_h$ (the fixed lower bound). Then, effectively,
+for batch $h$, the time $p_h$ is subtracted from $L_k$.
 
+The full set of constraints is listed in Model \ref{mod:movebackmip}, and the
+following section explains every constraint in detail.
+\begin{model}
+\begin{alignat}{2}
+\text{Min.}\quad & \Lmax && \\
+\label{mbm:eq1}\text{s.t.}\quad & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k\} \\
+&\label{mbm:eq2} x_{jj} = 1 \quad && \forall \{j \in J | j \geq f_L\} \\
+&\label{mbm:eq3} P_k \geq p_j x_{jk} \quad && \forall \{j \in J, k \in K | j \geq k\} \\
+&\label{mbm:eq4} \Lmax \geq L_{k,\text{single}} - \sum_{h=0}^{k} P_h - p_h(2 - x_{hh}) \quad && \forall k \in K \\
+&\label{mbm:eq5} x_{jk} \leq x_{kk} \quad && \forall \{j \in J, k \in K | j > k\} \\
+& \sum_{j} s_j x_{jk} \leq b \quad && \forall k \in K \\
+& \sum_{k} x_{jk} = 1 \quad && \forall j \in J \\[4ex]
+(*)\quad & \begin{gathered} 2(  4 - x_{k_1,k_1} - x_{k_2,k_2} \hfill \\+ \sum_{\substack{{j}\\{j \neq j_1}\\{j \neq
+j_2}}} - x_{j_1,k_1} - x_{j_1,k_2} -
+x_{j_2,k_1} - x_{j_2,k_2} ) \geq x_{j_1,k_2} + x_{j_2,k_1} \end{gathered}
+\quad && \begin{gathered} \forall\{ j_1, j_2 \in J, \\ k_1, k_2 \in K \\|\; k_1 < k_2 <
+j_1 < j_2 \land \\ [p_i \leq k_h \land b - s_h \geq s_i\\ \forall i \in
+\{j_1,j_2\}, \\ \forall h
+\in \{k_1,k_2\}] \} \end{gathered} \\[4ex]
+(*)\quad & x_{j_1,k} \geq x_{j_2,k} \quad && \begin{gathered} \forall \{k \in K,
+j_1 \in J, j_2 \in J \\|\; k < j_1 < j_2 \\ \land s_{j_1} \leq s_{j_2} \\
+\land s_{j_2} + s_k \leq b \\ p_{j_1} \leq p_k 
+\land p_{j_1} \geq p_{j_2} \} \\
+\end{gathered}
+\end{alignat}
+\caption{Move-based MIP model. Constraints marked $(*)$ are lazy constraints
+(see subsection \ref{sec:lazyconstraints} for details).}
+\label{mod:movebackmip}
+\end{model}
 
+Constraints \eqref{mbm:eq1} implement the requirement that jobs are only moved
+into earlier batches.
+
+Constraints \eqref{mbm:eq2} apply to jobs with index greater than $f_L$, which
+is the index of the job with the largest value for $L_{k,\text{single}}$. All
+jobs after batch $f_L$ can be ignored in the question, based on the proof given in
+Appendix \ref{sec:movebackproof}. This constraint fixes those jobs to their
+single-EDD batches, effectively removing them from the model. This set of
+constraints is rarely active but can greatly decrease the size of the model in
+some instances.
+
+Constraints \eqref{mbm:eq3} define the value of $P_k$ for every batch $k$ as the
+longest $p$ of all jobs in $k$. This is required in the definition of batch
+lateness as described above and in \eqref{mbm:eq4}.
+
+Constraints \eqref{mbm:eq5} ensure that no job is moved into a host-less batch,
+i.e. in order to move job $j$ into batch $k$ ($x_{jk} = 1$), job $k$ must still
+be in batch $k$ ($x_{kk} = 1$).
+
+Constraints \eqref{mbm:eq6} and \eqref{mbm:eq7} are capacity constraints and
+uniqueness constraints: batches have to remain within capacity $b$, and every
+job can only occupy one batch.
+
+Constraint \eqref{mbm:eq7} and \eqref{mbm:eq8} are dominance rules implemented
+as lazy constraints as explained
+in subsection \ref{sec:lazyconstraints}, and are presented in greater length in
+the following subsections.
+
+\subsubsection{Symmetry-breaking rule}
+Constraint \eqref{mbm:eq7} implements the following concept: if two jobs $j_1$
+and $j_2$ are assigned as guests to batches $k_1$ and $k_2$, and no other jobs
+(save for the hosts) are assigned to $k_1$ and $k_2$, then $j_1$ is always
+assigned to $k_1$ and $j_2$ to $k_2$.
+
+Additionally, both jobs have to be shorter (in terms of $p$) than the shorter of
+the two batches, and all possible assignments have to be feasible capacity-wise.
+
+Large problem instances generate thousands of such constraints, and only very
+few of them will ever hold in the model. Declaring them as ``lazy'' helps keep
+the model small.
+
+\subsubsection{Dominance rule on ``safe'' moves}
+This applies to pairs of jobs $j_1 < j_2$ that are, potentially, competing
+to be guests in batch $k$. If both $j_1$ and $j_2$ are shorter (in terms of $p$)
+than $k$, we can safely enforce that in some cases, $j_1$ gets priority over
+$j_2$, namely if both $p_{j_1} \geq p_{j_2}$ and $s_{j_1} \leq s_{j_2}$ hold.
+
+Two facts allow for this set of rules:
+\begin{proposition}If a job $j_h$ can either be safely moved into an earlier batch,
+\textrm{or} act as a host for later jobs $J_g = \{j_{g_1}, j_{g_2}, \dots\}$,
+moving $j_h$ is always preferable. \label{prop:moveisbetter}
+
+\begin{proof}
+Let $k_{\Lmax}$ be the batch hosting the job with maximum lateness in the final
+solution. If $j_h$ is due after $k_{\Lmax}$, moving it will have no impact on
+$\Lmax$ (see Appendix \ref{sec:movebackproof}). If $j_h$ is due before
+$k_{\Lmax}$, but the earliest-due of $J_g$ is due after $k_{\Lmax}$, then moving
+$J_g$ into $j_h$ will have no impact or a worsening impact on $\Lmax$. If both
+$j_h$ and $J_g$ are due before $k_{\Lmax}$, then moving $J_g$ will, at best,
+improve $\Lmax$ by $p_{j_h}$ (if $\underset{p}{\max}(J_g) \geq p_{j_h}$). In
+this case, however, moving $j_h$ back safely will, under any circumstances,
+reduce $\Lmax$ by $p_{j_h}$. The first job in $J_g$ can host all later jobs in
+$J_g$ (and possibly more, since vertical capacity was freed). The total
+reduction in $\Lmax$ in this case is improved.
+\end{proof}
+\end{proposition}
+
+\begin{proposition} If a job $j_1$ with $d_{j_1} \leq d_{j_2}$ is both longer
+and thinner than $j_2$ ($p_{j_1} \geq p_{j_2}, s_{j_1} \leq s_{j_2}$), assigning
+it as a guest to $k$ will produce a lower $\Lmax$ than assigning $j_2$ to $k$.
+
+\begin{proof}
+Because of due date and size requirements, $j_1$ is a potential host for $j_2$,
+Proposition \ref{prop:moveisbetter} applies. 
+
+Generally, a longer guest job will result in a greater reduction in $\Lmax$, and
+is thus preferable. Since $j_1$ is thinner than $j_2$, the dominance rule will
+not preclude (via capacity constraints) other guest jobs from being assigned to
+$k$ as a consequence of prioritizing $j_1$ over $j_2$.
+\end{proof}
+\end{proposition}
 
 \input{testresults.tex}
 \input{discussion.tex}
