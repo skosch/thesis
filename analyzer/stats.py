@@ -10,7 +10,8 @@ modelType = ""
 maxNj = 0
 timeout = 0
 
-while(not(modelType=="cp" or modelType=="mip" or modelType=="bender")):
+while(not(modelType=="cp" or modelType=="mip" or modelType=="bender" or
+modelType == "nkbender")):
     modelType = raw_input('>')
 print "Enter max number of jobs"
 while(not(maxNj > 10 and maxNj < 100)):
@@ -21,8 +22,10 @@ while(not(timeout > 2 and timeout < 2400)):
 
 basedir = "/home/sebastian/thesis/"
 
-for nj in range(10, maxNj):
-    for nsample in range(1,10):
+#for nj in [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 30, 40, 50]:
+    #for nsample in range(1,11):
+for nj in [30]:
+    for nsample in range(24, 40):
         if(modelType=="cp"):
             filename = basedir + "data/data_" + str(nj) + "_" + str(nsample)
             try:
@@ -54,6 +57,20 @@ for nj in range(10, maxNj):
                 output = process.communicate()[0]
                 elapsedTime = output.split("\n")[len(output.split("\n"))-3]
                 print str(nj) + ", " + str(nsample) + ", " + elapsedTime
+            except IOError as e:
+                pass
+        if(modelType=="nkbender"):
+            filename = basedir + "data/data_" + str(nj) + "_" + str(nsample)
+            try:
+                process = Popen([basedir + "nkbender1/bin/thesis_nkbender1",
+                str(nj), "0", "0", "2000", 
+                filename], stdout=PIPE, stderr=PIPE)
+                exit_code = os.waitpid(process.pid, 0)
+                output = process.communicate()[0]
+                elapsedTime = output.split("\n")[len(output.split("\n"))-2]
+                avgperbatch = output.split("\n")[len(output.split("\n"))-4]
+                print (str(nj) + ", " + str(nsample) + ", " + elapsedTime + ", "
+                + avgperbatch)
             except IOError as e:
                 pass
 

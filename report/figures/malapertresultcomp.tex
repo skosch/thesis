@@ -1,0 +1,111 @@
+\begin{figure}
+  \centering
+    \noindent\begin{tikzpicture}
+    \node[anchor=south west, inner sep=0] at (-3pt,-1pt)
+    {\includegraphics[width=0.9\textwidth]{figures/malapertfinal.pdf}};
+
+  \begin{semilogxaxis}[width=0.99\textwidth, 
+  height=0.749\textwidth,legend pos=south east, xmin=0.01, xmax=3600, ymin=0,
+  ymax=1.0, xtick={0.01, 0.1, 1, 10, 100, 1000, 3600}, ytick={0, 0.1, 0.2, 0.3,
+  0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0}, x tick label style={
+        /pgf/number format/.cd,
+            fixed,
+            fixed zerofill,
+            precision=2,
+        /tikz/.cd
+    }, log ticks with fixed point, 
+    every axis legend/.append style={xshift=8pt, yshift=-5pt}]
+  \addplot[color=black, mark=none] coordinates {
+(0.01, 0.175)
+(0.02, 0.291666666666667)
+(0.03, 0.325)
+(0.04, 0.333333333333333)
+(0.05, 0.35)
+(0.06, 0.358333333333333)
+(0.07, 0.375)
+(0.08, 0.4)
+(0.09, 0.408333333333333)
+(0.1, 0.408333333333333)
+(0.2, 0.475)
+(0.3, 0.5)
+(0.4, 0.533333333333333)
+(0.5, 0.558333333333333)
+(0.6, 0.566666666666667)
+(0.7, 0.566666666666667)
+(0.8, 0.566666666666667)
+(0.9, 0.575)
+(1, 0.575)
+(1.2, 0.591666666666667)
+(1.5, 0.616666666666667)
+(1.6, 0.641666666666667)
+(1.8, 0.65)
+(2, 0.65)
+(2.5, 0.65)
+(3, 0.65)
+(4, 0.658333333333333)
+(5, 0.658333333333333)
+(6, 0.683333333333333)
+(7, 0.725)
+(8, 0.75)
+(9, 0.758333333333333)
+(10, 0.783333333333333)
+(12, 0.816666666666667)
+(14, 0.825)
+(16, 0.825)
+(18, 0.833333333333333)
+(20, 0.833333333333333)
+(25, 0.85)
+(30, 0.866666666666667)
+(35, 0.875)
+(40, 0.875)
+(45, 0.875)
+(50, 0.875)
+(60, 0.925)
+(70, 0.933333333333333)
+(80, 0.933333333333333)
+(90, 0.933333333333333)
+(100, 0.941666666666667)
+(120, 0.941666666666667)
+(140, 0.95)
+(160, 0.95)
+(180, 0.95)
+(200, 0.95)
+(220, 0.95)
+(240, 0.95)
+(260, 0.95)
+(280, 0.95)
+(300, 0.95)
+(340, 0.95)
+(380, 0.95)
+(420, 0.95)
+(480, 0.95)
+(540, 0.958333333333333)
+(600, 0.958333333333333)
+(650, 0.958333333333333)
+(700, 0.958333333333333)
+(800, 0.958333333333333)
+(900, 0.966666666666667)
+(1000, 0.975)
+(1200, 0.975)
+(1400, 0.975)
+(1600, 0.975)
+(1800, 0.975)
+(2000, 0.975)
+(2500, 0.975)
+(3000, 0.975)
+(3600, 0.975)
+};
+\addlegendentry{Move-based MIP model}
+
+\addplot[color=black, mark=none, thick] coordinates {(0,0) (1, 0)};
+\addlegendentry{\texttt{sequenceEDD} with batch fit heuristic}
+
+\addplot[color=black, mark=none, dashed] coordinates {(0,0) (1,0)};
+\addlegendentry{Original MIP}
+
+  \end{semilogxaxis}
+\end{tikzpicture}
+   \vspace{0.73em}
+\caption{Percentage of problem instances solved in a given
+time}\label{fig:malapertresultcomp}
+\end{figure}

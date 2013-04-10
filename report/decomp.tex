@@ -6,8 +6,8 @@ approach is inspired by a method called \textit{Benders decomposition}.
 
 \subsection{Branch-and-bound by batch in chronological
 order}\label{sec:mipdecomp}
-A basic version of this approach uses branch-and-bound to transverse the search
-tree. At each node on level $\ell$, a single MIP and/or CP model is run to
+We use branch-and-bound to transverse a search
+tree representing individual batches $k=0$ to $k=n_k$. At each node on level $\ell$, a single MIP and/or CP model is run to
 assign jobs to batch $k = \ell$. The remaining jobs are passed to the children
 nodes, which assign jobs to the next batch, and so on -- until a solution, and
 thus a new upper bound on $\Lmax$, is found. Several constraints are used to

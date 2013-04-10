@@ -44,7 +44,7 @@ right=1in,top=1.3in, bottom=1.4in]{geometry}
 \vskip 4em
 \fontsize{12pt}{17pt}\selectfont
 \chapter{Introduction}
-This paper discusses three different approaches, and several variations on them,
+This paper discusses four different approaches, and several variations on them,
 to solving the problem of scheduling non-identical jobs on a batch processing
 machine. Batch processing machines, for the purposes of this paper, can process
 multiple, non-identical jobs simultaneously---but all jobs must be loaded into
@@ -57,13 +57,14 @@ ovens, which can process multiple items at a time, but often cannot be opened at
 random---in fact, such machines often need to wait for the largest item in the
 batch to be done before the next batch can be inserted.
 
-\citet{Malapert} proposed a global constraint programming algorithm consisting
+\citet{Malapert} proposed a global constraint programming (CP) algorithm consisting
 of a set of filtering rules to solve the problem. He achieved considerably
-better speeds than with a simple mixed-integer model, but it seems plausible
+better speeds than with a simple mixed-integer model (MIP), but it seems plausible
 that the new global constraint is unnecessarily cumbersome to achieve this
 performance; simple MIP, CP or decomposition approaches are easier to implement
 and extend.  In this paper, we present 1) an improvement to his MIP model, 2) a
-CP model and 3) a decomposition approach to ``divide and conquer'' the problem.
+CP model, 3) a decomposition approach to ``divide and conquer'' the problem, and
+4) a new MIP model that greatly simplifies the original one.
 
 \section{Problem definition}
 We describe the problem as follows: assume we are given a set of jobs $J$, each of
@@ -72,12 +73,12 @@ requirement'') $s_j$. Each job also
 has a due date $d_j$. The machine is characterized by its capacity $b$, and in
 every batch, the jobs' summed sizes must not exceed this number. All values are
 integer.
-
+447723
 The machine can only process one batch $k$ of jobs at a time, and batches always
 take as long as the longest job in the batch (i.e. $P_k = \max_{j \in k}(p_j)$).
 Our objective is to minimize the lateness $L$ of the latest job in $J$, where
 $L$ is the difference between the job's completion time $C_j$ and its due date
-$d_j$---in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
+$d_j$: in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
 completion time, however, is the completion time of the batch, which in turn
 finishes with its \textit{longest} job as stated above.
 
@@ -94,17 +95,22 @@ problem with eight jobs and a resource with capacity $b = 20$.
 
 \input{figures/intro_tetris.tex}
 \section{Organization of this paper}
-After reviewing some of the most relevant publications on both general MIP/CP models and
-batch scheduling problems, we first describe Malapert's original MIP model in
-section \ref{sec:malapertmipmodel}. We then present possible improvements to the
-model in \ref{sec:improvedmipmodel}. Section \ref{sec:cpmodel} introduces a CP formulation of the same
-problem. Sections \ref{sec:mipdecomp} and \ref{sec:cpdecomp} describe a
-decomposition approach.
+We first provide some background on the fundamental concepts of MIP and CP
+(sections \ref{sec:backgroundmip} and \ref{sec:backgroundcp}), and
+review some of the most relevant publications on similar batch scheduling
+problems (section \ref{sec:backgroundlit}) before we describe Malapert's global
+constraint in some detail (section \ref{sec:malapertcp}), as well as his
+original MIP model (section \ref{sec:malapertmip}).
+
+We then present possible improvements to the
+model in \ref{sec:improvedmipmodel}. Section \ref{sec:cpmodel} introduces a CP
+formulation of the same problem. Sections \ref{sec:mipdecomp} and
+\ref{sec:cpdecomp} describe a decomposition approach. Finally, a new MIP approach
+is introduced in section \ref{sec:newmip}.
 
 An empirical comparison of the new models and a discussion of the results follow in
 sections \ref{sec:results} and \ref{sec:discussion}. Ideas for future work are
 listed in \ref{sec:futurework}.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -131,7 +137,7 @@ solutions that are known to be suboptimal a priori. This limits the search
 space, allowing us to solve many instances of difficult combinatorial problems
 in few hours, minutes or even seconds.
 
-Such constrained searches are often implemented in either of two ways (or
+Such constrained searches are often implemented in either one of two ways (or
 variants of them): as a \textit{Constraint Programming model} (CP) or as a
 \textit{Mixed Integer Programming model} (MIP). In this section I will briefly
 introduce the concepts behind both CP and MIP and review recent work on problems
@@ -177,7 +183,7 @@ others violate $x > y$), $y$ is limited to $y = 9$. This means that $z \geq 9 \c
  
 This process of successive elimination is known as
 \textit{propagation}, and it is the core of all CP solver algorithms. In
-propagation, a variable is assigned a fixed value, and the constraints are used
+propagation, a variable's domain is reduced, and the constraints are used
 to reduce the domains of other variables accordingly, until no constraints are
 violated.
 
@@ -298,7 +304,7 @@ invariably be found at an intersection of hyperplanes.
 \subsection{Solving MIP models using branch-and-bound}
 MIP models are LPs in which some of the decision variables are declared
 integers---thus their name.  Like LP models, MIP models also require an
-objection function to be minimized. Figure
+objective function to be minimized. Figure
 \input{figures/mipplot1}
 \ref{fig:mipplot1} illustrates this based on the LP problem above: now, only the
 black dots represent feasible solutions. While the solution is easily found in
@@ -327,7 +333,7 @@ $x_2 \leq 3.0 \lor x_2 \leq 4.0$. We now have two new MIPs, as shown in figure
 this example, the optimal value for $x_2$ was
 within $\pm1$ of its LP value.  This is often the case, and it is not
 immediately obvious from the figure why fixing $x_2 = 3.0 \lor x_2 = 4.0$ is
-insufficient. In some problems, however, the shaded polyhedron protudes
+insufficient. In some problems, however, the shaded polyhedron protrudes
 relatively far diagonally through the grid of integer solutions, in which case
 branching on $\leq \lfloor x_i \rfloor$ and $\geq \lceil x_i \rceil$ is
 necessary to capture the optimal feasible solution.} At
@@ -399,12 +405,59 @@ applications in batch processing is given by \citet{Grossmann}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% MALAPERT'S MODELS %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter[State of the Art: Recent work by Malapert]{State of the Art:\\ Recent work by Malapert}
+\section{The sequenceEDD global constraint}
+
+\section{Malapert's MIP formulation}
+Malapert's original MIP approach is given in Model \ref{model:malapertmip}. It
+uses a set of binary decision variables $x_{jk}$ to represent whether job $j$ is
+assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
+batches, the number of jobs being a trivial upper bound on the number of batches
+required; it also enforces an earliest-due-date-first (EDD) ordering of the
+batches (constraint \eqref{c:malapp-edd}).
+
+\begin{model}[h]
+\begin{alignat}{2}
+\mathrm{Min.}\quad & \Lmax && \\
+\mathrm{s.t.}\quad &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J
+\label{c:malapp-unique}\\
+  &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\label{c:malapp-cap}\\
+  &p_j x_{jk} \leq P_k \quad && \forall j \in J, \forall k \in
+  K\label{c:malapp-pk}\\
+  &C_{k-1} + P_{k} = C_k \quad && \forall k \in K\label{c:malapp-ck}\\
+  &(d_{max} - d_j)(1 - x_{jk}) + d_j \geq D_k \quad && \forall j \in J, \forall
+  k \in K\label{c:malapp-dk}\\
+  &D_{k-1} \leq D_k \quad && \forall k \in K \label{c:malapp-edd} \\
+  &C_k - D_k \leq \Lmax \quad && \forall k \in K\label{c:malapp-lmax}\\[2ex]
+  &C_k \geq 0, P_k \geq 0 \text{ and } D_k \geq 0 \quad && \forall k \in K  
+\end{alignat}
+\caption{Malapert's original MIP model}
+\label{model:malapertmip}
+\end{model}
+
+Constraints \eqref{c:malapp-unique} ensure that every job $j$ is assigned to
+one batch $k$, and one batch only. Constraints \eqref{c:malapp-cap} ensure that
+no batch exceeds the machine's capacity $b$. Constraints \eqref{c:malapp-pk}
+define each batch's processing time $P_k$ as the maximum processing time of the
+jobs $j$ assinged to it. Constraints \eqref{c:malapp-ck} define each batch's
+completion time $C_k$ as that of the previous batch, plus the previous batch's
+processing time. Constraints \eqref{c:malapp-edd} ensure that batches are
+ordered by due date. Constraints \eqref{c:malapp-lmax} define the objective
+value $\Lmax$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% MY CONTRIBUTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \chapter{Modelling the problem} 
 In this section we present the models examined.
@@ -416,30 +469,17 @@ decomposition-based approach using either MIP or CP. Finally, we introduce a new
 approach to setting up a MIP model that significantly improves upon the original
 MIP and outperforms all other models presented in this paper.
 
-\section{MIP model}\label{sec:malapertmipmodel}
-As a baseline to compare other models' performance to, we first replicated
-Malapert's original MIP approach, as given in Model \ref{model:malapertmip}. It
-uses a set of binary decision variables $x_{jk}$ to represent whether job $j$ is
-assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
-batches, the number of jobs being a trivial upper bound on the number of batches
-required; it also enforces an earliest-due-date-first (EDD) ordering of the
-batches (constraint \ref{c:malapp-edd}).
+All MIP and CP models were implemented in C++ using IBM Ilog's Cplex and CP
+Optimizer solvers, respectively.
 
-\begin{model}[h]
-\begin{alignat}{2}
-\mathrm{Min.}\quad & \Lmax && \\
-\mathrm{s.t.}\quad &\sum_{k \in K} x_{jk} = 1 \quad && \forall j \in J \\
-  &\sum_{j \in J} s_j x_{jk} \leq b \quad && \forall k \in K\\
-  &p_j x_{jk} \leq P_k \quad && \forall j \in J, \forall k \in K\\
-  &C_{k-1} + P_{k} = C_k \quad && \forall k \in K\\
-  &(d_{max} - d_j)(1 - x_{jk}) + d_j \geq D_k \quad && \forall j \in J, \forall k \in K\\
-  &D_{k-1} \leq D_k \quad && \forall k \in K \label{c:malapp-edd} \\
-  &C_k - D_k \leq \Lmax \quad && \forall k \in K\\[2ex]
-  &C_k \geq 0, P_k \geq 0 \text{ and } D_k \geq 0 \quad && \forall k \in K  
-\end{alignat}
-\caption{Malapert's original MIP model}
-\label{model:malapertmip}
-\end{model}
+\section{MIP model}\label{sec:malapertmipmodel}
+We first replicated Malapert's original MIP approach, as given in Model
+\ref{model:malapertmip}, to establish a performance baseline to compare other
+models to. The original model assumes a
+set $K$ of $|K| = |J|$ batches, the number of jobs being a trivial upper bound
+on the number of batches required; it also enforces an earliest-due-date-first
+(EDD) ordering of the batches (constraint \eqref{c:malapp-edd} in Model
+\ref{model:malapertmip}).
 
 \section{Improved MIP model}\label{sec:improvedmipmodel}
 Several improvements can be made to Malapert's MIP model in the form of
@@ -479,7 +519,6 @@ A mathematical formulation is
 \end{alignat}
 
 To implement this, we can write constraints in terms of an additional  set of binary variables, $e_k$, indicating whether a batch $k$ is empty or not:
-
 \begin{alignat}{2}
 & e_k + \sum_{j \in J} x_{jk} \geq 1 \quad && \forall k \in K, \label{eq:emptybatch1} \\
 & n_j (e_k-1) + \sum_{j \in J} x_{jk} \leq 0 \quad && \forall k \in K. \label{eq:emptybatch2}
@@ -487,30 +526,42 @@ To implement this, we can write constraints in terms of an additional  set of bi
 
 Constraints \eqref{eq:emptybatch1} enforce $e_k = 1$ when the batch $k$ is
 empty. Constraints \eqref{eq:emptybatch2} enforce $e_k = 0$ otherwise, since the
-sum term will never exceed $n_j$. The rule \eqref{eq:emptybatch0} can now be
+sum term will never exceed the number of jobs $n_j$. The rule \eqref{eq:emptybatch0} can now be
 expressed as $e_{k-1} = 1 \rightarrow e_k = 1$, and implemented as follows:
-
 \begin{alignat}{2}
 & e_k - e_{k-1} \geq 0 \quad && \forall k \in K.
 \end{alignat}
 
 We can also prune any attempts to leave the first batch empty by adding a constraint $e_0 = 0$.
 
-
 \subsection{No postponing of jobs to later batches}
-Since the jobs are already sorted by non-decreasing due dates, it makes sense to explicitly instruct the solver never to attempt to push jobs into batches with a greater index than their own: even if every job had its own batch, it would be unreasonable to ever postpone a job to a later batch.
+\label{sec:nopostponing}
+Consider a schedule in which all jobs are assigned to a single batch (i.e.
+$x_{jk} = 1 \forall j = k$), ordered by non-decreasing due date, and by
+non-decreasing processing time in case of a tie between two jobs. For the
+purposes of this paper, we refer to this schedule as the \textit{single-EDD}
+schedule. 
+
+Since, as shown above, there exists an optimal solution with EDD-ordered
+batches, we can restrict the search to such solutions. Any solution in which
+a job $j$ is moved into a batch $h$ later than its single-EDD batch $k$, i.e. $h
+> j = k$, necessarily results in a non-EDD solution. We can therefore write
 \begin{alignat}{2}
   & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k \} \label{eq:mipnopp}
 \end{alignat}
+
+to exclude solutions in which jobs are assigned to later batches than their
+respective single-EDD batch.
+%%%% TODO: Explain why the shorter one needs to come first.
 
 \subsection[Lower bound on $\Lmax$]{Lower bound on {\sansitalicfont L}\textsubscript{max}}
 Let a \textit{bucket} $q$ denote the set of all batches with due date $\delta_q$.
 Then the completion date $C_q$ of this bucket is the completion date of the
 last-scheduled batch with due date $\delta_q$, and the lateness of the bucket
 $q$ is $L_q = C_q - \delta_q$. Since all batches up to and including those in
-bucket $q$ are guaranteed to contain all jobs with due dates $d \leq \delta_q$
--- as ensured by the EDD ordering of batches -- the lower bound on every
-bucket's lateness $LB(L_q)$ is a valid lower bound on $\Lmax$. In other words,
+bucket $q$ are guaranteed to contain all jobs with due dates $d \leq \delta_q$,
+as ensured by the EDD ordering of batches, the lower bound on every bucket's
+lateness $LB(L_q)$ is a valid lower bound on $\Lmax$. In other words,
 jobs with due date $d \leq \delta_q$ will be found only in batches up to and
 including the last
 batch of bucket $q$. This provides a lower bound on the lateness of bucket $q$:
@@ -518,8 +569,8 @@ batch of bucket $q$. This provides a lower bound on the lateness of bucket $q$:
 & \Lmax \geq C_{\text{max},q} - \delta_q \quad && \forall q
 \end{alignat}
 The buckets up to bucket $q$ will likely also contain some later ($d >
-\delta_q$) jobs in the optimal solution but this does not affect the validity of
-the lower bound.
+\delta_q$) jobs in the optimal solution, which weakens $LB(L_q)$'s usefulness
+but does not affect its validity as a lower bound.
 
 Now we need to find $C_{\text{max},q}$, or at least a lower bound on it, in
 polynomial time. The simplest approach simply considers the jobs' total ``area''
@@ -540,16 +591,265 @@ pieces (no longer than the smallest common divisor of the jobs' lengths $p$) and
 then pack them together such as to minimize the number of small time slots
 needed.}
 
-\input{cpmodel.tex}
-\input{decomp.tex}
+\section{CP model}\label{sec:cpmodel}
+The constraint programming model is based on a set of decision variables $B_j =
+\{k_1, \dots, k_{n_k} \}$, where each variable stands for the batch job $j$ is
+assigned to. The complete model is given in Model \ref{model:cpmodel}.
+\begin{model}
+\begin{alignat}{2}
+\mathrm{Min.}\quad & \Lmax && \\
+\mathrm{s.t.}\quad & \label{cpcs:pack} \mathtt{pack}(J, K, b) && \\
+& \label{cpcs:cumul} \mathtt{cumul}(J, b) && \\
+& \label{cpcs:pk} P_k = \underset{j}{\max} \; p_j \quad && \forall \{j \in J
+| B_j = k\}, \forall k \in K \\
+& \label{cpcs:dk} D_k = \underset{j}{\min} \; d_j \quad && \forall \{j \in J
+| B_j = k\}, \forall k \in K \\
+& \label{cpcs:ck} C_k + P_{k+1} = C_{k+1} \quad && \forall k \in K \\
+& \label{cpcs:lmax} \Lmax \geq \underset{k}{\max} \; (C_k - D_k) && \\
+& \label{cpcs:empty} \mathtt{IfThen}(P_k = 0, P_{k+1} = 0) \quad && \forall k
+\in \{ k_1, \dots, k_{n_k - 2}\} \\
+& \label{cpcs:pp} B_j \leq k \quad && \forall \{ j \in J, k \in K | j > k \}
+\end{alignat}
+\caption{Constraint programming model}
+\label{model:cpmodel}
+\end{model}
 
-\section{A move-based MIP model}
+Constraint \eqref{cpcs:pack} makes sure the jobs are distributed into the
+batches such that no batch exceeds the capacity $b$. Constraint
+\eqref{cpcs:cumul}, a global cumulative constraint, keeps jobs from overlapping
+on the resource---while redundant with \eqref{cpcs:pack}, this speeds up
+propagation slightly. Constraints \eqref{cpcs:pk}, \eqref{cpcs:dk},
+\eqref{cpcs:ck} and \eqref{cpcs:lmax} define $P_k$, $D_k$, $C_k$ (batch
+completion time) and $\Lmax$, respectively.
+
+\begin{comment}
+\subsection{Temporal constraints on a job's start date} Given any partial
+assignment of jobs and an open job $j$, we can reason that \begin{alist}
+\item{if the first batch with a due date later than the job is $k$, then the job
+cannot be part of a batch after $k$---this would result in a non-EDD sequence
+of batches.} \item{if the first batches up to $k-1$ offer not enough capacity
+for $j$ due to the given partial assignment, then the job cannot be part of a
+batch before $k$.} \end{alist} Since batches are \textit{not} dynamically
+created like in Malapert's solution but fixed from the start, any partial
+assignment that fails due to these constraints cannot be part of an optimal
+solution.
+
+This constraint is redundant with both the $(C_{k+1}\geq C_k)$ and
+\texttt{packing} constraints, but may help accelerate the propagation in some
+cases.
+\end{comment}
+
+\subsection{Grouping empty batches} We can force
+empty batches to the back and thus establish dominance of certain solutions. The
+implementation is much easier than in the MIP model: 
+\begin{alignat}{2} &
+\mathtt{IfThen}( P_k = 0, P_{k+1} = 0 ) \quad && \forall k \in
+\{k_1, \dots, k_{n_k-1}\}
+\end{alignat}
+
+\subsection{No postponing of jobs to later batches} Just like in the MIP model,
+jobs should never go into a batch with an index greater than their own:
+\begin{alignat}{2}
+& B_j \leq k \quad && \forall \{j \in J, k \in K | j > k \}
+\end{alignat}
+
+\section{Decomposition approach}
+
+Instead of solving the entire problem using one model, we can solve the problem
+step by step, using the best techniques available for each subproblem. This
+approach is inspired by \textit{Benders decomposition}.
+
+\label{sec:mipdecomp}
+A basic version of this approach uses branch-and-bound to transverse the search
+tree. At each node on level $\ell$, a single MIP and/or CP model is run to
+assign jobs to batch $k = \ell$. The remaining jobs are passed to the children
+nodes, which assign jobs to the next batch, and so on---until a solution, and
+thus a new upper bound on $\Lmax$, is found. Several constraints are used to
+prune parts of the search tree that are known to offer only solutions worse than
+this upper bound. Figure \ref{fig:decomp_diagram1} shows an example in which a
+MIP model is used to assign jobs to the batch at every node.
+\begin{algorithm}[h]
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\State update \textit{currentAssignments} \Comment{this keeps track of where we are
+in the tree}
+\If{no jobs given to this node} \Comment{if this is a leaf node, i.e. all jobs
+are assigned to batches}
+  \State calculate $L_{\text{max,current}}$ based on \textit{currentAssignments}
+  \If{$L_{\text{max,current}}$ < $L_{\text{max,incumbent}}$}
+    \State $L_{\text{max,incumbent}} \gets L_{\text{max,current}}$
+    \State \textit{bestAssignments} $\gets$ \textit{currentAssignments}
+  \EndIf
+  \State return to parent node
+\EndIf
+\State set up MIP model \Comment{as described below}
+\Repeat
+  \State $x_j \gets$ model.solve($x_j$) \Comment{let model assign jobs to the
+  batch}
+  \State spawn and run child node with all $\{j | x_j = 0\}$ \Comment{pass
+  unassigned jobs to children}
+  \State add constraint to keep this solution from recurring \Comment{this
+  happens once the child node returns}
+\Until{model has no more solutions}
+\State return to parent node
+\end{algorithmic}
+\caption{MIP node class code overview}
+\label{alg:bbnode_mip1}
+\end{algorithm}
+Algorithm \ref{alg:bbnode_mip1} outlines what happens at each node: the model
+finds the best jobs to assign to the batch according to some rule, lets the
+children handle the remaining jobs, and tries the next best solution once the
+first child has explored its subtree and backtracked.
+\subsubsection{Using MIP and cumulative packing after the batch}
+\input{figures/decomp_diagram1.tex}
+The first version of the branch-and-bound batch-by-batch decomposition uses a
+MIP model at each node to assign jobs to the respective batch. The remaining
+jobs are packed such as to minimize their $\Lmax$, with a relaxation of the
+batching requirement, i.e., as if on a cumulative resource. 
+\begin{model}[h!]
+\begin{alignat}{3}
+\text{Min.}\quad & L_{\text{max,cumul}} && \\ 
+\text{s. t.}\quad & \label{dc:eq1} \sum_j s_j x_j \leq b \quad && \forall j \in J \\
+& P_k \geq p_j x_j \quad && \forall j \in J \\
+& \label{dc:eq3} \sum_j x_j \geq 1 \quad && \forall \{j \in J | d_j = \min(d_j)\} \\
+& \label{dc:eq4} P_k + \frac{1}{b} \sum_{i} s_i p_i \leq d_j +
+L_{\text{max,incmb}} - 1 - v_k \quad && \forall j \in J, \forall \{i \in J | d_i
+\leq d_j\} \\[2ex]
+& \label{dc:eq5} \sum_t u_{jt} = 1 \quad && \forall j \in J \\
+& \label{dc:eq6} \sum_j \sum_{t' \in T_{jt}} s_j u_{jt'} \leq b \quad && \forall t \in \mathcal{H} \\
+& \label{dc:eq7} (v_k + t + p_j) u_{jt} \leq d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J, \forall t \in \mathcal{H} \\
+& \label{dc:eq8} L_{\text{max,cumul}} \geq (v_k + t + p_j) u_{jt} - d_j \quad && \forall j \in J, \forall t \in \mathcal{H} \\
+& \label{dc:eq9} u_{j,t=0} = x_j \quad && \forall j \in J \\
+& \label{dc:eq10} u_{it} \leq (1 - x_j) \quad && \forall i,j \in J, \forall t
+\in \{1, \dots, p_j - 1\} \\[2ex]
+& \label{dc:eq11} b - \sum_{i \in J} s_i x_i \leq (b w_j + 1) s_j \quad && \forall j \in J \\
+& \label{dc:eq12} P_k + 2w_j n_t \geq p_j + n_t x_j \quad && \forall j \in J\\
+& \label{dc:eq13} P_k - 2(1 - w_j)n_t \leq p_j +n_t x_j - 1 \quad && \forall j
+\in J
+\end{alignat}
+\caption{MIP model in batch-by-batch branch-and-bound}
+\label{model:decomp_mip}
+\end{model}
+
+\begin{table}[h]
+\begin{tabular}{l p{5in}}
+$x_j$ & is 1 iff job $j$ is assigned to the batch \\
+$u_{jt}$ & is 1 iff job $j$ starts in time slot $t$ \\
+$T_{jt}$ & is the set of all time slots occupied by job $j$ if it ended at time
+$t$, that is $T_{jt} = \{t - p_j + 1, \dots, t\}$ \\
+$v_k$ & is the start time of the batch at the given node in the search tree \\
+$L_{\text{max,incmb}}$ & is the incumbent (known best) value of and thus an
+upper bound on $\Lmax$ \\
+$\mathcal{H}$ & is the set of all indexed time points $\{0, \dots, n_t - 1\}$ \\
+$w_j$ & is 1 iff job $j$ is either longer than the batch ($p_j > P_k$) or
+already part of the batch ($x_j = 1$). Neither condition must be fulfilled for constraint
+\eqref{dc:eq11} to have an effect on job $j$
+\end{tabular}
+\caption{Notation used in the decomposition model}
+\end{table}
+
+Model \ref{model:decomp_mip} implements a time-indexed cumulative constraint on the
+non-batched jobs. Constraints \eqref{dc:eq1} through \eqref{dc:eq3} ensure that the
+batch stays below capacity, define the duration of the batch $P_k$ and force at
+least one of the earliest-due jobs into the batch.
+
+Constraints \eqref{dc:eq4} express the interval relaxation used to ensure that no
+jobs exceed their latest allowable finish date given any batch assignment. Even
+jobs that are assigned to the batch have to fulfill this requirement.
+
+Constraints \eqref{dc:eq5} and \eqref{dc:eq6} implement the cumulative nature of the
+post-batch assignments by ensuring that each job starts only once, and no jobs
+overlap on a given resource at any time.
+
+Constraints \eqref{dc:eq7} again limit the possible end dates of a
+job, but unlike \eqref{dc:eq4}, they use the time assignments on the cumulative
+resource to determine end dates. Constraints \eqref{dc:eq8} define the value of
+$L_{\text{max,cumul}}$, the maximum lateness of any job in the non-batched set.
+
+Constraints \eqref{dc:eq9} force batched jobs to start at $t = 0$, while
+\eqref{dc:eq10} force \textit{all} jobs to start either at $t = 0$ or after the
+last batched job ends.
+
+Constraints \eqref{dc:eq11} enforce a dominance rule: jobs must be assigned to
+the batch such that the remaining capacity, $b_r = b - \sum_j s_j x_j$, is less
+than the size $s_j$ of the \textit{smallest} job from the set of non-batched
+jobs that are \textit{not longer} than the current batch. That is, if there
+exists an non-batched job $j$ with $p_j \leq P_k$ and $s_j \leq b_r$, then the
+current assignment of jobs is infeasible in the model. The reasoning goes as
+follows: given any feasible schedule, assume there is a batch $k_a$ with $b_r$
+remaining capacity and a later batch $k_b$ containing a job $j$ such that $s_j
+\leq b_r$ and $p_j \leq P_{k_a}$. Then job $j$ can always be moved to batch
+$k_a$ without negatively affecting the quality of the solution: if the schedule
+was optimal, then moving $j$ will not affect $\Lmax$ at all (otherwise, it was
+no optimal schedule); if the schedule was not optimal, then $\Lmax$ will stay
+constant (unless $j$ was the longest job in $k_b$ and $\Lmax$ occured in or in a
+batch after $k_b$, in which case $\Lmax$ will be improved).
+
+This rule is implemented by means of a binary variable $w_j$, which, as defined
+by constraints \eqref{dc:eq11} and \eqref{dc:eq12}, is 1 iff $p_j > P_k \lor x_j
+= 1$. These are the cases in which a job $j$ is \textit{not} to be considered in
+\eqref{dc:eq10}, and so $w_j$ is used to scale $s_j$ to a value insignificantly
+large in the eyes of the constraint's less-than relation.
+
+After a solution is found, a child node in the search tree has run the subtree
+and returned, a constraint of the form 
+\begin{alignat}{2}
+& \sum_j x_j + \sum_i (1-x_i) \leq n_j - 1 \quad && \forall \{j \in J | x_j =
+1\}, \forall \{i \in J | x_i = 0 \}
+\end{alignat}
+is added to the model before the solver is called again, to exclude the last
+solution from the set of feasible solutions. 
+
+\subsection{Using CP and cumulative packing after the
+batch}\label{sec:cpdecomp}
+This approach is equivalent, but we now use CP to select the batch assignments,
+again based on a minimized $\Lmax$ among the non-batched jobs. Model
+\ref{model:decomp_cp} uses interval variables $j$ to represent the jobs;
+time constraints on the jobs (``est'', ``lft'' etc.) are represented as
+functions such as $\startOf(j)$ and $\endOf(j)$.
+
+Contraints \eqref{dcp:eq1} through \eqref{dcp:eq4} bi-directionally define the
+relationship between a job's $x_j$ and $\startOf(j)$: $x_j = 1$ is equivalent
+with a start time of $t = 0$, and $x_j = 0$ is equivalent with a start time of
+$t \geq P_k$. The term $\sum_{i \in J} p_i$ is used as a large constant as it is
+greater than any job's start time.
+
+Constraint \eqref{dcp:eq8} is equivalent to constraints \eqref{dc:eq11} through
+\eqref{dc:eq13} in Model \ref{model:decomp_mip} above. The cumulative constraint
+\eqref{dcp:eq9} ensures that jobs do not overlap. 
+
+\begin{model}[h!]
+\begin{alignat}{2}
+\mathrm{Min.} \quad & \Lmax \quad && \\
+\mathrm{s.t.} \quad 
+& \label{dcp:eq1} \startOf(j) \geq (1-x_j) P_k \quad && \forall j \in J \\
+& \startOf(j) \leq (1-x_j) \sum_{i \in J} p_i \quad && \forall j \in J \\
+& x_j \geq \frac{ \frac{1}{2} - \startOf(j) }{ \sum_{i \in J} p_i } \quad &&
+\forall j \in J \\
+& \label{dcp:eq4} x_j \leq 1+\frac{ \frac{1}{2} - \startOf(j)}{\sum_{i \in J} p_i } \quad &&
+\forall j \in J \\
+& P_k \geq \underset{j \in J}{\max}(x_j p_j) \quad && \\
+& \endOf(j) = d_j + L_{\text{max,incmb}} - 1 \quad && \forall j \in J \\
+& \Lmax \geq \underset{j \in J}{\max}(\endOf(j) - d_j) \quad &&  \\
+& \label{dcp:eq8} \mathtt{IfThen}(p_j \leq P_k \land x_j = 0, b - \sum_{j \in J} s_j
+x_j \leq s_j) \quad && \forall j \in J \\
+& P_k + \frac{1}{b} \sum_i s_i p_i \leq d_j + L_{\text{max,incmb}} - 1 - v_k
+\quad && \forall j \in J, \forall \{i \in J | d_i \leq d_j\} \\
+& \sum_j x_j \geq 1 \quad && \forall \{ j \in J | d_j = \min(d_j) \} \\
+& \label{dcp:eq9} \mathtt{cumul}(J, b) \quad & &  
+\end{alignat}
+\caption{CP model in batch-by-batch branch-and-bound}
+\label{model:decomp_cp}
+\end{model}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% MOVE-BASED MIP MODEL %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Move-based MIP model}
 This approach is based on the idea of preserving EDD ordering among the batches.
- 
-Initially, all jobs are assigned to a single batch, ordered by non-decreasing
-due date, and by non-decreasing processing time in case of a tie between two
-jobs. For the purposes of this paper, we refer to this schedule as the
-\textit{single-EDD} schedule. We can calculate the lateness
+Let an initial schedule be the single-EDD schedule as defined in section
+\ref{sec:nopostponing}. We can calculate the lateness
 $L_{k,\text{single}}$ of every job in this schedule in linear time.
 
 For the purpose of this discussion, we use the following terminology: in any
@@ -567,7 +867,9 @@ if $j$ is single in $k_\beta$ and if $k_\alpha$ is not empty.
 \begin{proof}
 Moving $j$ into $k_\alpha$ will leave $D_\alpha$ unaffected, since $k_\alpha$ is
 not empty, i.e. there is a host job in $k_\alpha$. Since the original schedule
-was EDD-ordered, the host in $k_\alpha$ is due earlier than $j$.
+was EDD-ordered, the host in $k_\alpha$ is due earlier than $j$. Note that if
+$k_\alpha$ is empty, the move will potentially disrupt EDD ordering, and is thus
+prohibited.
  
 Batch $k_\beta$ will be reduced to zero processing time, but batches after
 $k_\beta$ will still be due after $k_{\beta - 1}$, so EDD ordering is preserved.
@@ -575,74 +877,105 @@ $k_\beta$ will still be due after $k_{\beta - 1}$, so EDD ordering is preserved.
  
 \begin{proposition}
 Starting from a single-EDD schedule, moving single jobs back into earlier
-non-empty batches will generate all possible EDD schedules.
+non-empty batches will generate all possible EDD schedules, with the exception
+of those EDD schedules in which two hosts of the same due date are sorted in
+order of decreasing processing time.
 \end{proposition}
 \begin{proof}
 The order in which moves are performed is arbitrary; moves are independent of
-each other (capacity requirements notwithstanding).
-\end{proof}
+each other (capacity requirements notwithstanding). Therefore, any job can be
+moved into any earlier bucket (i.e. set of batches of equal due date). Within
+buckets, jobs are free to move with the only condition that host jobs be sorted
+by non-decreasing processing time, as given by the intial single-EDD schedule.
+Under this condition, then, all possible EDD schedules can be generated by
+moving single jobs into earlier batches. \end{proof}
  
-Consider a single-EDD schedule, that is, for every job and batch, the indices
-match: $B_j = j \forall j$ (where $B_j$ denotes the batch $j$ is assigned to).
-Moving $j$ from batch $k_j$ into an earlier batch $k_\alpha$ has the following
-effect:
+Consider now a single-EDD schedule. Moving $j$ from its single-EDD batch $k_j$ into an earlier
+batch $k_\alpha$ has the following effect:
 \begin{alist}
 \item{the lateness of all batches after $k_j$ is reduced by $p_j$,}
-\item{the lateness of all batches after $k_\alpha$, including those after $k_j$, is increased by $\max(0,p_j -
-P_\alpha)$.}
+\item{the lateness of all batches after $k_\alpha$, including those after $k_j$,
+is increased by $\max(0,p_j - P_\alpha)$, where $P_\alpha$ is the processing
+time of batch $\alpha$ before $j$ is moved into it.}
 \end{alist}
-Since, in any batch $k$, only the host job (with index $j = k$) is relevant to
-$\Lmax$, always being the earliest-due, we can understand the lateness of batch $k$ as its single-EDD lateness
-$L_{k,\text{single}}$, modified by summed effect all moves have on it as listed
+Since, in any batch $k$, only the host job's lateness (with index $j = k$) is
+relevant to $\Lmax$, we can understand the lateness of batch $k$ as the
+single-EDD lateness of job $k = L_{k,\text{single}}$, modified by summed effect
+all moves of other jobs into and out of earlier batches have on $k$, as listed
 above.
  
 The following expression defines the lateness of a batch $k$ based on this
 calculation:
  
-\begin{alignat}{2}
-& L_k = L_{k,\text{single}} - \sum_{h=0}^{k} P_h - p_h(2 - x_{hh}) \quad &&
-\forall k \in K
-\end{alignat}
+\begin{alignat}{2} & L_k = L_{k,\text{single}} - \sum_{h=0}^{k} P_h - p_h(2 -
+x_{hh}) \quad && \forall k \in K^\star \end{alignat}
  
-where $x_{jk}$ is 1 iff job $j$ is moved back into batch $k$. The sum term
-represents the effects that all moves have on previous batches up to, and
-including, $k$: $x_{hh} = 1$ iff job $h$ is not moved from its single-EDD batch
-$h$, and so the sum term evaluates to $P_h - p_h$ for a batch in which the host
-was not moved. If $h$ has guests, then $P_h - p_h$ may be positive; otherwise it
-will be zero. Effectively, for batch $h$, the time $\max(0, P_h-p_h)$ is added
-to $L_k$. If, however, job $h$ was moved out of its batch, then the batch
-will have a processing time of $P_h = p_h$ (the fixed lower bound). Then, effectively,
-for batch $h$, the time $p_h$ is subtracted from $L_k$.
+where $x_{jk}$ is 1 iff job $j$ is assigned to batch $k$ in the solution
+schedule. The sum term represents the effects that all moves have on previous
+batches up to, and including, $k$: $x_{hh} = 1$ iff job $h$ is not moved from
+its single-EDD batch $h$, and so the sum term evaluates to $P_h - p_h$ for a
+batch in which the host was not moved. If $h$ has guests, then $P_h - p_h$ is
+positive if any of the guests is longer than $j_h$ (i.e. $P_h > p_h$); if not,
+or if $h$ has no guests at all, it will be zero. Effectively thus, for batch
+$h$, the time $\max(0, P_h-p_h)$ is added to $L_k$. If, however, job $h$ was
+moved out of its batch, then the batch will have a processing time of $P_h =
+p_h$ (the fixed lower bound for $P_h$). In this case, effectively, for batch
+$h$, the time $p_h$ is subtracted from $L_k$. The net sum of these additions
+and subtractions to and from $L_{k,\text{single}}$ adjusts the lateness of
+batch $k$ to its correct number given the values of $x_{jk}$. 
+
+Note also that we only need to calculate the lateness for $k \in K^\star$, the set
+of batches that are the last in their respective buckets; in other words, those
+with the longest processing time in their respective bucket. This is true
+because empty batches in a bucket will be reduced to length $P = 0$ by the
+minimization objective.
 
 The full set of constraints is listed in Model \ref{mod:movebackmip}, and the
 following section explains every constraint in detail.
 \begin{model}
 \begin{alignat}{2}
 \text{Min.}\quad & \Lmax && \\
-\label{mbm:eq1}\text{s.t.}\quad & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k\} \\
-&\label{mbm:eq2} x_{jj} = 1 \quad && \forall \{j \in J | j \geq f_L\} \\
+\text{s.t.}\quad & \label{mbm:eq7}\sum_{k} x_{jk} = 1 \quad && \forall j \in J \\
+& \label{mbm:eq6}\sum_{j} s_j x_{jk} \leq b \quad && \forall k \in K \\
 &\label{mbm:eq3} P_k \geq p_j x_{jk} \quad && \forall \{j \in J, k \in K | j \geq k\} \\
-&\label{mbm:eq4} \Lmax \geq L_{k,\text{single}} - \sum_{h=0}^{k} P_h - p_h(2 - x_{hh}) \quad && \forall k \in K \\
 &\label{mbm:eq5} x_{jk} \leq x_{kk} \quad && \forall \{j \in J, k \in K | j > k\} \\
-& \sum_{j} s_j x_{jk} \leq b \quad && \forall k \in K \\
-& \sum_{k} x_{jk} = 1 \quad && \forall j \in J \\[4ex]
-(*)\quad & \begin{gathered} 2(  4 - x_{k_1,k_1} - x_{k_2,k_2} \hfill \\+ \sum_{\substack{{j}\\{j \neq j_1}\\{j \neq
+&\label{mbm:eq4} \Lmax \geq L_{k,\text{single}} - \sum_{h=0}^{k} P_h - p_h(2 -
+x_{hh}) \quad && \forall k \in K^\star \\
+\label{mbm:eq1} & x_{jk} = 0 \quad && \forall \{j \in J, k \in K | j > k\} \\
+&\label{mbm:eq2} x_{jj} = 1 \quad && \forall \{j \in J | j \geq f_L\} \\[2ex]
+(*)\quad & \label{mbm:eq8}\begin{gathered} 2(  4 - x_{k_1,k_1} - x_{k_2,k_2} \hfill \\+ \sum_{\substack{{j}\\{j \neq j_1}\\{j \neq
 j_2}}} - x_{j_1,k_1} - x_{j_1,k_2} -
 x_{j_2,k_1} - x_{j_2,k_2} ) \geq x_{j_1,k_2} + x_{j_2,k_1} \end{gathered}
 \quad && \begin{gathered} \forall\{ j_1, j_2 \in J, \\ k_1, k_2 \in K \\|\; k_1 < k_2 <
 j_1 < j_2 \land \\ [p_i \leq k_h \land b - s_h \geq s_i\\ \forall i \in
 \{j_1,j_2\}, \\ \forall h
-\in \{k_1,k_2\}] \} \end{gathered} \\[4ex]
-(*)\quad & x_{j_1,k} \geq x_{j_2,k} \quad && \begin{gathered} \forall \{k \in K,
+\in \{k_1,k_2\}] \} \end{gathered} \\[2ex]
+(*)\quad & \label{mbm:eq9}1-x_{j_1,j_1} \geq x_{j_2,k} \quad && \begin{gathered} \forall \{k \in K,
 j_1 \in J, j_2 \in J \\|\; k < j_1 < j_2 \\ \land s_{j_1} \leq s_{j_2} \\
 \land s_{j_2} + s_k \leq b \\ p_{j_1} \leq p_k 
 \land p_{j_1} \geq p_{j_2} \} \\
-\end{gathered}
+\end{gathered} \\[2ex]
+(*)\quad &  \label{mbm:eq11}2 - x_{jj} - x_{kk} \geq \left(1.0 + b - s_j -
+\sum_{\substack{{i = k}\\{i \neq j}}}^{n_j} s_i
+x_{ik}\right) / b \quad && \begin{gathered} \forall \{k \in K, j \in J \\| j > k 
+\land p_k \geq p_j \\ \land s_k + s_j \leq b\}\end{gathered}
 \end{alignat}
 \caption{Move-based MIP model. Constraints marked $(*)$ are lazy constraints
 (see subsection \ref{sec:lazyconstraints} for details).}
 \label{mod:movebackmip}
 \end{model}
+Constraints \eqref{mbm:eq6} and \eqref{mbm:eq7} are capacity constraints and
+uniqueness constraints: batches have to remain within capacity $b$, and every
+job can only occupy one batch.
+
+Constraints \eqref{mbm:eq3} define the value of $P_k$ for every batch $k$ as the
+longest $p$ of all jobs in $k$. This is required in the definition of batch
+lateness as described above and also in \eqref{mbm:eq4}, which follows the
+explanation above.
+
+Constraints \eqref{mbm:eq5} ensure that no job is moved into a host-less batch,
+i.e. in order to move job $j$ into batch $k$ ($x_{jk} = 1$), job $k$ must still
+be in batch $k$ ($x_{kk} = 1$).
 
 Constraints \eqref{mbm:eq1} implement the requirement that jobs are only moved
 into earlier batches.
@@ -655,41 +988,32 @@ single-EDD batches, effectively removing them from the model. This set of
 constraints is rarely active but can greatly decrease the size of the model in
 some instances.
 
-Constraints \eqref{mbm:eq3} define the value of $P_k$ for every batch $k$ as the
-longest $p$ of all jobs in $k$. This is required in the definition of batch
-lateness as described above and in \eqref{mbm:eq4}.
+Constraints \eqref{mbm:eq8} through \eqref{mbm:eq11} are dominance rules
+implemented as lazy constraints as defined in subsection
+\ref{sec:lazyconstraints}, and are presented in greater length in the following
+subsections.
 
-Constraints \eqref{mbm:eq5} ensure that no job is moved into a host-less batch,
-i.e. in order to move job $j$ into batch $k$ ($x_{jk} = 1$), job $k$ must still
-be in batch $k$ ($x_{kk} = 1$).
-
-Constraints \eqref{mbm:eq6} and \eqref{mbm:eq7} are capacity constraints and
-uniqueness constraints: batches have to remain within capacity $b$, and every
-job can only occupy one batch.
-
-Constraint \eqref{mbm:eq7} and \eqref{mbm:eq8} are dominance rules implemented
-as lazy constraints as explained
-in subsection \ref{sec:lazyconstraints}, and are presented in greater length in
-the following subsections.
-
-\subsubsection{Symmetry-breaking rule}
-Constraint \eqref{mbm:eq7} implements the following concept: if two jobs $j_1$
+\subsection{Symmetry-breaking rule}
+Constraints \eqref{mbm:eq8} implement the following concept: if two jobs $j_1$
 and $j_2$ are assigned as guests to batches $k_1$ and $k_2$, and no other jobs
 (save for the hosts) are assigned to $k_1$ and $k_2$, then $j_1$ is always
-assigned to $k_1$ and $j_2$ to $k_2$.
-
-Additionally, both jobs have to be shorter (in terms of $p$) than the shorter of
-the two batches, and all possible assignments have to be feasible capacity-wise.
+assigned to $k_1$ and $j_2$ to $k_2$. These constraints only hold for pairs of
+jobs where both $p_{j_1}$ and $p_{j_2}$ are less than both $p_{k_1}$ and
+$p_{k_2}$ (both batches are longer than the jobs) and all possible assignments
+are feasible capacity-wise.
 
 Large problem instances generate thousands of such constraints, and only very
-few of them will ever hold in the model. Declaring them as ``lazy'' helps keep
+few of them will ever hold in the model. Nevertheless, they can noticeably
+improve solving time in some cases; declaring them as ``lazy'' helps keep
 the model small.
 
-\subsubsection{Dominance rule on ``safe'' moves}
+\subsection{Dominance rule on ``safe'' moves}
 This applies to pairs of jobs $j_1 < j_2$ that are, potentially, competing
 to be guests in batch $k$. If both $j_1$ and $j_2$ are shorter (in terms of $p$)
 than $k$, we can safely enforce that in some cases, $j_1$ gets priority over
-$j_2$, namely if both $p_{j_1} \geq p_{j_2}$ and $s_{j_1} \leq s_{j_2}$ hold.
+$j_2$, namely if both $p_{j_1} \geq p_{j_2}$ and $s_{j_1} \leq s_{j_2}$ hold. In
+this case, we can state that $j_2$ cannot be moved into $k$ unless $j_1$ has
+been moved somewhere also (into $k$ or some other host batch).
 
 Two facts allow for this set of rules:
 \begin{proposition}If a job $j_h$ can either be safely moved into an earlier batch,
@@ -726,31 +1050,465 @@ $k$ as a consequence of prioritizing $j_1$ over $j_2$.
 \end{proof}
 \end{proposition}
 
-\input{testresults.tex}
-\input{discussion.tex}
-\input{futurework.tex}
-\input{mip2model.tex}
+\subsection{Dominance rule on required safe moves}
+This constraint can be expressed logically as: if $j$ can be safely moved into $k$
+without violating the capacity constraint, then $j$ must be moved somewhere, or
+$k$ must be empty (or both). In other words, in the context of Proposition
+\ref{prop:moveisbetter}, a schedule is unacceptable if job $j$ is left in its
+single-EDD batch although there is room for it in an earlier batch.
 
-\begin{comment}
-\chapter{My solution}
-\section{MIP formulation improvements}
-\section{CP formulation improvements}
-
-\chapter{Discussion}
+The left side of the above \textit{if-then} statement is written as $(b + 1 -
+s_j - \sum_{\substack{{i = k}\\{i \neq j}}}^{n_j} s_i x_{ik}) / b$, which
+evaluates to 1.0 or greater iff $s_k$ plus the sizes of guest jobs in $k$ sum to
+less than $b - s_j$.
 
 
-\end{comment}
-\pagebreak
+
+
+\chapter[Empirical comparison of models]{Empirical comparison\\ of models}
+\section{Experimental setup}\label{sec:results}
+The models were tested on a set of job lists. Malapert's paper uses benchmark
+job lists by \citet{daste1, daste2}, with a capacity of $b = 10$ and values for
+$p_j$, $s_j$ and $d_j$ distributed as follows:
+\begin{align}
+p_j &= U[1, 99] \\
+s_j &= U[1, 10] \\
+d_j &= U[0, 0.1] \cdot \tilde{C}_\text{max} + U[1, 3] \cdot p_j
+\end{align}
+where $U[a, b]$ is a uniform distribution between $a$ and $b$, and $\tilde{C}_\text{max} = \left( \sum_{j=1}^{n_j} s_j \cdot \sum_{j=1}^{n_j}
+p_j \right) /\\ (b \cdot n)$ is an approximation of the time required to process
+all jobs.
+
+Ten different sample job sets are
+used per unique value of $n_j \in \{10, 11, \dots, 18, 19, 20, 25,\\ 30, 35, 40, 45, 50\}$. The times shown in figure \ref{fig:comp_times}
+are averaged over those ten instances for each $n_j$.
+
+The models were run using Cplex 12.2 on an i7 Q740 CPU (1.73 GHz) in single-thread mode, with 8 GB RAM.
+Solving was aborted after a time of 3600 seconds (1 hour).
+
+\section{Results}
+The CP branch-and-bound model times out on most instances and is not shown here.
+The pure CP model times out on one 12-job instance and gets progressively worse
+with more jobs; similar to Malapert's original MIP model.
+\input{figures/results_graph.tex} The new, move-based MIP model trumps all other
+models' performance by at least one order of magnitude.
+
+Unfortunately we have no such performance profile for Malapert's
+\texttt{sequenceEDD} global constraint. We do, however, have a reference in
+Figure \ref{fig:malapertresultcomp}, which shows the percentage of solved
+problem instances in a given time. The figure is based on $n_j \in \{10, 20,
+50\}$, with 40 instances each (120 instances total).
+\input{figures/malapertresultcomp.tex}
+
+\section{Discussion}\label{sec:discussion}
+The move-based MIP model performs uses the fewest variables (columns) and
+constraints (rows) and performs the best. The use of lazy constraints for
+larger $n_j$ is advantageous in the large majority of problem instances and thus
+warranted. 
+
+The improved original MIP is a great improvement on the original MIP, mostly
+owed to constraint \eqref{eq:mipnopp} which excludes a large number of potential
+batch assignments.
+
+The batch-by-batch decomposition using MIP to assemble batches, while an
+improvement over Malapert's MIP model, is not satisfactory; the relaxations are
+too lax for the decomposition to compensate for the overhead of a naive
+branch-and-bound search, since we can only exclude one failed solution at a
+time.
+
+\subsection{Comparison with Malapert's sequenceEDD global constraint}
+Using all four filtering rules in conjunction with a \textit{batch fit} search
+heuristic allowed Malapert to solve 38 out of 40 problem instances with $n_j =
+50$ in less than an hour on a cluster of Linux machines, each node of which
+using 48 GB of RAM and two quad core 2.4 GHz processors (that is, using
+considerably more powerful hardware than was used for this thesis). 
+
+The move-based MIP model is able to achieve a comparable performance (39 of 40
+instances solved within an hour). While it is, on average, slower on problems
+with low $n_j$ (compare Figure \ref{fig:malapertresultcomp}), it is able to
+prove optimality quicker on most instances that take longer than 10 seconds to
+solve---ostensibly the more critical metric.
+
+\section{Further performance tests}
+A better understanding of the relationships between model performance and
+problem instance characteristics can help in the development of faster models.
+This is especially true with regard to redundant and/or lazy constraints that
+are used only to achieve a tighter formulation at the price of a larger model:
+using such constraints is often warranted only for particularly challenging
+problem instances. The following paragraphs outline some such considerations.
+
+\subsection{Correlation between disjunctivity and solving time}
+\label{sec:disjunctivity}
+The mean number of jobs per batch ($n_j/n_k$) in the optimal solution is
+strongly correlated with the time needed to solve to
+optimality. This is unsurprising given that a problem with a great number of large
+jobs (i.e. large $s_j$) will be of relatively low
+difficulty in terms of bin packing. This is illustrated by Figure
+\ref{fig:jpbtimecor_a}.
+\input{figures/jpbtimecor.tex}
+An excellent predictor of this correlation appears to be what Baptiste and Le Pape
+\citet{baptistelepape} call \textit{disjunction ratio}: the ratio between the
+number of job pairs which cannot run in parallel (as $s_{j_1} + s_{j_2} > b$) and
+the total number of job pairs $n_j^2$.\footnote{The term originates from the
+dichotomy between \textit{disjunctive resources} which can only process one job
+at a time, and \textit{(highly) cumulative resources} which can process many
+jobs in parallel.} The relationship is shown in Figure
+\ref{fig:jpbtimecor_b}.
+
+As a corrolary to the above, the solving time is greatly dependent on the
+capacity of the machine. Larger capacities, relative to the average job size
+$\bar{s}_j$, will cause longer solving times as the disjunction ratio decreases.
+
+\subsection{Uniform distribution of due dates}
+The due dates in the test instances used by Malapert and in the previous tests
+were generated by a fairly complex formula designed such that jobs are likely to
+fall into \textit{buckets}, i.e. larger sets of jobs with equal due dates.
+
+Malapert's \texttt{sequenceEDD} global constraint exploits the notion of buckets
+extensively, and would likely perform worse on instances that exhibit no
+bucketing at all (though we could not test this for lack of a working
+implementation).
+
+Our move-based model uses only the latest-due batch in every bucket to define
+the value of $\Lmax$. As a result, the size of the model is directly dependent
+on the number of buckets. We were, however, unable to find evidence of such a
+relationship: Figure \ref{fig:uniformddtimecor} shows the performance of the
+move-based MIP on non-bucketed ($d_j = U[1, 99]$) instances compared to bucketed
+instances. \input{figures/uniformddtimecor.tex} Indeed, average performance improves with uniformly distributed due dates on
+instances with larger $n_j$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONCLUSION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% TODO
+% My new model is better because it's simpler
+% It also improves in long time scales, not short ones.
+% Could maybe be copied to CP or to similar problems
+
+\chapter{Conclusion}\label{sec:futurework}
+The problem of scheduling jobs of non-identical sizes and processing times on a
+batch resource with a limited capacity arises frequently in the context of
+furnaces, autoclaves, driers, or other machinery where one particular job
+determines the processing time of the entire batch. The problem of minimizing
+the maximum lateness is given in situations in which all customers (or
+downstream processes) are to be treated as fairly as possible.
+
+The problem was approached by Daste \citet{daste1} using a branch-and-price
+model and by Malapert \citet{Malapert} using a new \texttt{sequenceEDD} global
+constraint. In this paper we have introduced a set of improvements to Malapert's
+basic MIP model, a simple CP model, a decomposition method, and a new MIP based
+on the idea of independent search moves expressed in a single formulation.
+
+The new move-based MIP model rivals the performance of Malapert's
+\texttt{sequenceEDD} constraint particularly with larger problem instances ($n_j
+> 30$). The great simplicity of our formulation allows production managers to
+integrate it into existing models without having to implement highly
+problem-specific filtering rules. Furthermore, it is easily extended with
+additional redundant or lazy constraints if necessary.
+
+\section{Future Work}
+All models described in this paper have weaknesses. The improved original MIP
+model lacks the fine-tuning and lazy constraints enjoyed by the move-based MIP.
+The CP model could likely benefit from additional redundant constraints. The
+decomposition approach needs a better pruning method. The move-based MIP's lazy
+constraints could certainly be fine-tuned based on a more generous definition of
+``safe'' moves and conditional activation relying on the problem's
+\textit{disjunction ratio}. Such potential improvements are described in
+Appendix \ref{appendix:improvements}.
+
+\subsection{Application to related problems}
+The promising computational performance of the move-based MIP model might find
+application in similar problems, e.g. completion-time minimization on batch
+machines (which is equivalent to $\Lmax$ minimization with equal due dates), or
+$\Lmax$ minimization with release dates (i.e. coupling $x_{jk}$ to batch start
+times, which can be expressed using an exact analogue to constraint
+\eqref{mbm:eq4}).
+
+
 
 \bibliographystyle{plainnat}
 \bibliography{bibliography}{}
 \vskip 4em
 \appendix
-\chapter{Appendix: Tables}
-\section{Hello. This is the first part of the first Appendix}
-Blabla.
+\chapter[Appendix: Potential improvements to the models]{Appendix: Potential\\ improvements to the models}
+The following section details some redundant constraints, tighter variable
+bounds and potential fine-tuning opportunities that were not implemented in this
+papier, but may be of use in further research. 
 
-\chapter{Appendix: Code}
+\section{CP Model} 
+\subsection[Constraint on the number of batches with length $P_k >
+p$]{Constraint on number of batches with length {\sansitalicfont
+P\textsubscript{k}} > {\sansitalicfont p}}
+
+Since batches take on the processing time of their longest job, there is at
+least one batch with $P = \underset{j}{\max} p_j $. We can proceed to fill batches with jobs, ordered by non-increasing processing
+time, based on algorithm \ref{alg:findBatchlengthCards}. 
+
+\begin{algorithm}[h!]
+\fontsize{9pt}{11.5pt}\selectfont \begin{algorithmic} \State $J^{\star} \gets J$
+\Comment{initialize all jobs as unassigned jobs} \State $n_k \gets 1$; $S_k
+\gets \{0\}$; $P_{k,\text{min}} \gets \{0\}$ \Comment{Create one empty batch of
+size and length zero} \State sort $J^{\star}$ by processing time, non-increasing
+\Repeat \State $j \gets J^{\star}$.pop() \Comment{select job for assignment,
+longest job first} \Loop $\;$ through all $n_k$ existing batches $k$, first
+batch first \State $k_p \gets \emptyset$ \Comment{no feasible batch} \State
+$c_\text{min} = b$ \Comment{currently known minimum remaining capacity} \If{$s_j
+< b-S_k$ and $b-S_k < c_\text{min}$} \State $k_p \gets k_p$; $c_\text{min} \gets
+b-S_k$ \EndIf \EndLoop \If{$|k_p| = 1$} \State $S_{k_p} \gets S_{k_p} + s_j$
+\Comment{assign job $j$ to batch $k_p$} \Else \If{$n_k < LB(n_k)$} \State $n_k
+\gets n_k + 1$\Comment{open new batch} \State $S_{n_k} \gets s_j$;
+$P_{n_k,\text{min}} \gets p_j$ \Comment{assign $s_j$ and $p_j$ to the new batch}
+\Else \State leave the loop now and end.  \EndIf \EndIf \Until{$J^{\star}$ is
+empty} \end{algorithmic} \caption{Generating lower bounds on batch lengths}
+\label{alg:findBatchlengthCards} \end{algorithm}
+At the end of this algorithm, we can state: \begin{alignat}{2} &
+\mathtt{globalCardinality}(\{1,\dots,n_j\},
+\{P_{k,\text{min}}, \dots, P_{k-1,\text{min}} - 1\}, P_k) \quad && \forall k \in \{k_0,\dots,k_{LB(n_k)}\}, \end{alignat}
+where the constraint takes three arguments (\mathtt{cards}, \mathtt{vals} and \mathtt{vars}) and $P_{k,\text{min}}$ denotes the minimum length of batch $k$.
+
+The algorithm sorts jobs by non-increasing $p$, and then fills batches job by
+job. If a job fits into a previous batch, it is assigned there. If a job fits
+into multiple previous batches, it is assigned to the batch with the smallest
+remaining capacity. This is called \textit{best-fit decreasing} rule,
+and works as follows: let $J^\star$ be the set of jobs sorted by $p$, then at
+least one batch will be as long as the longest job $j^\star_1$. If the next $n$
+jobs fit into this batch, then there is at least one batch not shorter than
+$j^\star_{n+1}$, and similarly for subsequent batches. 
+
+Unfortunately, the optimal solution may perform better than the packing heuristic in
+terms of ``vertical'' ($s_j$) bin packing, and may thus require fewer batches.
+We therefore need to find a lower bound $LB(n_k)$ on the number of batches, and
+we can only guarantee the first $LB(n_k)$ of the above constraints to hold in
+the optimal solution. Finding a true lower bound is a two-dimensional bin
+packing problem, which is NP-hard. A possible but naive lower bound is $j_0$,
+the number of jobs, ordered by decreasing $s_j$, that can never fit into a batch
+together.
+
+\subsection[Constraint on the number of batches with due date $D_k >
+d$]{Constraint on number of batches with length {\sansitalicfont
+D\textsubscript{k}} > {\sansitalicfont d}}
+
+In a similar fashion, we can determine that the second batch must be due no
+later than the earliest-due job $j_{m+1}$ that can \textit{not} fit into the first
+batch -- if we sort jobs by due date and fit the earliest $m$ jobs into the first
+batch -- and so on for subsequent batches. Once again, since best-fit decreasing
+may not perform optimally in terms of ``vertical'' packing, this may not be
+valid for batches beyond the known $LB(n_k)$.
+
+\subsection[All-different constraints on $P_k$ and $D_k$]{All-different
+constraints on {\sansitalicfont P\textsubscript{k}} and {\sansitalicfont
+D\textsubscript{k}}}
+
+Furthermore, if all jobs have different processing times, all batches will have
+different processing times as well: \texttt{alldifferent}$(P_k)$. If $m$ out of
+$n_j$ jobs have different processing times, we can still enforce
+\texttt{k\_alldifferent}$(P_k, m)$. Some work on \texttt{k\_alldifferent}
+constraints has been done in \citep{Lardeux}. 
+
+Similarly, we knows that the constraint \texttt{k\_alldifferent}$(D_k, m)$ must
+be true if $m$ out of $n_j$ jobs have different due dates.
+
+\section{Decomposition approaches}
+\subsection{Potential heuristics}
+\paragraph{Improve the initial $L_{\text{max,incumbent}}$} A better initial
+upper bound on $\Lmax$ can help prune some branches of the search tree from the
+outset. There are several dispatch rules (or maybe other heuristics?) that could
+be explored to do this better.
+\paragraph{Improve $L_{\text{max,incumbent}}$ during search} It may be useful to
+use a heuristic like above to ``complete the schedule'' once a promising partial
+schedule has been generated. I have yet to identify situations where this is
+always helpful.
+
+% fine-tuning of lazy constraints based on disjunction ratio
+% fine-tuning of safe-move lazy constraints' conditions based on minimum
+% latenesses for batches.
+
+\section{Move-based MIP model}
+\subsection{Conditional activation of lazy constraints}
+The disjunction ratio measure introduced by \citet{baptistelapape} may be useful
+in conditionally activating or omitting certain lazy constraint sets, as it is
+known that they often have a net slowing effect on the solver when dealing with
+less difficult problems. 
+
+\subsection{Improvement of ``safe'' move definition}
+The concept of ``safe'' moves is used in several constraints. It describes moves
+in which a job $j$ is moved into an earlier batch $k$ and $p_j \leq p_k$.
+
+The definition of ``safe'' can be extended to guest jobs $j$ that fulfill the
+following condition: $p_j \leq LB(\Lmax) + d_k - UB(S_k)$, where $LB(\Lmax)$ is
+a lower bound on the optimal value of $\Lmax$ and $UB(S_k)$ is an upper bound on
+the start time of batch $k$. The term represents the longest processing time
+that batch $k$ can be extended to without violating a known lower bound on the
+maximum lateness.
+
+The a-priori computation of upper bounds on batch start times is challenging,
+and can only be based on capacity violations (``what is the longest combination of
+guest jobs that can be placed into batches up to and including $k$?''), which
+will likely make for relatively weak bounds. Nevertheless, a stronger notion of
+``safe'' may be beneficial in some instances.
+
+\section{Move-back search}
+The following is a proof referenced in Proposition \ref{prop:moveisbetter}, but
+it could easily be turned into a standalone local search method that finds good
+solutions quickly.
+
+\begin{proposition}
+Begin with any EDD schedule (such as the single-EDD schedule). Moving any job
+$j$ into an earlier batch $k$ will never shift the position of $\Lmax$ to the
+right (into a later bucket).
+
+\begin{proof}
+In any partial schedule following EDD, let $k$ be the batch
+with maximum lateness $L_k = \Lmax$. If multiple batches have equal lateness
+$\Lmax$, let $L_k$ refer to the latest-due of these batches in the schedule. It has processing time $p_k$. Then the lateness of the
+batch before $k$ must be $L_{k-1} \geq L_k - p_k$ as a consequence of the EDD
+sequencing. Any batch following $k$ can have a lateness no greater than $L_k -
+1$.
+
+\begin{alist}
+\item{Moving any single job from a batch following $k$ into a batch before $k$ will
+worsen $\Lmax$, but not change its position. Such a move is never necessary to
+arrive at an optimal solution.}
+\item{Moving back any single job from a
+batch before $k$ \textit{safely}\footnote{for the meaning of ``safe'' and
+``unsafe'' moves, compare section \ref{sec:bounding_nk}.} will improve $\Lmax$,
+but not change its position.}
+\item{Moving back a single pre-$k$ job $j$ from a batch
+$\beta$ into an earlier batch $\alpha$ \textit{unsafely} will reduce $L_k$ by
+$p_\alpha$; $\Lmax$ may still be in $k$, or it may be found in any batch between
+(and including) $\alpha$ and $\beta$, since their lateness
+$L_{[\alpha,\dots,\beta]}$ is now increased by $p_j - p_\alpha$.}
+\item{If the
+max-lateness job $j$ is single itself, it can be moved from $k$ into an earlier
+batch $\alpha$. If this is done \textit{safely}, the batch immediately preceding
+$k$ will still have a lateness $L_{k-1} \geq L_k - p_j$. All batches after $k$
+will have their lateness reduced by $p_j$, but since their maximum lateness did
+not exceed $L_k - 1$ before the move, it will now be at least 1 less than that
+of batch $k-1$.}
+\item{If the max-lateness job
+$j$ was moved back \textit{unsafely} into a batch $\alpha$, batches between and
+including $\alpha$ and $k-1$ now have their lateness increased by $p_j - p_\alpha$,
+while batches after $k$ have their lateness decreased by $p_\alpha$. Again,
+batch $L_{k-1}$ would exceed the maximum lateness of batches after $k$.}
+\end{alist}
+This shows that after a sequence of operations in which single jobs are moved into
+earlier batches, $\Lmax$ will never shift to the right. 
+\end{proof}
+\end{proposition}
+In fact, this means that all jobs after the $\Lmax$-job in a single-job EDD
+schedule can be ignored in the scheduling problem entirely, although this turns
+out to be quite inconsequential as that job is often at or near the end of the
+single-job EDD schedule, resulting from the fact that $L_{k-1} \geq L_k - p_k$.
+By the same token, high-quality solutions often have their $\Lmax$ in an early
+batch.
+
+\chapter{Appendix: Other approaches}
+We present two methods which, independently of the model used, lead to no change
+or a worsening of performance in all initial tests despite appearing very
+promising at first. They are mentioned here briefly only for the sake of
+completeness.
+
+\subsection[Upper bound on $\Lmax$]{Upper bound on {\sansitalicfont L}\textsubscript{max}}
+An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
+feasible, if not optimal, schedule. A good approach could be the ``best-fit''
+heuristic proposed in Malapert's paper. 
+
+\subsection[Bounding the number of batches $n_k$]{Bounding the number of batches
+\sansitalicfont n\textsubscript{k}}\label{sec:bounding_nk}
+Initially, the number of batches needed is assumed to be equal to the number of
+jobs: $n_k = n_j$. Reducing $n_k$ by pre-computing the maximum number of batches
+needed shrinks the $x_{jk}$ matrix, and prunes potential search branches in
+branch-and-bound decomposition approaches.
+
+\input{figures/bnk1_1050} %fig:bnk1 (50/10 example)
+
+Unfortunately, we cannot make a general statement that optimal solutions never
+have more batches than other feasible solutions -- a simple counterexample is
+shown in figure \ref{fig:bnk1}.\footnote{To be more precise, we cannot state
+that at least one optimal solution is in the subset of feasible solutions that
+uses the fewest number of batches -- a dominance situation that could be
+exploited, were it true.}
+
+Starting out with a one-job-per-batch schedule sorted by EDD, we can explore
+all feasible batch configurations recursively. To generate any other feasible
+schedule (including the optimal solution), jobs $j$ are rescheduled (``moved back'')
+from their original batch $k_\text{origin}$ into a prior batch
+$k_\text{earlier}$. This eliminates $k_\text{origin}$ and requires, of course,
+that $k_\text{earlier}$ has sufficient capacity. If the job's processing time
+$p_j$ exceeds that of $k_\text{earlier}$, then the lateness of batches between
+$k_\text{earlier}$ and $k_\text{origin}$ will increase; the merit of such a move
+cannot be judged a priori, so it is an \textit{unsafe} batch elimination.
+\textit{Safe} eliminations, on the other hand, will never worsen $\Lmax$, and
+only they can be considered when bounding $n_k$ a priori.
+
+Algorithm \ref{alg:bounding_nk} outlines a recursive method to find an upper
+bound on $n_k$, recognizing safe batch eliminations only.
+
+\begin{algorithm}[h]
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\If{no open jobs left} \Comment{if this is a ``leaf node'' in the recursion}
+  \State update UB$(n_k)$
+\EndIf
+\State find the combination of unsafe later jobs that fills up the capacity
+most, leaving us with capacity $b_r$ 
+\State find all combinations $x$ of safe later jobs that fit into $b_r$
+\Repeat
+  \State $x$ = next safe job combination
+  \State \textit{ignoreJobs} $\gets x$ \Comment{make the moves, let the next recursion
+  level deal with the rest of the jobs}
+  \State spawn and run child node with $J \setminus$ \textit{ignoreJobs}
+  \State \textit{ignoreJobs} $\gets$ \textit{ignoreJobs} $\setminus x$
+\Until{all combinations have been explored}
+\State return
+\end{algorithmic}
+\caption{Recursive algorithm to find an upper bound on $n_k$}
+\label{alg:bounding_nk}
+\end{algorithm}
+
+This algorithm evidently requires exponential time. A relaxed variant is a
+possible option: if only a single unsafe move \textit{into} a batch is possible,
+no safe eliminations into that batch are considered at all and we skip to the
+next batch. This would greatly speed up the recursion but also significantly
+weaken the usefulness of the resulting upper bound.
+
+In a branch-and-bound decomposition approach in which batches are modelled
+individually, an upper bound on $n_k$ could be used to limit the depth of the
+search tree, or, in combination with a method to determine a lower bound on the
+remaining jobs' $n_k$ at every node, to actively prune the search tree during
+the search. The latter method, however, would also run in exponential time as
+it, again, would require knapsack-type reasoning unless we use a much less powerful
+relaxation.
+
+Another application of a bounded $n_k$ works as follows: a model (CP or MIP) is
+somehow optimized to quickly find the optimal solution of a problem that has a
+fixed number of batches $n_k \leq n_j$. The model is run with $n_k = n_j$, then
+with $n_k = n_j - 1$, then with $n_k = n_j - 2$ etc., until the value of $\Lmax$
+starts to increase (which happens at the point where an exceedingly low $n_k$
+forces capacity constraints to take precedence over optimality). With every
+successive run (i.e. with every decrement of $n_k$), the result of the previous
+run is passed to the solver as an initial solution to speed up the search---on
+the assumption that job-to-batch assignments will not vary substantially between
+runs.
+
+We performed some such tests with a modification of Malapert's original MIP
+model. While passing initial solutions to the MIP solver greatly sped up the
+search for the optimal schedule at a given $n_k$, the overall time required to
+find the optimal solution to a problem instance was significantly greater. We
+therefore did not explore this approach further.
+
+\chapter{Appendix: Result tables}
+\begin{longtable}
+
+\end{longtable}
+
+\chapter{Appendix: Code listings}
 \backmatter
 \end{document}
 

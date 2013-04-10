@@ -1,47 +1,51 @@
 This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
+A level-1 auxiliary file: coverpage_cardboard.aux
 A level-1 auxiliary file: coverpage.aux
 The style file: plainnat.bst
 Database file #1: bibliography.bib
-You've used 10 entries,
+Warning--I didn't find a database entry for "papadimitriou"
+Warning--empty year in Lardeux
+You've used 13 entries,
             2773 wiz_defined-function locations,
-            668 strings with 7018 characters,
-and the built_in function-call counts, 5155 in all, are:
-= -- 454
-> -- 298
-< -- 8
-+ -- 101
-- -- 90
-* -- 446
-:= -- 781
-add.period$ -- 30
-call.type$ -- 10
-change.case$ -- 60
-chr.to.int$ -- 9
-cite$ -- 20
-duplicate$ -- 222
-empty$ -- 419
-format.name$ -- 106
-if$ -- 1089
+            687 strings with 7490 characters,
+and the built_in function-call counts, 6379 in all, are:
+= -- 560
+> -- 359
+< -- 10
++ -- 122
+- -- 108
+* -- 542
+:= -- 965
+add.period$ -- 38
+call.type$ -- 13
+change.case$ -- 75
+chr.to.int$ -- 12
+cite$ -- 27
+duplicate$ -- 278
+empty$ -- 532
+format.name$ -- 129
+if$ -- 1349
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 9
-newline$ -- 58
-num.names$ -- 40
-pop$ -- 107
+missing$ -- 11
+newline$ -- 72
+num.names$ -- 52
+pop$ -- 140
 preamble$ -- 1
-purify$ -- 50
+purify$ -- 62
 quote$ -- 0
-skip$ -- 175
+skip$ -- 219
 stack$ -- 0
-substring$ -- 245
-swap$ -- 29
+substring$ -- 293
+swap$ -- 32
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
-warning$ -- 0
-while$ -- 43
+type$ -- 143
+warning$ -- 1
+while$ -- 54
 width$ -- 0
-write$ -- 138
+write$ -- 173
+(There were 2 warnings)

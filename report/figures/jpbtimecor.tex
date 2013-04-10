@@ -1,0 +1,111 @@
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.4\textwidth}
+  \centering
+    \noindent\begin{tikzpicture}
+  \begin{semilogyaxis}[ 
+  font=\small, width=0.99\textwidth]
+  \addplot[color=black, only marks] coordinates {
+(1.875, 1.84)
+(1.875, 2.45)
+(2, 3.3)
+(2, 2.14286)
+(2.30769, 15.56)
+(1.5, 0.44)
+(2.14286, 10.33)
+(1.76471, 1.99)
+(1.6666, 1.78)
+(1.5, 0.51)
+(1.666667, 1.15)
+(1.875, 2.34)
+(1.66667, 1.9)
+(2, 2.73)
+(2.14286, 11.56)
+(1.66667, 2.09)
+(1.6667, 0.89)
+(1.57895, 0.75)
+(1.42857, 0.09)
+(2, 2.36)
+(1.66667, 1.76)
+(2, 2.35)
+(1.76471, 0.67)
+(1.76471, 1.11)
+(2.14286, 3.83)
+(2, 3.59)
+(2.30769, 7.32)
+(2, 1.71)
+(2, 6.82)
+(1.5, 0.41)
+(1.76471, 1.29)
+(1.875, 2.62)
+(2, 2.15)
+(1.76471, 2.44)
+(2, 4.86)
+(2, 1.53)
+(2.14286, 4.23)
+(1.57895, 1.43)
+(1.875, 1.2)
+};
+  \end{semilogyaxis}
+\end{tikzpicture}
+\caption{$n_j/n_k$}
+\label{fig:jpbtimecor_a}
+\end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+  \centering
+    \noindent\begin{tikzpicture}
+  \begin{semilogyaxis}[font=\small, width=0.99\textwidth]
+  \addplot[color=black, only marks] coordinates {
+(0.407777777778, 1.84)
+(0.446666666667, 2.45)
+(0.347777777778, 3.3)
+(0.337777777778, 2.14286)
+(0.296666666667, 15.56)
+(0.583333333333, 0.44)
+(0.272222222222, 10.33)
+(0.398888888889, 1.99)
+(0.502222222222, 1.78)
+(0.584444444444, 0.51)
+(0.536666666667, 1.15)
+(0.427777777778, 2.34)
+(0.538888888889, 1.9)
+(0.346666666667, 2.73)
+(0.311111111111, 11.56)
+(0.512222222222, 2.09)
+(0.524444444444, 0.89)
+(0.558888888889, 0.75)
+(0.648888888889, 0.09)
+(0.397777777778, 2.36)
+(0.478888888889, 1.76)
+(0.364444444444, 2.35)
+(0.487777777778, 0.67)
+(0.471111111111, 1.11)
+(0.297777777778, 3.83)
+(0.354444444444, 3.59)
+(0.251111111111, 7.32)
+(0.362222222222, 1.71)
+(0.294444444444, 6.82)
+(0.671111111111, 0.41)
+(0.516666666667, 1.29)
+(0.428888888889, 2.62)
+(0.395555555556, 2.15)
+(0.392222222222, 2.44)
+(0.312222222222, 4.86)
+(0.37, 1.53)
+(0.297777777778, 4.23)
+(0.525555555556, 1.43)
+(0.348888888889, 1.2)
+};
+  \end{semilogyaxis}
+\end{tikzpicture}
+\label{fig:jpbtimecor_b}
+\caption{Disjunction ratio}
+  \end{subfigure}
+  \caption{Correlation between time to prove optimality in
+  seconds (ordinates) and measures of disjunctivity (abscissae), based
+  on 40 instances with $n_j=30$. Subfigure (a) shows the average number of jobs
+  per batch in the optimal solution. Subfigure (b) shows the \textit{disjunction
+  ratio} as defined in Section \ref{sec:disjunctivity}.}
+  \label{fig:jpbtimecor}
+  
+\end{figure}

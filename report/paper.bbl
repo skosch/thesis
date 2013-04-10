@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,6 +10,12 @@ Meral Azizoglu and Scott Webster.
 \newblock Scheduling a batch processing machine with non-identical job sizes.
 \newblock \emph{International Journal of Production Research}, 38\penalty0
   (10):\penalty0 2173 -- 2184, 2000.
+
+\bibitem[Baptiste and Le~Pape(2000)]{baptistelepape}
+Philippe Baptiste and Claude Le~Pape.
+\newblock Constraint propagation and decomposition techniques for highly
+  disjunctive and highly cumulative project scheduling problems.
+\newblock \emph{Constraints}, 1-2\penalty0 (5):\penalty0 119--139, 2000.
 
 \bibitem[Brucker et~al.(1998)Brucker, Gladky, Hoogeveen, Kovalyov, Potts,
   Tautenhahn, and van~de Velde]{Brucker}
@@ -48,12 +54,21 @@ Ignacio~E. Grossmann.
 \newblock Technical Report Paper 203, Carnegie Mellon University Engineering
   Design Research Center and Department of Chemical Engineering, 1992.
 
+\bibitem[Karmarkar(1984)]{karmarkar}
+Narendra Karmarkar.
+\newblock A new polynomial time algorithm for linear programming.
+\newblock \emph{Combinatorica}, 4\penalty0 (4):\penalty0 373--395, 1984.
+
 \bibitem[Kashan et~al.(2009)Kashan, Karimi, and Ghomi]{Kashan}
 Ali~Husseinzadeh Kashan, Behrooz Karimi, and S.~M. T.~Fatemi Ghomi.
 \newblock A note on minimizing makespan on a single batch processing machine
   with nonidentical job sizes.
 \newblock \emph{Theoretical Computer Science}, 410\penalty0 (27-29):\penalty0
   2754--2758, 2009.
+
+\bibitem[Lardeux et~al.()Lardeux, Monfroy, and Saubion]{Lardeux}
+Frédéric Lardeux, Eric Monfroy, and Frédéric Saubion.
+\newblock Interleaved alldifferent constraints: Csp vs. sat approaches.
 
 \bibitem[Malapert et~al.(2012)Malapert, Guéret, and Rousseau]{Malapert}
 Arnaud Malapert, Christelle Guéret, and Louis-Martin Rousseau.
