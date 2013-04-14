@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -15,7 +15,7 @@ Meral Azizoglu and Scott Webster.
 Philippe Baptiste and Claude Le~Pape.
 \newblock Constraint propagation and decomposition techniques for highly
   disjunctive and highly cumulative project scheduling problems.
-\newblock \emph{Constraints}, 1-2\penalty0 (5):\penalty0 119--139, 2000.
+\newblock \emph{Constraints}, 5\penalty0 (1-2):\penalty0 119--139, 2000.
 
 \bibitem[Brucker et~al.(1998)Brucker, Gladky, Hoogeveen, Kovalyov, Potts,
   Tautenhahn, and van~de Velde]{Brucker}
@@ -24,21 +24,13 @@ Peter Brucker, Andrei Gladky, Han Hoogeveen, Mikhail~Y. Kovalyov, Chris~N.
 \newblock Scheduling a batching machine.
 \newblock \emph{Journal of Scheduling}, 1\penalty0 (1):\penalty0 31--54, 1998.
 
-\bibitem[Daste et~al.(2008{\natexlab{a}})Daste, Gueret, and Lahlou]{daste1}
+\bibitem[Daste et~al.(2008)Daste, Gueret, and Lahlou]{Daste1}
 Denis Daste, Christelle Gueret, and Chams Lahlou.
 \newblock A branch-and-price algorithm to minimize the maximum lateness on a
   batch processing machine.
 \newblock In \emph{Proceedings of the 11\textsuperscript{th} International
-  Workshop on Project Management and Scheduling PMS`08, Istanbul, Turkey},
-  pages 64--69, 2008{\natexlab{a}}.
-
-\bibitem[Daste et~al.(2008{\natexlab{b}})Daste, Gueret, and Lahlou]{daste2}
-Denis Daste, Christelle Gueret, and Chams Lahlou.
-\newblock Génération de colonnes pour l’ordonnancement d’une machine à
-  traitement par fournées.
-\newblock In \emph{7\textsuperscript{ème} conférence internationale de
-  modélisation et simulation (MOSIM 2008), Paris, France}, volume~3, pages
-  64--69, 2008{\natexlab{b}}.
+  Workshop on Project Management and Scheduling (PMS), Istanbul, Turkey}, pages
+  64--69, 2008.
 
 \bibitem[Dupont and Dhaenens-Flipo(2002)]{Dupont}
 Lionel Dupont and Clarisse Dhaenens-Flipo.
@@ -46,6 +38,12 @@ Lionel Dupont and Clarisse Dhaenens-Flipo.
   sizes: an exact procedure.
 \newblock \emph{Computers \& Operations Research}, 29\penalty0 (7):\penalty0
   807 -- 819, 2002.
+
+\bibitem[Graham et~al.(1979)Graham, Lawler, Lenstra, and Kan]{graham}
+Ronald Graham, Eugene Lawler, Jan~Karel Lenstra, and Alexander~Rinnoy Kan.
+\newblock Optimization and approximation in deterministic sequencing and
+  scheduling: A survey.
+\newblock \emph{Annals of Discrete Mathematics}, 5:\penalty0 287--326, 1979.
 
 \bibitem[Grossmann(1992)]{Grossmann}
 Ignacio~E. Grossmann.
@@ -66,9 +64,9 @@ Ali~Husseinzadeh Kashan, Behrooz Karimi, and S.~M. T.~Fatemi Ghomi.
 \newblock \emph{Theoretical Computer Science}, 410\penalty0 (27-29):\penalty0
   2754--2758, 2009.
 
-\bibitem[Lardeux et~al.()Lardeux, Monfroy, and Saubion]{Lardeux}
+\bibitem[Lardeux et~al.(2008)Lardeux, Monfroy, and Saubion]{Lardeux}
 Frédéric Lardeux, Eric Monfroy, and Frédéric Saubion.
-\newblock Interleaved alldifferent constraints: Csp vs. sat approaches.
+\newblock Interleaved alldifferent constraints: Csp vs. sat approaches, 2008.
 
 \bibitem[Malapert et~al.(2012)Malapert, Guéret, and Rousseau]{Malapert}
 Arnaud Malapert, Christelle Guéret, and Louis-Martin Rousseau.
@@ -84,11 +82,21 @@ Onur Ozturk, Marie-Laure Espinouse, Maria~Di Mascolo, and Alexia Gouin.
 \newblock \emph{International Journal of Production Research}, 50\penalty0
   (20):\penalty0 6022--6035, 2012.
 
+\bibitem[Papadimitrou and Steiglitz(1998)]{papadimitriou}
+Christos~H. Papadimitrou and Kenneth Steiglitz.
+\newblock \emph{Combinatorial Optimization: Algorithms and Complexity}.
+\newblock Dover, 1998.
+
 \bibitem[Sabouni and Jolai(2010)]{Sabouni}
 M.T.~Yazdani Sabouni and F.~Jolai.
 \newblock Optimal methods for batch processing problem with makespan and
   maximum lateness objectives.
 \newblock \emph{Applied Mathematical Modelling}, 34\penalty0 (2):\penalty0 314
   -- 324, 2010.
+
+\bibitem[Williams(1978)]{williams}
+H.~Paul Williams.
+\newblock \emph{Model Building in Mathematical Programming}.
+\newblock Wiley, 1978.
 
 \end{thebibliography}

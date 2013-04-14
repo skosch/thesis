@@ -3,49 +3,57 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 A level-1 auxiliary file: coverpage_cardboard.aux
 A level-1 auxiliary file: coverpage.aux
+Case mismatch error between cite keys daste1 and Daste1
+---line 186 of file paper.aux
+ : \citation{daste1
+ :                 ,daste2}
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys daste1 and Daste1
+---line 213 of file paper.aux
+ : \citation{daste1
+ :                 }
+I'm skipping whatever remains of this command
 The style file: plainnat.bst
 Database file #1: bibliography.bib
-Warning--I didn't find a database entry for "papadimitriou"
-Warning--empty year in Lardeux
-You've used 13 entries,
+You've used 15 entries,
             2773 wiz_defined-function locations,
-            687 strings with 7490 characters,
-and the built_in function-call counts, 6379 in all, are:
-= -- 560
-> -- 359
+            699 strings with 7831 characters,
+and the built_in function-call counts, 6981 in all, are:
+= -- 606
+> -- 399
 < -- 10
-+ -- 122
-- -- 108
-* -- 542
-:= -- 965
-add.period$ -- 38
-call.type$ -- 13
-change.case$ -- 75
-chr.to.int$ -- 12
-cite$ -- 27
-duplicate$ -- 278
-empty$ -- 532
-format.name$ -- 129
-if$ -- 1349
-int.to.chr$ -- 2
++ -- 135
+- -- 120
+* -- 580
+:= -- 1076
+add.period$ -- 44
+call.type$ -- 15
+change.case$ -- 83
+chr.to.int$ -- 15
+cite$ -- 30
+duplicate$ -- 308
+empty$ -- 585
+format.name$ -- 145
+if$ -- 1465
+int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 11
-newline$ -- 72
-num.names$ -- 52
-pop$ -- 140
+missing$ -- 15
+newline$ -- 82
+num.names$ -- 60
+pop$ -- 162
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 70
 quote$ -- 0
-skip$ -- 219
+skip$ -- 239
 stack$ -- 0
-substring$ -- 293
-swap$ -- 32
-text.length$ -- 4
+substring$ -- 298
+swap$ -- 23
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 143
-warning$ -- 1
-while$ -- 54
+type$ -- 155
+warning$ -- 0
+while$ -- 59
 width$ -- 0
-write$ -- 173
-(There were 2 warnings)
+write$ -- 197
+(There were 2 error messages)

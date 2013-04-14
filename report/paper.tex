@@ -18,20 +18,55 @@ right=1in,top=1.3in, bottom=1.4in]{geometry}
 % \usepackage[T1]{fontenc} 
 \usepackage{enumitem,verbatim,natbib}
 
+\usepackage{changepage}
  \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
 \include{typography}
 
 \usepackage[hidelinks]{hyperref}
 
 \begin{document}
-\frontmatter
 
 \include{coverpage_cardboard}
 \pagebreak
+
+\frontmatter
+
 \include{coverpage}
 % abstract
-% acknowledgements
+\pagebreak
 
+\frontmatter
+\chapter*{Abstract}
+Ovens, washers, driers and autoclaves are examples of \textit{batch processing
+machines} and used in many industries. We examine the problem of
+scheduling jobs of non-identical sizes, processing times and due dates on a
+single batch machine of finite capacity in a way that minimizes the maximum
+lateness $\Lmax$. Previous authors have introduced a branch-and-price method and
+a new global constraint for constraint programming solvers, both of which
+perform better than a simple mixed-integer formulation. In this paper, we
+present four new models: an improved version of the mixed-integer program, a
+simple constraint programming model, a decomposition approach and a new
+mixed-integer model using a novel way to compute batch lateness. All models are
+evaluated on a set of problem instances and compared by performance. We show
+that the new mixed-integer model rivals the performance of the previously
+introduced global constraint.
+
+% acknowledgements
+\pagebreak
+\vspace*{\fill}
+
+\begin{adjustwidth}{1in}{1in}
+
+  I must acknowledge Professor Chris Beck, one of the best teachers I
+  have had, who took considerable time out from his busy schedule to keep me on track throughout the year.
+  
+  Thank you for being a model supervisor.\\[3ex]
+     And I could not have made it this far without two incredible parents and an
+     amazing girlfriend.
+     
+     I love you guys.
+\end{adjustwidth}
+    \vspace*{\fill}
 %\include{firstpage}
 
 \tableofcontents
@@ -333,7 +368,7 @@ $x_2 \leq 3.0 \lor x_2 \leq 4.0$. We now have two new MIPs, as shown in figure
 this example, the optimal value for $x_2$ was
 within $\pm1$ of its LP value.  This is often the case, and it is not
 immediately obvious from the figure why fixing $x_2 = 3.0 \lor x_2 = 4.0$ is
-insufficient. In some problems, however, the shaded polyhedron protrudes
+insufficient. In some problems, however, the circumscribed polytope protrudes
 relatively far diagonally through the grid of integer solutions, in which case
 branching on $\leq \lfloor x_i \rfloor$ and $\geq \lceil x_i \rceil$ is
 necessary to capture the optimal feasible solution.} At
@@ -358,10 +393,6 @@ LP solution to $P_1$ is worse than that of the current incumbent. This
 \textit{bounding}, and is what allows many MIP models to be solved in less time than
 their theoretically exponential complexity suggests.
 
-\subsection{Branch-and-cut methods}
-
-\subsection{Special ordered sets}
-
 \subsection{Lazy constraints in MIP}\label{sec:lazyconstraints}
 Achieving fast search times in MIP requires striking a delicate balance between
 keeping the model small (reducing the time needed to solve the LP relaxations)
@@ -380,18 +411,81 @@ are likely not needed. In such cases, lazy constraints can greatly speed up
 solution times.
 
 \section{Scheduling using CP and MIP}
-\subsection{Common types of scheduling problems}
-\subsection{Temporal problems in CP}
-\subsection{Temporal problems in MIP}
+\subsection{Common characteristics of scheduling problems}
+Many scheduling problems can be described by some of the following
+characteristics:
+\begin{description}
+\item[Objective]{In this paper, $\Lmax$ is the value to be minimized. Other
+situations might call for minimization of the makespan ($C_\text{max}$), the
+maximum tardiness (like lateness, but never below zero), total completion time
+weighed differently for every job, or other measures.}
+\item[Number of resources]{Some problems, like the one treated in this paper,
+assume the existence of only one resource. Other problems, e.g. \textit{flow
+shop} or \textit{open shop} problems, require multiple resources.}
+\item[Release dates and precendence constraints]{Many problems specify that
+certain jobs must finish before other jobs begin, and/or that they may not start
+before a certain time.}
+\item[Resource type]{In this paper, the resource processes batches only. Other
+resources may be \textit{disjunctive}, allowing execution of one job at a time
+only, or \textit{cumulative}, allowing for multiple jobs to be processed in
+parallel without any batching restriction. \textit{Pre-emptive} processing means
+that jobs may be interrupted and continued at a later time, which greatly
+improves the flexibility and, in turn, the objective value of the resulting
+schedule.}
+\end{description}
 
-\section{Literature}
+Scheduling problems are commonly summarized as an abbreviated expression
+summarizing the above and other properties in a format introduced in
+\citet{graham}. For the problem at hand, it is $1|\textit{p-batch}; b < n;
+\textit{non-identical}|\Lmax$.
+
+\subsection{Scheduling problems in CP}
+CP solvers work by reducing the domains of variables, and so it is only natural
+to express the position of a job using variables such as $\mathtt{startOf}(j)$
+or $\mathtt{endOf}(j)$, the domains of which are then reduced to feasible
+values. This creates the notion of an earliest/latest start/end time of a job,
+commonly abbreviated \texttt{est}/\texttt{lst}/\texttt{eft}/\texttt{lft}.
+
+The most well-known propagation techniques on these four variable bounds are
+called \textit{edge finding}: they reason about a job's time bounds and whether
+they allow it (or force it) to execute before or after a set of other jobs on
+the same resource.
+
+Capacity constraints are often expressed as \texttt{cumulative} and/or
+\texttt{pack} global constraints, efficient (and problem-agnostic)
+implementations of which are part of every major CP software package.
+
+\subsection{Scheduling problems in MIP}
+The position of a job in time is more difficult to represent in MIP
+formulations. Most models can roughly be divided into two groups:
+
+\paragraph{Time-indexed/discrete-time formulations.} In this type of model, a set of binary
+variables is used to indicate the start time (or end time) of a job on a
+predefined, discrete grid of time points. The binary variables must sum to one.
+Capacity constraints (e.g. cumulative constraints) can then be imposed by means
+of relationships between start times of pairs of jobs, their sizes and
+processing times. This kind of model is be relatively easy to extend and work
+with, but the number of variables and constraints required grows (at least) with
+the square of the number of jobs involved.
+
+\paragraph{Disjunctive/continuous-time formulations.}
+In this type of model, jobs' start times are represented by single variables,
+and for a pair of jobs, the difference between their start times must exceed the
+earlier-scheduled job's processing time on a disjunctive resource.
+
+\section{Literature Review}
+An extensive and application-based introduction to MIP models is given by
+\citet{williams}
+
 The problem at hand is based on the work of \citet{Malapert}, who proposed a global
 constraint \texttt{sequenceEDD} to be used in combination with \texttt{pack} to
 solve it to optimality. The \texttt{sequenceEDD} constraint is implemented as
 four distinct filtering rules applied at relevant domain changes: three to update
 bounds on $\Lmax$ based on different conditions, and one to limit the number of
-batches based on the marginal cost difference between adding a job to an empty batch vs. an
-existing one. The new global was shown to significantly outperform a simple MIP model of the same problem.
+batches based on the marginal cost difference between adding a job to an empty
+batch vs. an existing one. The new global was shown to significantly outperform
+a simple MIP model of the same problem, as well as a branch-and-price model
+proposed by \citet{Daste1}.
 
 Other authors have examined similar problems: \citet{Azizoglu} provide an exact
 method and a heuristic for the same problem, but minimize makespan
@@ -401,6 +495,7 @@ functions \citep{Sabouni}, for makespan minimization on single batch machines
 \citep{Kashan}, and for makespan minimization on parallel batch machines with
 different release dates \citep{Ozturk}. A more extensive review of MIP model
 applications in batch processing is given by \citet{Grossmann}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -412,9 +507,63 @@ applications in batch processing is given by \citet{Grossmann}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter[State of the Art: Recent work by Malapert]{State of the Art:\\ Recent work by Malapert}
 \section{The sequenceEDD global constraint}
+In their 2011 paper, Malapert et al. present a CP formulation of the problem
+which, in essence, relies on two global constraints: \texttt{pack}, which
+constraints job-to-batch assignments such that no capacity limits are violated,
+and \texttt{sequenceEDD}, which sorts batches into EDD order. The implementation
+of the latter constraint includes a set of rules which update the current
+$\Lmax$, lower and upper bounds on $\Lmax$, and lower and upper bounds on the
+number of batches in the optimal solution every time \texttt{sequenceEDD} is
+triggered by a job-batch assignment. Based on these bounds, other assignments
+are then eliminated from the set of feasible assignments.
 
-\section{Malapert's MIP formulation}
-Malapert's original MIP approach is given in Model \ref{model:malapertmip}. It
+\subsection{Filtering rules}
+\paragraph{\textit{Final lateness filtering rule} and \textit{lateness filtering
+rule.}} The algorithm calculates the value
+of $\Lmax$ given a partial assignment $\mathcal{A}$. This value is also a lower
+bound on the $\Lmax$ of any assignment $\mathcal{A}'$ extending $\mathcal{A}$,
+since assigning more jobs to batches will never improve $\Lmax$.\footnote{An
+\textit{assingment} $\mathcal{A}$ in this context refers to a set of
+job-to-batch assignments for any subset of jobs $J_\mathcal{A} \subseteq J$. A
+given assignment $\mathcal{A}$ can be \textit{extended} to $\mathcal{A}'$ by
+assigning one or more additional (i.e.  previously unassigned) jobs to batches.}
+
+\paragraph{\textit{Cost-based domain filtering rule of assignments.}} This rule
+eliminates possible assignments of yet-unassigned jobs $j$ to batches $k$, if
+such assignments cause $\Lmax$ to exceed the current known upper bound on
+$\Lmax$ (or best known solution).
+
+\paragraph{\textit{Cost-based domain filtering based on bin packing.}} The
+following set of rules considers the number of non-empty batches $M$ used in the
+final solution. First, lower and upper bounds on $M$ are updated based on the
+number of batches currently in use and on the number of unassigned (``open'')
+jobs. Then, the set of shortest remaining jobs is used to update to compute a
+lower bound on $\Lmax$ given a hypothetical solution using exactly $M = m$
+non-empty batches. Based on this lower bound, the current lower bound on
+$\Lmax$ is updated. Finally, the upper bound on $M$ is decremented until the
+lower bound on $\Lmax$ given $M$ batches no longer exceeds the current upper
+bound on $\Lmax$.
+
+These four filtering rules serve to systematically reduce the solution space as
+the search progresses.
+
+\subsection{Search heuristic}
+\label{sec:bestfit}
+The search heuristic chosen for the packing of a job $j$ into a set of batches
+$K$ is to prefer assignment to batch $k$ having the lowest value of $\gamma(B_j
+\leftarrow k)$, approximating the fitness of $j$ into $k$ given the current
+assignment $\mathcal{A}$:
+\begin{align}
+\gamma(B_j \leftarrow k) = \frac{ |\min(P_k) - p_j| }{\underset{J}{\max}(p_j) -
+\underset{J}{\min}(p_j)} + \frac{ |\max(D_k) - d_j| }{\underset{J}{\max}(d_j) -
+\underset{J}{\min}(d_j)}
+\end{align}
+
+We reference this heuristic in section \ref{sec:ublmax}, where we use it to
+determine an initial upper bound on the value of $\Lmax$.
+
+\section{MIP formulation}
+Malapert's original MIP formulation is given in Model \ref{model:malapertmip}. It
 uses a set of binary decision variables $x_{jk}$ to represent whether job $j$ is
 assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
 batches, the number of jobs being a trivial upper bound on the number of batches
@@ -659,6 +808,7 @@ Instead of solving the entire problem using one model, we can solve the problem
 step by step, using the best techniques available for each subproblem. This
 approach is inspired by \textit{Benders decomposition}.
 
+
 \label{sec:mipdecomp}
 A basic version of this approach uses branch-and-bound to transverse the search
 tree. At each node on level $\ell$, a single MIP and/or CP model is run to
@@ -702,17 +852,19 @@ children handle the remaining jobs, and tries the next best solution once the
 first child has explored its subtree and backtracked.
 \subsubsection{Using MIP and cumulative packing after the batch}
 \input{figures/decomp_diagram1.tex}
+\input{figures/decomp_tetris.tex}
 The first version of the branch-and-bound batch-by-batch decomposition uses a
 MIP model at each node to assign jobs to the respective batch. The remaining
 jobs are packed such as to minimize their $\Lmax$, with a relaxation of the
-batching requirement, i.e., as if on a cumulative resource. 
+batching requirement, i.e., as if on a cumulative resource as illustrated in
+Figure \ref{fig:decomp_tetris}. 
 \begin{model}[h!]
 \begin{alignat}{3}
 \text{Min.}\quad & L_{\text{max,cumul}} && \\ 
 \text{s. t.}\quad & \label{dc:eq1} \sum_j s_j x_j \leq b \quad && \forall j \in J \\
 & P_k \geq p_j x_j \quad && \forall j \in J \\
 & \label{dc:eq3} \sum_j x_j \geq 1 \quad && \forall \{j \in J | d_j = \min(d_j)\} \\
-& \label{dc:eq4} P_k + \frac{1}{b} \sum_{i} s_i p_i \leq d_j +
+& \label{dc:eq4} P_k + \frac{1}{b} \sum_{i} (1-x_i) s_i p_i \leq d_j +
 L_{\text{max,incmb}} - 1 - v_k \quad && \forall j \in J, \forall \{i \in J | d_i
 \leq d_j\} \\[2ex]
 & \label{dc:eq5} \sum_t u_{jt} = 1 \quad && \forall j \in J \\
@@ -753,9 +905,11 @@ non-batched jobs. Constraints \eqref{dc:eq1} through \eqref{dc:eq3} ensure that 
 batch stays below capacity, define the duration of the batch $P_k$ and force at
 least one of the earliest-due jobs into the batch.
 
-Constraints \eqref{dc:eq4} express the interval relaxation used to ensure that no
-jobs exceed their latest allowable finish date given any batch assignment. Even
-jobs that are assigned to the batch have to fulfill this requirement.
+Constraints \eqref{dc:eq4} express the interval relaxation as follows: for any
+job $j$, the sum of $P_k$, the processing time of the batch, and the
+area-relaxed processing time approximation of all non-batched jobs earlier than
+and including $j$, must not exceed the latest finish time of $j$.
+Even jobs that are assigned to the batch have to fulfill this requirement.
 
 Constraints \eqref{dc:eq5} and \eqref{dc:eq6} implement the cumulative nature of the
 post-batch assignments by ensuring that each job starts only once, and no jobs
@@ -847,6 +1001,7 @@ x_j \leq s_j) \quad && \forall j \in J \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Move-based MIP model}
+\label{sec:movebackmip}
 This approach is based on the idea of preserving EDD ordering among the batches.
 Let an initial schedule be the single-EDD schedule as defined in section
 \ref{sec:nopostponing}. We can calculate the lateness
@@ -889,14 +1044,18 @@ buckets, jobs are free to move with the only condition that host jobs be sorted
 by non-decreasing processing time, as given by the intial single-EDD schedule.
 Under this condition, then, all possible EDD schedules can be generated by
 moving single jobs into earlier batches. \end{proof}
- 
+
+\input{figures/movebasedmip.tex}
+
 Consider now a single-EDD schedule. Moving $j$ from its single-EDD batch $k_j$ into an earlier
 batch $k_\alpha$ has the following effect:
 \begin{alist}
-\item{the lateness of all batches after $k_j$ is reduced by $p_j$,}
+\item{the lateness of all batches after $k_j$ is reduced by $p_j$ (Figure
+\ref{fig:movebasedmip}b),}
 \item{the lateness of all batches after $k_\alpha$, including those after $k_j$,
 is increased by $\max(0,p_j - P_\alpha)$, where $P_\alpha$ is the processing
-time of batch $\alpha$ before $j$ is moved into it.}
+time of batch $\alpha$ before $j$ is moved into it (Figure
+\ref{fig:movebasedmip}c).}
 \end{alist}
 Since, in any batch $k$, only the host job's lateness (with index $j = k$) is
 relevant to $\Lmax$, we can understand the lateness of batch $k$ as the
@@ -1008,6 +1167,12 @@ improve solving time in some cases; declaring them as ``lazy'' helps keep
 the model small.
 
 \subsection{Dominance rule on ``safe'' moves}
+\label{sec:dominance-safe}
+For the following sections, note that a \textit{safe} move is defined as one
+where the guest job is shorter than the host job ($p_\text{guest} \leq
+p_\text{host}$), i.e. a move that will under no circumstances increase the
+processing time of the host job.
+
 This applies to pairs of jobs $j_1 < j_2$ that are, potentially, competing
 to be guests in batch $k$. If both $j_1$ and $j_2$ are shorter (in terms of $p$)
 than $k$, we can safely enforce that in some cases, $j_1$ gets priority over
@@ -1068,7 +1233,7 @@ less than $b - s_j$.
 \chapter[Empirical comparison of models]{Empirical comparison\\ of models}
 \section{Experimental setup}\label{sec:results}
 The models were tested on a set of job lists. Malapert's paper uses benchmark
-job lists by \citet{daste1, daste2}, with a capacity of $b = 10$ and values for
+job lists by \citet{Daste1, Daste2}, with a capacity of $b = 10$ and values for
 $p_j$, $s_j$ and $d_j$ distributed as follows:
 \begin{align}
 p_j &= U[1, 99] \\
@@ -1199,7 +1364,7 @@ determines the processing time of the entire batch. The problem of minimizing
 the maximum lateness is given in situations in which all customers (or
 downstream processes) are to be treated as fairly as possible.
 
-The problem was approached by Daste \citet{daste1} using a branch-and-price
+The problem was approached by Daste \citet{Daste1} using a branch-and-price
 model and by Malapert \citet{Malapert} using a new \texttt{sequenceEDD} global
 constraint. In this paper we have introduced a set of improvements to Malapert's
 basic MIP model, a simple CP model, a decomposition method, and a new MIP based
@@ -1218,7 +1383,7 @@ model lacks the fine-tuning and lazy constraints enjoyed by the move-based MIP.
 The CP model could likely benefit from additional redundant constraints. The
 decomposition approach needs a better pruning method. The move-based MIP's lazy
 constraints could certainly be fine-tuned based on a more generous definition of
-``safe'' moves and conditional activation relying on the problem's
+safe moves and conditional activation relying on the problem's
 \textit{disjunction ratio}. Such potential improvements are described in
 Appendix \ref{appendix:improvements}.
 
@@ -1331,16 +1496,20 @@ always helpful.
 
 \section{Move-based MIP model}
 \subsection{Conditional activation of lazy constraints}
-The disjunction ratio measure introduced by \citet{baptistelapape} may be useful
+The disjunction ratio measure introduced by \citet{baptistelepape} may be useful
 in conditionally activating or omitting certain lazy constraint sets, as it is
 known that they often have a net slowing effect on the solver when dealing with
-less difficult problems. 
+less difficult problems. This was not implemented for this paper and is thus not
+represented in the results in section \ref{sec:results}, but it certainly has
+potential to bring down average solving times, particularly with smaller problem
+instances, for which Malapert's \texttt{sequenceEDD} global constraint currently
+beats our move-based MIP model.
 
-\subsection{Improvement of ``safe'' move definition}
-The concept of ``safe'' moves is used in several constraints. It describes moves
+\subsection[Improvement of \textit{safe move} definition]{Improvement of {\sansitalicfont safe move} definition}
+The concept of safe moves is used in several constraints. It describes moves
 in which a job $j$ is moved into an earlier batch $k$ and $p_j \leq p_k$.
 
-The definition of ``safe'' can be extended to guest jobs $j$ that fulfill the
+The definition of safe can be extended to guest jobs $j$ that fulfill the
 following condition: $p_j \leq LB(\Lmax) + d_k - UB(S_k)$, where $LB(\Lmax)$ is
 a lower bound on the optimal value of $\Lmax$ and $UB(S_k)$ is an upper bound on
 the start time of batch $k$. The term represents the longest processing time
@@ -1351,8 +1520,9 @@ The a-priori computation of upper bounds on batch start times is challenging,
 and can only be based on capacity violations (``what is the longest combination of
 guest jobs that can be placed into batches up to and including $k$?''), which
 will likely make for relatively weak bounds. Nevertheless, a stronger notion of
-``safe'' may be beneficial in some instances.
+safe may be beneficial in some instances.
 
+\chapter{Appendix: Other approaches}
 \section{Move-back search}
 The following is a proof referenced in Proposition \ref{prop:moveisbetter}, but
 it could easily be turned into a standalone local search method that finds good
@@ -1376,23 +1546,23 @@ sequencing. Any batch following $k$ can have a lateness no greater than $L_k -
 worsen $\Lmax$, but not change its position. Such a move is never necessary to
 arrive at an optimal solution.}
 \item{Moving back any single job from a
-batch before $k$ \textit{safely}\footnote{for the meaning of ``safe'' and
-``unsafe'' moves, compare section \ref{sec:bounding_nk}.} will improve $\Lmax$,
+batch before $k$ safely\footnote{for the definition of ``safe'' and
+``unsafe'' moves, compare section \ref{sec:dominance-safe}.} will improve $\Lmax$,
 but not change its position.}
 \item{Moving back a single pre-$k$ job $j$ from a batch
-$\beta$ into an earlier batch $\alpha$ \textit{unsafely} will reduce $L_k$ by
+$\beta$ into an earlier batch $\alpha$ unsafely will reduce $L_k$ by
 $p_\alpha$; $\Lmax$ may still be in $k$, or it may be found in any batch between
 (and including) $\alpha$ and $\beta$, since their lateness
 $L_{[\alpha,\dots,\beta]}$ is now increased by $p_j - p_\alpha$.}
 \item{If the
 max-lateness job $j$ is single itself, it can be moved from $k$ into an earlier
-batch $\alpha$. If this is done \textit{safely}, the batch immediately preceding
+batch $\alpha$. If this is done safely, the batch immediately preceding
 $k$ will still have a lateness $L_{k-1} \geq L_k - p_j$. All batches after $k$
 will have their lateness reduced by $p_j$, but since their maximum lateness did
 not exceed $L_k - 1$ before the move, it will now be at least 1 less than that
 of batch $k-1$.}
 \item{If the max-lateness job
-$j$ was moved back \textit{unsafely} into a batch $\alpha$, batches between and
+$j$ was moved back unsafely into a batch $\alpha$, batches between and
 including $\alpha$ and $k-1$ now have their lateness increased by $p_j - p_\alpha$,
 while batches after $k$ have their lateness decreased by $p_\alpha$. Again,
 batch $L_{k-1}$ would exceed the maximum lateness of batches after $k$.}
@@ -1408,16 +1578,56 @@ single-job EDD schedule, resulting from the fact that $L_{k-1} \geq L_k - p_k$.
 By the same token, high-quality solutions often have their $\Lmax$ in an early
 batch.
 
-\chapter{Appendix: Other approaches}
-We present two methods which, independently of the model used, lead to no change
+\section{Other attempts to improve performance}
+We present two approaches which, independently of the model used, lead to no change
 or a worsening of performance in all initial tests despite appearing very
 promising at first. They are mentioned here briefly only for the sake of
 completeness.
 
 \subsection[Upper bound on $\Lmax$]{Upper bound on {\sansitalicfont L}\textsubscript{max}}
-An upper bound on $\Lmax$ can be found by using a dispatch rule to find a
-feasible, if not optimal, schedule. A good approach could be the ``best-fit''
-heuristic proposed in Malapert's paper. 
+\label{sec:ublmax}
+An upper bound on $\Lmax$ can be found a priori by using a dispatch rule to find a
+feasible, if not optimal, schedule. Algorithm \ref{alg:ublmax} shows a variant
+in which the longest safely-fitting job is selected first. Using the ``best-fit''
+heuristic proposed in Malapert's paper (see section \ref{sec:bestfit}) yields
+better bounds with other problem instances, but is not significantly better
+overall. 
+
+\begin{algorithm}[h]
+\fontsize{9pt}{11.5pt}\selectfont
+\begin{algorithmic}
+\State Sort jobs $J$ by due non-decreasing due date
+\State $x_j = 1 \forall j \in J$  \Comment $x_j = 0$ iff job $j$ is a guest in an earlier batch
+\Repeat{\;Select next job $j$ from $J$}
+  \If{$x_j = 0$}    \State continue \Comment skip loop and move to next $j$
+  \EndIf
+  \State $J^\star \gets$ list of all jobs $i$ after $j$ where $p_i \leq p_j$
+  \State Sort $J^\star$ by non-increasing processing time and size
+  \Repeat{\;Select next job $i$ from $J^\star$}
+    \If{$b - s_j - c_j \geq s_i$} \Comment if remaining capacity suffices for $i$
+      \State $x_i \gets 0$
+      \State $c_j \gets c_j + s_i$
+      \State $B_i \gets j$
+    \EndIf
+    \If{$b \leq c_j + s_j$} \Comment if capacity exceeded
+      \State break
+    \EndIf
+  \Until{$J^\star$ is empty}
+\Until{$J$ is empty}
+
+\State $t \gets 0$ \Comment time index
+\Repeat{\;Select next job $j$ from $J$}
+  \If{$x_j = 1$}
+    \State $t \gets t + p_j$
+    \If{$t - d_j > UB(\Lmax)$}
+      \State $UB(\Lmax) = t - d_j$
+    \EndIf
+  \EndIf
+\Until{$J$ is empty}
+\end{algorithmic}
+\caption{Dispatch rule to compute an upper bound on $\Lmax$}
+\label{alg:ublmax}
+\end{algorithm}
 
 \subsection[Bounding the number of batches $n_k$]{Bounding the number of batches
 \sansitalicfont n\textsubscript{k}}\label{sec:bounding_nk}
@@ -1442,9 +1652,9 @@ from their original batch $k_\text{origin}$ into a prior batch
 $k_\text{earlier}$. This eliminates $k_\text{origin}$ and requires, of course,
 that $k_\text{earlier}$ has sufficient capacity. If the job's processing time
 $p_j$ exceeds that of $k_\text{earlier}$, then the lateness of batches between
-$k_\text{earlier}$ and $k_\text{origin}$ will increase; the merit of such a move
-cannot be judged a priori, so it is an \textit{unsafe} batch elimination.
-\textit{Safe} eliminations, on the other hand, will never worsen $\Lmax$, and
+$k_\text{earlier}$ and $k_\text{origin}$ will increase. The merit of such a move
+cannot be judged a priori (unsafe batch elimination; compare ).
+Safe eliminations, on the other hand, will never worsen $\Lmax$, and
 only they can be considered when bounding $n_k$ a priori.
 
 Algorithm \ref{alg:bounding_nk} outlines a recursive method to find an upper
@@ -1503,12 +1713,333 @@ search for the optimal schedule at a given $n_k$, the overall time required to
 find the optimal solution to a problem instance was significantly greater. We
 therefore did not explore this approach further.
 
-\chapter{Appendix: Result tables}
-\begin{longtable}
+\chapter{Appendix: Tabulated results}
 
-\end{longtable}
+The following table lists solving time for all test instances.
 
-\chapter{Appendix: Code listings}
+\tiny
+\begin{multicols}{5}
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+10 & 1 & 0.02 \\
+10 & 2 & 0.01 \\
+10 & 3 & 0.02 \\
+10 & 4 & 0.01 \\
+10 & 5 & 0.01 \\
+10 & 6 & 0.05 \\
+10 & 7 & 0.02 \\
+10 & 8 & 0.02 \\
+10 & 9 & 0 \\
+10 & 10 & 0.03 \\
+10 & 11 & 0.02 \\
+10 & 12 & 0.02 \\
+10 & 13 & 0.01 \\
+10 & 14 & 0.02 \\
+10 & 15 & 0.02 \\
+10 & 16 & 0.01 \\
+10 & 17 & 0.02 \\
+10 & 18 & 0.02 \\
+10 & 19 & 0.01 \\
+10 & 20 & 0 \\
+10 & 21 & 0.01 \\
+10 & 22 & 0.02 \\
+10 & 23 & 0.02 \\
+10 & 24 & 0 \\
+10 & 25 & 0.04 \\
+10 & 26 & 0.03 \\
+10 & 27 & 0.02 \\
+10 & 28 & 0.01 \\
+10 & 29 & 0.01 \\
+10 & 30 & 0.01 \\
+10 & 31 & 0.01 \\
+10 & 32 & 0.01 \\
+10 & 33 & 0.01 \\
+10 & 34 & 0.01 \\
+10 & 35 & 0.01 \\
+10 & 36 & 0.01 \\
+10 & 37 & 0.01 \\
+10 & 38 & 0.02 \\
+10 & 39 & 0.03 \\
+10 & 40 & 0.01 \\
+11 & 1 & 0.04 \\
+11 & 2 & 0.03 \\
+11 & 3 & 0.01 \\
+11 & 4 & 0.04 \\
+11 & 5 & 0 \\
+11 & 6 & 0.04 \\
+11 & 7 & 0.03 \\
+11 & 8 & 0.01 \\
+11 & 9 & 0.03 \\
+11 & 10 & 0.03 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+12 & 1 & 0.01 \\
+12 & 2 & 0.05 \\
+12 & 3 & 0 \\
+12 & 4 & 0.05 \\
+12 & 5 & 0.02 \\
+12 & 6 & 0.02 \\
+12 & 7 & 0 \\
+12 & 8 & 0.02 \\
+12 & 9 & 0.02 \\
+12 & 10 & 0.02 \\
+13 & 1 & 0.04 \\
+13 & 2 & 0.03 \\
+13 & 3 & 0.08 \\
+13 & 4 & 0.01 \\
+13 & 5 & 0.07 \\
+13 & 6 & 0.02 \\
+13 & 7 & 0.02 \\
+13 & 8 & 0.01 \\
+13 & 9 & 0.02 \\
+13 & 10 & 0.02 \\
+14 & 1 & 0.02 \\
+14 & 2 & 0.08 \\
+14 & 3 & 0.07 \\
+14 & 4 & 0.06 \\
+14 & 5 & 0.02 \\
+14 & 6 & 0.04 \\
+14 & 7 & 0.03 \\
+14 & 8 & 0.02 \\
+14 & 9 & 0.01 \\
+14 & 10 & 0.03 \\
+15 & 1 & 0.03 \\
+15 & 2 & 0.07 \\
+15 & 3 & 0.01 \\
+15 & 4 & 0.04 \\
+15 & 5 & 0.03 \\
+15 & 6 & 0.01 \\
+15 & 7 & 0.07 \\
+15 & 8 & 0.37 \\
+15 & 9 & 0.04 \\
+15 & 10 & 0.07 \\
+16 & 1 & 0.05 \\
+16 & 2 & 0.03 \\
+16 & 3 & 0.07 \\
+16 & 4 & 0.17 \\
+16 & 5 & 0.23 \\
+16 & 6 & 0 \\
+16 & 7 & 0.04 \\
+16 & 8 & 0.13 \\
+16 & 9 & 0.08 \\
+16 & 10 & 1.02 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+17 & 1 & 0.07 \\
+17 & 2 & 0.06 \\
+17 & 3 & 0.03 \\
+17 & 4 & 1.07 \\
+17 & 5 & 0.01 \\
+17 & 6 & 0.07 \\
+17 & 7 & 0.07 \\
+17 & 8 & 0.11 \\
+17 & 9 & 0.06 \\
+17 & 10 & 0.1 \\
+18 & 1 & 0.14 \\
+18 & 2 & 0.09 \\
+18 & 3 & 0.84 \\
+18 & 4 & 0.2 \\
+18 & 5 & 0.13 \\
+18 & 6 & 0.25 \\
+18 & 7 & 0.04 \\
+18 & 8 & 0.26 \\
+18 & 9 & 0.26 \\
+18 & 10 & 0.03 \\
+19 & 1 & 0.07 \\
+19 & 2 & 0.16 \\
+19 & 3 & 0.07 \\
+19 & 4 & 0.08 \\
+19 & 5 & 0.18 \\
+19 & 6 & 0.17 \\
+19 & 7 & 1.23 \\
+19 & 8 & 0.04 \\
+19 & 9 & 2.29 \\
+19 & 10 & 0.37 \\
+20 & 1 & 0.19 \\
+20 & 2 & 0.43 \\
+20 & 3 & 0.15 \\
+20 & 4 & 0.46 \\
+20 & 5 & 0.09 \\
+20 & 6 & 0.02 \\
+20 & 7 & 1.07 \\
+20 & 8 & 0.08 \\
+20 & 9 & 0.06 \\
+20 & 10 & 0.07 \\
+20 & 11 & 0.33 \\
+20 & 12 & 1.46 \\
+20 & 13 & 1.58 \\
+20 & 14 & 0.18 \\
+20 & 15 & 0.05 \\
+20 & 16 & 0.08 \\
+20 & 17 & 0.35 \\
+20 & 18 & 0.45 \\
+20 & 19 & 1.65 \\
+20 & 20 & 0.27 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+20 & 21 & 0.81 \\
+20 & 22 & 0.31 \\
+20 & 23 & 0.13 \\
+20 & 24 & 0.15 \\
+20 & 25 & 1.47 \\
+20 & 26 & 0.15 \\
+20 & 27 & 0.08 \\
+20 & 28 & 1.57 \\
+20 & 29 & 0.05 \\
+20 & 30 & 0.14 \\
+20 & 31 & 0.13 \\
+20 & 32 & 0.07 \\
+20 & 33 & 1.33 \\
+20 & 34 & 0.52 \\
+20 & 35 & 0.23 \\
+20 & 36 & 0.21 \\
+20 & 37 & 1.08 \\
+20 & 38 & 1.56 \\
+20 & 39 & 0.37 \\
+20 & 40 & 0.69 \\
+30 & 1 & 1.68 \\
+30 & 2 & 2.35 \\
+30 & 3 & 3.15 \\
+30 & 4 & 1.93 \\
+30 & 5 & 15.13 \\
+30 & 6 & 0.37 \\
+30 & 7 & 10.31 \\
+30 & 8 & 1.88 \\
+30 & 9 & 1.68 \\
+30 & 10 & 0.47 \\
+40 & 1 & 3.77 \\
+40 & 2 & 8.3 \\
+40 & 3 & 13.34 \\
+40 & 4 & 2.88 \\
+40 & 5 & 3.63 \\
+40 & 6 & 3.31 \\
+40 & 7 & 11.43 \\
+40 & 8 & 28.39 \\
+40 & 9 & 46.56 \\
+40 & 10 & 2.42 \\
+50 & 1 & 53.8 \\
+50 & 2 & 10.15 \\
+50 & 3 & 483 \\
+50 & 4 & 9.27 \\
+50 & 5 & 7.58 \\
+50 & 6 & 5.29 \\
+50 & 7 & 23.14 \\
+50 & 8 & 26.82 \\
+50 & 9 & 955.95 \\
+50 & 10 & 805.26 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+50 & 11 & 6.87 \\
+50 & 12 & 5.86 \\
+50 & 13 & 7.32 \\
+50 & 14 & 57.67 \\
+50 & 15 & 9.5 \\
+50 & 16 & 9.07 \\
+50 & 17 & 5.94 \\
+50 & 18 & >3600 \\
+50 & 19 & 12.83 \\
+50 & 20 & 17.52 \\
+50 & 21 & 11.62 \\
+50 & 22 & 8.39 \\
+50 & 23 & 7.28 \\
+50 & 24 & 10.39 \\
+50 & 25 & 90.64 \\
+50 & 26 & 65.73 \\
+50 & 27 & 3.52 \\
+50 & 28 & 133.33 \\
+50 & 29 & 53.53 \\
+50 & 30 & 6.96 \\
+50 & 31 & 6.54 \\
+50 & 32 & 28.05 \\
+50 & 33 & 22.03 \\
+50 & 34 & 57.56 \\
+50 & 35 & 30.32 \\
+50 & 36 & 6.48 \\
+50 & 37 & 51.56 \\
+50 & 38 & 6.74 \\
+50 & 39 & 10.4 \\
+50 & 40 & 54.09 \\
+\bottomrule
+\end{tabular}
+\end{multicols}
+
+\section{Results with disjunctiveness measure}
+
+\begin{tabular}{c c r r r}
+\toprule
+$n_j$ & $i$ & $t$ (s) & $n_j/n_k$ & Disjunction ratio \\
+\midrule
+30&1&1.84&1.875&0.407777777778\\
+30&2&2.45&1.875&0.446666666667\\
+30&3&3.3&2&0.347777777778\\
+30&4&2.14286&2&0.337777777778\\
+30&5&15.56&2.30769&0.296666666667\\
+30&6&0.44&1.5&0.583333333333\\
+30&7&10.33&2.14286&0.272222222222\\
+30&8&1.99&1.76471&0.398888888889\\
+30&9&1.78&1.6666&0.502222222222\\
+30&10&0.51&1.5&0.584444444444\\
+30&11&1.15&1.666667&0.536666666667\\
+30&12&2.34&1.875&0.427777777778\\
+30&13&1.9&1.66667&0.538888888889\\
+30&14&2.73&2&0.346666666667\\
+30&15&11.56&2.14286&0.311111111111\\
+30&16&2.09&1.66667&0.512222222222\\
+30&17&0.89&1.6667&0.524444444444\\
+30&18&0.75&1.57895&0.558888888889\\
+30&19&0.09&1.42857&0.648888888889\\
+30&20&2.36&2&0.397777777778\\
+30&21&1.76&1.66667&0.478888888889\\
+30&22&2.35&2&0.364444444444\\
+30&23&0.67&1.76471&0.487777777778\\
+30&24&1.11&1.76471&0.471111111111\\
+30&25&3.83&2.14286&0.297777777778\\
+30&26&3.59&2&0.354444444444\\
+30&27&7.32&2.30769&0.251111111111\\
+30&28&1.71&2&0.362222222222\\
+30&29&6.82&2&0.294444444444\\
+30&30&0.41&1.5&0.671111111111\\
+30&31&1.29&1.76471&0.516666666667\\
+30&32&2.62&1.875&0.428888888889\\
+30&33&2.15&2&0.395555555556\\
+30&34&2.44&1.76471&0.392222222222\\
+30&35&4.86&2&0.312222222222\\
+30&36&1.53&2&0.37\\
+30&37&4.23&2.14286&0.297777777778\\
+30&38&1.43&1.57895&0.525555555556\\
+30&39&1.2&1.875&0.348888888889\\
+30&40&1.45&1.76471&0.362222222222\\
+\bottomrule
+\end{tabular}
 \backmatter
+\pagebreak
+\thispagestyle{empty}
+\vspace*{\fill}
 \end{document}
 

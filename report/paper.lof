@@ -1,20 +1,21 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Optimal solution to an example problem with eight jobs ($s_j$ and $p_j$ not shown for the two small jobs)\relax }}{3}{figure.caption.4}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Optimal solution to an example problem with eight jobs ($s_j$ and $p_j$ not shown for the two small jobs)\relax }}{3}{figure.caption.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Graphical representation of a typical LP problem\relax }}{8}{figure.caption.8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Graphical representation of a typical MIP problem\relax }}{9}{figure.caption.10}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches (circles represent the $x_{jk}$ variables; a filled circle stands for $x_{jk} = 1$)\relax }}{16}{figure.caption.13}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{21}{figure.caption.16}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Overzealous batch elimination can increase $L_{\text {max}}$\relax }}{31}{figure.caption.21}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison of CPU time used by different models to find an optimal schedule and prove its optimality.\relax }}{34}{figure.caption.22}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Percentage of problem instances solved in a given time\relax }}{35}{figure.caption.23}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Correlation between time to prove optimality in seconds (ordinates) and measures of disjunctivity (abscissae), based on 40 instances with $n_j=30$. Subfigure (a) shows the average number of jobs per batch in the optimal solution. Subfigure (b) shows the \textit {disjunction ratio} as defined in Section \ref {sec:disjunctivity}.\relax }}{37}{figure.caption.24}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparison of time to prove optimality required by the move-based MIP model depending on the distribution of due dates.\relax }}{38}{figure.caption.25}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Graphical representation of a typical LP problem\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Graphical representation of a typical MIP problem\relax }}{9}{figure.caption.11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Dominance rule to eliminate empty batches followed by non-empty batches (circles represent the $x_{jk}$ variables; a filled circle stands for $x_{jk} = 1$)\relax }}{18}{figure.caption.19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Batch-by-batch decomposition using MIP only\relax }}{23}{figure.caption.22}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Constructing the second batch. Remaining jobs are shaded.\relax }}{23}{figure.caption.23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Moving a job in the move-based MIP. In this example, job 5 (marked ``$p_5 = 10$'') is moved into batch 3, which changes the lateness of job 7 (marked \relax \fontsize {14.4}{18}\selectfont $\star $\fontsize {12pt}{16pt}\selectfont ) from $L_{7,\text {single}}$ to $L_{7,\text {single}} - 10 + 6 = L_{7,\text {single}} - 4$.\relax }}{29}{figure.caption.27}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Comparison of CPU time used by different models to find an optimal schedule and prove its optimality.\relax }}{35}{figure.caption.29}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Percentage of problem instances solved in a given time\relax }}{36}{figure.caption.30}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Correlation between time to prove optimality in seconds (ordinates) and measures of disjunctivity (abscissae), based on 40 instances with $n_j=30$. Subfigure (a) shows the average number of jobs per batch in the optimal solution. Subfigure (b) shows the \textit {disjunction ratio} as defined in Section \ref {sec:disjunctivity}.\relax }}{38}{figure.caption.31}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparison of time to prove optimality required by the move-based MIP model depending on the distribution of due dates.\relax }}{39}{figure.caption.32}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Overzealous batch elimination can increase $L_{\text {max}}$\relax }}{50}{figure.caption.36}
 \addvspace {10\p@ }
