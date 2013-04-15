@@ -1,4 +1,4 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -17,6 +17,12 @@ Philippe Baptiste and Claude Le~Pape.
   disjunctive and highly cumulative project scheduling problems.
 \newblock \emph{Constraints}, 5\penalty0 (1-2):\penalty0 119--139, 2000.
 
+\bibitem[Barták(2002)]{bartak}
+Roman Barták.
+\newblock On-line guide to constraint programming.
+\newblock \url{http://ktiml.mff.cuni.cz/\textasciitilde
+  bartak/constraints/index.html}, 2002.
+
 \bibitem[Brucker et~al.(1998)Brucker, Gladky, Hoogeveen, Kovalyov, Potts,
   Tautenhahn, and van~de Velde]{Brucker}
 Peter Brucker, Andrei Gladky, Han Hoogeveen, Mikhail~Y. Kovalyov, Chris~N.
@@ -24,13 +30,21 @@ Peter Brucker, Andrei Gladky, Han Hoogeveen, Mikhail~Y. Kovalyov, Chris~N.
 \newblock Scheduling a batching machine.
 \newblock \emph{Journal of Scheduling}, 1\penalty0 (1):\penalty0 31--54, 1998.
 
-\bibitem[Daste et~al.(2008)Daste, Gueret, and Lahlou]{Daste1}
+\bibitem[Daste et~al.(2008{\natexlab{a}})Daste, Gueret, and Lahlou]{Daste1}
 Denis Daste, Christelle Gueret, and Chams Lahlou.
 \newblock A branch-and-price algorithm to minimize the maximum lateness on a
   batch processing machine.
 \newblock In \emph{Proceedings of the 11\textsuperscript{th} International
   Workshop on Project Management and Scheduling (PMS), Istanbul, Turkey}, pages
-  64--69, 2008.
+  64--69, 2008{\natexlab{a}}.
+
+\bibitem[Daste et~al.(2008{\natexlab{b}})Daste, Gueret, and Lahlou]{Daste2}
+Denis Daste, Christelle Gueret, and Chams Lahlou.
+\newblock Génération de colonnes pour l’ordonnancement d’une machine à
+  traitement par fournées.
+\newblock In \emph{7\textsuperscript{ème} conférence internationale de
+  modélisation et simulation (MOSIM 2008), Paris, France}, volume~3, pages
+  64--69, 2008{\natexlab{b}}.
 
 \bibitem[Dupont and Dhaenens-Flipo(2002)]{Dupont}
 Lionel Dupont and Clarisse Dhaenens-Flipo.
@@ -86,6 +100,11 @@ Onur Ozturk, Marie-Laure Espinouse, Maria~Di Mascolo, and Alexia Gouin.
 Christos~H. Papadimitrou and Kenneth Steiglitz.
 \newblock \emph{Combinatorial Optimization: Algorithms and Complexity}.
 \newblock Dover, 1998.
+
+\bibitem[Pinedo(2006)]{pinedo}
+Michael Pinedo.
+\newblock \emph{Planning and Scheduling in Manufacturing and Services}.
+\newblock Springer, 2006.
 
 \bibitem[Sabouni and Jolai(2010)]{Sabouni}
 M.T.~Yazdani Sabouni and F.~Jolai.

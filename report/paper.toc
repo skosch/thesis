@@ -36,7 +36,7 @@
 \contentsline {subsection}{\numberline {4.3.2}No postponing of jobs to later batches}{22}{subsection.4.3.2}
 \contentsline {section}{\numberline {4.4}Decomposition approach}{22}{section.4.4}
 \contentsline {subsubsection}{Using MIP and cumulative packing after the batch}{23}{subsubsection*.21}
-\contentsline {subsection}{\numberline {4.4.1}Using CP and cumulative packing after the batch}{26}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.1}Replacing the MIP model with a CP model}{26}{subsection.4.4.1}
 \contentsline {section}{\numberline {4.5}Move-based MIP model}{26}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Symmetry-breaking rule}{30}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}Dominance rule on ``safe'' moves}{32}{subsection.4.5.2}
@@ -52,22 +52,23 @@
 \contentsline {chapter}{\numberline {6}Conclusion}{40}{chapter.6}
 \contentsline {section}{\numberline {6.1}Future Work}{40}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Application to related problems}{41}{subsection.6.1.1}
-\contentsline {chapter}{\numberline {A}Appendix: Potential improvements to the models}{44}{appendix.A}
-\contentsline {section}{\numberline {A.1}CP Model}{44}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Constraint on the number of batches with length $P_k > p$}{44}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Constraint on the number of batches with due date $D_k > d$}{45}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}All-different constraints on $P_k$ and $D_k$}{46}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}Decomposition approaches}{46}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}Potential heuristics}{46}{subsection.A.2.1}
-\contentsline {paragraph}{Improve the initial $L_{\text {max,incumbent}}$}{46}{paragraph*.34}
-\contentsline {paragraph}{Improve $L_{\text {max,incumbent}}$ during search}{46}{paragraph*.35}
-\contentsline {section}{\numberline {A.3}Move-based MIP model}{46}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Conditional activation of lazy constraints}{46}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Improvement of \textit {safe move} definition}{47}{subsection.A.3.2}
-\contentsline {chapter}{\numberline {B}Appendix: Other approaches}{48}{appendix.B}
-\contentsline {section}{\numberline {B.1}Move-back search}{48}{section.B.1}
-\contentsline {section}{\numberline {B.2}Other attempts to improve performance}{49}{section.B.2}
-\contentsline {subsection}{\numberline {B.2.1}Upper bound on $L_{\text {max}}$}{49}{subsection.B.2.1}
-\contentsline {subsection}{\numberline {B.2.2}Bounding the number of batches $n_k$}{50}{subsection.B.2.2}
-\contentsline {chapter}{\numberline {C}Appendix: Tabulated results}{53}{appendix.C}
-\contentsline {section}{\numberline {C.1}Results with disjunctiveness measure}{54}{section.C.1}
+\contentsline {chapter}{\numberline {A}Appendix: Potential improvements to the models}{45}{appendix.A}
+\contentsline {section}{\numberline {A.1}CP Model}{45}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Constraint on the number of batches with length $P_k > p$}{45}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Constraint on the number of batches with due date $D_k > d$}{46}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}All-different constraints on $P_k$ and $D_k$}{47}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Decomposition approaches}{47}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}Potential heuristics}{47}{subsection.A.2.1}
+\contentsline {paragraph}{Improve the initial $L_{\text {max,incmb}}$}{47}{paragraph*.34}
+\contentsline {paragraph}{Improve $L_{\text {max,incmb}}$ during search}{47}{paragraph*.35}
+\contentsline {section}{\numberline {A.3}Move-based MIP model}{47}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Conditional activation of lazy constraints}{47}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Improvement of \textit {safe move} definition}{48}{subsection.A.3.2}
+\contentsline {chapter}{\numberline {B}Appendix: Other approaches}{49}{appendix.B}
+\contentsline {section}{\numberline {B.1}Move-back search}{49}{section.B.1}
+\contentsline {section}{\numberline {B.2}Other attempts to improve performance}{50}{section.B.2}
+\contentsline {subsection}{\numberline {B.2.1}Upper bound on $L_{\text {max}}$}{50}{subsection.B.2.1}
+\contentsline {subsection}{\numberline {B.2.2}Bounding the number of batches $n_k$}{51}{subsection.B.2.2}
+\contentsline {chapter}{\numberline {C}Appendix: Tabulated results}{54}{appendix.C}
+\contentsline {section}{\numberline {C.1}Results with disjunctiveness measure}{55}{section.C.1}
+\contentsline {section}{\numberline {C.2}Results with non-bucketed job due dates}{56}{section.C.2}

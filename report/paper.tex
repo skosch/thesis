@@ -3,7 +3,7 @@
 
 \usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.4in,
 right=1in,top=1.3in, bottom=1.4in]{geometry}
-\usepackage[no-math]{fontspec}
+\usepackage[no-math, quiet]{fontspec}
 \usepackage{newfloat}
 \usepackage{sectsty, tikz, color, pgfplots}
 \usetikzlibrary{shapes,arrows}
@@ -95,7 +95,7 @@ batch to be done before the next batch can be inserted.
 \citet{Malapert} proposed a global constraint programming (CP) algorithm consisting
 of a set of filtering rules to solve the problem. He achieved considerably
 better speeds than with a simple mixed-integer model (MIP), but it seems plausible
-that the new global constraint is unnecessarily cumbersome to achieve this
+that the new global constraint is more cumbersome than necessary to achieve this
 performance; simple MIP, CP or decomposition approaches are easier to implement
 and extend.  In this paper, we present 1) an improvement to his MIP model, 2) a
 CP model, 3) a decomposition approach to ``divide and conquer'' the problem, and
@@ -108,9 +108,9 @@ requirement'') $s_j$. Each job also
 has a due date $d_j$. The machine is characterized by its capacity $b$, and in
 every batch, the jobs' summed sizes must not exceed this number. All values are
 integer.
-447723
+
 The machine can only process one batch $k$ of jobs at a time, and batches always
-take as long as the longest job in the batch (i.e. $P_k = \max_{j \in k}(p_j)$).
+take as long as the longest job in the batch (i.e. $P_k = \max_{j \text{\;in\;} k}(p_j)$).
 Our objective is to minimize the lateness $L$ of the latest job in $J$, where
 $L$ is the difference between the job's completion time $C_j$ and its due date
 $d_j$: in formal terms, \textit{min.} $\Lmax = \max_j(C_j - d_j)$. The job's
@@ -133,15 +133,15 @@ problem with eight jobs and a resource with capacity $b = 20$.
 We first provide some background on the fundamental concepts of MIP and CP
 (sections \ref{sec:backgroundmip} and \ref{sec:backgroundcp}), and
 review some of the most relevant publications on similar batch scheduling
-problems (section \ref{sec:backgroundlit}) before we describe Malapert's global
-constraint in some detail (section \ref{sec:malapertcp}), as well as his
-original MIP model (section \ref{sec:malapertmip}).
+problems (Section \ref{sec:backgroundlit}) before we describe Malapert's global
+constraint in some detail (Section \ref{sec:malapertcp}), as well as his
+original MIP model (Section \ref{sec:malapertmip}).
 
 We then present possible improvements to the
 model in \ref{sec:improvedmipmodel}. Section \ref{sec:cpmodel} introduces a CP
 formulation of the same problem. Sections \ref{sec:mipdecomp} and
 \ref{sec:cpdecomp} describe a decomposition approach. Finally, a new MIP approach
-is introduced in section \ref{sec:newmip}.
+is introduced in Section \ref{sec:movebackmip}.
 
 An empirical comparison of the new models and a discussion of the results follow in
 sections \ref{sec:results} and \ref{sec:discussion}. Ideas for future work are
@@ -155,8 +155,6 @@ listed in \ref{sec:futurework}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 \chapter{Background}
 % citet{Azizoglu} results in [2002]
@@ -179,7 +177,7 @@ introduce the concepts behind both CP and MIP and review recent work on problems
 similar to the one dealt with here.
 
 \section{Constraint Programming}
-
+\label{sec:backgroundcp}
 Many problems can be understood as a situation in which a set of values is to be
 chosen according to certain rules, but since the number of possible combinations
 of values is enormous, attempting to test all of them is infeasible.
@@ -277,7 +275,7 @@ x_1, x_2, x_3, x_4 &\in \{1, 2, 3\}
 \label{mod:cpalldiff}
 \end{model}
 This model prescribes that the variables $x_1, x_2, x_3, x_4$ are to take on
-different values. The model is arc consistent. To find a solution (or
+different values. The model is arc-consistent. To find a solution (or
 insatisfiability), a value has to be assigned to three of the variables, and the
 solver has to propagate the domain reductions after every assignment. Consider,
 on the other hand, the use of a specialized constraint called
@@ -293,6 +291,7 @@ not be available if the relationship were expressed as a set of binary
 constraints.
  
 \section{Mixed Integer Programming}
+\label{sec:backgroundmip}
 \subsection{Linear Programming}
 Mixed Integer Programs (or ``MIP
 models'') express the minimization of a linear function subject to linear
@@ -304,7 +303,9 @@ problems, but no known variant has been proven to have polynomial worst-case
 complexity \citep{papadimitriou}. Solvers with theoretically polynomial-time
 complexity exist (Karmarkar's algorithm \citet{karmarkar} has a runtime of
 $\mathcal{O}(n^{3.5}L^2 \cdot \log L \cdot \log \log L)$, for instance, where
-$L$ is the number of bits of input), but are used less frequently.}
+$L$ is the number of bits of input), but are used less frequently.} This makes
+MIP models a generalized and generally more difficult variation on LPs and it is
+convenient to introduce them in this order. 
 
 Figure
 \input{figures/lpplot1}
@@ -338,7 +339,7 @@ invariably be found at an intersection of hyperplanes.
 
 \subsection{Solving MIP models using branch-and-bound}
 MIP models are LPs in which some of the decision variables are declared
-integers---thus their name.  Like LP models, MIP models also require an
+integers. Like LP models, MIP models also require an
 objective function to be minimized. Figure
 \input{figures/mipplot1}
 \ref{fig:mipplot1} illustrates this based on the LP problem above: now, only the
@@ -351,7 +352,7 @@ with variables of small domains (e.g. binary variables), which are often used in
 MIP models to represent decisions. Indeed, solving MIP models is NP-hard.
 
 Similar to CP searches, MIP searches can be thought of as trees, where every
-branch represents an assignment of a value to a domain and every leaf represents
+branch represents an assignment of a value to a variable and every leaf represents
 a feasible solution. The difference lies in the way MIP explores this search tree.
 
 The MIP solver first solves the problem as an LP, which will usually result in
@@ -363,7 +364,7 @@ At this point, the solution is $x_1 = 4.6, x_2 = 3.2$.
 
 The solver then chooses a variable, based on heuristics, and \textit{branches}
 on it. In this case, assume that we branch on $x_2$, which means that we set
-$x_2 \leq 3.0 \lor x_2 \leq 4.0$. We now have two new MIPs, as shown in figure
+$x_2 \leq 3.0 \lor x_2 \geq 4.0$. We now have two new MIPs, as shown in figure
 \ref{fig:mipplot2}. Both of these new subproblems are need solving.\footnote{In
 this example, the optimal value for $x_2$ was
 within $\pm1$ of its LP value.  This is often the case, and it is not
@@ -440,6 +441,7 @@ summarizing the above and other properties in a format introduced in
 \textit{non-identical}|\Lmax$.
 
 \subsection{Scheduling problems in CP}
+\label{sec:schedulingcp}
 CP solvers work by reducing the domains of variables, and so it is only natural
 to express the position of a job using variables such as $\mathtt{startOf}(j)$
 or $\mathtt{endOf}(j)$, the domains of which are then reduced to feasible
@@ -474,8 +476,11 @@ and for a pair of jobs, the difference between their start times must exceed the
 earlier-scheduled job's processing time on a disjunctive resource.
 
 \section{Literature Review}
+\label{sec:backgroundlit}
 An extensive and application-based introduction to MIP models is given by
-\citet{williams}
+\citet{williams}. \citet{bartak} presents a detailed survey of common constraint
+programming techniques. \citet{pinedo} gives a comprehensive overview over
+topics and algorithms in artifical scheduling.
 
 The problem at hand is based on the work of \citet{Malapert}, who proposed a global
 constraint \texttt{sequenceEDD} to be used in combination with \texttt{pack} to
@@ -489,7 +494,7 @@ proposed by \citet{Daste1}.
 
 Other authors have examined similar problems: \citet{Azizoglu} provide an exact
 method and a heuristic for the same problem, but minimize makespan
-($C_\text{max}$) instead of $\Lmax$, as have \cite{Dupont}. Similar exact
+($C_\text{max}$) instead of $\Lmax$, as have \citet{Dupont}. Similar exact
 methods have been proposed for multi-agent variants with different objective
 functions \citep{Sabouni}, for makespan minimization on single batch machines
 \citep{Kashan}, and for makespan minimization on parallel batch machines with
@@ -506,6 +511,7 @@ applications in batch processing is given by \citet{Grossmann}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter[State of the Art: Recent work by Malapert]{State of the Art:\\ Recent work by Malapert}
+\label{sec:malapertcp}
 \section{The sequenceEDD global constraint}
 In their 2011 paper, Malapert et al. present a CP formulation of the problem
 which, in essence, relies on two global constraints: \texttt{pack}, which
@@ -559,10 +565,11 @@ assignment $\mathcal{A}$:
 \underset{J}{\min}(d_j)}
 \end{align}
 
-We reference this heuristic in section \ref{sec:ublmax}, where we use it to
+We reference this heuristic in Section \ref{sec:ublmax}, where we use it to
 determine an initial upper bound on the value of $\Lmax$.
 
 \section{MIP formulation}
+\label{sec:malapertmip}
 Malapert's original MIP formulation is given in Model \ref{model:malapertmip}. It
 uses a set of binary decision variables $x_{jk}$ to represent whether job $j$ is
 assigned to batch $k$. The original model assumes a set $K$ of $|K| = |J|$
@@ -593,7 +600,7 @@ Constraints \eqref{c:malapp-unique} ensure that every job $j$ is assigned to
 one batch $k$, and one batch only. Constraints \eqref{c:malapp-cap} ensure that
 no batch exceeds the machine's capacity $b$. Constraints \eqref{c:malapp-pk}
 define each batch's processing time $P_k$ as the maximum processing time of the
-jobs $j$ assinged to it. Constraints \eqref{c:malapp-ck} define each batch's
+jobs $j$ assied to it. Constraints \eqref{c:malapp-ck} define each batch's
 completion time $C_k$ as that of the previous batch, plus the previous batch's
 processing time. Constraints \eqref{c:malapp-edd} ensure that batches are
 ordered by due date. Constraints \eqref{c:malapp-lmax} define the objective
@@ -612,7 +619,7 @@ value $\Lmax$.
 In this section we present the models examined.
 Beginning with the MIP model used by Malapert, we explore several additional
 constraints that, while redundant, tighten the search space. We comment on the
-performance of the approaches (see section \ref{chapter:results} for a
+performance of the approaches (see Section \ref{sec:results} for a
 comprehensive comparison of performance). We present a CP model and a
 decomposition-based approach using either MIP or CP. Finally, we introduce a new
 approach to setting up a MIP model that significantly improves upon the original
@@ -704,7 +711,8 @@ respective single-EDD batch.
 %%%% TODO: Explain why the shorter one needs to come first.
 
 \subsection[Lower bound on $\Lmax$]{Lower bound on {\sansitalicfont L}\textsubscript{max}}
-Let a \textit{bucket} $q$ denote the set of all batches with due date $\delta_q$.
+Let a \textit{bucket} $q$ denote the set of all batches with due date
+$\delta_q$, as defined by \citet{Malapert}.
 Then the completion date $C_q$ of this bucket is the completion date of the
 last-scheduled batch with due date $\delta_q$, and the lateness of the bucket
 $q$ is $L_q = C_q - \delta_q$. Since all batches up to and including those in
@@ -717,7 +725,7 @@ batch of bucket $q$. This provides a lower bound on the lateness of bucket $q$:
 \begin{alignat}{2}
 & \Lmax \geq C_{\text{max},q} - \delta_q \quad && \forall q
 \end{alignat}
-The buckets up to bucket $q$ will likely also contain some later ($d >
+The buckets up to bucket $q$ will likely also contain some later-due ($d >
 \delta_q$) jobs in the optimal solution, which weakens $LB(L_q)$'s usefulness
 but does not affect its validity as a lower bound.
 
@@ -741,8 +749,8 @@ then pack them together such as to minimize the number of small time slots
 needed.}
 
 \section{CP model}\label{sec:cpmodel}
-The constraint programming model is based on a set of decision variables $B_j =
-\{k_1, \dots, k_{n_k} \}$, where each variable stands for the batch job $j$ is
+The constraint programming model is based on a set of decision variables $B_j
+\in \{k_1, \dots, k_{n_k} \}$, where each variable $B_j$ stands for the batch job $j$ is
 assigned to. The complete model is given in Model \ref{model:cpmodel}.
 \begin{model}
 \begin{alignat}{2}
@@ -789,8 +797,8 @@ cases.
 \end{comment}
 
 \subsection{Grouping empty batches} We can force
-empty batches to the back and thus establish dominance of certain solutions. The
-implementation is much easier than in the MIP model: 
+empty batches to the back of the schedule and thus establish dominance of
+certain solutions. The implementation is much easier than in the MIP model: 
 \begin{alignat}{2} &
 \mathtt{IfThen}( P_k = 0, P_{k+1} = 0 ) \quad && \forall k \in
 \{k_1, \dots, k_{n_k-1}\}
@@ -803,14 +811,12 @@ jobs should never go into a batch with an index greater than their own:
 \end{alignat}
 
 \section{Decomposition approach}
-
-Instead of solving the entire problem using one model, we can solve the problem
-step by step, using the best techniques available for each subproblem. This
-approach is inspired by \textit{Benders decomposition}.
-
+Instead of solving the entire problem using a single model, we can solve the
+problem step by step, using the best techniques available for each subproblem.
+This approach is inspired by \textit{Benders decomposition}.
 
 \label{sec:mipdecomp}
-A basic version of this approach uses branch-and-bound to transverse the search
+A basic version of this approach uses branch-and-bound to traverse the search
 tree. At each node on level $\ell$, a single MIP and/or CP model is run to
 assign jobs to batch $k = \ell$. The remaining jobs are passed to the children
 nodes, which assign jobs to the next batch, and so on---until a solution, and
@@ -853,11 +859,13 @@ first child has explored its subtree and backtracked.
 \subsubsection{Using MIP and cumulative packing after the batch}
 \input{figures/decomp_diagram1.tex}
 \input{figures/decomp_tetris.tex}
-The first version of the branch-and-bound batch-by-batch decomposition uses a
+We can use a
 MIP model at each node to assign jobs to the respective batch. The remaining
-jobs are packed such as to minimize their $\Lmax$, with a relaxation of the
+jobs are scheduled after the batch such as to minimize their $\Lmax$, with a relaxation of the
 batching requirement, i.e., as if on a cumulative resource as illustrated in
-Figure \ref{fig:decomp_tetris}. 
+Figure \ref{fig:decomp_tetris}. This yields a lower bond $LB(\Lmax)$ on the
+value of $\Lmax$, which can be used to prune the search tree (when $LB(\Lmax)$
+exceeds the incumbent $L_\text{max,incmb}$).
 \begin{model}[h!]
 \begin{alignat}{3}
 \text{Min.}\quad & L_{\text{max,cumul}} && \\ 
@@ -946,7 +954,7 @@ by constraints \eqref{dc:eq11} and \eqref{dc:eq12}, is 1 iff $p_j > P_k \lor x_j
 large in the eyes of the constraint's less-than relation.
 
 After a solution is found, a child node in the search tree has run the subtree
-and returned, a constraint of the form 
+and returned (backtracked), a constraint of the form 
 \begin{alignat}{2}
 & \sum_j x_j + \sum_i (1-x_i) \leq n_j - 1 \quad && \forall \{j \in J | x_j =
 1\}, \forall \{i \in J | x_i = 0 \}
@@ -954,13 +962,13 @@ and returned, a constraint of the form
 is added to the model before the solver is called again, to exclude the last
 solution from the set of feasible solutions. 
 
-\subsection{Using CP and cumulative packing after the
-batch}\label{sec:cpdecomp}
-This approach is equivalent, but we now use CP to select the batch assignments,
+\subsection{Replacing the MIP model with a CP model}\label{sec:cpdecomp}
+In an equivalent approach we use CP to select the batch assignments,
 again based on a minimized $\Lmax$ among the non-batched jobs. Model
 \ref{model:decomp_cp} uses interval variables $j$ to represent the jobs;
-time constraints on the jobs (``est'', ``lft'' etc.) are represented as
-functions such as $\startOf(j)$ and $\endOf(j)$.
+time constraints on the jobs (\texttt{est}, \texttt{lft} etc.) are represented as
+functions $\startOf(j)$ and $\endOf(j)$ as introduced in Section
+\ref{sec:schedulingcp}.
 
 Contraints \eqref{dcp:eq1} through \eqref{dcp:eq4} bi-directionally define the
 relationship between a job's $x_j$ and $\startOf(j)$: $x_j = 1$ is equivalent
@@ -1031,8 +1039,8 @@ $k_\beta$ will still be due after $k_{\beta - 1}$, so EDD ordering is preserved.
 \end{proof}
  
 \begin{proposition}
-Starting from a single-EDD schedule, moving single jobs back into earlier
-non-empty batches will generate all possible EDD schedules, with the exception
+Starting from a single-EDD schedule, moving single jobs into earlier
+non-empty batches allows us to generate all possible EDD schedules, with the exception
 of those EDD schedules in which two hosts of the same due date are sorted in
 order of decreasing processing time.
 \end{proposition}
@@ -1071,7 +1079,7 @@ x_{hh}) \quad && \forall k \in K^\star \end{alignat}
  
 where $x_{jk}$ is 1 iff job $j$ is assigned to batch $k$ in the solution
 schedule. The sum term represents the effects that all moves have on previous
-batches up to, and including, $k$: $x_{hh} = 1$ iff job $h$ is not moved from
+batches up to and including $k$: $x_{hh} = 1$ iff job $h$ is not moved from
 its single-EDD batch $h$, and so the sum term evaluates to $P_h - p_h$ for a
 batch in which the host was not moved. If $h$ has guests, then $P_h - p_h$ is
 positive if any of the guests is longer than $j_h$ (i.e. $P_h > p_h$); if not,
@@ -1120,7 +1128,7 @@ x_{ik}\right) / b \quad && \begin{gathered} \forall \{k \in K, j \in J \\| j > k
 \land p_k \geq p_j \\ \land s_k + s_j \leq b\}\end{gathered}
 \end{alignat}
 \caption{Move-based MIP model. Constraints marked $(*)$ are lazy constraints
-(see subsection \ref{sec:lazyconstraints} for details).}
+(see subSection \ref{sec:lazyconstraints} for details).}
 \label{mod:movebackmip}
 \end{model}
 Constraints \eqref{mbm:eq6} and \eqref{mbm:eq7} are capacity constraints and
@@ -1231,7 +1239,7 @@ less than $b - s_j$.
 
 
 \chapter[Empirical comparison of models]{Empirical comparison\\ of models}
-\section{Experimental setup}\label{sec:results}
+\section{Experimental setup}
 The models were tested on a set of job lists. Malapert's paper uses benchmark
 job lists by \citet{Daste1, Daste2}, with a capacity of $b = 10$ and values for
 $p_j$, $s_j$ and $d_j$ distributed as follows:
@@ -1248,10 +1256,11 @@ Ten different sample job sets are
 used per unique value of $n_j \in \{10, 11, \dots, 18, 19, 20, 25,\\ 30, 35, 40, 45, 50\}$. The times shown in figure \ref{fig:comp_times}
 are averaged over those ten instances for each $n_j$.
 
-The models were run using Cplex 12.2 on an i7 Q740 CPU (1.73 GHz) in single-thread mode, with 8 GB RAM.
+The models were run using Cplex 12.2 on an Intel i7 Q740 CPU (1.73 GHz) in single-thread mode, with 8 GB RAM.
 Solving was aborted after a time of 3600 seconds (1 hour).
 
 \section{Results}
+\label{sec:results}
 The CP branch-and-bound model times out on most instances and is not shown here.
 The pure CP model times out on one 12-job instance and gets progressively worse
 with more jobs; similar to Malapert's original MIP model.
@@ -1265,15 +1274,17 @@ problem instances in a given time. The figure is based on $n_j \in \{10, 20,
 50\}$, with 40 instances each (120 instances total).
 \input{figures/malapertresultcomp.tex}
 
+Note that fully tabulated results are given in \ref{appendix:results}.
+
 \section{Discussion}\label{sec:discussion}
-The move-based MIP model performs uses the fewest variables (columns) and
+The move-based MIP model uses the fewest variables (columns) and
 constraints (rows) and performs the best. The use of lazy constraints for
 larger $n_j$ is advantageous in the large majority of problem instances and thus
 warranted. 
 
-The improved original MIP is a great improvement on the original MIP, mostly
-owed to constraint \eqref{eq:mipnopp} which excludes a large number of potential
-batch assignments.
+The improvements made to the original MIP in Model \ref{model:improvedmip} show
+a substantial benefit, mostly owed to constraint \eqref{eq:mipnopp} which
+excludes a large number of potential batch assignments.
 
 The batch-by-batch decomposition using MIP to assemble batches, while an
 improvement over Malapert's MIP model, is not satisfactory; the relaxations are
@@ -1318,7 +1329,7 @@ the total number of job pairs $n_j^2$.\footnote{The term originates from the
 dichotomy between \textit{disjunctive resources} which can only process one job
 at a time, and \textit{(highly) cumulative resources} which can process many
 jobs in parallel.} The relationship is shown in Figure
-\ref{fig:jpbtimecor_b}.
+\ref{fig:jpbtimecorb}.
 
 As a corrolary to the above, the solving time is greatly dependent on the
 capacity of the machine. Larger capacities, relative to the average job size
@@ -1402,6 +1413,7 @@ times, which can be expressed using an exact analogue to constraint
 \vskip 4em
 \appendix
 \chapter[Appendix: Potential improvements to the models]{Appendix: Potential\\ improvements to the models}
+\label{appendix:improvements}
 The following section details some redundant constraints, tighter variable
 bounds and potential fine-tuning opportunities that were not implemented in this
 papier, but may be of use in further research. 
@@ -1481,11 +1493,11 @@ be true if $m$ out of $n_j$ jobs have different due dates.
 
 \section{Decomposition approaches}
 \subsection{Potential heuristics}
-\paragraph{Improve the initial $L_{\text{max,incumbent}}$} A better initial
+\paragraph{Improve the initial $L_{\text{max,incmb}}$} A better initial
 upper bound on $\Lmax$ can help prune some branches of the search tree from the
 outset. There are several dispatch rules (or maybe other heuristics?) that could
 be explored to do this better.
-\paragraph{Improve $L_{\text{max,incumbent}}$ during search} It may be useful to
+\paragraph{Improve $L_{\text{max,incmb}}$ during search} It may be useful to
 use a heuristic like above to ``complete the schedule'' once a promising partial
 schedule has been generated. I have yet to identify situations where this is
 always helpful.
@@ -1500,7 +1512,7 @@ The disjunction ratio measure introduced by \citet{baptistelepape} may be useful
 in conditionally activating or omitting certain lazy constraint sets, as it is
 known that they often have a net slowing effect on the solver when dealing with
 less difficult problems. This was not implemented for this paper and is thus not
-represented in the results in section \ref{sec:results}, but it certainly has
+represented in the results in Section \ref{sec:results}, but it certainly has
 potential to bring down average solving times, particularly with smaller problem
 instances, for which Malapert's \texttt{sequenceEDD} global constraint currently
 beats our move-based MIP model.
@@ -1524,6 +1536,7 @@ safe may be beneficial in some instances.
 
 \chapter{Appendix: Other approaches}
 \section{Move-back search}
+\label{sec:movebackproof}
 The following is a proof referenced in Proposition \ref{prop:moveisbetter}, but
 it could easily be turned into a standalone local search method that finds good
 solutions quickly.
@@ -1547,7 +1560,7 @@ worsen $\Lmax$, but not change its position. Such a move is never necessary to
 arrive at an optimal solution.}
 \item{Moving back any single job from a
 batch before $k$ safely\footnote{for the definition of ``safe'' and
-``unsafe'' moves, compare section \ref{sec:dominance-safe}.} will improve $\Lmax$,
+``unsafe'' moves, compare Section \ref{sec:dominance-safe}.} will improve $\Lmax$,
 but not change its position.}
 \item{Moving back a single pre-$k$ job $j$ from a batch
 $\beta$ into an earlier batch $\alpha$ unsafely will reduce $L_k$ by
@@ -1579,7 +1592,7 @@ By the same token, high-quality solutions often have their $\Lmax$ in an early
 batch.
 
 \section{Other attempts to improve performance}
-We present two approaches which, independently of the model used, lead to no change
+We present two approaches which, independent of the model used, lead to no change
 or a worsening of performance in all initial tests despite appearing very
 promising at first. They are mentioned here briefly only for the sake of
 completeness.
@@ -1589,7 +1602,7 @@ completeness.
 An upper bound on $\Lmax$ can be found a priori by using a dispatch rule to find a
 feasible, if not optimal, schedule. Algorithm \ref{alg:ublmax} shows a variant
 in which the longest safely-fitting job is selected first. Using the ``best-fit''
-heuristic proposed in Malapert's paper (see section \ref{sec:bestfit}) yields
+heuristic proposed in Malapert's paper (see Section \ref{sec:bestfit}) yields
 better bounds with other problem instances, but is not significantly better
 overall. 
 
@@ -1714,7 +1727,7 @@ find the optimal solution to a problem instance was significantly greater. We
 therefore did not explore this approach further.
 
 \chapter{Appendix: Tabulated results}
-
+\label{appendix:results}
 The following table lists solving time for all test instances.
 
 \tiny
@@ -2037,6 +2050,182 @@ $n_j$ & $i$ & $t$ (s) & $n_j/n_k$ & Disjunction ratio \\
 30&40&1.45&1.76471&0.362222222222\\
 \bottomrule
 \end{tabular}
+\pagebreak
+\section{Results with non-bucketed job due dates}
+\begin{multicols}{4}
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+10 & 1 & 0.01 \\
+10 & 2 & 0 \\
+10 & 3 & 0 \\
+10 & 4 & 0 \\
+10 & 5 & 0.01 \\
+10 & 6 & 0.04 \\
+10 & 7 & 0.01 \\
+10 & 8 & 0.02 \\
+10 & 9 & 0.01 \\
+10 & 10 & 0 \\
+11 & 1 & 0.01 \\
+11 & 2 & 0.02 \\
+11 & 3 & 0.01 \\
+11 & 4 & 0.02 \\
+11 & 5 & 0 \\
+11 & 6 & 0 \\
+11 & 7 & 0.03 \\
+11 & 8 & 0.01 \\
+11 & 9 & 0.06 \\
+11 & 10 & 0.01 \\
+12 & 1 & 0.04 \\
+12 & 2 & 0.05 \\
+12 & 3 & 0.02 \\
+12 & 4 & 0.04 \\
+12 & 5 & 0.02 \\
+12 & 6 & 0.02 \\
+12 & 7 & 0.01 \\
+12 & 8 & 0.02 \\
+12 & 9 & 0.01 \\
+12 & 10 & 0.04 \\
+13 & 1 & 0.01 \\
+13 & 2 & 0.03 \\
+13 & 3 & 0.03 \\
+13 & 4 & 0.01 \\
+13 & 5 & 0.01 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+13 & 6 & 0.07 \\
+13 & 7 & 0 \\
+13 & 8 & 0.02 \\
+13 & 9 & 0.01 \\
+13 & 10 & 0.04 \\
+14 & 1 & 0.02 \\
+14 & 2 & 0.02 \\
+14 & 3 & 0.01 \\
+14 & 4 & 0.09 \\
+14 & 5 & 0.03 \\
+14 & 6 & 0.01 \\
+14 & 7 & 0.03 \\
+14 & 8 & 0 \\
+14 & 9 & 0 \\
+14 & 10 & 0.06 \\
+15 & 1 & 0.01 \\
+15 & 2 & 0.11 \\
+15 & 3 & 0.05 \\
+15 & 4 & 0.04 \\
+15 & 5 & 0.02 \\
+15 & 6 & 0.05 \\
+15 & 7 & 0.05 \\
+15 & 8 & 0.06 \\
+15 & 9 & 0.02 \\
+15 & 10 & 0.05 \\
+16 & 1 & 0.01 \\
+16 & 2 & 0.04 \\
+16 & 3 & 0.02 \\
+16 & 4 & 0.02 \\
+16 & 5 & 0.08 \\
+16 & 6 & 0.01 \\
+16 & 7 & 0.04 \\
+16 & 8 & 0.05 \\
+16 & 9 & 0.01 \\
+16 & 10 & 0.06 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+17 & 1 & 0.03 \\
+17 & 2 & 0.1 \\
+17 & 3 & 0.02 \\
+17 & 4 & 0.21 \\
+17 & 5 & 0.18 \\
+17 & 6 & 0.04 \\
+17 & 7 & 0.01 \\
+17 & 8 & 0.67 \\
+17 & 9 & 0.12 \\
+17 & 10 & 0.11 \\
+18 & 1 & 0.07 \\
+18 & 2 & 0.13 \\
+18 & 3 & 0.05 \\
+18 & 4 & 0.03 \\
+18 & 5 & 0.79 \\
+18 & 6 & 0.1 \\
+18 & 7 & 0.01 \\
+18 & 8 & 0.05 \\
+18 & 9 & 0.1 \\
+18 & 10 & 0.19 \\
+19 & 1 & 0.08 \\
+19 & 2 & 0.05 \\
+19 & 3 & 0.24 \\
+19 & 4 & 0.04 \\
+19 & 5 & 0.11 \\
+19 & 6 & 0.04 \\
+19 & 7 & 0.18 \\
+19 & 8 & 0.03 \\
+19 & 9 & 0.08 \\
+19 & 10 & 0.14 \\
+20 & 1 & 0.06 \\
+20 & 2 & 0.5 \\
+20 & 3 & 0.03 \\
+20 & 4 & 0.15 \\
+20 & 5 & 1.45 \\
+\bottomrule
+\end{tabular}
+\vfill
+\columnbreak
+\begin{tabular}{c c r}
+\toprule
+$n_j$ & $i$ & $t$ (seconds) \\
+\midrule 
+20 & 6 & 0.3 \\
+20 & 7 & 0.13 \\
+20 & 8 & 0.67 \\
+20 & 9 & 0.22 \\
+20 & 10 & 0.15 \\
+30 & 1 & 3.8 \\
+30 & 2 & 7.38 \\
+30 & 3 & 1.68 \\
+30 & 4 & 3.35 \\
+30 & 5 & 0.9 \\
+30 & 6 & 0.27 \\
+30 & 7 & 0.6 \\
+30 & 8 & 0.59 \\
+30 & 9 & 0.27 \\
+30 & 10 & 3.72 \\
+40 & 1 & 2.06 \\
+40 & 2 & 2.2 \\
+40 & 3 & 7.63 \\
+40 & 4 & 3.15 \\
+40 & 5 & 1.99 \\
+40 & 6 & 1.65 \\
+40 & 7 & 6.05 \\
+40 & 8 & 2.28 \\
+40 & 9 & 16.92 \\
+40 & 10 & 13.82 \\
+50 & 1 & 7.27 \\
+50 & 2 & 3.31 \\
+50 & 3 & 41.67 \\
+50 & 4 & 16.9 \\
+50 & 5 & 12.75 \\
+50 & 6 & 6.24 \\
+50 & 7 & 7.32 \\
+50 & 8 & 34.12 \\
+50 & 9 & 8.89 \\
+50 & 10 & 132.68 \\
+\bottomrule
+\end{tabular}
+\end{multicols}
+
+
 \backmatter
 \pagebreak
 \thispagestyle{empty}

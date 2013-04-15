@@ -3,57 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 A level-1 auxiliary file: coverpage_cardboard.aux
 A level-1 auxiliary file: coverpage.aux
-Case mismatch error between cite keys daste1 and Daste1
----line 186 of file paper.aux
- : \citation{daste1
- :                 ,daste2}
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys daste1 and Daste1
----line 213 of file paper.aux
- : \citation{daste1
- :                 }
-I'm skipping whatever remains of this command
 The style file: plainnat.bst
 Database file #1: bibliography.bib
-You've used 15 entries,
+You've used 18 entries,
             2773 wiz_defined-function locations,
-            699 strings with 7831 characters,
-and the built_in function-call counts, 6981 in all, are:
-= -- 606
-> -- 399
-< -- 10
-+ -- 135
-- -- 120
-* -- 580
-:= -- 1076
-add.period$ -- 44
-call.type$ -- 15
-change.case$ -- 83
-chr.to.int$ -- 15
-cite$ -- 30
-duplicate$ -- 308
-empty$ -- 585
-format.name$ -- 145
-if$ -- 1465
-int.to.chr$ -- 1
+            713 strings with 8268 characters,
+and the built_in function-call counts, 8156 in all, are:
+= -- 705
+> -- 449
+< -- 14
++ -- 154
+- -- 135
+* -- 658
+:= -- 1249
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 96
+chr.to.int$ -- 17
+cite$ -- 36
+duplicate$ -- 374
+empty$ -- 700
+format.name$ -- 163
+if$ -- 1723
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 15
-newline$ -- 82
-num.names$ -- 60
-pop$ -- 162
+missing$ -- 18
+newline$ -- 97
+num.names$ -- 72
+pop$ -- 199
 preamble$ -- 1
-purify$ -- 70
+purify$ -- 81
 quote$ -- 0
-skip$ -- 239
+skip$ -- 288
 stack$ -- 0
-substring$ -- 298
-swap$ -- 23
-text.length$ -- 2
+substring$ -- 324
+swap$ -- 37
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 155
+type$ -- 183
 warning$ -- 0
-while$ -- 59
+while$ -- 70
 width$ -- 0
-write$ -- 197
-(There were 2 error messages)
+write$ -- 235

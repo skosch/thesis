@@ -30,7 +30,7 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Grouping\040empty\040batches}{section.4.3}% 30
 \BOOKMARK [2][-]{subsection.4.3.2}{No\040postponing\040of\040jobs\040to\040later\040batches}{section.4.3}% 31
 \BOOKMARK [1][-]{section.4.4}{Decomposition\040approach}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.4.1}{Using\040CP\040and\040cumulative\040packing\040after\040the\040batch}{section.4.4}% 33
+\BOOKMARK [2][-]{subsection.4.4.1}{Replacing\040the\040MIP\040model\040with\040a\040CP\040model}{section.4.4}% 33
 \BOOKMARK [1][-]{section.4.5}{Move-based\040MIP\040model}{chapter.4}% 34
 \BOOKMARK [2][-]{subsection.4.5.1}{Symmetry-breaking\040rule}{section.4.5}% 35
 \BOOKMARK [2][-]{subsection.4.5.2}{Dominance\040rule\040on\040``safe''\040moves}{section.4.5}% 36
@@ -63,3 +63,4 @@
 \BOOKMARK [2][-]{subsection.B.2.2}{Bounding\040the\040number\040of\040batches\040nk}{section.B.2}% 63
 \BOOKMARK [0][-]{appendix.C}{Appendix:\040Tabulated\040results}{}% 64
 \BOOKMARK [1][-]{section.C.1}{Results\040with\040disjunctiveness\040measure}{appendix.C}% 65
+\BOOKMARK [1][-]{section.C.2}{Results\040with\040non-bucketed\040job\040due\040dates}{appendix.C}% 66
