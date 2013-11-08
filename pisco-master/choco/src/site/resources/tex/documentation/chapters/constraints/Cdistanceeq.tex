@@ -1,0 +1,26 @@
+%\part{distanceeq}
+\label{distanceeq}
+\hypertarget{distanceeq}{}
+
+\section{distanceEQ (constraint)}\label{distanceeq:distanceeqconstraint}\hypertarget{distanceeq:distanceeqconstraint}{}
+\begin{notedef}
+  \texttt{distanceEQ}$(x_1,x_2,x_3,c)$ states that $x_3$ plus an offset $c$ (by default $c=0$) is equal to the distance between $x_1$ and $x_2$:
+$$ x_3 + c = | x_1 - x_2 |$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{distanceEQ(IntegerVariable x1, IntegerVariable x2, int x3)}
+		\item \mylst{distanceEQ(IntegerVariable x1, IntegerVariable x2, IntegerVariable x3)}
+		\item \mylst{distanceEQ(IntegerVariable x1, IntegerVariable x2, IntegerVariable x3, int c)}
+	\end{itemize}
+	\item \textbf{return type}: \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+	\item \textbf{references} :\\
+      global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Call_min_dist.html}{\tt all\_min\_dist} (variant)
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cdistanceeq.j2t}

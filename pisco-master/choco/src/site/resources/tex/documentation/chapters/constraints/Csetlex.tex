@@ -1,0 +1,24 @@
+%\part{setlex}
+\label{setlex}
+\hypertarget{setlex}{}
+
+\section{setLex (constraint)}\label{setlex:setlexconstraint}\hypertarget{setlex:setlexconstraint}{}
+\begin{notedef}
+  \texttt{setLex}$(s_1,s_2)$ states that set $s_1$ is lexicographicaaly ordered before set $s_2$:
+ We have:
+$$ s_1 <_{lex} s_2 $$
+
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{setLex(SetVariable s1, SetVariable s2)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :\emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/csetlex.j2t}

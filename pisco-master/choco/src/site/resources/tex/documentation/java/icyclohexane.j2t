@@ -1,0 +1,38 @@
+        //1- Create the problem
+        
+        CPModel pb = new CPModel();
+
+        //2- Create the variable
+        RealVariable x = Choco.makeRealVar("x", -1.0e8, 1.0e8);
+        RealVariable y = Choco.makeRealVar("y", -1.0e8, 1.0e8);
+        RealVariable z = Choco.makeRealVar("z", -1.0e8, 1.0e8);
+
+        //3- Create and post the constraints
+        RealExpressionVariable exp1 = Choco.plus(Choco.mult(Choco.power(y, 2), Choco.plus(1, Choco.power(z, 2))),
+                Choco.mult(z, Choco.minus(z, Choco.mult(24, y))));
+
+        RealExpressionVariable exp2 = Choco.plus(Choco.mult(Choco.power(z, 2), Choco.plus(1, Choco.power(x, 2))),
+                Choco.mult(x, Choco.minus(x, Choco.mult(24, z))));
+
+        RealExpressionVariable exp3 = Choco.plus(Choco.mult(Choco.power(x, 2), Choco.plus(1, Choco.power(y, 2))),
+                Choco.mult(y, Choco.minus(y, Choco.mult(24, x))));
+
+        Constraint eq1 = Choco.eq(exp1, -13);
+        Constraint eq2 = Choco.eq(exp2, -13);
+        Constraint eq3 = Choco.eq(exp3, -13);
+
+        pb.addConstraint(eq1);
+        pb.addConstraint(eq2);
+        pb.addConstraint(eq3);
+
+        //4- Search for all solution
+        CPSolver s = new CPSolver();
+        s.getConfiguration().putDouble(Configuration.REAL_PRECISION, 1e-8);
+        s.read(pb);
+        s.setVarRealSelector(new CyclicRealVarSelector(s));
+        s.setValRealIterator(new RealIncreasingDomain());
+        s.solve();
+        //5- print the solution found
+        System.out.println("x " + s.getVar(x).getValue());
+        System.out.println("y " + s.getVar(y).getValue());
+        System.out.println("z " + s.getVar(z).getValue());

@@ -1,0 +1,6 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable[] vars = makeBooleanVarArray("b", 10);
+        m.addConstraint(and(vars));
+        s.read(m);
+        s.solve();

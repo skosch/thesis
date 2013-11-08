@@ -1,0 +1,28 @@
+%\part{mult}
+\label{mult}
+\hypertarget{mult}{}
+
+\section{mult (operator)}\label{mult:multoperator}\hypertarget{mult:multoperator}{}
+Returns an expression variable that corresponding to the product of variables in argument (\(x*y\)).
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{mult(IntegerExpressionVariable x, IntegerExpressionVariable y)}
+		\item \mylst{mult(IntegerExpressionVariable x, int y)}
+		\item \mylst{mult(int x, IntegerExpressionVariable y)}
+		\item \mylst{mult(RealExpressionVariable x, RealExpressionVariable y)}
+		\item \mylst{mult(RealExpressionVariable x, double y)}
+		\item \mylst{mult(double x, RealExpressionVariable y)}
+	\end{itemize}
+	\item \textbf{return type} :
+	\begin{itemize}
+		\item \texttt{IntegerExpressionVariable}, if parameters are \texttt{IntegerExpressionVariable}
+		\item \texttt{RealExpressionVariable}, if parameters are \texttt{RealExpressionVariable}
+	\end{itemize}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}
+\lstinputlisting{java/omult.j2t}

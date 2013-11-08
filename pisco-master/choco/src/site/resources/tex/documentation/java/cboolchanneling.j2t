@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable bool = makeIntVar("bool", 0, 1);
+        IntegerVariable x = makeIntVar("x", 0, 5);
+        m.addConstraint(boolChanneling(bool, x, 4));
+        s.read(m);
+        s.solveAll();

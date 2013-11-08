@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+    <properties>
+        <title>Documentation</title>
+        <author>CHOCO Development Team</author>
+    </properties>
+    <body>
+
+        <section name="Documentation">
+
+            <p>
+                You can download the current
+                <a href="http://choco.svn.sourceforge.net/viewvc/choco/trunk/src/site/resources/tex/documentation/choco-doc.pdf"
+                   class="externalLink" target="_blank">documentation of CHOCO
+                </a>
+                in PDF format.
+            </p>
+            <p>
+                In this documentation, we ensure that code parts are up-to-date. If you find some typos, please submit
+                to the
+                <a href="./issue-tracking.html">issue tracking system</a>
+                .
+            </p>
+        </section>
+        <subsection name="Tutorials">
+            <p>
+                You can also download the current
+                <a href="http://choco.svn.sourceforge.net/viewvc/choco/trunk/src/site/resources/tex/tutorials/choco-tut.pdf"
+                   class="externalLink" target="_blank">tutorials of CHOCO
+                </a>
+                in PDF format.
+            </p>
+        </subsection>
+        <subsection name="White paper">
+            <p>
+                For further more informations, you can read the
+                <a href="./pdf/choco-presentation.pdf" class="externalLink" target="_blank">white paper of CHOCO
+                </a>
+                .
+            </p>
+        </subsection>
+    </body>
+</document>
+

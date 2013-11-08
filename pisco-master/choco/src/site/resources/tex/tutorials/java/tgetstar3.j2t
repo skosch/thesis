@@ -1,0 +1,6 @@
+        //Constraints
+        // ... over rows
+        Constraint[] rows = new Constraint[n];
+        for (int i = 0; i < n; i++) {
+            rows[i] = Choco.eq(Choco.sum(cells[i]), M);
+        }

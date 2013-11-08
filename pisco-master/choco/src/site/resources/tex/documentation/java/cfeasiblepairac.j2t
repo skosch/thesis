@@ -1,0 +1,13 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        ArrayList couples2 = new ArrayList();
+        couples2.add(new int[]{1, 2});
+        couples2.add(new int[]{1, 3});
+        couples2.add(new int[]{2, 1});
+        couples2.add(new int[]{3, 1});
+        couples2.add(new int[]{4, 1});
+        IntegerVariable v1 = makeIntVar("v1", 1, 4);
+        IntegerVariable v2 = makeIntVar("v2", 1, 4);
+        m.addConstraint(feasPairAC("cp:ac32", v1, v2, couples2));
+        s.read(m);
+        s.solveAll();

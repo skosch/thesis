@@ -1,0 +1,5 @@
+        IntegerVariable x = Choco.makeIntVar("x", 1, 1000, Options.V_OBJECTIVE);
+        IntegerVariable y = Choco.makeIntVar("y", 20, 50);
+        model.addConstraint(Choco.eq(x, Choco.mult(y, 20)));
+        solver.read(model);
+        solver.minimize(true);

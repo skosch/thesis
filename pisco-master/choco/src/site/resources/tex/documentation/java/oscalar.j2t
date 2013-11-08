@@ -1,0 +1,14 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+
+        IntegerVariable[] vars = makeIntVarArray("C", 9, 1, 10);
+        int[] coefficients = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
+        m.addConstraint(eq(165, scalar(coefficients, vars)));
+        
+        s.read(m);
+        s.solve();
+        System.out.print("165 = (" + coefficients[0] + "*" + s.getVar(vars[0]).getVal()+")");
+        for (int i = 1; i < vars.length; i++) {
+            System.out.print(" + (" + coefficients[i] + "*" + s.getVar(vars[i]).getVal()+")");
+        }
+        System.out.println();

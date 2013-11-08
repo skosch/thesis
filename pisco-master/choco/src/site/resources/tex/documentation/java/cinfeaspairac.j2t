@@ -1,0 +1,12 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        boolean[][] matrice2 = new boolean[][]{
+                      {false, true, true, false},
+                      {true, false, false, false},
+                      {false, false, true, false},
+                      {false, true, false, false}};
+        IntegerVariable v1 = makeIntVar("v1", 1, 4);
+        IntegerVariable v2 = makeIntVar("v2", 1, 4);
+        m.addConstraint(feasPairAC(Options.C_EXT_AC32,v1, v2, matrice2));
+        s.read(m);
+        s.solveAll();

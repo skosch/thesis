@@ -1,0 +1,31 @@
+\documentclass[13pt, letterpaper, oneside]{book}
+\usepackage{graphicx}
+
+\usepackage[driver=xetex,paperwidth=8.5in,paperheight=11in,left=1.4in,
+right=1in,top=1.3in, bottom=1.4in]{geometry}
+\usepackage[no-math, quiet]{fontspec}
+\usepackage{newfloat}
+\usepackage{sectsty, tikz, color, pgfplots}
+\usetikzlibrary{shapes,arrows}
+\usepackage{multicol}
+\usepackage{amsmath, amssymb, amsfonts, amsthm, titlesec}
+\usepackage{fancyhdr, booktabs, longtable}
+%\usepackage[font=small,format=plain,labelfont=it,textfont=it]{caption}
+\usepackage{caption,subcaption}
+\usepackage{listings}
+\usepackage{algpseudocode, algorithm,setspace}
+% \usepackage[T1]{fontenc} 
+\usepackage{enumitem,verbatim,natbib}
+
+\usepackage{changepage}
+ \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ } 
+\include{typography}
+
+\widowpenalty 300
+\clubpenalty 300
+
+\begin{document}
+\input{figures/20comp.tex}
+\input{figures/50comp.tex}
+\input{figures/75comp.tex}
+\end{document}

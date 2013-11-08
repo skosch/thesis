@@ -1,0 +1,19 @@
+%\part{infeastuplefc}
+\label{infeastuplefc}
+\hypertarget{infeastuplefc}{}
+
+\section{infeasTupleFC (constraint)}\label{infeastuplefc:infeastuplefcconstraint}\hypertarget{infeastuplefc:infeastuplefcconstraint}{}
+\begin{notedef}
+  \texttt{infeasTupleFC}$(\collec{x_1}{x_n},feasTuples)$ states an extensional constraint on \collec{x_1}{x_n} defined by the table $infeasTuples$ of compatible tuples of values, and then performs Forward Checking:
+      $$\forall \text{ tuple } i\ |\quad \collec{x_1}{x_n}\neq infeasTuples[i]$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} : \mylst{infeasTupleFC(List<int[]> infeasTuples, IntegerVariable... x)}
+	\item \textbf{return type}: \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain}: \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cinfeastuplefc.j2t}

@@ -1,0 +1,8 @@
+        //All cells are different from each other
+        IntegerVariable[] allVars = new IntegerVariable[n * n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                allVars[i * n + j] = cells[i][j];
+            }
+        }
+        m.addConstraint(Choco.allDifferent(allVars));

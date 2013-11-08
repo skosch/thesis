@@ -1,0 +1,9 @@
+This folder contains all four models described in the thesis.
+They were written in VIM and Eclipse and compiled using CMake and Clang, but a
+simple command line invocation of gcc should do too. You'll need some or all of
+these arguments and maybe more (and don't forget to tell the compiler where the
+libraries are):
+
+-Wall -g -std=c++0x -DIL_STD -ffloat-store -m64 -DILOUSEMT -D_REENTRANT
+-DILM_REENTRANT -lilocplex -lcp -lconcert -lcplex -lm -lpthread -lrt -lgsl
+-lgslcblas

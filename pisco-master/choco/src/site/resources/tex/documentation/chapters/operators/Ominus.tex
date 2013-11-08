@@ -1,0 +1,28 @@
+%\part{minus}
+\label{minus}
+\hypertarget{minus}{}
+
+\section{minus (operator)}\label{minus:minusoperator}\hypertarget{minus:minusoperator}{}
+Returns an expression variable that corresponding to the difference between the two arguments (\(x-y\)).
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{minus(IntegerExpressionVariable x, IntegerExpressionVariable y)}
+		\item \mylst{minus(IntegerExpressionVariable x, int y)}
+		\item \mylst{minus(int x, IntegerExpressionVariable y)}
+		\item \mylst{minus(RealExpressionVariable x, RealExpressionVariable y)}
+		\item \mylst{minus(RealExpressionVariable x, double y)}
+		\item \mylst{minus(double x, RealExpressionVariable y)}
+	\end{itemize}
+	\item \textbf{return type} :
+	\begin{itemize}
+		\item \texttt{IntegerExpressionVariable}, if parameters are \texttt{IntegerExpressionVariable}
+		\item \texttt{RealExpressionVariable}, if parameters are \texttt{RealExpressionVariable}
+	\end{itemize}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}
+\lstinputlisting{java/ominus.j2t}

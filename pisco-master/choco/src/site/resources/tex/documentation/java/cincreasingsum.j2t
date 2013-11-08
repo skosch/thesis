@@ -1,0 +1,10 @@
+        Model m = new CPModel();
+        IntegerVariable[] res = new IntegerVariable[3];
+        res[0] = makeIntVar("x0", -2, 3);
+        res[1] = makeIntVar("x1", -3, 3);
+        res[2] = makeIntVar("x2", -3, 0);
+        IntegerVariable sum = makeIntVar("s", -3, 3);
+        m.addConstraint(Choco.increasingSum(res, sum));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solve();

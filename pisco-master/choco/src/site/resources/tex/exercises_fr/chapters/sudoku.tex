@@ -1,0 +1,34 @@
+%\part{exercises}
+\label{sudoku}
+\hypertarget{sudoku}{}
+
+\section{Sudoku}\label{debutant:sudoku}\hypertarget{debutant:sudoku}{}
+
+\url{http://fr.wikipedia.org/wiki/Sudoku}
+\begin{quotation}
+Le sudoku est un jeu en forme de grille, inspiré du carré latin. Le but du jeu est de remplir la grille avec une série de chiffres (ou de lettres ou de symboles) tous différents, qui ne se trouvent jamais plus d?une fois sur une même ligne, dans une même colonne ou dans une même sous-grille. La plupart du temps, les symboles sont des chiffres allant de 1 à 9, les sous-grilles étant alors des carrés de 3 x 3. Quelques symboles sont déjà disposés dans la grille, ce qui autorise une résolution progressive du problème complet.
+\end{quotation}
+
+\begin{center} 
+\begin{sudoku-block}
+| | |7|5| | |3| | |. | |4| | |2| |1| | |. |1| | | |7| | |5| |. | | |3|1|4| |2| |6|. |4| | | |6|2|7| | |. | |6|5| |3| | | |8|. | |7|1| | | |6| | |. |8| | | | | | | | |. | |5| |7| | | |4|1|. 
+\end{sudoku-block}
+
+\end{center}
+ \begin{itemize}
+\item Comment modéliser ce problème?
+\item Une propagation suffit-elle?
+\item Modéliser ce problème avec des contraintes $allDifferent$. Quelles sont les différences notables?
+\end{itemize}
+
+\lstinputlisting{java/sudoku1.j2t}
+
+\begin{quote}
+\`A retenir
+\begin{itemize}
+\item Variables temporaires
+\item Différence entre contraintes locales / contraintes globales
+\item Statistiques : temps d'exécution, nombre de noeuds, nombre de backtracks, ...
+\item propagation -- résolution
+\end{itemize}
+\end{quote}

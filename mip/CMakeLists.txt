@@ -21,12 +21,13 @@ SET (CMAKE_NM      "/usr/bin/llvm-nm")
 SET (CMAKE_OBJDUMP "/usr/bin/llvm-objdump")
 SET (CMAKE_RANLIB  "/usr/bin/llvm-ranlib")
 
+INCLUDE_DIRECTORIES("/home/sebastian/thesis/cpx_studio_12.5/cplex/include")
+INCLUDE_DIRECTORIES("/home/sebastian/thesis/cpx_studio_12.5/cpoptimizer/include")
+INCLUDE_DIRECTORIES("/home/sebastian/thesis/cpx_studio_12.5/concert/include")
 
-INCLUDE_DIRECTORIES("${PROJECT_SOURCE_DIR}/../cpx_studio_12.2/cplex/include")
-INCLUDE_DIRECTORIES("${PROJECT_SOURCE_DIR}/../cpx_studio_12.2/concert/include")
-
-LINK_DIRECTORIES( "${PROJECT_SOURCE_DIR}/../cpx_studio_12.2/cplex/lib/x86-64_sles10_4.1/static_pic")
-LINK_DIRECTORIES( "${PROJECT_SOURCE_DIR}/../cpx_studio_12.2/concert/lib/x86-64_sles10_4.1/static_pic")
+LINK_DIRECTORIES(   "/home/sebastian/thesis/cpx_studio_12.5/cplex/lib/x86-64_sles10_4.1/static_pic")
+LINK_DIRECTORIES(   "/home/sebastian/thesis/cpx_studio_12.5/concert/lib/x86-64_sles10_4.1/static_pic")
+LINK_DIRECTORIES(   "/home/sebastian/thesis/cpx_studio_12.5/cpoptimizer/lib/x86-64_sles10_4.1/static_pic")
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 

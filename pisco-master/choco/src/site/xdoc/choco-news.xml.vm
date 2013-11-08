@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+    <properties>
+        <title>News</title>
+        <author>CHOCO Development Team</author>
+    </properties>
+    <body>
+
+        <section name="News">
+            <subsection name="V 213">
+                <p>
+                    Charles Prud'homme - Oct. 07th 2011
+                </p>
+                <p>
+                    A new release with minor changes is now avalaible.
+                </p>
+                <p>
+                    Main changes are:
+                    <u>
+                        <li>IState{Int, Long, Double}#add return the updated value</li>
+                        <li>add generic opposite in Solver.read(Model)</li>
+                        <li>improve AmongGAC</li>
+                        <li>integrate disjSModel to Profile branching</li>
+                        <li>add new packing selectors (best fit, worst fit)</li>
+                        <li>fix graphical regression in parsers</li>
+                        <li>complete disjunctive graph drawings</li>
+                        <li>remove Pair.java from sources</li>
+                        <li>improve sort in BoundAllDiff and BoundGcc</li>
+                    </u>
+                </p>
+
+                <p>
+                    If you have any suggestions, please let us know.
+                </p>
+
+            </subsection>
+
+            <subsection name="Refactoring">
+                <p>
+                    Charles Prud'homme - July 07th 2011
+                </p>
+                <p>
+                    We are currently working on the new version of Choco, version 3.
+                </p>
+                <p>
+                    This includes separation in modules of Model and Solver, restructuration of constraints, etc.
+                    But the main goal is to refactor of the propagation engine.
+                </p>
+                <p>
+                    During this summer, we are going to prepare the new version, in three steps:
+                    <u>
+                        <li>releasing the current version of the trunk (v2.1.2);</li>
+                        <li>distinguishing, in different modules, the Solver (main module) and the Modeler.
+                            We tend to reduce to the minimum, the user impact;</li>
+                        <li>closing the current version, with up-to-date documentation (v2.2.0)</li>
+                    </u>
+                </p>
+
+                <p>
+                    If you have any suggestions, please let us know.
+                </p>
+
+            </subsection>
+
+            <subsection name="New constraints">
+                <p>
+                    Narendra Jussien, Thierry Petit - June 28th 2011
+                </p>
+                <p>
+                    We recently added two constraints to CHOCO.
+                </p>
+                <p>
+                    increasingSum(IntegerVariable[] x, IntegerVariable s):
+                    Given a sequence of variables X = x0, x1, . . . , xn-1, the increasingSum constraint imposes that
+                    &#8704; i &#8712; [0, n-2], xi &#8804; xi+1 and xi &#8712; X xi = s,
+                    build on an O(n) bound-consistency algorithm.
+                </p>
+                <p>
+                    inverseChannelingWithinRange(IntegerVariable[] x, IntegerVariable[] y): derived from inverseChanneling(x, y),
+                    "If the i^th variable of the collection X is assigned to j and if j is less than or equal to the number of items of the collection Y
+                    then the j^th variable of the collection Y is assigned to i.
+                    Conversely, if the j^th variable of the collection Y is assigned to i and if i is less than or equal to the number of items of the collection X
+                    then the ith variable of the collection X is assigned to j."
+                    See <a href="http://www.emn.fr/z-info/sdemasse/gccat/Cinverse_within_range.html">inverse_within_range</a>.
+                </p>
+
+            </subsection>
+
+            <subsection name="CNF: boolean formulas framework">
+                <p>
+                    Charles Prud'homme - December 23th 2010
+                </p>
+                <p>
+                    The actual way to define boolean formulas was a little bit obscure to us.
+                    That's why we have added a small framework, in the Model part of CHOCO, to help declaration of
+                    clauses.
+                    It is composed of 2 main objects: Literal and Node, each is an extension of ALogicTree abstract
+                    object.
+                </p>
+                <p>
+                    A literal is an atomic formula, or its negation, build with a bolean variable.
+                </p>
+                <p>
+                    A node is a formula build with a literals or nodes. Existing operators are: AND, IFONLYIF,
+                    IFTHENELSE, REIFIED, IMPLIES, OR, NAND, NOR, XOR.
+                </p>
+
+                <p>
+                    One can add a formula to a Model object, using the Choco.clauses() API, which converts the current
+                    formula into CNF, a conjunction of clauses readable by the model.
+                    Using this framework and reification is a robust way to modelize problems.
+                </p>
+                <p>
+                    Here is an example code of the SendMoreMoney problem with logging statements
+                </p>
+                <source>
+CPModel mod = new CPModel();
+CPSolver s = new CPSolver();
+IntegerVariable b = Choco.makeBooleanVar("to be");
+mod.addVariable(b);
+
+ALogicTree or = Node.or(Literal.pos(b), Literal.neg(b));
+
+mod.addConstraints(clauses(or));
+s.read(mod);
+s.solveAll();
+                </source>
+
+            </subsection>
+            <subsection name="CP-VIZ: An Open Source Visualization Platform for CP">
+                <p>
+                    Charles Prud'homme - December  13th 2010
+                </p>
+                <p>
+                    We currently have the pleasure to welcome Helmut Simonis at Ecole des Mines. As part of the
+                    collaboration, the old OADymPAC-based tracer module has been replaced by a brand new one: CPVisu
+                    tracer. CPVisu allows the production of three data files: the tree search, the states of constraints
+                    and variables at different points of computations, and a configuration file. These files can be
+                    interpreted using the
+                    <a href="https://sourceforge.net/projects/cpviz/">cpviz</a>
+                    java library for post-mortem analysis.
+                    <br/>
+                    As for now, the tree search data file is available and can be exploited.
+                    Most of the declared states of constraints and variables are defined and can be used safely (some
+                    few are missing).
+                    <br/>
+                    The CPVisu tracer module uses AOP (Aspect-Oriented Programming), weaves the choco-solver class files
+                    to produce a modified JAR for logging. Thus, you need to add the followin jars to your classpath:
+                    <a href="http://www.aspectj.org/">AspectJ</a>
+                    and<a href="http://logback.qos.ch/">Logback</a>.
+                </p>
+
+                <p>
+                    Here is an example code of the SendMoreMoney problem with logging statements
+                </p>
+                <source>
+Model model;
+IntegerVariable S, E, N, D, M, O, R, Y;
+IntegerVariable[] SEND, MORE, MONEY;
+
+model = new CPModel();
+
+S = makeIntVar("S", 0, 9);
+E = makeIntVar("E", 0, 9);
+N = makeIntVar("N", 0, 9);
+D = makeIntVar("D", 0, 9);
+M = makeIntVar("M", 0, 9);
+O = makeIntVar("0", 0, 9);
+R = makeIntVar("R", 0, 9);
+Y = makeIntVar("Y", 0, 9);
+SEND = new IntegerVariable[]{S, E, N, D};
+MORE = new IntegerVariable[]{M, O, R, E};
+MONEY = new IntegerVariable[]{M, O, N, E, Y};
+
+model.addConstraints(neq(S, 0), neq(M, 0));
+model.addConstraint(allDifferent(S, E, N, D, M, O, R, Y));
+model.addConstraints(
+eq(plus(scalar(new int[]{1000, 100, 10, 1}, SEND),
+scalar(new int[]{1000, 100, 10, 1}, MORE)),
+scalar(new int[]{10000, 1000, 100, 10, 1}, MONEY))
+);
+
+Solver solver = new CPSolver();
+solver.read(model);
+
+// Creation of the visualization wrapper
+Visualization visu = new Visualization("SendMoreMoney", solver, "./out");
+
+visu.createTree(); // declare tree tool
+visu.createViz(); // declare viz tool
+
+// declare of specialized visualizer for variables states
+Vector visualizer = new Vector(solver.getVar(S,E,N,D,M,O,R,Y), "expanded", 0, 0, 8, 10, "SENDMORY",
+0, 9);
+
+// add the vector visualizer to the viz tool
+visu.addVisualizer(visualizer);
+
+solver.solve();
+
+// close the XML files safely
+visu.close();
+                </source>
+
+            </subsection>
+        </section>
+    </body>
+</document>
+

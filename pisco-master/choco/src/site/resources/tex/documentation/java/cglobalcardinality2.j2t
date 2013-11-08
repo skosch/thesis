@@ -1,0 +1,10 @@
+        int n = 5;
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable[] vars = makeIntVarArray("vars", n, 1, n);
+        IntegerVariable[] cards = makeIntVarArray("cards", n, 0, 1);
+
+
+        m.addConstraint(Options.C_GCC_BC, globalCardinality(vars, cards, 1));
+        s.read(m);
+        s.solve();

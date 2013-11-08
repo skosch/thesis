@@ -1,0 +1,10 @@
+        int k1 = 5;
+        Model m = new CPModel();
+		IntegerVariable x = makeIntVar("x", 1, 10);
+		IntegerVariable y = makeIntVar("y", 1, 10);
+		m.addVariables(Options.V_BOUND, x, y);
+		IntegerVariable z = makeIntVar("z", 0, 1);
+		m.addConstraint(precedenceReified(x,k1,y,z));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solve();

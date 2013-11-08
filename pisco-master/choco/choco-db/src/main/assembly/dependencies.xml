@@ -1,0 +1,16 @@
+<assembly>
+    <id>dep</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <excludes>
+                <exclude>*:choco-kernel:*</exclude>
+            </excludes>
+            <unpack>true</unpack>
+            <scope>compile</scope>
+        </dependencySet>
+    </dependencySets>
+</assembly>

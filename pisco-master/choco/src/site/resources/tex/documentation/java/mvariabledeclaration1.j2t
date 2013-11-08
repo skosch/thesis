@@ -1,0 +1,2 @@
+        model.addVariable(var1);
+        model.addVariables(var2, var3);

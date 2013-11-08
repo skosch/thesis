@@ -1,0 +1,34 @@
+#Eclipse
+.project
+.classpath
+.settings
+target
+
+#OPL
+.oplproject
+
+#LateX
+*.toc
+*.aux
+*.lof
+*.lot
+*.bbl
+*.blg
+*.ind
+*.loa
+*.idx
+*.out
+*.spl
+*.rel
+
+
+# Random OS stuff
+.DS_Store
+Thumbs.db
+*.bak
+*.log
+*~
+
+#some instances files (temporary)
+pisco-single/src/main/benchmarks/instances/**
+

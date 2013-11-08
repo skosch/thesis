@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: article.aux
+The style file: splncs.bst
+Database file #1: bibliography.bib
+Warning--I didn't find a database entry for "some_sched_papers"
+Warning--I didn't find a database entry for "cumulative"
+Warning--I didn't find a database entry for "Hooker_etc"
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "Daste"
+Warning--empty journal in ShawPacking
+You've used 21 entries,
+            2087 wiz_defined-function locations,
+            637 strings with 7659 characters,
+and the built_in function-call counts, 6428 in all, are:
+= -- 652
+> -- 182
+< -- 18
++ -- 70
+- -- 49
+* -- 430
+:= -- 821
+add.period$ -- 25
+call.type$ -- 21
+change.case$ -- 21
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 353
+empty$ -- 618
+format.name$ -- 49
+if$ -- 1595
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 18
+newline$ -- 106
+num.names$ -- 23
+pop$ -- 63
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 271
+stack$ -- 0
+substring$ -- 456
+swap$ -- 205
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 58
+width$ -- 23
+write$ -- 238
+(There were 6 warnings)

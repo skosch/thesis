@@ -1,0 +1,16 @@
+\subsection{Cumulative (visualizer)}\label{cumulative:visu}\hypertarget{cumulative:visu}{}
+\begin{notedef}
+  \texttt{Cumulative}$(ts, l, e)$ is a specialized visualizer for the \mylst{Cumulative} constraint, where $ts$ is an array of task variables, $l$ the limit variable and $e$ the end variable.
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} : 
+	\begin{itemize}
+	\item \mylst{Cumulative(TaskVar[] tasks, IntDomainVar limit, IntDomainVar end, String display, int width, int height)}, where \mylst{display} can take its value in \mylst{\{"compact", "expanded", "gantt"\}}
+	\item \mylst{Cumulative(TaskVar[] tasks, IntDomainVar limit, IntDomainVar end, String display, int x, int y, int width, int height, String group, int min, int max)}, where \mylst{display} can take its value in \mylst{\{"compact", "expanded", "gantt"\}}
+	\end{itemize}
+\end{itemize}
+
+%\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

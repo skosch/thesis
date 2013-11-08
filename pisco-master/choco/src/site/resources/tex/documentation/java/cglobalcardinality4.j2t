@@ -1,0 +1,13 @@
+        int[] values = {1,3};
+
+        Model m = new CPModel();
+        IntegerVariable[] vars = makeIntVarArray("var", 7, 1, 4);
+        IntegerVariable[] cards = makeIntVarArray("card", 2, 1, 3);
+
+        m.addConstraint(globalCardinality(vars, values, cards));
+        m.addConstraint(member(cards[0], new int[]{1, 2, 3}));
+        m.addConstraint(eq(cards[1], 2));
+
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

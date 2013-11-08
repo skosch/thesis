@@ -5,44 +5,44 @@ A level-1 auxiliary file: coverpage_cardboard.aux
 A level-1 auxiliary file: coverpage.aux
 The style file: plainnat.bst
 Database file #1: bibliography.bib
-You've used 18 entries,
+You've used 19 entries,
             2773 wiz_defined-function locations,
-            713 strings with 8268 characters,
-and the built_in function-call counts, 8156 in all, are:
-= -- 705
-> -- 449
-< -- 14
-+ -- 154
-- -- 135
-* -- 658
-:= -- 1249
-add.period$ -- 53
-call.type$ -- 18
-change.case$ -- 96
-chr.to.int$ -- 17
-cite$ -- 36
-duplicate$ -- 374
-empty$ -- 700
-format.name$ -- 163
-if$ -- 1723
+            716 strings with 8299 characters,
+and the built_in function-call counts, 8385 in all, are:
+= -- 722
+> -- 459
+< -- 15
++ -- 158
+- -- 138
+* -- 665
+:= -- 1285
+add.period$ -- 55
+call.type$ -- 19
+change.case$ -- 100
+chr.to.int$ -- 18
+cite$ -- 38
+duplicate$ -- 389
+empty$ -- 726
+format.name$ -- 167
+if$ -- 1772
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 18
-newline$ -- 97
-num.names$ -- 72
-pop$ -- 199
+newline$ -- 101
+num.names$ -- 76
+pop$ -- 212
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 84
 quote$ -- 0
-skip$ -- 288
+skip$ -- 302
 stack$ -- 0
-substring$ -- 324
-swap$ -- 37
+substring$ -- 308
+swap$ -- 38
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 183
+type$ -- 194
 warning$ -- 0
-while$ -- 70
+while$ -- 73
 width$ -- 0
-write$ -- 235
+write$ -- 245

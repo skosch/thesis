@@ -1,0 +1,19 @@
+\section{CyclicRealVarSelector (Variable selector)}\label{cyclicrealvarselector:cyclicrealvarselectorvarselector}\hypertarget{cyclicrealvarselector:cyclicrealvarselectorvarselector}{}
+\begin{notedef}
+  \texttt{CyclicRealVarSelector}$(x)$ selects the real variables in the order they appear in array $x$, in a cyclic way until they are all instantiated, i.e. with interval domain under the desired precision (\textbf{static}).
+%  \texttt{CyclicRealVarSelector}$(x)$: since a dichotomy algorithm is used, cyclic assigning is needed to instantiate a real interval variable. A variable is selected several times to split its domain until it reaches the desired precision.
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{Constructor} : 
+	\begin{itemize}
+	\item \mylst{CyclicRealVarSelector(Solver s)}
+	\item \mylst{CyclicRealVarSelector(Solver s, RealVar[] vars)}
+	\end{itemize}	
+	\item \textbf{type of variable} : real
+	\item \textbf{references} : \emph{n/a}
+\end{itemize}
+
+\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

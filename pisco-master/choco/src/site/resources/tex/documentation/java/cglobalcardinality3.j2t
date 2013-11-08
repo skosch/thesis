@@ -1,0 +1,11 @@
+        int[] values = {1,3};
+        int[] occmin = {1, 2};
+        int[] occmax = {3, 2};
+
+        Model m = new CPModel();
+        IntegerVariable[] vars = makeIntVarArray("var", 7, 1, 4);
+        m.addConstraint(globalCardinality(vars, values, occmin, occmax));
+
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

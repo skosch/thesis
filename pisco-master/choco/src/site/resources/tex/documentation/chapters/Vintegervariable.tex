@@ -1,0 +1,72 @@
+\section{Integer variables}\label{integervariable}\hypertarget{integervariable}{}
+\texttt{IntegerVariable} is a variable whose associated domain is made of integer values. 
+
+\subsubsection{constructors:}
+      \noindent\begin{tabular}{p{.8\linewidth}p{.15\linewidth}}
+        Choco method & return type \\
+        \hline
+        \mylst{makeIntVar(String name, int lowB, int uppB, String... options)} &\texttt{IntegerVariable}\\
+	\mylst{makeIntVar(String name, int[] values, String... options)} &\texttt{IntegerVariable}\\
+	\mylst{makeIntVar(String name, List<Integer> values, String... options)} &\texttt{IntegerVariable}\\
+	\mylst{makeIntVar(String name, TIntArrayList values, String... options)} &\texttt{IntegerVariable}\\
+        \mylst{makeBooleanVar(String name, String... options)}  &\texttt{IntegerVariable}\\
+        \mylst{makeIntVarArray(String name, int dim, int lowB, int uppB, String... options)} &\texttt{IntegerVariable[]}\\
+        \mylst{makeIntVarArray(String name, int dim, int[] values, String... options)} &\texttt{IntegerVariable[]}\\
+        \mylst{makeIntVarArray(String name, int dim, List<Integer> values, String... options)} &\texttt{IntegerVariable[]}\\
+        \mylst{makeIntVarArray(String name, int dim, TIntArrayList values, String... options)} &\texttt{IntegerVariable[]}\\
+        \mylst{makeBooleanVarArray(String name, int dim, String... options)}  &\texttt{IntegerVariable[]}\\
+        \mylst{makeIntVarArray(String name, int dim1, int dim2, int lowB, int uppB, String... options)}  &\texttt{IntegerVariable[][]}\\
+        \mylst{makeIntVarArray(String name, int dim1, int dim2, int[] values, String... options)}  &\texttt{IntegerVariable[][]}\\
+        \mylst{makeIntVarArray(String name, int dim1, int dim2, List<Integer> values, String... options)}  &\texttt{IntegerVariable[][]}\\
+         \mylst{makeIntVarArray(String name, int dim1, int dim2, TIntArrayList values, String... options)}  &\texttt{IntegerVariable[][]}\\
+      \end{tabular}
+% 	\begin{itemize}
+% 		\item to create an \textbf{IntegerVariable} object:
+% 		\begin{itemize}
+% 			\item \mylst{makeIntVar(String name, int lowB, int uppB, String... options)}
+% 			\item \mylst{makeIntVar(String name, List<Integer> values, String... options)}
+% 			\item \mylst{makeIntVar(String name, int[] values, String... options)}
+% 		\end{itemize}
+% 		\item to create an \textbf{array of IntegerVariable} object:
+% 		\begin{itemize}
+% 			\item \mylst{makeIntVarArray(String name, int dim, int lowB, int uppB, String... options)}
+% 			\item \mylst{makeIntVarArray(String name, int dim, int[] values, String... options)}
+% 		\end{itemize}
+% 		\item to create a \textbf{matrix of IntegerVariable} object:
+% 		\begin{itemize}
+% 			\item \mylst{makeIntVarArray(String name, int dim1, int dim2, int lowB, int uppB, String... options)}
+% 			\item \mylst{makeIntVarArray(String name, int dim1, int dim2, int[] values, String... options)}
+% 		\end{itemize}
+% 		\item to create an \textbf{IntegerVariable} object with pre defined domain [0,1]:
+% 		\begin{itemize}
+% 			\item \mylst{makeBooleanVar(String name, String... options)}
+% 		\end{itemize}
+% 		\item to create an \textbf{array of IntegerVariable} object with pre defined domain [0,1]:
+% 		\begin{itemize}
+% 			\item \mylst{makeBooleanVarArray(String name, int dim, String... options)}
+% 		\end{itemize}
+% 	\end{itemize}
+% 	\item \textbf{return type} : \texttt{IntegerVariable} \emph{or} \texttt{IntegerVariable[]} \emph{or} \texttt{IntegerVariable[][]}
+\subsubsection{options:}
+	\begin{itemize}
+		\item \emph{no option} : equivalent to option \hyperlink{venum:venumoptions}{\tt Options.V\_ENUM}
+		\item \hyperlink{venum:venumoptions}{\tt Options.V\_ENUM} : to force Solver to create enumerated domain for the variable.
+		\item \hyperlink{vbound:vboundoptions}{\tt Options.V\_BOUND} : to force Solver to create bounded domain for the variable.
+		\item \hyperlink{vlink:vlinkoptions}{\tt Options.V\_LINK} : to force Solver to create linked list domain for the variable.
+		\item \hyperlink{vbtree:vbtreeoptions}{\tt Options.V\_BTREE} : to force Solver to create binary tree domain for the variable.
+		\item \hyperlink{vblist:vblistoptions}{\tt Options.V\_BLIST} : to force Solver to create bipartite list domain for the variable.
+		\item \hyperlink{vmakespan:vmakespanoptions}{\tt Options.V\_MAKEPSAN} : declare the current variable as makespan.
+		\item \hyperlink{vnodecision:vnodecisionoptions}{\tt Options.V\_NO\_DECISION} : to force variable to be removed from the pool of decisional variables.
+		\item \hyperlink{vobjective:vobjectiveoptions}{\tt Options.V\_OBJECTIVE} : to define the variable to be the one to optimize.
+	\end{itemize}
+\subsubsection{methods:}
+      \begin{itemize}
+      \item \mylst{removeVal(int val)}: remove value \emph{val} from the domain of the current variable
+      \end{itemize}
+
+A variable with $\{0,1\}$ domain is automatically considered as boolean domain.
+
+\subsubsection{Example:}
+\lstinputlisting{java/vintegervariable.j2t}
+
+Integer variables are illustrated on the \hyperlink{model:example1:nqueenschoco}{n-Queens problem}. 

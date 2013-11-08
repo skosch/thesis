@@ -1,0 +1,22 @@
+<assembly>
+    <id>release</id>
+    <formats>
+        <format>dir</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <files>
+        <file>
+            <source>target/choco-${project.version}.tar.gz</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+        <file>
+            <source>target/choco-${project.version}.zip</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+        <file>
+            <source>choco-solver/target/choco-solver-${project.version}.jar</source>
+            <outputDirectory>/</outputDirectory>
+        </file>
+    </files>
+
+</assembly>

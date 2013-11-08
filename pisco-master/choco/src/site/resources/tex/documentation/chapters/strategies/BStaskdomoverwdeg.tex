@@ -1,0 +1,16 @@
+\section{TaskOverWDegBinBranching (Branching strategy)}\label{taskdomoverwdeg:taskdomoverwdegbranchstrat}\hypertarget{taskdomoverwdeg:taskdomoverwdegbranchstrat}{}
+\begin{notedef}
+  \texttt{TaskOverWDegBinBranching} is a \textbf{binary branching} for scheduling problems, fixing the relative order between two task variables constrained by a precedence relation. Like in \hyperlink{domoverwdegbin:domoverwdegbinbranchstrat}{\texttt{DomOverWDegBranchingNew}}, the pair of task variables is selected according to the ratio of the size of the variable domains and the failure weight of the constraints involving these variables. 
+  In the first branch, the selected pair of task variables is ordered according to the value returned by the \mylst{OrderingValSelector} ($1$ if $T_1$ precedes $T_2$ or $0$ if $T_2$ precedes $T_1$); in the second branch, the opposite relative order is enforced.
+$$B_1: \texttt{precedence}(T_1,T_2,order),\quad B_2: \texttt{precedence}(T_1,T_2,1-order)$$
+\end{notedef}
+
+\begin{itemize}
+\item \textbf{Constructor} :\mylst{TaskOverWDegBinBranching(Solver s, IPrecedenceRatio[] varRatios, OrderingValSelector valOrd, Number seed)}
+\item \textbf{type of variable} : task \emph{(actually: precedence boolean indicator)}
+\item \textbf{references} : \cite{Boussemart04}: \emph{Boosting systematic search by weighting constraints}.
+\end{itemize}
+
+\textbf{Example}:
+% \lstinputlisting{java/cabs.j2t}
+

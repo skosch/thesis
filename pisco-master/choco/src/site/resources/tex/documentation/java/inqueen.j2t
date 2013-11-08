@@ -1,0 +1,20 @@
+        int nbQueen = 8;
+        //1- Create the model
+        CPModel m = new CPModel();
+        //2- Create the variables
+        IntegerVariable[] queens = Choco.makeIntVarArray("Q", nbQueen, 1, nbQueen);
+        //3- Post constraints
+        for (int i = 0; i < nbQueen; i++) {
+            for (int j = i + 1; j < nbQueen; j++) {
+                int k = j - i;
+                m.addConstraint(Choco.neq(queens[i], queens[j]));
+                m.addConstraint(Choco.neq(queens[i], Choco.plus(queens[j], k))); // diagonal constraints
+                m.addConstraint(Choco.neq(queens[i], Choco.minus(queens[j], k))); // diagonal constraints
+            }
+        }
+        //4- Create the solver
+        CPSolver s = new CPSolver();
+        s.read(m);
+        s.solveAll();
+        //5- Print the number of solutions found
+        System.out.println("Number of solutions found:"+s.getSolutionCount());

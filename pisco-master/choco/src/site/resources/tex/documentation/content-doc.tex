@@ -1,0 +1,252 @@
+%!TEX root = choco-doc.tex
+\addcontentsline{toc}{chapter}{Preface}
+\chapter*{Preface}
+Choco is a java library for constraint satisfaction problems (CSP) and constraint programming (CP). It is built on a event-based propagation mechanism with backtrackable structures.
+Choco is an open-source software, distributed under a \textbf{BSD licence} and hosted by \href{http://sourceforge.net/projects/choco/}{sourceforge.net}.
+For any informations visit \url{http://choco.emn.fr}.
+\bigskip
+
+\noindent This document is organized as follows:
+\begin{itemize}
+\item \hyperlink{ch:doc}{Documentation} is the user-guide of Choco. After a short \hyperlink{doc:introduction}{introduction} to constraint programming and to the Choco solver, it presents the basics of \hyperlink{doc:model}{modeling} and \hyperlink{doc:solver}{solving} with Choco, and some \hyperlink{doc:advanced}{advanced usages} (customizing propagation and search).
+\item \hyperlink{part:elements}{Elements of Choco} gives a detailed description of the \hyperlink{ch:vars}{variables}, \hyperlink{ch:operators}{operators}, \hyperlink{ch:constraints}{constraints} currently available in Choco.
+\item \hyperlink{ch:extra}{Extras} presents future works, only available on the beta version or extension of the current jar, such as the \hyperlink{chocoandvisu:chocoandvisu}{visualization module of Choco}. The section dedicated to \hyperlink{sudokuandcp:sudokuandconstraintprogramming}{Sudoku} aims at explaining the basic principles of Constraint Programming (propagation and search) on this famous game.
+
+
+\end{itemize}
+
+\input{chapters/documentation.tex}
+
+
+\part{Elements of Choco}\label{part:elements}\hypertarget{part:elements}{}
+\chapter{Variables (Model)}\label{ch:vars}\hypertarget{ch:vars}{}
+This section describes the three kinds of \hyperlink{model:variables}{variables} that can be used within a Choco Model, and an object-variable.
+\input{chapters/Vintegervariable.tex}
+\input{chapters/Vrealvariable.tex}
+\input{chapters/Vsetvariable.tex}
+\input{chapters/Vtaskvariable.tex}
+\chapter{Operators (Model)}\label{ch:operators}\hypertarget{ch:operators}{}
+This section lists and details the \hyperlink{model:expressionvariables}{operators} that can be used within a Choco Model to combine variables in expressions.
+\input{chapters/operators/Oabs.tex}
+\input{chapters/operators/Ocos.tex}
+\input{chapters/operators/Odiv.tex}
+\input{chapters/operators/Oifthenelse.tex}
+\input{chapters/operators/Omax.tex}
+\input{chapters/operators/Omin.tex}
+\input{chapters/operators/Ominus.tex}
+\input{chapters/operators/Omod.tex}
+\input{chapters/operators/Omult.tex}
+\input{chapters/operators/Oneg.tex}
+\input{chapters/operators/Oplus.tex}
+\input{chapters/operators/Opower.tex}
+\input{chapters/operators/Oscalar.tex}
+\input{chapters/operators/Osin.tex}
+\input{chapters/operators/Osum.tex}
+%\input{chapters/operators/Otrue.tex}
+\chapter{Constraints (Model)}\label{ch:constraints}\hypertarget{ch:constraints}{}
+This section lists and details the \hyperlink{model:constraints}{constraints} currently available in Choco.
+\input{chapters/constraints/Cabs.tex}
+\input{chapters/constraints/Calldifferent.tex}
+\input{chapters/constraints/Camong.tex}
+\input{chapters/constraints/Cand.tex}
+\input{chapters/constraints/Catmostnvalue.tex}
+\input{chapters/constraints/Cboolchanneling.tex}
+\input{chapters/constraints/Cclause.tex}
+\input{chapters/constraints/Ccostregular.tex}
+\input{chapters/constraints/Ccumulative.tex}
+\input{chapters/constraints/Ccumulativemax.tex}
+\input{chapters/constraints/Ccumulativemin.tex}
+\input{chapters/constraints/Cdisjoint.tex}
+\input{chapters/constraints/Cdisjunctive.tex}
+\input{chapters/constraints/Cdistanceeq.tex}
+\input{chapters/constraints/Cdistancegt.tex}
+\input{chapters/constraints/Cdistancelt.tex}
+\input{chapters/constraints/Cdistanceneq.tex}
+\input{chapters/constraints/Cdomainconstraint.tex}
+\input{chapters/constraints/Celement.tex}
+\input{chapters/constraints/Cendsafter.tex}
+\input{chapters/constraints/Cendsafterbegin.tex}
+\input{chapters/constraints/Cendsafterend.tex}
+\input{chapters/constraints/Cendsbefore.tex}
+\input{chapters/constraints/Cendsbeforebegin.tex}
+\input{chapters/constraints/Cendsbeforeend.tex}
+\input{chapters/constraints/Cendsbetween.tex}
+\input{chapters/constraints/Ceq.tex}
+\input{chapters/constraints/Ceqcard.tex}
+\input{chapters/constraints/Cequation.tex}
+\input{chapters/constraints/Cexactly.tex}
+\input{chapters/constraints/Cfalse.tex}
+\input{chapters/constraints/Cfeaspairac.tex}
+\input{chapters/constraints/Cfeastupleac.tex}
+\input{chapters/constraints/Cfeastuplefc.tex}
+\input{chapters/constraints/Cforbiddeninterval.tex}
+\input{chapters/constraints/Cgeost.tex}
+\input{chapters/constraints/Cgeq.tex}
+\input{chapters/constraints/Cgeqcard.tex}
+\input{chapters/constraints/Cglobalcardinality.tex}
+\input{chapters/constraints/Cgt.tex}
+\input{chapters/constraints/Cifonlyif.tex}
+\input{chapters/constraints/Cifthenelse.tex}
+\input{chapters/constraints/Cimplies.tex}
+\input{chapters/constraints/Cincreasingnvalue.tex}
+\input{chapters/constraints/Cincreasingsum.tex}
+\input{chapters/constraints/Cinfeaspairac.tex}
+\input{chapters/constraints/Cinfeastupleac.tex}
+\input{chapters/constraints/Cinfeastuplefc.tex}
+\input{chapters/constraints/Cintdiv.tex}
+\input{chapters/constraints/Cinversechanneling.tex}
+\input{chapters/constraints/Cinversechannelingwithinrange.tex}
+\input{chapters/constraints/Cinverseset.tex}
+\input{chapters/constraints/Cisincluded.tex}
+\input{chapters/constraints/Cisnotincluded.tex}
+\input{chapters/constraints/Cknapsackproblem.tex}
+\input{chapters/constraints/Cleq.tex}
+\input{chapters/constraints/Cleqcard.tex}
+\input{chapters/constraints/Clex.tex}
+\input{chapters/constraints/Clexchain.tex}
+\input{chapters/constraints/Clexchaineq.tex}
+\input{chapters/constraints/Clexeq.tex}
+\input{chapters/constraints/Cleximin.tex}
+\input{chapters/constraints/Clt.tex}
+\input{chapters/constraints/Cmax.tex}
+\input{chapters/constraints/Cmember.tex}
+\input{chapters/constraints/Cmin.tex}
+\input{chapters/constraints/Cmod.tex}
+\input{chapters/constraints/Cmulticostregular.tex}
+\input{chapters/constraints/Cnand.tex}
+\input{chapters/constraints/Cneq.tex}
+\input{chapters/constraints/Cneqcard.tex}
+\input{chapters/constraints/Cnot.tex}
+\input{chapters/constraints/Cnotmember.tex}
+\input{chapters/constraints/Cnor.tex}
+\input{chapters/constraints/Cnth.tex}
+\input{chapters/constraints/Coccurrence.tex}
+\input{chapters/constraints/Coccurrencemax.tex}
+\input{chapters/constraints/Coccurrencemin.tex}
+\input{chapters/constraints/Coppositesign.tex}
+\input{chapters/constraints/Cor.tex}
+\input{chapters/constraints/Cpack.tex}
+\input{chapters/constraints/Cprecedencereified.tex}
+\input{chapters/constraints/Cprecedenceimplied.tex}
+\input{chapters/constraints/Cprecedence.tex}
+\input{chapters/constraints/Cprecedencedisjoint.tex}
+\input{chapters/constraints/Cregular.tex}
+\input{chapters/constraints/Creifiedand.tex}
+\input{chapters/constraints/Creifiedconstraint.tex}
+%\input{chapters/constraints/Creifiedintconstraint.tex}
+\input{chapters/constraints/Creifiedleftimp.tex}
+\input{chapters/constraints/Creifiednot.tex}
+\input{chapters/constraints/Creifiedor.tex}
+\input{chapters/constraints/Creifiedrightimp.tex}
+\input{chapters/constraints/Creifiedxnor.tex}
+\input{chapters/constraints/Creifiedxor.tex}
+\input{chapters/constraints/Crelationpairac.tex}
+\input{chapters/constraints/Crelationtupleac.tex}
+\input{chapters/constraints/Crelationtuplefc.tex}
+\input{chapters/constraints/Csamesign.tex}
+\input{chapters/constraints/Csetdisjoint.tex}
+\input{chapters/constraints/Csetinter.tex}
+\input{chapters/constraints/Csetunion.tex}
+\input{chapters/constraints/Csorting.tex}
+\input{chapters/constraints/Cstartsafter.tex}
+\input{chapters/constraints/Cstartsafterbegin.tex}
+\input{chapters/constraints/Cstartsafterend.tex}
+\input{chapters/constraints/Cstartsbefore.tex}
+\input{chapters/constraints/Cstartsbeforebegin.tex}
+\input{chapters/constraints/Cstartsbeforeend.tex}
+\input{chapters/constraints/Cstartsbetween.tex}
+\input{chapters/constraints/Cstretchpath.tex}
+\input{chapters/constraints/Ctimes.tex}
+\input{chapters/constraints/Ctree.tex}
+\input{chapters/constraints/Ctrue.tex}
+\input{chapters/constraints/Cxnor.tex}
+\input{chapters/constraints/Cxor.tex}
+
+\chapter{Options (Model)}\label{ch:options}\hypertarget{ch:options}{}
+This section lists and details the options that can be declared on variables or constraints within a Choco Model.
+\input{chapters/Options.tex}
+
+\chapter{Branching strategies (Solver)}\label{ch:branchstrat}\hypertarget{ch:branchstrat}{}
+This section lists and details the \hyperlink{solver:searchstrategy}{branching strategies} currently available in Choco.
+
+\input{chapters/strategies/BSAssigninterval}
+\input{chapters/strategies/BSassignorforbidintvarval}
+\input{chapters/strategies/BSassignorforbidintvarvalpair}
+\input{chapters/strategies/BSassignsetvar}
+\input{chapters/strategies/BSassignvar}
+\input{chapters/strategies/BSdomoverwdeg}
+\input{chapters/strategies/BSdomoverwdegbin}
+\input{chapters/strategies/BSimpact}
+\input{chapters/strategies/BSpackdynremovals}
+\input{chapters/strategies/BSsettimes}
+\input{chapters/strategies/BStaskdomoverwdeg}
+
+\chapter{Variable selectors (Solver)}\label{ch:varsel}\hypertarget{ch:varsel}{}
+This section lists and details the \hyperlink{solver:variableselector}{variable selectors} currently available in Choco.
+
+\input{chapters/strategies/VScompositeint}
+\input{chapters/strategies/VScyclicreal}
+\input{chapters/strategies/VSlexint}
+\input{chapters/strategies/VSmaxdomain}
+\input{chapters/strategies/VSmaxdomset}
+\input{chapters/strategies/VSmaxregret}
+\input{chapters/strategies/VSmaxregretset}
+\input{chapters/strategies/VSmaxvaluedomain}
+\input{chapters/strategies/VSmaxvaluedomset}
+\input{chapters/strategies/VSmindomain}
+\input{chapters/strategies/VSmindomset}
+\input{chapters/strategies/VSminvaluedomain}
+\input{chapters/strategies/VSminvaluedomset}
+\input{chapters/strategies/VSmostconstrained}
+\input{chapters/strategies/VSmostconstrainedset}
+\input{chapters/strategies/VSrandomintvar}
+\input{chapters/strategies/VSrandomsetvar}
+\input{chapters/strategies/VSstaticsetvarorder}
+\input{chapters/strategies/VSstaticvarorder}
+
+\chapter{Value iterators (Solver)}\label{ch:valite}\hypertarget{ch:valite}{}
+This section lists and details the \hyperlink{solver:valueiterator}{value iterators} currently available in Choco.
+
+\input{chapters/strategies/videcdomain}
+\input{chapters/strategies/viincdomain}
+\input{chapters/strategies/virealincdomain}
+
+\chapter{Value selector (Solver)}\label{ch:valsel}\hypertarget{ch:valsel}{}
+This section lists and details the \hyperlink{solver:valueselector}{value selectors} currently available in Choco.
+
+\input{chapters/strategies/vsbestfit}
+\input{chapters/strategies/vscostregularvalselector}
+\input{chapters/strategies/vsfastcostregularvalselector}
+\input{chapters/strategies/vsmaxval}
+%\input{chapters/strategies/vsmcrvalselector}
+\input{chapters/strategies/vsmidval}
+\input{chapters/strategies/vsminenv}
+\input{chapters/strategies/vsminval}
+\input{chapters/strategies/vsrandomintvalselector}
+\input{chapters/strategies/vsrandomsetvalselector}
+
+\chapter{Visualizer (Visualization)}\label{ch:visualizer}\hypertarget{ch:visualizer}{}
+\section{Variable-oriented Visualizers}\label{vov:visualizers}\hypertarget{vov:visualizers}{}
+This section lists and details the \hyperlink{chocoandcpviz:visualizers}{variable-oriented visualizers} currently available in Choco.
+\input{chapters/visualizers/VbinaryMatrix.tex}
+\input{chapters/visualizers/VbinaryVector.tex}
+\input{chapters/visualizers/VdomainMatrix.tex}
+\input{chapters/visualizers/Vvector.tex}
+\input{chapters/visualizers/Vvectorsize.tex}
+\input{chapters/visualizers/VvectorWaterfall.tex}
+
+\section{Constraint-oriented Visualizers}\label{cov:visualizers}\hypertarget{cov:visualizers}{}
+This section lists and details the \hyperlink{chocoandcpviz:visualizers}{constraint-oriented visualizers} currently available in Choco.
+\input{chapters/visualizers/Valldifferent}
+\input{chapters/visualizers/Valldifferentmatrix}
+\input{chapters/visualizers/Vbooleanchanneling}
+\input{chapters/visualizers/Vcumulative}
+\input{chapters/visualizers/Velement}
+\input{chapters/visualizers/Vgcc}
+\input{chapters/visualizers/Vinverse}
+\input{chapters/visualizers/Vlexle}
+\input{chapters/visualizers/Vlexlt}
+
+\part{Extras}\label{ch:extra}\hypertarget{ch:extra}{}
+%\input{chapters/Choco_and_visu.tex}
+\input{chapters/sudoku_and_cp.tex}

@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable nval = makeIntVar("nval", 1, 3);
+        IntegerVariable[] variables = makeIntVarArray("vars", 6, 1, 4);
+        m.addConstraint(increasing_nvalue(Options.C_INCREASING_NVALUE_BOTH, nval, variables));
+        s.read(m);
+        s.solveAll();

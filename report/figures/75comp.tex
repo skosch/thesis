@@ -1,0 +1,111 @@
+\begin{figure}
+  \centering
+    \noindent\begin{tikzpicture}
+
+  \begin{semilogyaxis}[width=0.99\textwidth, 
+  height=0.749\textwidth,legend pos=south east, xmin=0, xmax=41, ymin=0.1,
+  ymax=3600.0, xtick={1,5,10,15,20,25,30,35,40}, ytick={0.1,1,10,100,1000,3600},y tick label style={
+        /pgf/number format/.cd,
+            fixed,
+            fixed zerofill,
+            precision=2,
+        /tikz/.cd
+    }, log ticks with fixed point, 
+    every axis legend/.append style={xshift=8pt, yshift=-5pt}, ylabel=Time to
+    solve to optimality (seconds), xlabel=Instance Number $i$,grid]
+
+\addplot[color=black, mark=none,only marks] coordinates {
+(1, 1.22)
+(2, 1.52)
+(3, 5.13)
+(4, 4.63)
+(5, 5.37)
+(6, 5.38)
+(7, 54.38)
+(8, 52.17)
+(9, 19.07)
+(10, 19.34)
+(11, 89.18)
+(12, 73.35)
+(13, 290.48)
+(14, 4.82)
+(15, 1002.86)
+(16, 1434.35)
+(17, 238.96)
+(18, 809.75)
+(19, 1188.39)
+(20, 4.25)
+(21, 2825.45)
+(22, 361.32)
+(23, 3600)
+(24, 3600)
+(25, 3600)
+(26, 3600)
+(27, 3600)
+(28, 3600)
+(29, 3600)
+(30, 3600)
+(31, 3600)
+(32, 3600)
+(33, 3600)
+(34, 3600)
+(35, 3600)
+(36, 3600)
+(37, 3600)
+(38, 3600)
+(39, 3600)
+(40, 3600)
+};
+\addlegendentry{\texttt{sequenceEDD} with batch fit heuristic (mean for $i \leq 22$: 386.0 s)}
+
+\addplot[color=black, mark=o,only marks] coordinates {
+(1, 14.51)
+(2, 16.11)
+(3, 12.61)
+(4, 13.8)
+(5, 19.17)
+(6, 28.92)
+(7, 10.09)
+(8, 14.95)
+(9, 74.44)
+(10, 87.31)
+(11, 24.51)
+(12, 90.5)
+(13, 34.38)
+(14, 338.4)
+(15, 125.91)
+(16, 43.34)
+(17, 1281.7)
+(18, 881.98)
+(19, 884.67)
+(20, 2336.47)
+(21, 29.81)
+(22, 3009.28)
+(23, 27.3)
+(24, 37.71)
+(25, 57.5)
+(26, 62.22)
+(27, 74.22)
+(28, 182.98)
+(29, 299.73)
+(30, 308.72)
+(31, 447.64)
+(32, 618.65)
+(33, 919.98)
+(34, 2261.88)
+(35, 3132.98)
+(36, 3600)
+(37, 3600)
+(38, 3600)
+(39, 3600)
+(40, 3600)
+
+};
+\addlegendentry{Move-based MIP model (mean for $i \leq 22$: 426.0 s)}
+
+  \end{semilogyaxis}
+\end{tikzpicture}
+   \vspace{0.73em}
+\caption{Percentage of problem instances solved in a given
+time}\label{fig:malapertresultcomp}
+\end{figure}

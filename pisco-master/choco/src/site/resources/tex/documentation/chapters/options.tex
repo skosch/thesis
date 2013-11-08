@@ -1,0 +1,437 @@
+\section{Options and settings}\label{optionssettings}\hypertarget{optionssettings}{}
+The variables and some constraints allow the declaration of options. Options and settings are defined in the classes \texttt{Options} and \texttt{SettingType}. Default options are specified. Most of the time, options parameters are \textit{varargs}.
+
+\subsection{Options for variables:}
+	\begin{itemize}
+		\item \mylst{Options.NO\_OPTION}, \texttt{""}, or \textit{empty argument}
+		\item \label{vbound:vboundoptions}\hypertarget{vbound:vboundoptions}{}
+		\mylst{Options.V\_BOUND} or \texttt{"cp:bound"}
+		\begin{itemize}
+				\item \textbf{goal} : force the solver to create bounded domain variable. It is a domain where only bound propagation can be done (no holes). It is very well suited when constraints performing only Bound Consistency are added on the corresponding variables. It must be used when large domains are needed. Implemented by two integers.
+				\item \textbf{scope} : 
+					\begin{itemize} 
+						\item \hyperlink{integervariable}{IntegerVariable}
+						\item \hyperlink{setvariable}{SetVariable}
+						\item  \hyperlink{taskvariable}{TaskVariable}
+					\end{itemize}
+		\end{itemize}				
+		\item \label{venum:venumoptions}\hypertarget{venum:venumoptions}{}
+		\mylst{Options.V\_ENUM} or \texttt{"cp:enum"}
+		\begin{itemize}
+				\item \textbf{goal} : force the solver to create enumerated domain variable \textit{(default option)}. It is a domain in which holes can be created by the solver. It should be used when discrete and quite small domains are needed and when constraints performing Arc Consistency are added on the corresponding variables. Implemented by a \texttt{BitSet} object.
+				\item \textbf{scope} : 
+					\begin{itemize} 
+						\item \hyperlink{integervariable}{IntegerVariable}
+						\item \hyperlink{setvariable}{SetVariable}
+						\item  \hyperlink{taskvariable}{TaskVariable}
+					\end{itemize}
+		\end{itemize}				
+		\item \label{vbtree:vbtreeoptions}\hypertarget{vbtree:vbtreeoptions}{}
+		\mylst{Options.V\_BTREE} or \texttt{"cp:btree"}
+		\begin{itemize}
+				\item \textbf{goal} : force the solver to create binary tree domain variable. \emph{Under development}
+				\item \textbf{scope} : \hyperlink{integervariable}{IntegerVariable}
+		\end{itemize}
+		\item \label{vblist:vblistoptions}\hypertarget{vblist:vblistoptions}{}
+		\mylst{Options.V\_BLIST} or \texttt{"cp:blist"}
+		\begin{itemize}
+				\item \textbf{goal} : force the solver to create bipartite list domain variable. It is a domain where unavailable values are placed in the left part of the list, the other one on the right one.
+				\item \textbf{scope} : \hyperlink{integervariable}{IntegerVariable}
+		\end{itemize}
+		\item \label{vlink:vlinkoptions}\hypertarget{vlink:vlinkoptions}{}
+		\mylst{Options.V\_LINK} or \texttt{"cp:link"}
+		\begin{itemize}
+				\item \textbf{goal} : force the solver to create linked list domain variable. It is an enumerated domain where holes can be done and every values has a link to the previous value and to the next value. It is built by giving its name and its bounds: lower bound and upper bound. It must be used when the very small domains are needed, because although linked list domain consumes more memory than the \texttt{BitSet} implementation, it can provide good performance as iteration over the domain is made in constant time. Implemented by a \texttt{LinkedList} object.
+				\item \textbf{scope} : \hyperlink{integervariable}{IntegerVariable}
+		\end{itemize}
+		\item \label{vmakespan:vmakespanoptions}\hypertarget{vmakespan:vmakespanoptions}{}
+		\mylst{Options.V\_MAKESPAN} or \texttt{"cp:makespan"}
+		\begin{itemize}
+				\item \textbf{goal} : declare the current variable as makespan
+				\item \textbf{scope} : \hyperlink{integervariable}{IntegerVariable}
+		\end{itemize}		
+		\item \label{vnodecision:vnodecisionoptions}\hypertarget{vnodecision:vnodecisionoptions}{}
+		\mylst{Options.V\_NO\_DECISION} or \texttt{"cp:no\_decision"}
+		\begin{itemize}
+				\item \textbf{goal} : force variable to be removed from the pool of decisional variables of the default search strategy. Overriding the default search strategy will automatically erase this option.
+				\item \textbf{scope} : 
+					\begin{itemize} 
+						\item \hyperlink{integervariable}{IntegerVariable}
+						\item \hyperlink{setvariable}{SetVariable}
+						\item \hyperlink{realvariable}{RealVariable}
+						\item \hyperlink{taskvariable}{TaskVariable}
+					\end{itemize}				
+		\end{itemize}			
+		\item \label{vobjective:vobjectiveoptions}\hypertarget{vobjective:vobjectiveoptions}{}
+		\mylst{Options.V\_OBJECTIVE} or \texttt{"cp:objective"}
+		\begin{itemize}
+				\item \textbf{goal} : declare the objective variable
+				\item \textbf{scope} : 
+					\begin{itemize} 
+						\item \hyperlink{integervariable}{IntegerVariable}
+						\item \hyperlink{setvariable}{SetVariable}
+						\item \hyperlink{realvariable}{RealVariable}
+					\end{itemize}				
+		\end{itemize}
+	\end{itemize}		
+	
+\subsection{Options for expressions:}
+	\begin{itemize}				
+		\item \mylst{Options.NO\_OPTION}, \texttt{""}, or \textit{empty argument}
+		\item \label{edecomp:edecompoptions}\hypertarget{edecomp:edecompoptions}{}
+		\mylst{Options.E\_DECOMP} or \texttt{"cp:decomp"}
+		\begin{itemize}
+				\item \textbf{goal} : force decomposition of the scoped expression.
+				\item \textbf{scope} : \hyperlink{model:expressionvariables}{IntegerExpressionVariable}
+		\end{itemize}
+	\end{itemize}
+
+\subsection{Options and settings for constraints:}
+	\begin{itemize}	
+		\item \mylst{Options.NO\_OPTION}, \texttt{""}, or \textit{empty argument}
+		\item \label{cext3:cext3options}\hypertarget{cext3:cext3options}{}
+		\mylst{Options.C\_EXT\_AC3} or \texttt{"cp:ac3"}
+		\begin{itemize}
+				\item \textbf{goal} : to get AC3 algorithm (searching from scratch for supports on all values)
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{feaspairac:feaspairacconstraint}{feasPairAC(String, IntegerVariable, IntegerVariable, List)}
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, List)}
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, boolean[][])}
+						\item \hyperlink{relationpairac:relationpairacconstraint}{relationPairAC(String, IntegerVariable, IntegerVariable, BinRelation)}
+					\end{itemize}
+		\end{itemize}
+		\item \label{cext32:cext32options}\hypertarget{cext32:cext32options}{}
+		\mylst{Options.C\_EXT\_AC32} or \texttt{"cp:ac32"}
+		\begin{itemize}
+				\item \textbf{goal} : to get AC3rm algorithm (maintaining the current support of each value in a non backtrackable way)
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{feaspairac:feaspairacconstraint}{feasPairAC(String, IntegerVariable, IntegerVariable, List)}
+						\item \hyperlink{feastupleac:feastupleacconstraint}{feasTupleAC(String, List, IntegerVariable[])}
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, List)}					
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, boolean[][])}
+						\item \hyperlink{relationpairac:relationpairacconstraint}{relationPairAC(String, IntegerVariable, IntegerVariable, BinRelation)}	
+						\item \hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC(String, IntegerVariable[], LargeRelation)}
+					\end{itemize}	
+
+		\end{itemize}
+		\item \label{cext322:cext322options}\hypertarget{cext322:cext322options}{}
+		\mylst{Options.C\_EXT\_AC322} or \texttt{"cp:ac322"}
+		\begin{itemize}
+				\item \textbf{goal} : to get AC3 with the used of \texttt{BitSet} to know if a support still exists
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{feaspairac:feaspairacconstraint}{feasPairAC(String, IntegerVariable, IntegerVariable, List)}
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, List)}					
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, boolean[][])}
+						\item \hyperlink{relationpairac:relationpairacconstraint}{relationPairAC(String, IntegerVariable, IntegerVariable, BinRelation)}	
+					\end{itemize}	
+
+		\end{itemize}	
+		\item \label{cext2001:cext2001options}\hypertarget{cext2001:cext2001options}{}			
+		\mylst{Options.C\_EXT\_AC2001} or \texttt{"cp:ac2001"}
+		\begin{itemize}
+				\item \textbf{goal} : to get AC2001 algorithm (maintaining the current support of each value) 
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{feaspairac:feaspairacconstraint}{feasPairAC(String, IntegerVariable, IntegerVariable, List)}
+						\item \hyperlink{feastupleac:feastupleacconstraint}{feasTupleAC(String, List, IntegerVariable[])}
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, List)}					
+						\item \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC(String, IntegerVariable, IntegerVariable, boolean[][])}
+						\item \hyperlink{relationpairac:relationpairacconstraint}{relationPairAC(String, IntegerVariable, IntegerVariable, BinRelation)}	
+						\item \hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC(String, IntegerVariable[], LargeRelation)}
+					\end{itemize}	
+
+		\end{itemize}
+		\item \label{cext2008:cext2008options}\hypertarget{cext2008:cext2008options}{}					
+		\mylst{Options.C\_EXT\_AC2008} or \texttt{"cp:ac2008"}
+		\begin{itemize}
+				\item \textbf{goal} : to get AC2008 algorithm (maintained by STR)
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{feastupleac:feastupleacconstraint}{feasTupleAC(String, List, IntegerVariable[])}
+						\item \hyperlink{infeastupleac:infeastupleacconstraint}{infeasTupleAC(String, List, IntegerVariable[])}
+						\item \hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC(String, IntegerVariable[], LargeRelation)}
+					\end{itemize}	
+
+		\end{itemize}
+		\item \label{cextfc:cextfcoptions}\hypertarget{cextfc:cextfcoptions}{}					
+		\mylst{Options.C\_EXT\_FC} or \texttt{"cp:fc"}
+		\begin{itemize}
+				\item \textbf{goal} : set filter policy to forward checking
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{feastupleac:feastupleacconstraint}{feasTupleAC(String, List, IntegerVariable[])}
+						\item \hyperlink{infeastupleac:infeastupleacconstraint}{infeasTupleAC(String, List, IntegerVariable[])}
+						\item \hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC(String, IntegerVariable[], LargeRelation)}
+					\end{itemize}	
+		\end{itemize}
+		\item \label{calldiffac:calldiffacoptions}\hypertarget{calldiffac:calldiffacoptions}{}
+		\mylst{Options.C\_ALLDIFFERENT\_AC} or \texttt{"cp:ac"}
+		\begin{itemize}
+				\item \textbf{goal} : for Regin implementation
+				\item \textbf{scope} : \hyperlink{alldifferent:alldifferentconstraint}{allDifferent(String, IntegerVariable[])}
+		\end{itemize}
+		\item \label{calldiffbc:calldiffbcoptions}\hypertarget{calldiffbc:calldiffbcoptions}{}
+		\mylst{Options.C\_ALLDIFFERENT\_BC} or \texttt{"cp:bc"}
+		\begin{itemize}
+				\item \textbf{goal} : for bound all different using the propagator of A. Lopez-Ortiz, C.-G. Quimper, J. Tromp, and P. van Beek. A fast and simple algorithm for bounds consistency of the alldifferent constraint. IJCAI-2003
+				\item \textbf{scope} : \hyperlink{alldifferent:alldifferentconstraint}{allDifferent(String, IntegerVariable[])}
+		\end{itemize}
+		\item \label{calldiffclique:calldiffcliqueoptions}\hypertarget{calldiffclique:calldiffcliqueoptions}{}
+		\mylst{Options.C\_ALLDIFFERENT\_CLIQUE} or \texttt{"cp:clique"}
+		\begin{itemize}
+				\item \textbf{goal} : propagate on the clique of differences
+				\item \textbf{scope} : \hyperlink{alldifferent:alldifferentconstraint}{allDifferent(String, IntegerVariable[])}
+		\end{itemize}
+		\item \label{cgccac:cgccacoptions}\hypertarget{cgccac:cgccacoptions}{}
+		\mylst{Options.C\_GCC\_AC} or \texttt{"cp:ac"}
+		\begin{itemize}
+				\item \textbf{goal} : for Regin implementation
+				\item \textbf{scope} : \hyperlink{globalcardinality:globalcardinalityconstraint}{globalCardinality(String, IntegerVariable[], int[], int[], int)}
+		\end{itemize}
+		\item \label{cgccbc:cgccbcoptions}\hypertarget{cgccbc:cgccbcoptions}{}
+		\mylst{Options.C\_GCC\_BC} or \texttt{"cp:bc"}
+		\begin{itemize}
+				\item \textbf{goal} : for Quimper implementation
+				\item \textbf{scope} : \hyperlink{globalcardinality:globalcardinalityconstraint}{globalCardinality(String, IntegerVariable[], int[], int[], int)}
+		\end{itemize}
+		\item \label{cinvatleast:cinvatleastoptions}\hypertarget{cinvatleast:cinvatleastoptions}{}
+		\mylst{Options.C\_INCREASING\_NVALUE\_ATLEAST} or \texttt{"cp:atleast"}
+		\begin{itemize}
+				\item \textbf{goal} : set filtering policy to filter on lower bound only
+				\item \textbf{scope} : \hyperlink{increasingnvalue:increasingnvalueconstraint}{increasing\_nvalue(String, IntegerVariable, IntegerVariable[])}
+		\end{itemize}
+		\item \label{cinvatmost:cinvatmostoptions}\hypertarget{cinvatmost:cinvatmostoptions}{}
+		\mylst{Options.C\_INCREASING\_NVALUE\_ATMOST} or \texttt{"cp:atmost"}
+		\begin{itemize}
+				\item \textbf{goal} : set filtering policy to filter on upper bound only
+				\item \textbf{scope} : \hyperlink{increasingnvalue:increasingnvalueconstraint}{increasing\_nvalue(String, IntegerVariable, IntegerVariable[])}
+		\end{itemize}		
+		\item \label{cinvboth:cinvbothoptions}\hypertarget{cinvboth:cinvbothoptions}{}		
+		\mylst{Options.C\_INCREASING\_NVALUE\_BOTH} or \texttt{"cp:both"}
+		\begin{itemize}
+				\item \textbf{goal} : set filtering policy to filter on lower and upper bound only
+				\item \textbf{scope} : \hyperlink{increasingnvalue:increasingnvalueconstraint}{increasing\_nvalue(String, IntegerVariable, IntegerVariable[])}
+		\end{itemize}
+		\item \label{cnthg:cnthgoptions}\hypertarget{cnthg:cnthgoptions}{}		
+		\mylst{Options.C\_NTH\_G} or \texttt{"cp:G"}
+		\begin{itemize}
+				\item \textbf{goal} : global consistency
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{nth:nthconstraint}{nth(String options, IntegerVariable index, int[] values, IntegerVariable val)}
+						\item \hyperlink{nth:nthconstraint}{nth(String option, IntegerVariable index, IntegerVariable[] varArray, IntegerVariable val)}
+						\item \hyperlink{nth:nthconstraint}{nth(String options, IntegerVariable index, IntegerVariable[] varArray, IntegerVariable val, int offset)}
+					\end{itemize}				
+		\end{itemize}
+		\item \label{cclause:cclauseoptions}\hypertarget{cclause:cclauseoptions}{}		
+		\mylst{Options.C\_CLAUSES\_ENTAIL} or \texttt{"cp:entail"}
+		\begin{itemize}
+				\item \textbf{goal} : ensures quick entailment tests
+				\item \textbf{scope} : \hyperlink{clause:clauseconstraint}{clause(IntegerVariable[],IntegerVariable[])}
+		\end{itemize}
+		\item \label{cpostponed:cpostponedoptions}\hypertarget{cpostponed:cpostponedoptions}{}		
+		\mylst{Options.C\_POST\_PONED} or \texttt{"cp:postponed"}
+		\begin{itemize}
+				\item \textbf{goal} : postponed a constraint
+				\item \textbf{scope} : \texttt{Constraint}
+		\end{itemize}
+
+%% SettingType
+		\item \label{cpackar:cpackaroptions}\hypertarget{cpackar:cpackaroptions}{}		
+		\mylst{SettingType.ADDITIONAL\_RULES} or \texttt{"cp:pack:ar"}
+		\begin{itemize}
+				\item \textbf{goal} : more filtering rules (recommended)				
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{pack:packconstraint}{pack(int[] sizes, int nbBins, int capacity, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(PackModeler modeler,String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes,IntegerVariable nbNonEmpty, String... options)}						
+					\end{itemize}
+		\end{itemize}
+		\item \label{cpackdlb:cpackdlboptions}\hypertarget{cpackdlb:cpackdlboptions}{}		
+		\mylst{SettingType.DYNAMIC\_LB} or \texttt{"cp:pack:dlb"}
+		\begin{itemize}
+				\item \textbf{goal} : feasibility test based on a dynamic lower bound
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{pack:packconstraint}{pack(int[] sizes, int nbBins, int capacity, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(PackModeler modeler,String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes,IntegerVariable nbNonEmpty, String... options)}						
+					\end{itemize}
+		\end{itemize}
+		\item \label{cpackfill:cpackfilloptions}\hypertarget{cpackfill:cpackfilloptions}{}		
+		\mylst{SettingType.FILL\_BIN} or \texttt{"cp:pack:fill"}
+		\begin{itemize}
+				\item \textbf{goal} : dominance rule: fill a bin when an item fit into pertfectly equal-sized items and bins must be equivalent
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{pack:packconstraint}{pack(int[] sizes, int nbBins, int capacity, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(PackModeler modeler,String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes,IntegerVariable nbNonEmpty, String... options)}						
+					\end{itemize}
+		\end{itemize}
+		\item \label{cpacklbe:cpacklbeoptions}\hypertarget{cpacklbe:cpacklbeoptions}{}		
+		\mylst{SettingType.LAST\_BINS\_EMPTY} or \texttt{"cp:pack:lbe"}
+		\begin{itemize}
+				\item \textbf{goal} : empty bins are the last ones
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{pack:packconstraint}{pack(int[] sizes, int nbBins, int capacity, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(PackModeler modeler,String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes, String... options)}
+						\item \hyperlink{pack:packconstraint}{pack(SetVariable[] itemSets, IntegerVariable[] loads, IntegerVariable[] bins, IntegerConstantVariable[] sizes,IntegerVariable nbNonEmpty, String... options)}						
+					\end{itemize}
+		\end{itemize}
+		\item \label{ccumulativeti:ccumulativetioptions}\hypertarget{ccumulativeti:ccumulativetioptions}{}		
+		\mylst{SettingType.TASK\_INTERVAL} or \texttt{"cp:cumul:ti"}
+		\begin{itemize}
+				\item \textbf{goal} : for fast task intervals
+				\item \textbf{scope} :
+					\begin{itemize}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, IntegerVariable uppBound, String... options)}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, String... options) }
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable consumption, IntegerVariable capacity, String... options)}
+					\end{itemize}
+		\end{itemize}
+		\item \label{ccumulativesti:ccumulativestioptions}\hypertarget{ccumulativesti:ccumulativestioptions}{}		
+		\mylst{SettingType.SLOW\_TASK\_INTERVAL} or \texttt{"cp:cumul:sti"}
+		\begin{itemize}
+				\item \textbf{goal} : for slow task intervals
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, IntegerVariable uppBound, String... options)}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, String... options) }
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable consumption, IntegerVariable capacity, String... options)}
+					\end{itemize}
+		\end{itemize}
+		\item \label{ccumulativecef:ccumulativecefoptions}\hypertarget{ccumulativecef:ccumulativecefoptions}{}		
+		\mylst{SettingType.VILIM\_CEF\_ALGO} or \texttt{"cp:cumul:cef"}
+		\begin{itemize}
+				\item \textbf{goal} : for Vilim theta lambda tree + lazy computation of the inner maximization of the edge finding rule of Van hentenrick and Mercier
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, IntegerVariable uppBound, String... options)}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, String... options) }
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable consumption, IntegerVariable capacity, String... options)}
+					\end{itemize}
+		\end{itemize}
+		\item \label{ccumulativescef:ccumulativescefoptions}\hypertarget{ccumulativescef:ccumulativescefoptions}{}		
+		\mylst{SettingType.VHM\_CEF\_ALGO\_N2K} or \texttt{"cp:cumul:scef"}
+		\begin{itemize}
+				\item \textbf{goal} : for Simple $n^2 * k$ algorithm (lazy for R) (CalcEF -- Van Hentenrick)
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, IntegerVariable uppBound, String... options)}
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable[] usages, IntegerVariable consumption, IntegerVariable capacity, String... options) }
+						\item \hyperlink{cumulative:cumulativeconstraint}{cumulative(String name, TaskVariable[] tasks, IntegerVariable[] heights, IntegerVariable consumption, IntegerVariable capacity, String... options)}
+					\end{itemize}
+		\end{itemize}		
+		\item \label{cdisjunctiveoc:cdisjunctiveocoptions}\hypertarget{cdisjunctiveoc:cdisjunctiveocoptions}{}		
+		\mylst{SettingType.OVERLOAD\_CHECKING} or \texttt{"cp:unary:oc"}
+		\begin{itemize}
+				\item \textbf{goal} : overload checking rule ( O(n*log(n)), Vilim), also known as task interval
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}
+		\item \label{cdisjunctivenfnl:cdisjunctivenfnloptions}\hypertarget{cdisjunctivenfnl:cdisjunctivenfnloptions}{}		
+		\mylst{SettingType.NF\_NL} or \texttt{"cp:unary:nfnl"}
+		\begin{itemize}
+				\item \textbf{goal} : NotFirst/NotLast rule ( O(n*log(n)), Vilim) (recommended).
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}
+		
+		\item \label{cdisjunctivedp:cdisjunctivedpoptions}\hypertarget{cdisjunctivedp:cdisjunctivedpoptions}{}		
+		\mylst{SettingType.DETECTABLE\_PRECEDENCE} or \texttt{"cp:unary:dp"}
+		\begin{itemize}
+				\item \textbf{goal} : Detectable Precedence rule ( O(n*log(n)), Vilim).
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}
+		
+				\item \label{cdisjunctiveef:cdisjunctiveefoptions}\hypertarget{cdisjunctiveef:cdisjunctiveefoptions}{}		
+		\mylst{SettingType.EDGE\_FINDING\_D} or \texttt{"cp:unary:ef"}
+		\begin{itemize}
+				\item \textbf{goal} : disjunctive Edge Finding rule ( O(n*log(n)), Vilim) (recommended).
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}
+
+		\item \label{cdisjunctivedf:cdisjunctivedfoptions}\hypertarget{cdisjunctivedf:cdisjunctivedfoptions}{}				
+		\mylst{SettingType.DEFAULT\_FILTERING} or \texttt{"cp:unary:df"}
+		\begin{itemize}
+				\item \textbf{goal} : use filtering algorithm proposed by Vilim. nested loop, each rule is applied until it reach it fixpoint.
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}
+		
+		\item \label{cdisjunctivedf:cdisjunctivevfoptions}\hypertarget{cdisjunctivevf:cdisjunctivevfoptions}{}				
+		\mylst{SettingType.VILIM\_FILTERING} or \texttt{"cp:unary:vf"}
+		\begin{itemize}
+				\item \textbf{goal} : use filtering algorithm proposed by Vilim. nested loop, each rule is applied until it reach it fixpoint.
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}
+		
+		\item \label{cdisjunctivesrf:cdisjunctivesrfoptions}\hypertarget{cdisjunctivesrf:cdisjunctivesrfoptions}{}				
+		\mylst{SettingType.SINGLE\_RULE\_FILTERING} or \texttt{"cp:unary:srf"}
+		\begin{itemize}
+				\item \textbf{goal} : use filtering algorithm proposed by Vilim. nested loop, each rule is applied until it reach it fixpoint. A single filtering rule (debug only).
+				\item \textbf{scope} : 
+					\begin{itemize}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks, String... options) }
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks, String... options)}													\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(TaskVariable[] tasks,IntegerVariable[] usages, String... options)}
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, String... options)}							
+						\item \hyperlink{disjunctive:disjunctiveconstraint}{disjunctive(String name, TaskVariable[] tasks,IntegerVariable[] usages, IntegerVariable uppBound, String... options)}
+					\end{itemize}
+		\end{itemize}		
+
+	\end{itemize}
+
+	
+\subsection{Options for solvers:}
+	\begin{itemize}	
+		\item \mylst{Options.NO\_OPTION}, \texttt{""}, or \textit{empty argument}
+		\item \label{smultiplereading:smultiplereadingoptions}\hypertarget{smultiplereading:smultiplereadingoptions}{}		
+		\mylst{Options.S\_MULTIPLE\_READINGS} or \texttt{"cp:multiple\_readings"}
+		\begin{itemize}
+				\item \textbf{goal} : Allow a solver to read a model more than one time. \textit{In that case, the redundant constraints for scheduling must be posted explicitly}.
+				\item \textbf{scope} : \texttt{CPSolver}
+		\end{itemize}
+	\end{itemize}

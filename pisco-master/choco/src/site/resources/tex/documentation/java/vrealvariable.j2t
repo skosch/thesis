@@ -1,0 +1,2 @@
+        RealVariable rvar1 = makeRealVar("rvar1", -10.0, 10.0);
+        RealVariable rvar2 = makeRealVar("rvar2", 0.0, 100.0, Options.V_NO_DECISION, Options.V_OBJECTIVE);

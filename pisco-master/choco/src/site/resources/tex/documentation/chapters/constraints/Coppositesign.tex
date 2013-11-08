@@ -1,0 +1,22 @@
+%\part{oppositesign}
+\label{oppositesign}
+\hypertarget{oppositesign}{}
+
+\section{oppositeSign (constraint)}\label{oppositesign:oppositesignconstraint}\hypertarget{oppositesign:oppositesignconstraint}{}
+
+
+\begin{notedef}
+  \texttt{oppositeSign}$(x,y)$ states that the two arguments have opposite signs:
+$$xy<0$$
+\end{notedef}
+Note that $0$ has both signs then constraint fails if $x$ or $y$ is equal to 0.
+
+\begin{itemize}
+	\item \textbf{API} : \mylst{oppositeSign(IntegerExpressionVariable x, IntegerExpressionVariable y)}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :\emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/coppositesign.j2t} 

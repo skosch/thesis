@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<instance>
+<presentation maxConstraintArity='10' format='XCSP 2.1'/>
+
+<domains nbDomains='2'>
+ <domain name='D0' nbValues='4'>4..7</domain>
+ <domain name='D1' nbValues='2'>1..2</domain>
+</domains>
+
+<variables nbVariables='11'>
+ <variable name='V0' domain='D0'/>
+ <variable name='V1' domain='D0'/>
+ <variable name='V2' domain='D0'/>
+ <variable name='V3' domain='D0'/>
+ <variable name='V4' domain='D0'/>
+ <variable name='V5' domain='D0'/>
+ <variable name='V6' domain='D0'/>
+ <variable name='V7' domain='D1'/>
+ <variable name='V8' domain='D1'/>
+ <variable name='V9' domain='D1'/>
+ <variable name='V10' domain='D1'/>
+</variables>
+
+<constraints nbConstraints='1'>
+ <constraint name='C0' arity='11' scope='V0 V1 V2 V3 V4 V5 V6 V7 V8 V9 V10' reference='global:globalCardinality'>
+  <parameters>
+   [ V0 V1 V2 V3 V4 V5 V6 ]
+   [ { 4 V7 } { 5 V8 } { 6 V9 } { 7 V10 } ]
+  </parameters>
+ </constraint>
+</constraints>
+</instance>

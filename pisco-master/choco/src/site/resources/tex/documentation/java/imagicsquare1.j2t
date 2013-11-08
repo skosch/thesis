@@ -1,0 +1,5 @@
+        // Constant declaration
+        int n = 3; // Order of the magic square
+        int magicSum = n * (n * n + 1) / 2; // Magic sum
+        // Build the model
+        CPModel m = new CPModel();

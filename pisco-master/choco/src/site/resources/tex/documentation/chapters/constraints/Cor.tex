@@ -1,0 +1,35 @@
+%\part{or}
+\label{or}
+\hypertarget{or}{}
+
+\section{or (constraint)}\label{or:orconstraint}\hypertarget{or:orconstraint}{}
+\begin{notedef}
+  \texttt{or}$(c_1,\ldots,c_n)$ states that at least one constraint in arguments is satisfied:
+$$ c_1 \lor c_2 \lor\ldots\lor c_n$$
+
+  \texttt{or}$(b_1,\ldots,b_n)$ states that at least one boolean variable in argument is true:
+$$ (b_1=1) \lor (b_2=1) \lor\ldots\lor (b_n=1)$$
+\end{notedef}
+
+\begin{itemize}
+\item \textbf{API} : 
+\begin{itemize}
+\item \mylst{or(Constraint... c)}
+\item \mylst{or(IntegerVariable... b)}
+\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{n/a}
+	\item \textbf{references} :\\
+  global constraint catalog: \href{http://www.emn.fr/z-info/sdemasse/gccat/Cor.html}{\tt or}
+\end{itemize}
+
+\textbf{Examples:}
+\begin{itemize}
+	\item example1:
+\end{itemize}
+\lstinputlisting{java/cor1.j2t}
+\begin{itemize}
+	\item example2
+\end{itemize}
+\lstinputlisting{java/cor2.j2t}

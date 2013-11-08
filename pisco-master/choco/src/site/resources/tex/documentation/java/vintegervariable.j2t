@@ -1,0 +1,3 @@
+        IntegerVariable ivar1 = makeIntVar("ivar1", -10, 10);
+        IntegerVariable ivar2 = makeIntVar("ivar2", 0, 10000, Options.V_BOUND, Options.V_NO_DECISION);
+        IntegerVariable bool = makeBooleanVar("bool");

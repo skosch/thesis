@@ -1,0 +1,26 @@
+    class NQueenValueSelector implements ValSelector<IntDomainVar> {
+
+        // Column variable
+        protected IntDomainVar[] dualVar;
+
+        // Constructor of the value selector,
+        public NQueenValueSelector(IntDomainVar[] cols) {
+            this.dualVar = cols;
+        }
+
+        // Returns the "best val" that is the smallest column domain size OR -1
+        // (-1 is not in the domain of the variables)
+        public int getBestVal(IntDomainVar intDomainVar) {
+            int minValue = Integer.MAX_VALUE;
+            int v0 = -1;
+            int UB = intDomainVar.getSup();
+            for (int i = intDomainVar.getInf(); i <= UB; i = intDomainVar.getNextDomainValue(i)) {
+                int val = dualVar[i - 1].getDomainSize();
+                if (val < minValue) {
+                    minValue = val;
+                    v0 = i;
+                }
+            }
+            return v0;
+        }
+    }

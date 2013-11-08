@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<ruleset name="choco-ruleset"
+	 xmlns="http://pmd.sf.net/ruleset/1.0.0"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+	 xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+  <description>
+    This ruleset checks choco code for bad stuff
+  </description>
+
+
+<!-- see http://pmd.sourceforge.net/rules/index.html -->
+  <!-- full rulesets -->
+  <rule ref="rulesets/basic.xml"/>
+  <rule ref="rulesets/strings.xml"/>
+  <rule ref="rulesets/braces.xml"/>
+  <rule ref="rulesets/clone.xml"/>
+  <rule ref="rulesets/finalizers.xml"/>
+  <rule ref="rulesets/imports.xml"/>
+ <!--  <rule ref="rulesets/javabeans.xml"/> -->
+  <rule ref="rulesets/unusedcode.xml"/>
+
+  <!-- custom ruleset -->
+
+  <rule ref="rulesets/codesize.xml">
+    <exclude name="NPathComplexity"/>
+    <exclude name="CyclomaticComplexity"/>
+  </rule>
+
+  <rule ref="rulesets/design.xml">
+    <exclude name="AvoidDeeplyNestedIfStmts"/>
+    <exclude name="ConstructorCallsOverridableMethod"/>
+    <exclude name="ConfusingTernary"/>
+   <!-- comportement bizarre avec les accesseurs -->
+    <exclude name="EmptyMethodInAbstractClassShouldBeAbstract"/>
+  </rule>
+
+
+  <rule ref="rulesets/controversial.xml">
+    <exclude name="OnlyOneReturn"/>
+    <exclude name="AssignmentInOperand"/>
+    <exclude name="DataflowAnomalyAnalysis"/>
+    <exclude name="AtLeastOneConstructor"/>
+    <exclude name="AvoidFinalLocalVariable"/>
+  </rule>
+
+
+
+  <rule ref="rulesets/junit.xml">
+    <exclude name="JUnitSpelling"/>
+    <exclude name="TestClassWithoutTestCases"/>
+    <exclude name="JUnitTestsShouldIncludeAssert"/>
+  </rule>
+
+
+  <rule ref="rulesets/naming.xml">
+    <exclude name="ShortVariable"/>
+    <exclude name="LongVariable"/>
+    <exclude name="SuspiciousEqualsMethodName"/>
+  </rule>
+
+
+  <rule ref="rulesets/optimizations.xml">
+    <exclude name="AvoidInstantiatingObjectsInLoops"/>
+  </rule>
+
+  <rule ref="rulesets/strictexception.xml">
+  <exclude name="AvoidThrowingRawExceptionTypes"/>
+</rule>
+  
+</ruleset>

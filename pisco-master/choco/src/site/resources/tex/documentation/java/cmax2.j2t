@@ -1,0 +1,8 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable[] x = constantArray(new int[]{5, 7, 9, 10, 12, 3, 2});
+        IntegerVariable max = makeIntVar("max", 1, 100);
+        SetVariable set = makeSetVar("set", 0, x.length - 1);
+        m.addConstraints(max(set, x, max), leqCard(set, constant(5)));
+        s.read(m);
+        s.solve();

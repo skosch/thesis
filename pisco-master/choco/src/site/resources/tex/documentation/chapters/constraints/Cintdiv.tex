@@ -1,0 +1,19 @@
+%\part{intdiv}
+\label{intdiv}
+\hypertarget{intdiv}{}
+
+\section{intDiv (constraint)}\label{intdiv:intdivconstraint}\hypertarget{intdiv:intdivconstraint}{}
+\begin{notedef}
+  \texttt{intDiv}$(x,y,z)$ states that $z$ is equal to the integer quotient of $x$ by $y$:
+$$z = \lfloor x / y \rfloor$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API}: \mylst{intDiv(IntegerVariable x, IntegerVariable y, IntegerVariable z)}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{option} : \emph{n/a}
+	\item \textbf{favorite domain}: bound
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cintdiv.j2t}

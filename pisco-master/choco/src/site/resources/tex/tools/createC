@@ -1,0 +1,5 @@
+#!/bin/sh
+NAME=$1
+FF="\section{${NAME} (constraint)}\label{${NAME}:${NAME}constraint}\hypertarget{${NAME}:${NAME}constraint}{}\n"
+FF=${FF}"\emph{To complete}"
+echo $FF > C${NAME}.tex

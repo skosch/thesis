@@ -1,0 +1,106 @@
+predicate 
+  global_sorting(array[int] of var int: x, array[int] of var int: y);
+
+predicate global_setDijoint(var set of int: s1, var set of int: s2);
+
+predicate global_min(array[int] of var int: x, var int: m);
+
+predicate global_member(var set of int: x, var int: y);
+
+predicate global_max(array[int] of var int: x, var int: m);
+
+predicate global_lexEq(array[int] of var int: x, array[int] of var int: y);
+
+predicate global_lex(array[int] of var int: x, array[int] of var int: y);
+
+predicate 
+  global_inverseSet(
+    array[int] of var int: x, array[int] of var set of int: y);
+
+predicate 
+  global_globalCardinalityLowUp(
+    array[int] of var int: x, array[int] of var int: c, 
+    array[int] of int: lbound, array[int] of int: ubound);
+
+predicate 
+  global_globalCardinality(
+    array[int] of var int: x, array[int] of var int: c);
+
+predicate 
+  global_elementInt(var int: i, array[int] of var int: x, var int: y);
+
+predicate 
+  global_elementBool(var int: i, array[int] of var bool: x, var bool: y);
+
+predicate 
+  global_cumulative(
+    array[int] of var int: s, array[int] of var int: d, 
+    array[int] of var int: r, var int: b);
+
+predicate global_allDifferent(array[int] of var int: x);
+
+var 0 .. 25: INT____1::var_is_introduced;
+
+var 0 .. 25: INT____10::var_is_introduced;
+
+var 0 .. 25: INT____2::var_is_introduced;
+
+var 0 .. 25: INT____3::var_is_introduced;
+
+var 0 .. 25: INT____4::var_is_introduced;
+
+var 0 .. 25: INT____5::var_is_introduced;
+
+var 0 .. 25: INT____6::var_is_introduced;
+
+var 0 .. 25: INT____7::var_is_introduced;
+
+var 0 .. 25: INT____8::var_is_introduced;
+
+var 0 .. 25: INT____9::var_is_introduced;
+
+array[1 .. 10] of var 0 .. 25: differences = 
+  [ INT____1, INT____2, INT____3, INT____4, INT____5, INT____6, INT____7, 
+    INT____8, INT____9, INT____10 ];
+
+int: m = 5;
+
+array[1 .. 5] of var 0 .. 25: mark::output_array([ 1 .. 5 ]);
+
+int: n = 25;
+
+constraint global_allDifferent(differences);
+
+constraint int_lt(INT____1, INT____10);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____10, mark[4], mark[5] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____9, mark[3], mark[5] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____8, mark[3], mark[4] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____7, mark[2], mark[5] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____6, mark[2], mark[4] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____5, mark[2], mark[3] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____4, mark[1], mark[5] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____3, mark[1], mark[4] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____2, mark[1], mark[3] ], 0);
+
+constraint int_lin_eq([ 1, 1, -1 ], [ INT____1, mark[1], mark[2] ], 0);
+
+constraint int_eq(mark[1], 0);
+
+constraint int_lt(mark[1], mark[2]);
+
+constraint int_lt(mark[2], mark[3]);
+
+constraint int_lt(mark[3], mark[4]);
+
+constraint int_lt(mark[4], mark[5]);
+
+solve ::int_search(mark, input_order, indomain, complete) minimize mark[5];

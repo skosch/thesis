@@ -1,0 +1,128 @@
+\begin{thebibliography}{10}
+
+\bibitem{Malapert}
+Malapert, A., Guéret, C., Rousseau, L.M.:
+\newblock A constraint programming approach for a batch processing problem with
+  non-identical job sizes.
+\newblock European Journal of Operational Research \textbf{221} (2012)
+  533--545
+
+\bibitem{Freuder97a}
+Freuder, E.C.:
+\newblock In pursuit of the holy grail.
+\newblock Constraints \textbf{2} (1997)  57--61
+
+\bibitem{Heinz}
+Heinz, S., Ku, W.Y., Beck, J.C.:
+\newblock Recent improvements using constraint integer programming for resource
+  allocation and scheduling.
+\newblock In Gomes, C., Sellmann, M., eds.: Integration of AI and OR Techniques
+  in Constraint Programming for Combinatorial Optimization Problems. Volume
+  7874 of Lecture Notes in Computer Science.
+\newblock Springer Berlin Heidelberg (2013)  12--27
+
+\bibitem{Lee}
+Lee, C.Y., Uzsoy, R., Martin-Vega, L.A.:
+\newblock Efficient algorithms for scheduling semiconductor burn-in operations.
+\newblock Oper. Res. \textbf{40}(4) (July 1992)  764--775
+
+\bibitem{Grossmann}
+Grossmann, I.E.:
+\newblock Mixed-integer optimization techniques for the design and scheduling
+  of batch processes.
+\newblock Technical Report Paper 203, Carnegie Mellon University Engineering
+  Design Research Center and Department of Chemical Engineering (1992)
+
+\bibitem{graham}
+Graham, R., Lawler, E., Lenstra, J.K., Kan, A.R.:
+\newblock Optimization and approximation in deterministic sequencing and
+  scheduling: A survey.
+\newblock Annals of Discrete Mathematics \textbf{5} (1979)  287--326
+
+\bibitem{Brucker}
+Brucker, P., Gladky, A., Hoogeveen, H., Kovalyov, M.Y., Potts, C.N.,
+  Tautenhahn, T., van~de Velde, S.L.:
+\newblock Scheduling a batching machine.
+\newblock Journal of Scheduling \textbf{1}(1) (1998)  31--54
+
+\bibitem{Pinedo03}
+Pinedo, M.L.:
+\newblock Scheduling: Theory, Algorithms, and Systems. 2nd edn.
+\newblock Prentice-Hall (2003)
+
+\bibitem{Shaw04a}
+Shaw, P.:
+\newblock A constraint for bin packing.
+\newblock In: Proceedings of the Tenth International Conference on Principles
+  and Practice of Constraint Programming (CP04). (2004)  648--662
+
+\bibitem{ShawPacking}
+Shaw, P.:
+\newblock A constraint for bin packing.
+\newblock \textbf{3258} (2004)  648--662
+
+\bibitem{Daste1}
+Daste, D., Gueret, C., Lahlou, C.:
+\newblock A branch-and-price algorithm to minimize the maximum lateness on a
+  batch processing machine.
+\newblock In: Proceedings of the 11\textsuperscript{th} International Workshop
+  on Project Management and Scheduling (PMS), Istanbul, Turkey. (2008)  64--69
+
+\bibitem{Azizoglu}
+Azizoglu, M., Webster, S.:
+\newblock Scheduling a batch processing machine with non-identical job sizes.
+\newblock International Journal of Production Research \textbf{38}(10) (2000)
+  2173--2184
+
+\bibitem{Dupont}
+Dupont, L., Dhaenens-Flipo, C.:
+\newblock Minimizing the makespan on a batch machine with non-identical job
+  sizes: an exact procedure.
+\newblock Computers \& Operations Research \textbf{29}(7) (2002)  807--819
+
+\bibitem{Sabouni}
+Sabouni, M.Y., Jolai, F.:
+\newblock Optimal methods for batch processing problem with makespan and
+  maximum lateness objectives.
+\newblock Applied Mathematical Modelling \textbf{34}(2) (2010)  314--324
+
+\bibitem{Kashan}
+Kashan, A.H., Karimi, B., Ghomi, S.M.T.F.:
+\newblock A note on minimizing makespan on a single batch processing machine
+  with nonidentical job sizes.
+\newblock Theoretical Computer Science \textbf{410}(27-29) (2009)  2754--2758
+
+\bibitem{Ozturk}
+Ozturk, O., Espinouse, M.L., Mascolo, M.D., Gouin, A.:
+\newblock Makespan minimisation on parallel batch processing machines with
+  non-identical job sizes and release dates.
+\newblock International Journal of Production Research \textbf{50}(20) (2012)
+  6022--6035
+
+\bibitem{cplexmanual}
+{IBM ILOG}:
+\newblock User's manual for cplex (2013)
+
+\bibitem{cplex}
+Ilog, I.:
+\newblock Cplex optimization suite 12.2 (2010)
+
+\bibitem{choco}
+{Choco Team}:
+\newblock Choco: An open source java constraint programming library. version
+  2.1.5 (2013)
+
+\bibitem{baptistelepape}
+Baptiste, P., Le~Pape, C.:
+\newblock Constraint propagation and decomposition techniques for highly
+  disjunctive and highly cumulative project scheduling problems.
+\newblock Constraints \textbf{5}(1-2) (2000)  119--139
+
+\bibitem{shaw}
+Shaw, P.:
+\newblock Using constraint programming and local search methods to solve
+  vehicle routing problems.
+\newblock In: Proceedings of the Fourth International Conference on Pricinples
+  and Practice of Constraint Programming (Springer LNCS 1520). (1998)  417--431
+
+\end{thebibliography}

@@ -1,0 +1,30 @@
+\label{clause}
+\hypertarget{clause}{}
+
+\section{clause (constraint)}\label{clause:clauseconstraint}\hypertarget{clause:clauseconstraint}{}
+\begin{notedef}
+  \texttt{clause}$(\collec{b^+_1}{b^+_n}, \collec{b^-_1}{b^-_m})$ states that at least one boolean $b^+_i$ is true or one boolean $b^-_j$ is false.
+% $$(x_1=1) \vee (x_2=1) \vee \dots \vee (x_n=1) \vee (y_1=0) \vee (y_2=0) \vee \dots \vee (y_m=0)$$  
+ $$\bigvee_{i=1}^n (b^+_i=1) \vee \bigvee_{j=1}^m (b^-_j=0)$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{clause(IntegerVariable[] bpos, IntegerVariable[] bneg)}
+		\item \mylst{clause(String options, IntegerVariable[] bpos, IntegerVariable[] bneg)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :
+	\begin{itemize}
+		\item \emph{no option} default filtering
+		\item \hyperlink{cclause:cclauseoptions}{\tt Options.C\_CLAUSES\_ENTAIL} ensures quick entailment tests
+	\end{itemize}
+	\item \textbf{favorite domain} : \emph{n/a}.
+	\item \textbf{references} : global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Cclause_or.html}{\tt clause\_or}
+\end{itemize}
+
+
+
+\textbf{Example}:
+\lstinputlisting{java/cclause.j2t}

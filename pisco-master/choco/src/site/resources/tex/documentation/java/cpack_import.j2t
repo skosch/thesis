@@ -1,0 +1,2 @@
+import choco.cp.solver.SettingType;
+import choco.cp.solver.search.integer.varselector.StaticVarOrder;

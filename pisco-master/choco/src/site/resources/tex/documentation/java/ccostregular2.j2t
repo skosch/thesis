@@ -1,0 +1,42 @@
+        IntegerVariable[] vars = makeIntVarArray("x", 28, 0, 2, Options.V_ENUM);
+        IntegerVariable z = makeIntVar("z", 0, 100, Options.V_BOUND);
+
+        // different rules are formulated as patterns that must NOT be matched by x
+        List<String> forbiddenRegExps = new ArrayList<String>();
+        // do not end with '00' if start with '11'
+        forbiddenRegExps.add("11(0|1|2)*00");
+        // at most three consecutive 0
+        forbiddenRegExps.add("(0|1|2)*0000(0|1|2)*");
+        // no pattern '112' at position 5
+        forbiddenRegExps.add("(0|1|2){4}112(0|1|2)*");
+        // pattern '12' after a 0 or a sequence of 0
+        forbiddenRegExps.add("(0|1|2)*02(0|1|2)*");
+        forbiddenRegExps.add("(0|1|2)*01(0|1)(0|1|2)*");
+        // at most three 2 on consecutive even positions
+        forbiddenRegExps.add("(0|1|2)((0|1|2)(0|1|2))*2(0|1|2)2(0|1|2)2(0|1|2)*");
+
+        // a unique automaton is built as the complement language
+        // composed of all the forbidden patterns
+        FiniteAutomaton auto = new FiniteAutomaton();
+        for (String reg : forbiddenRegExps) {
+            FiniteAutomaton a = new FiniteAutomaton(reg);
+            auto = auto.union(a);
+            auto.minimize();
+        }
+        auto = auto.complement();
+        auto.minimize();
+        auto.toDotty("myForbiddenRules.dot");
+        System.out.println(auto.getNbStates() + " states");
+        // costs: count the number of 0 and of 1 at odd positions
+        int[][] costs = new int[vars.length][3];
+        for (int i = 1; i < costs.length; i += 2) {
+            costs[i][0] = 1;
+            costs[i][1] = 1;
+        }
+
+        CPModel m = new CPModel();
+        m.addConstraint(costRegular(z, vars, auto, costs));
+        CPSolver s = new CPSolver();
+        s.read(m);
+        s.minimize(s.getVar(z), true);
+        System.out.println(s.solutionToString());

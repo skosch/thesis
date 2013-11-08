@@ -1,0 +1,7 @@
+        // All cells of the matrix must be different
+        for (int i = 0; i < n * n; i++) {
+            for (int j = i + 1; j < n * n; j++) {
+                Constraint c = (Choco.neq(var[i / n][i % n], var[j / n][j % n]));
+                m.addConstraint(c);
+            }
+        }

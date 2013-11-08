@@ -1,0 +1,6 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable a = makeIntVar("a", 0, 4);
+        m.addConstraint(eq(minus(a, 1), 2));
+        s.read(m);
+        s.solve();

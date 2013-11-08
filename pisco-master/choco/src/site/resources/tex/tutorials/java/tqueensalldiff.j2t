@@ -1,0 +1,40 @@
+        int n = 12;
+        Model m = new CPModel();
+
+        IntegerVariable[] queens = new IntegerVariable[n];
+        IntegerVariable[] queensdual = new IntegerVariable[n];
+        IntegerVariable[] diag1 = new IntegerVariable[n];
+        IntegerVariable[] diag2 = new IntegerVariable[n];
+        IntegerVariable[] diag1dual = new IntegerVariable[n];
+        IntegerVariable[] diag2dual = new IntegerVariable[n];
+        for (int i = 0; i < n; i++) {
+            queens[i] = Choco.makeIntVar("Q" + i, 1, n, Options.V_ENUM);
+            queensdual[i] = Choco.makeIntVar("QD" + i, 1, n, Options.V_ENUM);
+            diag1[i] = Choco.makeIntVar("D1" + i, 1, 2 * n, Options.V_ENUM);
+            diag2[i] = Choco.makeIntVar("D2" + i, -n, n, Options.V_ENUM);
+            diag1dual[i] = Choco.makeIntVar("D1" + i, 1, 2 * n, Options.V_ENUM);
+            diag2dual[i] = Choco.makeIntVar("D2" + i, -n, n, Options.V_ENUM);
+        }
+
+        m.addConstraint(Choco.allDifferent(queens));
+        m.addConstraint(Choco.allDifferent(queensdual));
+        for (int i = 0; i < n; i++) {
+            m.addConstraint(Choco.eq(diag1[i], Choco.plus(queens[i], i)));
+            m.addConstraint(Choco.eq(diag2[i], Choco.minus(queens[i], i)));
+            m.addConstraint(Choco.eq(diag1dual[i], Choco.plus(queensdual[i], i)));
+            m.addConstraint(Choco.eq(diag2dual[i], Choco.minus(queensdual[i], i)));
+        }
+        m.addConstraint(Choco.inverseChanneling(queens, queensdual));
+
+        m.addConstraint(Choco.allDifferent(diag1));
+        m.addConstraint(Choco.allDifferent(diag2));
+        m.addConstraint(Choco.allDifferent(diag1dual));
+        m.addConstraint(Choco.allDifferent(diag2dual));
+
+        Solver s = new CPSolver();
+        s.read(m);
+
+        s.addGoal(new AssignOrForbidIntVarVal(new MinDomain(s, s.getVar(queens)), new MinVal()));
+
+        ChocoLogging.toSolution();
+        s.solve();

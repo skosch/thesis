@@ -1,0 +1,11 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable x = makeIntVar("x", 1, 3);
+        IntegerVariable y = makeIntVar("y", 1, 3);
+        IntegerVariable z = makeIntVar("z", 1, 3);
+        // use API ifThenElse(Constraint, Constraint, Constraint)
+        m.addConstraint(ifThenElse(lt((x), (y)), gt((y), (z)), FALSE));
+         // and ifThenElse(Constraint, IntegerExpressionVariable, IntegerExpressionVariable)
+        m.addConstraint(leq(z, ifThenElse(lt(x, y), constant(1), plus(x,y))));
+        s.read(m);
+        s.solveAll();

@@ -1,0 +1,3503 @@
+// -------------------------------------------------------------- -*- C++ -*-
+// File: ./ilcp/cp.h
+// --------------------------------------------------------------------------
+//
+// Licensed Materials - Property of IBM
+//
+// 5724-Y48 5724-Y49 5724-Y54 5724-Y55 5725-A06 5725-A29
+// Copyright IBM Corp. 1990, 2012 All Rights Reserved.
+//
+// US Government Users Restricted Rights - Use, duplication or
+// disclosure restricted by GSA ADP Schedule Contract with
+// IBM Corp.
+//
+// --------------------------------------------------------------------------
+
+#ifndef __CP_cpH
+#define __CP_cpH
+
+#ifdef _MSC_VER
+#pragma pack(push,8)
+#endif
+
+#ifndef ILCUSELAYER
+#define ILCUSELAYER
+#endif
+
+#ifndef CPPREF_GENERATION
+
+#define IlcAbs IlcCPOAbs
+#define IlcAllocationStack IlcCPOAllocationStack
+#define IlcBranchSelectorI IlcCPOBranchSelectorI
+#define IlcChooseIntVarI IlcCPOChooseIntVarI
+#define IlcChooseIntVar IlcCPOChooseIntVar
+#define IlcConstIntArray IlcCPOConstIntArray
+#define IlcConstraintArray IlcCPOConstraintArray
+#define IlcConstraintI IlcCPOConstraintI
+#define IlcConstraint IlcCPOConstraint
+#define IlcCPOFloatVarI IlcCPOFloatExpI
+#define IlcDemonI IlcCPODemonI
+#define IlcDemon IlcCPODemon
+#define IlcExponent IlcCPOExponent
+#define IlcExprI IlcCPOExprI
+#define IlcFloatArrayI IlcCPOFloatArrayI
+#define IlcFloatArray IlcCPOFloatArray
+#define IlcFloatExpI IlcCPOFloatExpI
+#define IlcFloatExp IlcCPOFloatExp
+#define IlcFloatMax IlcCPOFloatMax
+#define IlcFloatMin IlcCPOFloatMin
+#define IlcFloatVarArrayI IlcCPOFloatVarArrayI
+#define IlcFloatVarArray IlcCPOFloatVarArray
+#define IlcFloatVarArrayIterator IlcCPOFloatVarArrayIterator
+#define IlcFloatVarI IlcCPOFloatExpI
+#define IlcFloatVar IlcCPOFloatVar
+#define IlcGoalArray IlcCPOGoalArray
+#define IlcGoalI IlcCPOGoalI
+#define IlcGoal IlcCPOGoal
+#define IlcIntArray IlcCPOIntArray
+#define IlcIntExpI IlcCPOIntExpI
+#define IlcIntExp IlcCPOIntExp
+#define IlcIntExpIterator IlcCPOIntExpIterator
+#define IlcIntPredicateI IlcCPOIntPredicateI
+#define IlcIntPredicate IlcCPOIntPredicate
+#define IlcIntSelectEvalI IlcCPOIntSelectEvalI
+#define IlcIntSelectI IlcCPOIntSelectI
+#define IlcIntSelect IlcCPOIntSelect
+#define IlcIntSetArray IlcCPOIntSetArray
+#define IlcIntSetI IlcCPOIntSetI
+#define IlcIntSet IlcCPOIntSet
+#define IlcIntSetIterator IlcCPOIntSetIterator
+#define IlcIntSetVarArray IlcCPOIntSetVarArray
+#define IlcIntSetVarDeltaIterator IlcCPOIntSetVarDeltaIterator
+#define IlcIntSetVarI IlcCPOIntSetVarI
+#define IlcIntSetVar IlcCPOIntSetVar
+#define IlcIntSetVarIterator IlcCPOIntSetVarIterator
+#define IlcIntTupleSet IlcCPOIntTupleSet
+#define IlcIntTupleSetIterator IlcCPOIntTupleSetIterator
+#define IlcIntVarArrayI IlcCPOIntVarArrayI
+#define IlcIntVarArray IlcCPOIntVarArray
+#define IlcIntVarDeltaIterator IlcCPOIntVarDeltaIterator
+#define IlcIntVarI IlcCPOIntVarI
+#define IlcIntVar IlcCPOIntVar
+#define IlcLightIntExpIterator IlcCPOLightIntExpIterator
+#define IlcLog IlcCPOLog
+#define IlcManagerI IlcCPOManagerI
+#define IlcManager IlcCPOManager
+#define IlcPower IlcCPOPower
+#define IlcRandomI IlcCPORandomI
+#define IlcRandom IlcCPORandom
+#define IlcRevAny IlcCPORevAny
+#define IlcRevBool IlcCPORevBool
+#define IlcRevFloat IlcCPORevFloat
+#define IlcRevInt IlcCPORevInt
+#define IlcSearchI IlcCPOSearchI
+#define IlcSearchLimitI IlcCPOSearchLimitI
+#define IlcSearchMonitorI IlcCPOSearchMonitorI
+#define IlcStamp IlcCPOStamp
+#define IloCPConstraintI IloCPOCPConstraintI
+#define IloFailLimit IloCPOFailLimit
+#define IloGoalFail IloCPOGoalFail
+#define IloGoalI IloCPOGoalI
+#define IloGoal IloCPOGoal
+#define IloGoalTrue IloCPOGoalTrue
+#define IloOrLimit IloCPOOrLimit
+#define IloSearchLimitI IloCPOSearchLimitI
+#define IloSearchLimit IloCPOSearchLimit
+#define IloSolver IloCPOSolver
+#define IloTimeLimit IloCPOTimeLimit
+#define IlcIntSetIteratorI IlcCPOIntSetIteratorI
+
+#endif
+
+//----------------------------------------------------------------------
+// Macros for GCC attributes
+
+//#define ILC_GCC_VISIBILITY
+
+#if defined(__GNUC__) && (__GNUC__ >= 4) && defined(ILC_GCC_VISIBILITY)
+#  define ILCGCCHIDINGENABLED
+#  define ILCGCCHIDINGON      _Pragma("GCC visibility push(hidden)")
+#  define ILCGCCHIDINGOFF     _Pragma("GCC visibility pop")
+#  define ILCHIDDEN           __attribute__((visibility("hidden")))
+#else
+#  define ILCGCCHIDINGON
+#  define ILCGCCHIDINGOFF
+#  define ILCHIDDEN
+#endif
+
+#if defined(__GNUC__)
+#define ILCDEPRECATED __attribute__((deprecated))
+#elif defined(_MSC_VER)
+#define ILCDEPRECATED __declspec(deprecated)
+#else
+#define ILCDEPRECATED
+#endif
+
+ILCGCCHIDINGON
+class IloCPI;
+class IloLaExtractorI;
+ILCGCCHIDINGOFF
+
+//----------------------------------------------------------------------
+
+#if !defined(__CONCERT_iloalgH)
+# include <ilconcert/iloalg.h>
+#endif
+#if !defined(__CONCERT_ilomodelH)
+# include <ilconcert/ilomodel.h>
+#endif
+#if !defined(__CONCERT_ilotuplesetH)
+# include <ilconcert/ilotupleset.h>
+#endif
+#if !defined(__CONCERT_ilosmodelH)
+# include <ilconcert/ilosmodel.h>
+#endif
+#if !defined(__CONCERT_ilosatomiH)
+# include <ilconcert/ilsched/ilosatomi.h>
+#endif
+
+//----------------------------------------------------------------------
+
+#ifdef NDEBUG
+
+#define IlcAssert(x,y)
+
+#elif defined (USEILOASSERTFORILCASSERT)
+
+#define IlcAssert(x,y) IloAssert(x,y)
+
+#else
+
+inline int ilc_stop_assert() { return 0; }
+void IlcBacktrace(int maxLevels = 64);
+#define IlcAssert(x,y) assert((x) || (IlcBacktrace(), ILOSTD(cerr) << (y) << ILOSTD(endl), ilc_stop_assert()))
+
+#endif
+
+
+//----------------------------------------------------------------------
+
+#define ILOCPVISIBLEHANDLEMINI(Hname, Iname)                       \
+public:                                                            \
+                                                                \
+  Hname(Iname* impl = 0) : _impl(impl) { }                         \
+                                                                \
+  Iname* getImpl() const { return _impl; }                         \
+  Iname* getImplInternal() const                                   \
+    { return (Iname*)_impl; }                                      \
+protected:                                                         \
+  Iname* _impl;
+
+#ifdef ILCGCCHIDINGENABLED
+#define ILOCPHIDDENHANDLEMINI(Hname, Iname)                        \
+public:                                                            \
+                                                                \
+  Hname(Iname* impl = 0) : _impl(impl) { }                         \
+                                                                \
+  Iname* getImpl() const { return (Iname*)_impl; }                 \
+  Iname* getImplInternal() const                                   \
+    { return (Iname*)_impl; }                                      \
+protected:                                                         \
+  void* _impl;
+#else
+#define ILOCPHIDDENHANDLEMINI(Hname, Iname)                        \
+        ILOCPVISIBLEHANDLEMINI(Hname, Iname)
+#endif
+
+#define ILOCPVISIBLEHANDLE(Hname, Iname)                           \
+  ILOCPVISIBLEHANDLEMINI(Hname, Iname)                             \
+private:                                                           \
+  const char *  _getName() const;                                  \
+  IloAny        _getObject() const;                                \
+  void          _setName(const char * name) const;                 \
+  void          _setObject(IloAny obj) const;                      \
+public:                                                            \
+                                                                \
+  const char * getName() const {                                   \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    return _getName();                                             \
+  }                                                                \
+                                                                \
+  IloAny getObject() const {                                       \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    return _getObject();                                           \
+  }                                                                \
+                                                                \
+  void setName(const char * name) const {                          \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    _setName(name);                                                \
+  }                                                                \
+                                                                \
+  void setObject(IloAny obj) const {                               \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    _setObject(obj);                                               \
+  }                                                                \
+
+#ifdef ILCGCCHIDINGENABLED
+#define ILOCPHIDDENHANDLE(Hname, Iname)                            \
+  ILOCPHIDDENHANDLEMINI(Hname, Iname)                              \
+private:                                                           \
+  const char *  _getName() const;                                  \
+  IloAny        _getObject() const;                                \
+  void          _setName(const char * name) const;                 \
+  void          _setObject(IloAny obj) const;                      \
+public:                                                            \
+                                                                \
+  const char * getName() const {                                   \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    return _getName();                                             \
+  }                                                                \
+                                                                \
+  IloAny getObject() const {                                       \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    return _getObject();                                           \
+  }                                                                \
+                                                                \
+  void setName(const char * name) const {                          \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    _setName(name);                                                \
+  }                                                                \
+                                                                \
+  void setObject(IloAny obj) const {                               \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    _setObject(obj);                                               \
+  }
+#else
+
+#define ILOCPHIDDENHANDLE(Hname, Iname) ILOCPVISIBLEHANDLE(Hname, Iname)
+
+#endif
+
+#define ILOCPHANDLEINLINE(Hname, Iname)                            \
+  ILOCPVISIBLEHANDLEMINI(Hname, Iname)                             \
+public:                                                            \
+                                                                \
+  const char * getName() const {                                   \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    return _impl->getName();                                       \
+  }                                                                \
+                                                                \
+  IloAny getObject() const {                                       \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    return _impl->getObject();                                     \
+  }                                                                \
+                                                               \
+  void setName(const char * name) const {                          \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    _impl->setName(name);                                                \
+  }                                                                \
+                                                                \
+  void setObject(IloAny obj) const {                               \
+    IlcAssert(_impl != 0, ILO_STRINGIZE(hname) ": empty handle");  \
+    _impl->setObject(obj);                                               \
+  }                                                                \
+
+//----------------------------------------------------------------------
+
+// Concert classes:
+class IloCumulFunctionExpr;
+class IloDiff;
+class IloExtensibleRttiEnvObjectI;
+class IloIntArray;
+class IloIntExp;
+class IloIntSet;
+class IloIntSetVar;
+class IloIntSetVarArray;
+class IloIntVar;
+class IloIntVarArray;
+class IloStateFunctionI;
+
+// Internal classes (not defined neither in cp.h nor cpext.h)
+ILCGCCHIDINGON
+class IlcAllocationStack;
+class IlcExprI;
+class IlcFloatExpI;
+class IlcIntExpI;
+class IlcIntVarI;
+class IlcManagerI;
+class IlcRandom;
+class IlcRecomputeExprI;
+class IlcStrategyManagerI;
+class IloCPI;
+class IloSearchPhaseI;
+class IloValueSelectorI;
+class IloVarSelectorI;
+ILCGCCHIDINGOFF
+
+// External classes (defined in cp.h or cpext.h)
+class IlcConstraint;
+class IlcConstraintArray;
+class IlcCumulElementVar;
+class IlcFloatArray;
+class IlcFloatExp;
+class IlcFloatVar;
+class IlcFloatVarArray;
+class IlcGoal;
+class IlcIntArray;
+class IlcIntervalSequenceVar;
+class IlcIntervalVar;
+class IlcIntExp;
+class IlcIntSet;
+class IlcIntSetVar;
+class IlcIntSetVarArray;
+class IlcIntTupleSet;
+class IlcIntVar;
+class IlcIntVarArray;
+class IloCP;
+class IloCPHookI;
+class IloGoal;
+class IloSolver;
+
+////////////////////////////////////////////////////////////////////////
+//
+// CUSTOM SEARCH
+//
+////////////////////////////////////////////////////////////////////////
+
+
+class IloIntVarEvalI : public IloExtensibleRttiEnvObjectI {
+ public:
+  
+  IloIntVarEvalI(IloEnv env):
+    IloExtensibleRttiEnvObjectI(env.getImpl()){}
+  
+  virtual IloNum eval(IloCP cp, IloIntVar x) = 0;
+  
+  virtual ~IloIntVarEvalI();
+  ILORTTIDECL
+};
+
+
+class IloIntVarEval {
+  ILOCPVISIBLEHANDLEMINI(IloIntVarEval, IloIntVarEvalI)
+public:
+
+  void end();
+};
+
+
+class IloIntValueEvalI : public IloExtensibleRttiEnvObjectI {
+ public:
+  
+  IloIntValueEvalI(IloEnv env) :
+    IloExtensibleRttiEnvObjectI(env.getImpl()){}
+  
+  virtual IloNum eval(IloCP cp, IloIntVar x, IloInt value) = 0;
+  
+  virtual ~IloIntValueEvalI();
+  ILORTTIDECL
+};
+
+
+class IloIntValueEval {
+  ILOCPVISIBLEHANDLEMINI(IloIntValueEval, IloIntValueEvalI)
+public:
+
+  void end();
+};
+
+
+class IloVarSelector {
+  ILOCPHIDDENHANDLEMINI(IloVarSelector, IloVarSelectorI)
+public:
+
+  void end();
+};
+
+
+typedef IloArray<IloVarSelector> IloVarSelectorArray;
+
+
+IloVarSelector IloSelectSmallest(IloIntVarEval eval);
+
+
+IloVarSelector IloSelectSmallest(IloNum minNumber, IloIntVarEval eval);
+
+
+IloVarSelector IloSelectSmallest(IloIntVarEval eval, IloNum tol);
+
+
+IloVarSelector IloSelectLargest(IloIntVarEval eval);
+
+
+IloVarSelector IloSelectLargest(IloNum minNumber, IloIntVarEval eval);
+
+
+IloVarSelector IloSelectLargest(IloIntVarEval eval, IloNum tol);
+
+
+IloVarSelector IloSelectRandomVar(IloEnv env);
+
+
+class IloValueSelector {
+  ILOCPHIDDENHANDLEMINI(IloValueSelector, IloValueSelectorI)
+public:
+
+  void end();
+};
+
+
+typedef IloArray<IloValueSelector> IloValueSelectorArray;
+
+
+IloValueSelector IloSelectSmallest(IloIntValueEval eval);
+
+
+IloValueSelector IloSelectSmallest(IloNum minNumber, IloIntValueEval eval);
+
+
+IloValueSelector IloSelectSmallest(IloIntValueEval eval, IloNum tol);
+
+
+IloValueSelector IloSelectLargest(IloIntValueEval eval);
+
+
+IloValueSelector IloSelectLargest(IloNum minNumber, IloIntValueEval eval);
+
+
+IloValueSelector IloSelectLargest(IloIntValueEval eval, IloNum tol);
+
+
+IloValueSelector IloSelectRandomValue(IloEnv env);
+
+
+class IloIntVarChooserI : public IloExtensibleRttiEnvObjectI {
+ public:
+
+  IloIntVarChooserI(IloEnv env) :
+    IloExtensibleRttiEnvObjectI(env.getImpl()){}
+
+  virtual IloInt choose(IloCP cp, IloIntVarArray x) = 0;
+  
+  virtual ~IloIntVarChooserI();
+  ILORTTIDECL
+};
+
+
+class IloIntVarChooser {
+  ILOCPVISIBLEHANDLEMINI(IloIntVarChooser, IloIntVarChooserI)
+public:
+
+  IloIntVarChooser(IloVarSelector varSel);
+
+  IloIntVarChooser(IloVarSelectorArray varSelArray);
+
+  IloIntVarChooser(IloEnv env, IloVarSelector varSel);
+
+  IloIntVarChooser(IloEnv env, IloVarSelectorArray varSelArray);
+
+  void end();
+};
+
+
+class IloIntValueChooserI : public IloExtensibleRttiEnvObjectI {
+ public:
+
+  IloIntValueChooserI(IloEnv env) :
+    IloExtensibleRttiEnvObjectI(env.getImpl()){}
+
+  virtual IloInt choose(IloCP cp, IloIntVarArray x, IloInt index) = 0;
+  
+  virtual ~IloIntValueChooserI();
+  ILORTTIDECL
+};
+
+
+class IloIntValueChooser {
+  ILOCPVISIBLEHANDLEMINI(IloIntValueChooser, IloIntValueChooserI)
+public:
+
+  IloIntValueChooser(IloValueSelector valueSel);
+
+  IloIntValueChooser(IloValueSelectorArray valueSelArray);
+
+  IloIntValueChooser(IloEnv env, IloValueSelector valueSel);
+
+  IloIntValueChooser(IloEnv env, IloValueSelectorArray valueSelArray);
+
+  void end();
+};
+
+////////////////////////////////////
+//  IloSearchPhaseI
+
+
+class IloSearchPhase {
+  friend class  IlcStrategyManagerI;
+  ILOCPHIDDENHANDLE(IloSearchPhase, IloSearchPhaseI)
+ public:
+  
+  void end();
+  
+  IloSearchPhase(IloEnv env,
+                 IloIntVarArray vars,
+                 IloIntVarChooser varChooser,
+                 IloIntValueChooser valueChooser);
+
+  
+  IloSearchPhase(IloEnv env,
+                 IloIntVarArray vars);
+  
+  IloSearchPhase(IloEnv env,
+                 IloIntVarChooser varChooser,
+                 IloIntValueChooser valueChooser);
+
+  
+  IloSearchPhase(IloEnv env, IloIntervalVarArray intervalVars);
+
+  
+  IloSearchPhase(IloEnv env, IloIntervalSequenceVarArray sequenceVars);
+
+};
+
+// Undocumented:
+IloSearchPhase IloFixPresenceSearchPhase(IloEnv env, IloIntervalVarArray intervalVars);
+
+
+typedef IloArray<IloSearchPhase> IloSearchPhaseArray;
+
+
+IloIntValueEval IloExplicitValueEval(IloEnv env,
+                                     IloIntArray valueArray,
+                                     IloIntArray evalArray,
+                                     IloNum defaultEval = 0);
+
+IloIntValueEval IloExplicitValueEval(IloEnv env,
+                                     IloIntArray valueArray,
+                                     IloNumArray evalArray,
+                                     IloNum defaultValue = 0);
+
+IloIntValueEval IloValueIndex(IloEnv env,
+                              IloIntArray valueArray,
+                              IloInt defaultEval = -1);
+
+IloIntValueEval IloValue(IloEnv env);
+
+IloIntValueEval IloValueImpact(IloEnv env);
+
+IloIntValueEval IloValueSuccessRate(IloEnv env);
+
+IloIntValueEval IloValueLocalImpact(IloEnv env);
+
+
+IloIntValueEval IloValueLowerObjVariation(IloEnv env);
+
+IloIntValueEval IloValueUpperObjVariation(IloEnv env);
+
+IloIntVarEval IloVarIndex(IloEnv env, IloIntVarArray x, IloInt defaultEval = -1);
+
+IloIntVarEval IloExplicitVarEval(IloEnv env, IloIntVarArray x, IloIntArray evalArray, IloNum defaultEval = 0);
+
+IloIntVarEval IloExplicitVarEval(IloEnv env, IloIntVarArray x, IloNumArray evalArray, IloNum defaultEval = 0);
+
+IloIntVarEval IloDomainMin(IloEnv env);
+
+IloIntVarEval IloDomainMax(IloEnv env);
+
+IloIntVarEval IloDomainSize(IloEnv env);
+
+IloIntVarEval IloVarSuccessRate(IloEnv env);
+
+IloIntVarEval IloVarImpact(IloEnv env);
+
+IloIntVarEval IloVarLocalImpact(IloEnv env, IloInt effort = -1);
+
+IloIntVarEval IloImpactOfLastBranch(IloEnv env);
+
+
+IloIntVarEval IloRegretOnMin(IloEnv env);
+
+IloIntVarEval IloRegretOnMax(IloEnv env);
+
+IloIntVarEval IloVarLowerObjVariation(IloEnv env);
+
+IloIntVarEval IloVarUpperObjVariation(IloEnv env);
+
+////////////////////////////////////////////////////////////////////////
+//
+// ILOCP
+//
+////////////////////////////////////////////////////////////////////////
+  
+
+class IloCP : public IloAlgorithm {
+private:
+  void    _ctor(const IloModel model);
+  void    _ctor(const IloEnv env);
+  void    _abortSearch() const;
+  void    _clearAbort() const;
+  void    _exitSearch() const;
+  void    _fail(IloAny label) const;
+  void    _freeze() const;
+  void    _unfreeze() const;
+  void    _getBounds(const IloIntVar var, IloInt& min, IloInt& max) const;
+  IloInt  _getDegree(const IloIntVar var) const;
+  IlcAllocationStack * _getHeap() const;
+  IloNum  _getImpactOfLastAssignment(const IloIntVar var) const;
+  IloNum  _getImpact(const IloIntVar var) const;
+  IloNum  _getImpact(const IloIntVar var, IloInt value) const;
+  IloNum  _getSuccessRate(const IloIntVar var) const;
+  IloNum  _getSuccessRate(const IloIntVar var, IloInt value) const;
+  IloNum  _getNumberOfFails(const IloIntVar var, IloInt value) const;
+  IloNum  _getNumberOfInstantiations(const IloIntVar var, IloInt value) const;
+  IloNum  _getLocalImpact(const IloIntVar var, IloInt value) const;
+  IloNum  _getLocalVarImpact(const IloIntVar var, IloInt depth) const;
+  IlcFloatArray _getFloatArray(IloNumArray arg) const;
+  IlcIntArray _getIntArray(IloIntArray arg) const;
+  IlcIntArray _getIntArray(IloNumArray arg) const;
+  IloInt  _getMax(const IloIntVar var) const;
+  IloNum  _getMax(const IloNumVar var) const;
+  IloMemoryManager _getReversibleAllocator() const;
+  IloMemoryManager _getSolveAllocator() const;
+  IloMemoryManager _getPersistentAllocator() const;
+  IloInt  _getMin(const IloIntVar var) const;
+  IloNum  _getMin(const IloNumVar var) const;
+  IlcAllocationStack * _getPersistentHeap() const;
+  IlcAllocationStack * _getSolveHeap() const;
+  IloInt  _getRandomInt(IloInt n) const;
+  IloNum  _getRandomNum() const;
+  IloInt  _getReduction(const IloIntVar var) const;
+  IloNum  _getValue(const IloNumVar var) const;
+  IloInt  _getValue(const IloIntVar var) const;
+#ifndef ILCUSELAYER
+  IloIntSet  _getValue(const IloIntSetVar var) const;
+  IloIntSet  _getRequired(const IloIntSetVar var) const;
+  IloIntSet  _getPossible(const IloIntSetVar var) const;
+#endif
+  const char * _getVersion() const;
+  void _getObjValues(IloNumArray values) const;
+  IloNum _getObjValue(IloInt index) const;
+  IloInt _getNumberOfCriteria() const;
+  IloBool _isFixed(const IloIntVar var) const;
+  IloBool _isFixed(const IloNumVar var) const;
+#ifndef ILCUSELAYER
+  IloBool _isFixed(const IloIntSetVar var) const;
+#endif
+  IloBool _isAllFixed() const;
+  IloInt  _getDomainSize(const IloNumVar var) const;
+  IloBool _isInDomain(const IloIntVar var, IloInt value) const;
+  void     _printInformation() const;
+  void     _printInformation(ILOSTD(ostream) & o) const;
+  void     _printPortableInformation() const;
+  void     _printPortableInformation(ILOSTD(ostream) & o) const;
+  void     _printModelInformation() const;
+  void     _printModelInformation(ILOSTD(ostream) & o) const;
+  IloBool _propagate(const IloConstraint ct) const;
+  void    _removeValueBuffered(IloNumVarI * var, IloInt value) const;
+  void    _setMinBuffered(IloNumVarI * var, IloNum min) const;
+  void    _setMaxBuffered(IloNumVarI * var, IloNum max) const;
+  void    _failBuffered() const;
+  void    _setInferenceLevel(IloConstraint ct, IloInt level) const;
+  IloInt  _getInferenceLevel(IloConstraint ct) const;
+  void    _resetConstraintInferenceLevels() const;
+  void    _setSearchPhases() const;
+  void    _setSearchPhases(const IloSearchPhase phase) const;
+  void    _setSearchPhases(const IloSearchPhaseArray phaseArray) const;
+  void    _setStartingPoint(const IloSolution ws) const;
+  void    _clearStartingPoint() const;
+  IloBool _solve(const IloSearchPhaseArray phaseArray) const;
+  IloBool _solve(const IloSearchPhase phase) const;
+  IloBool _solve() const;
+  void    _startNewSearch(const IloSearchPhaseArray phaseArray) const;
+  void    _startNewSearch(const IloSearchPhase phase) const;
+  void    _startNewSearch() const;
+  IloBool  _next() const;
+  void    _endSearch() const;
+  IloArray<IloConstraintArray> _findDisjointConflicts(IloInt conflictLimit) const;
+  IloBool _isInReplay() const;
+  void    _store(IloSolution solution) const;
+  IloBool _restore(IloSolution solution) const;
+  void _saveValue(IloAny * ptr) const;
+  void _saveValue(IloNum * ptr) const;
+  void _setNodeHook(IloCPHookI * hook) const;
+
+  void _printDomain(ILOSTD(ostream)& s, const IloNumVar var) const;
+  void _printDomain(ILOSTD(ostream)& s, const IloNumVarArray vars) const;
+  void _printDomain(ILOSTD(ostream)& s, const IloIntVarArray vars) const;
+#ifndef ILCUSELAYER
+  void _printDomain(ILOSTD(ostream)& s, const IloIntSetVar var) const;
+  void _printDomain(ILOSTD(ostream)& s, const IloIntSetVarArray vars) const;
+#endif
+
+  IloBool _isFixed(const IloCumulFunctionExpr cumul) const;
+  IloInt _getNumberOfSegments(const IloCumulFunctionExpr cumul) const;
+  IloBool _isValidSegment(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloInt _getSegmentStart(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloInt _getSegmentEnd(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloInt _getSegmentValue(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloBool _isValidAbscissa(const IloCumulFunctionExpr cumul, IloInt a) const;
+  IloInt _getValue(const IloCumulFunctionExpr cumul, IloInt a) const;
+
+  IloNum _getNumberOfSegmentsAsNum(const IloCumulFunctionExpr cumul) const;
+  IloNum _getSegmentStartAsNum(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloNum _getSegmentEndAsNum(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloNum _getSegmentValueAsNum(const IloCumulFunctionExpr cumul, IloInt s) const;
+  IloNum _getValueAsNum(const IloCumulFunctionExpr cumul, IloInt a) const;
+  
+  IloBool _isFixed(const IloStateFunction f) const;
+  IloInt _getNumberOfSegments(const IloStateFunction f) const;
+  IloBool _isValidSegment(const IloStateFunction f, IloInt s) const;
+  IloInt _getSegmentStart(const IloStateFunction f, IloInt s) const;
+  IloInt _getSegmentEnd(const IloStateFunction f, IloInt s) const;
+  IloInt _getSegmentValue(const IloStateFunction f, IloInt s) const;
+  IloBool _isValidAbscissa(const IloStateFunction f, IloInt a) const;
+  IloInt _getValue(const IloStateFunction f, IloInt a) const;
+
+  IloNum _getNumberOfSegmentsAsNum(const IloStateFunction f) const;
+  IloNum _getSegmentStartAsNum(const IloStateFunction f, IloInt s) const;
+  IloNum _getSegmentEndAsNum(const IloStateFunction f, IloInt s) const;
+  IloNum _getSegmentValueAsNum(const IloStateFunction f, IloInt s) const;
+  IloNum _getValueAsNum(const IloStateFunction f, IloInt a) const;
+  
+  IloInt _getNumberOfSegments(const IloStateFunctionExpr expr) const;
+  IloInt _getSegmentStart(const IloStateFunctionExpr expr, IloInt s) const;
+  IloInt _getSegmentEnd(const IloStateFunctionExpr expr, IloInt s) const;
+  IloInt _getSegmentValue(const IloStateFunctionExpr expr, IloInt s) const;
+  IloInt _getValue(const IloStateFunctionExpr expr, IloInt a) const;
+
+  IloBool _isAllExtracted(const IloExtractableArray ex) const;
+  IloBool _isAllValid(const IloExtractableArray ex) const;
+  IloBool _hasObjective() const;
+
+  IlcManagerI * _getManagerI() const;
+
+  static void _RegisterXML(IloEnv env);
+public:
+  ///////////////////////////////////////////////////////////////////////////
+  // Parameters
+  ///////////////////////////////////////////////////////////////////////////
+
+  enum IntParam {
+    
+    DefaultInferenceLevel = 1,
+    
+    AllDiffInferenceLevel = 2,
+    
+    DistributeInferenceLevel = 3,
+    
+    CountInferenceLevel = 4,
+    
+    SequenceInferenceLevel = 5,
+    
+    AllMinDistanceInferenceLevel = 6,
+    
+    ElementInferenceLevel = 7,
+
+    
+    ConstraintAggregation = 8,
+
+    
+    FailLimit = 9,
+    
+    ChoicePointLimit = 10,
+
+    
+    LogVerbosity = 11,
+    
+    LogPeriod = 12,
+
+    
+     SearchType = 13,
+
+    
+    RandomSeed = 14,
+    
+    RestartFailLimit = 15,
+
+    
+    MultiPointNumberOfSearchPoints = 16,
+
+    
+    MultiPointEncodingPercentage = 17,
+    
+    ImpactMeasures = 18,
+
+    // Hole of size 3: can be filled later
+
+    
+    PackApproximationSize = 22,
+    
+    StrictNumericalDivision = 23,
+    
+    FloatDisplay = 24,
+
+    
+    Workers = 25,
+  
+    PropagationLog = 27,
+
+    
+    BranchLimit = 28,
+
+    
+
+    AutomaticReplay = 29,
+
+    
+    SeedRandomOnSolve = 30,
+    
+    TraceExtraction = 31,
+    
+    DynamicProbing = 32,
+
+    
+    ConflictLimit = 33,
+    
+    TimeDisplay = 34,
+
+    
+    SolutionLimit = 35,
+
+    
+    PresolveLevel = 36,
+    
+    ObjectiveLimit = 37,
+
+    
+    PrecedenceInferenceLevel = 38,
+
+    
+    IntervalSequenceInferenceLevel = 39,
+
+   
+    NoOverlapInferenceLevel = 40,
+
+   
+    CumulFunctionInferenceLevel = 41,
+
+   
+     StateFunctionInferenceLevel = 42,
+
+    
+    TimeMode = 43,
+
+    
+    TemporalRelaxation = 44,
+
+    // Undocumented
+    
+    TemporalRelaxationLevel = 45,
+    
+    TemporalRelaxationRowLimit = 46,
+    
+    TemporalRelaxationIterationLimit = 47,
+    
+    SearchConfiguration = 48,
+    
+    SequenceExpressionInferenceLevel = 50,
+    
+    StateFunctionTriangularInequalityCheck = 51,
+    
+    TemporalRelaxationUsesEnergyEnvelopes = 52,
+    
+    IntervalSolutionPoolCapacity = 53,
+    
+    TTEF = 54,
+    
+    TemporalRelaxationAlgorithm = 55,
+    
+    RestartTimeMeasurement = 56,
+    
+    MultiPointMaximumFailLimit = 57,
+    
+    MultiPointDisableLamarckism = 58,
+    
+    ParallelWorkerStackSize = 59,
+
+    
+    Presolve = 60,
+    
+    
+     ConflictRefinerIterationLimit =61,
+     
+    
+     ConflictRefinerBranchLimit =62,
+     
+    
+     ConflictRefinerFailLimit =63,
+     
+    
+    ConflictRefinerOnVariables =64,
+    
+    
+    ConflictRefinerOnLabeledConstraints = 65,
+    
+    
+    ConflictRefinerAlgorithm = 66,
+    
+    
+    TimetablingAlgorithm = 67,
+
+    
+    PresolveTransformers = 68,
+    
+    EliminatePresolvedModel = 69
+  };
+
+  
+
+  enum NumParam {
+    
+    OptimalityTolerance = 1001,
+    
+    RelativeOptimalityTolerance,
+    
+    TimeLimit,
+    
+    RestartGrowthFactor,
+    
+    DynamicProbingStrength,
+    
+    LowerBoundEffort,
+    
+    RestartProofEmphasis,
+    
+    MultiPointPropagationLimitFactor,
+    
+    RestartPropagationLimitFactor,
+    
+    ParallelRestartProp,
+    
+    MultiPointLearningRatio,
+    
+     ConflictRefinerTimeLimit
+  };
+
+  
+  enum IntInfo {
+    
+    NumberOfChoicePoints = 1,
+    
+    NumberOfFails = 2,
+    
+    NumberOfBranches = 3,
+    
+    NumberOfModelVariables = 4,
+    
+    NumberOfAuxiliaryVariables = 5,
+    
+    NumberOfVariables = 6,
+    
+    NumberOfConstraints = 7,
+    
+    MemoryUsage = 8,
+    
+    NumberOfConstraintsAggregated = 9,
+    
+    NumberOfConstraintsGenerated = 10,
+    
+    FailStatus = 11,
+    
+    NumberOfIntegerVariables = 12,
+    
+    NumberOfIntervalVariables = 13,
+    
+    NumberOfSequenceVariables = 14,
+    
+    NumberOfSolutions = 15,
+    
+    EffectiveWorkers = 16,
+    
+     EffectiveDepthFirstWorkers = 17,
+    
+    EffectiveMultiPointWorkers = 18,
+    
+     EffectiveRestartWorkers = 19
+  };
+  
+  enum NumInfo {
+    
+    SolveTime = 1001,
+    
+    ExtractionTime = 1002,
+    
+    TotalTime = 1003,
+    
+    EffectiveOptimalityTolerance = 1004,
+    
+    DepthFirstIdleTime = 1005,
+    
+     RestartIdleTime = 1006,
+    
+     MultiPointIdleTime = 1007,
+    
+     NumberOfWorkerRendezVous = 1008,
+    
+    PresolveTime = 1009
+  };
+
+  
+  enum ParameterValues {
+    // Auto
+    Auto     = -1,
+
+    // On / Off
+    Off      = 0,
+    On       = 1,
+
+    // Inference levels
+    Default,
+    Low,
+    Basic,
+    Medium,
+    Extended,
+
+    // Float display
+    Standard,
+    IntScientific,
+    IntFixed,
+    BasScientific,
+    BasFixed,
+
+    // Failure status
+    SearchHasNotFailed,
+    SearchHasFailedNormally,
+    SearchStoppedByLimit,
+    SearchStoppedByLabel,
+    SearchStoppedByExit,
+    SearchStoppedByAbort,
+    SearchStoppedByException,
+    UnknownFailureStatus,
+
+    // Log verbosity
+    Quiet,
+    Terse,
+    Normal,
+    Verbose,
+
+    // Search type
+    DepthFirst,
+    Restart,
+    MultiPoint,
+
+    // Parallelism type
+    Diverse,
+    Focused,
+    Intensive,
+
+    // Time display format
+    Seconds,
+    HMS,
+    NoTime,
+
+    // Time mode
+    CPUTime,
+    ElapsedTime
+  };
+
+private:
+  void   _setParameter(IloInt param, IloNum value) const;
+  void   _setParameter(const char * name, IloNum value) const;
+  void   _setParameter(const char * name, const char * value) const;
+
+  IloNum _getParameter(IloInt param) const;
+  IloNum _getParameter(const char * name) const;
+
+  IloNum _getParameterDefault(IloInt param) const;
+  IloNum _getParameterDefault(const char * name) const;
+
+  IloNum _getInfo(IloInt info) const;
+  IloNum _getInfo(const char * name) const;
+public:
+  
+  void setIntParameter(IloCP::IntParam param, IloNum value) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _setParameter(IloInt(param), value);
+  }
+  
+  IloNum getIntParameter(IloCP::IntParam param) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _getParameter(IloInt(param));
+  }
+  
+  IloNum getIntParameterDefault(IloCP::IntParam param) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _getParameterDefault(IloInt(param));
+  }
+  
+  IloNum getIntInfo(IloCP::IntInfo info) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _getInfo(IloInt(info));
+  }
+
+public:
+  
+  void setParameter(IloCP::IntParam param, IloInt value) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _setParameter(IloInt(param), value);
+  }
+  
+  IloInt getParameter(IloCP::IntParam param) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return IloInt(_getParameter(IloInt(param)));
+  }
+  
+  IloInt getParameterDefault(IloCP::IntParam param) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return IloInt(_getParameterDefault(IloInt(param)));
+  }
+  
+  void setParameter(IloCP::NumParam param, IloNum value) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _setParameter(IloInt(param), value);
+  }
+  
+  void setParameter(const char * name, IloNum value) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(name  != 0, "IloCP::setParameter - empty name");
+    _setParameter(name, value);
+  }
+  
+  void setParameter(const char * name, const char * value) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(name  != 0, "IloCP::setParameter - empty name");
+    IlcAssert(value != 0, "IloCP::setParameter - empty value");
+    _setParameter(name, value);
+  }
+  
+  IloNum getParameter(IloCP::NumParam param) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _getParameter(IloInt(param));
+  }
+  
+  IloNum getParameter(const char * name) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(name  != 0, "IloCP::getParameter - empty name");
+    return _getParameter(name);
+  }
+  
+  IloNum getParameterDefault(IloCP::NumParam param) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _getParameterDefault(IloInt(param));
+  }
+  IloNum getParameterDefault(const char * name) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(name  != 0, "IloCP::getParameterDefault - empty name");
+    return _getParameterDefault(name);
+  }
+
+  
+  IloInt getInfo(IloCP::IntInfo info) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return IloInt(_getInfo(IloInt(info)));
+  }
+  
+  IloNum getInfo(IloCP::NumInfo info) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _getInfo(IloInt(info));
+  }
+  IloNum getInfo(const char * name) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(name  != 0, "IloCP::getNumInfo - empty name");
+    return _getInfo(name);
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Constructors, extraction and related methods
+  ///////////////////////////////////////////////////////////////////////////
+
+  IloCP(const IloEnv env) {
+    IlcAssert(env.getImpl() != 0, "IloEnv: empty handle");
+    _ctor(env);
+  }
+
+  IloCP(const IloModel model) {
+    IlcAssert(model.getImpl() != 0, "IloModel: empty handle");
+    _ctor(model);
+  }
+#ifdef CPPREF_GENERATION
+
+void extract (const IloModel model) const;
+
+ IloBool isExtracted(const IloExtractable ext) const;
+
+ void end();
+#endif
+  
+  IloCPI * getImpl() const {
+    return (IloCPI*)_impl;
+  }
+  
+  IloCP(IloCPI * impl=0) : IloAlgorithm((IloAlgorithmI *)impl) { }
+
+  IloBool isAllExtracted(const IloExtractableArray ext) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(ext.getImpl() != 0, "IloExtractableArray: empty handle");
+    return _isAllExtracted(ext);
+  }
+  IloBool isAllValid(const IloExtractableArray ext) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(ext.getImpl() != 0, "IloExtractableArray: empty handle");
+    return _isAllValid(ext);
+  }
+  
+  IloBool hasObjective() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _hasObjective();
+  }
+  ///////////////////////////////////////////////////////////////////////////
+  // Solving
+  ///////////////////////////////////////////////////////////////////////////
+  
+  void setSearchPhases(){
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _setSearchPhases();
+  }
+  
+  void setSearchPhases(IloSearchPhase phase){
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(phase.getImpl() != 0, "IloSearchPhase: empty handle");
+    return _setSearchPhases(phase);
+  }
+  
+  void setSearchPhases(IloSearchPhaseArray phaseArray){
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(phaseArray.getImpl() != 0, "IloSearchPhaseArray: empty handle");
+    return _setSearchPhases(phaseArray);
+  }
+
+  
+  void setStartingPoint(const IloSolution sp) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(sp.getImpl() != 0, "IloSolution: empty handle");
+    _setStartingPoint(sp);
+  }
+
+  
+  void clearStartingPoint() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _clearStartingPoint();
+  }
+
+  
+  IloBool solve(const IloGoal goal) const;
+  
+  IloBool solve() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _solve();
+  }
+  
+  IloBool solve(const IloSearchPhaseArray phaseArray) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(phaseArray.getImpl() != 0, "IloSearchPhaseArray: empty handle");
+    return _solve(phaseArray);
+  }
+  
+  IloBool solve(const IloSearchPhase phase) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(phase.getImpl() != 0, "IloSearchPhase: empty handle");
+    return _solve(phase);
+  }
+  
+  void startNewSearch(const IloGoal goal) const;
+   
+  void startNewSearch() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _startNewSearch();
+  }
+  
+  void startNewSearch(const IloSearchPhaseArray phaseArray) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(phaseArray.getImpl() != 0, "IloSearchPhaseArray: empty handle");
+    _startNewSearch(phaseArray);
+  }
+  
+  void startNewSearch(const IloSearchPhase phase) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(phase.getImpl() != 0, "IloSearchPhase: empty handle");
+    _startNewSearch(phase);
+  }
+  
+  IloBool next() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _next();
+  }
+  IloBool isInReplay() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _isInReplay();
+  }
+  
+  void endSearch() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _endSearch();
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Conflict refiner
+  ///////////////////////////////////////////////////////////////////////////
+  
+  
+  enum ConflictStatus {
+    
+    ConflictPossibleMember =0,
+    
+    ConflictMember =1,
+    
+    ConflictExcluded =2
+  };
+  
+  IloBool refineConflict() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _refineConflict();
+  }
+  
+  IloBool refineConflict(IloConstraintArray csts) {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(csts.getImpl() != 0, "IloConstraintArray: empty handle");
+    return _refineConflict(csts);
+  }
+  
+  IloBool refineConflict(IloConstraintArray csts, IloNumArray prefs) {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(csts.getImpl() != 0, "IloConstraintArray: empty handle");
+    IlcAssert(prefs.getImpl() != 0, "IloNumArray: empty handle");
+    IlcAssert(csts.getSize()==prefs.getSize(), "IloCP::refineConflict: constraint and preference arrays have different size");
+    return _refineConflict(csts, prefs);
+  }
+  
+  IloBool refineConflict(IloSolution sol) {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(sol.getImpl() != 0, "IloSolution: empty handle");
+    return _refineConflict(sol);
+  }
+  
+  IloCP::ConflictStatus getConflict(IloConstraint cst) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(cst.getImpl() != 0, "IloConstraint: empty handle");
+    IlcAssert(_hasConflict(), "IloCP::getConflict: no available conflict");
+    return _getConflict(cst);
+  }
+  
+  IloCP::ConflictStatus getConflict(IloNumVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(_hasConflict(), "IloCP::getConflict: no available conflict");
+    return _getConflict(var);
+  }
+  
+  IloCP::ConflictStatus getConflict(IloIntervalVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntervalVar: empty handle");
+    IlcAssert(_hasConflict(), "IloCP::getConflict: no available conflict");
+    return _getConflict(var);
+  }
+  
+  IloInt getIntConflict(IloConstraint cst) const {
+    return (IloInt)getConflict(cst);
+  }
+  
+  IloInt getIntConflict(IloNumVar var) const {
+    return (IloInt)getConflict(var);
+  }
+  
+  IloInt getIntConflict(IloIntervalVar var) const {
+    return (IloInt)getConflict(var);
+  }
+  
+  typedef IloArray<IloCP::ConflictStatus> ConflictStatusArray;
+  void getConflictArray(IloConstraintArray& csts, IloCP::ConflictStatusArray& statuses) const {
+    IlcAssert(csts.getImpl() != 0, "IloConstraintArray: empty handle");
+    IlcAssert(statuses.getImpl() != 0, "IloCP::ConflictStatusArray: empty handle");
+    _getConflictArray(csts, statuses);
+  }
+  
+  
+  void writeConflict(ILOSTD(ostream)& str) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(_hasConflict(), "IloCP::writeConflict: no available conflict");
+    return _writeConflict(str);
+  }
+
+private:
+  IloBool _refineConflict() const;
+  IloBool _refineConflict(IloConstraintArray csts) const;
+  IloBool _refineConflict(IloConstraintArray csts, IloNumArray prefs) const;
+  IloBool _refineConflict(IloSolution sol) const;
+  IloCP::ConflictStatus _getConflict(IloConstraint cst) const;
+  IloCP::ConflictStatus _getConflict(IloNumVar var) const;
+  IloCP::ConflictStatus _getConflict(IloIntervalVar var) const;
+  void _getConflictArray(IloConstraintArray& csts, IloCP::ConflictStatusArray& statuses) const;
+  void _writeConflict(ILOSTD(ostream)& str) const;
+  IloBool _hasConflict() const;
+  
+public:
+  IloArray<IloConstraintArray> findDisjointConflicts(IloInt limit = IloIntMax) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(limit >= 0, "IloCP::findDisjointConflicts - conflict limit is negative");
+    return _findDisjointConflicts(IloMax(limit, 1));
+  }
+  
+  IloBool propagate(const IloConstraint constraint = 0) {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    return _propagate(constraint);
+  }
+  
+  void store(IloSolution solution) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(solution.getImpl() != 0, "IloSolution: empty handle");
+    _store(solution);
+  }
+  
+  IloBool restore(IloSolution solution) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(solution.getImpl() != 0, "IloSolution: empty handle");
+    return _restore(solution);
+  }
+  
+  void printInformation() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _printInformation();
+  }
+  
+  void printInformation(ILOSTD(ostream)& stream) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _printInformation(stream);
+  }
+
+  void printPortableInformation() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _printPortableInformation();
+  }
+  void printPortableInformation(ILOSTD(ostream)& stream) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _printPortableInformation(stream);
+  }
+
+  void printModelInformation() const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _printModelInformation();
+  }
+  void printModelInformation(ILOSTD(ostream)& stream) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _printModelInformation(stream);
+  }
+
+  void printDomain(const IloNumVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(var), "IloNumVar: not extracted");
+    _printDomain(out(), var);
+  }
+  void printDomain(ILOSTD(ostream)& s, const IloNumVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(var), "IloNumVar: not extracted");
+    _printDomain(s, var);
+  }
+  void printDomain(ILOSTD(ostream)& s, const IloNumVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloNumVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloNumVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloNumVarArray: element not extracted");
+    _printDomain(s, vars);
+  }
+  void printDomain(const IloNumVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloNumVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloNumVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloNumVarArray: element not extracted");
+    _printDomain(out(), vars);
+  }
+  void printDomain(ILOSTD(ostream)& s, const IloIntVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloIntVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloIntVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloIntVarArray: element not extracted");
+    _printDomain(s, vars);
+  }
+  void printDomain(const IloIntVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloIntVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloIntVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloIntVarArray: element not extracted");
+    _printDomain(out(), vars);
+  }
+#ifndef ILCUSELAYER
+  void printDomain(ILOSTD(ostream)& s, const IloIntSetVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    _printDomain(s, var);
+  }
+  void printDomain(const IloIntSetVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    _printDomain(out(), var);
+  }
+  void printDomain(ILOSTD(ostream)& s, const IloIntSetVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloIntSetVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloIntSetVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloIntSetVarArray: element not extracted");
+    _printDomain(s, vars);
+  }
+  void printDomain(const IloIntSetVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloIntSetVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloIntSetVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloIntSetVarArray: element not extracted");
+    _printDomain(out(), vars);
+  }
+#endif
+
+  class PrintDomains {
+  protected:
+    const void*        _cp;
+    IloInt             _n;
+    IloExtractableI ** _var;
+
+    PrintDomains() { }
+    PrintDomains(const IloCP cp, const IloExtractable ext);
+    PrintDomains(const IloCP cp, const IloExtractableArray ext);
+    PrintDomains(const PrintDomains &);
+  public:
+    ~PrintDomains();
+  };
+
+  class PrintNumVarDomains : public PrintDomains {
+    friend class IloCP;
+  private:
+    void operator = (const PrintNumVarDomains &);
+
+    PrintNumVarDomains(const IloCP cp, const IloNumVar var);
+    PrintNumVarDomains(const IloCP cp, const IloNumVarArray var);
+    PrintNumVarDomains(const IloCP cp, const IloIntVarArray var);
+  public:
+    void display(ILOSTD(ostream)& o) const;
+  };
+
+#ifndef ILCUSELAYER
+  class PrintIntSetVarDomains : public PrintDomains {
+    friend class IloCP;
+  private:
+    void operator = (const PrintIntSetVarDomains &);
+
+    PrintIntSetVarDomains(const IloCP cp, const IloIntSetVar var);
+    PrintIntSetVarDomains(const IloCP cp, const IloIntSetVarArray var);
+  public:
+    void display(ILOSTD(ostream)& o) const;
+  };
+#endif
+
+  
+    PrintNumVarDomains domain(const IloNumVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(var), "IloNumVar: not extracted");
+    return PrintNumVarDomains(*this, var);
+  }
+  
+    PrintNumVarDomains domain(const IloNumVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloNumVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloNumVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloNumVarArray: element not extracted");
+    return PrintNumVarDomains(*this, vars);
+  }
+  
+  PrintNumVarDomains domain(const IloIntVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloIntVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloIntVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloIntVarArray: element not extracted");
+    return PrintNumVarDomains(*this, vars);
+  }
+#ifndef ILCUSELAYER
+  // NO DOC
+  PrintIntSetVarDomains domain(const IloIntSetVar var) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    return PrintIntSetVarDomains(*this, var);
+  }
+  // NO DOC
+  PrintIntSetVarDomains domain(const IloIntSetVarArray vars) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(vars.getImpl() != 0, "IloIntSetVarArray: empty handle");
+    IlcAssert(isAllValid(vars), "IloIntSetVarArray: empty element handle");
+    IlcAssert(isAllExtracted(vars), "IloIntSetVarArray: element not extracted");
+    return PrintIntSetVarDomains(*this, vars);
+  }
+#endif
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Hooks
+  ///////////////////////////////////////////////////////////////////////////
+  void setNodeHook(IloCPHookI * hook = 0) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    _setNodeHook(hook);
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Getting solution information
+  ///////////////////////////////////////////////////////////////////////////
+  // Mimic IloAlgorithm as CP Optimizer has its own getValue functions
+  
+  void getObjValues(IloNumArray values) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(values.getImpl() != 0, "IloNumArray: empty handle");
+    return _getObjValues(values);
+  }
+  
+  IloInt getNumberOfCriteria() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getNumberOfCriteria();
+  }
+  
+  IloNum getObjValue(IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(i >= 0, "IloCP: Objective value index is negative");
+    IlcAssert(i < _getNumberOfCriteria(),
+              "IloCP: Objective value index is too large");
+    return _getObjValue(i);
+  }
+  IloNum getObjValue() const { return IloAlgorithm::getObjValue(); }
+  
+  IloNum getValue(const IloObjective obj) const {
+    return IloAlgorithm::getValue(obj);
+  }
+  
+  IloNum getValue(const IloNumExprArg expr) const {
+    return IloAlgorithm::getValue(expr);
+  }
+
+  
+  IloNum getValue(const IloNumVar v) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(v.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(v), "IloNumVar: not extracted");
+    IlcAssert(isFixed(v), "IloNumVar: not fixed");
+    return _getValue(v);
+  }
+  
+  IloInt getValue(const IloIntVar v) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(v.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(v), "IloIntVar: not extracted");
+    IlcAssert(isFixed(v), "IloIntVar: not fixed");
+    return _getValue(v);
+  }
+  // 2.0b1
+  IloAny getAnyValue(const IloIntVar v) const { return (IloAny)getValue(v); }
+  
+  IloNum getMin(const IloNumVar v) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(v.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(v), "IloNumVar: not extracted");
+    return _getMin(v);
+  }
+  
+  IloNum            getMax(const IloNumVar v) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(v.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(v), "IloNumVar: not extracted");
+    return _getMax(v);
+  }
+  
+  IloInt            getMax(const IloIntVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntVar: not extracted");
+    return _getMax(var);
+  }
+  
+  IloInt            getMin(const IloIntVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntVar: not extracted");
+    return _getMin(var);
+  }
+  void getBounds(const IloIntVar var, IloInt& min, IloInt& max) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntVar: not extracted");
+    _getBounds(var, min, max);
+  }
+   
+  IloBool isInDomain(const IloNumVar var, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(var), "IloNumVar: not extracted");
+    IlcAssert(var.getType() != ILOFLOAT, "IloNumVar: not integer");
+    return _isInDomain(IloIntVar(var.getImpl()), value);
+  }
+  
+  IloBool isInDomain(const IloIntVar var, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntVar: not extracted");
+    return _isInDomain(var, value);
+  }
+  
+  IloInt getDomainSize(const IloNumVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNUmVar: empty handle");
+    IlcAssert(isExtracted(var), "IloNumVar: not extracted");
+    IlcAssert(var.getType() != ILOFLOAT, "IloNumVar: not integer");
+    return _getDomainSize(var);
+  }
+  
+  IloBool isFixed(const IloNumVar var) const  {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(isExtracted(var), "IloNumVar: not extracted");
+    return _isFixed(var);
+  }
+  
+  IloBool isFixed(const IloIntVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntVar: not extracted");
+    return _isFixed(var);
+  }
+  IloBool isAllFixed() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _isAllFixed();
+  }
+#ifndef ILCUSELAYER
+  
+  IloBool isFixed(const IloIntSetVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    return _isFixed(var);
+  }
+  
+  IloIntSet getValue(const IloIntSetVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    IlcAssert(isFixed(var), "IloIntSetVar: not extracted");
+    return _getValue(var);
+  }
+  
+  IloIntSet getRequired(const IloIntSetVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    return _getRequired(var);
+  }
+  
+  IloIntSet getPossible(const IloIntSetVar var) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntSetVar: empty handle");
+    IlcAssert(isExtracted(var), "IloIntSetVar: not extracted");
+    return _getPossible(var);
+  }
+#endif
+  
+  class IntVarIterator {
+  private:
+    void*        _var;
+    IloInt       _curr;
+    IloBool      _ok;
+
+    void _init(IloCP cp, IloIntVar var);
+  public:
+    IntVarIterator() : _var(0) {}
+    
+    IntVarIterator(IloCP cp, IloIntVar var) {
+      IlcAssert(cp.getImpl() != 0, "IloCP: empty handle");
+      IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+      _init(cp, var);
+    }
+    
+    IntVarIterator(IloCP cp, IloNumVar var) {
+      IlcAssert(cp.getImpl() != 0, "IloCP: empty handle");
+      IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+      IlcAssert(var.getType() != ILOFLOAT, "IloNumVar: not integer");
+      _init(cp, IloIntVar(var.getImpl()));
+    }
+    
+    IntVarIterator& operator++();
+    
+    IloInt operator*() const { return _curr; }
+    // 2.0b1
+    IloAny getAnyValue() const { return (IloAny)_curr; }
+    
+    IloBool ok() const { return _ok; }
+  };
+  
+  IloCP::IntVarIterator iterator(IloIntVar var) {
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    return IloCP::IntVarIterator(*this, var);
+  }
+  
+  IloCP::IntVarIterator iterator(IloNumVar var) {
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    IlcAssert(var.getType() != ILOFLOAT, "IloNumVar: not integer");
+    return IloCP::IntVarIterator(*this, var);
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Search information
+  ///////////////////////////////////////////////////////////////////////////
+  
+  IloInt getReduction(const IloIntVar x) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getReduction(x);
+  }
+  
+  IloNum getImpactOfLastAssignment(const IloIntVar x) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getImpactOfLastAssignment(x);
+  }
+  
+  IloNum getImpact(const IloIntVar x) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getImpact(x);
+  }
+  
+  IloNum getImpact(const IloIntVar x, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getImpact(x, value);
+  }
+  
+  IloNum getSuccessRate(const IloIntVar x) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getSuccessRate(x);
+  }
+  
+  IloNum getSuccessRate(const IloIntVar x, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getSuccessRate(x, value);
+  }
+  IloNum getNumberOfFails(const IloIntVar x, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getNumberOfFails(x, value);
+  }
+  IloNum getNumberOfInstantiations(const IloIntVar x, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getNumberOfInstantiations(x, value);
+  }
+  IloNum getLocalImpact(const IloIntVar x, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getLocalImpact(x, value);
+  }
+  IloNum getLocalVarImpact(const IloIntVar x, IloInt depth) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(x.getImpl() != 0, "IloIntVar: empty handle");
+    IlcAssert(isExtracted(x), "IloIntVar: not extracted");
+    return _getLocalVarImpact(x, depth);
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Services
+  ///////////////////////////////////////////////////////////////////////////
+  
+  IloInt getRandomInt(IloInt n) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(n >= 1, "IloCP::getRandomInt(n): n < 1");
+    return _getRandomInt(n);
+  }
+  
+  IloNum getRandomNum() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getRandomNum();
+  }
+  
+  const char* getVersion() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getVersion();
+  }
+  static const char* GetVersion();
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Advanced: Ilc mapping
+  //           No inlining here to avoid Ilc/Ilo world crossover
+  ///////////////////////////////////////////////////////////////////////////
+  
+  IlcIntVar getIntVar(const IloNumVar var) const;
+  IlcIntVar getIntVar(const IloIntVar var) const;
+  IlcIntVar getIntVar(const IloNumVarI* var) const;
+  
+  IlcIntervalVar getInterval(const IloIntervalVar var) const;
+  
+  IlcCumulElementVar getCumulElement(const IloCumulFunctionExpr f) const;
+  
+  IlcIntervalSequenceVar getIntervalSequence(const IloIntervalSequenceVar s) const;
+  
+  IlcIntArray getIntArray(const IloNumArray arg) const;
+   
+  IlcIntArray getIntArray(const IloIntArray arg) const;
+  
+  IlcFloatArray getFloatArray(const IloNumArray arg) const;
+  
+  IlcIntSet getIntSet(const IloIntSet arg) const;
+  
+  IlcIntSet getIntSet(const IloNumSet arg) const;
+  
+  IlcFloatVar getFloatVar(const IloNumVar var) const;
+  
+  IlcIntVarArray getIntVarArray(const IloIntVarArray vars) const;
+  
+  IlcIntVarArray getIntVarArray(const IloNumVarArray vars) const;
+  IlcIntVarArray getIntVarArray(const IloIntExprArray exps) const;
+   
+  IlcFloatVarArray getFloatVarArray(const IloNumVarArray vars) const;
+#ifndef ILCUSELAYER
+  
+  IlcIntSetVar getIntSetVar(const IloIntSetVar var) const;
+  
+  IlcIntSetVarArray getIntSetVarArray(const IloIntSetVarArray vars) const;
+#endif
+  
+  ILCDEPRECATED IlcIntExp getIntExp(const IloIntExprArg expr) const;
+  
+  ILCDEPRECATED IlcFloatExp getFloatExp(const IloNumExprArg expr) const;
+  
+  IlcIntTupleSet getIntTupleSet(const IloIntTupleSet ts) const;
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Advanced
+  ///////////////////////////////////////////////////////////////////////////
+  
+  void startNewSearch(const IlcGoal goal) const;
+  
+  void fail(IloAny label=0) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _fail(label);
+  }
+  void freeze() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _freeze();
+  }
+  void unfreeze() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _unfreeze();
+  }
+  
+  IloBool solve(const IlcGoal goal, IloBool restore = IloFalse) const;
+  
+  void add(const IlcConstraint constraint) const;
+  
+  void add(const IlcConstraintArray constraints) const;
+  
+  IlcAllocationStack * getHeap() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getHeap();
+  }
+  
+  IlcRandom getRandom() const;
+  void setInferenceLevel(IloConstraint ct, IloInt level) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(ct.getImpl() != 0, "IloConstraint: empty handle");
+    _setInferenceLevel(ct, level);
+  }
+  IloInt getInferenceLevel(IloConstraint ct) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getInferenceLevel(ct);
+  }
+  void resetInferenceLevels() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _resetConstraintInferenceLevels();
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Low-level, advanced
+  ///////////////////////////////////////////////////////////////////////////
+  // No wrapping
+  void saveValue(IloAny * ptr) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(ptr != 0, "IloCP: saveValue must receive non-null pointer");
+    _saveValue(ptr);
+  }
+  // No wrapping
+  void saveValue(IloInt * ptr) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(ptr != 0, "IloCP: saveValue must receive non-null pointer");
+    _saveValue((IloAny*)ptr);
+  }
+  // No wrapping
+  void saveValue(IloNum * ptr) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(ptr != 0, "IloCP: saveValue must receive non-null pointer");
+    _saveValue(ptr);
+  }
+  
+  void abortSearch() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _abortSearch();
+  }
+  
+  void clearAbort() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _clearAbort();
+  }
+  
+  void exitSearch() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _exitSearch();
+  }
+  
+  IlcAllocationStack* getPersistentHeap() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getPersistentHeap();
+  }
+  
+  void addReversibleAction(const IlcGoal goal) const;
+
+  // For propagator
+  void failBuffered() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    _failBuffered();
+  }
+  void removeValueBuffered(IloNumVarI * var, IloInt value) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var != 0, "IloNumVar: empty handle");
+    IlcAssert(var->getType() != ILOFLOAT, "IloNumVar: not integer");
+    _removeValueBuffered(var, value);
+  }
+  void setMinBuffered(IloNumVarI * var, IloNum min) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var != 0, "IloNumVar: empty handle");
+    _setMinBuffered(var, min);
+  }
+  void setMaxBuffered(IloNumVarI * var, IloNum max) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(var != 0, "IloNumVar: empty handle");
+    _setMaxBuffered(var, max);
+  }
+  IloBool isInteger(IloNumVar var) const {
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    return var.getType() != ILOFLOAT;
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Exceptions
+  ///////////////////////////////////////////////////////////////////////////
+ 
+ class Exception : public IloAlgorithm::Exception {
+    IloInt _status;
+  public:
+    Exception(int status, const char* str);
+    IloInt getStatus() const { return _status; }
+  };
+  class NoLicense : public Exception {
+  public:
+    NoLicense(const char* msg)
+      : IloCP::Exception(-1, msg) { }
+  };
+
+  class MultipleObjException : public Exception {
+    IloObjective _obj;
+  public:
+    MultipleObjException(IloObjective obj)
+      :IloCP::Exception(-1, "IloCP can not handle multiple objectives")
+      , _obj(obj) {}
+    IloObjective getObj() const { return _obj; }
+  };
+
+  class GetObjValueNotSupportedException : public Exception {
+    IloObjective _obj;
+  public:
+    GetObjValueNotSupportedException()
+      :IloCP::Exception(-1, "IloCP::getValue only supported for "
+                            "simple or static lexicographic objectives") { }
+  };
+
+  class MultipleSearchException : public Exception {
+  public:
+    MultipleSearchException()
+      : IloCP::Exception(-1, "IloCP can not handle multiple searchs"){
+    }
+  };
+
+  class InvalidDiffException : public Exception {
+    IloDiff _diff;
+  public:
+    InvalidDiffException(IloDiff diff)
+      : IloCP::Exception(-1, "Invalid IloDiff constraint for IloCP (can only uses integer expressions)")
+      , _diff(diff) {}
+    IloDiff getDiff() const { return _diff; }
+  };
+
+  class InvalidSequenceConstraintException : public Exception {
+    IloIntervalSequenceVar _seq;
+    IloIntervalVar _itv;
+  public:
+    InvalidSequenceConstraintException(IloIntervalSequenceVar seq, IloIntervalVar itv)
+      : IloCP::Exception(-1, "Invalid IloFirst, IloLast, IloBefore or IloPrevious constraint for IloCP (constraint must hold on interval variables of the sequence)")
+      , _seq(seq), _itv(itv) {}
+    IloIntervalSequenceVar getSequenceVariable() const { return _seq; }
+    IloIntervalVar getIntervalVariable() const { return _itv; }
+  };
+
+  class SolverErrorException : public Exception {
+    const char* _function;
+    IloInt _errorType;
+  public:
+    SolverErrorException(const char* function, const char* str, IloInt er)
+      : IloCP::Exception(-1, str), _function(function),
+      _errorType(er) {}
+    virtual void print(ILOSTD(ostream)& o) const;
+    const char* getFunction() const { return _function; }
+    IloInt getErrorType() const { return _errorType; }
+  };
+
+  class SolverErrorExceptionInt : public SolverErrorException {
+    const IloInt _value;
+  public:
+    SolverErrorExceptionInt(const char* function,
+                            const char* str,
+                            IloInt e,
+                            IloInt value) :
+      IloCP::SolverErrorException(function, str, e), _value(value) {}
+
+    virtual void print(ILOSTD(ostream)& o) const;
+    IloInt getValue() const { return _value; }
+  };
+  class SolverErrorExceptionIntInt : public SolverErrorExceptionInt {
+    const IloInt _value2;
+  public:
+    SolverErrorExceptionIntInt(const char* function,
+                               const char* str,
+                               IloInt e,
+                               IloInt value,
+                               IloInt value2) :
+      IloCP::SolverErrorExceptionInt(function, str, e, value),
+      _value2(value2) {}
+
+    virtual void print(ILOSTD(ostream)& o) const;
+    IloInt getValue2() const { return _value2; }
+  };
+
+  class SolverErrorExceptionFloat : public SolverErrorException {
+    const IloNum _value;
+  public:
+    SolverErrorExceptionFloat(const char* function,
+                            const char* str,
+                            IloInt e,
+                            IloNum value) :
+      IloCP::SolverErrorException(function, str, e), _value(value) {}
+
+    virtual void print(ILOSTD(ostream)& o) const;
+    IloNum  getValue() const { return _value; }
+  };
+
+  class SolverErrorExceptionAny : public SolverErrorException {
+    const IloAny _value;
+  public:
+    SolverErrorExceptionAny(const char* function,
+                            const char* str,
+                            IloInt e,
+                            IloAny value) :
+      IloCP::SolverErrorException(function, str, e), _value(value) {}
+
+    virtual void print(ILOSTD(ostream)& o) const;
+    IloAny getValue() const { return _value; }
+  };
+
+  class SolverErrorExceptionExprI : public SolverErrorException {
+    const void* _exprI;
+  public:
+    SolverErrorExceptionExprI(const char* function,
+                              const char* str,
+                              IloInt e,
+                              const IlcExprI* expr) :
+      IloCP::SolverErrorException(function, str, e), _exprI(expr) {}
+
+    virtual void print(ILOSTD(ostream)& o) const;
+    const IlcExprI* getExprI() const { return (IlcExprI*)_exprI; }
+  };
+
+  class SolverErrorExceptionExprsI : public SolverErrorExceptionExprI {
+    const void* _exprI2;
+  public:
+    SolverErrorExceptionExprsI(const char* function,
+                              const char* str,
+                              IloInt e,
+                              const IlcExprI* expr,
+                              const IlcExprI* expr2) :
+      IloCP::SolverErrorExceptionExprI(function, str, e, expr),
+      _exprI2(expr2){}
+
+   virtual void print(ILOSTD(ostream)& o) const;
+   const IlcExprI* getExprI2() const { return (IlcExprI*)_exprI2; }
+  };
+
+  class UnimplementedFeature : public Exception {
+  public:
+    UnimplementedFeature(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+
+  class ObjectNotExtracted : public Exception {
+  public:
+    ObjectNotExtracted(const char* message) :
+      IloCP::Exception(-1, message) {}
+    virtual void print(ILOSTD(ostream)&) const;
+  };
+
+  class ModelNotExtracted : public Exception {
+  public:
+    ModelNotExtracted() : IloCP::Exception(-1, "Model is not loaded") {}
+  };
+
+  class BadParameterType : public Exception {
+  public:
+    BadParameterType(const char* message) :IloCP::Exception(-1, message) {}
+  };
+
+  class NumIsNotInteger : public Exception {
+  public:
+    NumIsNotInteger() :IloCP::Exception(-1, "IloNum is not integer") {}
+  };
+
+  class NumIsNotBoolean : public Exception {
+  public:
+    NumIsNotBoolean() :IloCP::Exception(-1, "IloNum is not boolean") {}
+  };
+
+  class IntegerOverflow : public Exception {
+  public:
+    IntegerOverflow() :IloCP::Exception(-1, "IloNum is out of integer range") {}
+  };
+
+  class MixedTypeVariableArray : public Exception {
+  public:
+    MixedTypeVariableArray(const char* message) :IloCP::Exception(-1, message) {}
+  };
+
+  class ArgumentOutOfRange : public Exception {
+  public:
+    ArgumentOutOfRange(const char* message) :
+      IloCP::Exception(-1, message) {}
+    virtual void print(ILOSTD(ostream)&) const;
+  };
+
+  class VariableShouldBeInteger : public Exception {
+  public:
+    VariableShouldBeInteger(const char* message) :
+      IloCP::Exception(-1, message) {}
+    virtual void print(ILOSTD(ostream)&) const;
+  };
+
+  class VariableShouldBeFloat : public Exception {
+  public:
+    VariableShouldBeFloat(const char* message) :
+      IloCP::Exception(-1, message) {}
+    virtual void print(ILOSTD(ostream)&) const;
+  };
+
+  class WrongContext : public Exception {
+  public:
+    WrongContext(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+  class WrongType : public Exception {
+  public:
+    WrongType(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+  class WrongUsage : public Exception {
+  public:
+    WrongUsage(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+
+  class EmptyHandle : public Exception {
+  public:
+    EmptyHandle(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+
+  class SizeMustBePositive : public Exception {
+  public:
+    SizeMustBePositive(const char* message) : IloCP::Exception(-1, message) {}
+  };
+
+  class ModelInconsistent : public Exception {
+    IloExtractableI* _extractable;
+  public:
+    ModelInconsistent(IloExtractableI* ext) :IloCP::Exception(-1, "The loaded model is inconsistent"), _extractable(ext) {}
+    IloExtractable getExtractable() const { return _extractable; }
+    virtual void print(ILOSTD(ostream)&) const;
+    virtual const char* getInconsistencyReason() const;
+  };
+
+  class IntervalInconsistent : public ModelInconsistent {
+  public:
+    enum Reason {
+      StartRange,
+      EndRange,
+      SizeRange,
+      LengthRange,
+      Window
+    };
+    IntervalInconsistent(IloExtractableI* ext, Reason r) :IloCP::ModelInconsistent(ext), _reason(r) {}
+    virtual const char* getInconsistencyReason() const;
+  private:
+    Reason _reason;
+  };
+
+  class StateFunctionNoTriangularInequality : public Exception {
+    const IloStateFunctionI* _sf;
+    IloInt _i;
+    IloInt _j;
+    IloInt _k;
+  public:
+    StateFunctionNoTriangularInequality(const IloStateFunctionI* sf, 
+                                        IloInt i =-1, IloInt j =-1, IloInt k =-1)
+      :IloCP::Exception(-1, "Transition distance matrix does not satisfy the triangular inequality")
+      ,_sf(sf), _i(i), _j(j), _k(k) {}
+    virtual void print(ILOSTD(ostream)& o) const;
+    const IloStateFunctionI* getStateFunction() const { return _sf; }
+    IloInt getI() const { return _i; }
+    IloInt getJ() const { return _j; }
+    IloInt getK() const { return _k; }
+  };
+  
+  class UndefinedFunctionValue : public Exception {
+    const void* _exprI;
+  public:
+    UndefinedFunctionValue(const IlcFloatExpI* exprI) 
+      :IloCP::Exception(-1, "Accessing function outside its definition interval"), 
+       _exprI(exprI) {}
+    virtual void print(ILOSTD(ostream)& o) const;
+  };
+  
+  class PropagatorException : public Exception {
+  public:
+    PropagatorException(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+
+  class ParameterCannotBeSetHereException : public Exception {
+  public:
+    ParameterCannotBeSetHereException(const char* message) :
+      IloCP::Exception(-1, message) {}
+  };
+
+  class MetaConstraintNotAllowed : public Exception {
+  public:
+    MetaConstraintNotAllowed() :
+      IloCP::Exception(-1, "Global constraints (for example: constraints on arrays) cannot be used in meta-constraints.") {}
+  };
+
+  
+  class IncompatibleMemoryManagerException : public Exception {
+    public: IncompatibleMemoryManagerException();
+  };
+
+  class NoSuchXException : public Exception {
+    private:
+      const char * _x;
+      void _ctor(const char *);
+    public:
+      NoSuchXException(const NoSuchXException &ex)
+        : Exception(ex) { _ctor(ex._x); }
+      NoSuchXException& operator = (const NoSuchXException & ex) {
+        *((Exception*)this) = (const Exception&)ex;
+        _ctor(ex._x);
+        return *this;
+      }
+      NoSuchXException(const char * what, const char * x)
+        : Exception(-1, what) { _ctor(x); }
+      ~NoSuchXException();
+      void print(ILOSTD(ostream)&) const;
+  };
+
+  class NoSuchParameterException : public NoSuchXException {
+    public:
+      NoSuchParameterException(const char * param)
+        : NoSuchXException("parameter", param) { }
+  };
+  class NoSuchParameterValueException : public NoSuchXException {
+    public:
+      NoSuchParameterValueException(const char * paramValue)
+        : NoSuchXException("parameter value", paramValue) { }
+  };
+  class NoSuchInfoException : public NoSuchXException {
+    public:
+      NoSuchInfoException(const char * info)
+        : NoSuchXException("info", info) { }
+  };
+
+#ifdef ILCUSELAYER
+  class ConflictRefinerException : public Exception {
+  public:
+    ConflictRefinerException(const char* msg) :IloCP::Exception(-1, msg) {}
+  };
+  
+  class ConflictRefinerNotAddedCt : public ConflictRefinerException {
+  public:
+  ConflictRefinerNotAddedCt(IloConstraint ct)
+  :ConflictRefinerException("Constraint was not added to the model: "), _ct(ct){}
+  virtual void print(ILOSTD(ostream)&) const;
+  private:
+    IloConstraint _ct;
+  };
+
+  
+  class PresolveException: public Exception {
+   private:
+    class IlcLaMessageStore* _store;
+    char* _aggregatedMessage;
+
+   public:
+    PresolveException(IlcLaMessageStore* store):
+      IloCP::Exception(-1, NULL),
+      _store(store),
+      _aggregatedMessage(NULL)
+    {}
+    ~PresolveException();
+    virtual const char* getMessage() const;
+    
+    class Iterator;
+    friend class Iterator;
+    class Iterator {
+     private:
+      IlcLaMessageStore* _store;
+      IloInt _position;
+      void advance();
+      IloUInt _getMsgCode() const;
+      IloExtractable _getExtractable() const;
+      const char* _getMessage() const;
+     public:
+      Iterator(const PresolveException* exception):
+        _store(exception->_store),
+        _position(0)
+      {}
+      IloBool ok() const;
+      void operator++() {
+        assert(ok());
+        advance();
+      }
+      IloUInt getMsgCode() const {
+        assert(ok());
+        return _getMsgCode();
+      }
+      IloExtractable getExtractable() const {
+        assert(ok());
+        return _getExtractable();
+      }
+      const char* getMessage() const {
+        assert(ok());
+        return _getMessage();
+      }
+    };
+
+    Iterator getIterator() const { return Iterator(this); }
+  };
+#endif
+  
+  
+  ///////////////////////////////////////////////////////////////////////////
+  // Unclassified
+  ///////////////////////////////////////////////////////////////////////////
+  
+  IloCP(IloMemoryManager memoryManager);
+  IloMemoryManager getReversibleAllocator() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getReversibleAllocator();
+  }
+  IloMemoryManager getSolveAllocator() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getSolveAllocator();
+  }
+  IloMemoryManager getPersistentAllocator() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getPersistentAllocator();
+  }
+  operator IloSolver() const;
+  IlcManagerI * getManagerI() const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getManagerI();
+  }
+  ////////////////////////////////////////////////////////////////////////
+  // Run-time license
+  ////////////////////////////////////////////////////////////////////////
+  
+  static IloBool RegisterLicense(const char *, int);
+
+  ////////////////////////////////////////////////////////////////////////
+  // XML registration
+  ////////////////////////////////////////////////////////////////////////
+  
+  static void RegisterXML(IloEnv env) {
+    IlcAssert(env.getImpl() != 0, "IloEnv: empty handle");
+    _RegisterXML(env);
+  }
+  static void UseStandardCPLEX();
+
+  
+   IloBool isFixed(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _isFixed(a);
+  }
+ 
+  IloBool isPresent(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _isPresent(a);
+  }
+ 
+  IloBool isAbsent(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _isAbsent(a);
+  }
+  
+  IloInt  getStartMin(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getStartMin(a);
+  }
+  
+  IloInt  getStartMax(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getStartMax(a);
+  }
+  
+  IloInt  getStart(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    IlcAssert(isFixed(a), "IloIntervalVar: not fixed.");
+    return _getStart(a);
+  }
+  
+  IloInt  getEndMin(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getEndMin(a);
+  }
+  
+  IloInt  getEndMax(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getEndMax(a);
+  }
+  
+  IloInt  getEnd(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    IlcAssert(isFixed(a), "IloIntervalVar: not fixed.");
+    return _getEnd(a);
+  }
+  
+  IloInt  getSizeMin(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getSizeMin(a);
+  }
+  
+  IloInt  getSizeMax(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getSizeMax(a);
+  }
+  
+  IloInt  getSize(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    IlcAssert(isFixed(a), "IloIntervalVar: not fixed.");
+    return _getSize(a);
+  }
+  
+  IloInt  getLengthMin(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getLengthMin(a);
+  }
+  
+  IloInt  getLengthMax(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    return _getLengthMax(a);
+  }
+  
+  IloInt  getLength(const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    IlcAssert(isFixed(a), "IloIntervalVar: not fixed.");
+    return _getLength(a);
+  }
+  void printDomain(ILOSTD(ostream)& s, const IloIntervalVar a) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle.");
+    IlcAssert(a.getImpl() != 0, "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    _printDomain(s, a);
+  }
+  void printDomain(const IloIntervalVar a) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle.");
+    IlcAssert(a.getImpl() != 0, "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    _printDomain(out(), a);
+  }
+  
+  IloBool isFixed(const IloIntervalSequenceVar seq) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(seq.getImpl(), "IloIntervalSequenceVar: empty handle.");
+    IlcAssert(isExtracted(seq), "IloIntervalSequenceVar: not extracted.");
+    return _isFixed(seq);
+  }
+  
+  IloIntervalVar getFirst(const IloIntervalSequenceVar seq) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(seq.getImpl(), "IloIntervalSequenceVar: empty handle.");
+    IlcAssert(isExtracted(seq), "IloIntervalSequenceVar: not extracted.");
+    IlcAssert(isFixed(seq), "IloIntervalSequenceVar: not fixed.");
+    return _getFirst(seq);
+  }
+  
+  IloIntervalVar getLast (const IloIntervalSequenceVar seq) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(seq.getImpl(), "IloIntervalSequenceVar: empty handle.");
+    IlcAssert(isExtracted(seq), "IloIntervalSequenceVar: not extracted.");
+    IlcAssert(isFixed(seq), "IloIntervalSequenceVar: not fixed.");
+    return _getLast(seq);
+  }
+  
+  IloIntervalVar getNext(const IloIntervalSequenceVar seq, const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(seq.getImpl(), "IloIntervalSequenceVar: empty handle.");
+    IlcAssert(isExtracted(seq), "IloIntervalSequenceVar: not extracted.");
+    IlcAssert(isFixed(seq), "IloIntervalSequenceVar: not fixed.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    IlcAssert(isPresent(a), "IloIntervalVar: not present.");
+    IlcAssert(isInSequence(seq, a), "IloIntervalVar: not in sequence variable.");
+     return _getNext(seq, a);
+  }
+  
+  IloIntervalVar getPrev (const IloIntervalSequenceVar seq, const IloIntervalVar a) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    IlcAssert(seq.getImpl(), "IloIntervalSequenceVar: empty handle.");
+    IlcAssert(isExtracted(seq), "IloIntervalSequenceVar: not extracted.");
+    IlcAssert(isFixed(seq), "IloIntervalSequenceVar: not fixed.");
+    IlcAssert(a.getImpl(), "IloIntervalVar: empty handle.");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted.");
+    IlcAssert(isPresent(a), "IloIntervalVar: not present.");
+    IlcAssert(isInSequence(seq, a), "IloIntervalVar: not in sequence variable.");
+    return _getPrev(seq, a);
+  }
+
+  
+  IloBool isFixed(const IloCumulFunctionExpr f) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCumulFunctionExpr: not extracted");
+    return _isFixed(f);
+  }
+
+  
+  IloInt getNumberOfSegments(const IloCumulFunctionExpr f) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    return _getNumberOfSegments(f);
+  }
+
+  
+  IloNum getNumberOfSegmentsAsNum(const IloCumulFunctionExpr f) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    return _getNumberOfSegmentsAsNum(f);
+  }
+
+  
+  IloInt getSegmentStart(const IloCumulFunctionExpr f, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidSegment(f, i), "IloCP: invalid cumul function expression segment");
+    return _getSegmentStart(f, i);
+  }
+  
+  IloNum getSegmentStartAsNum(const IloCumulFunctionExpr f, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidSegment(f, i), "IloCP: invalid cumul function expression segment");
+    return _getSegmentStartAsNum(f, i);
+  }
+
+  
+  IloInt getSegmentEnd(const IloCumulFunctionExpr f, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidSegment(f, i), "IloCP: invalid cumul function expression segment");
+    return _getSegmentEnd(f, i);
+  }
+  
+  IloNum getSegmentEndAsNum(const IloCumulFunctionExpr f, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidSegment(f, i), "IloCP: invalid cumul function expression segment");
+    return _getSegmentEndAsNum(f, i);
+  }
+
+  
+  IloInt getSegmentValue(const IloCumulFunctionExpr f, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidSegment(f, i), "IloCP: invalid cumul function expression segment");
+    return _getSegmentValue(f, i);
+  }
+  
+  IloNum getSegmentValueAsNum(const IloCumulFunctionExpr f, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidSegment(f, i), "IloCP: invalid cumul function expression segment");
+    return _getSegmentValueAsNum(f, i);
+  }
+
+  
+  IloInt getValue(const IloCumulFunctionExpr f, IloInt t) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidAbscissa(f, t), "IloCP: cumul function expression evaluated on invalid point");
+    return _getValue(f, t);
+  }
+  
+  IloNum getValueAsNum(const IloCumulFunctionExpr f, IloInt t) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloCumulFunctionExpr: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: cumul function expression not extracted");
+    IlcAssert(_isFixed(f), "IloCP: cumul function expression not fixed");
+    IlcAssert(_isValidAbscissa(f, t), "IloCP: cumul function expression evaluated on invalid point");
+    return _getValueAsNum(f, t);
+  }
+
+  ////////////////////////////////////////////////////////////////////////
+  // Reading State Functions at solution
+  ////////////////////////////////////////////////////////////////////////
+
+ 
+
+  enum FunctionValues {
+  
+        NoState = -1
+  };
+
+  
+  IloBool isFixed(const IloStateFunction f) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloStateFunctionFunction: not extracted");
+    return _isFixed(f);
+  }
+
+  
+  IloInt getNumberOfSegments(const IloStateFunction f) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    return _getNumberOfSegments(f);
+  }
+
+
+  
+  IloInt getSegmentStart(const IloStateFunction f, IloInt s) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidSegment(f, s), "IloCP: invalid state function segment");
+    return _getSegmentStart(f, s);
+  }
+  
+  IloNum getSegmentStartAsNum(const IloStateFunction f, IloInt s) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidSegment(f, s), "IloCP: invalid state function segment");
+    return _getSegmentStartAsNum(f, s);
+  }
+  
+  
+  IloInt getSegmentEnd(const IloStateFunction f, IloInt s) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidSegment(f, s), "IloCP: invalid state function segment");
+    return _getSegmentEnd(f, s);
+  }
+  
+  IloNum getSegmentEndAsNum(const IloStateFunction f, IloInt s) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidSegment(f, s), "IloCP: invalid state function segment");
+    return _getSegmentEndAsNum(f, s);
+  }
+ 
+  
+  IloInt getSegmentValue(const IloStateFunction f, IloInt s) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidSegment(f, s), "IloCP: invalid state function segment");
+    return _getSegmentValue(f, s);
+  }
+  
+  IloNum getSegmentValueAsNum(const IloStateFunction f, IloInt s) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function  not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidSegment(f, s), "IloCP: invalid state function segment");
+    return _getSegmentValueAsNum(f, s);
+  }
+ 
+
+
+  
+  IloInt getValue(const IloStateFunction f, IloInt t) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidAbscissa(f, t), "IloCP: state function evaluated on invalid point");
+    return _getValue(f, t);
+  }
+  
+  IloNum getValueAsNum(const IloStateFunction f, IloInt t) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    IlcAssert(f.getImpl() != 0, "IloStateFunction: empty handle");
+    IlcAssert(isExtracted(f), "IloCP: state function not extracted");
+    IlcAssert(_isFixed(f), "IloCP: state function not fixed");
+    IlcAssert(_isValidAbscissa(f, t), "IloCP: state function evaluated on invalid point");
+    return _getValueAsNum(f, t);
+  }
+  
+  ///////////////////////////////////////////////////////////////////////////
+  // class IloStateFunctionExpr
+  ///////////////////////////////////////////////////////////////////////////
+
+  
+  IloInt getNumberOfSegments(const IloStateFunctionExpr expr) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getNumberOfSegments(expr);
+  }
+
+
+  
+  IloInt getSegmentStart(const IloStateFunctionExpr expr, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getSegmentStart(expr, i);
+  }
+
+
+
+  
+  IloInt getSegmentEnd(const IloStateFunctionExpr expr, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getSegmentEnd(expr, i);
+  }
+
+
+  
+  IloInt getSegmentValue(const IloStateFunctionExpr expr, IloInt i) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getSegmentValue(expr, i);
+  }
+
+  
+  IloInt getValue(const IloStateFunctionExpr expr, IloInt t) const {
+    IlcAssert(getImpl() != 0, "IloCP: empty handle");
+    return _getValue(expr, t);
+  }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Printing interval domains
+  ///////////////////////////////////////////////////////////////////////////
+
+  class PrintIntervalVarDomains : public PrintDomains {
+    friend class IloCP;
+  private:
+    void operator = (const PrintIntervalVarDomains&);
+    PrintIntervalVarDomains(const IloCP cp, const IloIntervalVar var);
+  public:
+    void display(ILOSTD(ostream)& o) const;
+  };
+  
+  PrintIntervalVarDomains domain(const IloIntervalVar a) const {
+    IlcAssert(_impl != 0, "IloCP: empty handle");
+    IlcAssert(a.getImpl() != 0, "IloIntervalVar: empty handle");
+    IlcAssert(isExtracted(a), "IloIntervalVar: not extracted");
+    return PrintIntervalVarDomains(*this, a);
+  }
+
+  // ------------------------------------------------------------------------
+  // Advanced
+  // ------------------------------------------------------------------------
+  IloBool isInSequence (const IloIntervalSequenceVar seq,
+                        const IloIntervalVar a) const;
+  void prettyPrintSchedule(ILOSTD(ostream)& s) const {
+    IlcAssert(getImpl(), "IloCP: empty handle.");
+    _prettyPrintSchedule(s);
+  }
+ private:
+  IloBool _isFixed      (const IloIntervalVar a) const;
+  IloBool _isPresent    (const IloIntervalVar a) const;
+  IloBool _isAbsent     (const IloIntervalVar a) const;
+  IloInt  _getStartMin  (const IloIntervalVar a) const;
+  IloInt  _getStartMax  (const IloIntervalVar a) const;
+  IloInt  _getStart     (const IloIntervalVar a) const;
+  IloInt  _getEndMin    (const IloIntervalVar a) const;
+  IloInt  _getEndMax    (const IloIntervalVar a) const;
+  IloInt  _getEnd       (const IloIntervalVar a) const;
+  IloInt  _getSizeMin   (const IloIntervalVar a) const;
+  IloInt  _getSizeMax   (const IloIntervalVar a) const;
+  IloInt  _getSize      (const IloIntervalVar a) const;
+  IloInt  _getLengthMin (const IloIntervalVar a) const;
+  IloInt  _getLengthMax (const IloIntervalVar a) const;
+  IloInt  _getLength    (const IloIntervalVar a) const;
+  void    _printDomain  (ILOSTD(ostream)&, const IloIntervalVar a) const;
+  IloBool _isFixed      (const IloIntervalSequenceVar seq) const;
+  IloIntervalVar _getFirst(const IloIntervalSequenceVar seq) const;
+  IloIntervalVar _getLast (const IloIntervalSequenceVar seq) const;
+  IloIntervalVar _getNext (const IloIntervalSequenceVar seq, const IloIntervalVar a) const;
+  IloIntervalVar _getPrev (const IloIntervalSequenceVar seq, const IloIntervalVar a) const;
+  void _prettyPrintSchedule(ILOSTD(ostream)& s) const;
+
+public:
+  void setJNIEnv(void* env);
+};
+
+ILOSTD(ostream)& operator << (ILOSTD(ostream) & o,
+                              const IloCP::PrintNumVarDomains& doms);
+#ifndef ILCUSELAYER
+ILOSTD(ostream)& operator << (ILOSTD(ostream) & o,
+                              IloCP::PrintIntSetVarDomains& doms);
+#endif
+ILOSTD(ostream)& operator << (ILOSTD(ostream) & o,
+                              const IloCP::PrintIntervalVarDomains& doms);
+
+////////////////////////////////////////////////////////////////////////
+//
+// ILOCPHOOK
+//
+////////////////////////////////////////////////////////////////////////
+
+class IloCPHookI : public IloEnvObjectI {
+public:
+  IloCPHookI(IloEnv env) : IloEnvObjectI(env.getImpl()) { }
+  virtual void execute(IloCP cp) = 0;
+};
+
+////////////////////////////////////////////////////////////////////////
+//
+// IloSolver compat
+//
+////////////////////////////////////////////////////////////////////////
+
+
+typedef enum {
+  IlcLow=0L,
+  IloLowLevel=0L,
+  IlcBasic=1L,
+  IloBasicLevel=1L,
+  IlcMedium=2L,
+  IloMediumLevel=2L,
+  IlcExtended=3L,
+  IloExtendedLevel=3L
+} IlcFilterLevel;
+
+typedef enum {
+  IlcAllDiffCt=0L,
+  IloAllDiffCt=0L,
+  IlcDistributeCt=1L,
+  IloDistributeCt=1L,
+  IlcSequenceCt=2L,
+  IloSequenceCt=2L,
+  IlcAllMinDistanceCt=3L,
+  IloAllMinDistanceCt=3L,
+  IlcPartitionCt=4L,
+  IloPartitionCt=4L,
+  IlcAllNullIntersectCt=5L,
+  IloAllNullIntersectCt=5L,
+  IlcEqUnionCt=6L,
+  IloEqUnionCt=6L,
+  IlcCountCt=8L,
+  IloCountCt=8L
+} IlcFilterLevelConstraint;
+
+typedef enum {
+  IlcStandardDisplay = 0,
+  IlcIntScientific,
+  IlcIntFixed,
+  IlcBasScientific,
+  IlcBasFixed
+} IlcFloatDisplay;
+
+class IloSolver : public IloCP {
+private:
+  void _restartSearch() const;
+  void _setPropagationControl(IloNumVar var) const;
+  void _setPropagationControl(IloIntVar var) const;
+  void _setMin(IloNumVar var, IloNum min) const;
+  void _setMax(IloNumVar var, IloNum max) const;
+  void _setValue(IloNumVar var, IloNum value) const;
+
+  void _ctor(const IloModel model);
+  void _ctor(const IloEnv env);
+  void _setSolverConfig() const;
+public:
+  IloSolver(const IloModel model) : IloCP() {
+    IlcAssert(model.getImpl() != 0, "IloModel: empty handle");
+    _ctor(model);
+  }
+  IloSolver(const IloEnv env) : IloCP() {
+    IlcAssert(env.getImpl() != 0, "IloEnv: empty handle");
+    _ctor(env);
+  }
+  IloSolver(IloCPI * impl = 0) : IloCP(impl) { }
+
+  enum SearchState {
+    IloBeforeSearch = 0,
+    IloDuringSearch,
+    IloAfterSearch
+  };
+  typedef enum {
+    searchHasNotFailed = 0,
+    searchHasFailedNormally,
+    searchStoppedByLimit,
+    searchStoppedByLabel,
+    searchStoppedByExit,
+    searchStoppedByAbort,
+    searchStoppedByException,
+    unknownFailureStatus
+  } FailureStatus;
+  FailureStatus convertFailureStatus(IloInt f) const {
+    switch (f) {
+      case IloCP::SearchHasNotFailed:      return searchHasNotFailed;
+      case IloCP::SearchHasFailedNormally: return searchHasFailedNormally;
+      case IloCP::SearchStoppedByLimit:    return searchStoppedByLimit;
+      case IloCP::SearchStoppedByLabel:    return searchStoppedByLabel;
+      case IloCP::SearchStoppedByExit:     return searchStoppedByExit;
+      case IloCP::SearchStoppedByAbort:    return searchStoppedByAbort;
+      case IloCP::SearchStoppedByException: return searchStoppedByException;
+      default:                             return unknownFailureStatus;
+    }
+    return unknownFailureStatus;
+  }
+
+  IloCP::ParameterValues filterToInferenceLevel(IlcFilterLevel fl) const {
+    switch (fl) {
+      case IlcLow :     return IloCP::Low;
+      case IlcBasic:    return IloCP::Basic;
+      case IlcMedium:   return IloCP::Medium;
+      case IlcExtended: return IloCP::Extended;
+    }
+    IlcAssert(0, "IloSolver: Invalid filter level");
+    return IloCP::Basic;
+  }
+  IloCP::IntParam filterToInferenceCt(IlcFilterLevelConstraint fl) const {
+    switch (fl) {
+      case IloAllDiffCt:          return IloCP::AllDiffInferenceLevel;
+      case IloDistributeCt:       return IloCP::DistributeInferenceLevel;
+      case IloSequenceCt:         return IloCP::SequenceInferenceLevel;
+      case IloAllMinDistanceCt:   return IloCP::AllMinDistanceInferenceLevel;
+      case IloCountCt:            return IloCP::CountInferenceLevel;
+      default: IlcAssert(0, "IloSolver: Invalid filter constraint");
+    }
+    return IloCP::AllDiffInferenceLevel;
+  }
+  void setFilterLevel(IloConstraint ct, IlcFilterLevel fl) const {
+    setInferenceLevel(ct, filterToInferenceLevel(fl));
+  }
+  void setDefaultFilterLevel(IlcFilterLevelConstraint ct,
+                             IlcFilterLevel fl) const {
+    setParameter(filterToInferenceCt(ct), filterToInferenceLevel(fl));
+  }
+  void setDefaultFilterLevel(IlcFilterLevel fl) const {
+    setParameter(IloCP::DefaultInferenceLevel, filterToInferenceLevel(fl));
+  }
+  ILCDEPRECATED void setFilterLevel(IlcConstraint ct, IlcFilterLevel fl) const;
+  ILCDEPRECATED IlcConstraint getConstraint(IloConstraint ct) const;
+  ILCDEPRECATED IlcConstraintArray getConstraintArray(IloConstraintArray ct) const;
+  IloBool isInSearch() const;
+  void restartSearch() const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    _restartSearch();
+  }
+  FailureStatus getFailureStatus() const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    return convertFailureStatus(getInfo(IloCP::FailStatus));
+  }
+  void setOptimizationStep(IloNum step) const {
+    setParameter(IloCP::OptimalityTolerance, step);
+  }
+  void setRelativeOptimizationStep(IloNum step) const {
+    setParameter(IloCP::RelativeOptimalityTolerance, step);
+  }
+  IloNum getOptimizationStep() const {
+    return getParameter(IloCP::OptimalityTolerance);
+  }
+  IloNum getRelativeOptimizationStep() const {
+    return getParameter(IloCP::RelativeOptimalityTolerance);
+  }
+  void setFailLimit(IloInt fails) const {
+    setParameter(IloCP::FailLimit, fails);
+  }
+  void setOrLimit(IloInt cps) const {
+    setParameter(IloCP::ChoicePointLimit, cps);
+  }
+  void setTimeLimit(IloNum time) const {
+    setParameter(IloCP::TimeLimit, time);
+  }
+  void unsetLimit() const {
+    setFailLimit(IloIntMax);
+    setOrLimit(IloIntMax);
+    setTimeLimit(IloInfinity);
+  }
+  void setFloatDisplay(IlcFloatDisplay display) const {
+    setParameter(IloCP::FloatDisplay,
+      display - IlcStandardDisplay + IloCP::Standard
+    );
+  }
+  IlcFloatDisplay getFloatDisplay() const {
+    return IlcFloatDisplay(getParameter(IloCP::FloatDisplay)
+                         - IloCP::Standard
+                         + IlcStandardDisplay);
+  }
+#ifndef ILCUSELAYER
+  IloIntSet getIntSetValue(IloIntSetVar s) const {
+    return IloCP::getValue(s);
+  }
+#endif
+  IloNum getTime() const { return getInfo(IloCP::SolveTime); }
+  IloUInt getMemoryUsage() const { return getInfo(IloCP::MemoryUsage); }
+  IloNum getDefaultPrecision() const;
+  void setFastRestartMode(IloBool mode) const;
+  IloInt getNumberOfChoicePoints() const {
+    return getInfo(IloCP::NumberOfChoicePoints);
+  }
+  IloInt getNumberOfConstraints() const {
+    return getInfo(IloCP::NumberOfConstraints);
+  }
+  using IloCP::getNumberOfFails;
+  IloInt getNumberOfFails() const {
+    return getInfo(IloCP::NumberOfFails);
+  }
+  IloInt getNumberOfVariables() const {
+    return getInfo(IloCP::NumberOfVariables);
+  }
+  void setDefaultPrecision(IloNum precision) const;
+  void setPackApproximationSize(IloInt size) const {
+    setParameter(IloCP::PackApproximationSize, size);
+  }
+  void setPropagationControl(IloNumVar var) const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    _setPropagationControl(var);
+  }
+  void setPropagationControl(IloIntVar var) const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloIntVar: empty handle");
+    _setPropagationControl(var);
+  }
+  void setMin(IloNumVar var, IloNum min) const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    _setMin(var, min);
+  }
+  void setMax(IloNumVar var, IloNum max) const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    _setMax(var, max);
+  }
+  void setValue(IloNumVar var, IloNum value) const {
+    IlcAssert(getImpl() != 0, "IloSolver: empty handle");
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    _setValue(var, value);
+  }
+};
+
+////////////////////////////////////////////////////////////////////////
+//
+// PROPAGATORS
+//
+////////////////////////////////////////////////////////////////////////
+
+class IloPropagatorI : public IloEnvObjectI {
+private:
+  IloNumVarArray _vars;
+  IloCP          _cp;
+
+  void _addVar(IloNumVar var);
+public:
+  
+  IloPropagatorI(IloEnv env);
+  
+  virtual ~IloPropagatorI();
+
+  IloNumVar getVar(IloInt i) const { return _vars[i]; }
+  IloInt getNumVars() const { return _vars.getSize(); }
+
+  
+  void addVar(IloNumVar var) {
+    IlcAssert(var.getImpl() != 0, "IloNumVar: empty handle");
+    _addVar(var);
+  }
+
+  void violate(IloCP cp) {
+    cp.failBuffered();
+  }
+
+  
+  void violate() {
+    violate(_cp);
+  }
+
+  void setMax(IloCP cp, IloNumVar var, IloNum max) {
+    cp.setMaxBuffered(var.getImpl(), max);
+  }
+  void setMax(IloCP cp, IloIntVar var, IloInt max) {
+    cp.setMaxBuffered(var.getImpl(), (IloNum)max);
+  }
+  
+  void setMax(IloNumVar var, IloNum max) {
+    setMax(_cp, var, max);
+  }
+  void setMax(IloIntVar var, IloInt max) {
+    setMax(_cp, var, max);
+  }
+
+  void setMin(IloCP cp, IloNumVar var, IloNum min) {
+    cp.setMinBuffered(var.getImpl(), min);
+  }
+  void setMin(IloCP cp, IloIntVar var, IloInt min) {
+    cp.setMinBuffered(var.getImpl(), (IloNum)min);
+  }
+  
+  void setMin(IloNumVar var, IloNum min) {
+    setMin(_cp, var, min);
+  }
+
+  void setRange(IloCP cp, IloNumVar var, IloNum min, IloNum max) {
+    setMin(cp, var, min);
+    setMax(cp, var, max);
+  }
+  void setRange(IloCP cp, IloIntVar var, IloInt min, IloInt max) {
+    setMin(cp, var, min);
+    setMax(cp, var, max);
+  }
+  
+  void setRange(IloNumVar var, IloNum min, IloNum max) {
+    setRange(_cp, var, min, max);
+  }
+  void setRange(IloIntVar var, IloInt min, IloInt max) {
+    setRange(_cp, var, min, max);
+  }
+
+  void setValue(IloCP cp, IloNumVar var, IloNum value) {
+    setRange(cp, var, value, value);
+  }
+  void setValue(IloCP cp, IloIntVar var, IloInt value) {
+    setRange(cp, var, value, value);
+  }
+  
+  void setValue(IloNumVar var, IloNum value) {
+    setValue(_cp, var, value);
+  }
+  void setValue(IloIntVar var, IloInt value) {
+    setValue(_cp, var, value);
+  }
+
+  void removeValue(IloCP cp, IloIntVar var, IloInt value) {
+    cp.removeValueBuffered(var.getImpl(), value);
+  }
+  
+  void removeValue(IloIntVar var, IloInt value) {
+    removeValue(_cp, var, value);
+  }
+
+  IloNum getMin(IloCP cp, IloNumVar var) const {
+    return cp.getMin(var);
+  }
+  IloInt getMin(IloCP cp, IloIntVar var) const {
+    return cp.getMin(var);
+  }
+  
+  IloNum getMin(IloNumVar var) const {
+    return getMin(_cp, var);
+  }
+  IloInt getMin(IloIntVar var) const {
+    return getMin(_cp, var);
+  }
+
+  IloNum getMax(IloCP cp, IloNumVar var) const  {
+    return cp.getMax(var);
+  }
+  IloInt getMax(IloCP cp, IloIntVar var) const  {
+    return cp.getMax(var);
+  }
+  
+  IloNum getMax(IloNumVar var) const { return getMax(_cp, var); }
+  IloInt getMax(IloIntVar var) const { return getMax(_cp, var); }
+
+  IloNum getValue(IloCP cp, IloNumVar var) const { return cp.getValue(var); }
+  IloInt getValue(IloCP cp, IloIntVar var) const { return cp.getValue(var); }
+  
+  IloNum getValue(IloNumVar var) const { return getValue(_cp, var); }
+  IloInt getValue(IloIntVar var) const { return getValue(_cp, var); }
+
+  IloInt getDomainSize(IloCP cp, IloNumVar var) const {
+    return cp.getDomainSize(var);
+  }
+  
+  IloInt getDomainSize(IloNumVar var) const {
+    return getDomainSize(_cp, var);
+  }
+  IloBool isInDomain(IloCP cp, IloNumVar var, IloInt value) const {
+    return cp.isInDomain(var, value);
+  }
+  
+  IloBool isInDomain(IloNumVar var, IloInt value) const {
+    return isInDomain(_cp, var, value);
+  }
+  IloBool isFixed(IloCP cp, IloNumVar var) const {
+    return cp.isFixed(var);
+  }
+  IloBool isFixed(IloCP cp, IloIntVar var) const {
+    return cp.isFixed(var);
+  }
+  
+  IloBool isFixed(IloNumVar var) const { return isFixed(_cp, var); }
+  IloBool isFixed(IloIntVar var) const { return isFixed(_cp, var); }
+  IloCP::IntVarIterator iterator(IloCP cp, IloNumVar var) {
+    return IloCP::IntVarIterator(cp, var);
+  }
+  
+  IloCP::IntVarIterator iterator(IloNumVar var) {
+    return iterator(_cp, var);
+  }
+
+  
+  virtual void execute() = 0;
+  
+  virtual IloPropagatorI* makeClone(IloEnv env) const=0;
+  void setCP(IloCP cp);
+  friend class IlcPropagatorConstraintI;
+  friend class IntVarIterator;
+};
+
+
+IloConstraint IloCustomConstraint(IloEnv env, IloPropagatorI * prop);
+
+////////////////////////////////////////////////////////////////////////
+//
+// ILOGOAL
+//
+////////////////////////////////////////////////////////////////////////
+
+
+class IloGoalI : public IloExtensibleRttiEnvObjectI {
+public:
+
+  IloGoalI(IloEnvI*);
+
+  virtual ~IloGoalI();
+
+  virtual IlcGoal extract(const IloCP cp) const=0;
+
+  virtual void display(ILOSTD(ostream&)) const;
+  ILORTTIDECL
+};
+
+
+class IloGoal {
+  ILOCPHANDLEINLINE(IloGoal, IloGoalI)
+public:
+  typedef IloGoalI ImplClass;
+
+  IloGoal(IloEnv env, IloIntVarArray vars);
+
+  IloGoal(IloEnv env, IloIntVarArray vars,
+                      IloIntVarChooser varChooser,
+                      IloIntValueChooser valueChooser);
+
+  IloEnv getEnv() const;
+
+  void end() const;
+};
+
+ILOSTD(ostream&) operator << (ILOSTD(ostream&), const IloGoal&);
+
+
+typedef IloArray<IloGoal> IloGoalArray;
+
+
+IloGoal IloGoalTrue(const IloEnv);
+
+
+IloGoal IloGoalFail(const IloEnv);
+
+
+IloGoal operator && (const IloGoal g1, const IloGoal g2);
+
+IloGoal IloAndGoal(const IloEnv env, const IloGoal, const IloGoal);
+
+IloGoal operator||(const IloGoal g1, const IloGoal g2);
+
+IloGoal IloOrGoal(const IloEnv env, const IloGoal, const IloGoal);
+
+#ifdef ILCENABLEUSINGCPO
+using namespace CPOptimizer;
+#endif
+
+#ifdef _MSC_VER
+#pragma pack(pop)
+#endif
+
+#endif

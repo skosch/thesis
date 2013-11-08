@@ -1,0 +1,23 @@
+%\part{geqcard}
+\label{geqcard}
+\hypertarget{geqcard}{}
+
+\section{geqCard (constraint)}\label{geqcard:geqcardconstraint}\hypertarget{geqcard:geqcardconstraint}{}
+\begin{notedef}
+  \texttt{geqCard}$(s,z)$ states that the cardinality of set $s$ is greater than or equal to $z$:
+$$|s| \ge z$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{geqCard(SetVariable s, IntegerVariable z)}
+		\item \mylst{geqCard(SetVariable s, int z)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cgeqcard.j2t}

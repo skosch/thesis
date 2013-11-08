@@ -1,0 +1,62 @@
+\usepackage[french]{babel}
+\usepackage{tikz}
+
+
+
+
+\mode<presentation>
+{
+  \usetheme{Choco}
+
+  \usefonttheme[onlymath]{serif}
+
+}
+
+
+
+\newenvironment<>{notabene}%
+ {\begin{visibleenv}#1\begin{alertenv}NB~:}%
+ {\end{alertenv}\end{visibleenv}}
+
+\newenvironment<>{exemple}%
+  {\begin{visibleenv}#1\begin{exampleblock}{Exemple}}%
+  {\end{exampleblock}\end{visibleenv}}
+
+\definecolor{exercice}{RGB}{0,0,167}
+\setbeamercolor{exercice corps}{fg=black,bg=exercice!15!white}
+\setbeamercolor{exercice titre}{fg=white,bg=exercice!75!white}
+
+
+ \newenvironment<>{exercice}%
+ {\setbeamercolor{item}{fg=exercice,bg=exercice}
+\begin{visibleenv}#1\hfill\begin{beamerboxesrounded}[width=0.8\textwidth,shadow=true,upper=exercice titre,lower=exercice corps]{Exercice}}%
+   {\end{beamerboxesrounded}\hfill\end{visibleenv}}
+
+ \newenvironment<>{exercicelarge}%
+ {\setbeamercolor{item}{fg=exercice,bg=exercice}
+\begin{visibleenv}#1\hfill\begin{beamerboxesrounded}[shadow=true,upper=exercice titre,lower=exercice corps]{Exercice}}%
+   {\end{beamerboxesrounded}\hfill\end{visibleenv}}
+
+
+\definecolor{correction}{RGB}{0,167,0}
+\setbeamercolor{correction corps}{fg=black,bg=correction!15!white}
+\setbeamercolor{correction titre}{fg=white,bg=correction!75!white}
+
+ \newenvironment<>{correction}%
+ {\setbeamercolor{item}{fg=correction,bg=correction}
+\begin{visibleenv}#1\hfill\begin{beamerboxesrounded}[width=0.8\textwidth,shadow=true,upper=correction titre,lower=correction corps]{Correction}}%
+   {\end{beamerboxesrounded}\hfill\end{visibleenv}}
+
+ \newenvironment<>{preuve}%
+ {\setbeamercolor{item}{fg=correction,bg=correction}
+\begin{visibleenv}#1\hfill\begin{beamerboxesrounded}[shadow=true,upper=correction titre,lower=correction corps]{Preuve}}%
+   {\end{beamerboxesrounded}\hfill\end{visibleenv}}
+
+
+
+
+
+ \newtheorem{theoreme}{Th\'{e}or\`{e}me}
+ \newtheorem{proposition}{Proposition}
+ \newtheorem{corollaire}{Corollaire}
+ \newtheorem{defi}{D\'{e}finition}

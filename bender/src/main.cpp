@@ -65,27 +65,21 @@ int main(int argc, char *argv[]) {
       nj = 10;
     }
 
-    if(argc >= 3 && !strcmp(argv[2], "v")) {
-      //  verboseoutput=true;
-    }
 
-    if(argc >= 4) {
-      datafilename = argv[3];
+
+    if(argc >= 3) {
+      datafilename = argv[2];
     }
 
     vector<Job> jc = getSortedJobs(env, datafilename, nj);
 
-	// create heuristic solution to find a bound on Lmax
 
 	// create root node
 	RootNode root(&jc, capacity, Dmax);
 
 	// let root node create children
 	root.run();
-	// track solving progress
 
-	// get and print solution
-
-	cout << "We're done here. Thanks." << endl;
+	cout << "We're done here." << endl;
 	return 0;
 }

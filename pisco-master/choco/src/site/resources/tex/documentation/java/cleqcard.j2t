@@ -1,0 +1,8 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        SetVariable set = makeSetVar("s", 1, 5);
+        IntegerVariable i = makeIntVar("card", 2, 3);
+        m.addConstraint(member(set, 3));
+        m.addConstraint(leqCard(set, i));
+        s.read(m);
+        s.solve();

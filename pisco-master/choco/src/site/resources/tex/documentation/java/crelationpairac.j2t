@@ -1,0 +1,9 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable v1 = makeIntVar("v1", 1, 4);
+        IntegerVariable v2 = makeIntVar("v2", 1, 4);
+        IntegerVariable v3 = makeIntVar("v3", 3, 6);
+        m.addConstraint(relationPairAC(Options.C_EXT_AC32, v1, v2, new MyEquality()));
+        m.addConstraint(relationPairAC(Options.C_EXT_AC32, v2, v3, new MyEquality()));
+        s.read(m);
+        s.solveAll();

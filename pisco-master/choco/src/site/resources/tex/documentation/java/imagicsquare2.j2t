@@ -1,0 +1,10 @@
+        // Creation of an array of variables
+        IntegerVariable[][] var = new IntegerVariable[n][n];
+        // For each variable, we define its name and the boundaries of its domain.
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                var[i][j] = Choco.makeIntVar("var_" + i + "_" + j, 1, n * n);
+                // Associate the variable to the model.
+                m.addVariable(var[i][j]);
+            }
+        }

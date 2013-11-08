@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -9,7 +9,7 @@
 Meral Azizoglu and Scott Webster.
 \newblock Scheduling a batch processing machine with non-identical job sizes.
 \newblock \emph{International Journal of Production Research}, 38\penalty0
-  (10):\penalty0 2173 -- 2184, 2000.
+  (10):\penalty0 2173--2184, 2000.
 
 \bibitem[Baptiste and Le~Pape(2000)]{baptistelepape}
 Philippe Baptiste and Claude Le~Pape.
@@ -43,15 +43,15 @@ Denis Daste, Christelle Gueret, and Chams Lahlou.
 \newblock Génération de colonnes pour l’ordonnancement d’une machine à
   traitement par fournées.
 \newblock In \emph{7\textsuperscript{ème} conférence internationale de
-  modélisation et simulation (MOSIM 2008), Paris, France}, volume~3, pages
-  64--69, 2008{\natexlab{b}}.
+  modélisation et simulation (MOSIM), Paris, France}, volume~3, pages 64--69,
+  2008{\natexlab{b}}.
 
 \bibitem[Dupont and Dhaenens-Flipo(2002)]{Dupont}
 Lionel Dupont and Clarisse Dhaenens-Flipo.
 \newblock Minimizing the makespan on a batch machine with non-identical job
   sizes: an exact procedure.
 \newblock \emph{Computers \& Operations Research}, 29\penalty0 (7):\penalty0
-  807 -- 819, 2002.
+  807--819, 2002.
 
 \bibitem[Graham et~al.(1979)Graham, Lawler, Lenstra, and Kan]{graham}
 Ronald Graham, Eugene Lawler, Jan~Karel Lenstra, and Alexander~Rinnoy Kan.
@@ -65,6 +65,10 @@ Ignacio~E. Grossmann.
   of batch processes.
 \newblock Technical Report Paper 203, Carnegie Mellon University Engineering
   Design Research Center and Department of Chemical Engineering, 1992.
+
+\bibitem[Ilog(2010)]{cplex}
+IBM Ilog.
+\newblock Cplex optimization suite 12.2, 2010.
 
 \bibitem[Karmarkar(1984)]{karmarkar}
 Narendra Karmarkar.
@@ -110,8 +114,8 @@ Michael Pinedo.
 M.T.~Yazdani Sabouni and F.~Jolai.
 \newblock Optimal methods for batch processing problem with makespan and
   maximum lateness objectives.
-\newblock \emph{Applied Mathematical Modelling}, 34\penalty0 (2):\penalty0 314
-  -- 324, 2010.
+\newblock \emph{Applied Mathematical Modelling}, 34\penalty0 (2):\penalty0
+  314--324, 2010.
 
 \bibitem[Williams(1978)]{williams}
 H.~Paul Williams.

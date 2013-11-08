@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable v1 = makeIntVar("v1", 0, 1);
+        IntegerVariable v2 = makeIntVar("v2", 0, 1);
+        m.addConstraint(xnor(v1,v2));
+        s.read(m);
+        s.solve();

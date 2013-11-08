@@ -1,0 +1,22 @@
+%\part{boolchanneling}
+\label{boolchanneling}
+\hypertarget{boolchanneling}{}
+
+\section{boolChanneling (constraint)}\label{boolchanneling:boolchannelingconstraint}\hypertarget{boolchanneling:boolchannelingconstraint}{}
+\begin{notedef}  
+\texttt{boolChanneling}$(b,x,v)$ states that boolean $b$ is true if and only if $x$ has value $v$:
+$$(b=1)\quad\iff\quad (x=v)$$ 
+\end{notedef}
+
+$b$ is an indicator variable acting as an observer of value $v$. 
+See also \hyperlink{domainchanneling}{\texttt{domainChanneling}} for observing all the values of $x$.
+%Imagine a bin packing problem where variable $x$ tells you on which a given bin object is placed. By stating the boolean channeling, $b$ is true if and only if the object is placed on bin $v$, the knapsack constraint for bin $v$ can then be easily stated as a scalar of the boolean variables.
+\begin{itemize}
+	\item \textbf{API} : \mylst{boolChanneling(IntegerVariable b, IntegerVariable x, int v)}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : enumerated for $x$
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cboolchanneling.j2t}

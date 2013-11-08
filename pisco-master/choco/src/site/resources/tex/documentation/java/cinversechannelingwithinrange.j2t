@@ -1,0 +1,11 @@
+        Model m = new CPModel();
+        IntegerVariable[] X = Choco.makeIntVarArray("X", 3, 0, 9, Options.V_ENUM);
+        IntegerVariable[] Y = Choco.makeIntVarArray("Y", 4, 0, 9, Options.V_ENUM);
+
+        m.addConstraint(Choco.eq(X[0], 9));
+        m.addConstraint(Choco.eq(Y[0], 9));
+        m.addConstraint(Choco.eq(Y[2], 9));
+        m.addConstraint(inverseChannelingWithinRange(X, Y));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solve();

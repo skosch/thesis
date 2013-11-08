@@ -1,0 +1,12 @@
+        Model m = new CPModel();
+        int n = 7;
+        IntegerVariable[] vars = makeIntVarArray("v", n, 0, 2);
+        //define the stretches
+        ArrayList<int[]> lgt = new ArrayList<int[]>();
+        lgt.add(new int[]{0, 2, 2}); // stretches of value 0 are of length 2
+        lgt.add(new int[]{1, 2, 3}); // stretches of value 1 are of length 2 or 3
+        lgt.add(new int[]{2, 2, 2}); // stretches of value 2 are of length 2
+        m.addConstraint(stretchPath(lgt, vars));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solve();

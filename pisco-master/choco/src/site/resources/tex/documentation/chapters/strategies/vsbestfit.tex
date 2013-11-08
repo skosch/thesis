@@ -1,0 +1,15 @@
+\section{BestFit (Value selector)}\label{bestfit:bestfitvalselector}\hypertarget{bestfit:bestfitvalselector}{}
+\begin{notedef}
+  \texttt{BestFit}, associated with a \hyperlink{pack:packconstraint}{pack}(items, load, bin, size) constraint, selects the bin $v$ with the minimum residual space $rcap_v$ for the bin assignment integer variable $\mathtt{bin}[i]$ of item $i$:
+$$v\in D(\mathtt{bin}[i]):\quad\min\{rcap_v\}\qquad\text{with } rcap_v=\overline{\mathtt{load}[v]} -\!\sum_{j\in Ker(\mathtt{items}[v])}\!\mathtt{size}[j]$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{Constructor} : \mylst{BestFit(PackSConstraint cstr)}
+	\item \textbf{type of variable} : integer (\emph{bin-to-item assignment variable} $\mathtt{bin}[i]$)
+%	\item \textbf{references} : \emph{n/a}
+\end{itemize}
+
+%\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

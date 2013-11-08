@@ -1,0 +1,9 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable v1 = makeIntVar("v1", 0, 2);
+        IntegerVariable v2 = makeIntVar("v2", 0, 2);
+        IntegerExpressionVariable w1 = plus(v1, 1);
+        IntegerExpressionVariable w2 = minus(v2, 1);
+        m.addConstraint(eq(w1, w2));
+        s.read(m);
+        s.solve();

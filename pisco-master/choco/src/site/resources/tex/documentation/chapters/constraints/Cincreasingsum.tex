@@ -1,0 +1,22 @@
+%!TEX root = ../../content-doc.tex
+%\part{inversechanneling}
+\label{increasingsum}
+\hypertarget{increasingsum}{}
+
+\section{increasingSum (constraint)}\label{increasingsum:increasingsumconstraint}\hypertarget{increasingsum:increasingsumconstraint}{}
+\begin{notedef}
+  \texttt{increasingSum}$(\collec{x_1}{x_n},s)$ states that \collec{x_1}{x_n} is sorted in increasing order and that $s$ is equal to the sum of $x$.
+$$\forall i=[1,n-1] \quad x_i \le x_{i+1}\quad\wedge \quad \sum_{i =[1,n]}x_i = s $$
+%$$x_i = j \wedge j \le |y| \quad\iff\quad y_j = i \wedge i \le |x|,\qquad i \in[1,n],  j\in[1,m]$$
+\end{notedef}
+\begin{itemize}
+	\item \textbf{API} : \mylst{increasingSum(IntegerVariable[] x, IntegerVariable s)}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{no options}
+	\item \textbf{favorite domain} : bounded for x and s
+	\item \textbf{references} : --
+      %\\ global constraint catalog: \href{http://www.emn.fr/z-info/sdemasse/gccat/Cinverse_within_range.html}{inverse\_within\_range}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cincreasingsum.j2t}

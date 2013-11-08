@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="CHOCO">
+
+    <bannerLeft>
+        <name>CHOCO</name>
+        <src>images/name.png</src>
+        <href>index.html</href>
+    </bannerLeft>
+
+    <bannerRight>
+        <name>CHOCO</name>
+        <src>images/logo.png</src>
+        <href>index.html</href>
+    </bannerRight>
+
+    <publishDate format="dd MMM yyyy"/>
+    <body>
+
+        <links>
+            <item name="Apache" href="http://www.apache.org/"/>
+            <item name="Maven" href="http://maven.apache.org/"/>
+            <item name="Sourceforge" href="https://sourceforge.net/projects/choco/"/>
+            <!--<item name="Continuum" href="http://maven.apache.org/continuum"/>-->
+        </links>
+
+        <menu name="About CHOCO">
+            <!--<item name="Welcome" href="index.html"/>-->
+            <item name="Welcome" href="index.html"/>
+            <item name="News" href="choco-news.html"/>
+        </menu>
+
+        <menu name="Get CHOCO">
+            <item name="Download" href="choco-download.html"/>
+            <item name="Build" href="choco-build.html"/>
+            <item name="License" href="license.html"/>
+        </menu>
+
+        <menu name="Using CHOCO">
+            <item name="Documentation" href="choco-documentation.html"/>
+            <item name="Forums" href="choco-forums.html"/>
+            <item name="Samples" href="choco-samples.html"/>
+            <item name="Materials" href="choco-materials.html"/>
+            <item name="FAQ" href="choco-faq.html"/>
+        </menu>
+
+        <menu name="Around CHOCO">
+            <item name="Users" href="choco-users.html"/>
+            <!--<item name="Applications" href="choco-applications.html"/>-->
+            <item name="Publications" href="choco-publications.html"/>
+            <item name="Get involved" href="choco-developper_corner.html"/>
+            <item name="About you" href="choco-about-you.html"/>
+        </menu>
+
+        <menu name="CHOCO Solver">
+            <item name="CHOCO solver" href="choco-solver/index.html"/>
+            <item name="CHOCO solver + CP-Viz" href="cpvisu-tracer/index.html"/>
+        </menu>
+        <menu name="Extras">
+            <item name="CHOCO DB" href="choco-db/index.html"/>
+            <item name="CHOCO Parsers" href="choco-parsers/index.html"/>
+            <item name="CHOCO CLI" href="choco-cli/index.html"/>
+            <item name="CHOCO Visu" href="choco-visu/index.html"/>
+            <item name="Samples" href="samples/index.html"/>
+        </menu>
+
+        <menu ref="reports" />
+
+    </body>
+</project>
+

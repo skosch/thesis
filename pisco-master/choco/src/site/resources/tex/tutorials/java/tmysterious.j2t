@@ -1,0 +1,31 @@
+        // Build a model
+        Model m = new CPModel();
+
+        // Build enumerated domain variables
+        IntegerVariable x1 = Choco.makeIntVar("var1", 0, 5);
+        IntegerVariable x2 = Choco.makeIntVar("var2", 0, 5);
+        IntegerVariable x3 = Choco.makeIntVar("var3", 0, 5);
+
+        // Build the constraints
+        Constraint C1 = Choco.gt(x1, x2);
+        Constraint C2 = Choco.neq(x1, x3);
+        Constraint C3 = Choco.gt(x2, x3);
+
+        // Add the constraints to the Choco model
+        m.addConstraint(C1);
+        m.addConstraint(C2);
+        m.addConstraint(C3);
+
+        // Build a solver
+        Solver s = new CPSolver();
+
+        // Read the model
+        s.read(m);
+
+        // Solve the problem
+        s.solve();
+
+        // Print the variable domains
+        System.out.println("var1 =" + s.getVar(x1).getVal());
+        System.out.println("var2 =" + s.getVar(x2).getVal());
+        System.out.println("var3 =" + s.getVar(x3).getVal());

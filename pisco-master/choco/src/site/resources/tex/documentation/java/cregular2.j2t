@@ -1,0 +1,23 @@
+        //1- Create the model
+        Model m = new CPModel();
+        IntegerVariable v1 = makeIntVar("v1", 1, 4);
+        IntegerVariable v2 = makeIntVar("v2", 1, 4);
+        IntegerVariable v3 = makeIntVar("v3", 1, 4);
+        //2- add some allowed tuples (here, the tuples define a all_equal constraint)
+        List<int[]> tuples = new LinkedList<int[]>();
+        tuples.add(new int[]{1, 1, 1});
+        tuples.add(new int[]{2, 2, 2});
+        tuples.add(new int[]{3, 3, 3});
+        tuples.add(new int[]{4, 4, 4});
+        //3- add the constraint
+        m.addConstraint(regular(new IntegerVariable[]{v1, v2, v3}, tuples));
+        //4- Create the solver, read the model and solve it
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solve();
+        do {
+            System.out.println("("+s.getVar(v1)+","+s.getVar(v2)+","+s.getVar(v3)+")");
+        } while (s.nextSolution());
+        //5- Print the number of solution found
+        System.out.println("Nb_sol : " + s.getNbSolutions());
+

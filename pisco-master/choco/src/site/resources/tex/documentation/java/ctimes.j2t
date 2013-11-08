@@ -1,0 +1,8 @@
+        Model m = new CPModel();
+        IntegerVariable x = makeIntVar("x", 1, 2);
+        IntegerVariable y = makeIntVar("y", 3, 5);
+        IntegerVariable z = makeIntVar("z", 3, 10);
+        m.addConstraint(times(x, y, z));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solve();

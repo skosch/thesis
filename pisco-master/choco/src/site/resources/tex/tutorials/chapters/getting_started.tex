@@ -1,0 +1,143 @@
+%!TEX root = ../content-tut.tex
+%\part{getting started}
+\label{gettingstarted}
+\hypertarget{gettingstarted}{}
+
+\chapter{Getting started: welcome to Choco}\label{gettingstarted:gettingstarted:welcometochoco}\hypertarget{gettingstarted:gettingstarted:welcometochoco}{}
+%This introduction covers the basics of writing a program in Choco
+
+%Choco is a java library for constraint satisfaction problems (CSP), constraint programming (CP) and explanation-based constraint solving (e-CP). It is built on a event-based propagation mechanism with backtrackable structures. 
+
+\section{Before starting}\label{gettingstarted:beforestarting}\hypertarget{gettingstarted:beforestarting}{}
+
+Before doing anything, you have to be sure that 
+\begin{itemize}
+	\item you have at least \href{http://java.sun.com/javase/6/}{Java6} installed on your environment.
+	\item you have a IDE (like \href{http://www.jetbrains.com/idea/}{IntelliJ IDEA} or \href{http://www.eclipse.org/}{Eclipse}).
+\end{itemize}
+
+To install Java6 or your IDE, please refer to its specific documentation. We now assume that you have the previously defined environment.
+
+You need to create a \textbf{New Project...} on your favorite IDE (\href{http://www.jetbrains.com/idea/training/demos.html}{create a new project on IntelliJ}, \href{https://eclipse-tutorial.dev.java.net/eclipse-tutorial/part1.html}{create a new project on Eclipse}). Our project name is \emph{ChocoProgram}.
+Create a new class, named \emph{MyFirstChocoProgram}, with a main method.
+\begin{lstlisting}
+	public class MyFirstChocoProgram {
+	
+	    public static void main(String[] args) {
+	        
+	    }
+	}
+\end{lstlisting}
+
+\section{Download Choco}\label{gettingstarted:downloadchoco}\hypertarget{gettingstarted:downloadchoco}{}
+Now, before doing anything else, you need to download the last stable version of Choco. See the \href{http://www.emn.fr/z-info/choco-solver/choco-download.html}{download page}. 
+Once you have download choco, you need to add it to the classpath of your project.
+
+Now you are ready to create you first Choco program.
+
+If you want a short introduction on what is constraint programming, you can find some informations in the \href{http://www.emn.fr/z-info/choco-solver/choco-documentation.html}{Documentation of choco}.\\
+When you feel ready, solve your own problem! And if you need more tries, please take a look at the \hyperlink{exercises}{exercises}. %and \hyperlink{examples}{examples}. 
+
+\chapter{First Example: Magic square}\label{gettingstarted:firstexample:magicsquare}\hypertarget{gettingstarted:firstexample:magicsquare}{}
+A simple magic square of order 3 can be seen as the ``Hello world!'' program in Choco. First of all, we need to agree on the definition of a magic square of order 3.
+\href{http://en.wikipedia.org/wiki/Magic_square}{Wikipedia} tells us that :
+\begin{myquote}
+A \textbf{magic square} of order $n$ is an arrangement of $n^2$ numbers, usually distinct integers, in a square, such that the $n$ numbers in all rows, all columns, and both diagonals sum to the same constant. A normal magic square contains the integers from 1 to $n^2$.
+\end{myquote}
+
+So we are going to solve a problem where unknows are cells value, knowing that each cell can take its value between 1 and $n^2$, is different from the others and columns, diagonals and rows are equal to the same constant M (which is equal to $n * (n^2 + 1) / 2$).
+
+We have the definition, let see how to add some Choco in it.
+
+\section{First, the model}\label{gettingstarted:first,themodel}\hypertarget{gettingstarted:first,themodel}{}
+To define our problem, we need to create a Model object. As we want to solve our problem with constraint programming (of course, we do), we need to create a CPModel.
+% ref. samples.documentation.Code4Tut1#tgettingstarted()
+\lstinputlisting{java/tgetstar1.j2t}
+
+These objects require to import the following classes:
+\begin{lstlisting}
+	import choco.cp.model.CPModel;
+	import choco.kernel.model.Model;
+\end{lstlisting}
+
+At the begining, our model is empty, no problem has been defined explicitly. A model is composed of variables and constraints, and constraints link variables to each others.
+
+\begin{itemize}
+\item 
+\textbf{Variables}\label{gettingstarted:variables}\hypertarget{gettingstarted:variables}{}
+A variable is an object defined by a name, a type and a domain. We know that our unknowns are cells of the magic square. So:
+\mylst{IntegerVariable cell = Choco.makeIntVar("aCell", 1, n*n);}
+which means that \emph{aCell} is an integer variable, and its domain is defined from \emph{1} to \emph{n*n}.
+But we need $n^2$ variables, so the easiest way to define them is:
+\lstinputlisting{java/tgetstar2.j2t}
+
+This code requires to import the following classes:
+\begin{lstlisting}
+	import choco.kernel.model.variables.integer.IntegerVariable;
+	import choco.Choco;
+\end{lstlisting}
+
+Now that our variables are defined, we have to define the constraints between variables.
+\item
+\textbf{Constraints over the rows}\label{gettingstarted:constraintsovertherows}\hypertarget{gettingstarted:constraintsovertherows}{}
+The sum of ach rows is equal to a constant $M$.
+So we need a sum operator and and equality constraint. The both are provides by the \texttt{Choco.java} class.
+\lstinputlisting{java/tgetstar3.j2t}
+This part of code requires the following import:
+\begin{lstlisting}
+  import choco.kernel.model.constraints.Constraint;
+\end{lstlisting}
+After the creation of the constraints, we need to add them to the model:
+\lstinputlisting{java/tgetstar4.j2t}
+\item
+\textbf{Constraints over the columns}\label{gettingstarted:constraintsoverthecolumns}\hypertarget{gettingstarted:constraintsoverthecolumns}{}
+Now, we need to declare the equality between the sum of each column and $M$.
+But, the way we have declare our variables matrix does not allow us to deal easily with it in the column case. So we create the transposed matrix (a $90^o$ rotation of the matrix) of \emph{cells}.
+\begin{note}
+We do not introduce new variables. We just reorder the matrix to see the \emph{column point of view}.
+\end{note}
+\lstinputlisting{java/tgetstar5.j2t}
+Now, we can declare the constraints as before, and add them to the model:
+\lstinputlisting{java/tgetstar6.j2t}
+\item
+\textbf{Constraints over the diagonals}\label{gettingstarted:constraintsoverthediagonals}\hypertarget{gettingstarted:constraintsoverthediagonals}{}
+Now, we get the two diagonals array \emph{diags}, reordering the required \emph{cells} variables, like in the previous step.
+\lstinputlisting{java/tgetstar7.j2t}
+
+And we add the constraints to the model (in one step this time).
+\lstinputlisting{java/tgetstar8.j2t}
+
+\item
+\textbf{Constraints of variables AllDifferent}\label{gettingstarted:constraintsofvariablesalldifferent}\hypertarget{gettingstarted:constraintsofvariablesalldifferent}{}
+Finally, we add the AllDifferent constraints, stating that each \emph{cells} variables takes a unique value. 
+One more time, we have to reorder the variables, introducing temporary array.
+\lstinputlisting{java/tgetstar9.j2t}
+\end{itemize}
+
+\section{Then, the solver}\label{gettingstarted:then,thesolver}\hypertarget{gettingstarted:then,thesolver}{}
+Our model is established, it does not require any other information, we can focus on the way to solve it.
+The first step is to create a Solver;
+\lstinputlisting{java/tgetstar10.j2t}
+This part requires the following imports:
+\begin{lstlisting}
+	import choco.kernel.solver.Solver;
+	import choco.cp.solver.CPSolver;
+\end{lstlisting}
+
+After that, the model and the solver have to be linked, thus the solver \emph{read} the model, to extract informations:
+\lstinputlisting{java/tgetstar11.j2t}
+
+Once it is done, we just need to solve it:
+\lstinputlisting{java/tgetstar12.j2t}
+And print the information
+\lstinputlisting{java/tgetstar13.j2t}
+
+\section{The entire code}\label{gettingstarted:thecode}\hypertarget{gettingstarted:thecode}{}
+The entire code looks like:
+\newpage
+\lstinputlisting{java/tgetstar.j2t}
+
+\section{Conclusion}\label{gettingstarted:conclusion}\hypertarget{gettingstarted:conclusion}{}
+We saw, in a few steps, how to modelize and to solve a basic problem using constraint programming and Choco.
+We think a main clue to efficiency is to strongly distinguish the modeling part from the resolution part. 
+That's why, from now on, we will first introduce the modeling elements and then focus on the solving tools.   

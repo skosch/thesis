@@ -1,0 +1,23 @@
+%\part{domainchanneling}
+\label{domainchanneling}
+\hypertarget{domainchanneling}{}
+
+\section{domainChanneling (constraint)}\label{domainchanneling:domainchannelingconstraint}\hypertarget{domainchanneling:domainchannelingconstraint}{}
+\begin{notedef}  
+\texttt{domainChanneling}$(x, \collec{b_1}{b_n})$ states that boolean $b_j$ is true if and only if $x$ has value $j$:
+$$b_j=1\quad\iff\quad x=j,\qquad\forall j=1..n$$ 
+\end{notedef}
+
+It makes the link between a domain variable $x$ and those 0-1 variables $b$ that are associated with each potential value of $x$: the 0-1 variable $b_j$ associated with the value $j$ taken by $x$ is equal to 1, while the remaining 0-1 variables $b_i$ ($i\neq j$) are all equal to 0.
+
+\begin{itemize}
+	\item \textbf{API} : \mylst{domainChanneling(IntegerVariable x, IntegerVariable[] b)}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : enumerated for $x$
+	\item \textbf{references} :\\
+	  global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Cdomain_constraint.html}{\tt domain\_constraint}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cdomainchanneling.j2t}

@@ -1,0 +1,79 @@
+%\part{sudoku and cp}
+\label{sudokuandcp}
+\hypertarget{sudokuandcp}{}
+
+\chapter{Sudoku and Constraint Programming}\label{sudokuandcp:sudokuandconstraintprogramming}\hypertarget{sudokuandcp:sudokuandconstraintprogramming}{}
+
+\section{Sudoku ?!?}\label{sudokuandcp:sudoku!}\hypertarget{sudokuandcp:sudoku!}{}
+
+\insertGraphique{5cm}{media/sudokuillustration.jpg}{A sudoku grid}
+
+Everybody knows those grids that appeared last year in the subway, in wating lounges, on colleague's desks, etc. In Japanese \emph{su} means digit and \emph{doku}, unique. But this game has been discovered by an American ! The first grids appeared in the USA in 1979 (they were hand crafted). \href{http://en.wikipedia.org/wiki/sudoku}{Wikipedia} tells us that they were designed by Howard Garns a retired architect. He died in 1989 well before the success story of sudoku initiated by Wayne Gould, a retired judge from Hong-Kong. The rules are really simple: a 81 cells square grid is divided in 9 smaller blocks of 9 cells (3 x 3). Some of the 81 are filled with one digit. The aim of the puzzle is to fill in the other cells, using digits except 0, such as each digit appears once and only once in each row, each column and each smaller block. The solution is unique.
+
+\subsection{Solving sudokus}\label{sudokuandcp:solvingsudokus}\hypertarget{sudokuandcp:solvingsudokus}{}
+
+Many computer techniques exist to quickly solve a sudoku puzzle. Mainly, they are based on backtracking algorithms. The idea is the following: give a free cell a value and continue as long as choices remain consistent. As soon as an inconsistency is detected, the computer program backtracks to its earliest past choice et tries another value. If no more value is available, the program keeps backtracking until it can go forward again. This systematic technique make it sure to solve a sudoku grid. However, no human player plays this way: this needs too much memory ! 
+
+\begin{note}
+see \href{http://en.wikipedia.org/wiki/sudoku}{Wikipedia} for a panel of solving techniques.
+\end{note}
+
+\section{Sudoku and Artificial Intelligence}\label{sudokuandcp:sudokuandartificialintelligence}\hypertarget{sudokuandcp:sudokuandartificialintelligence}{}
+
+Many techniques and rules have been designed and discovered to solve sudoku grids. Some are really simple, some need to use some useful tools: pencil and eraser. 
+
+\subsection{Simple rules: single candidate and single position}\label{sudokuandcp:simplerules:singlecandidateandsingleposition}\hypertarget{sudokuandcp:simplerules:singlecandidateandsingleposition}{}
+
+\insertGraphique{5cm}{media/sudokuillustrationscsp.jpg}{Simple rules: single candidates and single position} 
+
+Let consider the grid on Figure~\ref{fig:media/sudokuillustrationscsp.jpg} and the cell with the red dot. In the same line, we find: 3, 4, 6, 7, and 9. In the same column: 2, 3, 5, and 8. In the same block: 2, 7, 8, and 9. There remain only one possibility: \textbf{1}. This is the \textbf{single candidate} rule. This cell should be filled in with \textbf{1}. 
+
+Now let consider a given digit: let's say 4. In the block with a blue dot, there is no 4. Where can it be ? The 4's in the surrounding blocks heavily constrain the problem. There is a \textbf{single position} possible: the blue dot. This another simple rule to apply.
+
+Alternatively using these two rules allows a player to fill in many cells and even solve the simplest grids. 
+But, limits are easily reached. More subtle approaches are needed: but an important tool is now needed ... an eraser ! 
+
+\subsection{Human reasoning principles}\label{sudokuandcp:humanreasoningprinciples}\hypertarget{sudokuandcp:humanreasoningprinciples}{}
+
+\insertGraphique{7cm}{media/sudokuillustrationmarks.jpg}{Introducing marks}
+
+Many techniques do exist but a vaste amount of them rely on simple principles. The first one is: do not try to find the value of a cell but instead focus on values that \textbf{will never be assigned} to it. The space of possibility is then reduced. This is where the eraser comes handy. Many players marks the remaining possibilities as in the grid on the left. 
+
+Using this information, rather subtle reasoning is possible. For example, consider the seventh column on the grid on the left. Two cells contain as possible values the two values 5 and 7. This means that those two values cannot appear elsewhere in that very same column. Therefore, the other unassigned cell on the column can only contain a 6. We have \emph{deduced} something.
+
+\noindent\begin{minipage}[b]{0.8\linewidth}
+This was an easy to spot inference. This is not always the case. Consider the part of the grid on the right. Let us consider the third column. For cells 4 and 5, only two values are available: 4 and 8. Those values cannot be assigned to any other cell in that column. Therefore, in cell 6 we have a 3, and thus and 7 in cell 2 and finally a 1 in cell 3. This can be a very powerful rule.
+
+Such a reasoning (sometimes called \emph{Naked Pairs}) is easily generalized to any number of cells (always in the same region: row, column or block) presenting this same configuration. This local reasoning can be applied to any region of the grid. It is important to notice that the inferred information can (and should) be used from a region to another.   
+\end{minipage}%
+\begin{minipage}[m]{0.2\linewidth}
+~~\Graph{media/sudokuillustrationpart.jpg}{width=3cm}
+\end{minipage}
+
+\noindent The following principles of \emph{human} reasoning can be listed: 
+\begin{itemize}
+	\item reasoning on \emph{possible} values for a cell (by erasing impossible ones)
+	\item systematically applying an evolved local reasoning (such as the \emph{Naked Pairs} rule)
+	\item transmitting inferred information from a region to another related through a given a set of cells
+\end{itemize}
+
+\subsection{Towards Constraint Programming}\label{sudokuandcp:towardsconstraintprogramming}\hypertarget{sudokuandcp:towardsconstraintprogramming}{}
+
+Those three principles are at the core of \textbf{constraint programming} a recent technique coming from both \emph{artificial intelligence} and \emph{operations research}.
+
+\begin{itemize}
+	\item The first principle is called \textbf{domain reduction} or \emph{filtering}
+	\item The second considers its region as a \textbf{constraint} (a relation to be verified by the solution of the problem): here we consider an \emph{all different} constraint (all the values must be different in a given region). Constraints are considered \textbf{locally} for reasoning
+	\item The third principle is called \textbf{propagation}: constraints (regions) communicate with one another through the available values in variables (cells)
+\end{itemize}
+
+Constraint programming is able to solve this problem as a human would do. Moreover, a large majority of the rules and techniques described on the Internet amount to a well-known problem: the alldifferent problem. A \textbf{constraint solver} (as \textbf{Choco}) is therefore able to reason on this problem allowing the solving of sudoku grid as a human would do although it has not be specifically designed to.
+
+Ideally, iterating local reasoning will lead to a solution. However, for exceptionnaly hard grids, an enumerating phase (all constraint solvers provide tools for that) relying on backtracking may be necessary.
+
+\section{See also}\label{sudokuandcp:seealso}\hypertarget{sudokuandcp:seealso}{}
+
+\begin{itemize}
+	\item \href{http://njussien.e-constraints.net/sudoku/eng-jouer.html}{SudokuHelper} a sudoku solver and helper applet developed with \emph{Choco}.
+	\item \href{http://www.palmsudoku.com}{PalmSudoku} a rather complete list of rules and tips for solving sudokus
+\end{itemize}

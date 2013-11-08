@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        IntegerVariable x = makeIntVar("x", 1, 5);
+        IntegerVariable y = makeIntVar("y", 0, 10);
+        m.addConstraint(eq(y, ifThenElse(gt(x,2), mult(x,x), x)));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

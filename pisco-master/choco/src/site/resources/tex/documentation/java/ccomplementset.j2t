@@ -1,0 +1,8 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        SetVariable x = makeSetVar("X", 1, 4);
+        SetVariable y = makeSetVar("Y", 2, 5);
+        Constraint c1 = complementSet(x, y);
+        m.addConstraint(c1);
+        s.read(m);
+        s.solveAll();

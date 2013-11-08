@@ -1,0 +1,38 @@
+\section{Set variables}\label{setvariable}\hypertarget{setvariable}{}
+\texttt{SetVariable} is high level modeling tool. It allows to represent variable whose values are sets. A SetVariable on integer values between $[1,n]$ has $2^{n}$ values (every possible subsets of $\{1..n\}$). This makes an exponential number of values and the domain is represented with two bounds corresponding to the intersection of all possible sets (called the kernel) and the union of all possible sets (called the envelope) which are the possible candidate values for the variable. The consistency achieved on SetVariables is therefore a kind of bound consistency.
+
+\subsubsection{constructors:}
+      \noindent\begin{tabular}{p{.8\linewidth}p{.15\linewidth}}
+        Choco method & return type \\
+        \hline
+        \mylst{makeSetVar(String name, int lowB, int uppB, String... options)} &\texttt{SetVariable}\\
+        \mylst{makeSetVarArray(String name, int dim, int lowB, int uppB, String... options)} &\texttt{SetVariable[]}
+      \end{tabular}
+%	\begin{itemize}
+%		\item to create an \textbf{SetVariable} object:
+%		\begin{itemize}
+%			\item \mylst{makeSetVar(String name, int lowB, int uppB, String... options)}
+%		\end{itemize}
+%		\item to create an \textbf{array of SetVariable} object:
+%		\begin{itemize}
+%			\item \mylst{makeSetVarArray(String name, int dim, int lowB, int uppB, String... options)}
+%		\end{itemize}
+%	\end{itemize}
+%	\item \textbf{return type} : \texttt{SetVariable} \emph{or} \texttt{SetVariable[]}
+\subsubsection{options:}
+	\begin{itemize}
+		\item \emph{no option} : equivalent to option \hyperlink{venum:venumoptions}{\tt Options.V\_ENUM}
+		\item \hyperlink{venum:venumoptions}{\tt Options.V\_ENUM} : to force Solver to create \texttt{SetVariable} with enumerated domain for the caridinality variable.
+		\item \hyperlink{vbound:vboundoptions}{\tt Options.V\_BOUND} : to force Solver to create \texttt{SetVariable} with bounded cardinality.
+		\item \hyperlink{vnodecision:vnodecisionoptions}{\tt Options.V\_NO\_DECISION} : to force variable to be removed from the pool of decisional variables.
+		\item \hyperlink{vobjective:vobjectiveoptions}{\tt Options.V\_OBJECTIVE} : to define the variable to be the one to optimize.
+	\end{itemize}
+
+The variable representing the cardinality can be accessed and constrained using method \texttt{getCard()} that returns an \hyperlink{integervariable}{\tt IntegerVariable} object.
+
+\subsubsection{Example:}
+\lstinputlisting{java/vsetvariable.j2t}
+
+Set variables are illustrated on the \hyperlink{model:example2:ternarysteinerchoco}{ternary Steiner problem}. 
+
+

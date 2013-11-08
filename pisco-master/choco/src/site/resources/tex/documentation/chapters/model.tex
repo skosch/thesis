@@ -1,0 +1,583 @@
+%!TEX root = ../content-doc.tex
+\chapter{The model}\label{doc:model}\hypertarget{doc:model}{}
+
+The {\tt Model}, along with the {\tt Solver}, is one of the two key elements of any Choco program. The Choco {\tt Model} allows to describe a problem in an easy and declarative way: it simply records the variables and the constraints defining the problem.
+
+This section describes the large API provided by Choco to create different types of \hyperlink{model:variables}{variables} and \hyperlink{model:constraints}{constraints}.
+
+%\begin{note}
+\textbf{Note that a static import is required to use the Choco API:}
+\begin{lstlisting}
+  import static choco.Choco.*;
+\end{lstlisting}
+%It is mandatory in order to compile !
+%\end{note}
+
+%\section{How to create a model}\label{model:howtocreateamodel}\hypertarget{model:howtocreateamodel}{}
+First of all, a {\tt Model} object is created as follows:
+\begin{lstlisting}
+Model model = new CPModel();
+\end{lstlisting}
+In that specific case, a Constraint Programming (CP) {\tt Model} object has been created. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% VARIABLE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Variables}\label{model:variables}\hypertarget{model:variables}{}
+
+%Choco provides a large API to create different types of variables : \textbf{integer}, \textbf{real} and \textbf{set}. 
+
+A Variable is defined by a type (\hyperlink{integervariable}{integer}, \hyperlink{realvariable}{real}, or \hyperlink{setvariable}{set} variable), a name, and the values of its domain. When creating a simple variable, some options can be set to specify its domain representation (\eg enumerated or bounded) within the {\tt Solver}.
+%Some kinds of variables have options for their domain, it may have an effect on what kind of specific object is created when the model is read by the solver.
+\begin{note}
+The choice of the domain should be considered. The efficiency of the solver often depends on judicious choice of the domain type.
+\end{note}
+Variables can be combined as \hyperlink{model:expressionvariables}{expression variables} using operators.
+
+One or more variables can be added to the model using the following methods of the \texttt{Model} class:
+\lstinputlisting{java/mvariabledeclaration1.j2t}
+
+\begin{note}
+Explictly addition of variables is not mandatory. See \hyperlink{model:constraints}{\tt Constraint} for more details.
+\end{note}
+
+Specific role of variables \emph{var} can be defined with \emph{options}:  \hyperlink{model:decisionvariables}{non-decision} variables or  \hyperlink{model:objectivevariable}{objective} variable;
+\lstinputlisting{java/mvariabledeclaration2.j2t}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SIMPLE VARIABLE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Simple Variables}\label{model:simplevariables}\hypertarget{model:simplevariables}{}
+See Section \hyperlink{ch:vars}{Variables} for details:
+
+\begin{notedef}\tt
+\hyperlink{integervariable}{IntegerVariable}, \hyperlink{setvariable}{SetVariable}, \hyperlink{realvariable}{RealVariable}
+\end{notedef}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONSTANT VARIABLE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Constants}\label{model:constants}\hypertarget{model:constants}{}
+A constant is a variable with a fixed domain. An \hyperlink{integervariable}{\tt IntegerVariable} declared with a unique value is automatically set as constant. A constant declared twice or more is only stored once in a model.
+
+\lstinputlisting{java/mconstant.j2t}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXPRESSION VARIABLE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Expression variables and operators}\label{model:expressionvariables}\hypertarget{model:expressionvariables}{}
+Expression variables represent the result of combinations between variables of the same type made by operators. Two types of expression variables exist : 
+\begin{notedef}
+\textbf{\tt IntegerExpressionVariable} and \textbf{\tt RealExpressionVariable}.
+\end{notedef}
+One can define an expression variable to define an operation, for example:
+\lstinputlisting{java/mexpressionvariable.j2t}
+
+%\section{Operators}\label{model:operators}\hypertarget{model:operators}{}
+
+To construct expressions of variables, simple operators can be used. Each returns a \texttt{ExpressionVariable} object:
+\begin{notedef}\tt
+\begin{itemize}
+\item Integer : \hyperlink{abs:absoperator}{abs}, \hyperlink{div:divoperator}{div}, \hyperlink{ifthenelse:ifthenelseoperator}{ifThenElse}, \hyperlink{max:maxoperator}{max}, \hyperlink{min:minoperator}{min}, \hyperlink{minus:minusoperator}{minus}, \hyperlink{mod:modoperator}{mod}, \hyperlink{mult:multoperator}{mult}, \hyperlink{neg:negoperator}{neg}, \hyperlink{plus:plusoperator}{plus}, \hyperlink{power:poweroperator}{power}, \hyperlink{scalar:scalaroperator}{scalar}, \hyperlink{sum:sumoperator}{sum},
+\item Real : \hyperlink{cos:cosoperator}{cos}, \hyperlink{minus:minusoperator}{minus}, \hyperlink{mult:multoperator}{mult}, \hyperlink{plus:plusoperator}{plus}, \hyperlink{power:poweroperator}{power}, \hyperlink{sin:sinoperator}{sin}
+\end{itemize}
+\end{notedef}
+Note that these operators are not considered as constraints: they do not return a \texttt{Constraint} objet but a \texttt{Variable} object.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MULTIPLE VARIABLE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{MultipleVariables}\label{model:multiplevariables}\hypertarget{model:multiplevariables}{}
+These are syntaxic sugar. To make their declaration easier, \hyperlink{tree:treeconstraint}{\tt tree}, \hyperlink{geost:geostconstraint}{\tt geost}, and scheduling constraints allow or require to use multiple variables, like \texttt{TreeParametersObject}, \texttt{GeostObject} or \hyperlink{taskvariable}{\tt TaskVariable}.
+See also the code examples for these constraints.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% OPTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Decision/non-decision variables}\label{model:decisionvariables}\hypertarget{model:decisionvariables}{}
+
+By default, each variable added to a model is a decision variable, \textit{i.e.} is included in the default search strategy. A variable can be stated as a non decision one if its value can be computed by side-effect. To specify non decision variables, one can 
+\begin{itemize}
+\item exclude them from the search strategies (see \hyperlink{solver:searchstrategy}{search strategy} for more details);
+\item specify non-decision variables (adding \hyperlink{vnodecision:vnodecisionoptions}{\tt Options.V\_NO\_DECISION} to their options) and keep the default search strategy.
+\end{itemize}
+\lstinputlisting{java/mnodecision1.j2t}
+Each of these options can also be set within a single instruction for a group of variables, as follows: 
+\lstinputlisting{java/mnodecision2.j2t}
+
+\begin{note}
+ The declaration of a \hyperlink{solver:searchstrategy}{search strategy} will erase setting \hyperlink{vnodecision:vnodecisionoptions}{\tt Options.V\_NO\_DECISION}.
+\end{note}
+  \todo{more precise: user-defined/pre-defined, variable and/or value heuristics ?}
+
+\subsection{Objective variable}\label{model:objectivevariable}\hypertarget{model:objectivevariable}{}
+You can define an objective variable directly within the model, by using option \hyperlink{vobjective:vobjectiveoptions}{\tt Options.V\_OBJECTIVE}:
+\lstinputlisting{java/mobjective.j2t}
+
+Only one variable can be defined as an objective. If more than one objective variable is declared, then only the last one will be taken into account.
+
+Note that optimization problems can be declared without defining an objective variable within the model (see the \hyperlink{solver:optimization}{optimization example}.)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Constraints}\label{model:constraints}\hypertarget{model:constraints}{}
+Choco provides a large number of simple and global constraints and allows the user to easily define its own new constraint.
+% Either basic, global (a \hyperlink{constraints}{large set of global constraints} are available) or \hyperlink{advanced:defineyourownconstraint}{user-defined} constraints, they are used to specify conditions to be held on variables to the model. 
+A constraint deals with one or more variables of the model and specify conditions to be held on these variables. 
+A constraint is stated into the model by using the following methods available from the \texttt{Model} API: 
+
+\lstinputlisting{java/mconstraintdeclaration1.j2t}
+
+\begin{note}\
+Adding a constraint automatically adds its variables to the model (explicit declaration of variables addition is not mandatory).
+Thus, a variable not involved in any constraints will not be declared in the Solver during the reading step.
+\end{note}
+
+
+\subsubsection{Example:} adding a difference (disequality) constraint between two variables of the model
+
+\lstinputlisting{java/mconstraintdeclaration2.j2t}
+
+Available \emph{options} depend on the kind of constraint \emph{c} to add: they allow, for example, to choose the filtering algorithm to run during propagation. See \hyperlink{optionssettings}{Section options and settings} for more details, specific APIs exist for declaring options constraints.
+
+This section presents the constraints available in the Choco API sorted by type or by domain. Related sections:
+\begin{itemize}
+\item a detailed description (with options, examples, references) of each constraint is given in Section \hyperlink{ch:constraints}{constraints}
+%\item Section \hyperlink{doc:applications}{applications} shows how to apply some specific global constraints
+\item Section \hyperlink{advanced:defineyourownconstraint}{user-defined constraint} explains how to create its own constraint.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% BINARY CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Binary constraints}\label{model:comparisonconstraints}\hypertarget{model:comparisonconstraints}{}
+%The simplest constraints are comparisons which are defined over expressions of variables such as linear combinations. The following comparison constraints can be accessed through the \texttt{Model} API:
+Constraints involving two integer variables
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{eq:eqconstraint}{eq}, \hyperlink{geq:geqconstraint}{geq}, \hyperlink{gt:gtconstraint}{gt}, \hyperlink{leq:leqconstraint}{leq}, \hyperlink{lt:ltconstraint}{lt}, \hyperlink{neq:neqconstraint}{neq}
+  \item \hyperlink{abs:absconstraint}{abs}, \hyperlink{oppositesign:oppositesignconstraint}{oppositeSign}, \hyperlink{samesign:samesignconstraint}{sameSign}
+  \end{itemize}
+\end{notedef}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TERNARY CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Ternary constraints}\label{model:ternaryconstraints}\hypertarget{model:ternaryconstraints}{}
+Constraints involving three integer variables
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{distanceeq:distanceeqconstraint}{distanceEQ}, \hyperlink{distanceneq:distanceneqconstraint}{distanceNEQ}, \hyperlink{distancegt:distancegtconstraint}{distanceGT}, \hyperlink{distancelt:distanceltconstraint}{distanceLT}
+  \item \hyperlink{intdiv:intdivconstraint}{intDiv}, \hyperlink{mod:modconstraint}{mod}, \hyperlink{times:timesconstraint}{times}
+  \end{itemize}
+\end{notedef}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REAL CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Constraints involving real variables}\label{model:realconstraints}\hypertarget{model:realconstraints}{}
+%The simplest constraints are comparisons which are defined over expressions of variables such as linear combinations. The following comparison constraints can be accessed through the \texttt{Model} API:
+Constraints involving two real variables
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{eq:eqconstraint}{eq}, \hyperlink{geq:geqconstraint}{geq}, \hyperlink{leq:leqconstraint}{leq}
+  \end{itemize}
+\end{notedef}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SET CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Constraints involving set variables}\label{model:setconstraints}\hypertarget{model:setconstraints}{}
+%The simplest constraints are comparisons which are defined over expressions of variables such as linear combinations. The following comparison constraints can be accessed through the \texttt{Model} API:
+Set constraints are illustrated on the \hyperlink{model:example2:ternarysteinerchoco}{ternary Steiner problem}. 
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{member:memberconstraint}{member}, \hyperlink{notmember:notmemberconstraint}{notMember}
+  \item \hyperlink{eqcard:eqcardconstraint}{eqCard}, \hyperlink{geqcard:geqcardconstraint}{geqCard}, \hyperlink{leqcard:leqcardconstraint}{leqCard}, \hyperlink{neqcard}{neqCard}
+  \item \hyperlink{eq}{eq}
+  \item \hyperlink{isincluded:isincludedconstraint}{isIncluded}, \hyperlink{isnotincluded:isnotincludedconstraint}{isNotIncluded}
+  \item \hyperlink{setinter:setinterconstraint}{setInter}
+  \item \hyperlink{setdisjoint:setdisjointconstraint}{setDisjoint}, \hyperlink{setunion:setunionconstraint}{setUnion}
+  \item \hyperlink{max:maxofaset}{max}, \hyperlink{min:minofaset}{min}
+  \item \hyperlink{inverseset}{inverseSet}
+  \item \hyperlink{among}{among}
+  \item \hyperlink{pack:packconstraint}{pack}
+  \end{itemize}
+\end{notedef}
+
+%\hyperlink{max:maxconstraint}{max}, \hyperlink{min:minconstraint}{min},
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANNELING CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Channeling constraints}\label{model:channelingconstraints}\hypertarget{model:channelingconstraints}{}
+The use of a redundant model, based on an alternative set of decision variables, is a frequent technique to strengthen propagation or to get more freedom to design dedicated search heuristics. 
+The following constraints allow to ensure the integrity of two redundant models by linking (channeling) variable-value assignments in the first model to variable-value assignments in the second model:
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{boolchanneling:boolchannelingconstraint}{boolChanneling} $b_j=1 \iff x=j$, 
+  \item \hyperlink{domainchanneling:domainchannelingconstraint}{domainChanneling} $b_j=1 \iff x=j$, $\forall j$, 
+  \item \hyperlink{inversechanneling:inversechannelingconstraint}{inverseChanneling} $y_j=i \iff x_i=j$, $\forall i, j$, 
+  \item \hyperlink{inversechannelingwithinrange:inversechannelingconstraintwithinrange}{inverseChannelingWithinRange} $y_j=i \wedge j \le |x| \iff x_i=j \wedge i \le |y|$, $\forall i, j$, 
+  \item \hyperlink{inverseset:inversesetconstraint}{inverseSet} $i\in s_j \iff x_i=j$, $\forall i,j$, 
+  \end{itemize}
+\end{notedef}
+In the n-queen problem, for example, a domain variable by column indicates the row $j$ to place a queen in column $i$. To enhance the propagation, a redundant model can be stated by defining a domain variable by row indicating the column $i$. As columns and rows can be interchanged, the same set of constraints applies to both models, then constraint \hyperlink{inversechanneling:inversechannelingconstraint}{inverseChanneling} is set to propagate between the two models.
+\lstinputlisting{java/cinversechanneling.j2t}
+
+Channeling constraints are also useful to compose a model made up of two parts as, for example, in a task-resources assignment problem where some constraints are set on the task set and some other constraints are set on the resource set.
+
+\hyperlink{model:reifiedconstraints}{Reification} offers an other type of channeling, between a constraint and a boolean variable representing its truth value. 
+More complex channeling can be done using reification and boolean operators although they are less effective. 
+The reified constraint below states $b=1\iff x=y$:
+\lstinputlisting{java/cchannelingreified.j2t}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXTENSIONS CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Constraints in extension and relations}\label{model:arbitraryconstraintsinextension}\hypertarget{model:arbitraryconstraintsinextension}{}
+Choco supports the statement of constraints defining arbitrary relations over two or more variables.
+Such a relation may be defined by three means:
+\begin{itemize}
+	\item \textbf{feasible table:} the list of allowed tuples of values (that belong to the relation),
+	\item \textbf{infeasible table:} the list of forbidden tuples of values (that do not belong to the relation),
+	\item \textbf{predicate:} a method to be called in order to check whether a tuple of values belongs or not to the relation.
+\end{itemize}
+On the one hand, constraints based on tables may be rather memory consuming in case of large domains, although one relation table may be shared by several constraints. On the other hand, predicate constraints require little memory as they do not cache truth values, but imply some run-time overhead for calling the feasibility test. Table constraints are thus well suited for constraints over small domains; while predicate constraints are well suited for situations with large domains. 
+
+Different levels of consistency can be enforced on constraints in extension (when selecting an API) and, for Arc Consistency, different filtering algorithms can be used (when selecting an option).
+The Choco API for creating constraints in extension are as follows:
+
+\begin{notedef}
+  \begin{itemize}
+  \item arc consistency (AC) for binary relations:\\
+{\tt \hyperlink{feaspairac:feaspairacconstraint}{feasPairAC}, \hyperlink{infeaspairac:infeaspairacconstraint}{infeasPairAC}, \hyperlink{relationpairac:relationpairacconstraint}{relationPairAC}}
+  \item arc consistency (AC) for n-ary relations:\\
+{\tt \hyperlink{feastupleac:feastupleacconstraint}{feasTupleAC}, \hyperlink{infeastupleac:infeastupleacconstraint}{infeasTupleAC}, \hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC}}
+  \item weaker forward checking (FC) for n-ary relations:\\
+{\tt \hyperlink{feastuplefc:feastuplefcconstraint}{feasTupleFC}, \hyperlink{infeastuplefc:infeastuplefcconstraint}{infeasTupleFC}, \hyperlink{relationtuplefc:relationtuplefcconstraint}{relationTupleFC}}
+  \end{itemize}
+\end{notedef}
+
+\subsubsection{Relations.}
+A same relation might be shared among several constraints, in this case it is highly recommended to create it first and then use the \hyperlink{relationpairac:relationpairacconstraint}{relationPairAC}, \hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC}, or \hyperlink{relationtuplefc:relationtuplefcconstraint}{relationTupleFC} API  on the same relation for each constraint.
+
+For binary relations, the following Choco API is provided:\\
+\mylst{makeBinRelation(int[] min, int[] max, List<int[]>pairs, boolean feas)}
+
+It returns a \texttt{BinRelation} giving a list of compatible (\texttt{feas=true}) or incompatible (\texttt{feas=false}) pairs of values. This relation can be applied to any pair of variables $(x_1,x_2)$ whose domains are included in the \texttt{min/max} intervals, i.e. such that:
+$$\mathtt{min}[i] \le x_i.\mathtt{getInf}() \le x_i.\mathtt{getSup}() \le  \mathtt{max}[i],\quad \forall i.$$
+Bounds \texttt{min/max} are mandatory in order to allow to compute the opposite of the relation if needed.
+
+For n-ary relations, the corresponding Choco API is:\\
+\mylst{makeLargeRelation(int[] min, int[] max, List<int[]> tuples, boolean feas);}
+
+It returns a \texttt{LargeRelation}. If \texttt{feas=true}, the returned relation matches also the \texttt{IterLargeRelation} interface which provides constant time iteration abilities over tuples (for compatibility with the GAC algorithm used over feasible tuples).
+\lstinputlisting{java/mlargerelation.j2t}
+
+Lastly, some specific relations can be defined without storing the tuples, as in the following example (\texttt{TuplesTest} extends \texttt{LargeRelation}):
+\lstinputlisting{java/mnotallequal.j2t}
+Then, the \texttt{NotAllEqual} relation is stated as a constraint of a model:
+\lstinputlisting{java/mrelationtuplefc.j2t}
+%Again, for compatibility with the GAC algorithm invoked by relationTupleAC, such a relation has to match the \texttt{IterLargeRelation} interface for feasible tuples.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% REIFIED CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Reified constraints}\label{model:reifiedconstraints}\hypertarget{model:reifiedconstraints}{}
+The \emph{truth value} of a constraint is a boolean that is true if and only if the constraint holds.
+To \emph{reify} a constraint is to get its truth value. 
+
+This mechanism can be used for example to model a MaxCSP problem where the number of satisfied constraints has to be maximized.
+It is also intended to give the freedom to model complex constraints combining several reified constraints, using some logical operators on the truth values, such as in:
+$(x \neq y) \lor (z \le 9)$.
+
+Choco provides a generic constraint \hyperlink{reifiedconstraint:reifiedconstraintconstraint}{reifiedConstraint} to reify any constraint into a boolean variable expressing its truth value:
+\begin{lstlisting}
+  Constraint reifiedConstraint(IntegerVariable b, Constraint c);
+  Constraint reifiedConstraint(IntegerVariable b, Constraint c1, Constraint c2);
+\end{lstlisting}
+Specific API are also provided to reify boolean constraints:  
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{reifiedconstraint:reifiedconstraintconstraint}{reifiedConstraint}, 
+   \item \hyperlink{reifiedand:reifiedandconstraint}{reifiedAnd}, \hyperlink{reifiedleftimp:reifiedleftimpconstraint}{reifiedLeftImp}, \hyperlink{reifiednot:reifiednotconstraint}{reifiedNot}, \hyperlink{reifiedor:reifiedorconstraint}{reifiedOr}, \hyperlink{reifiedrightimp:reifiedrightimpconstraint}{reifiedRightImp}, \hyperlink{reifiedxnor:reifiedxnorconstraint}{reifiedXnor}, \hyperlink{reifiedxor:reifiedxorconstraint}{reifiedXor}
+  \end{itemize}
+\end{notedef}
+
+
+
+\subsubsection{Handling complex expressions.}\label{model:handlingcomplexexpressions}\hypertarget{model:handlingcomplexexpressions}{}
+In order to build complex combinations of constraints, Choco also provides a simpler and more direct API with the following logical meta-constraints taking constraints in arguments:
+\begin{notedef}\tt
+  \begin{itemize}
+  \item \hyperlink{and:andconstraint}{and}, \hyperlink{or:orconstraint}{or}, \hyperlink{implies:impliesconstraint}{implies}, \hyperlink{ifonlyif:ifonlyifconstraint}{ifOnlyIf}, \hyperlink{ifthenelse:ifthenelseconstraint}{ifThenElse}, \hyperlink{not:notconstraint}{not}, \hyperlink{nand:nandconstraint}{nand}, \hyperlink{nor:norconstraint}{nor}
+  \end{itemize}
+\end{notedef}
+For example, the following expression
+$$((x = 10 * |y|) \lor (z \le 9))\quad \iff\quad \texttt{alldifferent}(a,b,c)$$
+could be expressed in Choco by:
+\begin{lstlisting}
+	Constraint exp = ifOnlyIf( or( eq(x, mult(10, abs(y))), leq(z, 9) ), 
+                               alldifferent(new IntegerVariable[]{a,b,c}) );
+\end{lstlisting}
+Such an expression is internally represented as a tree whose nodes are operators and leaves are variables, constants and constraints. Variables and constants can be combined as \texttt{ExpressionVariable} using \hyperlink{model:expressionvariables}{operators} (e.g, \texttt{mult(10,abs(w))}), or using simple constraints (e.g., \texttt{leq(z,9)}), or even using global constraints (e.g, \texttt{alldifferent(vars)}).
+The language available on expressions currently matches the language used in the \href{http://cpai.ucc.ie/08/}{Constraint Solver Competition 2008} of the CPAI workshop.
+
+At the solver level, there exists two different ways to represent expressions:
+\begin{itemize}
+\item \emph{by extension:} the first way is to handle expressions as \hyperlink{model:arbitraryconstraintsinextension}{constraints in extension}. The expression is then used to check a tuple in a dynamic way just like a n-ary relation that is defined without listing all the possible tuples. The expression is then propagated using the GAC3rm algorithm. This is very powerful as arc-consistency is achieved on the corresponding constraints.
+\item \emph{by decomposition:} the second way is to decompose the expression automatically by introducing intermediate variables and possibly the generic \hyperlink{reifiedconstraint:reifiedconstraintconstraint}{\tt reifiedConstraint}. By doing so, the level of pruning decreases but expressions of larger arity involving large domains can be represented.
+\end{itemize}
+The way to represent expressions is decided at the modeling level. Representation \emph{by extension} is the default. Representation \emph{by decomposition} can be set instead by:
+\begin{lstlisting}
+  model.setDefaultExpressionDecomposition(true);
+\end{lstlisting}
+
+Representation \emph{by decomposition} can also be controlled individually for some expressions, by setting option \hyperlink{edecomp:edecompoptions}{\tt Options.E\_DECOMP} when adding the constraint.
+For example, the following code tells the solver to decompose e1 but not e2 :
+\begin{lstlisting}
+	model.setDefaultExpressionDecomposition(false);
+	IntegerVariable[] x = makeIntVarArray("x", 3, 1, 3, Options.V_BOUND);
+
+	Constraint e1 = or(lt(x[0], x[1]), lt(x[1], x[0]));
+	model.addConstraint(Options.E_DECOMP, e1);
+	
+	Constraint e2 = or(lt(x[1], x[2]), lt(x[2], x[1]));
+	model.addConstraint(e2);
+\end{lstlisting}
+
+\subsubsection{When and how should I use expressions ?}\label{model:whenshouldiuseexpressions}\hypertarget{model:whenshouldiuseexpressions}{}
+Expressions offer a slightly richer modeling language than the one available via standard constraints. However, expressions 
+can not be handled as efficiently as constraints that embed a dedicated propagation algorithm. We therefore
+recommend you to carefully check that you can not model the expression using the \emph{global constraints} of Choco before using
+expressions.
+
+Expressions represented \emph{in extension} should be used in the case of complex logical relationships that involve \textbf{few different variables}, each of \textbf{small domain}, and if \textbf{arc consistency} is desired on those variables.
+In such a case, representation in extension can be much more effective than with decomposition. Imagine the following ``crazy'' example :
+\begin{lstlisting}
+ or( and( eq( abs(sub(div(x,50),div(y,50))),1), eq( abs(sub(mod(x,50),mod(y,50))),2)),
+     and( eq( abs(sub(div(x,50),div(y,50))),2), eq( abs(sub(mod(x,50),mod(y,50))),1)))
+\end{lstlisting}
+This expression has a small arity: it involves only two variables $x$ and $y$.
+Let assume that their domains has no more than 300 values, then such an expression should typically not be decomposed. Indeed, arc consistency will create many holes in the domains and filter much more than if the relation was decomposed.
+
+Conversely, an expression should be decomposed as soon as it involves a large number of variables, or at least one variable with a large domain.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GLOBAL CONSTRAINT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Global constraints}\label{model:advancedconstraints}\hypertarget{model:advancedconstraints}{}
+Choco includes several \href{http://www.emn.fr/x-info/sdemasse/gccat/}{global constraints}. Those constraints accept any number of variables and offer dedicated filtering algorithms which are able to make deductions where a decomposed model would not.
+For instance, constraint \texttt{alldifferent}$(a,b,c,d)$ with $a,b\in[1,4]$ and $c,d\in[3,4]$ allows to deduce that $a$ and $b$ cannot be instantiated to $3$ or $4$; such rule cannot be inferred by simple binary constraints. 
+
+The up-to-date list of global constraints available in Choco can be found within the Javadoc API.
+Most of these global constraints are listed below according to their application fields.
+Details and examples can be found in Section \hyperlink{ch:constraints}{Elements of Choco/Constraints}.
+\subsubsection{Value constraints}\label{model:valueconstraints}\hypertarget{model:valueconstraints}{}
+Constraints that put a restriction on how values can be distributed among a collection of variables.
+See also in Global Constraint Catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Kvalue_constraint.html}{value constraint}.
+
+\vspace{1em}\noindent\begin{notedef}\tt
+  \begin{itemize}
+  \item counting distinct values: 
+\hyperlink{alldifferent:alldifferentconstraint}{allDifferent}, 
+\hyperlink{atmostnvalue:atmostnvalueconstraint}{atMostNValue},
+\hyperlink{increasingnvalue:increasingnvalueconstraint}{increasingNValue},
+  \item counting values: 
+\hyperlink{among:amongconstraint}{among},
+\hyperlink{occurrence:occurrenceconstraint}{occurrence},
+\hyperlink{occurrencemax:occurrencemaxconstraint}{occurrenceMax},
+\hyperlink{occurrencemin:occurrenceminconstraint}{occurrenceMin},
+\hyperlink{globalcardinality:globalcardinalityconstraint}{globalCardinality},
+  \item indexing values: 
+\hyperlink{nth:nthconstraint}{nth} (element),
+\hyperlink{max:maxconstraint}{max},
+\hyperlink{min:minconstraint}{min},
+  \item ordering: 
+\hyperlink{sorting:sortingconstraint}{sorting},
+\hyperlink{increasingnvalue:increasingnvalueconstraint}{increasingNValue},
+\hyperlink{increasingsum:increasingsumconstraint}{increasingSum},
+\hyperlink{lex:lexconstraint}{lex}, 
+\hyperlink{lexeq:lexeqconstraint}{lexeq},
+\hyperlink{leximin:leximinconstraint}{leximin},
+\hyperlink{lexchain:lexchainconstraint}{lexChain},
+\hyperlink{lexchaineq:lexchaineqconstraint}{lexChainEq},
+  \item tuple matching: 
+\hyperlink{feastupleac:feastupleacconstraint}{feasTupleAC},
+\hyperlink{feastuplefc:feastuplefcconstraint}{feasTupleFC},
+\hyperlink{infeastupleac:infeastupleacconstraint}{infeasTupleAC},
+\hyperlink{infeastuplefc:infeastuplefcconstraint}{infeasTupleFC},
+\hyperlink{relationtupleac:relationtupleacconstraint}{relationTupleAC},
+\hyperlink{relationtuplefc:relationtuplefcconstraint}{relationTupleFC},
+  \item pattern matching: 
+\hyperlink{regular:regularconstraint}{regular},
+\hyperlink{costregular:costregularconstraint}{costRegular},
+\hyperlink{multicostregular:multicostregularconstraint}{multiCostRegular}, 
+%\hyperlink{stretchcyclic:stretchcyclicconstraint}{stretchCyclic}, 
+\hyperlink{stretchpath:stretchpathconstraint}{stretchPath}, 
+\hyperlink{tree:treeconstraint}{tree},
+  \end{itemize}
+\end{notedef}
+
+\subsubsection{Boolean constraints}\label{modelglobal:logicconstraints}\hypertarget{modelglobal:logicconstraints}{}
+Logical operations on boolean expressions.
+See also in Global Constraint Catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/KBoolean_constraint.html}{boolean constraint}.
+
+\vspace{1em}\noindent\begin{notedef}\tt
+\hyperlink{and:andconstraint}{and},
+\hyperlink{or:orconstraint}{or},
+\hyperlink{clause:clauseconstraint}{clause},
+\end{notedef}
+
+\subsubsection{Channeling constraints}\label{modelglobal:channelingconstraints}\hypertarget{modelglobal:channelingconstraints}{}
+Constraints linking two collections of variables (many-to-many) or indexing one among many variables (one-to-many).
+See also Section \hyperlink{model:channelingconstraints}{Channeling} and in Global Constraint Catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Kchannelling_constraint.html}{channelling constraint}.
+
+ \vspace{1em}\noindent\begin{notedef}\tt
+   \begin{itemize}
+   \item one-to-many: 
+ \hyperlink{domainchanneling:domainchannelingconstraint}{domainChanneling},
+ \hyperlink{nth:nthconstraint}{nth} (element),
+ \hyperlink{max:maxconstraint}{max},
+ \hyperlink{min:minconstraint}{min},
+   \item many-to-many: 
+ \hyperlink{inversechanneling:inversechannelingconstraint}{inverseChanneling},
+ \hyperlink{inverseset:inversesetconstraint}{inverseSet},
+ \hyperlink{sorting:sortingconstraint}{sorting},
+\hyperlink{pack:packconstraint}{pack},
+ \end{itemize}
+ \end{notedef}
+
+\subsubsection{Optimization constraints}\label{model:optimizationconstraints}\hypertarget{model:optimizationconstraints}{}
+Constraints channelling a variable to the sum of the weights of a collection of variable-value assignments.
+See also in Global Constraint Catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Kcost_filtering_constraint.html}{cost-filtering constraint}.
+\vspace{1em}\noindent\begin{notedef}\tt
+ \begin{itemize}
+  \item one cost: 
+\hyperlink{among:amongconstraint}{among},
+\hyperlink{occurrence:occurrenceconstraint}{occurrence},
+\hyperlink{occurrencemax:occurrencemaxconstraint}{occurrenceMax},
+\hyperlink{occurrencemin:occurrenceminconstraint}{occurrenceMin},
+\hyperlink{knapsackproblem:knapsackproblemconstraint}{knapsackProblem},
+\hyperlink{equation:equationconstraint}{equation},
+\hyperlink{costregular:costregularconstraint}{costRegular},
+\hyperlink{tree:treeconstraint}{tree},
+ \item several costs:
+\hyperlink{globalcardinality:globalcardinalityconstraint}{globalCardinality},
+\hyperlink{multicostregular:multicostregularconstraint}{multiCostRegular}, 
+ \end{itemize}
+\end{notedef}
+
+\subsubsection{Packing constraints (capacitated resources)}\label{model:packingconstraints}\hypertarget{model:packingconstraints}{}
+Constraints involving items to be packed in bins without overlapping. More generaly, any constraints modelling the concurrent assignment of objects to one or several capacitated resources.
+See also in Global Constraint Catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Kresource_constraint.html}{resource constraint}.
+
+\vspace{1em}\noindent\begin{notedef}\tt
+   \begin{itemize}
+   \item packing problems: 
+\hyperlink{equation:equationconstraint}{equation},
+\hyperlink{knapsackproblem:knapsackproblemconstraint}{knapsackProblem},
+\hyperlink{pack:packconstraint}{pack} (bin-packing),
+   \item geometric placement problems: 
+\hyperlink{geost:geostconstraint}{geost}, 
+   \item scheduling problems: 
+\hyperlink{disjoint}{disjoint (tasks)} 
+\hyperlink{disjunctive:disjunctiveconstraint}{disjunctive}, 
+\hyperlink{cumulative:cumulativeconstraint}{cumulative}, 
+   \item timetabling problems: 
+\hyperlink{costregular:costregularconstraint}{costRegular},
+\hyperlink{multicostregular:multicostregularconstraint}{multiCostRegular}, 
+ \end{itemize}
+\end{notedef}
+
+\subsubsection{Scheduling constraints (time assignment)}\label{model:schedulingconstraints}\hypertarget{model:schedulingconstraints}{}
+Constraints involving tasks to be scheduled over a time horizon.
+%See also \hyperlink{schedulinganduseofthecumulative:schedulinganduseofthecumulativeconstraint}{scheduling application} and 
+See also in Global Constraint Catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Kscheduling_constraint.html}{scheduling constraint}.
+
+\vspace{1em}\noindent\begin{notedef}\tt
+   \begin{itemize}
+   \item temporal constraints:
+\hyperlink{disjoint}{disjoint (tasks)} 
+\hyperlink{precedence:precedenceconstraint}{precedence}, 
+\hyperlink{precedencedisjoint:precedencedisjointconstraint}{precedenceDisjoint}, 
+\hyperlink{precedenceimplied:precedenceimpliedconstraint}{precedenceImplied}, 
+\hyperlink{precedencereified:precedencereifiedconstraint}{precedenceReified},
+\hyperlink{forbiddeninterval:forbiddenintervalconstraint}{forbiddenInterval},
+\hyperlink{tree:treeconstraint}{tree},
+   \item resource constraints: 
+\hyperlink{cumulative:cumulativeconstraint}{cumulative}, 
+\hyperlink{disjunctive:disjunctiveconstraint}{disjunctive}, 
+\hyperlink{geost:geostconstraint}{geost}, 
+ \end{itemize}
+\end{notedef}
+
+\subsection{Things to know about \mylst{Model}, \mylst{Variable} and \mylst{Constraint}}
+
+It is important to know the relation between \mylst{Model}s, \mylst{Variable}s and \mylst{Constraint}s. \mylst{Variable}s and \mylst{Constraints} are build without the help of a \mylst{Model}, so that they can be used natively in different \mylst{Model}s. That's why one need to add them to a \mylst{Model}, using \mylst{model.addVariable(Variable var)} and \mylst{model.addConstraint(Constraint cstr)}. On a variable addition, this one is added to the list of variables of the model. On a constraint addition, the constraint is added to the constraint network AND the constraint and its associated variables are linked. It means the constraint is now known from its variables, which was not the case before the addition.
+
+
+Now, let see a short example: one declares two constraints involving the two same variables, and add them to five different models. This implies the following references:
+\begin{itemize}
+\item each model points to two constraint and two variables;
+\item each constraint points the two variables;
+\item each of the variables points to ten constraints: the very same constraint is considered as different from a model to another.  
+\end{itemize}
+
+This must be kept in mind while you write your program: whether a model is used or not, a shared variable stores references to the constraints it is involved in. 
+
+\vspace{1cm}
+\begin{notedef}
+Do not count on the garbage collector to manage this (even if the \mylst{finalize()} method was declared for a \mylst{Model}): while a variable references a constraint declared in an obsolete model, neither the model nor the constraint can be safely destroyed. 
+
+A good habit to have is to delete constraints of a model when this one is not used anymore, by calling \mylst{model.removeConstraints()}. This breaks links between constraint and variable of a model, prevents large memory consumption and can stabilize performances by reusing \mylst{Model}s.
+
+
+Consider the following code, \mylst{model2} is faster and consumes less memory than \mylst{model1} for the same result.
+\begin{lstlisting}
+public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            long t = -System.currentTimeMillis();
+            model1(99999);
+            t += System.currentTimeMillis();
+            System.out.printf("%d ", t);
+            t = -System.currentTimeMillis();
+            model2(99999);
+            t += System.currentTimeMillis();
+            System.out.printf("%d\n", t);
+        }
+    }                                               
+                                                 
+private static void model1(int i) {              
+    IntegerVariable v1 = makeIntVar("v1", 0, 10);
+    IntegerVariable v2 = makeIntVar("v2", 0, 10);
+    for (int j = 0; j < i; j++) {                
+        CPModel m1 = new CPModel();              
+        m1.addConstraint(eq(v1, v2));            
+    }                                            
+}                                                
+                                                 
+private static void model2(int i) {              
+    IntegerVariable v1 = makeIntVar("v1", 0, 10);
+    IntegerVariable v2 = makeIntVar("v2", 0, 10);
+    CPModel m1 = new CPModel();                  
+    for (int j = 0; j < i; j++) {                
+        m1.addConstraint(eq(v1, v2));            
+        m1.removeConstraints();                  
+    }                                            
+}                                                
+\end{lstlisting}
+
+\end{notedef}
+
+
+
+
+% java ToTex ../../../../../../samples/src/main/java/samples/documentation/ ../../documentation/java/

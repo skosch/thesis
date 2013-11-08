@@ -1,0 +1,36 @@
+%\part{neq}
+\label{neq}
+\hypertarget{neq}{}
+
+\section{neq (constraint)}\label{neq:neqconstraint}\hypertarget{neq:neqconstraint}{}
+
+\begin{notedef}
+  \texttt{neq} states that the two arguments are different:
+$$x \neq y.$$
+\end{notedef}
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{neq(IntegerExpressionVariable x, IntegerExpressionVariable y)}
+		\item \mylst{neq(IntegerExpressionVariable x, int y)}
+		\item \mylst{neq(int x, IntegerExpressionVariable y)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}.
+	\item \textbf{references} :\\
+      global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Cneq.html}{neq}
+\end{itemize}
+
+\textbf{Examples:}
+\begin{itemize}
+	\item example1:
+\end{itemize}
+
+\lstinputlisting{java/cneq1.j2t}
+
+\begin{itemize}
+	\item example2
+\end{itemize}
+
+\lstinputlisting{java/cneq2.j2t}

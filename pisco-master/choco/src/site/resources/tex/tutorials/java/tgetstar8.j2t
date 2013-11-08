@@ -1,0 +1,2 @@
+        m.addConstraint(Choco.eq(Choco.sum(diags[0]), M));
+        m.addConstraint(Choco.eq(Choco.sum(diags[1]), M));

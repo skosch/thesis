@@ -1,0 +1,2 @@
+        model.addConstraint(c1);
+        model.addConstraints(c2,c3);

@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable v0 = makeIntVar("v0", 0, 5);
+        IntegerVariable v1 = makeIntVar("v1", 0, 5);
+        m.addConstraint(distanceNEQ(v0, v1, 0));
+        s.read(m);
+        s.solveAll();

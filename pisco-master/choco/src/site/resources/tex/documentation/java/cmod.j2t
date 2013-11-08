@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable x = makeIntVar("x", 0, 10);
+        IntegerVariable w = makeIntVar("w", 0, 10);
+        m.addConstraint(mod(w, x, 1));
+        s.read(m);
+        s.solve();

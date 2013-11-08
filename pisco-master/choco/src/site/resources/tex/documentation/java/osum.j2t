@@ -1,0 +1,15 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+
+        IntegerVariable[] vars = makeIntVarArray("C", 10, 1, 10);
+        m.addConstraint(eq(99, sum(vars)));
+
+        s.read(m);
+        s.solve();
+        if(s.isFeasible()){
+            System.out.print("99 = " + s.getVar(vars[0]).getVal());
+            for (int i = 1; i < vars.length; i++) {
+                System.out.print(" + "+s.getVar(vars[i]).getVal());
+            }
+            System.out.println();
+        }

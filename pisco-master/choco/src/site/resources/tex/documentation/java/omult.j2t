@@ -1,0 +1,13 @@
+        CPModel m = new CPModel();
+        IntegerVariable x = makeIntVar("x", -10, 10);
+        IntegerVariable z = makeIntVar("z", -10, 10);
+        IntegerVariable w = makeIntVar("w", -10, 10);
+        m.addVariables(x, z, w);
+        CPSolver s = new CPSolver();
+        // x >= z * w
+        Constraint exp = geq(x, mult(z, w));
+        m.setDefaultExpressionDecomposition(true);
+        m.addConstraint(exp);
+        s.read(m);
+        s.solveAll();
+

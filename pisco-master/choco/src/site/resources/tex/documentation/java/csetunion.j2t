@@ -1,0 +1,9 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        SetVariable x = makeSetVar("X", 1, 3);
+        SetVariable y = makeSetVar("Y", 3, 5);
+        SetVariable z = makeSetVar("Z", 0, 6);
+        Constraint c1 = setUnion(x, y, z);
+        m.addConstraint(c1);
+        s.read(m);
+        s.solveAll();

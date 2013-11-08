@@ -1,0 +1,35 @@
+        //1- Create the problem
+        CPModel mod = new CPModel();
+        int m = 7;
+        int n = m * (m - 1) / 6;
+
+        //2- Create Variables
+        SetVariable[] vars = new SetVariable[n]; // A variable for each set
+        SetVariable[] intersect = new SetVariable[n * n]; // A variable for each pair of sets
+        for (int i = 0; i < n; i++)
+            vars[i] = Choco.makeSetVar("set " + i, 1, n);
+        for (int i = 0; i < n; i++)
+            for (int j = i + 1; j < n; j++)
+                intersect[i * n + j] = Choco.makeSetVar("interSet " + i + " " + j, 1, n);
+
+        //3- Post constraints
+        for (int i = 0; i < n; i++)
+            mod.addConstraint(Choco.eqCard(vars[i], 3));
+        for (int i = 0; i < n; i++)
+            for (int j = i + 1; j < n; j++) {
+                // the cardinality of the intersection of each pair is equal to one
+                mod.addConstraint(Choco.setInter(vars[i], vars[j], intersect[i * n + j]));
+                mod.addConstraint(Choco.leqCard(intersect[i * n + j], 1));
+            }
+
+        //4- Search for a solution
+        CPSolver s = new CPSolver();
+        s.read(mod);
+        s.setVarSetSelector(new MinDomSet(s, s.getVar(vars)));
+        s.setValSetSelector(new MinEnv());
+        s.solve();
+
+        //5- Print the solution found
+        for(SetVariable var: vars){
+            System.out.println(s.getVar(var).pretty());
+        }

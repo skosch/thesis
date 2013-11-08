@@ -1,0 +1,2 @@
+        LargeRelation r = Choco.makeLargeRelation(min, max, tuples, true);
+        model.addConstraint(Choco.relationTupleAC(vars, r));

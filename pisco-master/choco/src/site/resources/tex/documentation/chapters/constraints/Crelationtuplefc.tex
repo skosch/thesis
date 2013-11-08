@@ -1,0 +1,21 @@
+%\part{relationtuplefc}
+\label{relationtuplefc}
+\hypertarget{relationtuplefc}{}
+
+\section{relationTupleFC (constraint)}\label{relationtuplefc:relationtuplefcconstraint}\hypertarget{relationtuplefc:relationtuplefcconstraint}{}
+\begin{notedef}
+  \texttt{relationTupleFC}$(x,rel)$ states an extensional constraint on $(x_1,\ldots,x_n)$ defined by the $n$-ary relation $rel$, and then enforces forward checking:
+$$(x_1,\ldots,x_n)\in rel$$
+\end{notedef}
+Many constraints of the same kind often appear in a model. Relations can therefore often be shared among many constraints to spare memory.
+
+\begin{itemize}
+	\item \textbf{API}: \mylst{relationTupleFC(IntegerVariable[] x, LargeRelation rel)}
+	\item \textbf{return type}: \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example} :
+\lstinputlisting{java/cnotallequal.j2t}
+\lstinputlisting{java/crelationtuplefc.j2t}

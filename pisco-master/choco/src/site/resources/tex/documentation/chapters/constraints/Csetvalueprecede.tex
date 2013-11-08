@@ -1,0 +1,27 @@
+%\part{setvalueprecede}
+\label{setvalueprecede}
+\hypertarget{setvalueprecede}{}
+
+\section{setValuePrecede (constraint)}\label{setvalueprecede:setvalueprecedeconstraint}\hypertarget{setvalueprecede:setvalueprecedeconstraint}{}
+\begin{notedef}
+  \texttt{setValuePrecede}$(sv,s,t)$ states that if there exists a set variable $v_1 \in sv$ such that $s$ does not belong to $v$ and $t$ does,
+  then there also exists a set variable $v_2 \in sv$ preceding $v_1$ in sequence $sv$ such that $s$ belongs to $v_2$ and $t$ does not. In other words,
+  this constraint maintains a value precedence relation between $s$ and $t$ within the sequence of set variables $sv$.
+
+
+  A useful application of this notion is in breaking symmetries of indistinguishable values, an important class of symmetries in practice.
+
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{setValuePrecede(SetVariable[] sv, int s, int t)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :\emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/csetvalueprecede.j2t}

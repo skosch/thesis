@@ -1,0 +1,22 @@
+%\part{feastuplefc}
+\label{feastuplefc}
+\hypertarget{feastuplefc}{}
+
+\section{feasTupleFC (constraint)}\label{feastuplefc:feastuplefcconstraint}\hypertarget{feastuplefc:feastuplefcconstraint}{}
+\begin{notedef}
+  \texttt{feasTupleFC}$(\collec{x_1}{x_n},feasTuples)$ states an extensional constraint on \collec{x_1}{x_n} defined by the table $feasTuples$ of compatible tuples of values, and then performs Forward Checking:
+      $$\exists \text{ tuple } i\ |\quad \collec{x_1}{x_n}=feasTuples[i]$$
+\end{notedef}
+
+
+\begin{itemize}
+	\item \textbf{API} : \mylst{feasTupleFC(List<int[]> tuples, IntegerVariable... x)}
+	\item \textbf{return type}: \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain}: \emph{to complete}
+	\item \textbf{references} :\\
+      global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Cin_relation.html}{in\_relation}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cfeastuplefc.j2t}

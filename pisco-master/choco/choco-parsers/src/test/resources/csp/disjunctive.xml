@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<instance>
+<presentation maxConstraintArity='6' format='XCSP 2.1'/>
+
+<domains nbDomains='1'>
+ <domain name='D0' nbValues='10'>1..10</domain>
+</domains>
+
+<variables nbVariables='6'>
+ <variable name='V0' domain='D0'/>
+ <variable name='V1' domain='D0'/>
+ <variable name='V2' domain='D0'/>
+ <variable name='V3' domain='D0'/>
+ <variable name='V4' domain='D0'/>
+ <variable name='V5' domain='D0'/>
+</variables>
+
+<constraints nbConstraints='1'>
+ <constraint name='C0' arity='5' scope='V0 V1 V2 V4 V5' reference='global:disjunctive'>
+  <parameters>
+   [ { V0 V1 } { V2 3 } { V4 V5 } ]
+  </parameters>
+ </constraint>
+</constraints>
+</instance>

@@ -1,0 +1,30 @@
+\section{Real variables}\label{realvariable}\hypertarget{realvariable}{}
+\texttt{RealVariable} is a variable whose associated domain is made of real values. Only enumerated domain is available for real variables. 
+
+Such domain are memory consuming. In order to minimize the memory use and to have the precision you need, the model offers a way to set a precision (default value is 1.0e-6):
+\lstinputlisting{java/vprecision.j2t}
+
+\subsubsection{constructor:}
+      \noindent\begin{tabular}{p{.8\linewidth}p{.15\linewidth}}
+        Choco method & return type \\
+        \hline
+        \mylst{makeRealVar(String name, double lowB, double uppB, String... options)} &\texttt{RealVariable}\\
+      \end{tabular}
+%	\begin{itemize}
+%		\item to create a \textbf{RealVariable} object:
+%		\begin{itemize}
+%			\item \mylst{makeRealVar(String name, double lowB, double uppB, String... options)}
+%		\end{itemize}
+%	\end{itemize}
+%	\item \textbf{return type} : \texttt{RealVariable}
+\subsubsection{options:}
+	\begin{itemize}
+		\item \emph{no option} : no particular choice on decision or objective.
+		\item \hyperlink{vnodecision:vnodecisionoptions}{\tt Options.V\_NO\_DECISION} : to force variable to be removed from the pool of decisional variables.
+		\item \hyperlink{vobjective:vobjectiveoptions}{\tt Options.V\_OBJECTIVE} : to define the variable to be the one to optimize.
+	\end{itemize}
+
+\subsubsection{Example:}
+\lstinputlisting{java/vrealvariable.j2t}
+
+Real variables are illustrated on the \hyperlink{model:example3:thecyclohexaneproblemwithchoco}{CycloHexan problem}. 

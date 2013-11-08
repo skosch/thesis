@@ -1,0 +1,44 @@
+%\part{cumulative}
+\label{cumulative}
+\hypertarget{cumulative}{}
+
+\section{cumulative (constraint)}\label{cumulative:cumulativeconstraint}\hypertarget{cumulative:cumulativeconstraint}{}
+\todo{to be cleaned.}
+
+\begin{notedef}
+  \texttt{cumulative(start,duration,height,capacity)} states that a set of tasks (defined by their starting times, finishing dates, durations and heights (or consumptions)) are executed on a cumulative resource of limited capacity. That is, the total height of the tasks which are executed at any time $t$ does not exceed the capacity of the resource:
+$$\sum_{\{i\ |\ \mathtt{start}[i]\le t < \mathtt{start}[i]+\mathtt{duration}[i]\}} \mathtt{height}[i] \le \mathtt{capacity},\quad (\forall \text{ time } t)$$
+\end{notedef}
+
+The notion of task does not exist yet in Choco. The \texttt{cumulative} takes therefore as input, several arrays of integer variables (of same size $n$) denoting the starting, duration, and height of each task. When the array of finishing times is also specified, the constraint ensures that \texttt{start[i] + duration[i] = end[i]} for all task $i$.
+As usual, a task is executed in the interval \texttt{[start,end-1]}.
+
+For further informations, see the section devoted to this constraint in the Choco Tutorial document. 
+%A tutorial on the use of this constraint is available \hyperlink{schedulinganduseofthecumulative:schedulinganduseofthecumulativeconstraint}{here}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{cumulative(IntegerVariable[] start, IntegerVariable[] end, IntegerVariable[] duration, IntegerVariable[] height, IntegerVariable capa, String... options)}
+		\item \mylst{cumulative(IntegerVariable[] start, IntegerVariable[] end, IntegerVariable[] duration, int[] height, int capa, String... options)}
+		\item \mylst{cumulative(IntegerVariable[] start, IntegerVariable[] duration, IntegerVariable[] height, IntegerVariable capa, String... options)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :
+	\begin{itemize}
+		\item \emph{no option}
+		\item \hyperlink{ccumulativeti:ccumulativetioptions}{SettingType.TASK\_INTERVAL.getOptionName()} for fast task intervals
+		\item \hyperlink{ccumulativesti:ccumulativestioptions}{SettingType.SLOW\_TASK\_INTERVAL.getOptionName()} for slow task intervals
+		\item \hyperlink{ccumulativecef:ccumulativecefoptions}{SettingType.VILIM\_CEF\_ALGO.getOptionName()} for Vilim theta lambda tree + lazy computation of the inner maximization of the edge finding rule of Van hentenrick and Mercier
+		\item \hyperlink{ccumulativescef:ccumulativescefoptions}{SettingType.VHM\_CEF\_ALGO\_N2K.getOptionName()} for Simple $n^2 * k$ algorithm (lazy for R) (CalcEF -- Van Hentenrick)
+	\end{itemize}
+	\item \textbf{favorite domain} : \emph{n/a}
+	\item \textbf{references} :
+      \begin{itemize}
+      \item  \cite{BeldiceanuCP02} \emph{A new multi-resource cumulatives constraint with negative heights}
+      \item global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Ccumulative.html}{\tt cumulative}
+      \end{itemize}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/ccumulative.j2t} 

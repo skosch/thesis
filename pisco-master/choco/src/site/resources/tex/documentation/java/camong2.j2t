@@ -1,0 +1,8 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable nvar = makeIntVar("v1", 1, 2);
+        IntegerVariable[] vars = Choco.makeIntVarArray("var", 10, 0, 10);
+        int[] values = new int[]{2, 3, 5};
+        m.addConstraint(among(nvar, vars, values));
+        s.read(m);
+        s.solve();

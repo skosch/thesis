@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>choco</groupId>
+	<artifactId>choco</artifactId>
+	<packaging>pom</packaging>
+	<version>2.1.6-SNAPSHOT</version>
+	<name>CHOCO</name>
+	<url>http://www.emn.fr/z-info/choco-solver/</url>
+	<licenses>
+		<license>
+			<name>BSD Berkeley Software Distribution License</name>
+			<url>src/main/resources/LICENSE.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<description>
+        Choco is a java library for constraint satisfaction problems (CSP), constraint programming (CP) and
+        explanation-based constraint solving (e-CP). It is built on a event-based propagation mechanism with
+        backtrackable structures. Choco is an open-source software, distributed under a Choco Licence and hosted by
+        sourceforge.net.
+    </description>
+	<scm>
+		<connection>scm:svn:https://choco.svn.sourceforge.net/svnroot/choco/trunk</connection>
+		<developerConnection>scm:svn:https://choco.svn.sourceforge.net/svnroot/choco/trunk</developerConnection>
+		<url>http://choco.svn.sourceforge.net/viewvc/choco/trunk</url>
+	</scm>
+	<issueManagement>
+		<system>sourceforge</system>
+		<url>
+            http://sourceforge.net/tracker/?atid=615736&amp;group_id=96738
+        </url>
+	</issueManagement>
+	<mailingLists>
+		<mailingList>
+			<name>choco-users</name>
+			<subscribe>https://lists.sourceforge.net/lists/listinfo/choco-users</subscribe>
+			<unsubscribe>https://lists.sourceforge.net/lists/listinfo/choco-users</unsubscribe>
+			<post>choco-users@lists.sourceforge.net</post>
+			<archive>https://sourceforge.net/mailarchive/forum.php?forum_name=choco-users</archive>
+		</mailingList>
+	</mailingLists>
+	<ciManagement>
+		<system>Hudson</system>
+		<url>http://frontal.info.emn.fr:8080/hudson/view/Choco/</url>
+	</ciManagement>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>gnu</groupId>
+			<artifactId>trove</artifactId>
+			<version>2.1.0</version>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<!-- The following code includes tools.jar for JDKs on Windows, Linux and 
+		Solaris (it is already included in the runtime for Mac OS X and some free JDKs). 
+		From http://maven.apache.org/general.html#tools-jar-dependency
+		-->
+	<profiles>
+		<profile>
+			<id>default-tools.jar</id>
+			<activation>
+				<property>
+					<name>java.vendor</name>
+					<value>Sun Microsystems Inc.</value>
+				</property>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>com.sun</groupId>
+					<artifactId>tools</artifactId>
+					<version>1.4.2</version>
+					<scope>system</scope>
+					<systemPath>${java.home}/../lib/tools.jar</systemPath>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
+	<modules>
+		<module>choco-kernel</module>
+		<module>choco-cp</module>
+		<module>choco-solver</module>
+		<module>cpvisu-tracer</module>
+		<module>choco-db</module>
+		<module>choco-parsers</module>
+		<module>choco-cli</module>
+		<module>choco-visu</module>
+		<module>samples</module>
+		<module>choco-contribs</module>
+	</modules>
+	<distributionManagement>
+		<site>
+			<id>choco.dir</id>
+			<url>${choco-dir}</url>
+		</site>
+		<repository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>sourceforge.net</id>
+			<name>Stable version</name>
+			<url>${mvn-releases-dir}</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>true</uniqueVersion>
+			<id>sourceforge.net</id>
+			<name>Snapshot version</name>
+			<url>${mvn-snapshots-dir}</url>
+			<layout>default</layout>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<repository>
+			<id>jboss.releases</id>
+			<name>JBoss releases</name>
+			<url>http://repository.jboss.org/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>central.repos</id>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>choco.repo</id>
+			<url>http://www.emn.fr/z-info/choco-repo/mvn/repository/</url>
+		</repository>
+	</repositories>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>ISO-8859-1</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<!-- Permet de spécifier l'encoding en UTF8 lors du traitement des ressources -->
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<additionalJOption>-J-Xmx256m</additionalJOption>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<!--<descriptor>src/main/assembly/full.xml</descriptor> -->
+						<descriptor>src/main/assembly/archives.xml</descriptor>
+						<descriptor>src/main/assembly/release-dir.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.2</version>
+							<configuration>
+								<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+							</configuration>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.7</version>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.9.0</version>
+				<configuration>
+					<header>src/etc/header.txt</header>
+					<failIfMissing>false</failIfMissing>
+					<aggregate>true</aggregate>
+					<properties>
+						<owner>Ecole des Mines de Nantes</owner>
+						<year>2010</year>
+						<email>choco@emn.fr</email>
+					</properties>
+					<strictCheck>true</strictCheck>
+					<includes>
+						<include>**/*.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/site/**</exclude>
+						<exclude>**/target/**</exclude>
+					</excludes>
+					<headerDefinitions>
+						<headerDefinition>src/etc/old.xml</headerDefinition>
+						<headerDefinition>src/etc/old2.xml</headerDefinition>
+					</headerDefinitions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+					<preparationGoals>clean install</preparationGoals>
+					<goals>deploy -P admin</goals>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changes-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<issueLinkTemplatePerSystem>
+						<default>
+							https://sourceforge.net/tracker/index.php?func=detail&amp;aid=%ISSUE%&amp;group_id=96738&amp;atid=615736
+						</default>
+					</issueLinkTemplatePerSystem>
+				</configuration>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>changes-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+		</plugins>
+	</reporting>
+	<developers>
+
+		<developer>
+			<name>Charles Prud'homme</name>
+			<email>charles.prudhomme@emn.fr</email>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>administrator</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Francois Laburthe</name>
+			<email>francois.laburthe@amadeus.com</email>
+			<organization>Amadeus</organization>
+			<organizationUrl>
+                http://www.amadeus.com/amadeus/amadeus.html
+            </organizationUrl>
+			<roles>
+				<role>steering committee</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Narendra Jussien</name>
+			<email>narendra.jussien@emn.fr</email>
+			<url>http://njussien.e-constraints.net/</url>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>steering committee</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Hadrien Cambazard</name>
+			<email>h.cambazard@4c.ucc.ie</email>
+			<url>http://4c.ucc.ie/~hcambaza/</url>
+			<organization>Cork Constraint Computation Centre</organization>
+			<organizationUrl>
+                http://4c.ucc.ie/web/index.jsp
+            </organizationUrl>
+			<roles>
+				<role>steering committee</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Arnaud Malapert</name>
+			<email>arnaud.malapert@emn.fr</email>
+			<url>http://www.emn.fr/x-info/amalap06/</url>
+			<organization>LINA</organization>
+			<organizationUrl>
+                http://www.sciences.univ-nantes.fr/lina/fr/
+            </organizationUrl>
+			<roles>
+				<role>steering committee</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Guillaume Rochart</name>
+			<email>grochart@bouygues.com</email>
+			<organization>Bouygues SA</organization>
+			<organizationUrl>
+                http://e-lab.bouygues.com/
+            </organizationUrl>
+			<roles>
+				<role>steering committee</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Sophie Demassey</name>
+			<email>sophie.demassey@emn.fr</email>
+			<url>http://www.emn.fr/x-info/sdemasse/</url>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Xavier Lorca</name>
+			<email>xavier.lorca@emn.fr</email>
+			<url>http://www.emn.fr/x-info/xlorca/</url>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Julien Menana</name>
+			<email>julien.menana@emn.fr</email>
+			<url>http://www.emn.fr/x-info/jmenana/Site/Home.html</url>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Thierry Petit</name>
+			<email>thierry.petit@emn.fr</email>
+			<url>http://www.emn.fr/x-info/tpetit/</url>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+
+		<developer>
+			<name>Guillaume Richaud</name>
+			<email>guillaume.richaud@emn.fr</email>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>committer</role>
+			</roles>
+		</developer>
+
+	</developers>
+
+	<contributors>
+
+		<contributor>
+			<name>Nicolas Beldiceanu</name>
+			<email>nicolas.beldiceanu@mines-nantes.fr</email>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>suggestion</role>
+			</roles>
+		</contributor>
+
+		<contributor>
+			<name>Fabien Hermenier</name>
+			<email>fabien.hermenier@emn.fr</email>
+			<url>http://www.emn.fr/x-info/fhermeni/</url>
+			<organization>EMN ASCOLA</organization>
+			<organizationUrl>
+                http://www.inria.fr/recherche/equipes/ascola.fr.html
+            </organizationUrl>
+			<roles>
+				<role>patch</role>
+			</roles>
+		</contributor>
+
+		<contributor>
+			<name>Julien Vion</name>
+			<email>julien.vion@gmail.com</email>
+			<url>http://vion.free.fr/perso/index.html</url>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>patch</role>
+			</roles>
+		</contributor>
+
+		<contributor>
+			<name>Stephane Zampelli</name>
+			<email>stephane.zampelli@emn.fr</email>
+			<organization>EMN Constraint</organization>
+			<organizationUrl>
+                http://www.emn.fr/x-info/ppc/
+            </organizationUrl>
+			<roles>
+				<role>patch</role>
+			</roles>
+		</contributor>
+
+	</contributors>
+</project>

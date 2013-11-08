@@ -1,0 +1,25 @@
+\section{Task variables}\label{taskvariable}\hypertarget{taskvariable}{}
+\texttt{TaskVariable} is an object-variable composed of three \hyperlink{integervariable}{\tt IntegerVariable}: a starting time integer variable $start$, an ending time integer variable $end$ and a duration integer variable $duration$. To create a \texttt{TaskVariable}, one can creates the $start$, $end$ and $duration$ before, or indicates the earliest starting time ($int$), the latest completion time ($int$) and the duration({\tt int} or {\tt IntegerVariable}).
+
+\subsubsection{constructors:}
+      \noindent\begin{tabular}{p{.8\linewidth}p{.15\linewidth}}
+        Choco method & return type \\
+        \hline
+        \mylst{makeTaskVar(String name, IntegerVariable start, IntegerVariable end, IntegerVariable duration, String... options)} &\texttt{TaskVariable}\\
+		\mylst{makeTaskVar(String name, IntegerVariable start, IntegerVariable duration, String... options)} &\texttt{TaskVariable}\\
+		\mylst{makeTaskVar(String name, int binf, int bsup, IntegerVariable duration, String... options)} &\texttt{TaskVariable}\\
+        \mylst{makeTaskVar(String name, int binf, int bsup, int duration, String... options)}  &\texttt{TaskVariable}\\
+        \mylst{makeTaskVar(String name, int bsup, IntegerVariable duration, String... options)} &\texttt{TaskVariable}\\
+        \mylst{makeTaskVar(String name, int bsup, int duration, String... options)} &\texttt{TaskVariable}\\
+        \mylst{makeTaskVarArray(String prefix, IntegerVariable[] starts, IntegerVariable[] ends, IntegerVariable[] durations, String... options)}  &\texttt{TaskVariable[]}\\
+        \mylst{makeTaskVarArray(String name,  int binf, int bsup, IntegerVariable[] durations, String... options)}  &\texttt{TaskVariable[]}\\
+        \mylst{makeTaskVarArray(String name,  int binf, int bsup, int[] durations, String... options)}  &\texttt{TaskVariable[][]}\\
+        \mylst{makeTaskVarArray(String name,  int binf, int bsup, IntegerVariable[][] durations, String... options) }  &\texttt{TaskVariable[][]}\\
+        \mylst{makeTaskVarArray(String name,  int binf, int bsup, int[][] durations, String... options)}  &\texttt{TaskVariable[][]}\\
+      \end{tabular}
+
+\subsubsection{options:}
+Options are for the three \texttt{IntegerVariable}. See \hyperlink{integervariable}{\tt IntegerVariable} for more details about options.
+
+\subsubsection{Example:}
+\lstinputlisting{java/vtaskvariable.j2t} 

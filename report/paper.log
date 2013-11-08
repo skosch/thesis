@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  14 APR 2013 23:18
+This is XeTeX, Version 3.1415926-2.4-0.9998 (TeX Live 2012/Debian) (format=xelatex 2012.8.21)  15 APR 2013 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1479,45 +1479,45 @@ LaTeX Warning: Unused global option(s):
 (./paper.aux (./coverpage_cardboard.aux) (./coverpage.aux))
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 30.
 
 (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for MDA+cmr on input line 27.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 27.
-LaTeX Font Info:    Try loading font information for MDB+cmr on input line 27.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 30.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
 File: mdbcmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1555,11 +1555,11 @@ LaTeX Font Info:    ... okay on input line 27.
 ABD: EveryShipout initializing macros
 
 Package mathdesign/mdugm Warning: Package 'amssymb' shouldn't be used in conjon
-ction with package mdugm, on input line 27.
+ction with package mdugm, on input line 30.
 
 
 Package mathdesign/mdugm Warning: Package 'amsfonts' shouldn't be used in conjo
-nction with package mdugm, on input line 27.
+nction with package mdugm, on input line 30.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -1568,7 +1568,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count344
 \AtBeginShipoutBox=\box104
-Package hyperref Info: Link coloring OFF on input line 27.
+Package hyperref Info: Link coloring OFF on input line 30.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 
@@ -1577,9 +1577,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count345
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (./paper.out) (./paper.out)
 \@outlinefile=\write4
@@ -1599,61 +1599,62 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
 
 
+] [1
+
+
 ]
 \openout2 = `coverpage.aux'.
 
- (./coverpage.tex) [1
-
-
+ (./coverpage.tex) [2
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 44
+LaTeX Font Info:    Try loading font information for OT1+mdugm on input line 50
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/ot1mdugm.fd
 File: ot1mdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OT1/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OML+mdugm on input line 44
+LaTeX Font Info:    Try loading font information for OML+mdugm on input line 50
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omlmdugm.fd
 File: omlmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OML/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 44
+LaTeX Font Info:    Try loading font information for OMS+mdugm on input line 50
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omsmdugm.fd
 File: omsmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMS/mdugm.
 )
-LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 44
+LaTeX Font Info:    Try loading font information for OMX+mdugm on input line 50
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/omxmdugm.fd
 File: omxmdugm.fd 2006/01/29 Fontinst v1.928 font definitions for OMX/mdugm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
-(Font)              scaled to size 12.10803pt on input line 44.
+(Font)              scaled to size 12.10803pt on input line 50.
 LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
-(Font)              scaled to size 8.07202pt on input line 44.
+(Font)              scaled to size 8.07202pt on input line 50.
 LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
-(Font)              scaled to size 6.05402pt on input line 44.
-LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 44
+(Font)              scaled to size 6.05402pt on input line 50.
+LaTeX Font Info:    Try loading font information for MDA+mdugm on input line 50
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdamdugm.fd
 File: mdamdugm.fd 2006/01/29 Fontinst v1.928 font definitions for MDA/mdugm.
 )
-LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 44
+LaTeX Font Info:    Try loading font information for MDB+mdugm on input line 50
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/mathdesign/mdugm/mdbmdugm.fd
@@ -1698,13 +1699,12 @@ LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
 
 ]
 Chapter 1.
+LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
+(Font)              scaled to size 5.04501pt on input line 115.
 [1
 
 
 ] (./figures/intro_tetris.tex
-LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
-(Font)              scaled to size 5.04501pt on input line 8.
-
 Underfull \hbox (badness 1038) in paragraph at lines 14--14
  []$\OML/mdugm/m/it/7 s \OT1/mdugm/m/n/7 = 10\OML/mdugm/m/it/7 ;$ 
  []
@@ -1732,26 +1732,22 @@ Underfull \hbox (badness 1297) in paragraph at lines 24--24
 ) [2] [3]
 Chapter 2.
 Package hyperref Info: bookmark level for unknown model defaults to 0 on input 
-line 201.
+line 210.
 [4
 
 ]
 \g_fontspec_family_Inconsolata_int=\count347
 LaTeX Font Info:    Font shape `EU1/Inconsolata(0)/m/n' will be
-(Font)              scaled to size 10.92004pt on input line 229.
+(Font)              scaled to size 10.92004pt on input line 238.
  [5]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] (./figures/lpplot1.tex) [7] [8] (./figures/mipplot1.tex) [9] [10]
-Underfull \hbox (badness 1147) in paragraph at lines 426--429
-[]\T1/mdugm/m/n/12 Many prob-lems spec-ify that cer-tain jobs
- []
-
-[11] [12] [13]
+[6] (./figures/lpplot1.tex) [7] [8] (./figures/mipplot1.tex) [9] [10] [11]
+[12] [13]
 Chapter 3.
 LaTeX Font Info:    Font shape `T1/mdugm/bx/it' in size <12> not available
-(Font)              Font shape `T1/mdugm/b/it' tried instead on input line 528.
+(Font)              Font shape `T1/mdugm/b/it' tried instead on input line 538.
 
 [14
 
@@ -1769,23 +1765,23 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ] (./figures/dominancerule.tex) [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 713.
+(hyperref)                removing `math shift' on input line 723.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 713.
+(hyperref)                removing `subscript' on input line 723.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 713.
+(hyperref)                removing `math shift' on input line 723.
 
 [20] [21]
 LaTeX Font Info:    Font shape `OMS/xmdcmsy/m/n' will be
-(Font)              scaled to size 9.08102pt on input line 831.
+(Font)              scaled to size 9.08102pt on input line 841.
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <9> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 832.
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 842.
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 852.
+put line 862.
  [22] (./figures/decomp_diagram1.tex) (./figures/decomp_tetris.tex)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1800,7 +1796,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [26] [27] (./figures/movebasedmip.tex) [28] [29] [30] [31] [32] [33]
 Chapter 5.
 
-Overfull \hbox (0.84084pt too wide) in paragraph at lines 1250--1254
+Overfull \hbox (0.84084pt too wide) in paragraph at lines 1261--1265
 \T1/mdugm/m/n/12 where $\OML/mdugm/m/it/12 U\OT1/mdugm/m/n/12 [\OML/mdugm/m/it/
 12 a; b\OT1/mdugm/m/n/12 ]$ \T1/mdugm/m/n/12 is a uni-form dis-tri-bu-tion be-t
 ween $\OML/mdugm/m/it/12 a$ \T1/mdugm/m/n/12 and $\OML/mdugm/m/it/12 b$\T1/mdug
@@ -1844,15 +1840,15 @@ Missing character: There is no ’ in font mdugmr8t!
 Appendix A.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1424.
+(hyperref)                removing `math shift' on input line 1435.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1424.
+(hyperref)                removing `subscript' on input line 1435.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1424.
+(hyperref)                removing `math shift' on input line 1435.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1862,46 +1858,46 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1472.
+(hyperref)                removing `math shift' on input line 1483.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1472.
+(hyperref)                removing `subscript' on input line 1483.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1472.
+(hyperref)                removing `math shift' on input line 1483.
 
 [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1483.
+(hyperref)                removing `math shift' on input line 1494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1483.
+(hyperref)                removing `subscript' on input line 1494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1483.
+(hyperref)                removing `math shift' on input line 1494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1483.
+(hyperref)                removing `math shift' on input line 1494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1483.
+(hyperref)                removing `subscript' on input line 1494.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1483.
+(hyperref)                removing `math shift' on input line 1494.
 
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <8> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 1496.
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 1507.
 
 LaTeX Font Info:    Font shape `T1/mdugm/bx/n' in size <6> not available
-(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 1496.
+(Font)              Font shape `T1/mdugm/b/n' tried instead on input line 1507.
 
 [47] [48]
 Appendix B.
@@ -1910,81 +1906,81 @@ Appendix B.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1600.
+(hyperref)                removing `math shift' on input line 1611.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1600.
+(hyperref)                removing `subscript' on input line 1611.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1600.
+(hyperref)                removing `math shift' on input line 1611.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1646.
+(hyperref)                removing `math shift' on input line 1657.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1646.
+(hyperref)                removing `subscript' on input line 1657.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1646.
+(hyperref)                removing `math shift' on input line 1657.
 
 [50] (./figures/bnk1_1050.tex) [51] [52] [53]
 Appendix C.
 
-Overfull \hbox (3.8054pt too wide) in paragraph at lines 1735--1791
+Overfull \hbox (3.8054pt too wide) in paragraph at lines 1746--1802
 [][] 
  []
 
 
-Overfull \hbox (3.8004pt too wide) in paragraph at lines 1793--1849
+Overfull \hbox (3.8004pt too wide) in paragraph at lines 1804--1860
 [][] 
  []
 
 
-Overfull \hbox (3.8054pt too wide) in paragraph at lines 1851--1907
+Overfull \hbox (3.8054pt too wide) in paragraph at lines 1862--1918
 [][] 
  []
 
 
-Overfull \hbox (3.8004pt too wide) in paragraph at lines 1909--1965
+Overfull \hbox (3.8004pt too wide) in paragraph at lines 1920--1976
 [][] 
  []
 
 
-Overfull \hbox (3.8054pt too wide) in paragraph at lines 1967--2003
+Overfull \hbox (3.8054pt too wide) in paragraph at lines 1978--2014
 [][] 
  []
 
 [54
 
 ] [55] [56]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2233.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2244.
  [57
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2233.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2244.
  (./paper.aux (./coverpage_cardboard.aux) (./coverpage.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2233.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2233.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2244.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2244.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2233.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2244.
  ) 
 Here is how much of TeX's memory you used:
- 42965 strings out of 495716
- 918991 string characters out of 3188883
- 1136043 words of memory out of 3000000
- 45300 multiletter control sequences out of 15000+200000
+ 42968 strings out of 495716
+ 919030 string characters out of 3188883
+ 1136048 words of memory out of 3000000
+ 45303 multiletter control sequences out of 15000+200000
  145450 words of font info for 146 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,22n,85p,657b,1897s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on paper.pdf (66 pages).
+Output written on paper.pdf (67 pages).

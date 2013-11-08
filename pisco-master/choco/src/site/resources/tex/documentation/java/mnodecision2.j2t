@@ -1,0 +1,3 @@
+        IntegerVariable vNoDec1 = Choco.makeIntVar("vNoDec1", 1, 3);
+        IntegerVariable vNoDec2 = Choco.makeIntVar("vNoDec2", 1, 3);
+        model.addOptions(Options.V_NO_DECISION, vNoDec1, vNoDec2);

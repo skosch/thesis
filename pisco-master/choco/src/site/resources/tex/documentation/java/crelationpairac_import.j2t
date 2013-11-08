@@ -1,0 +1,2 @@
+import choco.kernel.solver.constraints.integer.extension.CouplesTest;
+import choco.kernel.solver.constraints.integer.extension.TuplesTest;

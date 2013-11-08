@@ -1,0 +1,106 @@
+%\part{choco and visu}
+\label{chocoandvisu}
+\hypertarget{chocoandvisu}{}
+
+\chapter{Choco and Visu}\label{chocoandvisu:chocoandvisu}\hypertarget{chocoandvisu:chocoandvisu}{}
+
+\section{Why?}\label{chocoandvisu:why}\hypertarget{chocoandvisu:why}{}
+Since few months, it has seemed more and more evident for us that CHOCO needed a way to visualize dynamically the resolution of a problem.
+We wanted that visualization to be open, easy to use and not static.
+Now, you will find a new package on \textbf{Choco 2.0.1} (the actual beta version) named \emph{visu}.
+
+\section{The visu package}\label{chocoandvisu:thevisupackage}\hypertarget{chocoandvisu:thevisupackage}{}
+
+The \emph{visu} package contains objects to define a visualization of the resolution, domain reduction, constraints propagation, etc. %is build as follow:
+
+% \begin{note}
+% \begin{itemize}
+% 	\item choco
+% 	\begin{itemize}
+% 		\item ...
+% 		\item visu
+% 		\begin{itemize}
+% 			\item components
+% 			\item searchloop
+% 			\item variables
+% 		\end{itemize}
+% 	\end{itemize}
+% \end{itemize}
+% \end{note}
+
+Figures~\ref{fig:media/cd_visu.png} depicts the class diagram of the visu package (\emph{powered by \href{http://bouml.free.fr/}{BOUML}}):
+
+\insertGraphique{18cm}{media/cd_visu.png}{Visu classes diagram. The blue classes are examples of implementation and inheritence.}
+
+
+
+\section{Steps to use the Visu}\label{chocoandvisu:stepstousethevisu}\hypertarget{chocoandvisu:stepstousethevisu}{}
+Only one Visu can be linked to one Solver.
+
+We are going to see a short example of Visu use, based on Sudoku problem.
+In our modeling, variables are cells of a sudoku grid, represented by the matrix \emph{rows}.
+We want to define a standard visualization where a variable is displayed on a line. Its name is written, and the domain is viewed as an array of colored square.
+That representation is known in CHOCO as a \emph{FULLDOMAIN} representation.
+\subsection{Visu creation}\label{chocoandvisu:visucreation}\hypertarget{chocoandvisu:visucreation}{}
+The first step is to create the Visu object, which is basically a frame with components. We use the static constructor defined in \texttt{Visu.java}:
+\begin{itemize}
+	\item \mylst{Visu.createFullVisu()}: build a Visu object with default minimum size (width 480 px and heigth 640 px), with \emph{next}, \emph{play},\emph{pause} buttons and the break length slider.
+	\item \mylst{Visu.createFullVisu(int width, int height)}: build a Visu object with user defined minimum size (width \emph{width} px and heigth \emph{height} px), with \emph{next}, \emph{play},\emph{pause} buttons and the break length slider.
+	\item \mylst{Visu.createVisu(VisuButton... buttons)}: build a Visu object with default minimum size (width 480 px and heigth 640 px), with \emph{buttons} buttons and the break length slider.
+	\item \mylst{Visu.createVisu(int width, int height, final VisuButton... buttons)}: build a Visu object with user defined minimum size (width \emph{width} px and heigth \emph{height} px), with \emph{buttons} buttons and the break length slider if necessary (at least, if there.is one button).
+\end{itemize}
+
+Parameter \emph{buttons} is an array of VisuButton that can take one of the following values: \emph{NEXT}, \emph{PLAY}. 
+\emph{NEXT} add the \emph{next} button to the frame and the slider, \emph{PLAY} add the \emph{play} and \emph{pause} buttons and the slider.
+
+We want to create a simple full Visu:
+\begin{lstlisting}
+Visu v = Visu.createVisu();
+\end{lstlisting}
+
+\subsection{Adding panel}\label{chocoandvisu:addingpanel}\hypertarget{chocoandvisu:addingpanel}{}
+Now the frame is defined, we have to add a component: a \texttt{VarChocoPanel}. It is a specified panel, added to a \texttt{TabbedPane}, where one visualization (a \texttt{ChocoPApplet}) can be put.
+A \texttt{ChocoPApplet} can be defined in two ways: an existing one, or a user defined one.
+Constructors of \texttt{VarChocoPanel} are:
+\begin{itemize}
+	\item \mylst{VarChocoPanel(final String name, final Variable[] x, final ChocoPApplet applet, final Object params)}: to add a predefined \texttt{ChocoPApplet}. \emph{params} can be null, except for \emph{applet=DOTTYTREESEARCH} (see below).
+	\item \mylst{VarChocoPanel(final String name, final Variable[] x, final Class appletclass, Object params)}: like previous, but \texttt{ChocoPApplet} is replaced by \emph{class} which is the class name of the user's \texttt{ChocoPApplet}. Recommanded for use of user's ChocoPApplet.
+	\item \mylst{VarChocoPanel(final String name, final Variable[] x, final String appletpath, Object params)}: like previous, but \texttt{ChocoPApplet} is replaced by \emph{path} which is the path of the user's \texttt{ChocoPApplet} in the project.
+\end{itemize}
+
+\subsubsection{Existing ChocoPApplet}\label{chocoandvisu:existingchocopapplet}\hypertarget{chocoandvisu:existingchocopapplet}{}
+Few ChocoPApplet are defined in Choco:
+\begin{itemize}
+	\item \textbf{COLORORVALUE} : draw an applet where variables are in columns and where their value is displayed with a colored square (blue: not instantiated, green: instantiated),
+	\item \textbf{DOTTYTREESEARCH} : specific applet, which do not display anything, but a \emph{screensaver}. It builds a dot file (name given in parameters) with nodes of the tree search, to represent the tree search. The paramaters are :
+	\begin{itemize}
+		\item \emph{filename} (\texttt{String}) : output file name
+		\item \emph{nbMaxNode} (\texttt{int}): size limit of the tree seach. If there is more than \emph{nbMaxNode} nodes, the dot file will not be printed. The number of nodes has an impact on the file size
+		\item \emph{watch} (\texttt{Var}) : the variable to optimize. Can be \texttt{null} if no optimization is performed.
+		\item \emph{maximize} (\texttt{Boolean}) : indicating wether the optimization is a maximization (if set to \texttt{true}) or a minimization (if set to \texttt{false}). Can be \texttt{null} if no optimization is performed.
+		\item \emph{restart} (\texttt{Boolean}) : indicating wether the search can restart (is set to \texttt{true}) or not (if set to \texttt{false}). Can be \texttt{null} if no optimization is performed.
+	\end{itemize}
+	\item \textbf{FULLDOMAIN} : draw an applet where variables are in columns. Each line is build with a variable name and a set of colored square (blue: not instantiated, green: instantiated) representing each value of the domain.
+	\item \textbf{GRID} : draw an applet with a simple grid, where each cells contains the value of a variable (question mark or value).
+	\item \textbf{NAMEORQUESTIONMARK} : draw an applet where a variables are displayed on columns, by a question mark (if not instanciated) or its value (if instanciated).
+	\item \textbf{NAMEORVALUE} : draw an applet where a variables are displayed on columns, by its name (if not instanciated) or its value (if instanciated).
+	\item \textbf{SUDOKU} : specific applet, draw a sudoku grid where each cell represents the value of a variable or a question mark.
+	\item \textbf{TREESEARH} : draw the dynamique construction of the tree search.
+\end{itemize}
+
+To add a panel where one of that ChocoPApplet will be drawn, use the following code:
+\begin{lstlisting}
+	Visu v = Visu.createVisu(
+	v.addPanel(new VarChocoPanel("Grid", vars, GRID, null));
+	v.addPanel(new VarChocoPanel("TreeSearch", vars, TREESEARCH, null));
+	v.addPanel(new VarChocoPanel("Dotty", vars, DOTTYTREESEARCH,
+               new Object[]{"/home/choco/treesearch.dot", 100, null, null, null}));
+\end{lstlisting}
+
+\subsubsection{User ChocoPApplet}\label{chocoandvisu:userchocopapplet}\hypertarget{chocoandvisu:userchocopapplet}{}
+
+\todo{UNDER DEVELOPMENT}
+
+\section{Examples}\label{chocoandvisu:examples}\hypertarget{chocoandvisu:examples}{}
+
+\todo{UNDER DEVELOPMENT}

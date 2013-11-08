@@ -1,0 +1,26 @@
+%\part{complementset}
+\label{complementset}
+\hypertarget{complementset}{}
+
+\section{complementSet (constraint)}\label{complementset:complementsetconstraint}\hypertarget{complementset:complementsetconstraint}{}
+\begin{notedef}
+  \texttt{complementSet}$(s,s_{complement})$ states that the $s_{complement}$ set is exactly the complement set of set $s$:
+
+  let $m = \min\{s, s_{complement}\}$ the minimum value of elements of $s$ and $s_{complement}$. Let, conversely,
+  $M = \max \min\{s, s_{complement}\}$ the maximum value of elements of $s$ and $s_{complement}$. We have:
+$$ s \cup s_[complement} = \{m \ldots M \} \qquad \wedge \qquad s \cap s_[complement} = \emptyset $$
+
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{complementSet(SetVariable s, SetVariable complement)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :\emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/ccomplementset.j2t}

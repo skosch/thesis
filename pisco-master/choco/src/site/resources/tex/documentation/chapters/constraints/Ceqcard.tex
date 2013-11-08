@@ -1,0 +1,23 @@
+%\part{eqcard}
+\label{eqcard}
+\hypertarget{eqcard}{}
+
+\section{eqCard (constraint)}\label{eqcard:eqcardconstraint}\hypertarget{eqcard:eqcardconstraint}{}
+\begin{notedef}
+  \texttt{eqCard}$(s,z)$ states that the cardinality of set $s$ is equal to $z$:
+$$|s| = z$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{eqCard(SetVariable s, IntegerVariable z)}
+		\item \mylst{eqCard(SetVariable s, int z)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/ceqcard.j2t}

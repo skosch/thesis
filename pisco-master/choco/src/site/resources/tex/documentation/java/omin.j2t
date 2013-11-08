@@ -1,0 +1,9 @@
+        Model m = new CPModel();
+        m.setDefaultExpressionDecomposition(true);
+        IntegerVariable[] v = makeIntVarArray("v", 3, -3, 3);
+        IntegerVariable minv = makeIntVar("min", -3, 3);
+        Constraint c = eq(minv, min(v));
+        m.addConstraint(c);
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

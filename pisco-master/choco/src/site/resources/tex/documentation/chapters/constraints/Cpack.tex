@@ -1,0 +1,50 @@
+%\part{pack}
+\label{pack}
+\hypertarget{pack}{}
+
+\section{pack (constraint)}\label{pack:packconstraint}\hypertarget{pack:packconstraint}{}
+
+\begin{notedef}
+  \texttt{pack(items, load, bin, size)} states that a collection of items is packed into different bins, such that the total size of the items in each bin does not exceed the bin capacity:
+$$ \mathtt{load}[b] = \sum_{i\in\mathtt{items}[b]} \mathtt{size}[i],\quad\forall \text{ bin } b $$
+%and
+$$ i\in\mathtt{items}[b]\ \iff\ \mathtt{bin}[i]=b,\quad\forall \text{ bin } b,\ \forall \text{ item } i $$
+\end{notedef}
+%\texttt{pack}$(sizes, n, )$ states a collection of items (each of them having a specific size) is packed into different bins of given capacity such that the total weight of the items in each bin does not exceed the bin capacity.
+\texttt{pack} is a \href{http://www.emn.fr/x-info/sdemasse/gccat/Cbin_packing.html}{bin packing constraint} based on \cite{ShawCP04}. 
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{pack(SetVariable[] items, IntegerVariable[] load, IntegerVariable[] bin, IntegerConstantVariable[] size, String... options)}
+		\item \mylst{pack(PackModeler modeler,String... options)}: PackModeler is a high-level modeling object.
+		\item \mylst{pack(int[] sizes, int nbBins, int capacity, String... options)}: build instance with PackModeler.
+	\end{itemize}
+	\item \textbf{Variables}:
+	\begin{itemize}
+		\item \texttt{SetVariable[] items: items}$[b]$ is the set of items packed into bin $b$.
+		\item \texttt{IntegerVariable[] load: load}$[b]$ is the total size of the items packed into bin $b$.
+		\item \texttt{IntegerVariable[] bin: bin}$[i]$ is the bin where item $i$ is packed into.
+		\item \texttt{IntegerConstantVariable[] size: size}$[i]$ is the size of item $i$.
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : 	
+      \begin{itemize}
+      \item \hyperlink{cpackar:cpackaroptions}{SettingType.ADDITIONAL\_RULES.getOptionName()}: additional filtering rules \emph{recommended}
+      \item \hyperlink{cpackdlb:cpackdlboptions}{SettingType.DYNAMIC\_LB.getOptionName()}: feasibility tests based on dynamic lower bounds for 1D-bin packing
+      \item \hyperlink{cpackfill:cpackfilloptions}{SettingType.FILL\_BIN.getOptionName()}: dominance rule: fill a bin when an item fit into pertfectly equal-sized items and bins must be equivalent
+      \item \hyperlink{cpacklbe:cpacklbeoptions}{SettingType.LAST\_BINS\_EMPTY.getOptionName()}: empty bins are the last ones 
+      \end{itemize}
+	\item \textbf{favorite domain} : \emph{to complete}
+	\item \textbf{references} :
+      \begin{itemize}
+      \item \cite{ShawCP04}: \emph{A constraint for bin packing}
+      \item global constraint catalog: \href{http://www.emn.fr/x-info/sdemasse/gccat/Cbin_packing.html}{bin\_packing} (variant)
+      \end{itemize}
+\end{itemize}
+
+\textbf{Example}:
+
+Take a look at \emph{samples.pack} to see advanced use of the constraint.
+\lstinputlisting{java/cpack_import.j2t}
+\lstinputlisting{java/cpack.j2t}

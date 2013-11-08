@@ -1,0 +1,5 @@
+        Constraint[] cols = new Constraint[n];
+        for (int i = 0; i < n; i++) {
+            cols[i] = Choco.eq(Choco.sum(cellsDual[i]), M);
+        }
+        m.addConstraints(cols);

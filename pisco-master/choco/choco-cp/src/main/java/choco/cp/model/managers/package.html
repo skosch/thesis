@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+</head>
+
+<body>
+return new ComponentConstraint(ConstraintType.ALLDIFFERENT, null, vars);
+* soit un type => dans ce cas il faut mettre ? jour avec le manager dans ConstraintType
+* soit une chaine de caractere avec le nom complet du manager => cas ? utiliser pour les contraintes custom
+
+Dans le manager :
+public SConstraint makeConstraint(Solver solver, Variable[] vars, Object parameters, HashSet[String] options) {
+
+Test en fonction du solver, des options et des variables / parametre...
+</body>
+
+</html>

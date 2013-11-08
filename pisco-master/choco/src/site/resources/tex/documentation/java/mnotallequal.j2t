@@ -1,0 +1,7 @@
+    public static class NotAllEqual extends TuplesTest {
+      public boolean checkTuple(int[] tuple) {
+          for (int i = 1; i < tuple.length; i++) {
+              if (tuple[i - 1] != tuple[i]) return true;
+          }
+          return false;
+      }

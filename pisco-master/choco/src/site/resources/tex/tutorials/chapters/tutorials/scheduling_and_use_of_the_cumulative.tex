@@ -1,0 +1,123 @@
+%!TEX root = ../../content-tut.tex
+%\part{scheduling and use of the cumulative}
+%\label{schedulinganduseofthecumulative}
+%\hypertarget{schedulinganduseofthecumulative}{}
+
+\section{Scheduling and use of the cumulative constraint}\label{schedulinganduseofthecumulative:schedulinganduseofthecumulativeconstraint}\hypertarget{schedulinganduseofthecumulative:schedulinganduseofthecumulativeconstraint}{}
+
+%\emph{This tutorial is the Choco2 version of \href{http://choco-solver.net/index.phptitle=schedulinganduseofthecumulative}{this one}}
+
+We present a simple example of a scheduling problem solved using the cumulative global constraint.
+
+%The problem is to schedule a given set of tasks on a single resource and in a given time horizon. 
+The problem is to maximize the number of tasks that can be scheduled on  a single resource within a given time horizon.
+% and to provide a corresponding valid schedule.
+
+The following picture summarizes the instance that we will use as example. 
+It shows the resource profile on the left and on the right, the set of tasks to be scheduled. Each task is represented here as a rectangle whose height is the resource consumption of the task and whose length is the duration of the task. Notice that the profile is not a straight line but varies in time. 
+
+\insertGraphique{\linewidth}{media/schedulinstance.jpg}{A cumulative scheduling problem instance}
+
+This tutorial might help you to deal with :
+
+\begin{itemize}
+	\item The profile of the resource that varies in time whereas the API of the cumulative only accepts a constant capacity
+	\item The objective function that implies optional tasks which is a priori not allowed by cumulative
+	\item A search heuristic that will first assign the tasks to the resource and then try to schedule them while maximizing the number of tasks
+\end{itemize}
+
+The first point is easy to solve by adding fake tasks at the right position to simulate the consumption of the resource. The second point is possible thanks to the ability of the cumulative to handle variable heights. We shall explain it in more details soon.
+
+Let's have a look at the source code and first start with the representation of the instance. We need three fake tasks to decrease the profile accordindly to the instance capacity. There is otherwise 11 tasks. Their heights and duration are fixed and given in the two following int[] tables. The three first tasks correspond to the fake one are all of duration 1 and heights 2, 1, 4. 
+\begin{lstlisting}
+  CPModel m = new CPModel();
+  // data
+  int n = 11 + 3; //number of tasks (include the three fake tasks)
+  int[] heights_data = new int[]{2, 1, 4, 2, 3, 1, 5, 6, 2, 1,3, 1, 1, 2};
+  int[] durations_data = new int[]{1, 1, 1, 2, 1, 3, 1, 1, 3, 4,2, 3, 1, 1};
+\end{lstlisting}
+
+The variables of the problem consist of four variables for each task (start, end, duration, height). We recall here that the scheduling convention is that a task is active on the interval [start, end-1] so that the upper bound of the start and end variables need to be 5 and 6 respectively. Notice that start and end variables are BoudIntVar variables. Indeed, the cumulative is only performing bound reasonning so it would be a waste of efficiency to declare here EnumVariables. Duration and heights are constant in this problem. However, our plan is to simulate the allocation of a task to the resource by using variable height. In other word, we will define the height of the task i as a variable of domain $\{0, \mathtt{height[i]}\}$. The height of the task takes its normal value if the task is assigned to the resource and 0 otherwise. The duration is really constant and is therefore created as a ConstantIntVar.
+
+Moreover, we add a boolean variable per task to specify if the task is assigned to the resource or not. The objective variable is created as a BoundIntVar. 
+
+\begin{lstlisting}
+  IntegerVariable capa = constant(7);
+  IntegerVariable[] starts = makeIntVarArray("start", n, 0, 5, Options.V_BOUND);
+  IntegerVariable[] ends = makeIntVarArray("end", n, 0, 6, Options.V_BOUND);
+  
+  IntegerVariable[] duration = new IntegerVariable[n];
+  IntegerVariable[] height = new IntegerVariable[n];
+  for (int i = 0; i < height.length; i++) {
+      duration[i] = constant(durations_data[i]);
+      height[i] = makeIntVar("height " + i, new int[]{0, heights_data[i]});
+  }
+  
+  IntegerVariable[] bool = makeIntVarArray("taskIn?", n, 0, 1);
+  IntegerVariable obj = makeIntVar("obj", 0, n, Options.V_BOUND, Options.V_OBJECTIVE);
+\end{lstlisting}
+
+We then add the constraints to the model. Three constraints are needed. First, the cumulative ensures that the resource consumption is respected at any time. Then we need to make sure that if a task is assigned to the cumulative, its height can not be null which is done by the use of boolean channeling constraints. Those constraints ensure that :
+
+$$\mathtt{bool[i]} = 1 \quad\iff\quad \mathtt{height[i]} = \mathtt{heights\_data[i]}$$
+
+We state the objective function to be the sum of all boolean variables. 
+\begin{lstlisting}
+  //post the cumulative
+  m.addConstraint(cumulative(starts, ends, duration, height, capa, ""));                                                                            
+  //post the channeling to know if the task is scheduled or not
+  for (int i = 0; i < n; i++) {
+      m.addConstraint(boolChanneling(bool[i], height[i], heights_data[i]));
+  }
+  
+  //state the objective function
+  m.addConstraint(eq(sum(bool), obj));
+\end{lstlisting}
+
+Finally we fix the fake task at their position to simulate the profil: 
+\begin{lstlisting}
+  CPSolver s = new CPSolver();
+  s.read(m);
+  
+  //set the fake tasks to establish the profile capacity of the resource
+  try {
+      s.getVar(starts[0]).setVal(1); s.getVar(ends[0]).setVal(2); s.getVar(height[0]).setVal(2);
+      s.getVar(starts[1]).setVal(2); s.getVar(ends[1]).setVal(3); s.getVar(height[1]).setVal(1);
+      s.getVar(starts[2]).setVal(3); s.getVar(ends[2]).setVal(4); s.getVar(height[2]).setVal(4);
+  } catch (ContradictionException e) {
+      System.out.println("error, no contradiction expected at this stage");
+  }
+\end{lstlisting}
+We are now ready to solve the problem. We could call a maximize(false) but we want to add a specific heuristic that first assigned the tasks to the cumulative and then tries to schedule them.
+\begin{lstlisting}
+  s.maximize(s.getVar(obj),false);
+\end{lstlisting}
+We now want to print the solution and will use the following code : 
+\begin{lstlisting}
+	System.out.println("Objective : " + (s.getVar(obj).getVal() - 3));
+	for (int i = 3; i < starts.length; i++) {
+	   if (s.getVar(height[i]).getVal() != 0)
+	      System.out.println("[" + s.getVar(starts[i]).getVal() + " - " 
+                                 + (s.getVar(ends[i]).getVal() - 1) + "]:" 
+                                 + s.getVar(height[i]).getVal());
+	}
+\end{lstlisting}
+Choco gives the following solution : 
+\begin{lstlisting}
+	Objective : 9
+	[1 - 2]:2
+	[0 - 0]:3
+	[2 - 4]:1
+	[4 - 4]:5
+	[5 - 5]:6
+	[0 - 2]:2
+	[0 - 3]:1
+	[3 - 5]:1
+	[0 - 0]:1
+\end{lstlisting}
+This solution could be represented by the following picture :
+
+\insertGraphique{\linewidth}{media/schedulsolution.jpg}{Cumulative profile of a solution.}
+
+Notice that the cumulative gives a necesserary condition for packing (if no schedule exists then no packing exists) but this condition is not sufficient as shown on the picture because it only ensures that the capacity is respected at each time point. Specially, the tasks might be splitted to fit in the profile as in the previous solution.
+%The complete code can be found \hyperlink{cumulative:cumulativeconstraint}{here}.

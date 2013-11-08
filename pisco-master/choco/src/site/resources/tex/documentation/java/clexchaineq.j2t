@@ -1,0 +1,13 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        int n = 4;
+        int k = 2;
+        IntegerVariable[] vs1 = new IntegerVariable[n];
+        IntegerVariable[] vs2 = new IntegerVariable[n];
+        for (int i = 0; i < n; i++) {
+           vs1[i] = makeIntVar("" + i, 0, k);
+           vs2[i] = makeIntVar("" + i, 0, k);
+        }
+        m.addConstraint(lexChainEq(vs1, vs2));
+        s.read(m);
+        s.solve();

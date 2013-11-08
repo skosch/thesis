@@ -1,0 +1,7 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        TaskVariable[] tasks1 = Choco.makeTaskVarArray("Task1", 0, 10, new int[]{2,5});
+        TaskVariable[] tasks2 = Choco.makeTaskVarArray("Task2", 0, 10, new int[]{3,4});
+        m.addConstraints(disjoint(tasks1, tasks2));
+        s.read(m);
+        s.solve();

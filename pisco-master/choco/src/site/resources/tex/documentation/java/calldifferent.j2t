@@ -1,0 +1,24 @@
+        int n = 8;
+        CPModel m = new CPModel();
+        IntegerVariable[] queens = new IntegerVariable[n];
+        IntegerVariable[] diag1 = new IntegerVariable[n];
+        IntegerVariable[] diag2 = new IntegerVariable[n];
+        for (int i = 0; i < n; i++) {
+            queens[i] = makeIntVar("Q" + i, 1, n);
+            diag1[i] = makeIntVar("D1" + i, 1, 2 * n);
+            diag2[i] = makeIntVar("D2" + i, -n + 1, n);
+        }
+        m.addConstraint(allDifferent(queens));
+        for (int i = 0; i < n; i++) {
+            m.addConstraint(eq(diag1[i], plus(queens[i], i)));
+            m.addConstraint(eq(diag2[i], minus(queens[i], i)));
+        }
+        m.addConstraint(Options.C_ALLDIFFERENT_CLIQUE, allDifferent(diag1));
+        m.addConstraint(Options.C_ALLDIFFERENT_CLIQUE, allDifferent(diag2));
+        // diagonal constraints
+        CPSolver s = new CPSolver();
+        s.read(m);
+        long tps = System.currentTimeMillis();
+        s.solveAll();
+        System.out.println("tps nreines1 " + (System.currentTimeMillis() - tps) + " nbNode " + s.
+                getNodeCount());

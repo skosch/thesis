@@ -1,0 +1,16 @@
+\section{PackDynRemovals (Branching strategy)}\label{packdynremovals:packdynremovalsbranchstrat}\hypertarget{packdynremovals:packdynremovalsbranchstrat}{}
+\begin{notedef}
+  \texttt{PackDynRemovals} is a \textbf{n-ary branching} for packing problems with identical bin capacities and without pre-assignments, placing an item in distinct bins. It is a specialization of \hyperlink{assignvar:assignvarbranchstrat}{AssignVar} for breaking symmetries: 
+the selected item $x$ is successively placed, in each branch, in a next selected bin. At every backtrack, once a bin has been tried, all other bins having exactly the same residual space $rcap$ become unselectable.
+$$B_1: bin(x)=v_1,\quad B_2: bin(x)=v_2,\quad \ldots,\quad B_n: bin(x)=v_n,\qquad\text{with } rcap(v_j)\neq rcap(v_i)\ \forall i<j$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{Constructor}:\mylst{PackDynRemovals(VarSelector varSel, ValSelector valSel, PackSConstraint pack)}
+	\item \textbf{type of variable} : integer \emph{(bin-to-item assignment variable)}
+	\item \textbf{references} : \emph{n/a}
+\end{itemize}
+
+\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

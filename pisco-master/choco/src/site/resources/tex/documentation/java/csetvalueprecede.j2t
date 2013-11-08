@@ -1,0 +1,9 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+
+        SetVariable[] setVariables = makeSetVarArray("sv", 2, 1, 2);
+        Constraint c1 = setValuePrecede(setVariables, 1, 2);
+
+        m.addConstraint(c1);
+        s.read(m);
+        s.solveAll();   % 10 solutions

@@ -1,0 +1,4 @@
+        IntegerConstantVariable c10 = Choco.constant(10);
+        RealConstantVariable c0dot0 = Choco.constant(0.0);
+        SetConstantVariable c0_12 = Choco.constant(new int[]{0, 12});
+        SetConstantVariable cEmpty = Choco.emptySet();

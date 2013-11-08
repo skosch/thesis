@@ -1,0 +1,3 @@
+            CPModel model = new CPModel();
+            IntegerVariable[] vars = Choco.makeIntVarArray("v", 3, 1, 3);
+            model.addConstraint(Choco.relationTupleFC(vars, new NotAllEqual()));

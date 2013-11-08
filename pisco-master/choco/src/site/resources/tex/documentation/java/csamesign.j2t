@@ -1,0 +1,10 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable x = makeIntVar("x", -1, 1);
+        IntegerVariable y = makeIntVar("y", -1, 1);
+        IntegerVariable z = makeIntVar("z", 0, 1000);
+        m.addConstraint(oppositeSign(x,y));
+        m.addConstraint(eq(z, plus(mult(x, -425), mult(y, 391))));
+        s.read(m);
+        s.solve();
+        System.out.println(s.getVar(z).getVal());

@@ -1,0 +1,43 @@
+<assembly>
+    <id>src</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>choco-kernel/src/main/java</directory>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>choco-cp/src/main/java</directory>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>choco-cli/src/main/java</directory>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>choco-db/src/main/java</directory>
+            <outputDirectory>.choco-db</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>choco-parsers/src/main/java</directory>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>choco-visu/src/main/java</directory>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>choco-contribs/src/main/java</directory>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>samples/src/main/java</directory>
+            <outputDirectory>samples</outputDirectory>
+        </fileSet>
+    </fileSets>
+
+</assembly>

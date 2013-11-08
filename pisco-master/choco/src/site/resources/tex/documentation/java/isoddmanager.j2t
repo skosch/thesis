@@ -1,0 +1,8 @@
+public class IsOddManager extends IntConstraintManager {
+    public SConstraint makeConstraint(Solver solver, IntegerVariable[] variables, Object parameters, List<String> options) {
+        if (solver instanceof CPSolver) {
+            return new IsOdd(solver.getVar(variables[0]));
+        }
+        return null;
+    }
+}

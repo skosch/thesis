@@ -1,0 +1,10 @@
+        int i = 4;
+        int j = 2;
+        Model m = new CPModel();
+        IntegerVariable[] iv = makeIntVarArray("iv", i, 0, j);
+        SetVariable[] sv = makeSetVarArray("sv", j, 0, i);
+
+        m.addConstraint(inverseSet(iv, sv));
+        Solver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

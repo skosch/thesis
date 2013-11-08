@@ -1,0 +1,18 @@
+\subsection{BooleanChanneling (visualizer)}\label{boolchan:visu}\hypertarget{boolchan:visu}{}
+\begin{notedef}
+  \texttt{BooleanChanneling}$(x, bs, o)$ is a specialized visualizer for the boolean channeling constraint, where $x$ is a variable, $bs$ an array of boolean variables and $o$ the first value (in Choco: \mylst{domainChanneling}).
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} : 
+	\begin{itemize}
+	\item \mylst{BoolChanneling(IntDomainVar x, IntDomainVar[] bs, int o, String display, int width, int height)}
+	\item \mylst{BoolChanneling(IntDomainVar x, IntDomainVar[] bs, String display, int width, int height)}, where $o$ is computed from the lower bound $x$'s domain.
+	\item \mylst{BoolChanneling(IntDomainVar var, IntDomainVar[] bool, int o, String display, int x, int y, int width, int height, String group, int min, int max)}
+	\item \mylst{BoolChanneling(IntDomainVar var, IntDomainVar[] bool, String display, int x, int y, int width, int height, String group, int min, int max)}, where $o$ is computed from the lower bound $x$'s domain.
+	\end{itemize}
+\end{itemize}
+
+%\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

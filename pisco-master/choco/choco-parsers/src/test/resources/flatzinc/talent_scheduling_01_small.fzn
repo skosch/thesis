@@ -1,0 +1,686 @@
+predicate 
+  global_sorting(array[int] of var int: x, array[int] of var int: y);
+
+predicate global_setDisjoint(var set of int: s1, var set of int: s2);
+
+predicate global_min(array[int] of var int: x, var int: m);
+
+predicate global_member(var set of int: x, var int: y);
+
+predicate global_max(array[int] of var int: x, var int: m);
+
+predicate global_lexEq(array[int] of var int: x, array[int] of var int: y);
+
+predicate global_lex(array[int] of var int: x, array[int] of var int: y);
+
+predicate 
+  global_inverseSet(
+    array[int] of var int: x, array[int] of var set of int: y);
+
+predicate 
+  global_globalCardinalityLowUp(
+    array[int] of var int: x, array[int] of var int: c, 
+    array[int] of int: lbound, array[int] of int: ubound);
+
+predicate 
+  global_globalCardinality(
+    array[int] of var int: x, array[int] of var int: c);
+
+predicate 
+  global_elementInt(var int: i, array[int] of var int: x, var int: y);
+
+predicate 
+  global_elementBool(var int: i, array[int] of var bool: x, var bool: y);
+
+predicate 
+  global_cumulative(
+    array[int] of var int: s, array[int] of var int: d, 
+    array[int] of var int: r, var int: b);
+
+predicate global_allDifferent(array[int] of var int: x);
+
+set of int: Actors = 1 .. 4;
+
+var 0 .. 1: BOOL2INT____1::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____10::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____13::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____15::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____17::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____19::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____22::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____24::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____26::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____28::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____31::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____33::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____35::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____37::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____4::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____40::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____42::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____44::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____46::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____49::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____51::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____53::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____6::var_is_introduced::is_defined_var;
+
+var 0 .. 1: BOOL2INT____8::var_is_introduced::is_defined_var;
+
+var bool: ELEM____103::var_is_introduced::is_defined_var;
+
+var bool: ELEM____107::var_is_introduced::is_defined_var;
+
+var bool: ELEM____111::var_is_introduced::is_defined_var;
+
+var bool: ELEM____115::var_is_introduced::is_defined_var;
+
+var bool: ELEM____119::var_is_introduced::is_defined_var;
+
+var int: ELEM____12::var_is_introduced::is_defined_var;
+
+var bool: ELEM____123::var_is_introduced::is_defined_var;
+
+var bool: ELEM____127::var_is_introduced::is_defined_var;
+
+var bool: ELEM____131::var_is_introduced::is_defined_var;
+
+var bool: ELEM____135::var_is_introduced::is_defined_var;
+
+var bool: ELEM____139::var_is_introduced::is_defined_var;
+
+var bool: ELEM____143::var_is_introduced::is_defined_var;
+
+var bool: ELEM____147::var_is_introduced::is_defined_var;
+
+var int: ELEM____21::var_is_introduced::is_defined_var;
+
+var int: ELEM____3::var_is_introduced::is_defined_var;
+
+var int: ELEM____30::var_is_introduced::is_defined_var;
+
+var int: ELEM____39::var_is_introduced::is_defined_var;
+
+var int: ELEM____48::var_is_introduced::is_defined_var;
+
+var bool: ELEM____87::var_is_introduced::is_defined_var;
+
+var bool: ELEM____91::var_is_introduced::is_defined_var;
+
+var bool: ELEM____95::var_is_introduced::is_defined_var;
+
+var bool: ELEM____99::var_is_introduced::is_defined_var;
+
+var 1 .. 21: INT____100::var_is_introduced;
+
+var 4 .. 24: INT____104::var_is_introduced;
+
+var 3 .. 23: INT____108::var_is_introduced;
+
+var 2 .. 22: INT____112::var_is_introduced;
+
+var 1 .. 21: INT____116::var_is_introduced;
+
+var 4 .. 24: INT____120::var_is_introduced;
+
+var 3 .. 23: INT____124::var_is_introduced;
+
+var 2 .. 22: INT____128::var_is_introduced;
+
+var 1 .. 21: INT____132::var_is_introduced;
+
+var 4 .. 24: INT____136::var_is_introduced;
+
+var 3 .. 23: INT____140::var_is_introduced;
+
+var 2 .. 22: INT____144::var_is_introduced;
+
+var 1 .. 21: INT____148::var_is_introduced;
+
+var 4 .. 24: INT____56::var_is_introduced;
+
+var 3 .. 23: INT____58::var_is_introduced;
+
+var 2 .. 22: INT____60::var_is_introduced;
+
+var 1 .. 21: INT____62::var_is_introduced;
+
+var 4 .. 24: INT____80::var_is_introduced;
+
+var 3 .. 23: INT____82::var_is_introduced;
+
+var 2 .. 22: INT____84::var_is_introduced;
+
+var 1 .. 21: INT____86::var_is_introduced;
+
+var 4 .. 24: INT____88::var_is_introduced;
+
+var 3 .. 23: INT____92::var_is_introduced;
+
+var 2 .. 22: INT____96::var_is_introduced;
+
+set of int: Scenes = 1 .. 6;
+
+var int: TIMES____11::var_is_introduced::is_defined_var;
+
+var int: TIMES____14::var_is_introduced::is_defined_var;
+
+var int: TIMES____16::var_is_introduced::is_defined_var;
+
+var int: TIMES____18::var_is_introduced::is_defined_var;
+
+var int: TIMES____2::var_is_introduced::is_defined_var;
+
+var int: TIMES____20::var_is_introduced::is_defined_var;
+
+var int: TIMES____23::var_is_introduced::is_defined_var;
+
+var int: TIMES____25::var_is_introduced::is_defined_var;
+
+var int: TIMES____27::var_is_introduced::is_defined_var;
+
+var int: TIMES____29::var_is_introduced::is_defined_var;
+
+var int: TIMES____32::var_is_introduced::is_defined_var;
+
+var int: TIMES____34::var_is_introduced::is_defined_var;
+
+var int: TIMES____36::var_is_introduced::is_defined_var;
+
+var int: TIMES____38::var_is_introduced::is_defined_var;
+
+var int: TIMES____41::var_is_introduced::is_defined_var;
+
+var int: TIMES____43::var_is_introduced::is_defined_var;
+
+var int: TIMES____45::var_is_introduced::is_defined_var;
+
+var int: TIMES____47::var_is_introduced::is_defined_var;
+
+var int: TIMES____5::var_is_introduced::is_defined_var;
+
+var int: TIMES____50::var_is_introduced::is_defined_var;
+
+var int: TIMES____52::var_is_introduced::is_defined_var;
+
+var int: TIMES____54::var_is_introduced::is_defined_var;
+
+var int: TIMES____7::var_is_introduced::is_defined_var;
+
+var int: TIMES____9::var_is_introduced::is_defined_var;
+
+array[1 .. 24] of bool: ab = 
+  [ true, true, false, false, false, true, true, false, false, false, true, 
+    true, false, true, false, true, true, false, true, false, true, false, 
+    false, true ];
+
+array[1 .. 24] of var bool: aft;
+
+array[1 .. 24] of var bool: bef;
+
+array[1 .. 4] of int: c = [ 1, 1, 1, 1 ];
+
+var int: cost::output_var;
+
+array[1 .. 6] of int: d = [ 1, 2, 3, 4, 5, 6 ];
+
+array[1 .. 24] of var bool: dur;
+
+array[1 .. 24] of 0 .. 1: ia = 
+  [ 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1 ];
+
+int: numActors = 4;
+
+int: numScenes = 6;
+
+array[1 .. 6] of var 1 .. 6: s::output_array([ 1 .. 6 ]);
+
+constraint bool_or(ELEM____147, aft[5], aft[1]);
+
+constraint bool_or(dur[1], bef[1], bef[5]);
+
+constraint bool_or(ELEM____143, aft[6], aft[2]);
+
+constraint bool_or(dur[2], bef[2], bef[6]);
+
+constraint bool_or(ELEM____139, aft[7], aft[3]);
+
+constraint bool_or(dur[3], bef[3], bef[7]);
+
+constraint bool_or(ELEM____135, aft[8], aft[4]);
+
+constraint bool_or(dur[4], bef[4], bef[8]);
+
+constraint bool_or(ELEM____131, aft[9], aft[5]);
+
+constraint bool_or(ELEM____147, bef[5], bef[9]);
+
+constraint 
+  array_var_bool_element(INT____148, ab, ELEM____147)
+    ::defines_var(ELEM____147);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____148, s[2] ], -3);
+
+constraint bool_or(ELEM____127, aft[10], aft[6]);
+
+constraint bool_or(ELEM____143, bef[6], bef[10]);
+
+constraint 
+  array_var_bool_element(INT____144, ab, ELEM____143)
+    ::defines_var(ELEM____143);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____144, s[2] ], -2);
+
+constraint bool_or(ELEM____123, aft[11], aft[7]);
+
+constraint bool_or(ELEM____139, bef[7], bef[11]);
+
+constraint 
+  array_var_bool_element(INT____140, ab, ELEM____139)
+    ::defines_var(ELEM____139);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____140, s[2] ], -1);
+
+constraint bool_or(ELEM____119, aft[12], aft[8]);
+
+constraint bool_or(ELEM____135, bef[8], bef[12]);
+
+constraint 
+  array_var_bool_element(INT____136, ab, ELEM____135)
+    ::defines_var(ELEM____135);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____136, s[2] ], 0);
+
+constraint bool_or(ELEM____115, aft[13], aft[9]);
+
+constraint bool_or(ELEM____131, bef[9], bef[13]);
+
+constraint 
+  array_var_bool_element(INT____132, ab, ELEM____131)
+    ::defines_var(ELEM____131);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____132, s[3] ], -3);
+
+constraint bool_or(ELEM____111, aft[14], aft[10]);
+
+constraint bool_or(ELEM____127, bef[10], bef[14]);
+
+constraint 
+  array_var_bool_element(INT____128, ab, ELEM____127)
+    ::defines_var(ELEM____127);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____128, s[3] ], -2);
+
+constraint bool_or(ELEM____107, aft[15], aft[11]);
+
+constraint bool_or(ELEM____123, bef[11], bef[15]);
+
+constraint 
+  array_var_bool_element(INT____124, ab, ELEM____123)
+    ::defines_var(ELEM____123);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____124, s[3] ], -1);
+
+constraint bool_or(ELEM____103, aft[16], aft[12]);
+
+constraint bool_or(ELEM____119, bef[12], bef[16]);
+
+constraint 
+  array_var_bool_element(INT____120, ab, ELEM____119)
+    ::defines_var(ELEM____119);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____120, s[3] ], 0);
+
+constraint bool_or(ELEM____99, aft[17], aft[13]);
+
+constraint bool_or(ELEM____115, bef[13], bef[17]);
+
+constraint 
+  array_var_bool_element(INT____116, ab, ELEM____115)
+    ::defines_var(ELEM____115);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____116, s[4] ], -3);
+
+constraint bool_or(ELEM____95, aft[18], aft[14]);
+
+constraint bool_or(ELEM____111, bef[14], bef[18]);
+
+constraint 
+  array_var_bool_element(INT____112, ab, ELEM____111)
+    ::defines_var(ELEM____111);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____112, s[4] ], -2);
+
+constraint bool_or(ELEM____91, aft[19], aft[15]);
+
+constraint bool_or(ELEM____107, bef[15], bef[19]);
+
+constraint 
+  array_var_bool_element(INT____108, ab, ELEM____107)
+    ::defines_var(ELEM____107);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____108, s[4] ], -1);
+
+constraint bool_or(ELEM____87, aft[20], aft[16]);
+
+constraint bool_or(ELEM____103, bef[16], bef[20]);
+
+constraint 
+  array_var_bool_element(INT____104, ab, ELEM____103)
+    ::defines_var(ELEM____103);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____104, s[4] ], 0);
+
+constraint bool_or(dur[21], aft[21], aft[17]);
+
+constraint bool_or(ELEM____99, bef[17], bef[21]);
+
+constraint 
+  array_var_bool_element(INT____100, ab, ELEM____99)
+    ::defines_var(ELEM____99);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____100, s[5] ], -3);
+
+constraint bool_or(dur[22], aft[22], aft[18]);
+
+constraint bool_or(ELEM____95, bef[18], bef[22]);
+
+constraint 
+  array_var_bool_element(INT____96, ab, ELEM____95)
+    ::defines_var(ELEM____95);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____96, s[5] ], -2);
+
+constraint bool_or(dur[23], aft[23], aft[19]);
+
+constraint bool_or(ELEM____91, bef[19], bef[23]);
+
+constraint 
+  array_var_bool_element(INT____92, ab, ELEM____91)
+    ::defines_var(ELEM____91);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____92, s[5] ], -1);
+
+constraint bool_or(dur[24], aft[24], aft[20]);
+
+constraint bool_or(ELEM____87, bef[20], bef[24]);
+
+constraint 
+  array_var_bool_element(INT____88, ab, ELEM____87)
+    ::defines_var(ELEM____87);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____88, s[5] ], 0);
+
+constraint bool_eq(aft[21], false);
+
+constraint bool_eq(aft[22], false);
+
+constraint bool_eq(aft[23], false);
+
+constraint bool_eq(aft[24], false);
+
+constraint bool_eq(bef[1], false);
+
+constraint bool_eq(bef[2], false);
+
+constraint bool_eq(bef[3], false);
+
+constraint bool_eq(bef[4], false);
+
+constraint array_var_bool_element(INT____86, ab, dur[21]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____86, s[6] ], -3);
+
+constraint array_var_bool_element(INT____84, ab, dur[22]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____84, s[6] ], -2);
+
+constraint array_var_bool_element(INT____82, ab, dur[23]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____82, s[6] ], -1);
+
+constraint array_var_bool_element(INT____80, ab, dur[24]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____80, s[6] ], 0);
+
+constraint bool_and(bef[9], aft[1], dur[5]);
+
+constraint bool_and(bef[10], aft[2], dur[6]);
+
+constraint bool_and(bef[11], aft[3], dur[7]);
+
+constraint bool_and(bef[12], aft[4], dur[8]);
+
+constraint bool_and(bef[13], aft[5], dur[9]);
+
+constraint bool_and(bef[14], aft[6], dur[10]);
+
+constraint bool_and(bef[15], aft[7], dur[11]);
+
+constraint bool_and(bef[16], aft[8], dur[12]);
+
+constraint bool_and(bef[17], aft[9], dur[13]);
+
+constraint bool_and(bef[18], aft[10], dur[14]);
+
+constraint bool_and(bef[19], aft[11], dur[15]);
+
+constraint bool_and(bef[20], aft[12], dur[16]);
+
+constraint bool_and(bef[21], aft[13], dur[17]);
+
+constraint bool_and(bef[22], aft[14], dur[18]);
+
+constraint bool_and(bef[23], aft[15], dur[19]);
+
+constraint bool_and(bef[24], aft[16], dur[20]);
+
+constraint array_var_bool_element(INT____62, ab, dur[1]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____62, s[1] ], -3);
+
+constraint array_var_bool_element(INT____60, ab, dur[2]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____60, s[1] ], -2);
+
+constraint array_var_bool_element(INT____58, ab, dur[3]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____58, s[1] ], -1);
+
+constraint array_var_bool_element(INT____56, ab, dur[4]);
+
+constraint int_lin_eq([ 1, -4 ], [ INT____56, s[1] ], 0);
+
+constraint 
+  int_lin_eq(
+    [ -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 
+      -1, -1, -1, -1, -1, -1, -1, 1 ], 
+    [ TIMES____11, TIMES____14, TIMES____16, TIMES____18, TIMES____2, 
+      TIMES____20, TIMES____23, TIMES____25, TIMES____27, TIMES____29, 
+      TIMES____32, TIMES____34, TIMES____36, TIMES____38, TIMES____41, 
+      TIMES____43, TIMES____45, TIMES____47, TIMES____5, TIMES____50, 
+      TIMES____52, TIMES____54, TIMES____7, TIMES____9, cost ], 0);
+
+constraint 
+  int_times(ELEM____48, BOOL2INT____53, TIMES____54)
+    ::defines_var(TIMES____54);
+
+constraint bool2int(dur[24], BOOL2INT____53)::defines_var(BOOL2INT____53);
+
+constraint 
+  int_times(ELEM____48, BOOL2INT____51, TIMES____52)
+    ::defines_var(TIMES____52);
+
+constraint bool2int(dur[23], BOOL2INT____51)::defines_var(BOOL2INT____51);
+
+constraint 
+  int_times(ELEM____48, BOOL2INT____49, TIMES____50)
+    ::defines_var(TIMES____50);
+
+constraint bool2int(dur[22], BOOL2INT____49)::defines_var(BOOL2INT____49);
+
+constraint 
+  int_times(ELEM____48, BOOL2INT____46, TIMES____47)
+    ::defines_var(TIMES____47);
+
+constraint 
+  array_var_int_element(s[6], d, ELEM____48)::defines_var(ELEM____48);
+
+constraint bool2int(dur[21], BOOL2INT____46)::defines_var(BOOL2INT____46);
+
+constraint 
+  int_times(ELEM____39, BOOL2INT____44, TIMES____45)
+    ::defines_var(TIMES____45);
+
+constraint bool2int(dur[20], BOOL2INT____44)::defines_var(BOOL2INT____44);
+
+constraint 
+  int_times(ELEM____39, BOOL2INT____42, TIMES____43)
+    ::defines_var(TIMES____43);
+
+constraint bool2int(dur[19], BOOL2INT____42)::defines_var(BOOL2INT____42);
+
+constraint 
+  int_times(ELEM____39, BOOL2INT____40, TIMES____41)
+    ::defines_var(TIMES____41);
+
+constraint bool2int(dur[18], BOOL2INT____40)::defines_var(BOOL2INT____40);
+
+constraint 
+  int_times(ELEM____39, BOOL2INT____37, TIMES____38)
+    ::defines_var(TIMES____38);
+
+constraint 
+  array_var_int_element(s[5], d, ELEM____39)::defines_var(ELEM____39);
+
+constraint bool2int(dur[17], BOOL2INT____37)::defines_var(BOOL2INT____37);
+
+constraint 
+  int_times(ELEM____30, BOOL2INT____35, TIMES____36)
+    ::defines_var(TIMES____36);
+
+constraint bool2int(dur[16], BOOL2INT____35)::defines_var(BOOL2INT____35);
+
+constraint 
+  int_times(ELEM____30, BOOL2INT____33, TIMES____34)
+    ::defines_var(TIMES____34);
+
+constraint bool2int(dur[15], BOOL2INT____33)::defines_var(BOOL2INT____33);
+
+constraint 
+  int_times(ELEM____30, BOOL2INT____31, TIMES____32)
+    ::defines_var(TIMES____32);
+
+constraint bool2int(dur[14], BOOL2INT____31)::defines_var(BOOL2INT____31);
+
+constraint 
+  int_times(ELEM____30, BOOL2INT____28, TIMES____29)
+    ::defines_var(TIMES____29);
+
+constraint 
+  array_var_int_element(s[4], d, ELEM____30)::defines_var(ELEM____30);
+
+constraint bool2int(dur[13], BOOL2INT____28)::defines_var(BOOL2INT____28);
+
+constraint 
+  int_times(ELEM____21, BOOL2INT____26, TIMES____27)
+    ::defines_var(TIMES____27);
+
+constraint bool2int(dur[12], BOOL2INT____26)::defines_var(BOOL2INT____26);
+
+constraint 
+  int_times(ELEM____21, BOOL2INT____24, TIMES____25)
+    ::defines_var(TIMES____25);
+
+constraint bool2int(dur[11], BOOL2INT____24)::defines_var(BOOL2INT____24);
+
+constraint 
+  int_times(ELEM____21, BOOL2INT____22, TIMES____23)
+    ::defines_var(TIMES____23);
+
+constraint bool2int(dur[10], BOOL2INT____22)::defines_var(BOOL2INT____22);
+
+constraint 
+  int_times(ELEM____21, BOOL2INT____19, TIMES____20)
+    ::defines_var(TIMES____20);
+
+constraint 
+  array_var_int_element(s[3], d, ELEM____21)::defines_var(ELEM____21);
+
+constraint bool2int(dur[9], BOOL2INT____19)::defines_var(BOOL2INT____19);
+
+constraint 
+  int_times(ELEM____12, BOOL2INT____17, TIMES____18)
+    ::defines_var(TIMES____18);
+
+constraint bool2int(dur[8], BOOL2INT____17)::defines_var(BOOL2INT____17);
+
+constraint 
+  int_times(ELEM____12, BOOL2INT____15, TIMES____16)
+    ::defines_var(TIMES____16);
+
+constraint bool2int(dur[7], BOOL2INT____15)::defines_var(BOOL2INT____15);
+
+constraint 
+  int_times(ELEM____12, BOOL2INT____13, TIMES____14)
+    ::defines_var(TIMES____14);
+
+constraint bool2int(dur[6], BOOL2INT____13)::defines_var(BOOL2INT____13);
+
+constraint 
+  int_times(ELEM____12, BOOL2INT____10, TIMES____11)
+    ::defines_var(TIMES____11);
+
+constraint 
+  array_var_int_element(s[2], d, ELEM____12)::defines_var(ELEM____12);
+
+constraint bool2int(dur[5], BOOL2INT____10)::defines_var(BOOL2INT____10);
+
+constraint 
+  int_times(ELEM____3, BOOL2INT____8, TIMES____9)::defines_var(TIMES____9);
+
+constraint bool2int(dur[4], BOOL2INT____8)::defines_var(BOOL2INT____8);
+
+constraint 
+  int_times(ELEM____3, BOOL2INT____6, TIMES____7)::defines_var(TIMES____7);
+
+constraint bool2int(dur[3], BOOL2INT____6)::defines_var(BOOL2INT____6);
+
+constraint 
+  int_times(ELEM____3, BOOL2INT____4, TIMES____5)::defines_var(TIMES____5);
+
+constraint bool2int(dur[2], BOOL2INT____4)::defines_var(BOOL2INT____4);
+
+constraint 
+  int_times(ELEM____3, BOOL2INT____1, TIMES____2)::defines_var(TIMES____2);
+
+constraint 
+  array_var_int_element(s[1], d, ELEM____3)::defines_var(ELEM____3);
+
+constraint bool2int(dur[1], BOOL2INT____1)::defines_var(BOOL2INT____1);
+
+constraint global_allDifferent(s);
+
+solve ::int_search(s, first_fail, indomain, complete) minimize cost;

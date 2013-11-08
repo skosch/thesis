@@ -1,0 +1,14 @@
+        CPModel mod = new CPModel();
+        CPSolver s = new CPSolver();
+        IntegerVariable[] vars = makeBooleanVarArray("b", 8);
+
+        IntegerVariable[] plits1 = new IntegerVariable[]{vars[0], vars[3], vars[4]};
+        IntegerVariable[] nlits1 = new IntegerVariable[]{vars[1], vars[2], vars[6]};
+        mod.addConstraint(clause(plits1, nlits1));
+
+        IntegerVariable[] plits2 = new IntegerVariable[]{vars[5], vars[3]};
+        IntegerVariable[] nlits2 = new IntegerVariable[]{vars[1], vars[4], vars[7]};
+        mod.addConstraint(clause(plits2, nlits2));
+
+        s.read(mod);
+        s.solveAll();

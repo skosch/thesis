@@ -1,0 +1,81 @@
+int: k = 4;
+
+int: n = 4;
+
+array[1 .. 17] of var 1 .. 4: x;
+
+constraint int_ne(x[2], x[3]);
+
+constraint int_ne(x[2], x[4]);
+
+constraint int_ne(x[3], x[4]);
+
+constraint int_ne(x[5], x[2]);
+
+constraint int_ne(x[1], x[2]);
+
+constraint int_ne(x[5], x[3]);
+
+constraint int_ne(x[1], x[3]);
+
+constraint int_ne(x[5], x[4]);
+
+constraint int_ne(x[1], x[4]);
+
+constraint int_ne(x[6], x[7]);
+
+constraint int_ne(x[6], x[8]);
+
+constraint int_ne(x[7], x[8]);
+
+constraint int_ne(x[9], x[6]);
+
+constraint int_ne(x[5], x[6]);
+
+constraint int_ne(x[9], x[7]);
+
+constraint int_ne(x[5], x[7]);
+
+constraint int_ne(x[9], x[8]);
+
+constraint int_ne(x[5], x[8]);
+
+constraint int_ne(x[10], x[11]);
+
+constraint int_ne(x[10], x[12]);
+
+constraint int_ne(x[11], x[12]);
+
+constraint int_ne(x[13], x[10]);
+
+constraint int_ne(x[9], x[10]);
+
+constraint int_ne(x[13], x[11]);
+
+constraint int_ne(x[9], x[11]);
+
+constraint int_ne(x[13], x[12]);
+
+constraint int_ne(x[9], x[12]);
+
+constraint int_ne(x[14], x[15]);
+
+constraint int_ne(x[14], x[16]);
+
+constraint int_ne(x[15], x[16]);
+
+constraint int_ne(x[17], x[14]);
+
+constraint int_ne(x[13], x[14]);
+
+constraint int_ne(x[17], x[15]);
+
+constraint int_ne(x[13], x[15]);
+
+constraint int_ne(x[17], x[16]);
+
+constraint int_ne(x[13], x[16]);
+
+constraint int_ne(x[1], x[17]);
+
+solve ::int_search(x, first_fail, indomain_min, complete) satisfy;

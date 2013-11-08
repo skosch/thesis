@@ -1,0 +1,10 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        IntegerVariable v1 = makeIntVar("v1", 0, 2);
+        IntegerVariable v2 = makeIntVar("v2", 0, 4);
+        ArrayList feasTuple = new ArrayList();
+        feasTuple.add(new int[]{1, 1}); // x*y = 1
+        feasTuple.add(new int[]{2, 4}); // x*y = 1
+        m.addConstraint(feasTupleAC("cp:ac2001", feasTuple, new IntegerVariable[]{v1, v2}));
+        s.read(m);
+        s.solve();

@@ -1,0 +1,8 @@
+\glossaryentry{Solver?\glossaryentryfield{Solver}{\glsnamefont{Solver}}{solver description}{\relax }|setentrycounter{page}\glsnumberformat}{29}
+\glossaryentry{search strategy?\glossaryentryfield{search strategy}{\glsnamefont{search strategy}}{composition of branching strategies}{\relax }|setentrycounter{page}\glsnumberformat}{33}
+\glossaryentry{branching strategy?\glossaryentryfield{branching strategy}{\glsnamefont{branching strategy}}{heuristic controlling the execution of a search loop at a point where the control flow may be split between different branches}{\relax }|setentrycounter{page}\glsnumberformat}{33}
+\glossaryentry{branching strategy?\glossaryentryfield{branching strategy}{\glsnamefont{branching strategy}}{heuristic controlling the execution of a search loop at a point where the control flow may be split between different branches}{\relax }|setentrycounter{page}\glsnumberformat}{34}
+\glossaryentry{variable selector?\glossaryentryfield{variable selector}{\glsnamefont{variable selector}}{heuristic specifying how to choose a variable at a fix point}{\relax }|setentrycounter{page}\glsnumberformat}{34}
+\glossaryentry{value selector?\glossaryentryfield{value selector}{\glsnamefont{value selector}}{heuristic specifying how to choose a value from a chosen variable at a fix point}{\relax }|setentrycounter{page}\glsnumberformat}{34}
+\glossaryentry{value iterator?\glossaryentryfield{value iterator}{\glsnamefont{value iterator}}{heuristic specifying how to choose a value from a chosen variable, through an iterator, at a fix point}{\relax }|setentrycounter{page}\glsnumberformat}{34}
+\glossaryentry{fix point?\glossaryentryfield{fix point}{\glsnamefont{fix point}}{definition of a fix point}{\relax }|setentrycounter{page}\glsnumberformat}{46}

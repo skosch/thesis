@@ -1,0 +1,11 @@
+        // Read the model
+        s.read(m);
+        // Solve the model
+        s.solve();
+        // Print the solution
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(MessageFormat.format("{0} ", s.getVar(var[i][j]).getVal()));
+            }
+            System.out.println();
+        }

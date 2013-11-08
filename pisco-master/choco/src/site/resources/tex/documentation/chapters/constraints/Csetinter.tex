@@ -1,0 +1,19 @@
+%\part{setinter}
+\label{setinter}
+\hypertarget{setinter}{}
+
+\section{setInter (constraint)}\label{setinter:setinterconstraint}\hypertarget{setinter:setinterconstraint}{}
+\begin{notedef}
+  \texttt{setInter}$(s_1,s_2,s_3)$ states that the third set $s_3$ is exactly the intersection of the two first sets:
+$$s_1\cap s_2=s_3$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} : \mylst{setInter(SetVariable s1, SetVariable s2, SetVariable s3)}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} :\emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/csetinter.j2t}

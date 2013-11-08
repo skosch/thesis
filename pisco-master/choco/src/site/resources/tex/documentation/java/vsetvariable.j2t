@@ -1,0 +1,2 @@
+        SetVariable svar1 = makeSetVar("svar1", -10, 10);
+        SetVariable svar2 = makeSetVar("svar2", 0, 10000, Options.V_BOUND, Options.V_NO_DECISION);

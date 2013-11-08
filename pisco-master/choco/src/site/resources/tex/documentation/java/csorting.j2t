@@ -1,0 +1,9 @@
+        CPModel m = new CPModel();
+        int n = 3;
+        IntegerVariable[] x = makeIntVarArray("x", n, 0, n);
+        IntegerVariable[] y = makeIntVarArray("y", n, 0, n);
+        m.addConstraint(sorting(x, y));
+        m.addConstraint(allDifferent(x));
+        CPSolver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

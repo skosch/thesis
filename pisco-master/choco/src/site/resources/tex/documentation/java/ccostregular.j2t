@@ -1,0 +1,28 @@
+        // z counts the number of 2 followed by a 0 or a 1 in sequence x
+        IntegerVariable[] vars = makeIntVarArray("x", 10, 0, 2, Options.V_ENUM);
+        IntegerVariable z = makeIntVar("z", 3, 4, Options.V_BOUND);
+
+        FiniteAutomaton auto = new FiniteAutomaton();
+        // states
+        int start = auto.addState();
+        int end = auto.addState();
+        auto.setInitialState(start);
+        auto.setFinal(start);
+        auto.setFinal(end);
+        // transitions
+        auto.addTransition(start, start, 0, 1);
+        auto.addTransition(start, end, 2);
+        auto.addTransition(end, start, 2);
+        auto.addTransition(end, start, 0, 1);
+        // costs
+        int[][][] costs = new int[vars.length][3][auto.getNbStates()];
+        for (int i = 0; i < costs.length; i++) {
+            costs[i][0][end] = 1;
+            costs[i][1][end] = 1;
+        }
+
+        CPModel m = new CPModel();
+        m.addConstraint(costRegular(z, vars, auto, costs));
+        CPSolver s = new CPSolver();
+        s.read(m);
+        s.solveAll();

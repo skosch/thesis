@@ -1,0 +1,23 @@
+%\part{leqcard}
+\label{leqcard}
+\hypertarget{leqcard}{}
+
+\section{leqCard (constraint)}\label{leqcard:leqcardconstraint}\hypertarget{leqcard:leqcardconstraint}{}
+\begin{notedef}
+  \texttt{leqCard}$(s,z)$ states that the cardinality of set $s$ is less than or equal to $z$:
+$$|s| \le z$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{leqCard(SetVariable s, IntegerVariable z)}
+		\item \mylst{leqCard(SetVariable s, int z)}
+	\end{itemize}
+	\item \textbf{return type} : \texttt{Constraint}
+	\item \textbf{options} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example}:
+\lstinputlisting{java/cleqcard.j2t}

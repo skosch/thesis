@@ -1,0 +1,50 @@
+Model m = new CPModel();
+
+/* Declaration des cases de la grille */
+IntegerVariable[][] lignes = Choco.makeIntVarArray("c", 9, 9, 1, 9);
+
+/* Declaration des colonnes de la grille */
+IntegerVariable[][] colonnes = new IntegerVariable[9][9];
+for(int i = 0; i < 9; i++){
+    for(int j =0; j < 9; j++){
+        colonnes[i][j] = lignes[j][i];
+    }
+}
+
+/* Declaration des blocks */
+IntegerVariable[][] blocks = new IntegerVariable[9][9];
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        for (int k = 0; k < 3; k++) {
+            blocks[j + k * 3][i] = lignes[(k * 3)][i + j * 3];
+            blocks[j + k * 3][i + 3] = lignes[1 + k * 3][i + j * 3];
+            blocks[j + k * 3][i + 6] = lignes[2 + k * 3][i + j * 3];
+        }
+    }
+}
+
+/* Contraintes d'inegalites par lignes, colonnes et blocks */
+for (int l = 0; l < 9; l++) {
+    for (int c = 0; c < 9-1; c++) {
+        for (int _c = c+1; _c < 9; _c++) {
+            m.addConstraint(Choco.neq(lignes[l][c],     lignes[l][_c]));
+            m.addConstraint(Choco.neq(colonnes[l][c],   colonnes[l][_c]));
+            m.addConstraint(Choco.neq(blocks[l][c],     blocks[l][_c]));
+        }
+    }
+}
+
+/* Lecture de l'instance */
+for(int i = 0; i < 9; i++){
+    for(int j =0; j < 9; j++){
+        if(instance[i][j]>0){
+            m.addConstraint(Choco.eq(lignes[i][j], instance[i][j]));
+        }
+    }
+}
+
+
+Solver s = new CPSolver();
+s.read(m);
+ChocoLogging.setVerbosity(Verbosity.VERBOSE);
+s.solve();

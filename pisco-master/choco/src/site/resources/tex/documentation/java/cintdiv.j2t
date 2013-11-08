@@ -1,0 +1,11 @@
+        Model m = new CPModel();
+        Solver s = new CPSolver();
+        long seed = 0;
+        IntegerVariable x = makeIntVar("x", 3, 5);
+        IntegerVariable y = makeIntVar("y", 1, 2);
+        IntegerVariable z = makeIntVar("z", 0, 5);
+        m.addConstraint(intDiv(x, y, z));
+        s.setVarIntSelector(new RandomIntVarSelector(s, seed));
+        s.setValIntSelector(new RandomIntValSelector(seed + 1));
+        s.read(m);
+        s.solve();

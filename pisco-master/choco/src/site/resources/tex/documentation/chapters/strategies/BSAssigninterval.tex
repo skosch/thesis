@@ -1,0 +1,15 @@
+\section{AssignInterval (Branching strategy)}\label{assigninterval:assignintervalbranchstrat}\hypertarget{assigninterval:assignintervalbranchstrat}{}
+\begin{notedef}
+  \texttt{AssignInterval} is a \textbf{binary branching} assigning two distinct intervals to a real variable. Following the \emph{interval bisection rule}, the interval representing the domain of the selected variable is split into two parts at its midpoint. In the first branch, the variable upper bound is set to the midpoint; in the second branch, the variable lower bound is set to the midpoint.
+$$B_1: x\in[\underline{x}, m],\quad B_2: x\in[m, \overline{x}],\qquad \text{with } m=\frac{\underline{x}+\overline{x}}{2}$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{Constructor} :\mylst{AssignInterval(VarSelector<RealVar> varSel, ValIterator<RealVar> valIt)}
+	\item \textbf{type of variable} : real
+	\item \textbf{references} : \emph{n/a}
+\end{itemize}
+
+\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

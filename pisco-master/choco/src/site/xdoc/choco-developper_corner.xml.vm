@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document>
+    <properties>
+        <title>Developper corner</title>
+        <author>CHOCO Development Team</author>
+    </properties>
+    <body>
+
+        <section name="Developper Corner">
+
+            <p>
+                This section is still under construction.
+            </p>
+            <p>
+                If you want to contribute to CHOCO, mail us at
+                <a href="mailto:choco@emn.fr?subject=[CONTRIB]">contribution to CHOCO</a>.
+            </p>
+        </section>
+
+        <section name="Classe header">
+            If you want to commit file to the subversion, please be sure that it fill the following template:<a
+                href="http://choco.svn.sourceforge.net/viewvc/choco/trunk/choco-contribs/src/main/java/header/java.java"
+                target="_blank">header.java</a>.
+        </section>
+
+    </body>
+</document>
+

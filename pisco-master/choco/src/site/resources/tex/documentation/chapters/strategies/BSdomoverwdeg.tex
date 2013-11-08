@@ -1,0 +1,19 @@
+\section{DomOverWDegBranchingNew (Branching strategy)}\label{domoverwdeg:domoverwdegbranchstrat}\hypertarget{domoverwdeg:domoverwdegbranchstrat}{}
+\begin{notedef}
+  \texttt{DomOverWDegBranchingNew} is a \textbf{n-ary branching} assigning distinct values to an integer variable. It maintains (incrementally or dynamically) on each constraint, the count of the failures caused by the constraint from the beginning of the search.
+To each variable are then associated, at any time, three values: $dom$ the current domain size, $deg$ the current number of uninstantiated constraints involving the variable, and $w$ the sum of the counters associated with these $deg$ constraints.
+The strategy selects the variable with the smallest ratio $r_i=dom/w*deg$.  Ties are randomly broken when \mylst{seed != null}.
+The variable is then successively assigned, in each branch, to a next selected value.
+% er a counter on each constraint. Whenever a dead-end occurs, the counter associated with the contraint that just failed is updated during search whenever a dead-end occurs. Then, the weight, $w$, of a variable $X_i$ is the sum of the weights of the constraints involving $X_i$ and at least one uninstantiated variable. And combining $w$ with the domain size, $dom$, and the degree, $deg$, of $X_i$, this strategy selects the variable with the smallest ratio $r_i=dom/w*deg$.
+$$B_1: x=v_1,\quad B_2: x= v_2,\quad\ldots,\quad B_m: x= v_m,\qquad\text{ with } x=\arg\min\bigl(\frac{dom_x}{w_x*deg_x}\bigr)$$
+\end{notedef}
+
+\begin{itemize}
+	\item \textbf{Constructor} :\mylst{DomOverWDegBranchingNew(Solver s, IntDomainVar[] vars, ValIterator valIt, Number seed)}
+	\item \textbf{type of variable} : integer
+	\item \textbf{references} : \cite{Boussemart04}: \emph{Boosting systematic search by weighting constraints}.
+\end{itemize}
+
+\textbf{Example}:
+%\lstinputlisting{java/cabs.j2t}
+

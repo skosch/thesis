@@ -1,0 +1,26 @@
+%\part{power}
+\label{power}
+\hypertarget{power}{}
+
+\section{power (operator)}\label{power:poweroperator}\hypertarget{power:poweroperator}{}
+Returns an expression variable that represents the first argument raised to the power of the second argument (\(x^y\)).
+
+\begin{itemize}
+	\item \textbf{API} :
+	\begin{itemize}
+		\item \mylst{power(IntegerExpressionVariable x, IntegerExpressionVariable y)}
+		\item \mylst{power(int x, IntegerExpressionVariable y)}
+		\item \mylst{power(IntegerExpressionVariable x, int y)}
+		\item \mylst{power(RealExpressionVariable x, int y)}
+	\end{itemize}
+	\item \textbf{return type}:
+	\begin{itemize}
+		\item \texttt{IntegerExpressionVariable}, if parameters are \texttt{IntegerExpressionVariable}
+		\item \texttt{RealExpressionVariable}, if parameters are \texttt{RealExpressionVariable}
+	\end{itemize}
+	\item \textbf{option} : \emph{n/a}
+	\item \textbf{favorite domain} : \emph{to complete}
+\end{itemize}
+
+\textbf{Example} : 
+\lstinputlisting{java/opower.j2t}

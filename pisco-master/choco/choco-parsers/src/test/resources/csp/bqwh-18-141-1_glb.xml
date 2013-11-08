@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<instance>
+<presentation name="?" maxConstraintArity="8" format="XCSP 2.0"/>
+
+<domains nbDomains="134">
+<domain name="D0" nbValues="3">3 7 13</domain>
+<domain name="D1" nbValues="5">1 4 8 10 13</domain>
+<domain name="D2" nbValues="4">3 7 10 16</domain>
+<domain name="D3" nbValues="2">8 13</domain>
+<domain name="D4" nbValues="5">3..4 7..8 10</domain>
+<domain name="D5" nbValues="5">1 3..4 7..8</domain>
+<domain name="D6" nbValues="3">1 4 8</domain>
+<domain name="D7" nbValues="3">3 7 16</domain>
+<domain name="D8" nbValues="1">10</domain>
+<domain name="D9" nbValues="3">10 13 15</domain>
+<domain name="D10" nbValues="3">2 4 13</domain>
+<domain name="D11" nbValues="4">5 13..15</domain>
+<domain name="D12" nbValues="4">5 10 13..14</domain>
+<domain name="D13" nbValues="4">4..5 11 14</domain>
+<domain name="D14" nbValues="2">5 14</domain>
+<domain name="D15" nbValues="3">4 13..14</domain>
+<domain name="D16" nbValues="4">1 4 6 13</domain>
+<domain name="D17" nbValues="4">1 3 9 13</domain>
+<domain name="D18" nbValues="3">6 12..13</domain>
+<domain name="D19" nbValues="3">3 12..13</domain>
+<domain name="D20" nbValues="3">3 6 13</domain>
+<domain name="D21" nbValues="3">4 7 9</domain>
+<domain name="D22" nbValues="4">3..4 7 9</domain>
+<domain name="D23" nbValues="5">3..4 9 12..13</domain>
+<domain name="D24" nbValues="3">5 7 15</domain>
+<domain name="D25" nbValues="5">3 7 9..10 17</domain>
+<domain name="D26" nbValues="5">3 9..10 15 17</domain>
+<domain name="D27" nbValues="2">5 17</domain>
+<domain name="D28" nbValues="5">3 5 14..15 17</domain>
+<domain name="D29" nbValues="4">7 9..10 15</domain>
+<domain name="D30" nbValues="4">3 5 7 14</domain>
+<domain name="D31" nbValues="4">3 5 9 14</domain>
+<domain name="D32" nbValues="4">3 7 13 15</domain>
+<domain name="D33" nbValues="5">4..7 15</domain>
+<domain name="D34" nbValues="3">4 6 13</domain>
+<domain name="D35" nbValues="3">3 13 15</domain>
+<domain name="D36" nbValues="5">3..4 6..7 15</domain>
+<domain name="D37" nbValues="2">4..5</domain>
+<domain name="D38" nbValues="5">3 5..7 16</domain>
+<domain name="D39" nbValues="4">3 7 11 15</domain>
+<domain name="D40" nbValues="4">0 5 8 17</domain>
+<domain name="D41" nbValues="4">3 5 8 17</domain>
+<domain name="D42" nbValues="5">3 5 7..8 11</domain>
+<domain name="D43" nbValues="2">5 8</domain>
+<domain name="D44" nbValues="3">0 8 11</domain>
+<domain name="D45" nbValues="4">3 5 7 17</domain>
+<domain name="D46" nbValues="4">0 3 8 17</domain>
+<domain name="D47" nbValues="3">3 7 9</domain>
+<domain name="D48" nbValues="4">0 4 8 10</domain>
+<domain name="D49" nbValues="4">0 3..4 8</domain>
+<domain name="D50" nbValues="4">3 5 8 10</domain>
+<domain name="D51" nbValues="6">0 4 7..10</domain>
+<domain name="D52" nbValues="7">0 3..5 7 9..10</domain>
+<domain name="D53" nbValues="4">3..5 9</domain>
+<domain name="D54" nbValues="3">4 6 8</domain>
+<domain name="D55" nbValues="2">9 17</domain>
+<domain name="D56" nbValues="4">6 8 14 17</domain>
+<domain name="D57" nbValues="2">4 9</domain>
+<domain name="D58" nbValues="5">6 9 14 16..17</domain>
+<domain name="D59" nbValues="4">4 9 14 16</domain>
+<domain name="D60" nbValues="2">0 9</domain>
+<domain name="D61" nbValues="2">1 9</domain>
+<domain name="D62" nbValues="3">0 4 8</domain>
+<domain name="D63" nbValues="4">0 4 8..9</domain>
+<domain name="D64" nbValues="5">1 4..5 8 14</domain>
+<domain name="D65" nbValues="6">1 4..5 8..9 14</domain>
+<domain name="D66" nbValues="4">0 8..9 14</domain>
+<domain name="D67" nbValues="4">3 9 11..12</domain>
+<domain name="D68" nbValues="4">0 5..6 11</domain>
+<domain name="D69" nbValues="3">0 3 17</domain>
+<domain name="D70" nbValues="4">3 5..6 17</domain>
+<domain name="D71" nbValues="3">0 9 11</domain>
+<domain name="D72" nbValues="3">5 9 12</domain>
+<domain name="D73" nbValues="4">0 9 11..12</domain>
+<domain name="D74" nbValues="4">0 3 6 17</domain>
+<domain name="D75" nbValues="3">0 4 15</domain>
+<domain name="D76" nbValues="4">0 2 12..13</domain>
+<domain name="D77" nbValues="5">0 3 12..13 15</domain>
+<domain name="D78" nbValues="3">0 12..13</domain>
+<domain name="D79" nbValues="4">3..4 12..13</domain>
+<domain name="D80" nbValues="4">0 3..4 13</domain>
+<domain name="D81" nbValues="4">3 9 12 14</domain>
+<domain name="D82" nbValues="5">0 2..4 8</domain>
+<domain name="D83" nbValues="4">3..4 8 14</domain>
+<domain name="D84" nbValues="6">2 4 8..9 12 14</domain>
+<domain name="D85" nbValues="5">0 2..4 9</domain>
+<domain name="D86" nbValues="3">3 9 14</domain>
+<domain name="D87" nbValues="5">0 3..4 8 14</domain>
+<domain name="D88" nbValues="3">11..13</domain>
+<domain name="D89" nbValues="5">0 6 10 13 17</domain>
+<domain name="D90" nbValues="3">0 10 17</domain>
+<domain name="D91" nbValues="3">0 13 17</domain>
+<domain name="D92" nbValues="5">0 5 12..13 17</domain>
+<domain name="D93" nbValues="2">6 10</domain>
+<domain name="D94" nbValues="5">0 10..13</domain>
+<domain name="D95" nbValues="3">5 12..13</domain>
+<domain name="D96" nbValues="4">7 9 13..14</domain>
+<domain name="D97" nbValues="4">5..8</domain>
+<domain name="D98" nbValues="3">7 9 17</domain>
+<domain name="D99" nbValues="4">5 13..14 17</domain>
+<domain name="D100" nbValues="3">6..8</domain>
+<domain name="D101" nbValues="3">7..9</domain>
+<domain name="D102" nbValues="3">5 7 9</domain>
+<domain name="D103" nbValues="5">6 8 13..14 17</domain>
+<domain name="D104" nbValues="6">0..1 8 10 13 17</domain>
+<domain name="D105" nbValues="5">1 3 10 13 17</domain>
+<domain name="D106" nbValues="4">0 8 13 17</domain>
+<domain name="D107" nbValues="6">3 8 10 13..14 17</domain>
+<domain name="D108" nbValues="4">1 3 8 14</domain>
+<domain name="D109" nbValues="3">1 8 14</domain>
+<domain name="D110" nbValues="3">0 3 10</domain>
+<domain name="D111" nbValues="3">3 13..14</domain>
+<domain name="D112" nbValues="4">3 8 13 16</domain>
+<domain name="D113" nbValues="5">3 7..8 10 15</domain>
+<domain name="D114" nbValues="5">3 8 10 13..14</domain>
+<domain name="D115" nbValues="4">7..8 10 15</domain>
+<domain name="D116" nbValues="4">3 7..8 14</domain>
+<domain name="D117" nbValues="4">8 10 13..14</domain>
+<domain name="D118" nbValues="4">3 7 14 16</domain>
+<domain name="D119" nbValues="4">3 13..14 16</domain>
+<domain name="D120" nbValues="4">0 6 8 11</domain>
+<domain name="D121" nbValues="5">0 2 6 8 17</domain>
+<domain name="D122" nbValues="3">0 14 17</domain>
+<domain name="D123" nbValues="2">6 8</domain>
+<domain name="D124" nbValues="4">2 8..9 14</domain>
+<domain name="D125" nbValues="3">0 2 9</domain>
+<domain name="D126" nbValues="5">0 8..9 11 14</domain>
+<domain name="D127" nbValues="4">6 9 14 17</domain>
+<domain name="D128" nbValues="6">0 4 8 10 13 17</domain>
+<domain name="D129" nbValues="5">0 8 12..13 17</domain>
+<domain name="D130" nbValues="6">0 3..4 8 13 17</domain>
+<domain name="D131" nbValues="5">0 3 12..13 17</domain>
+<domain name="D132" nbValues="4">0 3..4 10</domain>
+<domain name="D133" nbValues="5">0 8 10 12..13</domain>
+</domains>
+
+<variables nbVariables="141">
+<variable name="V0" domain="D0"/>
+<variable name="V1" domain="D1"/>
+<variable name="V2" domain="D2"/>
+<variable name="V3" domain="D3"/>
+<variable name="V4" domain="D4"/>
+<variable name="V5" domain="D5"/>
+<variable name="V6" domain="D6"/>
+<variable name="V7" domain="D7"/>
+<variable name="V8" domain="D8"/>
+<variable name="V9" domain="D9"/>
+<variable name="V10" domain="D10"/>
+<variable name="V11" domain="D11"/>
+<variable name="V12" domain="D12"/>
+<variable name="V13" domain="D13"/>
+<variable name="V14" domain="D14"/>
+<variable name="V15" domain="D15"/>
+<variable name="V16" domain="D16"/>
+<variable name="V17" domain="D17"/>
+<variable name="V18" domain="D18"/>
+<variable name="V19" domain="D19"/>
+<variable name="V20" domain="D20"/>
+<variable name="V21" domain="D21"/>
+<variable name="V22" domain="D22"/>
+<variable name="V23" domain="D23"/>
+<variable name="V24" domain="D24"/>
+<variable name="V25" domain="D25"/>
+<variable name="V26" domain="D26"/>
+<variable name="V27" domain="D27"/>
+<variable name="V28" domain="D28"/>
+<variable name="V29" domain="D29"/>
+<variable name="V30" domain="D30"/>
+<variable name="V31" domain="D31"/>
+<variable name="V32" domain="D32"/>
+<variable name="V33" domain="D33"/>
+<variable name="V34" domain="D34"/>
+<variable name="V35" domain="D7"/>
+<variable name="V36" domain="D35"/>
+<variable name="V37" domain="D36"/>
+<variable name="V38" domain="D37"/>
+<variable name="V39" domain="D38"/>
+<variable name="V40" domain="D39"/>
+<variable name="V41" domain="D40"/>
+<variable name="V42" domain="D41"/>
+<variable name="V43" domain="D42"/>
+<variable name="V44" domain="D43"/>
+<variable name="V45" domain="D44"/>
+<variable name="V46" domain="D45"/>
+<variable name="V47" domain="D46"/>
+<variable name="V48" domain="D47"/>
+<variable name="V49" domain="D48"/>
+<variable name="V50" domain="D49"/>
+<variable name="V51" domain="D50"/>
+<variable name="V52" domain="D51"/>
+<variable name="V53" domain="D52"/>
+<variable name="V54" domain="D53"/>
+<variable name="V55" domain="D49"/>
+<variable name="V56" domain="D54"/>
+<variable name="V57" domain="D55"/>
+<variable name="V58" domain="D54"/>
+<variable name="V59" domain="D56"/>
+<variable name="V60" domain="D57"/>
+<variable name="V61" domain="D58"/>
+<variable name="V62" domain="D59"/>
+<variable name="V63" domain="D60"/>
+<variable name="V64" domain="D61"/>
+<variable name="V65" domain="D62"/>
+<variable name="V66" domain="D63"/>
+<variable name="V67" domain="D64"/>
+<variable name="V68" domain="D65"/>
+<variable name="V69" domain="D66"/>
+<variable name="V70" domain="D67"/>
+<variable name="V71" domain="D68"/>
+<variable name="V72" domain="D69"/>
+<variable name="V73" domain="D70"/>
+<variable name="V74" domain="D71"/>
+<variable name="V75" domain="D72"/>
+<variable name="V76" domain="D73"/>
+<variable name="V77" domain="D74"/>
+<variable name="V78" domain="D75"/>
+<variable name="V79" domain="D76"/>
+<variable name="V80" domain="D77"/>
+<variable name="V81" domain="D75"/>
+<variable name="V82" domain="D78"/>
+<variable name="V83" domain="D79"/>
+<variable name="V84" domain="D80"/>
+<variable name="V85" domain="D81"/>
+<variable name="V86" domain="D62"/>
+<variable name="V87" domain="D82"/>
+<variable name="V88" domain="D83"/>
+<variable name="V89" domain="D84"/>
+<variable name="V90" domain="D85"/>
+<variable name="V91" domain="D86"/>
+<variable name="V92" domain="D87"/>
+<variable name="V93" domain="D88"/>
+<variable name="V94" domain="D89"/>
+<variable name="V95" domain="D90"/>
+<variable name="V96" domain="D91"/>
+<variable name="V97" domain="D92"/>
+<variable name="V98" domain="D93"/>
+<variable name="V99" domain="D94"/>
+<variable name="V100" domain="D95"/>
+<variable name="V101" domain="D96"/>
+<variable name="V102" domain="D97"/>
+<variable name="V103" domain="D98"/>
+<variable name="V104" domain="D99"/>
+<variable name="V105" domain="D100"/>
+<variable name="V106" domain="D101"/>
+<variable name="V107" domain="D102"/>
+<variable name="V108" domain="D103"/>
+<variable name="V109" domain="D104"/>
+<variable name="V110" domain="D105"/>
+<variable name="V111" domain="D106"/>
+<variable name="V112" domain="D107"/>
+<variable name="V113" domain="D108"/>
+<variable name="V114" domain="D109"/>
+<variable name="V115" domain="D110"/>
+<variable name="V116" domain="D111"/>
+<variable name="V117" domain="D112"/>
+<variable name="V118" domain="D113"/>
+<variable name="V119" domain="D114"/>
+<variable name="V120" domain="D115"/>
+<variable name="V121" domain="D116"/>
+<variable name="V122" domain="D117"/>
+<variable name="V123" domain="D118"/>
+<variable name="V124" domain="D119"/>
+<variable name="V125" domain="D120"/>
+<variable name="V126" domain="D121"/>
+<variable name="V127" domain="D122"/>
+<variable name="V128" domain="D123"/>
+<variable name="V129" domain="D124"/>
+<variable name="V130" domain="D125"/>
+<variable name="V131" domain="D126"/>
+<variable name="V132" domain="D127"/>
+<variable name="V133" domain="D62"/>
+<variable name="V134" domain="D128"/>
+<variable name="V135" domain="D129"/>
+<variable name="V136" domain="D130"/>
+<variable name="V137" domain="D131"/>
+<variable name="V138" domain="D132"/>
+<variable name="V139" domain="D133"/>
+<variable name="V140" domain="D130"/>
+</variables>
+
+<constraints nbConstraints="36">
+<constraint name="C0" arity="8" scope="V0 V1 V2 V3 V4 V5 V6 V7" reference="global:allDifferent"/>
+<constraint name="C1" arity="8" scope="V8 V9 V10 V11 V12 V13 V14 V15" reference="global:allDifferent"/>
+<constraint name="C2" arity="8" scope="V16 V17 V18 V19 V20 V21 V22 V23" reference="global:allDifferent"/>
+<constraint name="C3" arity="8" scope="V24 V25 V26 V27 V28 V29 V30 V31" reference="global:allDifferent"/>
+<constraint name="C4" arity="8" scope="V32 V33 V34 V35 V36 V37 V38 V39" reference="global:allDifferent"/>
+<constraint name="C5" arity="8" scope="V40 V41 V42 V43 V44 V45 V46 V47" reference="global:allDifferent"/>
+<constraint name="C6" arity="8" scope="V48 V49 V50 V51 V52 V53 V54 V55" reference="global:allDifferent"/>
+<constraint name="C7" arity="7" scope="V56 V57 V58 V59 V60 V61 V62" reference="global:allDifferent"/>
+<constraint name="C8" arity="7" scope="V63 V64 V65 V66 V67 V68 V69" reference="global:allDifferent"/>
+<constraint name="C9" arity="8" scope="V70 V71 V72 V73 V74 V75 V76 V77" reference="global:allDifferent"/>
+<constraint name="C10" arity="7" scope="V78 V79 V80 V81 V82 V83 V84" reference="global:allDifferent"/>
+<constraint name="C11" arity="8" scope="V85 V86 V87 V88 V89 V90 V91 V92" reference="global:allDifferent"/>
+<constraint name="C12" arity="8" scope="V93 V94 V95 V96 V97 V98 V99 V100" reference="global:allDifferent"/>
+<constraint name="C13" arity="8" scope="V101 V102 V103 V104 V105 V106 V107 V108" reference="global:allDifferent"/>
+<constraint name="C14" arity="8" scope="V109 V110 V111 V112 V113 V114 V115 V116" reference="global:allDifferent"/>
+<constraint name="C15" arity="8" scope="V117 V118 V119 V120 V121 V122 V123 V124" reference="global:allDifferent"/>
+<constraint name="C16" arity="8" scope="V125 V126 V127 V128 V129 V130 V131 V132" reference="global:allDifferent"/>
+<constraint name="C17" arity="8" scope="V133 V134 V135 V136 V137 V138 V139 V140" reference="global:allDifferent"/>
+<constraint name="C18" arity="8" scope="V0 V32 V40 V48 V70 V85 V93 V101" reference="global:allDifferent"/>
+<constraint name="C19" arity="8" scope="V24 V33 V56 V71 V78 V102 V125 V133" reference="global:allDifferent"/>
+<constraint name="C20" arity="8" scope="V1 V16 V34 V49 V86 V94 V109 V134" reference="global:allDifferent"/>
+<constraint name="C21" arity="7" scope="V2 V8 V25 V35 V63 V95 V103" reference="global:allDifferent"/>
+<constraint name="C22" arity="7" scope="V9 V17 V26 V36 V57 V64 V110" reference="global:allDifferent"/>
+<constraint name="C23" arity="8" scope="V3 V18 V27 V41 V79 V111 V126 V135" reference="global:allDifferent"/>
+<constraint name="C24" arity="8" scope="V10 V50 V65 V72 V87 V96 V117 V136" reference="global:allDifferent"/>
+<constraint name="C25" arity="8" scope="V11 V19 V28 V80 V97 V104 V127 V137" reference="global:allDifferent"/>
+<constraint name="C26" arity="7" scope="V4 V37 V58 V98 V105 V118 V128" reference="global:allDifferent"/>
+<constraint name="C27" arity="8" scope="V12 V20 V42 V51 V59 V73 V112 V119" reference="global:allDifferent"/>
+<constraint name="C28" arity="8" scope="V21 V29 V52 V66 V74 V81 V106 V120" reference="global:allDifferent"/>
+<constraint name="C29" arity="8" scope="V5 V13 V30 V43 V67 V88 V113 V121" reference="global:allDifferent"/>
+<constraint name="C30" arity="8" scope="V6 V38 V44 V68 V75 V89 V114 V129" reference="global:allDifferent"/>
+<constraint name="C31" arity="8" scope="V22 V53 V60 V90 V107 V115 V130 V138" reference="global:allDifferent"/>
+<constraint name="C32" arity="8" scope="V45 V69 V76 V82 V99 V122 V131 V139" reference="global:allDifferent"/>
+<constraint name="C33" arity="8" scope="V7 V14 V39 V46 V61 V91 V123 V132" reference="global:allDifferent"/>
+<constraint name="C34" arity="8" scope="V23 V31 V54 V62 V83 V100 V116 V124" reference="global:allDifferent"/>
+<constraint name="C35" arity="8" scope="V15 V47 V55 V77 V84 V92 V108 V140" reference="global:allDifferent"/>
+</constraints>
+</instance>

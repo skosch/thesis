@@ -1,0 +1,266 @@
+%!TEX root = ../content-doc.tex
+\chapter{Introduction to constraint programming and Choco}\label{doc:introduction}\hypertarget{doc:introduction}{}
+
+\section{About constraint programming}\label{introduction:aboutconstraintprogramming}\hypertarget{introduction:aboutconstraintprogramming}{}
+
+\begin{myquote}
+Constraint programming represents one of the closest approaches computer science has yet made to the Holy Grail of programming: the user states the problem, the computer solves it.
+\begin{flushright}\bf E. C. Freuder, Constraints, 1997.\end{flushright}
+\end{myquote}
+
+
+Fast increasing computing power in the 1960s led to a wealth of works around problem solving, at the root of Operational Research, Numerical Analysis, Symbolic Computing, Scientific Computing, and a large part of Artificial Intelligence and programming languages. Constraint Programming is a discipline that gathers, interbreeds, and unifies ideas shared by all these domains to tackle decision support problems.
+
+Constraint programming has been successfully applied in numerous domains. Recent applications include computer graphics (to express geometric coherence in the case of scene analysis), natural language processing (construction of efficient parsers), database systems (to ensure and/or restore consistency of the data), operations research problems (scheduling, routing), molecular biology (DNA sequencing), business applications (option trading), electrical engineering (to locate faults), circuit design (to compute layouts), etc.
+
+Current research in this area deals with various fundamental issues, with implementation aspects and with new applications of constraint programming.
+
+\subsection{Constraints}\label{introduction:constraints}\hypertarget{introduction:constraints}{}
+A constraint is simply a logical relation among several unknowns (or variables), each taking a value in a given domain. A constraint thus restricts the possible values that variables can take, it represents some partial information about the variables of interest. For instance, the circle is inside the square relates two objects without precisely specifying their positions, i.e., their coordinates. Now, one may move the square or the circle and one is still able to maintain the relation between these two objects. Also, one may want to add another object, say a triangle, and to introduce another constraint, say the square is to the left of the triangle. From the user (human) point of view, everything remains absolutely transparent.
+
+Constraints naturally meet several interesting properties:
+\begin{itemize}
+	\item constraints may specify partial information, i.e. constraint need not uniquely specify the values of its variables,
+	\item constraints are non-directional, typically a constraint on (say) two variables $X, Y$ can be used to infer a constraint on $X$ given a constraint on $Y$ and vice versa,
+	\item constraints are declarative, i.e. they specify what relationship must hold without specifying a computational procedure to enforce that relationship,
+	\item constraints are additive, i.e. the order of imposition of constraints does not matter, all that matters at the end is that the conjunction of constraints is in effect,
+	\item constraints are rarely independent, typically constraints in the constraint store share variables.
+\end{itemize}
+
+Constraints arise naturally in most areas of human endeavor. The three angles of a triangle sum to 180 degrees, the sum of the currents flowing into a node must equal zero, the position of the scroller in the window scrollbar must reflect the visible part of the underlying document, these are some examples of constraints which appear in the real world. Thus, constraints are a natural medium for people to express problems in many fields. 
+
+\subsection{Constraint Programming}\label{introduction:constraintprogramming}\hypertarget{introduction:constraintprogramming}{}
+Constraint programming is the study of computational systems based on constraints. The idea of constraint programming is to solve problems by stating constraints (conditions, properties) which must be satisfied by the solution.
+
+Work in this area can be tracked back to research in Artificial Intelligence and Computer Graphics in the sixties and seventies. Only in the last decade, however, has there emerged a growing realization that these ideas provide the basis for a powerful approach to programming, modeling and problem solving and that different efforts to exploit these ideas can be unified under a common conceptual and practical framework, constraint programming. 
+
+\begin{note}
+If you know \textbf{sudoku}, then you know \textbf{constraint programming}. See why \hyperlink{sudokuandcp}{here}.
+\end{note}
+
+
+\section{Modeling with Constraint programming}\label{introduction:modelingwithconstraintprogramming}\hypertarget{introduction:modelingwithconstraintprogramming}{}
+The formulation and the resolution of combinatorial problems are the two main goals of the constraint programming domain. This is an essential way to solve many interesting industrial problems such as scheduling, planning or design of timetables. 
+
+\subsection{The Constraint Satisfaction Problem}\label{introduction:csp}\hypertarget{introduction:csp}{}
+
+Constraint programming allows to solve combinatorial problems modeled by a Constraint Satisfaction Problem (CSP). Formally, a CSP is defined by a triplet $(X,D,C)$:
+\begin{itemize}
+	\item \textbf{Variables}: $X = \{X_1,X_2,\ldots,X_n\}$ is the set of variables of the problem.
+	\item \textbf{Domains}: $D$ is a function which associates to each variable $X_i$ its domain $D(X_i)$, i.e. the set of possible values that can be assigned to $X_i$. The domain of a variable is usually a finite set of integers: $D(X_i)\subset\Z$ (\emph{integer variable}). But a domain can also be continuous ($D(X_i)\subseteq\R$ for a \emph{real variable}) or made of discrete set values ($D(X_i)\subseteq\mathcal{P}(\Z)$ for a \emph{set variable}).
+	\item \textbf{Constraints}: $C = \{C_1,C_2,\ldots,C_m\}$ is the set of constraints. A constraint $C_j$ is a relation defined on a subset $X^j = \{X^j_1,X^j_2,\ldots,X^j_{n^j}\}\subseteq X$ of variables which restricts the possible tuples of values $(v_1,\ldots,v_{n^j})$ for these variables:
+$$(v_1,\ldots,v_{n^j})\in C_j\cap (D(X^j_1)\times D(X^j_2)\times\cdots\times D(X^j_{n^j})).$$
+Such a relation can be defined explicitely (ex: $(X_1,X_2)\in\{(0,1),(1,0)\}$) or implicitely (ex: $X_1+X_2\le 1$).
+\end{itemize}
+
+Solving a CSP consists in finding a tuple $v=(v_1,\ldots,v_{n})\in D(X)$ on the set of variables which satisfies all the constraints:
+$$(v_1,\ldots,v_{n^j})\in C_j,\quad\forall j\in\{1,\ldots,m\}.$$
+
+For optimization problems, one needs to define an \textbf{objective function} $f:D(X)\rightarrow\R$. An optimal solution is then a solution tuple of the CSP that minimizes (or maximizes) function $f$.
+
+\subsection{Examples of CSP models}\label{introduction:examples}\hypertarget{introduction:examples}{}
+This part provides three examples using different types of variables in different problems. These examples are used throughout this tutorial to illustrate their modeling with Choco.
+
+\subsubsection{Example 1: the n-queens problem.}\label{introduction:example1:nqueens}\hypertarget{introduction:example1:nqueens}{}
+Let us consider a chess board with $n$ rows and $n$ columns. A queen can move as far as she pleases, horizontally, vertically, or diagonally. The standard $n$-queens problem asks how to place $n$ queens on an $n$-ary chess board so that none of them can hit any other in one move.
+
+The $n$-queens problem can be modeled by a CSP in the following way:
+\begin{itemize}
+	\item \textbf{Variables}: $X = \{X_{i}\ |\ i\in [1,n]\}$; one variable represents a column and the constraint "queens must be on different columns" is induced by the variables.
+	\item \textbf{Domain}: for all variable $X_{i}\in X$, $D(X_{i}) = \{1,2,\ldots, n\}$.
+	\item \textbf{Constraints}: the set of constraints is defined by the union of the three following constraints,
+	\begin{itemize}
+		\item queens have to be on distinct lines:
+		\begin{itemize}
+			\item $C_{lines} = \{X_{i}\neq X_{j}\ |\ i,j\in [1,n], i\neq j\}$.
+		\end{itemize}
+		\item queens have to be on distinct diagonals:
+		\begin{itemize}
+			\item $C_{diag1} = \{X_{i}\neq X_{j}+j-i\ |\ i,j\in [1,n], i\neq j\}$.
+			\item $C_{diag2} = \{X_{i}\neq X_{j}+i-j\ |\ i,j\in [1,n], i\neq j\}$.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Example 2: the ternary Steiner problem.}\label{introduction:example2:theternarysteinerproblem}\hypertarget{introduction:example2:theternarysteinerproblem}{}
+A ternary Steiner system of order $n$ is a set of $n*(n-1)/6$ triplets of distinct elements taking their values in $[1,n]$, such that all the pairs included in two distinct triplets are different.
+See \url{http://en.wikipedia.org/wiki/Steiner_system} for details. 
+
+The ternary Steiner problem can be modeled by a CSP in the following way:
+\begin{itemize}
+	\item let $t = n*(n-1)/6$.
+	\item \textbf{Variables}: $X = \{X_{i}\ |\ i\in [1,t]\}$.
+	\item \textbf{Domain}: for all $i\in [1,t]$, $D(X_{i}) = \{1,...,n\}$.
+	\item \textbf{Constraints}:
+	\begin{itemize}
+		\item every set variable $X_i$ has a cardinality of 3:
+		\begin{itemize}
+			\item for all $i\in [1,t]$, $|X_{i}| = 3$.
+		\end{itemize}
+		\item the cardinality of the intersection of every two distinct sets must not exceed 1:
+		\begin{itemize}
+			\item for all $i,j\in [1,t]$, $i\neq j$, $|X_{i}\cap X_{j}|\le 1$.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+\subsubsection{Example 3: the CycloHexane problem.}\label{introduction:example3:thecyclohexaneproblem}\hypertarget{introduction:example3:thecyclohexaneproblem}{}
+The problem consists in finding the 3D configuration of a cyclohexane molecule. It is described with a system of three non linear equations:
+\begin{itemize}
+	\item \textbf{Variables}: $x,y,z$.
+	\item \textbf{Domain}: $]-\infty;+\infty[$.
+	\item \textbf{Constraints}:
+	\begin{align*}
+		y^{2} * (1 + z^{2}) + z * (z - 24 * y) &= -13\\
+		x^{2} * (1 + y^{2}) + y * (y - 24 * x) &= -13\\
+		z^{2} * (1 + x^{2}) + x * (x - 24 * z) &= -13
+	\end{align*}
+\end{itemize}
+
+\section{My first Choco program: the magic square}\label{introduction:myfirstchocoprogram}\hypertarget{introduction:myfirstchocoprogram}{}
+
+\subsection{The magic square problem}\label{introduction:amagicsquareproblem}\hypertarget{introduction:amagicsquareproblem}{}
+In the following, we will address the magic square problem of order 3 to illustrate step-by-step how to model and solve this problem using choco. 
+
+\subsubsection{Definition:}
+A magic square of order $n$ is an arrangement of $n^{2}$ numbers, usually distinct integers, in a square, such that the $n$ numbers in all rows, all columns, and both diagonals sum to the same constant. A standard magic square contains the integers from 1 to $n^{2}$.
+
+The constant sum in every row, column and diagonal is called the magic constant or magic sum $M$. The magic constant of a classic magic square depends only on $n$ and has the value:
+$M(n)=n(n^2 +1)/2$.
+
+\href{http://en.wikipedia.org/wiki/Magic_square}{More details on the magic square problem.}
+
+
+\subsection{A mathematical model}\label{introduction:mathematicalmodeling}\hypertarget{introduction:mathematicalmodeling}{}
+
+Let $x_{ij}$ be the variable indicating the value of the $j^{th}$ cell of row $i$. 
+Let $C$ be the set of constraints modeling the magic square as:
+\begin{align*}
+&x_{ij} \in [1,n^2],\ &&\forall i,j \in [1, n]\\
+&x_{ij}\ne x_{kl},\ &&\forall i,j,k,l \in [1,n], i\ne k, j\ne l\\
+&\sum_{j=1}^{n} x_{ij} = n(n^2 +1)/2,\ &&\forall i \in [1,n]\\
+&\sum_{i=1}^{n} x_{ij} = n(n^2 +1)/2,\ &&\forall j \in [1,n]\\
+&\sum_{i=1}^{n} x_{ii} = n(n^2 +1)/2&&\\
+&\sum_{i=n}^{1} x_{i(n-i)} = n(n^2 +1)/2&&\\
+\end{align*}
+
+We have all the required information to model the problem with Choco.
+\begin{note}
+	For the moment, we just talk about \emph{model translation} from a mathematical representation to Choco.
+	Choco can be used as a \emph{black box}, that means we just need to define the problem without knowing the way it will be solved. We can therefore focus on the modeling not on the solving.
+\end{note}
+
+\subsection{To Choco...}\label{introduction:inchoco}\hypertarget{introduction:inchoco}{}
+
+First, we need to know some of the basic Choco objects:
+\begin{itemize}
+\item 
+The \textbf{model} (object \texttt{Model} in Choco) is one of the central elements of a Choco program. Variables and constraints are associated to it.
+\item
+The \textbf{variables} (objects \texttt{IntegerVariable}, \texttt{SetVariable}, and \texttt{RealVariable} in Choco) are the \emph{unknowns} of the problem. Values of variables are taken from a \textbf{domain} which is defined by a set of values or quite often simply by a lower bound and an upper bound of the allowed values. The domain is given when creating the variable.
+\begin{note}
+Do not forget that we manipulate \textbf{variables} in the mathematical sense (as opposed to classical computer science). Their effective value will be known only once the problem has been solved.
+\end{note}
+\item
+The \textbf{constraints} define relations to be satisfied between variables and constants.
+In our first model, we only use the following constraints provided by Choco:
+\begin{itemize}
+	\item \texttt{eq(var1, var2)} which ensures that \texttt{var1} equals \texttt{var2}.
+	\item \texttt{neq(var1, var2)} which ensures that \texttt{var1} is not equal to \texttt{var2}.
+	\item \texttt{sum(var[])} which returns expression \texttt{var[0]+var[1]+...+var[n]}.
+\end{itemize}
+\end{itemize}
+
+\subsection{The program}\label{introduction:theprogram}\hypertarget{introduction:theprogram}{}
+After having created your java class file, import the Choco class to use the API:
+\begin{lstlisting}
+  import choco.Choco;
+\end{lstlisting}
+First of all, let's create a Model:
+\lstinputlisting{java/imagicsquare1.j2t}
+We create an instance of \texttt{CPModel()} for \textbf{C}onstraint \textbf{P}rogramming Model.
+Do not forget to add the following imports:
+\begin{lstlisting}
+  import choco.cp.model.CPModel;
+\end{lstlisting}
+Then we declare the variables of the problem:
+\lstinputlisting{java/imagicsquare2.j2t}
+Add the import:
+\begin{lstlisting}
+  import choco.kernel.model.variables.integer.IntegerVariable;
+\end{lstlisting}
+We have defined the variable using the \texttt{makeIntVar} method which creates an enumerated domain: all the values are stored in the java object (beware, it is usually not necessary to store all the values and it is less efficient than to create a bounded domain).
+
+\noindent Now, we are going to state a constraint ensuring that all variables must have a different value:
+\lstinputlisting{java/imagicsquare3.j2t}
+Add the import:
+\begin{lstlisting}
+  import choco.kernel.model.constraints.Constraint;
+\end{lstlisting}
+Then, we add the constraint ensuring that the magic sum is respected:
+\lstinputlisting{java/imagicsquare4.j2t}
+Then we define the constraint ensuring that each column is equal to the magic sum.
+Actually, \texttt{var} just denotes the rows of the square. So we have to declare a temporary array of variables that defines the columns.
+\lstinputlisting{java/imagicsquare5.j2t}
+It is sometimes useful to define some temporary variables to keep the model simple or to reorder array of variables. That is why we also define two other temporary arrays for diagonals.
+\lstinputlisting{java/imagicsquare6.j2t}
+Now, we have defined the model. The next step is to solve it.
+For that, we build a Solver object:
+\lstinputlisting{java/imagicsquare7.j2t}
+
+with the imports:
+\begin{lstlisting}
+  import choco.cp.solver.CPSolver;
+\end{lstlisting}
+We create an instance of \texttt{CPSolver()} for Constraint Programming Solver.
+Then, the solver reads (translates) the model and solves it:
+\lstinputlisting{java/imagicsquare8.j2t}
+The only variables that need to be printed are the ones in \texttt{var} (all the others are only references to these ones). 
+\begin{note}
+We have to use the Solver to get the value of each variable of the model. The Model only declares the objects, the Solver finds their value.
+\end{note}
+We are done, we have created our first Choco program. 
+%The complete source code can be found here: \href{media/zip/exmagicsquare.zip}{ExMagicSquare.zip}
+
+
+\subsection{In summary}\label{introduction:whatisimportant}\hypertarget{introduction:whatisimportant}{}
+\begin{itemize}
+	\item A Choco Model is defined by a set of Variables with a given domain and a set of Constraints that link Variables:
+it is necessary to add both Variables and Constraints to the Model.
+	\item temporary Variables are useful to keep the Model readable, or necessary when reordering arrays.
+	\item The value of a Variable can be known only once the Solver has found a solution.
+	\item To keep the code readable, you can avoid the calls to the static methods of the Choco classes, by importing the static classes, i.e. instead of:
+\begin{lstlisting}
+  import choco.Choco;
+  ...
+  IntegerVariable v = Choco.makeIntVar("v", 1, 10);
+  ...
+  Constraint c = Choco.eq(v, 5);
+\end{lstlisting}
+you can use:
+\begin{lstlisting}
+  import static choco.Choco.*;
+  ...
+  IntegerVariable v = makeIntVar("v", 1, 10);
+  ...
+  Constraint c = eq(v, 5);
+\end{lstlisting}
+\end{itemize}
+
+\section{Complete examples}\label{model:completeexamples}\hypertarget{model:completeexamples}{}
+We provide now the complete Choco model for the three examples \hyperlink{introduction:examples}{previously described}.
+
+\subsection{Example 1: the n-queens problem with Choco}\label{model:example1:nqueenschoco}\hypertarget{model:example1:nqueenschoco}{}
+This first model for the \hyperlink{introduction:example1:nqueens}{n-queens problem} only involves binary constraints of differences between integer variables. One can immediately recognize the 4 main elements of any Choco code. First of all, create the model object. Then create the variables by using the Choco API (One variable per queen giving the row (or the column) where the queen will be placed). Finally, add the constraints and solve the problem. 
+
+\lstinputlisting{java/inqueen.j2t}
+
+\subsection{Example 2: the ternary Steiner problem with Choco}\label{model:example2:ternarysteinerchoco}\hypertarget{model:example2:ternarysteinerchoco}{}
+The \hyperlink{introduction:example2:theternarysteinerproblem}{ternary Steiner problem} is entirely modeled using set variables and set constraints. 
+\lstinputlisting{java/iternarysteiner.j2t}
+
+\subsection{Example 3: the CycloHexane problem with Choco}\label{model:example3:thecyclohexaneproblemwithchoco}\hypertarget{model:example3:thecyclohexaneproblemwithchoco}{}
+Real variables are illustrated on the problem of finding the 3D configuration of a cyclohexane molecule. 
+\lstinputlisting{java/icyclohexane.j2t}
+
+

@@ -1,0 +1,37 @@
+%\part{and}
+\label{nand}
+\hypertarget{nand}{}
+
+\section{nand (constraint)}\label{nand:nandconstraint}\hypertarget{nand:nandconstraint}{}
+\begin{notedef}
+  \texttt{nand}$(\collec{C_1}{C_n})$ states that at least one constraint in arguments is not satisfied:
+$$ C_1 \uparrow C_2 \uparrow\ldots\uparrow C_n$$
+
+  \texttt{nand}$(\collec{b_1}{b_n})$ states that at least one boolean in arguments is false:
+$$ (b_1=1)\ \uparrow\ (b_2=1)\ \uparrow\ \ldots\ \uparrow\ (b_n=1)$$
+\end{notedef}
+
+\begin{itemize}
+\item \textbf{API} : 
+\begin{itemize}
+\item \mylst{nand(Constraint... c)}
+\item \mylst{nand(IntegerVariable... b)}
+\end{itemize}
+\item \textbf{return type} : \texttt{Constraint}
+\item \textbf{options} : \emph{n/a}
+\item \textbf{favorite domain} : \emph{n/a}
+\item \textbf{references} :\\
+  global constraint catalog: \href{http://www.emn.fr/z-info/sdemasse/gccat/Cnand.html}{\tt nand}
+\end{itemize}
+
+\textbf{Examples:}
+\begin{itemize}
+	\item example1:
+\end{itemize}
+\lstinputlisting{java/cnand1.j2t}
+\begin{itemize}
+	\item example2
+\end{itemize}
+
+\lstinputlisting{java/cnand2.j2t}
+

@@ -1,0 +1,37 @@
+        int n = 9;
+        // Build Model
+        Model m = new CPModel();
+
+        // Build an array of integer variables
+        IntegerVariable[][] rows = Choco.makeIntVarArray("rows", n, n, 1, n, Options.V_ENUM);
+
+        // Not equal constraint between each case of a row
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                for (int k = j; k < n; k++)
+                    if (k != j) m.addConstraint(Choco.neq(rows[i][j], rows[i][k]));
+        }
+
+        // Not equal constraint between each case of a column
+        for (int j = 0; j < n; j++) {
+            for (int i = 0; i < n; i++)
+                for (int k = 0; k < n; k++)
+                    if (k != i) m.addConstraint(Choco.neq(rows[i][j], rows[k][j]));
+        }
+
+        // Not equal constraint between each case of a sub region
+        for (int ci = 0; ci < n; ci += 3) {
+            for (int cj = 0; cj < n; cj += 3)
+                // Extraction of disequality of a sub region
+                for (int i = ci; i < ci + 3; i++)
+                    for (int j = cj; j < cj + 3; j++)
+                        for (int k = ci; k < ci + 3; k++)
+                            for (int l = cj; l < cj + 3; l++)
+                                if (k != i || l != j) m.addConstraint(Choco.neq(rows[i][j], rows[k][l]));
+        }
+        // Call solver
+        Solver s = new CPSolver();
+        s.read(m);
+        ChocoLogging.toSolution();
+        s.solve();
+        // print the grid

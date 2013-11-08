@@ -1,0 +1,3 @@
+        IntegerVariable v1 = Choco.makeIntVar("v1", 1, 3);
+        IntegerVariable v2 = Choco.makeIntVar("v2", 1, 3);
+        IntegerExpressionVariable v1Andv2 = Choco.plus(v1, v2);
