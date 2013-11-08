@@ -1,9 +1,0 @@
-        IntegerVariable[][] varCol = new IntegerVariable[n][n];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                // Copy of var in the column order
-                varCol[i][j] = var[j][i];
-            }
-            // All column's sum is equal to the magic sum
-            m.addConstraint(Choco.eq(Choco.sum(varCol[i]), magicSum));
-        }

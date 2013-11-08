@@ -1,6 +1,0 @@
-        Model m = new CPModel();
-        Solver s = new CPSolver();
-        IntegerVariable x = makeIntVar("x", 1, 10);
-        m.addConstraint(not(geq(x, 3)));
-        s.read(m);
-        s.solve();

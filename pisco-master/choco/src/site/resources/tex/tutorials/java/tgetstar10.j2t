@@ -1,2 +1,0 @@
-        //Our solver
-        Solver s = new CPSolver();

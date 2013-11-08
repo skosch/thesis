@@ -1,8 +1,0 @@
-        Model m = new CPModel();
-        IntegerVariable x = makeIntVar("x", 1, 5);
-		IntegerVariable y = makeIntVar("y", 1, 5);
-		IntegerVariable z = makeIntVar("z", 1, 5);
-		m.addConstraint(relationTupleFC(new IntegerVariable[]{x, y, z}, new NotAllEqual()));
-		Solver s = new CPSolver();
-        s.read(m);
-		s.solveAll();

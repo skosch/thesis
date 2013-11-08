@@ -1,9 +1,0 @@
-        Model m = new CPModel();
-        Solver s = new CPSolver();
-        IntegerVariable x = makeIntVar("x", 1, 5);
-        IntegerVariable y = makeIntVar("y", 1, 5);
-        IntegerVariable z = makeIntVar("z", 1, 5);
-        m.addVariables(Options.V_BOUND, x, y, z);
-        m.addConstraint(max(y, z, x));
-        s.read(m);
-        s.solve();

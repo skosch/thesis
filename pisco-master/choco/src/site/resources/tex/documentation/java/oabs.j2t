@@ -1,7 +1,0 @@
-        Model m = new CPModel();
-        IntegerVariable x = makeIntVar("x", 1, 5, Options.V_ENUM);
-        IntegerVariable y = makeIntVar("y", -5, 5, Options.V_ENUM);
-        m.addConstraint(eq(abs(x), y));
-        Solver s = new CPSolver();
-        s.read(m);
-        s.solve();

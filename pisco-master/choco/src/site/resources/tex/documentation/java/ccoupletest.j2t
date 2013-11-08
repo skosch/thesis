@@ -1,7 +1,0 @@
-    public static class MyEquality extends CouplesTest {
-        
-        public boolean checkCouple(int x, int y) {
-            return x == y;
-        }
-    }
-

@@ -1,5 +1,0 @@
-        //constants of the problem:
-        int n = 3;
-        int M = n * (n * n + 1) / 2;
-        // Our model
-        Model m = new CPModel();

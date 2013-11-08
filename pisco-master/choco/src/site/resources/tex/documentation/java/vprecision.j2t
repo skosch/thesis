@@ -1,2 +1,0 @@
-        Solver m = new CPSolver();
-        m.setPrecision(0.01);

@@ -1,3 +1,0 @@
-import choco.kernel.model.constraints.automaton.DFA;
-import choco.kernel.model.constraints.automaton.Transition;
-import choco.kernel.model.constraints.Constraint;

@@ -1,6 +1,0 @@
-        Model m = new CPModel();
-        RealVariable x = makeRealVar("x", 0, Math.PI);
-        m.addConstraint(eq(sin(x), 1));
-        Solver s = new CPSolver();
-        s.read(m);
-        s.solve();

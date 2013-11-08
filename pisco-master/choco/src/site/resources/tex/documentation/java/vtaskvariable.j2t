@@ -1,5 +1,0 @@
-        TaskVariable tvar1 = makeTaskVar("tvar1", 0, 123, 18, Options.V_ENUM);
-        IntegerVariable start = makeIntVar("start", 0, 30);
-        IntegerVariable end = makeIntVar("end", 10, 60);
-        IntegerVariable duration = makeIntVar("duration", 7, 13);
-        TaskVariable tvar2 = makeTaskVar("tvar2", start, end, duration);

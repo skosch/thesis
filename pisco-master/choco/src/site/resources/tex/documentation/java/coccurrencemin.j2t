@@ -1,8 +1,0 @@
-        Model m = new CPModel();
-        Solver s = new CPSolver();
-        int n=7;
-        IntegerVariable[] x = makeIntVarArray("X", n, 0, 10);
-        IntegerVariable z = makeIntVar("Z", 0, 10);
-        m.addConstraint(occurrenceMin(z, x, 3));
-        s.read(m);
-        s.solve();

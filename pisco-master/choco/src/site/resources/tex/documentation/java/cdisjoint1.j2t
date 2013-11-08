@@ -1,7 +1,0 @@
-        Model m = new CPModel();
-        Solver s = new CPSolver();
-        IntegerVariable var = makeIntVar("v1", 0, 100, Options.V_BOUND);
-        int[] values = new int[]{10, 20, 30, 40, 50, 60, 70, 80, 90};
-        m.addConstraint(notMember(var, values));
-        s.read(m);
-        s.solve();
