@@ -1,7 +1,7 @@
 \documentclass[oribibl]{llncs}
 
 % Other packages needed
-\usepackage{newfloat}
+\usepackage{newfloat,wrapfig}
 \usepackage{cite}
 \usepackage{chngcntr}
 \counterwithout*{figure}{chapter} % make sure figures are numbered right
@@ -20,28 +20,33 @@
 
 % shortcuts etc.
 \def\Lmax{{L_{\mathrm{max}}}}
+\newcommand{\set}[1]{\{#1\}}
 
 \begin{document}
 % Title
 \title{A New MIP Model for Parallel-Batch Scheduling with Non-Identical Job Sizes}
 \author{Sebastian Kosch \and J. Christopher Beck}
-\institute{University of Toronto\\Dept. of Mechanical and Industrial
-Engineering\\\email{\{skosch,jcb\}@mie.utoronto.ca}}
+\institute{Department of Mechanical \& Industrial Engineering\\
+University of Toronto, Toronto, Ontario M5S 3G8, Canada\\
+\email{\set{skosch,jcb}@mie.utoronto.ca}}
 
 \maketitle
 
 \begin{abstract}
-  Parallel batch machine problems arise in numerous manufacturing
-  settings. They have recently been addressed by Malapert et al., who
-  proposed the implementation of a new \texttt{sequenceEDD} global
-  constraint. The latter, in combination with \texttt{pack}, forms the
-  current state-of-the-art approach and performs significantly better
-  than a basic MIP formulation of the problem. In this paper, we present
-  three improvements to this basic MIP model and show that they boost its
-  performance and solution quality to match and exceed that of the CP
-  model.
-
-  \textbf{$\uparrow\quad$ CB: To be fixed later.}
+  Parallel-batch machine problems arise in numerous manufacturing
+  settings from semiconductor manufacturing to printing. They have
+  recently been addressed in constraint programming (CP) via the
+  combination of the novel \texttt{sequenceEDD} global constraint with
+  the existing \texttt{pack} constraint to form the current
+  state-of-the-art approach.  In this paper, we present a detailed
+  analysis of the problem and derivation of a number of properties
+  that are exploited in a novel mixed integer programming (MIP) model
+  for the problem. Our empirical results demonstrate that the new
+  model is able to outperform the CP model across a range of standard
+  benchmark problems. Further investigation shows that the new MIP
+  formulation improves on the existing formulation primarily by
+  producing a much smaller model and enabling high quality primal
+  solutions to be found very quickly.
 \end{abstract}
 
 \section{Introduction}
@@ -49,77 +54,76 @@ Engineering\\\email{\{skosch,jcb\}@mie.utoronto.ca}}
 Despite the widespread application of mixed integer programming (MIP)
 technology to optimization problems in general and scheduling problems
 specifically,\footnote{For example, of the 58 papers published in the
-\emph{Journal of Scheduling} in 2012, 19 use MIP, more than any other
-single approach.} there is a significant body of work that demonstrates
-the superiority of constraint programming (CP) and hybrid approaches for
-a number of classes of scheduling problems \cite{some_sched_papers}.
-While the superiority is often a result of strong inference techniques
-embedded in global constraints \cite{cumulative}, the strong performance
-is often the result of more detailed, problem-specific implementation in
-the form of specialized global constraints \cite{Malapert} or
-instantiations of decomposition techniques \cite{Hooker_etc}. The
-flexibility of CP and hybrid techniques which facilitates such
-implementation is undoubtedly positive from the perspective of solving
-specific problems better. However, the flexibility is in some ways in
-opposition to the ``holy grail'' of CP \cite{Freuder97a}: to enable
-users to model and solve problems without implementing anything new at
-all.
+  \emph{Journal of Scheduling} in 2012, 19 use MIP, more than any
+  other single approach.} there is a significant body of work that
+demonstrates the superiority of constraint programming (CP) and hybrid
+approaches for a number of classes of scheduling problems
+\cite{Hooker05b,Beck11a,Tran12a,Malapert,Schutt13a}.  While the
+superiority is often a result of strong inference techniques embedded
+in global constraints \cite{Baptiste00a,Baptiste01a,Vilim09a}, it is sometimes due to problem-specific implementation
+in the form of specialized global constraints \cite{Malapert} or
+instantiations of decomposition techniques
+\cite{Hooker05b,Beck11a,Tran12a}. The flexibility of CP and
+decomposition approaches which facilitates such implementation is
+undoubtedly positive from the perspective of solving specific problems
+better. However, the ability to create problem-specific approaches is
+in some ways in opposition to the compositionality and model-and-solve ``holy grail'' of CP
+\cite{Freuder97a}: to enable users to model and solve problems without
+\emph{implementing} anything new at all.
 
-Our over-arching thesis is that, in fact, MIP technology is closer to
+Our overarching thesis is that, in fact, MIP technology is closer to
 this goal than CP, at least in the context of combinatorial optimization
 problems. In our investigation of this thesis, we are developing MIP
 models for scheduling problems where the current state of the art is
 customized CP or hybrid approaches. Heinz et al. \cite{Heinz} showed
 that on a class of resource allocation and scheduling problems, a MIP
 model could be designed that was competitive with the state-of-the-art
-logic-based Benders decomposition approach. This paper represents a
-similar contribution in different scheduling problem: a parallel batch
+logic-based Benders decomposition. This paper represents a
+similar contribution in different scheduling problem: a parallel-batch
 processing problem which has previously been attacked by MIP,
-branch-and-price \cite{Daste1}, and CP \cite{Malapert}. The latter represents
-the current state of the art.
+branch-and-price \cite{Daste1}, and CP \cite{Malapert} with the latter representing
+the state of the art.
 
-In this paper, we propose a MIP model inspired by the idea of modifying
-a canonical sub-optimal solution to arrive at an optimal solution.
+We propose a MIP model inspired by the idea of modifying
+a canonical feasible solution.
 The definition of our objective function in this novel context is not
 intuitive until we reason algorithmically about how constraints and
-assignments interact -- a strategy usually reserved for local search
-techniques. Indeed, we suggest that the analogy between branching
-on independent binary decision variables and making moves between
+assignments interact -- a strategy often used in designing metaheuristics.
+Indeed, we suggest that the analogy between branching
+on independent decision variables and making moves between
 neighbouring schedules should be explored in more detail for a range of
 combinatorial problems.
 
-The balance of the paper is organized as follows. In next section we
+In the next section we
 present the formal problem definition and discuss existing approaches.
-In Section \ref{sec:propositions} we present and
-prove a number of propositions that allows us to propose a novel MIP
-model for the problem before formally defining the model in Section
-\ref{sec:newMIPmodel}. Section \ref{sec:exp} presents our empirical
-results, demonstrating that the performance of the new model is superior
-to the existing CP model, both in terms of mean time to find optimal solutions
-and in terms of solution quality when optimal solutions could not be found
-within the time limit.
+In Section \ref{sec:propositions} we prove a number of
+propositions that allow us to formally propose a novel MIP model for the problem
+in Section \ref{sec:newMIPmodel}.
+Section \ref{sec:exp} presents our empirical results, demonstrating
+that the performance of the new model is superior to the existing CP
+model, both in terms of mean time to find optimal solutions and in terms of solution quality when optimal
+solutions could not be found within the time limit.
 
 \section{Background}
 \label{sec:background}
 
 Batch machines with limited capacity exist in many manufacturing
-settings: as ovens in semiconductor manufacturing \cite{Lee}, autoclaves
-in the production of carbon fiber parts \cite{Malapert}, and processing
-tanks in the pharmaceutical industry \cite{Grossmann}. In this paper,
+settings in forms such as ovens \cite{Lee}, autoclaves \cite{Malapert}, and 
+tanks \cite{Grossmann}. In this paper,
 we tackle the problem of minimizing the maximum lateness, $\Lmax$,
 in a single machine parallel batching problem where each job has an
 individual due date and size.
 
-We use the following notation: a set $\mathcal{J}$ of $n$ jobs,
-is to be assigned to a set of batches $\mathcal{B} = \{B_1,\dots,B_n\}$. Every
-job $j$ has three properties: its processing time $p_j$, its size $s_j$
-and its due date $d_j$. Jobs can be assigned to arbitrary batches, as
-long as the sum of the sizes of the jobs in any batch does not exceed
+We use the following notation: a set $\mathcal{J}$ of $n$ jobs
+is to be assigned to a set of $n$ batches $\mathcal{B} = \{B_1,\dots,B_n\}$.
+Batches can hold multiple jobs or remain empty. Each
+job $j$ has a processing time, $p_j$, a size, $s_j$,
+and a due date, $d_j$. Jobs can be assigned to arbitrary batches, as long as the sum of the sizes of the jobs in a batch does not exceed
 the machine capacity, $b$.
 
 The single machine processes one batch at a time. Each batch $B_k$ has a
 \textit{batch start date} $S_k$, a \textit{batch processing time},
-defined as the longest of processing times of all jobs assigned to the
+defined as the longest processing time of all jobs assigned to the
 batch, $P_k = \max_{j\in \mathcal{B}_k}(p_j)$, and a \textit{batch completion
   date}, which must fall before the start time of the next batch, $C_k
 = S_k + P_k \leq S_{k+1}$.
@@ -128,24 +132,23 @@ The lateness of a job $j$, $L_j$, is the completion time of its batch
 $C_k$ less its due date $d_j$. The objective function is to minimize the
 maximum lateness over all jobs, $\Lmax = \max_{j \in \mathcal{J}}(L_j)$. Since we
 are interested in the maximum lateness, only the earliest-due job in
-each batch matters and is referred to as the \textit{batch due date}
+each batch matters and we define it as the \textit{batch due date}
 $D_k = \min_{j\in \mathcal{B}_k}(d_j)$.
 
-Previous authors have used the format established by Graham et al.
-\cite{graham} to summarize the problem as $1|\textit{p-batch}; b
-< n; \textit{non-identical}|\Lmax$ \cite{Daste, Malapert}, where
-$\textit{p-batch};b<n$ represents the parallel-batch nature and the
-finite capacity of the resource. A simpler version with identical job
+The problem can be summarized as $1|\textit{p-batch}; b
+< n; \textit{non-identical}|\Lmax$ \cite{Daste1, Malapert}, where
+$\textit{p-batch};b<n$ represents the resource's parallel-batch nature and its
+finite capacity. A version with identical job
 sizes was shown to be strongly NP-hard by Brucker et al. \cite{Brucker};
 this problem, therefore, is no less difficult.
 
 Figure \ref{fig:intro_tetris} shows a solution to a sample
-problem with eight jobs and a resource with capacity $b = 20$. The last batch
+problem with eight jobs and resource capacity $b = 20$. The last batch
 has the maximum lateness $L_5 = C_5 - D_5 = 70 - 39 = 31$.
 
-\begin{figure}[th]
+\begin{figure}[t]
 \centering
-\includegraphics[width=\textwidth]{tetris.pdf}
+\includegraphics[width=0.8\textwidth]{tetris.pdf}
 \caption{An optimal solution to an example problem with eight jobs (values for
   $s_j$ and $p_j$ are not shown for the two small jobs in batches 1 and 3,
 respectively).}
@@ -154,7 +157,7 @@ respectively).}
 
 \subsection{Reference MIP model} The problem is formally defined by MIP
 Model \ref{model:malapertmip}, used by Malapert et al. \cite{Malapert} for comparison
-with their proposed CP model (see below).
+with their CP model (see below).
 
 \begin{model}[h]
 \begin{alignat}{2}
@@ -175,19 +178,21 @@ with their proposed CP model (see below).
 \label{model:malapertmip}
 \end{model}
 
-The decision variable, $x_{jk}$ is a binary variable that is one
-if and only if job $j$ is assigned to batch $k$. Constraints
+The decision variables, $x_{jk}$, are binary variables where $x_{jk}=1$
+iff job $j$ is assigned to batch $k$. Constraints
 \eqref{c:malapp-unique} ensure that each job $j$ is assigned to exactly
 one batch $k$. Constraints \eqref{c:malapp-cap} ensure that no batch
 exceeds the machine capacity, $b$. Constraints \eqref{c:malapp-pk}
-define each batch's processing time $P_k$ as the maximum processing time
-of the jobs $j$ assigned to it. Constraints \eqref{c:malapp-ck} define
-each batch's completion time $C_k$ as that of the previous batch, plus
+define each batch's processing time, $P_k$, as the maximum processing time
+of the jobs $j$ assigned to it. Constraints \eqref{c:malapp-dk} implement the
+definition of $D_k$ while ensuring that for empty batches $k$, $D_k = d_\text{max}$.
+Constraints \eqref{c:malapp-ck} define
+each batch's completion time, $C_k$, as that of the previous batch, plus
 the batch's processing time. Constraints \eqref{c:malapp-lmax} define
 the objective value $\Lmax$. Constraints \eqref{c:malapp-edd} sort the
 batches by due date, based on a well-known dominance rule: there exists
 an optimal solution with batches scheduled in earliest-due-date-first
-order (EDD). This is due to the fact that if all jobs are already optimally
+order (EDD). This stems from the fact that if all jobs are already 
 assigned, the problem reduces to a polynomial-time solvable single machine
 problem ($1|D_k|\Lmax$) \cite{Pinedo03}.
 
@@ -195,13 +200,13 @@ problem ($1|D_k|\Lmax$) \cite{Pinedo03}.
 
 Malapert et al. \cite{Malapert} present a CP formulation of the problem
 (see Model \ref{model:malapertcp}) which relies on two
-global constraints: \texttt{pack} \cite{Shaw04a}, which constrains the
+global constraints: \texttt{pack} \cite{ShawPacking}, which constrains the
 job-to-batch assignments such that no capacity limits are violated,
 and \texttt{sequenceEDD}, which enforces the EDD order over the batches. The
 implementation of the latter constraint is the main contribution of
-the paper and is primarily responsible for the strong performance. It
-includes a set of rules which update the lower and upper bounds on
-$\Lmax$ and on the number of batches every time \texttt{sequenceEDD}
+the paper and is primarily responsible for the strong performance. \texttt{sequenceEDD}
+includes a set of pruning rules that update the lower and upper bounds on
+$\Lmax$ and on the number of batches every time the constraint
 is triggered by a job-batch assignment. Based on these bounds, other
 assignments are then eliminated from the set of feasible assignments.
 
@@ -214,8 +219,7 @@ assignments are then eliminated from the set of feasible assignments.
     \label{c:mcpmin} & \mathtt{minOfASet}(D_k, B_k, [d_j]_k, d_\mathrm{max}) &&
     \quad \forall k \in \mathcal{B} \\
     \label{c:mcppack} & \mathtt{pack}(B_k, A_j, S_k, M, s_j) && \\
-    \label{c:mcpseq} & \mathtt{sequenceEDD}(B_k, D_k, P_k, M, \Lmax)
-    && \\
+    \label{c:mcpseq} & \mathtt{sequenceEDD}(B_k, D_k, P_k, M, \Lmax) && 
 \end{alignat}
   \caption{CP model proposed by Malapert et al.}
 \end{model}
@@ -224,16 +228,16 @@ Constraints \eqref{c:mcpmax} define $P_k$ as the maximum of the set
 of processing times $[p_j]_k$ belonging to the jobs assigned to
 batch $B_k$, with a minimum value of 0 (note that the notation is
 adapted from Malapert et al. to match that in this paper). Constraints
-\eqref{c:mcpmin} define $D_k$ as the minimium of the due dates $[d_j]_k$
+\eqref{c:mcpmin} define $D_k$ as the minimum of the due dates $[d_j]_k$
 associated with the set of jobs assigned to the batch $B_k$, with a
 maximum of $d_\mathrm{max}$, the largest due date among all given jobs.
-Constraint \eqref{eqc:mcppack} implements the limited batch capacity $b$.
+Constraint \eqref{c:mcppack} implements the limited batch capacity $b$.
 It uses propagation rules incorporating knapsack-based reasoning, as
 well as a dynamic lower bound on the number of non-empty batches $M$
 \cite{Malapert,ShawPacking}. Note that this constraint handles the
 channeling between the set of jobs assigned to batch $B_k$, and the
 assigned batch index $A_j$ for each job $j$. The limited capacity is
-enforced by setting the domain of the batch loads $S_k$ to $[0, b]$.
+enforced by setting the domain of the batch loads, $S_k$, to $[0, b]$.
 Constraint \eqref{c:mcpseq} ensures that the objective value $\Lmax$ is
 equal to the maximum lateness of the batches scheduled according to the
 EDD rule.
@@ -248,72 +252,74 @@ improves the current solution of the master problem. Malapert et al.
 than the branch-and-price algorithm which itself was more efficient 
 than the reference MIP model. 
 
-\textbf{$\uparrow\quad$ CB: I emailed Christelle Guéret about the B\&P paper,
-but haven't heard back from her yet. I'll keep you posted.}
-
 Other authors have examined similar problems: Azizoglu \& Webster
 \cite{Azizoglu} provide an exact method and a heuristic for the same
 problem, but minimize makespan ($C_\mathrm{max}$) instead of $\Lmax$,
-similarly to the work by Dupont and Dhaenens-Flipo \cite{Dupont}.
+similar to the work by Dupont and Dhaenens-Flipo \cite{Dupont}.
 Exact methods have been proposed for multi-agent variants
 with different objective functions by Sabouni and Jolai \cite{Sabouni},
 for makespan minimization on single batch machines by Kashan et al.
 \cite{Kashan}, and for makespan minimization on parallel batch machines
-with different release dates \cite{Ozturk}. A more
+with different release dates \cite{Ozturk}. An
 extensive review of MIP models in batch processing is given
 by Grossmann \cite{Grossmann}. 
 
-\section{Exploiting the Structure of the Parallel-Batching Problem}
+\section{Exploiting the Problem Structure}
 \label{sec:propositions}
 
-In this section, we provide a series of observations about the
-parallel-batch scheduling problem that allow us to improve the reference MIP
-model significantly.
+In this section, we make a series of observations about the
+parallel-batch scheduling problem that allow us to develop a novel MIP
+formulation.
 
 \subsection{The single-EDD schedule and assigning jobs to earlier batches}
 We can exploit the EDD rule to eliminate $\frac{1}{2}(n^2 - n)$ of the
 $n^2$ potential job-batch assignments a priori.
 
 We first re-index all jobs in non-decreasing due date (and in
-non-decreasing processing time in case of a tie), which can be done in
-$\mathcal{O}(n \log n)$ time. For the remainder of this paper, consider
-all jobs to be indexed in this way. We then introduce the notion of
+non-decreasing processing time in case of a tie).
+%, which can be done in $\mathcal{O}(n \log n)$ time. 
+For the remainder of this paper, consider
+all jobs to be indexed in this way. We then define
 the \textit{single-EDD} schedule, in which each batch $B_k$ contains the
-\textit{single} job $j$ matching its index (i.e., $x_{jk}=1$ exactly when
+\textit{single} job $j$ matching its index (i.e., $x_{jk}=1$ iff
 $j=k$), such that EDD is always satisfied. We refer to $j$ as the \textit{host
-job} of batch $B_k$, while other jobs assigned to $B_k$ are \textit{guest jobs}.
+job} of batch $B_k$, while other jobs assigned to $B_k$, if any, are \textit{guest jobs}.
+
+\begin{lemma}
+  \label{lemma:emptyorsame}
+Consider a schedule $S$ in which $B_k$ is the earliest-scheduled batch such that its
+host job $j$ is assigned to a later-scheduled batch $B_{k+m}$. In this schedule,
+$B_k$ is either empty or $D_k = d_j$ (even though $j \notin B_k$).
+\end{lemma}
+\begin{proof}
+If $B_k$ is non-empty, $D_k \geq d_j$: since $B_k$ is defined as
+the earliest scheduled batch whose host job is scheduled later, $B_k$ cannot
+host jobs due before $d_j$. But if $D_k > d_j$ then EDD is violated, as $D_{k+m}
+= d_j$. Thus, $B_k$ is empty, or $D_k = d_j$ (due to other jobs with due date $d_j$ assigned to
+$B_k$).
+\end{proof}
 
 \begin{proposition} \label{prop:movebackonly}
-There always exists an optimal solution among the schedules in which job $j$ is assigned to batch
-$B_k \; \forall \,j \leq k$, i.e. among the schedules where jobs are either assigned to
-their single-EDD batches or to earlier-due batches.
+There exists an optimal solution in which job $j$ is assigned to batch
+$B_k \; j \leq k$.
 \end{proposition}
+
+% Before giving a proof, we prove the following lemma.
+
+% Schedule $S$ clearly violates the constraint given in Proposition
+% \ref{prop:movebackonly}. We now prove the proposition by showing that $S$ is
+% not uniquely optimal.
+
 \begin{proof}
-  We will show the inverse: all solutions in which jobs are assigned to batches
-  scheduled after their single-EDD batches \textit{either} violate EDD
-  \textit{or} have equivalent solutions (in terms of $\Lmax$)
-  in which jobs are assigned to earlier batches only.
+  Consider again schedule $S$. Since $D_{k+m} = d_j$, EDD requires that no batch $B_q,
+  k\leq q<k+m$, is due after $d_j$. By Lemma \ref{lemma:emptyorsame}, we only
+  need to consider the following two cases:
 
-  Consider a schedule in which $B_k$ is the earliest-scheduled batch such that
-  its host job $j$ is assigned to a later-scheduled batch $B_{k+m}$, which makes
-  $D_{k+m} = d_j$.
-
-  The schedule violates EDD if one or more batches $B_q$ are due after
-  job $j$ (i.e. $D_q>d_j$) with $k\leq q<k+m$. This will always be the
-  case when $B_k$ holds other jobs due later than $j$. Note that by the
-  definition of $B_k$ as the earliest batch such that its host job is
-  assigned to a later batch, none of the jobs assigned to it can be due
-  before $d_j$.
-
-  If the schedule does not violate EDD, we need to consider the following cases:
-  \begin{itemize}
+  \begin{enumerate}
     \item{$B_k$ is empty, so $P_k = 0$. Since EDD is not violated, we
-    know that $D_q = d_j\;\forall\;B_q, k \leq q \leq k+m$. In this case,
-    we can instead assign all jobs from $B_{k+m}$ into $B_k$, such that
+    know that $D_q = d_j\;\forall\;B_q, k \leq q \leq k+m$. We can assign all jobs from $B_{k+m}$ into $B_k$, such that
     $P_{k+m} = 0$. $\Lmax$ will stay constant, as the completion time of
     the last-scheduled of all batches due at $d_j$ does not change.}
-    \item{$B_k$ is non-empty and due before $d_j$: inapplicable per definition
-        of $B_k$ above.}
     \item{$B_k$ is non-empty and due at $D_k = d_j$ (although $j \notin B_k$), due
         to at least one job $g$ from a later-scheduled batch for which
         $d_g = d_j$, which is assigned to $B_k$. In this case, since $D_k
@@ -325,10 +331,7 @@ their single-EDD batches or to earlier-due batches.
     is not affected by this re-assignment, as the completion time of the
     last-scheduled batch due
   at $d_j$ does not change.}
-    \item{$B_k$ is non-empty and due after $d_j$: inapplicable as it violates
-      EDD.}
-  \end{itemize}
-\end{proof}
+  \end{enumerate} \end{proof}
 
 We thus introduce the following constraint to exclude solutions
 in which jobs are assigned to later batches than their single-EDD
@@ -338,29 +341,34 @@ batches.
 \end{alignat}
 
 We can also show that in every non-empty batch $B_k$,
-the earliest-due job $j$ must be the single-EDD job (such that $j =
-k$). This means that when batch $B_k$'s host job $j$ is assigned to an
+the earliest-due job $j$ must be the host job.
+%(such that $j = k$). 
+This means that when batch $B_k$'s host job is assigned to an
 earlier batch, no other jobs can be assigned to $B_k$; a batch
 that is \textit{host-less} must be empty. This requirement rests on the
-following proposition:
+following proposition.
 
 \begin{proposition}\label{prop:nohostless}
 There exists an optimal solution that has no host-less, non-empty batches.
 \end{proposition}
 \begin{proof}
-Consider an optimal schedule, ordered by EDD, in which batch $B_k$ is the
-last-scheduled batch which is host-less but non-empty: instead of its host job
-$j$ (with $j=k$), only a set $G$ of later-due guest jobs is assigned
-to $B_k$ (where $j \notin G$). Note that the earliest-due job $g$ in $G$ must have the same
-due date as batch $B_{k+1}$: if it is due later, EDD is violated; if it
-is due earlier, $G$ is not a set of later-due guest jobs. 
+Consider an EDD-ordered schedule in which batch $B_j$ is the
+last-scheduled batch which is host-less but non-empty: instead of its host job, only a set $G$ of later-due guest jobs is assigned
+to $B_j$ ($j \notin G$).
 
-Since $B_k$ is the last host-less non-empty batch, job $g$'s own single-EDD
-batch $B_g$ is empty ($P_g = 0$). Then we can re-assign the guest jobs
-$G$ from $B_k$ into $B_g$, such that $g$ is again host job in its own
-single-EDD batch. This re-assignment has no impact on $\Lmax$ since it
-makes $P_k = 0$, resulting in the same completion time of the set of all
-batches with batch due date $D = D_{k+1}$.
+The earliest-due job $g \in G$ must have the same due date as batch
+$B_{j+1}$: if it is due later, EDD is violated; if it is due earlier,
+$G$ is not a set of later-due guest jobs. Job $g$'s own host batch $B_g$
+(which is host-less) cannot itself be due later than $d_g = D_{j+1}$ --
+this would require $B_g$ to have guest jobs from later batches, but we
+defined $B_k$ as the last batch with this property -- therefore, $D_q =
+D_{j+1}$ for all batches $B_q, j \leq q \leq g$.
+
+Then we can re-assign the guest jobs $G$ from $B_j$ into $B_g$,
+such that $g$ is again host job in its own single-EDD batch. This
+re-assignment has no impact on $\Lmax$ since it makes $P_j = 0$,
+resulting in the same completion time of the set of all batches with
+batch due date $D = D_{j+1}$.
 \end{proof}
 
 The above proposition translates to the following constraint:
@@ -369,28 +377,29 @@ The above proposition translates to the following constraint:
 j> k\}
 \end{alignat}
 
-\subsection{Using changes to the single-EDD schedule to calculate the objective value}
+This observation allows us to define the due date of \emph{all} batches
+to be the due date of their respective host jobs: $D_k = d_j\,\forall\{j
+\in \mathcal{J}, k \in \mathcal{B}|j=k\}$. This rule holds
+even for empty batches $B_k$: $P_k = 0$, so $C_k = C_{k-1}$; but
+$D_{k-1} \leq D_k$ due to this rule, so $L_{k-1} \geq L_k$ and thus
+$L_k$ has no impact on $\Lmax$.
+
+\subsection{Reformulating the objective function}
 \label{sec:moves}
 
-We can formulate each batch's lateness, $L_k$, as its pre-computed
+We can formulate each batch's lateness, $L_k$, as its 
 lateness in the single-EDD schedule, modified by the assignment of jobs into and
-out of batches $B_h, h \leq k$.
-
-\textbf{$\uparrow\quad $CB: I understand that you want to get away
-from talking about the reference model. My understanding is that my model is faster
-mainly because it has fewer rows and columns. Is that a valid motivation to bring up
-here (in whichever form) or too handwavy? (I'm not sure about cuts, for
-example)}
+out of batches $B_h, h \leq k$. 
 
 We first define $\mathcal{B}^\star \subseteq \mathcal{B}$ as the set of batches
 $B_k$ which, given any EDD schedule, are the last-scheduled among all batches
-with due date $D_k$, since we can make the following observation:
+with due date $D_k$, since we can make the following observation.
 \begin{proposition}
-Given a set of batches with equal due date in a schedule, we only need
-consider the lateness value of the one scheduled last.
+Given a set of batches with equal due date in a schedule, we only need to 
+consider the lateness of the one scheduled last.
 \end{proposition}
 \begin{proof}
-  In an EDD ordering, the lateness value of the batch scheduled last is greater
+  In an EDD ordering, the lateness of the batch scheduled last is greater
   than (or equal to, in the case of an empty batch) the lateness values
   of all other batches sharing its due date as it has the latest completion
   date.
@@ -399,31 +408,31 @@ This fact allows us to reduce the number of constraints defining $\Lmax$, as
 we only need to consider batches $\mathcal{B}^\star$ as potential candidates for
 $\Lmax$.
 
-To simplify the following arguments, we also define the term
+To simplify the following exposition, we define the term
 \textit{move} as the re-assignment of a job $j$ from its single-EDD
 batch $B_k$ to an earlier batch $B_h, h < k$, such that $x_{jk}=0$ and $x_{jh}=1$ and $j$
 is a guest job in $B_h$.
-Any schedule can thus be understood as a set $M$ of such moves, executed in arbitrary
+Any schedule can thus be understood as a set of such moves, executed in arbitrary
 order starting from the single-EDD schedule. To define the objective function,
-we consider below the change in $\Lmax$ associated with individiual moves, going
-from one schedule to another, instead of reasoning about the $\Lmax$ value of an entire schedule at once.
+we consider the change in $\Lmax$ associated with individual moves.
+%, going
+%from one schedule to another, instead of reasoning about the $\Lmax$ value of an entire schedule at once.
 
 Consider any EDD
-schedule, such as the one shown in Figure \ref{fig:movebasedmip}a. Moving
+schedule, such as the one in Figure \ref{fig:movebasedmip}(a). Moving
 a job $j$ from its single-EDD batch $B_{k=j}$ into an earlier batch
 $B_e$ has the following effect:
 
 \begin{itemize}
-\item{the lateness of all batches $B_i, i \geq k$ is reduced by $p_j$,
-    as in Figure \ref{fig:movebasedmip}(b),}
-\item{the lateness of all batches $B_h, h \geq e$ is increased by
+\item the lateness of all batches $B_i, i \geq k$ is reduced by $p_j$(Figure \ref{fig:movebasedmip}(b)),
+\item the lateness of all batches $B_h, h \geq e$ is increased by
 $\max(0,p_j - P_e)$, where $P_e$ is the processing time of batch $B_e$
-before $j$ is moved into it, as in Figure \ref{fig:movebasedmip}(c).}
+before $j$ is moved into it (Figure \ref{fig:movebasedmip}(c)).
 \end{itemize}
 
 \begin{figure}[th]
 \centering
-\includegraphics[width=\textwidth]{movebasedmip.pdf}
+\includegraphics[width=0.8\textwidth]{movebasedmip.pdf}
 \caption{Moving a job in a single-EDD schedule. Job 5 (marked
 ``$p_5 = 10$'') is moved from its single-EDD batch 5 into the earlier batch 3.
 This changes the lateness of job 7 (marked $\star$) from $L_\mathrm{7,single}$
@@ -448,10 +457,6 @@ x_{hh})}_{T_h} \quad && \forall k \in \mathcal{B}^\star\\
 where $P'_k = \max(P_k, p_k) \forall k \in \mathcal{B}$ as defined in
 constraints \eqref{c:pkpj} and \eqref{c:pkmin}.
 
-\begin{proposition}
-  Constraints \eqref{c:lmaxc}--\eqref{c:pkmin} are sufficient to define $\Lmax$.
-\end{proposition}
-\begin{proof}
   For every batch $B_k \in \mathcal{B}^\star$, consider the possible scenarios for all batches
 $B_h, h \leq k$:
 \begin{itemize}
@@ -466,79 +471,83 @@ $B_h, h \leq k$:
       minimization objective enforces $P'_h = p_h$ and $T_h = P'_h - 2p_h =
     -p_h$.}
 \end{itemize}
-Effectively thus, we add to $L_k$ the increase in processing time due
-to guests, $\max(0, P'_h-p_h)$, for every non-empty batch $B_h$; we
+Thus, we add to $L_k$ the increase in processing time due
+to guests, $\max(0, P'_h-p_h)$, for every non-empty batch $B_h$. We
 subtract from $L_k$ the host job processing time $p_h$ for every empty
 batch $B_h$. This is congruent with Figure \ref{fig:movebasedmip} above.
 
-Note that the $P'_k$ variables used here are not the same as the
-physically meaningful $P_k$ due to constraints \eqref{c:pkmin}, which is
-why we distinguish them with a prime mark.
-
-Note also that if a batch $B_k \in \mathcal{B}^\star$ is empty, then its
-lateness equals that of the previous batch $B_{k-1}$: 
-\begin{align*}
-L_k =
-&\left[L_{{k-1},\mathrm{single}} + P_k - (d_k - d_{k-1})\right] \\&\quad+\left[\sum_{h\leq k-1}
-P'_h-p_h(2-x_{hh}) \right] + P'_k - p_k(2-x_{kk}) = L_{k-1}
-\end{align*}
-as $d_k = d_{k-1}$
-and $x_{kk}$ if $B_k$ is empty.
-
-\textbf{$\uparrow\quad$ CB: Your concern about empty batches in
-$\mathcal{B}^\star$ makes sense from the old model's perspective. But here every
-batch's lateness is defined independently of the previous batch's. I can write
-out the math if you think that helps? (I'm worried we don't have the room for it) }
+% Note that the $P'_k$ variables used here are not the same as the
+% physically meaningful $P_k$ due to constraints \eqref{c:pkmin}, which is
+% why we distinguish them with a prime mark.
 
 
 The net sum of these additions and subtractions to and from
-$L_{k,\mathrm{single}}$ adjusts the lateness of batch $k$ to its correct number
+$L_{k,\mathrm{single}}$ adjusts the lateness of batch $k$ to its correct value
 given the values of $x_{jk}$.
-\end{proof}
-\pagebreak
-We first express the lateness of the first batch as its single-EDD lateness,
+
+
+\begin{proposition}
+  Constraints \eqref{c:lmaxc}--\eqref{c:pkmin} correctly define $L_k$ for each batch $B_k$.
+\end{proposition}
+\begin{proof}
+By induction on $k$, our base case is the lateness of the first batch ($k=1$). It is clear that the lateness of $B_k$ is equal to its single-EDD lateness,
 plus $\max(P_1 - p_1, 0)$ since guest jobs may cause $P_1 > p_1$:
 \begin{equation}
   \label{eq:ind1}
   L_1 = L_{1,\mathrm{single}} + \underbrace{P'_1 -
   p_1(2-x_{11})}_{=\max(P_1-p_1,0)}.
 \end{equation}
-We then consider the lateness of any batch, $L_k$, which can be written as
+Our induction hypothesis is that the proposition holds for any batch $B_k$:
 \begin{equation}
-  \label{eq:ind2}
-  L_k = L_{k-1} + \underbrace{P_k}_{C_k-C_{k-1}} - \underbrace{(d_k -
-  d_{k-1})}_{D_k-D_{k-1}}.
+  \label{eq:indhyp}
+  L_k = L_{k,\mathrm{single}} + \sum_{h \leq k} P'_h - p_h(2-x_{hh})
 \end{equation}
-Note that we can use the respective host jobs' due dates as the batch due dates
-due to Proposition \ref{prop:nohostless}.
-We first expand the $L_{k-1}$ term into
+To show how an expression for $L_{k+1}$ then follows,
+we relate $L_{k+1}$ to $L_k$:
+\begin{equation}
+\label{eq:k1k}
+  L_{k+1} = L_k + \underbrace{P_{k+1}}_{C_{k+1}-C_k} - \underbrace{(d_{k+1} -
+  d_k)}_{D_{k+1}-D_k}
+\end{equation}
+The difference $L_{k+1} - L_k$ can also be written in terms of single-EDD
+lateness values and processing time adjustments due to guests or host-lessness,
+all of which are expressed in known terms:
 \begin{equation}
   \label{eq:ind3}
-  L_{k-1} = L_{k-1,\mathrm{single}} + \sum_{h\leq k-1} P'_h - p_h(2-x_{hh}),
+  P_{k+1} - (d_{k+1} - d_k) = L_{k+1,\mathrm{single}} - L_{k,\mathrm{single}}+
+\begin{cases}\max(P_{k+1}-p_{k+1},0)&x_{k+1,k+1}=1\\-p_{k+1}&x_{k+1,k+1}=0\end{cases}.
 \end{equation}
-which we know to be true for the case of $k-1 = 1$. We then argue that
-\begin{equation}
+The conditional expression is equivalent to $P'_{k+1} -
+p_{k+1}(2-x_{k+1, k+1})$. We can now rewrite \eqref{eq:k1k} for $L_{k+1}$ and arrive at
+\begin{align}
   \label{eq:ind4}
-  P_k - (d_k - d_{k-1}) = L_{k,\mathrm{single}} - L_{k-1,\mathrm{single}} +
-\begin{cases}\max(P_k-p_k,0)&x_{kk}=1\\-p_k&x_{kk}=0\end{cases}.
-\end{equation}
-Note that after substituting \eqref{eq:ind3} and \eqref{eq:ind4} into equation
-\eqref{eq:ind2}, the $L_{k-1,\mathrm{single}}$ terms cancel. Finally, the
-conditional expression is equivalent to $P'_k - p_k(2-x_{kk})$, and thus
-\begin{equation}
-  L_k = L_{k,\mathrm{single}} + \left[\sum_{h\leq k-1} P'_h -
-  p_h(2-x_{hh})\right] + P'_k - p_k(2-x{kk}),
-\end{equation}
-which is simply
-\begin{equation}
-  L_k = L_{k,\mathrm{single}} + \sum_{h\leq k} P'_h - p_h(2 -
-x_{hh}).
-\end{equation}
-\pagebreak
+   L_{k+1} =& \left[L_{k,\mathrm{single}} + \sum_{h \leq k} P'_h
+- p_h(2-x_{hh})\right]  \nonumber \\ &+ L_{k+1,\mathrm{single}} - L_{k,\mathrm{single}}+ P'_{k+1} -
+p_{k+1}(2-x_{k+1, k+1}),
+\end{align}
+which, after cancelling out $L_{k,\mathrm{single}}$ terms, becomes
+\begin{align}
+  \label{eq:indfin}
+ L_{k+1} = L_{k+1,\mathrm{single}} + \sum_{h \leq k+1} P'_h - p_h(2-x_{hh})
+\end{align}
+and agrees with \eqref{eq:indhyp}. Since \eqref{eq:indfin} follows from
+\eqref{eq:indhyp}, and the latter is true for the base case of $k = 1$,
+\eqref{c:lmaxc} is true for all $k$.
+\end{proof}
+
+Note also that in the case of an empty batch $B_k \in
+\mathcal{B}^\star$, if $B_{k-1} \notin \mathcal{B}^\star$,
+$d_k = d_{k-1}$ and $x_{kk}=0$, so $L_k = L_{k-1}$ as evident from
+\eqref{eq:ind4}; if $B_{k-1} \in \mathcal{B}^\star$, $d_k > d_{k-1}$,
+and thus $L_k < L_{k-1}$. as $d_k = d_{k-1}$ and $x_{kk} = 0$ if $B_k$
+is empty.
+
 \subsection{Additional lazy constraints}
-Additionally, \textit{lazy constraints} \cite{cplexmanual} are used in the model. Lazy
-constraints can be generated in the thousands prior to solving, but are
-not immediately used in the model. Instead, they are checked
+\label{sec:lazyconstraints}
+\textit{Lazy constraints} \cite{cplexmanual} are also used in the model. Lazy
+constraints are simple constraints based on the specific problem. Large numbers
+of them are generated prior to solving, but they are
+not immediately used in the model. Instead, they are checked against
 whenever an integral solution is found, and only those that are violated
 are added to the LP model. In practice, only few of the lazy constraints
 are used in the solution process. Nevertheless, they can noticeably
@@ -551,17 +560,18 @@ $S_2$. Both schedules contain batches $B_h$ and $B_k$, both of which
 are holding their respective host jobs only. Two jobs $j$ and $i$ are now
 assigned as the only guests to the two batches; furthermore $\max(p_i, p_j) \leq
 \min(p_h, p_k)$, $\max(s_h, s_k) + \max(s_j, s_i) \leq b$ and
-$\min(d_j, d_i) \geq \max(d_h, d_k)$. If $j \rightarrow
-B_h$ and $i \rightarrow B_k$ in schedule $S_1$ and vice versa in
+$\min(d_j, d_i) \geq \max(d_h, d_k)$. If $j \in
+B_h$ and $i \in B_k$ in schedule $S_1$ and vice versa in
 $S_2$, then the constraint renders $S_2$ infeasible.
 
 \begin{alignat}{2}
   & \begin{gathered} 2 (  4 - x_{hh} - x_{kk} - x_{jh} - x_{jk} -
 x_{ih} - x_{ik}\hfill \\+ \sum_{\substack{{g}\\{g \neq j}\\{g \neq
 i}}} (x_{gh} + x_{gk}) ) \geq x_{jk} + x_{ih} \end{gathered}
-\quad && \begin{gathered} \forall\{ j, i \in \mathcal{J}, \\ h, k \in K \\|\; h < k <
-j < i \land \\ [p_i \leq k_h \land b - s_h \geq s_i\\ \forall i \in
-\{j,i\}, \\ \forall h
+\quad && \begin{gathered} \forall\{ j, i \in \mathcal{J}, \\ h, k \in
+\mathcal{B} \\|\; h < k <
+j < i \land \\ [p_q \leq p_r \land b - s_r \geq s_q\\ \forall q \in
+\{j,i\}, \\ \forall r
 \in \{h,k\}] \} \end{gathered}
 \end{alignat}
 
@@ -570,7 +580,7 @@ conditions are met, which in turn disallows the assignment given on the right.
 For all other job/batch pairings, the left side evaluates to at least two, which
 places no constraint on the right hand side at all.
 
-This kind of symmetry-breaking rule can theoretically be extended to situations with
+This kind of symmetry-breaking rule can be extended to 
 $m > 2$ batches, with the number of constraints growing combinatorially with $m$. Since it takes
 a constant but appreciable time to generate these constraints prior to solving,
 we have in our trials kept to the simplest variant shown here, and limited their
@@ -590,7 +600,7 @@ less than $b - s_j$. The constraint is written as follows:
 \begin{alignat}{2}
 &2 - x_{jj} - x_{kk} \geq \left(1.0 + b - s_j -
 \sum_{\substack{{i = k}\\{i \neq j}}}^{n_j} s_i
-x_{ik}\right) / b \quad && \begin{gathered} \forall \{k \in \mathcal{B}, j \in \mathcal{J} \\| j > k 
+x_{ik}\right) / b \quad && \begin{gathered} \forall \{ j \in \mathcal{J}, k \in \mathcal{B}\\| j > k 
 \land p_k \geq p_j \\ \land s_k + s_j \leq b\}\end{gathered}
 \end{alignat}\\
 
@@ -614,40 +624,33 @@ The full novel MIP model we are proposing is defined in Model \ref{mod:movebackm
 x_{hh}) \quad && \forall k \in \mathcal{B}^\star \\
   \label{mbm:eq1} & x_{jk} = 0 \quad && \forall \{j \in \mathcal{J}, k \in \mathcal{B} | j < k\}
   \\[2ex]
-  (*)\quad \label{mbm:eq8} & \begin{gathered} 2 (  4 - x_{k_1,k_1} - x_{k_2,k_2} - x_{j_1,k_1} - x_{j_1,k_2} -
-x_{j_2,k_1} - x_{j_2,k_2}\hfill \\+ \sum_{\substack{{j}\\{j \neq j_1}\\{j \neq
-j_2}}} (x_{j,k_1} + x_{j,k_2}) ) \geq x_{j_1,k_2} + x_{j_2,k_1} \end{gathered}
-\quad && \begin{gathered} \forall\{ j_1, j_2 \in \mathcal{J}, \\ k_1, k_2 \in K \\|\; k_1 < k_2 <
-j_1 < j_2 \land \\ [p_i \leq k_h \land b - s_h \geq s_i\\ \forall i \in
-\{j_1,j_2\}, \\ \forall h
-\in \{k_1,k_2\}] \} \end{gathered}
+  (*)\quad \label{mbm:eq8}   & \begin{gathered} 2 (  4 - x_{hh} - x_{kk} - x_{jh} - x_{jk} -
+x_{ih} - x_{ik}\hfill \\+ \sum_{\substack{{g}\\{g \neq j}\\{g \neq
+i}}} (x_{gh} + x_{gk}) ) \geq x_{jk} + x_{ih} \end{gathered}
+\quad && \begin{gathered} \forall\{ j, i \in \mathcal{J}, \\ h, k \in
+\mathcal{B} \\|\; h < k <
+j < i \land \\ [p_q \leq p_r \land b - s_r \geq s_q\\ \forall q \in
+\{j,i\}, \\ \forall r
+\in \{h,k\}] \} \end{gathered}
  \\[2ex]
 (*)\quad &  \label{mbm:eq11}2 - x_{jj} - x_{kk} \geq \left(1.0 + b - s_j -
 \sum_{\substack{{i = k}\\{i \neq j}}}^{n_j} s_i
-x_{ik}\right) / b \quad && \begin{gathered} \forall \{k \in \mathcal{B}, j \in \mathcal{J} \\| j > k 
+x_{ik}\right) / b \quad && \begin{gathered} \forall \{j \in \mathcal{J},k \in \mathcal{B} \\| j > k 
 \land p_k \geq p_j \\ \land s_k + s_j \leq b\}\end{gathered}
 \end{alignat}
-\caption{Move-based MIP model. Constraints marked $(*)$ are lazy constraints.}
+\caption{The new MIP model. Constraints marked $(*)$ are lazy constraints.}
 \label{mod:movebackmip}
 \end{model}
 
 Constraints \eqref{mbm:eq7} and \eqref{mbm:eq6} are uniqueness and
 capacity constraints: batches have to remain within capacity $b$, and every
-job can only occupy one batch.
-
-Constraints \eqref{mbm:eq3} and \eqref{mbm:eq10} define the value of
-$P_k$ for every batch $k$ as the longest $p$ of all jobs in $k$, but
+job can only occupy one batch. Constraints \eqref{mbm:eq3} and \eqref{mbm:eq10} define the value of
+$P'_k$ for every batch $k$ as the longest $p$ of all jobs in $k$, but
 at least $p_k$. This is required in \eqref{mbm:eq4}, which follows the
-explanation above.
-
-Constraints \eqref{mbm:eq5} ensure that no job is moved into a host-less batch,
+explanation above. Constraints \eqref{mbm:eq5} ensure that no job is moved into a host-less batch,
 i.e. in order to move job $j$ into batch $k$ ($x_{jk} = 1$), job $k$ must still
-be in batch $k$ ($x_{kk} = 1$).
-
-Constraints \eqref{mbm:eq1} implement the requirement that jobs are only moved
-into earlier batches.
-
-Constraints \eqref{mbm:eq8} and \eqref{mbm:eq11} implement the additional lazy
+be in batch $k$ ($x_{kk} = 1$). Constraints \eqref{mbm:eq1} implement the requirement that jobs are only moved
+into earlier batches. Constraints \eqref{mbm:eq8} and \eqref{mbm:eq11} implement the additional lazy
 constraints described above.
 
 \section{Empirical comparison}
@@ -655,16 +658,17 @@ constraints described above.
 
 We empirically compared the performance of the CP model by Malapert et al. and
 Model \ref{mod:movebackmip}. Both models were run on 120
-benchmark instances provided by Malapert et al. (i.e. 40 instances of each $n_j = \{20,
-50, 75\}$). The benchmarks are generated as specified in \cite{Daste1}, with a
-capacity of $b = 10$ and values for $p_j$, $s_j$ and $d_j$ distributed as follows:
-\begin{align}
-p_j &= U[1, 99] \\
-s_j &= U[1, 10] \\
-d_j &= U[0, 0.1] \cdot \tilde{C}_\text{max} + U[1, 3] \cdot p_j
-\end{align}
-where $U[a, b]$ is a uniform distribution between $a$ and $b$, and
-$\tilde{C}_\text{max} = \frac{1}{bn} \cdot \\ \left( \sum_{j=1}^{n_j} s_j \cdot \sum_{j=1}^{n_j}
+benchmark instances as in Malapert et al. (i.e. 40 instances of each $n_j = \{20,
+50, 75\}$). The benchmarks are generated as specified by Daste \cite{Daste1}, with a
+capacity of $b = 10$ and values for $p_j$, $s_j$ and $d_j$ distributed as follows: $p_j = U[1, 99]$,
+$s_j = U[1, 10]$, and $d_j = U[0, 0.1] \cdot \tilde{C}_\text{max} + U[1, 3] \cdot p_j$.
+% \begin{align}
+% p_j &= U[1, 99] \\
+% s_j &= U[1, 10] \\
+% d_j &= U[0, 0.1] \cdot \tilde{C}_\text{max} + U[1, 3] \cdot p_j
+% \end{align}
+$U[a, b]$ is a uniform distribution between $a$ and $b$, and
+$\tilde{C}_\text{max} = \frac{1}{bn} \cdot \left( \sum_{j=1}^{n_j} s_j \cdot \sum_{j=1}^{n_j}
 p_j \right)$ is an approximation of the time required to process
 all jobs.
 
@@ -677,17 +681,18 @@ machine using the same problem instances.\footnote{The authors would like to ext
 it.}
 Solving was aborted after a time of 3600 seconds (1 hour).
 
-The reference MIP model solves less than a third of all instances to optimality
-within the time limit. The branch-and-price model proposed by Daste \cite{Daste1} also
-performs considerably worse than CP \cite{Malapert}. Neither of the two is
-included in these results.
+The reference MIP model solves fewer than a third of the instances
+within the time limit. The branch-and-price model \cite{Daste1} is reported to 
+perform considerably worse than CP \cite{Malapert}. Therefore, neither of the two is
+included here.
 
 \subsection{Results}
-The overview in Table \ref{table:results} below shows aggregated results that
+The overview in Table \ref{table:results} shows aggregated results that
 demonstrate the performance and robustness of our new model.
 
+
+\begin{table}[t]
 \small
-\begin{table}
 \noindent\begin{tabu} to \linewidth {l l X[r] X[r] X[r] X[r] X[r]}
   \toprule
   \multirow{2}{*}{$n_j$}& \multirow{2}{*}{optimal soln. found by} &
@@ -710,109 +715,207 @@ absolute gap} \\
 \end{tabu}
 \vspace{0.3em}
 \caption{Summary of empirical results. Values are geometric means for solving
-  time and arithmetic means for absolute gaps. Note that no relative gaps are given
-  because negative lower bounds result in misleading percentages; see Figure
-\ref{fig:gapcomp} for a more detailed gap comparison.}
+  time and arithmetic means for absolute gaps. No relative gaps are given
+  due to negative lower bounds.}
 \label{table:results}
 \end{table}
-\normalsize
-As shown in Figure \ref{fig:scattercomp}, our MIP model performed better overall on
+%\normalsize
+
+\begin{table}[t]
+\small
+  \noindent\begin{tabu} to \linewidth {l X[r] X[r] X[r] X[r] X[r] X[r]}
+  \toprule
+  \multirow{2}{*}{Mean (120 instances)} & \multicolumn{2}{r}{Reference MIP} &
+  \multicolumn{2}{r}{Improved MIP} & \multicolumn{2}{c}{\quad\; Reduction}\\
+    & Rows & Cols & Rows & Cols & Rows & Cols \\
+  \midrule
+  Before presolve & 7415.14 & 3033.81 & 4291.48 & 2882.76 & $-42.1\%$ & $-5.0\%$ \\
+  After presolve & 2209.34 & 1513.06 & 754.57  & 687.13 & $-65.8\%$ & $-54.6\%$ \\
+  \midrule
+  Reduction & $-70.2\%$ & $-50.1\%$ & $-82.4\%$ & $-76.1\%$ & --- & --- \\
+  \bottomrule
+\end{tabu}
+\vspace{0.3em}
+\caption{Average numbers of variables and constraints in
+  reference and improved MIP models before and after processing by
+  \textsc{cplex}'s presolve routines.}
+\label{table:beforeafterpresolve}
+\end{table}
+
+
+As shown in Figure \ref{fig:scattercomp}, our MIP model performs better overall on
 instances with $n_j = 20$ and $n_j = 75$, while MIP and CP perform similarly
 well on intermediate problems ($n_j = 50$).
 
-Wherever an optimal solution was not found within the 1-hour time limit,
+Wherever an optimal solution was not found,
 the improved MIP model achieved a significantly better solution quality: 
 out of the 40 instances with $n_j = 75$, 22 were solved to optimality by both CP
 and MIP, 13 were solved to optimality by the MIP only, and 5
-were solved by neither model within an hour. 
-
-\begin{figure}[h]
-\centering
-\includegraphics[height=0.55\textheight]{scattercomp.pdf}
-\caption{Performance comparison over 120 instances, each represented by one data
-point. Horizontal/vertical coordinates correspond to solving time by CP model
-and improved MIP model, respectively. Note that 16 instances were not solved to
-optimality within an hour by either the CP model or both models.}
-\label{fig:scattercomp}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[height=0.45\textheight]{gapcomp.pdf}
-\caption{Comparison of solution quality for the 18 instances that were not
-solved to optimality within an hour by either the CP model or both models. White bars represent
-the LB-UB gap achieved by the CP model, black bars the LB-UB gap achieved by the
-improved MIP model (straight line if solved to optimality).}
-\label{fig:gapcomp}
-\end{figure}
-
-\section{Discussion}
-\label{sec:discussion}
-Our results show that the improved MIP model is an improvement over previous
-approaches, demonstrating that at least in this case, the performance
-of custom implementations can indeed be matched and exceeded by
-a comparatively simple mathematical formulation.
-
-A comparison of solution quality where no optimal schedule was
+were solved by neither model within an hour.  A comparison of solution quality where no optimal schedule was
 found confirms the robustness of the improved MIP model: as Figure
 \ref{fig:gapcomp} illustrates, the gap (UB($\Lmax)-$LB($\Lmax$)) is
 consistently larger in the CP model. This means that even with very difficult
 problems, our model will often give near-optimal solutions more quickly
 than Malapert et al.'s CP model.
 
-Mathematical models also have the general benefit of being more readily
+We further found that the lazy constraints introduced in Section
+\ref{sec:lazyconstraints} did not yield \emph{consistent} benefits across
+problems; in fact,
+they doubled and tripled solving times for some instances. On average, however,
+adding the lazy constraints resulted in a speed gain on the order of about 10\%,
+especially for larger problems ($n \geq 50$).
+
+\begin{figure}[t]
+\begin{minipage}[t]{.475\textwidth}
+\includegraphics[width=\textwidth]{scattercomp.pdf}
+\caption{Performance comparison over 120 instances, each represented by one data
+point. Horizontal/vertical coordinates correspond to solving time by CP model
+and improved MIP model, respectively. Note that 18 instances were not solved to
+optimality within an hour by either the CP model or both models.}
+\label{fig:scattercomp}
+%\includegraphics[width=2in]{scattercomp.pdf}
+%Some text.
+\end{minipage} %
+\hfill
+\begin{minipage}[t]{.475\textwidth}
+\centering
+\includegraphics[width=\textwidth]{gapcomp.pdf}
+\caption{Comparison of solution quality for the 18 instances that were not
+solved to optimality within an hour by either the CP model or both models. White bars represent
+the LB-UB gap achieved by the CP model, black bars the LB-UB gap achieved by the
+improved MIP model (straight line where solved to optimality).}
+\label{fig:gapcomp}
+%\includegraphics[width=2in]{elephant}
+%Some more text.
+\end{minipage}
+\end{figure}
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+%\subsubsection{Understanding the performance differences}
+
+One likely contribution to the new model's performance is its reduced
+size compared to the reference MIP model: while the reference model
+required $3n^2 + 8n$ constraints over $n^2 + 3n$ variables, our
+model uses fewer than $2.5n^2 + 2.5n$ constraints over $n^2 + n$
+variables.\footnote{The word ``fewer'' here arises from the problem-specific
+cardinality of $\mathcal{B}^\star$.} In addition, \textsc{cplex}'s
+presolve methods are more effective on our model (see Table
+\ref{table:beforeafterpresolve}), reducing its size further.
+
+Figure \ref{fig:lbubcomp} shows the evolution of bounds (i.e. best feasible
+solutions and tightest LP solutions at the nodes) for the three
+models over the first few seconds. It is based on the logs for
+the 40 instances with $n = 75$, which contain only irregular timestamps.
+%Yet even such approximate data demonstrates two interesting points.
+While the new MIP model is better than the reference model on both the lower
+and upper bounds, the largest gain appears to derive from the latter,
+indicating that unlike what is commonly observed, the improved MIP model
+benefits not from a tighter relaxation but from being more amenable to
+the solver's primal heuristics.
+
+\begin{figure} %{0.5\textwidth}
+\centering
+\includegraphics[height=0.3\textheight]{lbubcomp.pdf}
+\caption{Evolution of upper and lower bounds.
+Left cutoffs indicate the approximate mean time at which the
+respective bound was first found.}
+\label{fig:lbubcomp}
+\end{figure}
+
+% \begin{wrapfigure}{l}{0.5\textwidth}
+% \centering
+% \includegraphics[height=0.3\textheight]{lbubcomp.pdf}
+% \caption{Evolution of upper and lower bounds.
+% Left cutoffs indicate the approximate mean time at which the
+% respective bound was first found.}
+% \label{fig:lbubcomp}
+% \end{wrapfigure}
+
+
+The upper bound for the improved MIP model matches that of the CP model.
+CP is often able to find high quality solutions faster than MIP. However, the improved model removes that
+advantage on our test problems.
+
+\subsubsection{Making moves in MIP modeling}
+
+One of the novelties of the new MIP model, as well as much of its
+inspiration, is the consideration of \textit{moves} from the canonical
+single-EDD solution. The effects of the assignment variables on the
+objective function can be considered discretely, allowing us to reason
+about them algorithmically even though they constitute a
+declarative model.  The concept of moves is common in local
+search techniques including Large Neighbourhood Search (LNS) \cite{shaw}
+where moves correspond to the removal and re-insertion of jobs from
+and into the schedule, similar to our reasoning in Section
+\ref{sec:moves}.  
+
+This line of reasoning presents several interesting directions for future work including (i) using the idea of moves from a canonical solution to develop MIP and CP models for other optimization problems and (ii) the derivation of dominance rules to restrict LNS moves on large problems and thereby expand the size of the neighbourhoods that can be explored.
+
+% Analogous to the notion of ``neighbourhood'' is the
+% set of schedules than can be reached via feasible moves, starting from
+% any other schedule. We can then easily represent the objective
+% function as a sum of changes from some canonical solution. Such
+% models, while non-standard, may provide substantial insight into
+% problem structure that can be exploited in a MIP (or CP) formulation.
+
+\subsubsection{Models vs. global constraints}
+
+Our results show that the novel MIP model is an improvement over
+previous approaches, demonstrating that at least in this case, the
+performance of a specialized global constraint implementation can
+indeed be matched and exceeded by a comparatively simple mathematical
+formulation. Mathematical models have the general benefit of being more readily
 understandable, straightforward to implement and reasonably easy to
 adapt to new, similar problems.
 
-\subsection{Correlation between problem configuration and solving time}
-\label{sec:correlation}
-The mean number of jobs per batch ($n_j/n_k$) in the optimal solution
-strongly correlates with the time needed to solve to optimality. This
-is unsurprising given that a problem with a great number of large jobs
-(i.e. large $s_j$) will be of relatively low difficulty in terms of bin
-packing. 
+A global constraint is most valuable when it is the encapsulation of a
+problem structure that occurs across a number of interesting problem
+types. It can then be used far beyond its original context. However,
+with the flexibility to define arbitrary inference operations comes the
+temptation to develop problem-specific global constraints and to
+trade the ideal of re-usability for problem solving power. We believe
+that the collection of global constraints in CP is mature enough that
+most problem-specific efforts are now best placed on exploring novel ways
+to exploit problem structure using existing global constraints. To this
+end, one of our current research efforts is the development of a CP
+model exploiting the propositions proved in this paper without needing novel global constraints.
 
-An excellent predictor of solving time therefore appears to be what Baptiste \& LePape
-\cite{baptistelepape} call the \textit{disjunction ratio}: the ratio between the
-number of job pairs which cannot run in parallel (as $s_{j_1} + s_{j_2} > b$) and
-the total number of job pairs $n_j^2$. For a sample of 40 random instances of
-$n_j=30$, we found a correlation between $n_j/n_k$ and solution time of $r =
-0.72$ and a correlation between disjunction ratio and solution time of $r =
--0.64$.
+%%%%%%%%%%%
+%A global constraint is most valuable when it is the
+%encapsulation of a problem structure that occurs across a number of
+%interesting problem types. It can then be used far beyond its original
+%context. However, the flexibility to define an arbitrary inference
+%operation on variable domains comes with the temptation to develop
+%problem-specific global constraints, trading the re-use and wide
+%applicability for problem solving power. From an application engineering
+%perspective, such a trade-off may be reasonable. However, such work
+%does not further CP as a \emph{general} modeling and solving framework.
+%To that end, we believe that the collection of global constraints
+%has reached a level of maturity that problem-specific effort is
+%better placed on efforts of problem modeling, using existing global
+%constraints, that exploit structure such as demonstrated above. To this
+%end, one of our current research efforts is the development of a CP
+%model exploiting the propositions proved in this paper
+%%%%%%%%%%%%%%
+\section{Conclusion} \label{sec:conclusion}
 
-As a corollary, the solving time is greatly dependent on the
-capacity of the machine. Larger capacities, relative to the average job size
-$\bar{s}_j$, will correlate with longer solving times as the disjunction ratio decreases.
+In this paper, we addressed an existing parallel-batch scheduling
+problem for which the current state-of-the-art approach is constraint
+programming. Inspired by the conception of moves from a canonical
+solution, we proved a number of propositions about the problem, allowing
+us to create a novel MIP model that, after presolving, is less than
+half the size of the previous MIP model. Empirical results demonstrated
+that, primarily due to the ability to find
+good feasible solutions quickly, the new MIP model was able to out-perform the
+existing CP approach over a broad range of problem instances both in
+terms of finding and proving optimality and in terms of finding high
+quality solutions when the optimal solution could not be proved.
 
-\subsection{Generalizing the search technique used in the improved MIP model}
-
-The effects of binary decision variables on the objective function can often be
-considered discretely, which allows us to reason about them algorithmically
-even though they constitute an entirely declarative model.
-Indeed, the concept of \textit{moves} typically appears
-in local search techniques, such as the \textit{Large Neighbourhood
-Search} \cite{shaw} where moves correspond to the removal and
-re-insertion of jobs from and into the schedule, similarly to what
-we propose in Section \ref{sec:moves} above. Analogous to the notion
-of ``neighbourhood'' is the set of schedules than can be reached via
-feasible moves, starting from any other schedule. We can then easily
-represent the objective function as a sum of changes from
-some canonical solution. Such models, while non-standard, may provide
-substantial insight into problem structure that can be exploited in a
-MIP (or CP) formulation.
-
-\section{Conclusion} 
-\label{sec:conclusion}
-
-\textbf{CB: Needs rewriting later.}
-
-By examining the batch scheduling problem carefully, we were able to identify
-redundancies in the original model. We proposed a new model and showed that its
-performance is comparable to, or better than that of the state-of-the-art
-constraint programming implementation.
-
-\bibliography{bibliography}{}
 \bibliographystyle{splncs}
+\bibliography{bibliography}
 
 
 \end{document}

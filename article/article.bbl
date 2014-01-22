@@ -1,11 +1,52 @@
 \begin{thebibliography}{10}
 
+\bibitem{Hooker05b}
+Hooker, J.:
+\newblock A hybrid method for planning and scheduling.
+\newblock Constraints \textbf{10} (2005)  385--401
+
+\bibitem{Beck11a}
+Beck, J.C., Feng, T.K., Watson, J.P.:
+\newblock Combining constraint programming and local search for job-shop
+  scheduling.
+\newblock {INFORMS} Journal on Computing \textbf{23}(1) (2011)  1--14
+
+\bibitem{Tran12a}
+Tran, T.T., Beck, J.C.:
+\newblock Logic-based benders decomposition for alternative resource scheduling
+  with sequence-dependent setups.
+\newblock In: Proceedings of the Twentieth European Conference on Artificial
+  Intelligence (ECAI2012). (2012)  774--779
+
 \bibitem{Malapert}
-Malapert, A., Guéret, C., Rousseau, L.M.:
+Malapert, A., Gu\'{e}ret, C., Rousseau, L.M.:
 \newblock A constraint programming approach for a batch processing problem with
   non-identical job sizes.
 \newblock European Journal of Operational Research \textbf{221} (2012)
   533--545
+
+\bibitem{Schutt13a}
+Schutt, A., Feydy, T., Stuckey, P.J., Wallace, M.:
+\newblock Solving {RCPSP/max} by lazy clause generation.
+\newblock Journal of Scheduling \textbf{16}(3) (2013)  273--289
+
+\bibitem{Baptiste00a}
+Baptiste, P., Le~Pape, C.:
+\newblock Constraint propagation and decomposition techniques for highly
+  disjunctive and highly cumulative project scheduling problems.
+\newblock Constraints \textbf{5}(1-2) (2000)  119--139
+
+\bibitem{Baptiste01a}
+Baptiste, P., Le~Pape, C., Nuijten, W.:
+\newblock Constraint-based Scheduling.
+\newblock Kluwer Academic Publishers (2001)
+
+\bibitem{Vilim09a}
+Vil{\'\i}m, P.:
+\newblock Edge finding filtering algorithm for discrete cumulative resources in
+  ${O}(kn~log~n)$.
+\newblock In: Principles and Practice of Constraint Programming-CP 2009.
+\newblock Springer (2009)  802--816
 
 \bibitem{Freuder97a}
 Freuder, E.C.:
@@ -21,6 +62,13 @@ Heinz, S., Ku, W.Y., Beck, J.C.:
   7874 of Lecture Notes in Computer Science.
 \newblock Springer Berlin Heidelberg (2013)  12--27
 
+\bibitem{Daste1}
+Daste, D., Gueret, C., Lahlou, C.:
+\newblock A branch-and-price algorithm to minimize the maximum lateness on a
+  batch processing machine.
+\newblock In: Proceedings of the 11\textsuperscript{th} International Workshop
+  on Project Management and Scheduling (PMS), Istanbul, Turkey. (2008)  64--69
+
 \bibitem{Lee}
 Lee, C.Y., Uzsoy, R., Martin-Vega, L.A.:
 \newblock Efficient algorithms for scheduling semiconductor burn-in operations.
@@ -33,12 +81,6 @@ Grossmann, I.E.:
 \newblock Technical Report Paper 203, Carnegie Mellon University Engineering
   Design Research Center and Department of Chemical Engineering (1992)
 
-\bibitem{graham}
-Graham, R., Lawler, E., Lenstra, J.K., Kan, A.R.:
-\newblock Optimization and approximation in deterministic sequencing and
-  scheduling: A survey.
-\newblock Annals of Discrete Mathematics \textbf{5} (1979)  287--326
-
 \bibitem{Brucker}
 Brucker, P., Gladky, A., Hoogeveen, H., Kovalyov, M.Y., Potts, C.N.,
   Tautenhahn, T., van~de Velde, S.L.:
@@ -50,23 +92,12 @@ Pinedo, M.L.:
 \newblock Scheduling: Theory, Algorithms, and Systems. 2nd edn.
 \newblock Prentice-Hall (2003)
 
-\bibitem{Shaw04a}
-Shaw, P.:
-\newblock A constraint for bin packing.
-\newblock In: Proceedings of the Tenth International Conference on Principles
-  and Practice of Constraint Programming (CP04). (2004)  648--662
-
 \bibitem{ShawPacking}
 Shaw, P.:
 \newblock A constraint for bin packing.
-\newblock \textbf{3258} (2004)  648--662
-
-\bibitem{Daste1}
-Daste, D., Gueret, C., Lahlou, C.:
-\newblock A branch-and-price algorithm to minimize the maximum lateness on a
-  batch processing machine.
-\newblock In: Proceedings of the 11\textsuperscript{th} International Workshop
-  on Project Management and Scheduling (PMS), Istanbul, Turkey. (2008)  64--69
+\newblock In Wallace, M., ed.: Proceedings of the 10\textsuperscript{th}
+  International Conference on Principles and Practice of Constraint Programming
+  (CP 2004). Volume 3258 of Lecture Notes in Computer Science. (2004)  648--662
 
 \bibitem{Azizoglu}
 Azizoglu, M., Webster, S.:
@@ -105,24 +136,19 @@ Ozturk, O., Espinouse, M.L., Mascolo, M.D., Gouin, A.:
 
 \bibitem{cplex}
 Ilog, I.:
-\newblock Cplex optimization suite 12.2 (2010)
+\newblock Cplex optimization suite 12.5 (2013)
 
 \bibitem{choco}
 {Choco Team}:
 \newblock Choco: An open source java constraint programming library. version
   2.1.5 (2013)
 
-\bibitem{baptistelepape}
-Baptiste, P., Le~Pape, C.:
-\newblock Constraint propagation and decomposition techniques for highly
-  disjunctive and highly cumulative project scheduling problems.
-\newblock Constraints \textbf{5}(1-2) (2000)  119--139
-
 \bibitem{shaw}
 Shaw, P.:
 \newblock Using constraint programming and local search methods to solve
   vehicle routing problems.
 \newblock In: Proceedings of the Fourth International Conference on Pricinples
-  and Practice of Constraint Programming (Springer LNCS 1520). (1998)  417--431
+  and Practice of Constraint Programming. Volume 1520 of Lecture Notes in
+  Computer Science. (1998)  417--431
 
 \end{thebibliography}

@@ -1,8 +1,8 @@
 \relax 
-\citation{some_sched_papers}
-\citation{cumulative}
+\citation{Hooker05b,Beck11a,Tran12a,Malapert,Schutt13a}
+\citation{Baptiste00a,Baptiste01a,Vilim09a}
 \citation{Malapert}
-\citation{Hooker_etc}
+\citation{Hooker05b,Beck11a,Tran12a}
 \citation{Freuder97a}
 \citation{Heinz}
 \citation{Daste1}
@@ -14,8 +14,7 @@
 \citation{Lee}
 \citation{Malapert}
 \citation{Grossmann}
-\citation{graham}
-\citation{Daste,Malapert}
+\citation{Daste1,Malapert}
 \citation{Brucker}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}}
 \newlabel{sec:background}{{2}{2}}
@@ -34,8 +33,11 @@
 \@writefile{los}{\contentsline {model}{\numberline {2.1}{\ignorespaces Reference MIP model}}{3}}
 \newlabel{model:malapertmip}{{2.1}{3}}
 \citation{Malapert}
-\citation{Shaw04a}
+\citation{ShawPacking}
 \citation{Malapert,ShawPacking}
+\citation{Daste1}
+\citation{Malapert}
+\citation{Malapert}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Previous Work}{4}}
 \newlabel{model:malapertcp}{{2.2}{4}}
 \newlabel{c:mcpmax}{{11}{4}}
@@ -43,92 +45,99 @@
 \newlabel{c:mcppack}{{13}{4}}
 \newlabel{c:mcpseq}{{14}{4}}
 \@writefile{los}{\contentsline {model}{\numberline {2.2}{\ignorespaces CP model proposed by Malapert et al.}}{4}}
-\citation{Daste1}
-\citation{Malapert}
-\citation{Malapert}
 \citation{Azizoglu}
 \citation{Dupont}
 \citation{Sabouni}
 \citation{Kashan}
 \citation{Ozturk}
 \citation{Grossmann}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Exploiting the Structure of the Parallel-Batching Problem}{5}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Exploiting the Problem Structure}{5}}
 \newlabel{sec:propositions}{{3}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The single-EDD schedule and assigning jobs to earlier batches}{5}}
+\newlabel{lemma:emptyorsame}{{1}{5}}
 \newlabel{prop:movebackonly}{{1}{5}}
-\newlabel{eq:mipnopp}{{16}{6}}
+\newlabel{eq:mipnopp}{{15}{6}}
 \newlabel{prop:nohostless}{{2}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Using changes to the single-EDD schedule to calculate the objective value}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reformulating the objective function}{7}}
 \newlabel{sec:moves}{{3.2}{7}}
+\newlabel{c:lmaxc}{{17}{7}}
+\newlabel{c:pkpj}{{18}{7}}
+\newlabel{c:pkmin}{{19}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Moving a job in a single-EDD schedule. Job 5 (marked ``$p_5 = 10$'') is moved from its single-EDD batch 5 into the earlier batch 3. This changes the lateness of job 7 (marked $\star $) from $L_\mathrm  {7,single}$ to $L_\mathrm  {7,single} - 10 + 6 = L_\mathrm  {7,single} - 4$.}}{8}}
 \newlabel{fig:movebasedmip}{{2}{8}}
-\newlabel{c:lmaxc}{{18}{8}}
-\newlabel{c:pkpj}{{19}{8}}
-\newlabel{c:pkmin}{{20}{8}}
-\newlabel{eq:ind1}{{21}{10}}
-\newlabel{eq:ind2}{{22}{10}}
-\newlabel{eq:ind3}{{23}{10}}
-\newlabel{eq:ind4}{{24}{10}}
+\newlabel{eq:ind1}{{20}{8}}
+\newlabel{eq:indhyp}{{21}{8}}
 \citation{cplexmanual}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Additional lazy constraints}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{Symmetry-breaking rule}{11}}
-\@writefile{toc}{\contentsline {subsubsection}{Dominance rule on required assignments}{11}}
+\newlabel{eq:k1k}{{22}{9}}
+\newlabel{eq:ind3}{{23}{9}}
+\newlabel{eq:ind4}{{24}{9}}
+\newlabel{eq:indfin}{{25}{9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Additional lazy constraints}{9}}
+\newlabel{sec:lazyconstraints}{{3.3}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{Symmetry-breaking rule}{9}}
+\@writefile{toc}{\contentsline {subsubsection}{Dominance rule on required assignments}{10}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}A New MIP Model}{10}}
+\newlabel{sec:newMIPmodel}{{4}{10}}
+\newlabel{mbm:eq7}{{29}{11}}
+\newlabel{mbm:eq6}{{30}{11}}
+\newlabel{mbm:eq3}{{31}{11}}
+\newlabel{mbm:eq10}{{32}{11}}
+\newlabel{mbm:eq5}{{33}{11}}
+\newlabel{mbm:eq4}{{34}{11}}
+\newlabel{mbm:eq1}{{35}{11}}
+\newlabel{mbm:eq8}{{36}{11}}
+\newlabel{mbm:eq11}{{37}{11}}
+\@writefile{los}{\contentsline {model}{\numberline {4.1}{\ignorespaces The new MIP model. Constraints marked $(*)$ are lazy constraints.}}{11}}
+\newlabel{mod:movebackmip}{{4.1}{11}}
 \citation{Daste1}
 \citation{cplex}
 \citation{choco}
-\@writefile{toc}{\contentsline {section}{\numberline {4}A New MIP Model}{12}}
-\newlabel{sec:newMIPmodel}{{4}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Empirical comparison}{12}}
-\newlabel{sec:exp}{{5}{12}}
-\newlabel{mbm:eq7}{{30}{13}}
-\newlabel{mbm:eq6}{{31}{13}}
-\newlabel{mbm:eq3}{{32}{13}}
-\newlabel{mbm:eq10}{{33}{13}}
-\newlabel{mbm:eq5}{{34}{13}}
-\newlabel{mbm:eq4}{{35}{13}}
-\newlabel{mbm:eq1}{{36}{13}}
-\newlabel{mbm:eq8}{{37}{13}}
-\newlabel{mbm:eq11}{{38}{13}}
-\@writefile{los}{\contentsline {model}{\numberline {4.1}{\ignorespaces Move-based MIP model. Constraints marked $(*)$ are lazy constraints.}}{13}}
-\newlabel{mod:movebackmip}{{4.1}{13}}
 \citation{Daste1}
 \citation{Malapert}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Results}{14}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of empirical results. Values are geometric means for solving time and arithmetic means for absolute gaps. Note that no relative gaps are given because negative lower bounds result in misleading percentages; see Figure 4\hbox {} for a more detailed gap comparison.}}{14}}
-\newlabel{table:results}{{1}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{14}}
-\newlabel{sec:discussion}{{6}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Performance comparison over 120 instances, each represented by one data point. Horizontal/vertical coordinates correspond to solving time by CP model and improved MIP model, respectively. Note that 16 instances were not solved to optimality within an hour by either the CP model or both models.}}{15}}
-\newlabel{fig:scattercomp}{{3}{15}}
-\citation{baptistelepape}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Empirical comparison}{12}}
+\newlabel{sec:exp}{{5}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Results}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of empirical results. Values are geometric means for solving time and arithmetic means for absolute gaps. No relative gaps are given due to negative lower bounds.}}{13}}
+\newlabel{table:results}{{1}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Average numbers of variables and constraints in reference and improved MIP models before and after processing by \textsc  {cplex}'s presolve routines.}}{13}}
+\newlabel{table:beforeafterpresolve}{{2}{13}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{13}}
+\newlabel{sec:discussion}{{6}{13}}
 \citation{shaw}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of solution quality for the 18 instances that were not solved to optimality within an hour by either the CP model or both models. White bars represent the LB-UB gap achieved by the CP model, black bars the LB-UB gap achieved by the improved MIP model (straight line if solved to optimality).}}{16}}
-\newlabel{fig:gapcomp}{{4}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Correlation between problem configuration and solving time}{16}}
-\newlabel{sec:correlation}{{6.1}{16}}
-\bibdata{bibliography}
-\bibcite{Malapert}{1}
-\bibcite{Freuder97a}{2}
-\bibcite{Heinz}{3}
-\bibcite{Lee}{4}
-\bibcite{Grossmann}{5}
-\bibcite{graham}{6}
-\bibcite{Brucker}{7}
-\bibcite{Pinedo03}{8}
-\bibcite{Shaw04a}{9}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Generalizing the search technique used in the improved MIP model}{17}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{17}}
-\newlabel{sec:conclusion}{{7}{17}}
-\bibcite{ShawPacking}{10}
-\bibcite{Daste1}{11}
-\bibcite{Azizoglu}{12}
-\bibcite{Dupont}{13}
-\bibcite{Sabouni}{14}
-\bibcite{Kashan}{15}
-\bibcite{Ozturk}{16}
-\bibcite{cplexmanual}{17}
-\bibcite{cplex}{18}
-\bibcite{choco}{19}
-\bibcite{baptistelepape}{20}
-\bibcite{shaw}{21}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Performance comparison over 120 instances, each represented by one data point. Horizontal/vertical coordinates correspond to solving time by CP model and improved MIP model, respectively. Note that 18 instances were not solved to optimality within an hour by either the CP model or both models.}}{14}}
+\newlabel{fig:scattercomp}{{3}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Comparison of solution quality for the 18 instances that were not solved to optimality within an hour by either the CP model or both models. White bars represent the LB-UB gap achieved by the CP model, black bars the LB-UB gap achieved by the improved MIP model (straight line where solved to optimality).}}{14}}
+\newlabel{fig:gapcomp}{{4}{14}}
+\@writefile{toc}{\contentsline {subsubsection}{Making moves in MIP modeling}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Evolution of upper and lower bounds. Left cutoffs indicate the approximate mean time at which the respective bound was first found.}}{15}}
+\newlabel{fig:lbubcomp}{{5}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{Models vs. global constraints}{15}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{15}}
+\newlabel{sec:conclusion}{{7}{15}}
 \bibstyle{splncs}
+\bibdata{bibliography}
+\bibcite{Hooker05b}{1}
+\bibcite{Beck11a}{2}
+\bibcite{Tran12a}{3}
+\bibcite{Malapert}{4}
+\bibcite{Schutt13a}{5}
+\bibcite{Baptiste00a}{6}
+\bibcite{Baptiste01a}{7}
+\bibcite{Vilim09a}{8}
+\bibcite{Freuder97a}{9}
+\bibcite{Heinz}{10}
+\bibcite{Daste1}{11}
+\bibcite{Lee}{12}
+\bibcite{Grossmann}{13}
+\bibcite{Brucker}{14}
+\bibcite{Pinedo03}{15}
+\bibcite{ShawPacking}{16}
+\bibcite{Azizoglu}{17}
+\bibcite{Dupont}{18}
+\bibcite{Sabouni}{19}
+\bibcite{Kashan}{20}
+\bibcite{Ozturk}{21}
+\bibcite{cplexmanual}{22}
+\bibcite{cplex}{23}
+\bibcite{choco}{24}
+\bibcite{shaw}{25}
